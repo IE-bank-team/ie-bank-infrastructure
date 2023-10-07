@@ -6,22 +6,28 @@
             "value": "nonprod"
         },
         "postgreSQLServerName": {
-            "value": "aguadamillas-dbsrv-dev"
+            "value": "chiaradigi-dbsrv-dev"
         },
         "postgreSQLDatabaseName": {
-            "value": "aguadamillas-db-dev"
+            "value": "chiaradigi-db-dev"
         },
         "appServicePlanName": {
-            "value": "aguadamillas-asp-dev"
+            "value": "chiaradigi-asp-dev"
         },
         "appServiceAPIAppName": {
-            "value": "aguadamillas-be-dev"
+            "value": "chiaradigi-be-dev"
         },
         "appServiceAppName": {
-            "value": "aguadamillas-fe-dev"
+            "value": "chiaradigi-fe-dev"
+        },
+        "azureMonitorName": {
+            "value": "chiaradigi-am"
+        },
+        "appInsightsName": {
+            "value": "chiaradigi-ai"
         },
         "location": {
-            "value": "North Europe"
+            "value": "Brazil South"
         }
     }
 }

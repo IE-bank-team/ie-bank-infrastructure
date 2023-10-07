@@ -18,6 +18,7 @@ param environmentType string
 
 var appServicePlanSkuName = (environmentType == 'prod') ? 'B1' : 'F1'
 
+//this is the resource provider for the app service plan
 resource appServicePlan 'Microsoft.Web/serverFarms@2022-03-01' = {
   name: appServicePlanName
   location: location
@@ -72,6 +73,10 @@ resource appServiceAPIApp 'Microsoft.Web/sites@2022-03-01' = {
         {
           name: 'SCM_DO_BUILD_DURING_DEPLOYMENT'
           value: 'true'
+        }
+        {
+          name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
+          value: '3c75b957-a1d0-4ddb-ab2d-a0521c35c566' //CHANGE
         }
       ]
     }
