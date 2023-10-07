@@ -34,6 +34,13 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
+      # Run Azure CLI commands
+    - name: Run Azure CLI commands
+      run: |
+          az account set --subscription ${{ env.SUBSCRIPTION_ID_DEV }}
+          az group create --name ${{ env.RESOURCE_GROUP_DEV }} --location brazilsouth
+        
 
       # Deploy Bicep file
     - name: deploy
