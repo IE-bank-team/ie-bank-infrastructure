@@ -52,7 +52,7 @@ jobs:
     environment:
       name: 'UAT'
     env:
-      RESOURCE_GROUP_UAT: aguadamillas_students_2
+      RESOURCE_GROUP_UAT: aguadamillas_students_1
       SUBSCRIPTION_ID_UAT: 3b1b6b1e-5b0e-4b9c-9b0a-1b0b0b0b0b0b
     steps:
         # Checkout code
