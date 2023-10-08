@@ -1,9 +1,6 @@
 name: ie-bank-infra
 
-on:
-  push:
-      paths:
-        - '!scripts/**'
+on: [push, workflow_dispatch]
 
 env:
   RESOURCE_GROUP_DEV: aguadamillas_resources
