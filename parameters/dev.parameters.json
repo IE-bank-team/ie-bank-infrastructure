@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "environmentType": {
-            "value": "uat"
+            "value": "nonprod"
         },
         "postgreSQLServerName": {
             "value": "chiaradigi-dbsrv-dev"
