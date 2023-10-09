@@ -1,7 +1,6 @@
 @sys.description('The environment type (nonprod, dev, uat, or prod)')
 @allowed([
   'nonprod'
-  'dev'
   'uat'
   'prod'
 ])
