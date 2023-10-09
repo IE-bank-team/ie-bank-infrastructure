@@ -26,7 +26,7 @@ jobs:
       name: 'User Acceptance Testing'
     env:
       ENV: uat
-      DBHOST: chiaradigi-dbsrv-uat-postgres.database.azure.com
+      DBHOST: chiaradigi-dbsrv-uat.postgres.database.azure.com
       DBNAME: chiaradigi-db-uat
       FLASK_APP: app.py
       FLASK_DEBUG: 1
