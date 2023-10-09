@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "environmentType": {
-            "value": "nonprod"
+            "value": "uat"
         },
         "postgreSQLServerName": {
             "value": "chiaradigi-dbsrv-uat"
@@ -22,6 +22,12 @@
         },
         "location": {
             "value": "Brazil South"
+        },
+        "postgreSQLSkuName": {
+            "value": "Standard_B1ms"
+        },
+        "appServicePlanSkuName": {
+            "value": "B1"
         }
     }
 }
