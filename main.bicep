@@ -1,12 +1,13 @@
-@sys.description('The environment type (nonprod, uat, or prod)')
-
-@allowed(['nonprod', 'prod', 'uat'])
-param environmentType string 
-
+@sys.description('The environment type (nonprod or prod)')
+@allowed([
+  'nonprod'
+  'prod'
+])
+param environmentType string = 'nonprod'
 @sys.description('The PostgreSQL Server name')
 @minLength(3)
 @maxLength(24)
-param postgreSQLServerName string = (environmentType == 'uat' ? 'ie-bank-db-server-uat' : 'ie-bank-db-server-dev')
+param postgreSQLServerName string = (environmentType == 'prod' ? 'ie-bank-db-server-uat' : 'ie-bank-db-server-dev')
 @sys.description('The PostgreSQL Database name')
 @minLength(3)
 @maxLength(24)
@@ -14,15 +15,16 @@ param postgreSQLDatabaseName string = 'ie-bank-db'
 @sys.description('The App Service Plan name')
 @minLength(3)
 @maxLength(24)
-param appServicePlanName string = (environmentType == 'uat' ? 'ie-bank-app-sp-uat' : 'ie-bank-app-sp-dev')
+param appServicePlanName string = (environmentType == 'prod' ? 'ie-bank-app-sp-uat' : 'ie-bank-app-sp-dev')
+
 @sys.description('The Web App name (frontend)')
 @minLength(3)
 @maxLength(24)
-param appServiceAppName string = (environmentType == 'uat' ? 'ie-bank-uat' : 'ie-bank-dev')
+param appServiceAppName string = (environmentType == 'prod' ? 'ie-bank-uat' : 'ie-bank-dev')
 @sys.description('The API App name (backend)')
 @minLength(3)
 @maxLength(24)
-param appServiceAPIAppName string = (environmentType == 'uat' ? 'ie-bank-api-uat' :  'ie-bank-api-dev')
+param appServiceAPIAppName string = (environmentType == 'prod' ? 'ie-bank-api-uat' :  'ie-bank-api-dev')
 @sys.description('The name of the Azure Monitor workspace')
 param azureMonitorName string
 @sys.description('The name of the Application Insights')
