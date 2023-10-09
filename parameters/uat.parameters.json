@@ -28,12 +28,6 @@
         },
         "location": {
             "value": "Brazil South"
-        },
-        "postgreSQLSkuName": {
-            "value": "Standard_B1ms"
-        },
-        "appServicePlanSkuName": {
-            "value": "B1"
         }
     }
 }
