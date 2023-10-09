@@ -20,6 +20,12 @@
         "appServiceAppName": {
             "value": "chiaradigi-fe-uat"
         },
+        "azureMonitorName": {
+            "value": "chiaradigi-am"
+        },
+        "appInsightsName": {
+            "value": "chiaradigi-ai"
+        },
         "location": {
             "value": "Brazil South"
         },
