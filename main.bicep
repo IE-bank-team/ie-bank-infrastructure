@@ -1,5 +1,6 @@
-@sys.description('The environment type (nonprod, dev, uat, or prod)')
-@allowed(['nonprod', 'uat', 'prod'])
+@sys.description('The environment type (nonprod, uat, or prod)')
+
+@allowed(['nonprod', 'prod'])
 param environmentType string = 'nonprod'
 
 @sys.description('The PostgreSQL Server name')
