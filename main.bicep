@@ -1,13 +1,12 @@
-@sys.description('The environment type (nonprod or prod)')
-@allowed([
-  'nonprod'
-  'prod'
-])
+@sys.description('The environment type (nonprod, dev, uat, or prod)')
+
+@allowed(['nonprod','dev', 'uat','prod'])
 param environmentType string = 'nonprod'
+
 @sys.description('The PostgreSQL Server name')
 @minLength(3)
 @maxLength(24)
-param postgreSQLServerName string = 'ie-bank-db-server-dev'
+param postgreSQLServerName string = (environmentType == 'uat' ? 'ie-bank-db-server-uat' : 'ie-bank-db-server-dev')
 @sys.description('The PostgreSQL Database name')
 @minLength(3)
 @maxLength(24)
@@ -15,15 +14,15 @@ param postgreSQLDatabaseName string = 'ie-bank-db'
 @sys.description('The App Service Plan name')
 @minLength(3)
 @maxLength(24)
-param appServicePlanName string = 'ie-bank-app-sp-dev'
+param appServicePlanName string = (environmentType == 'uat' ? 'ie-bank-app-sp-uat' : 'ie-bank-app-sp-dev')
 @sys.description('The Web App name (frontend)')
 @minLength(3)
 @maxLength(24)
-param appServiceAppName string = 'ie-bank-dev'
+param appServiceAppName string = (environmentType == 'uat' ? 'ie-bank-uat' : 'ie-bank-dev')
 @sys.description('The API App name (backend)')
 @minLength(3)
 @maxLength(24)
-param appServiceAPIAppName string = 'ie-bank-api-dev'
+param appServiceAPIAppName string = (environmentType == 'uat' ? 'ie-bank-api-uat' :  'ie-bank-api-dev')
 @sys.description('The name of the Azure Monitor workspace')
 param azureMonitorName string
 @sys.description('The name of the Application Insights')
@@ -44,7 +43,6 @@ param appServiceAPIDBHostDBUSER string
 @sys.description('The value for the environment variable FLASK_APP')
 param appServiceAPIDBHostFLASK_APP string
 @sys.description('The value for the environment variable FLASK_DEBUG')
-param appServiceAPIDBHostFLASK_DEBUG string
 
 resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01' = {
   name: postgreSQLServerName

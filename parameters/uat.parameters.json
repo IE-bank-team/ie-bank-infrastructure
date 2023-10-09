@@ -29,10 +29,10 @@
         "location": {
             "value": "Brazil South"
         },
-        "postgreSQLSkuName": {
+        "postgreSQLSkuNameUAT": {
             "value": "Standard_B1ms"
         },
-        "appServicePlanSkuName": {
+        "appServicePlanSkuNameUAT": {
             "value": "B1"
         }
     }
