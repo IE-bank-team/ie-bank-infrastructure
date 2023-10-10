@@ -47,15 +47,17 @@ param appServiceAPIDBHostFLASK_APP string
 @sys.description('The value for the environment variable FLASK_DEBUG')
 param appServiceAPIDBHostFLASK_DEBUG string
 
+//this is the server
 resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01' = {
-  name: postgreSQLServerName
+  name: postgreSQLServerName 
   location: location
   sku: {
-    name: 'Standard_B1ms'
+    name: 'Standard_B1ms' 
     tier: 'Burstable'
   }
+  //we apply the credentials. backend code needs credentials for the db
   properties: {
-    administratorLogin: 'iebankdbadmin'
+    administratorLogin: 'iebankdbadmin' 
     administratorLoginPassword: 'IE.Bank.DB.Admin.Pa$$'
     createMode: 'Default'
     highAvailability: {
@@ -72,6 +74,7 @@ resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01
     version: '15'
   }
 
+  //not very secure letting all IPs access the db. 
   resource postgresSQLServerFirewallRules 'firewallRules@2022-12-01' = {
     name: 'AllowAllAzureServicesAndResourcesWithinAzureIps'
     properties: {
@@ -81,15 +84,18 @@ resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01
   }
 }
 
+//this is the database
 resource postgresSQLDatabase 'Microsoft.DBforPostgreSQL/flexibleServers/databases@2022-12-01' = {
   name: postgreSQLDatabaseName
-  parent: postgresSQLServer
+  parent: postgresSQLServer //depends on the server
   properties: {
     charset: 'UTF8'
     collation: 'en_US.UTF8'
   }
 }
-
+//we have a mdoule for the app service. Is the tool to follow modular code
+//we have another infraestracture as a code in another file and we call it here (app-service.bicep)
+//the app service plan is the server where the app will be deployed
 module appService 'modules/app-service.bicep' = {
   name: 'appService'
   params: {

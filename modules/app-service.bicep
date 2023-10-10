@@ -24,7 +24,7 @@ resource appServicePlan 'Microsoft.Web/serverFarms@2022-03-01' = {
   name: appServicePlanName
   location: location
   sku: {
-    name: appServicePlanSkuName
+    name: appServicePlanSkuName //basic or free in this case
   }
   kind: 'linux'
   properties: {
@@ -32,9 +32,10 @@ resource appServicePlan 'Microsoft.Web/serverFarms@2022-03-01' = {
   }
 }
 
+//Api is the backend
 resource appServiceAPIApp 'Microsoft.Web/sites@2022-03-01' = {
   name: appServiceAPIAppName
-  location: location
+  location: location 
   properties: {
     serverFarmId: appServicePlan.id
     httpsOnly: true
@@ -42,6 +43,7 @@ resource appServiceAPIApp 'Microsoft.Web/sites@2022-03-01' = {
       linuxFxVersion: 'PYTHON|3.11'
       alwaysOn: false
       ftpsState: 'FtpsOnly'
+      //backend needs variables to connect to the database
       appSettings: [
         {
           name: 'ENV'
@@ -77,7 +79,7 @@ resource appServiceAPIApp 'Microsoft.Web/sites@2022-03-01' = {
         }
         {
           name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
-          value: '3c75b957-a1d0-4ddb-ab2d-a0521c35c566' //CHANGE
+          value: '90354c3a-83cf-4143-9963-2e9268b76aad' //Check
         }
       ]
     }
