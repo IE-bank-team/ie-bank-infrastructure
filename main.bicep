@@ -7,7 +7,7 @@ param environmentType string = 'nonprod'
 @sys.description('The PostgreSQL Server name')
 @minLength(3)
 @maxLength(24)
-param postgreSQLServerName string = (environmentType == 'prod' ? 'ie-bank-db-server-uat' : 'ie-bank-db-server-dev')
+param postgreSQLServerName string = 'ie-bank-db-server-dev'
 @sys.description('The PostgreSQL Database name')
 @minLength(3)
 @maxLength(24)
@@ -15,16 +15,15 @@ param postgreSQLDatabaseName string = 'ie-bank-db'
 @sys.description('The App Service Plan name')
 @minLength(3)
 @maxLength(24)
-param appServicePlanName string = (environmentType == 'prod' ? 'ie-bank-app-sp-uat' : 'ie-bank-app-sp-dev')
-
+param appServicePlanName string = 'ie-bank-app-sp-dev'
 @sys.description('The Web App name (frontend)')
 @minLength(3)
 @maxLength(24)
-param appServiceAppName string = (environmentType == 'prod' ? 'ie-bank-uat' : 'ie-bank-dev')
+param appServiceAppName string = 'ie-bank-dev'
 @sys.description('The API App name (backend)')
 @minLength(3)
 @maxLength(24)
-param appServiceAPIAppName string = (environmentType == 'prod' ? 'ie-bank-api-uat' :  'ie-bank-api-dev')
+param appServiceAPIAppName string = 'ie-bank-api-dev'
 @sys.description('The name of the Azure Monitor workspace')
 param azureMonitorName string
 @sys.description('The name of the Application Insights')
@@ -49,15 +48,15 @@ param appServiceAPIDBHostFLASK_DEBUG string
 
 //this is the server
 resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01' = {
-  name: postgreSQLServerName 
+  name: postgreSQLServerName
   location: location
   sku: {
-    name: 'Standard_B1ms' 
+    name: 'Standard_B1ms'
     tier: 'Burstable'
   }
   //we apply the credentials. backend code needs credentials for the db
   properties: {
-    administratorLogin: 'iebankdbadmin' 
+    administratorLogin: 'iebankdbadmin'
     administratorLoginPassword: 'IE.Bank.DB.Admin.Pa$$'
     createMode: 'Default'
     highAvailability: {
@@ -74,7 +73,7 @@ resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01
     version: '15'
   }
 
-  //not very secure letting all IPs access the db. 
+    //not very secure letting all IPs access the db. 
   resource postgresSQLServerFirewallRules 'firewallRules@2022-12-01' = {
     name: 'AllowAllAzureServicesAndResourcesWithinAzureIps'
     properties: {
