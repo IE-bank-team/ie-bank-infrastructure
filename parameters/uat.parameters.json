@@ -21,10 +21,10 @@
             "value": "chiaradigi-fe-uat"
         },
         "azureMonitorName": {
-            "value": "chiaradigi-am"
+            "value": "chiaradigi-am-uat"
         },
         "appInsightsName": {
-            "value": "chiaradigi-ai"
+            "value": "chiaradigi-ai-uat"
         },
         "location": {
             "value": "Japan West"
