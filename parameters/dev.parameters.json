@@ -1,33 +1,33 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "environmentType": {
-            "value": "nonprod"
-        },
-        "postgreSQLServerName": {
-            "value": "chiaradigi-dbsrv-dev"
-        },
-        "postgreSQLDatabaseName": {
-            "value": "chiaradigi-db-dev"
-        },
-        "appServicePlanName": {
-            "value": "chiaradigi-asp-dev"
-        },
-        "appServiceAPIAppName": {
-            "value": "chiaradigi-be-dev"
-        },
-        "appServiceAppName": {
-            "value": "chiaradigi-fe-dev"
-        },
-        "azureMonitorName": {
-            "value": "chiaradigi-am"
-        },
-        "appInsightsName": {
-            "value": "chiaradigi-ai"
-        },
-        "location": {
-            "value": "Japan West"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentType": {
+      "value": "nonprod"
+    },
+    "postgreSQLServerName": {
+      "value": "chiaradigi-dbsrv-dev"
+    },
+    "postgreSQLDatabaseName": {
+      "value": "chiaradigi-db-dev"
+    },
+    "appServicePlanName": {
+      "value": "chiaradigi-asp-dev"
+    },
+    "appServiceAPIAppName": {
+      "value": "chiaradigi-be-dev"
+    },
+    "appServiceAppName": {
+      "value": "chiaradigi-fe-dev"
+    },
+    "azureMonitorName": {
+      "value": "chiaradigi-am"
+    },
+    "appInsightsName": {
+      "value": "chiaradigi-ai"
+    },
+    "location": {
+      "value": "Qatar Central"
     }
+  }
 }
