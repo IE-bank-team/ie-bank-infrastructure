@@ -6,31 +6,31 @@
       "value": "prod"
     },
     "postgreSQLServerName": {
-      "value": "husseinn-dbsrv-uat"
+      "value": "adu-dbsrv-uat"
     },
     "postgreSQLDatabaseName": {
-      "value": "husseinn-db-uat"
+      "value": "adu-db-uat"
     },
     "appServicePlanName": {
-      "value": "husseinn-asp-uat"
+      "value": "adu-asp-uat"
     },
     "appServiceAPIAppName": {
-      "value": "husseinn-be-uat"
+      "value": "adu-be-uat"
     },
     "appServiceAppName": {
-      "value": "husseinn-fe-uat"
+      "value": "adu-fe-uat"
     },
     "azureMonitorName": {
-      "value": "husseinn-am-uat"
+      "value": "adu-am-uat"
     },
     "appInsightsName": {
-      "value": "husseinn-ai-uat"
+      "value": "adu-ai-uat"
     },
     "staticSiteName": {
-      "value": "husseinn-ssn-uat"
+      "value": "adu-ssn-uat"
     },
     "location": {
-      "value": "US East"
+      "value": "East US 2"
     }
   }
 }
