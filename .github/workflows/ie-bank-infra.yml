@@ -7,7 +7,7 @@ env:
   RESOURCE_GROUP_UAT: aguadamillas_students_1
   SUBSCRIPTION_ID_DEV: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
   SUBSCRIPTION_ID_UAT: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
-  USER_ALIAS: teno
+  USER_ALIAS: husseinn
 
 jobs:
   build:
@@ -28,8 +28,8 @@ jobs:
       name: "Development"
     env:
       ENV: dev
-      DBHOST: teno-dbsrv-dev.postgres.database.azure.com
-      DBNAME: teno-db-dev
+      DBHOST: husseinn-dbsrv-dev.postgres.database.azure.com
+      DBNAME: husseinn-db-dev
       FLASK_APP: app.py
       FLASK_DEBUG: 1
 
@@ -60,8 +60,8 @@ jobs:
       name: "User Acceptance Testing"
     env:
       ENV: uat
-      DBHOST: teno-dbsrv-uat.postgres.database.azure.com
-      DBNAME: teno-db-uat
+      DBHOST: husseinn-dbsrv-uat.postgres.database.azure.com
+      DBNAME: husseinn-db-uat
       FLASK_APP: app.py
       FLASK_DEBUG: 1
 

@@ -6,31 +6,31 @@
       "value": "nonprod"
     },
     "postgreSQLServerName": {
-      "value": "teno-dbsrv-dev"
+      "value": "husseinn-dbsrv-dev"
     },
     "postgreSQLDatabaseName": {
-      "value": "teno-db-dev"
+      "value": "husseinn-db-dev"
     },
     "appServicePlanName": {
-      "value": "teno-asp-dev"
+      "value": "husseinn-asp-dev"
     },
     "appServiceAPIAppName": {
-      "value": "teno-be-dev"
+      "value": "husseinn-be-dev"
     },
     "appServiceAppName": {
-      "value": "teno-fe-dev"
+      "value": "husseinn-fe-dev"
     },
     "azureMonitorName": {
-      "value": "teno-am"
+      "value": "husseinn-am"
     },
     "appInsightsName": {
-      "value": "teno-ai"
+      "value": "husseinn-ai"
     },
     "staticSiteName": {
-      "value": "teno-ssn-dev"
+      "value": "husseinn-ssn-dev"
     },
     "location": {
-      "value": "East US 2"
+      "value": "West Europe"
     }
   }
 }
