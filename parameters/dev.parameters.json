@@ -6,28 +6,28 @@
       "value": "nonprod"
     },
     "postgreSQLServerName": {
-      "value": "autumn-dbsrv-dev"
+      "value": "GOOGLE-dbsrv-dev"
     },
     "postgreSQLDatabaseName": {
-      "value": "autumn-db-dev"
+      "value": "GOOGLE-db-dev"
     },
     "appServicePlanName": {
-      "value": "autumn-asp-dev"
+      "value": "GOOGLE-asp-dev"
     },
     "appServiceAPIAppName": {
-      "value": "autumn-be-dev"
+      "value": "GOOGLE-be-dev"
     },
     "appServiceAppName": {
-      "value": "autumn-fe-dev"
+      "value": "GOOGLE-fe-dev"
     },
     "azureMonitorName": {
-      "value": "autumn-am"
+      "value": "GOOGLE-am"
     },
     "appInsightsName": {
-      "value": "autumn-ai"
+      "value": "GOOGLE-ai"
     },
     "staticSiteName": {
-      "value": "autumn-ssn-dev"
+      "value": "GOOGLE-ssn-dev"
     },
     "location": {
       "value": "Central US"

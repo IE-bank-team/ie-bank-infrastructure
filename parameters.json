@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "acrName": {
-      "value": "autumn"
+      "value": "GOOGLE"
     },
     "location": {
-      "value": "Brazil South"
+      "value": "Germany West Central"
     },
     "appServicePlanName": {
-      "value": "autumn-appserviceplan"
+      "value": "GOOGLE-appserviceplan"
     },
     "keyVaultName": {
-      "value": "autumn-keyvault1"
+      "value": "GOOGLE-keyvault1"
     }
   }
 }
