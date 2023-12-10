@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "acrName": {
-      "value": "chennaiexpress"
+      "value": "winter"
     },
     "location": {
-      "value": "Japan East"
+      "value": "Israel Central"
     },
     "appServicePlanName": {
-      "value": "chennaiexpress-appserviceplan"
+      "value": "winter-appserviceplan"
     },
     "keyVaultName": {
-      "value": "chennaiexpress-keyvault1"
+      "value": "winter-keyvault1"
     }
   }
 }

@@ -1,7 +1,7 @@
 param acrName string 
 param location string 
 param appServicePlanName string
-param webAppName string ='chennaiexpress-webapp'
+param webAppName string ='winter-webapp'
 param containerRegistryImageName string = 'flask-demo'
 param containerRegistryImageVersion string = 'latest'
 

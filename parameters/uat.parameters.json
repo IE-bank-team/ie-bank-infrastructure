@@ -6,28 +6,28 @@
       "value": "prod"
     },
     "postgreSQLServerName": {
-      "value": "chennaiexpress-dbsrv-uat"
+      "value": "winter-dbsrv-uat"
     },
     "postgreSQLDatabaseName": {
-      "value": "chennaiexpress-db-uat"
+      "value": "winter-db-uat"
     },
     "appServicePlanName": {
-      "value": "chennaiexpress-asp-uat"
+      "value": "winter-asp-uat"
     },
     "appServiceAPIAppName": {
-      "value": "chennaiexpress-be-uat"
+      "value": "winter-be-uat"
     },
     "appServiceAppName": {
-      "value": "chennaiexpress-fe-uat"
+      "value": "winter-fe-uat"
     },
     "azureMonitorName": {
-      "value": "chennaiexpress-am-uat"
+      "value": "winter-am-uat"
     },
     "appInsightsName": {
-      "value": "chennaiexpress-ai-uat"
+      "value": "winter-ai-uat"
     },
     "staticSiteName": {
-      "value": "chennaiexpress-ssn-uat"
+      "value": "winter-ssn-uat"
     },
     "location": {
       "value": "East US 2"

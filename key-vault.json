@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "keyVaultName": {
-      "value": "chennaiexpress-keyvault1"
+      "value": "winter-keyvault1"
     },
     "location": {
-      "value": "France Central"
+      "value": "UAE North"
     },
     "acrName": {
-      "value": "chennaiexpress"
+      "value": "winter"
     }
   }
 }
