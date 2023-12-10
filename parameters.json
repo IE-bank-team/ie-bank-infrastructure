@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "acrName": {
-      "value": "fivequys"
+      "value": "Dhoom2"
     },
     "location": {
-      "value": "East US 2"
+      "value": "Qatar Central"
     },
     "appServicePlanName": {
-      "value": "fivequys-appserviceplan"
+      "value": "Dhoom2-appserviceplan"
     },
     "keyVaultName": {
-      "value": "fivequys-keyvault1"
+      "value": "Dhoom2-keyvault1"
     }
   }
 }

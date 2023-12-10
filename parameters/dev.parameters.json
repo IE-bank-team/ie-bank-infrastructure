@@ -6,31 +6,31 @@
       "value": "nonprod"
     },
     "postgreSQLServerName": {
-      "value": "fivequys-dbsrv-dev"
+      "value": "Dhoom2-dbsrv-dev"
     },
     "postgreSQLDatabaseName": {
-      "value": "fivequys-db-dev"
+      "value": "Dhoom2-db-dev"
     },
     "appServicePlanName": {
-      "value": "fivequys-asp-dev"
+      "value": "Dhoom2-asp-dev"
     },
     "appServiceAPIAppName": {
-      "value": "fivequys-be-dev"
+      "value": "Dhoom2-be-dev"
     },
     "appServiceAppName": {
-      "value": "fivequys-fe-dev"
+      "value": "Dhoom2-fe-dev"
     },
     "azureMonitorName": {
-      "value": "fivequys-am"
+      "value": "Dhoom2-am"
     },
     "appInsightsName": {
-      "value": "fivequys-ai"
+      "value": "Dhoom2-ai"
     },
     "staticSiteName": {
-      "value": "fivequys-ssn-dev"
+      "value": "Dhoom2-ssn-dev"
     },
     "location": {
-      "value": "East Asia"
+      "value": "East US 2"
     }
   }
 }

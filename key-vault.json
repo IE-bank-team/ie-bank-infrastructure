@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "keyVaultName": {
-      "value": "fivequys-keyvault1"
+      "value": "Dhoom2-keyvault1"
     },
     "location": {
-      "value": "East Asia"
+      "value": " France Central"
     },
     "acrName": {
-      "value": "fivequys"
+      "value": "Dhoom2"
     }
   }
 }
