@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "acrName": {
-      "value": "winter"
+      "value": "summer"
     },
     "location": {
       "value": "Israel Central"
     },
     "appServicePlanName": {
-      "value": "winter-appserviceplan"
+      "value": "summer-appserviceplan"
     },
     "keyVaultName": {
-      "value": "winter-keyvault1"
+      "value": "summer-keyvault1"
     }
   }
 }

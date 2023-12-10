@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "keyVaultName": {
-      "value": "winter-keyvault1"
+      "value": "summer-keyvault1"
     },
     "location": {
       "value": "UAE North"
     },
     "acrName": {
-      "value": "winter"
+      "value": "summer"
     }
   }
 }
