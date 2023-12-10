@@ -46,8 +46,6 @@ param appServiceAPIDBHostFLASK_APP string
 @sys.description('The value for the environment variable FLASK_DEBUG')
 param appServiceAPIDBHostFLASK_DEBUG string
 
-param staticSiteName string
-
 //this is the server
 resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01' = {
   name: postgreSQLServerName
@@ -132,14 +130,5 @@ resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
   properties: {
     Application_Type: 'web'
     WorkspaceResourceId: resourceId('Microsoft.OperationalInsights/workspaces', azureMonitorName)
-  }
-}
-
-module staticSite './Ressources/ResourceModules-main 3/modules/web/static-site/main.bicep' = {
-  name: staticSiteName
-  params: {
-    // Required parameters
-    name: staticSiteName
-    location: location
   }
 }

@@ -6,31 +6,28 @@
       "value": "prod"
     },
     "postgreSQLServerName": {
-      "value": "adu-dbsrv-uat"
+      "value": "khaledk-dbsrv-uat"
     },
     "postgreSQLDatabaseName": {
-      "value": "adu-db-uat"
+      "value": "khaledk-db-uat"
     },
     "appServicePlanName": {
-      "value": "adu-asp-uat"
+      "value": "khaledk-asp-uat"
     },
     "appServiceAPIAppName": {
-      "value": "adu-be-uat"
+      "value": "khaledk-be-uat"
     },
     "appServiceAppName": {
-      "value": "adu-fe-uat"
+      "value": "khaledk-fe-uat"
     },
     "azureMonitorName": {
-      "value": "adu-am-uat"
+      "value": "khaledk-am-uat"
     },
     "appInsightsName": {
-      "value": "adu-ai-uat"
-    },
-    "staticSiteName": {
-      "value": "adu-ssn-uat"
+      "value": "khaledk-ai-uat"
     },
     "location": {
-      "value": "North Europe"
+      "value": "France Central"
     }
   }
 }

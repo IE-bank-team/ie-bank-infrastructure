@@ -6,31 +6,28 @@
       "value": "nonprod"
     },
     "postgreSQLServerName": {
-      "value": "adu-dbsrv-dev"
+      "value": "khaledk-dbsrv-dev"
     },
     "postgreSQLDatabaseName": {
-      "value": "adu-db-dev"
+      "value": "khaledk-db-dev"
     },
     "appServicePlanName": {
-      "value": "adu-asp-dev"
+      "value": "khaledk-asp-dev"
     },
     "appServiceAPIAppName": {
-      "value": "adu-be-dev"
+      "value": "khaledk-be-dev"
     },
     "appServiceAppName": {
-      "value": "adu-fe-dev"
+      "value": "khaledk-fe-dev"
     },
     "azureMonitorName": {
-      "value": "adu-am"
+      "value": "khaledk-am"
     },
     "appInsightsName": {
-      "value": "adu-ai"
-    },
-    "staticSiteName": {
-      "value": "adu-ssn-dev"
+      "value": "khaledk-ai"
     },
     "location": {
-      "value": "North Europe"
+      "value": "France Central"
     }
   }
 }
