@@ -7,13 +7,13 @@ env:
   RESOURCE_GROUP_UAT: aguadamillas_students_1
   SUBSCRIPTION_ID_DEV: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
   SUBSCRIPTION_ID_UAT: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
-  USER_ALIAS: GOOGLE
+  USER_ALIAS: summer
 
   RESOURCE_GROUP: aguadamillas_students_1
   SUBSCRIPTION_ID: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
   KEY_VAULT_SECRET_NAME_ACR_USERNAME: keyVaultSecretNameACRUsername
   KEY_VAULT_SECRET_NAME_ACR_PASSWORD: keyVaultSecretNameACRPassword1
-  KEY_VAULT_NAME: GOOGLE-keyvault1
+  KEY_VAULT_NAME: summer-keyvault1
 
 jobs:
   build:
@@ -34,8 +34,8 @@ jobs:
       name: "Development"
     env:
       ENV: dev
-      DBHOST: GOOGLE-dbsrv-dev.postgres.database.azure.com
-      DBNAME: GOOGLE-db-dev
+      DBHOST: summer-dbsrv-dev.postgres.database.azure.com
+      DBNAME: summer-db-dev
       FLASK_APP: app.py
       FLASK_DEBUG: 1
 
@@ -66,8 +66,8 @@ jobs:
       name: "User Acceptance Testing"
     env:
       ENV: uat
-      DBHOST: GOOGLE-dbsrv-uat.postgres.database.azure.com
-      DBNAME: GOOGLE-db-uat
+      DBHOST: summer-dbsrv-uat.postgres.database.azure.com
+      DBNAME: summer-db-uat
       FLASK_APP: app.py
       FLASK_DEBUG: 1
 

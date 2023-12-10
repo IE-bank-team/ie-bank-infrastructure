@@ -6,28 +6,28 @@
       "value": "prod"
     },
     "postgreSQLServerName": {
-      "value": "GOOGLE-dbsrv-uat"
+      "value": "summer-dbsrv-uat"
     },
     "postgreSQLDatabaseName": {
-      "value": "GOOGLE-db-uat"
+      "value": "summer-db-uat"
     },
     "appServicePlanName": {
-      "value": "GOOGLE-asp-uat"
+      "value": "summer-asp-uat"
     },
     "appServiceAPIAppName": {
-      "value": "GOOGLE-be-uat"
+      "value": "summer-be-uat"
     },
     "appServiceAppName": {
-      "value": "GOOGLE-fe-uat"
+      "value": "summer-fe-uat"
     },
     "azureMonitorName": {
-      "value": "GOOGLE-am-uat"
+      "value": "summer-am-uat"
     },
     "appInsightsName": {
-      "value": "GOOGLE-ai-uat"
+      "value": "summer-ai-uat"
     },
     "staticSiteName": {
-      "value": "GOOGLE-ssn-uat"
+      "value": "summer-ssn-uat"
     },
     "location": {
       "value": "East US 2"

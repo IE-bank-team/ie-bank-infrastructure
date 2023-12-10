@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "acrName": {
-      "value": "GOOGLE"
+      "value": "summer"
     },
     "location": {
-      "value": "Germany West Central"
+      "value": "Israel Central"
     },
     "appServicePlanName": {
-      "value": "GOOGLE-appserviceplan"
+      "value": "summer-appserviceplan"
     },
     "keyVaultName": {
-      "value": "GOOGLE-keyvault1"
+      "value": "summer-keyvault1"
     }
   }
 }
