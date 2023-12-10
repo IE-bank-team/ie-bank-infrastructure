@@ -1,7 +1,7 @@
 param acrName string 
 param location string 
 param appServicePlanName string
-param webAppName string ='autumn-webapp'
+param webAppName string ='GOOGLE-webapp'
 param containerRegistryImageName string = 'flask-demo'
 param containerRegistryImageVersion string = 'latest'
 
