@@ -6,28 +6,28 @@
       "value": "nonprod"
     },
     "postgreSQLServerName": {
-      "value": "chiaradigi-dbsrv-dev"
+      "value": "group1-dbsrv-dev"
     },
     "postgreSQLDatabaseName": {
-      "value": "chiaradigi-db-dev"
+      "value": "group1-db-dev"
     },
     "appServicePlanName": {
-      "value": "chiaradigi-asp-dev"
+      "value": "group1-asp-dev"
     },
     "appServiceAPIAppName": {
-      "value": "chiaradigi-be-dev"
+      "value": "group1-be-dev"
     },
     "appServiceAppName": {
-      "value": "chiaradigi-fe-dev"
+      "value": "group1-fe-dev"
     },
     "azureMonitorName": {
-      "value": "chiaradigi-am"
+      "value": "group1-am"
     },
     "appInsightsName": {
-      "value": "chiaradigi-ai"
+      "value": "group1-ai"
     },
     "staticSiteName": {
-      "value": "chiaradigi-ssn-dev"
+      "value": "group1-ssn-dev"
     },
     "location": {
       "value": "Central US"

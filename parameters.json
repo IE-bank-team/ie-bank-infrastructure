@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "acrName": {
-      "value": "chiaradigi"
+      "value": "group1"
     },
     "location": {
       "value": "West Europe"
     },
     "appServicePlanName": {
-      "value": "chiaradigi-appserviceplan"
+      "value": "group1-appserviceplan"
     },
     "keyVaultName": {
-      "value": "chiaradigi-keyvault1"
+      "value": "group1-keyvault1"
     }
   }
 }

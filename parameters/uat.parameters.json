@@ -6,28 +6,28 @@
       "value": "prod"
     },
     "postgreSQLServerName": {
-      "value": "chiaradigi-dbsrv-uat"
+      "value": "group1-dbsrv-uat"
     },
     "postgreSQLDatabaseName": {
-      "value": "chiaradigi-db-uat"
+      "value": "group1-db-uat"
     },
     "appServicePlanName": {
-      "value": "chiaradigi-asp-uat"
+      "value": "group1-asp-uat"
     },
     "appServiceAPIAppName": {
-      "value": "chiaradigi-be-uat"
+      "value": "group1-be-uat"
     },
     "appServiceAppName": {
-      "value": "chiaradigi-fe-uat"
+      "value": "group1-fe-uat"
     },
     "azureMonitorName": {
-      "value": "chiaradigi-am-uat"
+      "value": "group1-am-uat"
     },
     "appInsightsName": {
-      "value": "chiaradigi-ai-uat"
+      "value": "group1-ai-uat"
     },
     "staticSiteName": {
-      "value": "chiaradigi-ssn-uat"
+      "value": "group1-ssn-uat"
     },
     "location": {
       "value": "Central US"

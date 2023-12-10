@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "keyVaultName": {
-      "value": "chiaradigi-keyvault1"
+      "value": "group1-keyvault1"
     },
     "location": {
       "value": "West US"
     },
     "acrName": {
-      "value": "chiaradigi"
+      "value": "group1"
     }
   }
 }

@@ -1,7 +1,7 @@
 param acrName string 
 param location string 
 param appServicePlanName string
-param webAppName string ='chiaradigi-webapp'
+param webAppName string ='group1-webapp'
 param containerRegistryImageName string = 'flask-demo'
 param containerRegistryImageVersion string = 'latest'
 
