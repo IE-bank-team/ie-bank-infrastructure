@@ -6,28 +6,28 @@
       "value": "nonprod"
     },
     "postgreSQLServerName": {
-      "value": "summer-dbsrv-dev"
+      "value": "GOOGLE-dbsrv-dev"
     },
     "postgreSQLDatabaseName": {
-      "value": "summer-db-dev"
+      "value": "GOOGLE-db-dev"
     },
     "appServicePlanName": {
-      "value": "summer-asp-dev"
+      "value": "GOOGLE-asp-dev"
     },
     "appServiceAPIAppName": {
-      "value": "summer-be-dev"
+      "value": "GOOGLE-be-dev"
     },
     "appServiceAppName": {
-      "value": "summer-fe-dev"
+      "value": "GOOGLE-fe-dev"
     },
     "azureMonitorName": {
-      "value": "summer-am"
+      "value": "GOOGLE-am"
     },
     "appInsightsName": {
-      "value": "summer-ai"
+      "value": "GOOGLE-ai"
     },
     "staticSiteName": {
-      "value": "summer-ssn-dev"
+      "value": "GOOGLE-ssn-dev"
     },
     "location": {
       "value": "Central US"

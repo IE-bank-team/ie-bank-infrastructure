@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "keyVaultName": {
-      "value": "summer-keyvault1"
+      "value": "GOOGLE-keyvault1"
     },
     "location": {
-      "value": "Brazil South"
+      "value": "Japan West"
     },
     "acrName": {
-      "value": "summer"
+      "value": "GOOGLE"
     }
   }
 }
