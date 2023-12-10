@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "keyVaultName": {
-      "value": "summer-keyvault1"
+      "value": "autumn-keyvault1"
     },
     "location": {
       "value": "Brazil South"
     },
     "acrName": {
-      "value": "summer"
+      "value": "autumn"
     }
   }
 }

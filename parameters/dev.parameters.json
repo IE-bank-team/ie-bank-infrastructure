@@ -6,28 +6,28 @@
       "value": "nonprod"
     },
     "postgreSQLServerName": {
-      "value": "summer-dbsrv-dev"
+      "value": "autumn-dbsrv-dev"
     },
     "postgreSQLDatabaseName": {
-      "value": "summer-db-dev"
+      "value": "autumn-db-dev"
     },
     "appServicePlanName": {
-      "value": "summer-asp-dev"
+      "value": "autumn-asp-dev"
     },
     "appServiceAPIAppName": {
-      "value": "summer-be-dev"
+      "value": "autumn-be-dev"
     },
     "appServiceAppName": {
-      "value": "summer-fe-dev"
+      "value": "autumn-fe-dev"
     },
     "azureMonitorName": {
-      "value": "summer-am"
+      "value": "autumn-am"
     },
     "appInsightsName": {
-      "value": "summer-ai"
+      "value": "autumn-ai"
     },
     "staticSiteName": {
-      "value": "summer-ssn-dev"
+      "value": "autumn-ssn-dev"
     },
     "location": {
       "value": "Central US"

@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "acrName": {
-      "value": "summer"
+      "value": "autumn"
     },
     "location": {
       "value": "Brazil South"
     },
     "appServicePlanName": {
-      "value": "summer-appserviceplan"
+      "value": "autumn-appserviceplan"
     },
     "keyVaultName": {
-      "value": "summer-keyvault1"
+      "value": "autumn-keyvault1"
     }
   }
 }
