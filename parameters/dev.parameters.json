@@ -6,28 +6,28 @@
       "value": "nonprod"
     },
     "postgreSQLServerName": {
-      "value": "chiaradigi-dbsrv-dev"
+      "value": "teno-dbsrv-dev"
     },
     "postgreSQLDatabaseName": {
-      "value": "chiaradigi-db-dev"
+      "value": "teno-db-dev"
     },
     "appServicePlanName": {
-      "value": "chiaradigi-asp-dev"
+      "value": "teno-asp-dev"
     },
     "appServiceAPIAppName": {
-      "value": "chiaradigi-be-dev"
+      "value": "teno-be-dev"
     },
     "appServiceAppName": {
-      "value": "chiaradigi-fe-dev"
+      "value": "teno-fe-dev"
     },
     "azureMonitorName": {
-      "value": "chiaradigi-am"
+      "value": "teno-am"
     },
     "appInsightsName": {
-      "value": "chiaradigi-ai"
+      "value": "teno-ai"
     },
     "staticSiteName": {
-      "value": "chiaradigi-ssn-dev"
+      "value": "teno-ssn-dev"
     },
     "location": {
       "value": "East US 2"
