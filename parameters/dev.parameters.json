@@ -26,6 +26,9 @@
     "appInsightsName": {
       "value": "chiaradigi-ai"
     },
+    "staticSiteName": {
+      "value": "chiaradigi-ssn-dev"
+    },
     "location": {
       "value": "Japan West"
     }

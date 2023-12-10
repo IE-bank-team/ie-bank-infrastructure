@@ -26,6 +26,9 @@
     "appInsightsName": {
       "value": "chiaradigi-ai-uat"
     },
+    "staticSiteName": {
+      "value": "chiaradigi-ssn-uat"
+    },
     "location": {
       "value": "Canada Central"
     }
