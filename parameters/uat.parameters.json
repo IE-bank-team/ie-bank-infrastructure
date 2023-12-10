@@ -6,25 +6,25 @@
       "value": "prod"
     },
     "postgreSQLServerName": {
-      "value": "chiaradigi-dbsrv-uat"
+      "value": "khaled-dbsrv-uat"
     },
     "postgreSQLDatabaseName": {
-      "value": "chiaradigi-db-uat"
+      "value": "khaled-db-uat"
     },
     "appServicePlanName": {
-      "value": "chiaradigi-asp-uat"
+      "value": "khaled-asp-uat"
     },
     "appServiceAPIAppName": {
-      "value": "chiaradigi-be-uat"
+      "value": "khaled-be-uat"
     },
     "appServiceAppName": {
-      "value": "chiaradigi-fe-uat"
+      "value": "khaled-fe-uat"
     },
     "azureMonitorName": {
-      "value": "chiaradigi-am-uat"
+      "value": "khaled-am-uat"
     },
     "appInsightsName": {
-      "value": "chiaradigi-ai-uat"
+      "value": "khaled-ai-uat"
     },
     "location": {
       "value": "Canada Central"

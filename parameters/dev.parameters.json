@@ -6,25 +6,25 @@
       "value": "nonprod"
     },
     "postgreSQLServerName": {
-      "value": "chiaradigi-dbsrv-dev"
+      "value": "khaled-dbsrv-dev"
     },
     "postgreSQLDatabaseName": {
-      "value": "chiaradigi-db-dev"
+      "value": "khaled-db-dev"
     },
     "appServicePlanName": {
-      "value": "chiaradigi-asp-dev"
+      "value": "khaled-asp-dev"
     },
     "appServiceAPIAppName": {
-      "value": "chiaradigi-be-dev"
+      "value": "khaled-be-dev"
     },
     "appServiceAppName": {
-      "value": "chiaradigi-fe-dev"
+      "value": "khaled-fe-dev"
     },
     "azureMonitorName": {
-      "value": "chiaradigi-am"
+      "value": "khaled-am"
     },
     "appInsightsName": {
-      "value": "chiaradigi-ai"
+      "value": "khaled-ai"
     },
     "location": {
       "value": "Japan West"
