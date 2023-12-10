@@ -7,13 +7,13 @@ env:
   RESOURCE_GROUP_UAT: aguadamillas_students_1
   SUBSCRIPTION_ID_DEV: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
   SUBSCRIPTION_ID_UAT: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
-  USER_ALIAS: Dhoom2
+  USER_ALIAS: chennaiexpress
 
   RESOURCE_GROUP: aguadamillas_students_1
   SUBSCRIPTION_ID: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
   KEY_VAULT_SECRET_NAME_ACR_USERNAME: keyVaultSecretNameACRUsername
   KEY_VAULT_SECRET_NAME_ACR_PASSWORD: keyVaultSecretNameACRPassword1
-  KEY_VAULT_NAME: Dhoom2-keyvault1
+  KEY_VAULT_NAME: chennaiexpress-keyvault1
 
 jobs:
   build:
@@ -34,8 +34,8 @@ jobs:
       name: "Development"
     env:
       ENV: dev
-      DBHOST: Dhoom2-dbsrv-dev.postgres.database.azure.com
-      DBNAME: Dhoom2-db-dev
+      DBHOST: chennaiexpress-dbsrv-dev.postgres.database.azure.com
+      DBNAME: chennaiexpress-db-dev
       FLASK_APP: app.py
       FLASK_DEBUG: 1
 
@@ -66,8 +66,8 @@ jobs:
       name: "User Acceptance Testing"
     env:
       ENV: uat
-      DBHOST: Dhoom2-dbsrv-uat.postgres.database.azure.com
-      DBNAME: Dhoom2-db-uat
+      DBHOST: chennaiexpress-dbsrv-uat.postgres.database.azure.com
+      DBNAME: chennaiexpress-db-uat
       FLASK_APP: app.py
       FLASK_DEBUG: 1
 

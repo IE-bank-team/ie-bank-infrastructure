@@ -6,28 +6,28 @@
       "value": "nonprod"
     },
     "postgreSQLServerName": {
-      "value": "Dhoom2-dbsrv-dev"
+      "value": "chennaiexpress-dbsrv-dev"
     },
     "postgreSQLDatabaseName": {
-      "value": "Dhoom2-db-dev"
+      "value": "chennaiexpress-db-dev"
     },
     "appServicePlanName": {
-      "value": "Dhoom2-asp-dev"
+      "value": "chennaiexpress-asp-dev"
     },
     "appServiceAPIAppName": {
-      "value": "Dhoom2-be-dev"
+      "value": "chennaiexpress-be-dev"
     },
     "appServiceAppName": {
-      "value": "Dhoom2-fe-dev"
+      "value": "chennaiexpress-fe-dev"
     },
     "azureMonitorName": {
-      "value": "Dhoom2-am"
+      "value": "chennaiexpress-am"
     },
     "appInsightsName": {
-      "value": "Dhoom2-ai"
+      "value": "chennaiexpress-ai"
     },
     "staticSiteName": {
-      "value": "Dhoom2-ssn-dev"
+      "value": "chennaiexpress-ssn-dev"
     },
     "location": {
       "value": "East US 2"

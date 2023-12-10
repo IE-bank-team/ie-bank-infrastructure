@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "keyVaultName": {
-      "value": "Dhoom2-keyvault1"
+      "value": "chennaiexpress-keyvault1"
     },
     "location": {
       "value": " France Central"
     },
     "acrName": {
-      "value": "Dhoom2"
+      "value": "chennaiexpress"
     }
   }
 }

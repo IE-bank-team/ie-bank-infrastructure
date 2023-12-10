@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "acrName": {
-      "value": "Dhoom2"
+      "value": "chennaiexpress"
     },
     "location": {
-      "value": "Qatar Central"
+      "value": "Japan East"
     },
     "appServicePlanName": {
-      "value": "Dhoom2-appserviceplan"
+      "value": "chennaiexpress-appserviceplan"
     },
     "keyVaultName": {
-      "value": "Dhoom2-keyvault1"
+      "value": "chennaiexpress-keyvault1"
     }
   }
 }
