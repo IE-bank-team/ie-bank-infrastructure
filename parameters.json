@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "acrName": {
-      "value": "tikitacos"
+      "value": "fivequys"
     },
     "location": {
       "value": "East US 2"
     },
     "appServicePlanName": {
-      "value": "tikitacos-appserviceplan"
+      "value": "fivequys-appserviceplan"
     },
     "keyVaultName": {
-      "value": "tikitacos-keyvault1"
+      "value": "fivequys-keyvault1"
     }
   }
 }

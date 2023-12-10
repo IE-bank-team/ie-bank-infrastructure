@@ -6,28 +6,28 @@
       "value": "nonprod"
     },
     "postgreSQLServerName": {
-      "value": "tikitacos-dbsrv-dev"
+      "value": "fivequys-dbsrv-dev"
     },
     "postgreSQLDatabaseName": {
-      "value": "tikitacos-db-dev"
+      "value": "fivequys-db-dev"
     },
     "appServicePlanName": {
-      "value": "tikitacos-asp-dev"
+      "value": "fivequys-asp-dev"
     },
     "appServiceAPIAppName": {
-      "value": "tikitacos-be-dev"
+      "value": "fivequys-be-dev"
     },
     "appServiceAppName": {
-      "value": "tikitacos-fe-dev"
+      "value": "fivequys-fe-dev"
     },
     "azureMonitorName": {
-      "value": "tikitacos-am"
+      "value": "fivequys-am"
     },
     "appInsightsName": {
-      "value": "tikitacos-ai"
+      "value": "fivequys-ai"
     },
     "staticSiteName": {
-      "value": "tikitacos-ssn-dev"
+      "value": "fivequys-ssn-dev"
     },
     "location": {
       "value": "East Asia"

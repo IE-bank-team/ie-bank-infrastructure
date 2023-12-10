@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "keyVaultName": {
-      "value": "tikitacos-keyvault1"
+      "value": "fivequys-keyvault1"
     },
     "location": {
       "value": "East Asia"
     },
     "acrName": {
-      "value": "tikitacos"
+      "value": "fivequys"
     }
   }
 }
