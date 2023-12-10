@@ -6,28 +6,28 @@
       "value": "prod"
     },
     "postgreSQLServerName": {
-      "value": "group1-dbsrv-uat"
+      "value": "tikitacos-dbsrv-uat"
     },
     "postgreSQLDatabaseName": {
-      "value": "group1-db-uat"
+      "value": "tikitacos-db-uat"
     },
     "appServicePlanName": {
-      "value": "group1-asp-uat"
+      "value": "tikitacos-asp-uat"
     },
     "appServiceAPIAppName": {
-      "value": "group1-be-uat"
+      "value": "tikitacos-be-uat"
     },
     "appServiceAppName": {
-      "value": "group1-fe-uat"
+      "value": "tikitacos-fe-uat"
     },
     "azureMonitorName": {
-      "value": "group1-am-uat"
+      "value": "tikitacos-am-uat"
     },
     "appInsightsName": {
-      "value": "group1-ai-uat"
+      "value": "tikitacos-ai-uat"
     },
     "staticSiteName": {
-      "value": "group1-ssn-uat"
+      "value": "tikitacos-ssn-uat"
     },
     "location": {
       "value": "Central US"

@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "acrName": {
-      "value": "group1"
+      "value": "tikitacos"
     },
     "location": {
       "value": "West Europe"
     },
     "appServicePlanName": {
-      "value": "group1-appserviceplan"
+      "value": "tikitacos-appserviceplan"
     },
     "keyVaultName": {
-      "value": "group1-keyvault1"
+      "value": "tikitacos-keyvault1"
     }
   }
 }

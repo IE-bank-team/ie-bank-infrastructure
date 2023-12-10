@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "keyVaultName": {
-      "value": "group1-keyvault1"
+      "value": "tikitacos-keyvault1"
     },
     "location": {
       "value": "West US"
     },
     "acrName": {
-      "value": "group1"
+      "value": "tikitacos"
     }
   }
 }
