@@ -23,7 +23,7 @@
       "type": "string",
       "minLength": 1,
       "metadata": {
-        "description": "Conditional. The name of the parent private link scope. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent private link scope. Required if the template is used in a standaluno deployment."
       }
     },
     "linkedResourceId": {

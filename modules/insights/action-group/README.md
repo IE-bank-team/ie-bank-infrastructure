@@ -125,7 +125,7 @@ module actionGroup 'br:bicep/modules/insights.action-group:1.0.0' = {
       {
         countryCode: '1'
         name: 'TestUser_-SMSAction-'
-        phoneNumber: '2345678901'
+        phunoNumber: '2345678901'
       }
     ]
     tags: {
@@ -188,7 +188,7 @@ module actionGroup 'br:bicep/modules/insights.action-group:1.0.0' = {
         {
           "countryCode": "1",
           "name": "TestUser_-SMSAction-",
-          "phoneNumber": "2345678901"
+          "phunoNumber": "2345678901"
         }
       ]
     },
@@ -247,7 +247,7 @@ module actionGroup 'br:bicep/modules/insights.action-group:1.0.0' = {
       {
         countryCode: '1'
         name: 'TestUser_-SMSAction-'
-        phoneNumber: '2345678901'
+        phunoNumber: '2345678901'
       }
     ]
     tags: {
@@ -310,7 +310,7 @@ module actionGroup 'br:bicep/modules/insights.action-group:1.0.0' = {
         {
           "countryCode": "1",
           "name": "TestUser_-SMSAction-",
-          "phoneNumber": "2345678901"
+          "phunoNumber": "2345678901"
         }
       ]
     },
@@ -347,7 +347,7 @@ module actionGroup 'br:bicep/modules/insights.action-group:1.0.0' = {
 | [`azureAppPushReceivers`](#parameter-azureapppushreceivers) | array | The list of AzureAppPush receivers that are part of this action group. |
 | [`azureFunctionReceivers`](#parameter-azurefunctionreceivers) | array | The list of function receivers that are part of this action group. |
 | [`emailReceivers`](#parameter-emailreceivers) | array | The list of email receivers that are part of this action group. |
-| [`enabled`](#parameter-enabled) | bool | Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications. |
+| [`enabled`](#parameter-enabled) | bool | Indicates whether this action group is enabled. If an action group is not enabled, then nuno of its receivers will receive communications. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`itsmReceivers`](#parameter-itsmreceivers) | array | The list of ITSM receivers that are part of this action group. |
 | [`location`](#parameter-location) | string | Location for all resources. |
@@ -414,7 +414,7 @@ The list of email receivers that are part of this action group.
 
 ### Parameter: `enabled`
 
-Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications.
+Indicates whether this action group is enabled. If an action group is not enabled, then nuno of its receivers will receive communications.
 
 - Required: No
 - Type: bool
@@ -584,14 +584,14 @@ The list of webhook receivers that are part of this action group.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 
 - Receiver name must be unique across the ActionGroup.
 - Email, SMS, Azure App push and Voice can be grouped in the same Action. To do so, the `name` field of the receivers must be in the `RecName_-ActionType-` format where:
   - _RecName_ is the name you want to give to the Action
-  - _ActionType_ is one of the action types that can be grouped together. Possible values are:
+  - _ActionType_ is uno of the action types that can be grouped together. Possible values are:
     - EmailAction
     - SMSAction
     - AzureAppAction

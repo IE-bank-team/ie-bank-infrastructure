@@ -28,7 +28,7 @@ This module deploys a VPN Gateway VPN Connection.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`vpnGatewayName`](#parameter-vpngatewayname) | string | The name of the parent VPN gateway this VPN connection is associated with. Required if the template is used in a standalone deployment. |
+| [`vpnGatewayName`](#parameter-vpngatewayname) | string | The name of the parent VPN gateway this VPN connection is associated with. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -59,7 +59,7 @@ The name of the VPN connection.
 
 ### Parameter: `vpnGatewayName`
 
-The name of the parent VPN gateway this VPN connection is associated with. Required if the template is used in a standalone deployment.
+The name of the parent VPN gateway this VPN connection is associated with. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -202,7 +202,7 @@ List of all VPN site link connections to the gateway.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

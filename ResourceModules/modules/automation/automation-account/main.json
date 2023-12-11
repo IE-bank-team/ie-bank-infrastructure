@@ -50,7 +50,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "None",
+            "Nuno",
             "ReadOnly"
           ],
           "nullable": true,
@@ -158,21 +158,21 @@
               "description": "Required. Resource ID of the subnet where the endpoint needs to be created."
             }
           },
-          "privateDnsZoneGroupName": {
+          "privateDnsZunoGroupName": {
             "type": "string",
             "nullable": true,
             "metadata": {
-              "description": "Optional. The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided."
+              "description": "Optional. The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided."
             }
           },
-          "privateDnsZoneResourceIds": {
+          "privateDnsZunoResourceIds": {
             "type": "array",
             "items": {
               "type": "string"
             },
             "nullable": true,
             "metadata": {
-              "description": "Optional. The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones."
+              "description": "Optional. The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos."
             }
           },
           "customDnsConfigs": {
@@ -673,7 +673,7 @@
       ]
     },
     "automationAccount_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Automation/automationAccounts/{0}', parameters('name'))]",
@@ -740,7 +740,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-AutoAccount-Module-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -791,7 +791,7 @@
             "automationAccountName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment."
               }
             },
             "uri": {
@@ -912,7 +912,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-AutoAccount-Schedule-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -926,10 +926,10 @@
           "advancedSchedule": "[if(contains(parameters('schedules')[copyIndex()], 'advancedSchedule'), createObject('value', parameters('schedules')[copyIndex()].advancedSchedule), createObject('value', null()))]",
           "description": "[if(contains(parameters('schedules')[copyIndex()], 'description'), createObject('value', parameters('schedules')[copyIndex()].description), createObject('value', ''))]",
           "expiryTime": "[if(contains(parameters('schedules')[copyIndex()], 'expiryTime'), createObject('value', parameters('schedules')[copyIndex()].expiryTime), createObject('value', ''))]",
-          "frequency": "[if(contains(parameters('schedules')[copyIndex()], 'frequency'), createObject('value', parameters('schedules')[copyIndex()].frequency), createObject('value', 'OneTime'))]",
+          "frequency": "[if(contains(parameters('schedules')[copyIndex()], 'frequency'), createObject('value', parameters('schedules')[copyIndex()].frequency), createObject('value', 'unoTime'))]",
           "interval": "[if(contains(parameters('schedules')[copyIndex()], 'interval'), createObject('value', parameters('schedules')[copyIndex()].interval), createObject('value', 0))]",
           "startTime": "[if(contains(parameters('schedules')[copyIndex()], 'startTime'), createObject('value', parameters('schedules')[copyIndex()].startTime), createObject('value', ''))]",
-          "timeZone": "[if(contains(parameters('schedules')[copyIndex()], 'timeZone'), createObject('value', parameters('schedules')[copyIndex()].timeZone), createObject('value', ''))]",
+          "timeZuno": "[if(contains(parameters('schedules')[copyIndex()], 'timeZuno'), createObject('value', parameters('schedules')[copyIndex()].timeZuno), createObject('value', ''))]",
           "enableDefaultTelemetry": {
             "value": "[variables('enableReferencedModulesTelemetry')]"
           }
@@ -957,7 +957,7 @@
             "automationAccountName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment."
               }
             },
             "advancedSchedule": {
@@ -986,13 +986,13 @@
             },
             "frequency": {
               "type": "string",
-              "defaultValue": "OneTime",
+              "defaultValue": "unoTime",
               "allowedValues": [
                 "Day",
                 "Hour",
                 "Minute",
                 "Month",
-                "OneTime",
+                "unoTime",
                 "Week"
               ],
               "metadata": {
@@ -1013,11 +1013,11 @@
                 "description": "Optional. The start time of the schedule."
               }
             },
-            "timeZone": {
+            "timeZuno": {
               "type": "string",
               "defaultValue": "",
               "metadata": {
-                "description": "Optional. The time zone of the schedule."
+                "description": "Optional. The time zuno of the schedule."
               }
             },
             "baseTime": {
@@ -1058,10 +1058,10 @@
                 "advancedSchedule": "[if(not(empty(parameters('advancedSchedule'))), parameters('advancedSchedule'), null())]",
                 "description": "[if(not(empty(parameters('description'))), parameters('description'), null())]",
                 "expiryTime": "[if(not(empty(parameters('expiryTime'))), parameters('expiryTime'), null())]",
-                "frequency": "[if(not(empty(parameters('frequency'))), parameters('frequency'), 'OneTime')]",
+                "frequency": "[if(not(empty(parameters('frequency'))), parameters('frequency'), 'unoTime')]",
                 "interval": "[if(not(equals(parameters('interval'), 0)), parameters('interval'), null())]",
                 "startTime": "[if(not(empty(parameters('startTime'))), parameters('startTime'), dateTimeAdd(parameters('baseTime'), 'PT10M'))]",
-                "timeZone": "[if(not(empty(parameters('timeZone'))), parameters('timeZone'), null())]"
+                "timeZuno": "[if(not(empty(parameters('timeZuno'))), parameters('timeZuno'), null())]"
               }
             }
           ],
@@ -1103,7 +1103,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-AutoAccount-Runbook-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1160,7 +1160,7 @@
             "automationAccountName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment."
               }
             },
             "type": {
@@ -1341,7 +1341,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-AutoAccount-JobSchedule-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1385,7 +1385,7 @@
             "automationAccountName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment."
               }
             },
             "runbookName": {
@@ -1493,7 +1493,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-AutoAccount-Variable-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1530,7 +1530,7 @@
             "automationAccountName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -1630,7 +1630,7 @@
       "subscriptionId": "[if(not(empty(parameters('linkedWorkspaceResourceId'))), split(if(not(empty(parameters('linkedWorkspaceResourceId'))), parameters('linkedWorkspaceResourceId'), '//'), '/')[2], subscription().subscriptionId)]",
       "resourceGroup": "[if(not(empty(parameters('linkedWorkspaceResourceId'))), split(if(not(empty(parameters('linkedWorkspaceResourceId'))), parameters('linkedWorkspaceResourceId'), '////'), '/')[4], resourceGroup().name)]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1669,7 +1669,7 @@
             "logAnalyticsWorkspaceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -1783,7 +1783,7 @@
       "subscriptionId": "[if(not(empty(parameters('linkedWorkspaceResourceId'))), split(if(not(empty(parameters('linkedWorkspaceResourceId'))), parameters('linkedWorkspaceResourceId'), '//'), '/')[2], subscription().subscriptionId)]",
       "resourceGroup": "[if(not(empty(parameters('linkedWorkspaceResourceId'))), split(if(not(empty(parameters('linkedWorkspaceResourceId'))), parameters('linkedWorkspaceResourceId'), '////'), '/')[4], resourceGroup().name)]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1938,7 +1938,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-AutoAccount-SwUpdateConfig-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1982,7 +1982,7 @@
           "scopeByTags": "[if(contains(parameters('softwareUpdateConfigurations')[copyIndex()], 'scopeByTags'), createObject('value', parameters('softwareUpdateConfigurations')[copyIndex()].scopeByTags), createObject('value', createObject()))]",
           "scopeByTagsOperation": "[if(contains(parameters('softwareUpdateConfigurations')[copyIndex()], 'scopeByTagsOperation'), createObject('value', parameters('softwareUpdateConfigurations')[copyIndex()].scopeByTagsOperation), createObject('value', 'All'))]",
           "startTime": "[if(contains(parameters('softwareUpdateConfigurations')[copyIndex()], 'startTime'), createObject('value', parameters('softwareUpdateConfigurations')[copyIndex()].startTime), createObject('value', ''))]",
-          "timeZone": "[if(contains(parameters('softwareUpdateConfigurations')[copyIndex()], 'timeZone'), createObject('value', parameters('softwareUpdateConfigurations')[copyIndex()].timeZone), createObject('value', 'UTC'))]",
+          "timeZuno": "[if(contains(parameters('softwareUpdateConfigurations')[copyIndex()], 'timeZuno'), createObject('value', parameters('softwareUpdateConfigurations')[copyIndex()].timeZuno), createObject('value', 'UTC'))]",
           "updateClassifications": "[if(contains(parameters('softwareUpdateConfigurations')[copyIndex()], 'updateClassifications'), createObject('value', parameters('softwareUpdateConfigurations')[copyIndex()].updateClassifications), createObject('value', createArray('Critical', 'Security')))]",
           "weekDays": "[if(contains(parameters('softwareUpdateConfigurations')[copyIndex()], 'weekDays'), createObject('value', parameters('softwareUpdateConfigurations')[copyIndex()].weekDays), createObject('value', createArray()))]",
           "enableDefaultTelemetry": {
@@ -2012,7 +2012,7 @@
             "automationAccountName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment."
               }
             },
             "operatingSystem": {
@@ -2040,7 +2040,7 @@
             "frequency": {
               "type": "string",
               "allowedValues": [
-                "OneTime",
+                "unoTime",
                 "Hour",
                 "Day",
                 "Week",
@@ -2169,11 +2169,11 @@
                 "description": "Optional. Enables the deployment schedule."
               }
             },
-            "timeZone": {
+            "timeZuno": {
               "type": "string",
               "defaultValue": "UTC",
               "metadata": {
-                "description": "Optional. Time zone for the deployment schedule. IANA ID or a Windows Time Zone ID."
+                "description": "Optional. Time zuno for the deployment schedule. IANA ID or a Windows Time Zuno ID."
               }
             },
             "nonAzureQueries": {
@@ -2306,7 +2306,7 @@
               "type": "string",
               "defaultValue": "[utcNow('u')]",
               "metadata": {
-                "description": "Generated. Do not touch. Is used to provide the base time for time comparison for startTime. If startTime is specified in HH:MM format, baseTime is used to check if the provided startTime has passed, adding one day before setting the deployment schedule."
+                "description": "Generated. Do not touch. Is used to provide the base time for time comparison for startTime. If startTime is specified in HH:MM format, baseTime is used to check if the provided startTime has passed, adding uno day before setting the deployment schedule."
               }
             },
             "enableDefaultTelemetry": {
@@ -2375,7 +2375,7 @@
                   "interval": "[parameters('interval')]",
                   "frequency": "[parameters('frequency')]",
                   "isEnabled": "[parameters('isEnabled')]",
-                  "timeZone": "[parameters('timeZone')]",
+                  "timeZuno": "[parameters('timeZuno')]",
                   "advancedSchedule": {
                     "weekDays": "[if(empty(parameters('weekDays')), null(), parameters('weekDays'))]",
                     "monthDays": "[if(empty(parameters('monthDays')), null(), parameters('monthDays'))]",
@@ -2430,7 +2430,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-automationAccount-PrivateEndpoint-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -2458,11 +2458,11 @@
           "lock": {
             "value": "[coalesce(tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'lock'), parameters('lock'))]"
           },
-          "privateDnsZoneGroupName": {
-            "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'privateDnsZoneGroupName')]"
+          "privateDnsZunoGroupName": {
+            "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'privateDnsZunoGroupName')]"
           },
-          "privateDnsZoneResourceIds": {
-            "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'privateDnsZoneResourceIds')]"
+          "privateDnsZunoResourceIds": {
+            "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'privateDnsZunoResourceIds')]"
           },
           "roleAssignments": {
             "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'roleAssignments')]"
@@ -2581,7 +2581,7 @@
                   "type": "string",
                   "allowedValues": [
                     "CanNotDelete",
-                    "None",
+                    "Nuno",
                     "ReadOnly"
                   ],
                   "nullable": true,
@@ -2704,18 +2704,18 @@
                 "description": "Required. Subtype(s) of the connection to be created. The allowed values depend on the type serviceResourceId refers to."
               }
             },
-            "privateDnsZoneGroupName": {
+            "privateDnsZunoGroupName": {
               "type": "string",
               "nullable": true,
               "metadata": {
-                "description": "Optional. The name of the private DNS zone group to create if `privateDnsZoneResourceIds` were provided."
+                "description": "Optional. The name of the private DNS zuno group to create if `privateDnsZunoResourceIds` were provided."
               }
             },
-            "privateDnsZoneResourceIds": {
+            "privateDnsZunoResourceIds": {
               "type": "array",
               "nullable": true,
               "metadata": {
-                "description": "Optional. The private DNS zone groups to associate the private endpoint. A DNS zone group can support up to 5 DNS zones."
+                "description": "Optional. The private DNS zuno groups to associate the private endpoint. A DNS zuno group can support up to 5 DNS zunos."
               }
             },
             "location": {
@@ -2771,12 +2771,12 @@
             "builtInRoleNames": {
               "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
               "DNS Resolver Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')]",
-              "DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
+              "DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
               "Domain Services Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')]",
               "Domain Services Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')]",
               "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
               "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-              "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+              "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
               "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
               "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]"
             }
@@ -2831,7 +2831,7 @@
               }
             },
             "privateEndpoint_lock": {
-              "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+              "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
               "type": "Microsoft.Authorization/locks",
               "apiVersion": "2020-05-01",
               "scope": "[format('Microsoft.Network/privateEndpoints/{0}', parameters('name'))]",
@@ -2866,22 +2866,22 @@
                 "privateEndpoint"
               ]
             },
-            "privateEndpoint_privateDnsZoneGroup": {
-              "condition": "[not(empty(parameters('privateDnsZoneResourceIds')))]",
+            "privateEndpoint_privateDnsZunoGroup": {
+              "condition": "[not(empty(parameters('privateDnsZunoResourceIds')))]",
               "type": "Microsoft.Resources/deployments",
               "apiVersion": "2022-09-01",
-              "name": "[format('{0}-PrivateEndpoint-PrivateDnsZoneGroup', uniqueString(deployment().name))]",
+              "name": "[format('{0}-PrivateEndpoint-PrivateDnsZunoGroup', uniqueString(deployment().name))]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
                 "parameters": {
                   "name": {
-                    "value": "[coalesce(parameters('privateDnsZoneGroupName'), 'default')]"
+                    "value": "[coalesce(parameters('privateDnsZunoGroupName'), 'default')]"
                   },
                   "privateDNSResourceIds": {
-                    "value": "[coalesce(parameters('privateDnsZoneResourceIds'), createArray())]"
+                    "value": "[coalesce(parameters('privateDnsZunoResourceIds'), createArray())]"
                   },
                   "privateEndpointName": {
                     "value": "[parameters('name')]"
@@ -2899,15 +2899,15 @@
                       "version": "0.23.1.45101",
                       "templateHash": "17578977753131828304"
                     },
-                    "name": "Private Endpoint Private DNS Zone Groups",
-                    "description": "This module deploys a Private Endpoint Private DNS Zone Group.",
+                    "name": "Private Endpoint Private DNS Zuno Groups",
+                    "description": "This module deploys a Private Endpoint Private DNS Zuno Group.",
                     "owner": "Azure/module-maintainers"
                   },
                   "parameters": {
                     "privateEndpointName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent private endpoint. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent private endpoint. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "privateDNSResourceIds": {
@@ -2915,14 +2915,14 @@
                       "minLength": 1,
                       "maxLength": 5,
                       "metadata": {
-                        "description": "Required. Array of private DNS zone resource IDs. A DNS zone group can support up to 5 DNS zones."
+                        "description": "Required. Array of private DNS zuno resource IDs. A DNS zuno group can support up to 5 DNS zunos."
                       }
                     },
                     "name": {
                       "type": "string",
                       "defaultValue": "default",
                       "metadata": {
-                        "description": "Optional. The name of the private DNS zone group."
+                        "description": "Optional. The name of the private DNS zuno group."
                       }
                     },
                     "enableDefaultTelemetry": {
@@ -2936,12 +2936,12 @@
                   "variables": {
                     "copy": [
                       {
-                        "name": "privateDnsZoneConfigs",
+                        "name": "privateDnsZunoConfigs",
                         "count": "[length(parameters('privateDNSResourceIds'))]",
                         "input": {
-                          "name": "[last(split(parameters('privateDNSResourceIds')[copyIndex('privateDnsZoneConfigs')], '/'))]",
+                          "name": "[last(split(parameters('privateDNSResourceIds')[copyIndex('privateDnsZunoConfigs')], '/'))]",
                           "properties": {
-                            "privateDnsZoneId": "[parameters('privateDNSResourceIds')[copyIndex('privateDnsZoneConfigs')]]"
+                            "privateDnsZunoId": "[parameters('privateDNSResourceIds')[copyIndex('privateDnsZunoConfigs')]]"
                           }
                         }
                       }
@@ -2963,11 +2963,11 @@
                       }
                     },
                     {
-                      "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+                      "type": "Microsoft.Network/privateEndpoints/privateDnsZunoGroups",
                       "apiVersion": "2023-04-01",
                       "name": "[format('{0}/{1}', parameters('privateEndpointName'), parameters('name'))]",
                       "properties": {
-                        "privateDnsZoneConfigs": "[variables('privateDnsZoneConfigs')]"
+                        "privateDnsZunoConfigs": "[variables('privateDnsZunoConfigs')]"
                       }
                     }
                   ],
@@ -2975,21 +2975,21 @@
                     "name": {
                       "type": "string",
                       "metadata": {
-                        "description": "The name of the private endpoint DNS zone group."
+                        "description": "The name of the private endpoint DNS zuno group."
                       },
                       "value": "[parameters('name')]"
                     },
                     "resourceId": {
                       "type": "string",
                       "metadata": {
-                        "description": "The resource ID of the private endpoint DNS zone group."
+                        "description": "The resource ID of the private endpoint DNS zuno group."
                       },
-                      "value": "[resourceId('Microsoft.Network/privateEndpoints/privateDnsZoneGroups', parameters('privateEndpointName'), parameters('name'))]"
+                      "value": "[resourceId('Microsoft.Network/privateEndpoints/privateDnsZunoGroups', parameters('privateEndpointName'), parameters('name'))]"
                     },
                     "resourceGroupName": {
                       "type": "string",
                       "metadata": {
-                        "description": "The resource group the private endpoint DNS zone group was deployed into."
+                        "description": "The resource group the private endpoint DNS zuno group was deployed into."
                       },
                       "value": "[resourceGroup().name]"
                     }

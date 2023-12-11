@@ -21,7 +21,7 @@ This module deploys a ServiceBus Namespace Network Rule Set.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Service Bus Namespace for the Service Bus Network Rule Set. Required if the template is used in a standalone deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Service Bus Namespace for the Service Bus Network Rule Set. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -36,7 +36,7 @@ This module deploys a ServiceBus Namespace Network Rule Set.
 
 ### Parameter: `namespaceName`
 
-The name of the parent Service Bus Namespace for the Service Bus Network Rule Set. Required if the template is used in a standalone deployment.
+The name of the parent Service Bus Namespace for the Service Bus Network Rule Set. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -114,4 +114,4 @@ List virtual network rules. It will not be set if publicNetworkAccess is "Disabl
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

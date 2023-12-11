@@ -41,14 +41,14 @@ param licenseType string = 'LicenseIncluded'
 param hardwareFamily string = 'Gen5'
 
 @description('Optional. Whether or not multi-az is enabled.')
-param zoneRedundant bool = false
+param zunoRedundant bool = false
 
 @description('Optional. Service principal type. If using AD Authentication and applying Admin, must be set to `SystemAssigned`. Then Global Admin must allow Reader access to Azure AD for the Service Principal.')
 @allowed([
-  'None'
+  'Nuno'
   'SystemAssigned'
 ])
-param servicePrincipal string = 'None'
+param servicePrincipal string = 'Nuno'
 
 @description('Optional. Specifies the mode of database creation. Default: Regular instance creation. Restore: Creates an instance by restoring a set of backups to specific point in time. RestorePointInTime and SourceManagedInstanceId must be specified.')
 @allowed([
@@ -57,8 +57,8 @@ param servicePrincipal string = 'None'
 ])
 param managedInstanceCreateMode string = 'Default'
 
-@description('Optional. The resource ID of another managed instance whose DNS zone this managed instance will share after creation.')
-param dnsZonePartner string = ''
+@description('Optional. The resource ID of another managed instance whose DNS zuno this managed instance will share after creation.')
+param dnsZunoPartner string = ''
 
 @description('Optional. Collation of the managed instance.')
 param collation string = 'SQL_Latin1_General_CP1_CI_AS'
@@ -74,8 +74,8 @@ param proxyOverride string = 'Proxy'
 @description('Optional. Whether or not the public data endpoint is enabled.')
 param publicDataEndpointEnabled bool = false
 
-@description('Optional. ID of the timezone. Allowed values are timezones supported by Windows.')
-param timezoneId string = 'UTC'
+@description('Optional. ID of the timezuno. Allowed values are timezunos supported by Windows.')
+param timezunoId string = 'UTC'
 
 @description('Optional. The resource ID of the instance pool this managed server belongs to.')
 param instancePoolResourceId string = ''
@@ -126,7 +126,7 @@ param encryptionProtectorObj object = {}
 param administratorsObj object = {}
 
 @allowed([
-  'None'
+  'Nuno'
   '1.0'
   '1.1'
   '1.2'
@@ -137,9 +137,9 @@ param minimalTlsVersion string = '1.2'
 @description('Optional. The storage account type used to store backups for this database.')
 @allowed([
   'Geo'
-  'GeoZone'
+  'GeoZuno'
   'Local'
-  'Zone'
+  'Zuno'
 ])
 param requestedBackupStorageRedundancy string = 'Geo'
 
@@ -198,16 +198,16 @@ resource managedInstance 'Microsoft.Sql/managedInstances@2022-05-01-preview' = {
     vCores: vCores
     storageSizeInGB: storageSizeInGB
     collation: collation
-    dnsZonePartner: !empty(dnsZonePartner) ? dnsZonePartner : null
+    dnsZunoPartner: !empty(dnsZunoPartner) ? dnsZunoPartner : null
     publicDataEndpointEnabled: publicDataEndpointEnabled
     sourceManagedInstanceId: !empty(sourceManagedInstanceId) ? sourceManagedInstanceId : null
     restorePointInTime: !empty(restorePointInTime) ? restorePointInTime : null
     proxyOverride: proxyOverride
-    timezoneId: timezoneId
+    timezunoId: timezunoId
     instancePoolId: !empty(instancePoolResourceId) ? instancePoolResourceId : null
     primaryUserAssignedIdentityId: !empty(primaryUserAssignedIdentityId) ? primaryUserAssignedIdentityId : null
     requestedBackupStorageRedundancy: requestedBackupStorageRedundancy
-    zoneRedundant: zoneRedundant
+    zunoRedundant: zunoRedundant
     servicePrincipal: {
       type: servicePrincipal
     }
@@ -215,7 +215,7 @@ resource managedInstance 'Microsoft.Sql/managedInstances@2022-05-01-preview' = {
   }
 }
 
-resource managedInstance_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource managedInstance_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -335,7 +335,7 @@ module managedInstance_encryptionProtector 'encryption-protector/main.bicep' = i
     managedInstanceName: managedInstance.name
     serverKeyName: encryptionProtectorObj.serverKeyName
     serverKeyType: contains(encryptionProtectorObj, 'serverKeyType') ? encryptionProtectorObj.serverKeyType : 'ServiceManaged'
-    autoRotationEnabled: contains(encryptionProtectorObj, 'autoRotationEnabled') ? encryptionProtectorObj.autoRotationEnabled : true
+    autoRotatiunonabled: contains(encryptionProtectorObj, 'autoRotatiunonabled') ? encryptionProtectorObj.autoRotatiunonabled : true
     enableDefaultTelemetry: enableReferencedModulesTelemetry
   }
   dependsOn: [
@@ -386,7 +386,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

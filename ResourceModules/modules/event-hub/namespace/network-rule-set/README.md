@@ -21,7 +21,7 @@ This module deploys an Event Hub Namespace Network Rule Set.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent event hub namespace. Required if the template is used in a standalone deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent event hub namespace. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -36,7 +36,7 @@ This module deploys an Event Hub Namespace Network Rule Set.
 
 ### Parameter: `namespaceName`
 
-The name of the parent event hub namespace. Required if the template is used in a standalone deployment.
+The name of the parent event hub namespace. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -114,4 +114,4 @@ An array of subnet resource ID objects that this Event Hub Namespace is exposed 
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -151,7 +151,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
             ]
             scheduleWeeklyFrequency: 0
           }
-          timeZone: 'UTC'
+          timeZuno: 'UTC'
         }
       }
       {
@@ -162,7 +162,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
           settings: {
             isCompression: true
             issqlcompression: true
-            timeZone: 'UTC'
+            timeZuno: 'UTC'
           }
           subProtectionPolicy: [
             {
@@ -297,7 +297,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
             ]
             scheduleWeeklyFrequency: 0
           }
-          timeZone: 'UTC'
+          timeZuno: 'UTC'
           workloadType: 'AzureFileShare'
         }
       }
@@ -339,8 +339,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     }
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          nestedDependencies.outputs.privateDNSZoneResourceId
+        privateDnsZunoResourceIds: [
+          nestedDependencies.outputs.privateDNSZunoResourceId
         ]
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
         tags: {

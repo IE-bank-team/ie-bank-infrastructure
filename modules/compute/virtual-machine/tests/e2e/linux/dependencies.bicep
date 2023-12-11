@@ -83,7 +83,7 @@ resource loadBalancer 'Microsoft.Network/loadBalancers@2023-04-01' = {
   properties: {
     frontendIPConfigurations: [
       {
-        name: 'privateIPConfione'
+        name: 'privateIPConfiuno'
         properties: {
           subnet: virtualNetwork.properties.subnets[0]
         }
@@ -183,7 +183,7 @@ resource recoveryServicesVault 'Microsoft.RecoveryServices/vaults@2022-04-01' = 
         }
       }
       instantRpRetentionRangeInDays: 2
-      timeZone: 'UTC'
+      timeZuno: 'UTC'
       protectedItemsCount: 0
     }
   }

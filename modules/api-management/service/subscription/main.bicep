@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Optional. Determines whether tracing can be enabled.')
 param allowTracing bool = true
 
-@description('Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment.')
 param apiManagementServiceName string
 
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')

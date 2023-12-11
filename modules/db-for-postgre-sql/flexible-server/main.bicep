@@ -53,8 +53,8 @@ param tier string
   '2'
   '3'
 ])
-@description('Optional. Availability zone information of the server. Default will have no preference set.')
-param availabilityZone string = ''
+@description('Optional. Availability zuno information of the server. Default will have no preference set.')
+param availabilityZuno string = ''
 
 @minValue(7)
 @maxValue(35)
@@ -95,8 +95,8 @@ param version string = '15'
 
 @allowed([
   'Disabled'
-  'SameZone'
-  'ZoneRedundant'
+  'SameZuno'
+  'ZunoRedundant'
 ])
 @description('Optional. The mode for high availability.')
 param highAvailability string = 'Disabled'
@@ -128,8 +128,8 @@ param sourceServerResourceId string = ''
 @description('Optional. Delegated subnet arm resource ID. Used when the desired connectivity mode is "Private Access" - virtual network integration.')
 param delegatedSubnetResourceId string = ''
 
-@description('Optional. Private dns zone arm resource ID. Used when the desired connectivity mode is "Private Access" and required when "delegatedSubnetResourceId" is used. The Private DNS Zone must be lined to the Virtual Network referenced in "delegatedSubnetResourceId".')
-param privateDnsZoneArmResourceId string = ''
+@description('Optional. Private dns zuno arm resource ID. Used when the desired connectivity mode is "Private Access" and required when "delegatedSubnetResourceId" is used. The Private DNS Zuno must be lined to the Virtual Network referenced in "delegatedSubnetResourceId".')
+param privateDnsZunoArmResourceId string = ''
 
 @description('Optional. The firewall rules to create in the PostgreSQL flexible server.')
 param firewallRules array = []
@@ -215,7 +215,7 @@ resource flexibleServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01' =
       passwordAuth: passwordAuth
       tenantId: !empty(tenantId) ? tenantId : null
     }
-    availabilityZone: availabilityZone
+    availabilityZuno: availabilityZuno
     backup: {
       backupRetentionDays: backupRetentionDays
       geoRedundantBackup: geoRedundantBackup
@@ -228,7 +228,7 @@ resource flexibleServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01' =
     } : null
     highAvailability: {
       mode: highAvailability
-      standbyAvailabilityZone: highAvailability == 'SameZone' ? availabilityZone : null
+      standbyAvailabilityZuno: highAvailability == 'SameZuno' ? availabilityZuno : null
     }
     maintenanceWindow: !empty(maintenanceWindow) ? {
       customWindow: maintenanceWindow.customWindow
@@ -238,7 +238,7 @@ resource flexibleServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01' =
     } : null
     network: !empty(delegatedSubnetResourceId) && empty(firewallRules) ? {
       delegatedSubnetResourceId: delegatedSubnetResourceId
-      privateDnsZoneArmResourceId: privateDnsZoneArmResourceId
+      privateDnsZunoArmResourceId: privateDnsZunoArmResourceId
     } : null
     pointInTimeUTC: createMode == 'PointInTimeRestore' ? pointInTimeUTC : null
     sourceServerResourceId: createMode == 'PointInTimeRestore' ? sourceServerResourceId : null
@@ -249,7 +249,7 @@ resource flexibleServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01' =
   }
 }
 
-resource flexibleServer_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource flexibleServer_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -375,7 +375,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

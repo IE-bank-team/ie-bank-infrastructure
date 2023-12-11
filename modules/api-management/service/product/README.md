@@ -29,7 +29,7 @@ This module deploys an API Management Service Product.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standalone deployment. |
+| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -54,7 +54,7 @@ Product Name.
 
 ### Parameter: `apiManagementServiceName`
 
-The name of the parent API Management service. Required if the template is used in a standalone deployment.
+The name of the parent API Management service. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -144,4 +144,4 @@ Product terms of use. Developers trying to subscribe to the product will be pres
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

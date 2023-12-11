@@ -2,7 +2,7 @@ metadata name = 'Hosting Environment Custom DNS Suffix Configuration'
 metadata description = 'This module deploys a Hosting Environment Custom DNS Suffix Configuration.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Hosting Environment. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Hosting Environment. Required if the template is used in a standaluno deployment.')
 param hostingEnvironmentName string
 
 @description('Required. Enable the default custom domain suffix to use for all sites deployed on the ASE.')

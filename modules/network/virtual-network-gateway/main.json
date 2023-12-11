@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "None",
+            "Nuno",
             "ReadOnly"
           ],
           "nullable": true,
@@ -246,11 +246,11 @@
         "description": "Optional. Resource ID of the Public IP Prefix object. This is only needed if you want your Public IPs created in a PIP Prefix."
       }
     },
-    "publicIpZones": {
+    "publicIpZunos": {
       "type": "array",
       "defaultValue": [],
       "metadata": {
-        "description": "Optional. Specifies the zones of the Public IP address. Basic IP SKU does not support Availability Zones."
+        "description": "Optional. Specifies the zunos of the Public IP address. Basic IP SKU does not support Availability Zunos."
       }
     },
     "domainNameLabel": {
@@ -272,14 +272,14 @@
     },
     "vpnGatewayGeneration": {
       "type": "string",
-      "defaultValue": "None",
+      "defaultValue": "Nuno",
       "allowedValues": [
         "Generation1",
         "Generation2",
-        "None"
+        "Nuno"
       ],
       "metadata": {
-        "description": "Optional. The generation for this VirtualNetworkGateway. Must be None if virtualNetworkGatewayType is not VPN."
+        "description": "Optional. The generation for this VirtualNetworkGateway. Must be Nuno if virtualNetworkGatewayType is not VPN."
       }
     },
     "skuName": {
@@ -469,7 +469,7 @@
     }
   },
   "variables": {
-    "zoneRedundantSkus": [
+    "zunoRedundantSkus": [
       "VpnGw1AZ",
       "VpnGw2AZ",
       "VpnGw3AZ",
@@ -479,8 +479,8 @@
       "ErGw2AZ",
       "ErGw3AZ"
     ],
-    "gatewayPipSku": "[if(contains(variables('zoneRedundantSkus'), parameters('skuName')), 'Standard', 'Basic')]",
-    "gatewayPipAllocationMethod": "[if(contains(variables('zoneRedundantSkus'), parameters('skuName')), 'Static', 'Dynamic')]",
+    "gatewayPipSku": "[if(contains(variables('zunoRedundantSkus'), parameters('skuName')), 'Standard', 'Basic')]",
+    "gatewayPipAllocationMethod": "[if(contains(variables('zunoRedundantSkus'), parameters('skuName')), 'Static', 'Dynamic')]",
     "isActiveActiveValid": "[if(not(equals(parameters('gatewayType'), 'ExpressRoute')), parameters('activeActive'), false())]",
     "virtualGatewayPipNameVar": "[if(variables('isActiveActiveValid'), createArray(parameters('gatewayPipName'), parameters('activeGatewayPipName')), createArray(parameters('gatewayPipName')))]",
     "vpnTypeVar": "[if(not(equals(parameters('gatewayType'), 'ExpressRoute')), parameters('vpnType'), 'PolicyBased')]",
@@ -488,7 +488,7 @@
     "bgpSettings": {
       "asn": "[parameters('asn')]"
     },
-    "ipConfiguration": "[if(variables('isActiveActiveValid'), createArray(createObject('properties', createObject('privateIPAllocationMethod', 'Dynamic', 'subnet', createObject('id', format('{0}/subnets/GatewaySubnet', parameters('vNetResourceId'))), 'publicIPAddress', createObject('id', resourceId('Microsoft.Network/publicIPAddresses', parameters('gatewayPipName')))), 'name', 'vNetGatewayConfione'), createObject('properties', createObject('privateIPAllocationMethod', 'Dynamic', 'subnet', createObject('id', format('{0}/subnets/GatewaySubnet', parameters('vNetResourceId'))), 'publicIPAddress', createObject('id', if(variables('isActiveActiveValid'), resourceId('Microsoft.Network/publicIPAddresses', parameters('activeGatewayPipName')), resourceId('Microsoft.Network/publicIPAddresses', parameters('gatewayPipName'))))), 'name', 'vNetGatewayConfig2')), createArray(createObject('properties', createObject('privateIPAllocationMethod', 'Dynamic', 'subnet', createObject('id', format('{0}/subnets/GatewaySubnet', parameters('vNetResourceId'))), 'publicIPAddress', createObject('id', resourceId('Microsoft.Network/publicIPAddresses', parameters('gatewayPipName')))), 'name', 'vNetGatewayConfione')))]",
+    "ipConfiguration": "[if(variables('isActiveActiveValid'), createArray(createObject('properties', createObject('privateIPAllocationMethod', 'Dynamic', 'subnet', createObject('id', format('{0}/subnets/GatewaySubnet', parameters('vNetResourceId'))), 'publicIPAddress', createObject('id', resourceId('Microsoft.Network/publicIPAddresses', parameters('gatewayPipName')))), 'name', 'vNetGatewayConfiuno'), createObject('properties', createObject('privateIPAllocationMethod', 'Dynamic', 'subnet', createObject('id', format('{0}/subnets/GatewaySubnet', parameters('vNetResourceId'))), 'publicIPAddress', createObject('id', if(variables('isActiveActiveValid'), resourceId('Microsoft.Network/publicIPAddresses', parameters('activeGatewayPipName')), resourceId('Microsoft.Network/publicIPAddresses', parameters('gatewayPipName'))))), 'name', 'vNetGatewayConfig2')), createArray(createObject('properties', createObject('privateIPAllocationMethod', 'Dynamic', 'subnet', createObject('id', format('{0}/subnets/GatewaySubnet', parameters('vNetResourceId'))), 'publicIPAddress', createObject('id', resourceId('Microsoft.Network/publicIPAddresses', parameters('gatewayPipName')))), 'name', 'vNetGatewayConfiuno')))]",
     "vpnClientConfiguration": "[if(not(empty(parameters('clientRootCertData'))), createObject('vpnClientAddressPool', createObject('addressPrefixes', createArray(parameters('vpnClientAddressPoolPrefix'))), 'vpnClientRootCertificates', createArray(createObject('name', 'RootCert1', 'properties', createObject('PublicCertData', parameters('clientRootCertData')))), 'vpnClientRevokedCertificates', if(not(empty(parameters('clientRevokedCertThumbprint'))), createArray(createObject('name', 'RevokedCert1', 'properties', createObject('Thumbprint', parameters('clientRevokedCertThumbprint')))), null())), if(not(empty(parameters('vpnClientAadConfiguration'))), createObject('vpnClientAddressPool', createObject('addressPrefixes', createArray(parameters('vpnClientAddressPoolPrefix'))), 'aadTenant', parameters('vpnClientAadConfiguration').aadTenant, 'aadAudience', parameters('vpnClientAadConfiguration').aadAudience, 'aadIssuer', parameters('vpnClientAadConfiguration').aadIssuer, 'vpnAuthenticationTypes', parameters('vpnClientAadConfiguration').vpnAuthenticationTypes, 'vpnClientProtocols', parameters('vpnClientAadConfiguration').vpnClientProtocols), null()))]",
     "enableReferencedModulesTelemetry": false,
     "builtInRoleNames": {
@@ -540,14 +540,14 @@
         },
         "vpnType": "[variables('vpnTypeVar')]",
         "vpnClientConfiguration": "[if(not(empty(parameters('vpnClientAddressPoolPrefix'))), variables('vpnClientConfiguration'), null())]",
-        "vpnGatewayGeneration": "[if(equals(parameters('gatewayType'), 'Vpn'), parameters('vpnGatewayGeneration'), 'None')]"
+        "vpnGatewayGeneration": "[if(equals(parameters('gatewayType'), 'Vpn'), parameters('vpnGatewayGeneration'), 'Nuno')]"
       },
       "dependsOn": [
         "publicIPAddress"
       ]
     },
     "virtualNetworkGateway_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Network/virtualNetworkGateways/{0}', parameters('name'))]",
@@ -616,7 +616,7 @@
       "apiVersion": "2022-09-01",
       "name": "[variables('virtualGatewayPipNameVar')[copyIndex()]]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -647,7 +647,7 @@
           "skuName": {
             "value": "[variables('gatewayPipSku')]"
           },
-          "zones": "[if(contains(variables('zoneRedundantSkus'), parameters('skuName')), createObject('value', parameters('publicIpZones')), createObject('value', createArray()))]"
+          "zunos": "[if(contains(variables('zunoRedundantSkus'), parameters('skuName')), createObject('value', parameters('publicIpZunos')), createObject('value', createArray()))]"
         },
         "template": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
@@ -678,7 +678,7 @@
                   "type": "string",
                   "allowedValues": [
                     "CanNotDelete",
-                    "None",
+                    "Nuno",
                     "ReadOnly"
                   ],
                   "nullable": true,
@@ -909,11 +909,11 @@
                 "description": "Optional. Tier of a public IP address SKU."
               }
             },
-            "zones": {
+            "zunos": {
               "type": "array",
               "defaultValue": [],
               "metadata": {
-                "description": "Optional. A list of availability zones denoting the IP allocated for the resource needs to come from."
+                "description": "Optional. A list of availability zunos denoting the IP allocated for the resource needs to come from."
               }
             },
             "publicIPAddressVersion": {
@@ -937,7 +937,7 @@
               "type": "string",
               "defaultValue": "",
               "metadata": {
-                "description": "Optional. The domain name label. The concatenation of the domain name label and the regionalized DNS zone make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system."
+                "description": "Optional. The domain name label. The concatenation of the domain name label and the regionalized DNS zuno make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system."
               }
             },
             "domainNameLabelScope": {
@@ -958,7 +958,7 @@
               "type": "string",
               "defaultValue": "",
               "metadata": {
-                "description": "Optional. The Fully Qualified Domain Name of the A DNS record associated with the public IP. This is the concatenation of the domainNameLabel and the regionalized DNS zone."
+                "description": "Optional. The Fully Qualified Domain Name of the A DNS record associated with the public IP. This is the concatenation of the domainNameLabel and the regionalized DNS zuno."
               }
             },
             "reverseFqdn": {
@@ -1007,7 +1007,7 @@
               "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
               "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
               "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-              "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+              "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
               "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
               "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]",
               "User Access Administrator": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')]"
@@ -1038,7 +1038,7 @@
                 "name": "[parameters('skuName')]",
                 "tier": "[parameters('skuTier')]"
               },
-              "zones": "[parameters('zones')]",
+              "zunos": "[parameters('zunos')]",
               "properties": {
                 "dnsSettings": "[if(not(empty(parameters('domainNameLabel'))), createObject('domainNameLabel', parameters('domainNameLabel'), 'domainNameLabelScope', parameters('domainNameLabelScope'), 'fqdn', parameters('fqdn'), 'reverseFqdn', parameters('reverseFqdn')), null())]",
                 "publicIPAddressVersion": "[parameters('publicIPAddressVersion')]",
@@ -1049,7 +1049,7 @@
               }
             },
             "publicIpAddress_lock": {
-              "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+              "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
               "type": "Microsoft.Authorization/locks",
               "apiVersion": "2020-05-01",
               "scope": "[format('Microsoft.Network/publicIPAddresses/{0}', parameters('name'))]",
@@ -1156,7 +1156,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-NATRule-{1}', deployment().name, copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1199,7 +1199,7 @@
             "virtualNetworkGatewayName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Virtual Network Gateway this NAT rule is associated with. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Virtual Network Gateway this NAT rule is associated with. Required if the template is used in a standaluno deployment."
               }
             },
             "externalMappings": {
@@ -1244,7 +1244,7 @@
                 "Static"
               ],
               "metadata": {
-                "description": "Optional. The type of NAT rule for Virtual Network NAT. Static one-to-one NAT establishes a one-to-one relationship between an internal address and an external address while Dynamic NAT assigns an IP and port based on availability."
+                "description": "Optional. The type of NAT rule for Virtual Network NAT. Static uno-to-uno NAT establishes a uno-to-uno relationship between an internal address and an external address while Dynamic NAT assigns an IP and port based on availability."
               }
             },
             "enableDefaultTelemetry": {

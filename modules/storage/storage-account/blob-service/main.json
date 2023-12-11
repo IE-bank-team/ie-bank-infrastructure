@@ -125,7 +125,7 @@
       "type": "string",
       "maxLength": 24,
       "metadata": {
-        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
       }
     },
     "automaticSnapshotPolicyEnabled": {
@@ -351,7 +351,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Container-{1}', deployment().name, copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -368,7 +368,7 @@
           "enableNfsV3RootSquash": "[if(contains(parameters('containers')[copyIndex()], 'enableNfsV3RootSquash'), createObject('value', parameters('containers')[copyIndex()].enableNfsV3RootSquash), createObject('value', false()))]",
           "immutableStorageWithVersioningEnabled": "[if(contains(parameters('containers')[copyIndex()], 'immutableStorageWithVersioningEnabled'), createObject('value', parameters('containers')[copyIndex()].immutableStorageWithVersioningEnabled), createObject('value', false()))]",
           "metadata": "[if(contains(parameters('containers')[copyIndex()], 'metadata'), createObject('value', parameters('containers')[copyIndex()].metadata), createObject('value', createObject()))]",
-          "publicAccess": "[if(contains(parameters('containers')[copyIndex()], 'publicAccess'), createObject('value', parameters('containers')[copyIndex()].publicAccess), createObject('value', 'None'))]",
+          "publicAccess": "[if(contains(parameters('containers')[copyIndex()], 'publicAccess'), createObject('value', parameters('containers')[copyIndex()].publicAccess), createObject('value', 'Nuno'))]",
           "roleAssignments": "[if(contains(parameters('containers')[copyIndex()], 'roleAssignments'), createObject('value', parameters('containers')[copyIndex()].roleAssignments), createObject('value', createArray()))]",
           "immutabilityPolicyProperties": "[if(contains(parameters('containers')[copyIndex()], 'immutabilityPolicyProperties'), createObject('value', parameters('containers')[copyIndex()].immutabilityPolicyProperties), createObject('value', createObject()))]",
           "enableDefaultTelemetry": {
@@ -462,7 +462,7 @@
               "type": "string",
               "maxLength": 24,
               "metadata": {
-                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -529,11 +529,11 @@
             },
             "publicAccess": {
               "type": "string",
-              "defaultValue": "None",
+              "defaultValue": "Nuno",
               "allowedValues": [
                 "Container",
                 "Blob",
-                "None"
+                "Nuno"
               ],
               "metadata": {
                 "description": "Optional. Specifies whether data in the container may be accessed publicly and the level of access."
@@ -655,7 +655,7 @@
               "apiVersion": "2022-09-01",
               "name": "[parameters('immutabilityPolicyName')]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -691,13 +691,13 @@
                       "type": "string",
                       "maxLength": 24,
                       "metadata": {
-                        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "containerName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent container to apply the policy to. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent container to apply the policy to. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "immutabilityPeriodSinceCreationInDays": {

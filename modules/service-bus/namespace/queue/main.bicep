@@ -2,7 +2,7 @@ metadata name = 'Service Bus Namespace Queue'
 metadata description = 'This module deploys a Service Bus Namespace Queue.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standaluno deployment.')
 @minLength(6)
 @maxLength(50)
 param namespaceName string
@@ -65,7 +65,7 @@ param maxMessageSizeInKilobytes int = 1024
 ])
 param status string = 'Active'
 
-@description('Optional. A value that indicates whether the queue is to be partitioned across multiple message brokers.')
+@description('Optional. A value that indicates whether the queue is to be partitiunod across multiple message brokers.')
 param enablePartitioning bool = false
 
 @description('Optional. A value that indicates whether Express Entities are enabled. An express queue holds a message in memory temporarily before writing it to persistent storage.')
@@ -157,7 +157,7 @@ module queue_authorizationRules 'authorization-rule/main.bicep' = [for (authoriz
   }
 }]
 
-resource queue_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource queue_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -198,7 +198,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

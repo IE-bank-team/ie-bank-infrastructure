@@ -106,7 +106,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
           {
             networkGroupId: '${networkManagerExpecetedResourceID}/networkGroups/network-group-spokes'
             useHubGateway: 'False'
-            groupConnectivity: 'None'
+            groupConnectivity: 'Nuno'
             isGlobal: 'False'
           }
         ]
@@ -121,7 +121,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
           {
             networkGroupId: '${networkManagerExpecetedResourceID}/networkGroups/network-group-spokes'
             useHubGateway: 'False'
-            groupConnectivity: 'None'
+            groupConnectivity: 'Nuno'
             isGlobal: 'False'
           }
         ]

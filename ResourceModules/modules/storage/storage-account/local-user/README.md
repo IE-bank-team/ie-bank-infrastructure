@@ -30,7 +30,7 @@ This module deploys a Storage Account Local User, which is used for SFTP authent
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`storageAccountName`](#parameter-storageaccountname) | string | The name of the parent Storage Account. Required if the template is used in a standalone deployment. |
+| [`storageAccountName`](#parameter-storageaccountname) | string | The name of the parent Storage Account. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -71,7 +71,7 @@ The permission scopes of the local user.
 
 ### Parameter: `storageAccountName`
 
-The name of the parent Storage Account. Required if the template is used in a standalone deployment.
+The name of the parent Storage Account. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -119,4 +119,4 @@ The local user SSH authorized keys for SFTP.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -9,7 +9,7 @@
       "templateHash": "89939038941992549"
     },
     "name": "Virtual Machines",
-    "description": "This module deploys a Virtual Machine with one or multiple NICs and optionally one or multiple public IPs.",
+    "description": "This module deploys a Virtual Machine with uno or multiple NICs and optionally uno or multiple public IPs.",
     "owner": "Azure/module-maintainers"
   },
   "definitions": {
@@ -50,7 +50,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "None",
+            "Nuno",
             "ReadOnly"
           ],
           "nullable": true,
@@ -313,7 +313,7 @@
       "type": "bool",
       "defaultValue": false,
       "metadata": {
-        "description": "Optional. The flag that enables or disables a capability to have one or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled."
+        "description": "Optional. The flag that enables or disables a capability to have uno or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled."
       }
     },
     "adminUsername": {
@@ -433,10 +433,10 @@
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optional. Resource ID of an availability set. Cannot be used in combination with availability zone nor scale set."
+        "description": "Optional. Resource ID of an availability set. Cannot be used in combination with availability zuno nor scale set."
       }
     },
-    "availabilityZone": {
+    "availabilityZuno": {
       "type": "int",
       "defaultValue": 0,
       "allowedValues": [
@@ -446,7 +446,7 @@
         3
       ],
       "metadata": {
-        "description": "Optional. If set to 1, 2 or 3, the availability zone for all VMs is hardcoded to that value. If zero, then availability zones is not used. Cannot be used in combination with availability set nor scale set."
+        "description": "Optional. If set to 1, 2 or 3, the availability zuno for all VMs is hardcoded to that value. If zero, then availability zunos is not used. Cannot be used in combination with availability set nor scale set."
       }
     },
     "nicConfigurations": {
@@ -654,7 +654,7 @@
       "type": "bool",
       "defaultValue": true,
       "metadata": {
-        "description": "Optional. Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later."
+        "description": "Optional. Indicates whether virtual machine agent should be provisiunod on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later."
       }
     },
     "enableAutomaticUpdates": {
@@ -689,11 +689,11 @@
         "description": "Optional. VM guest patching assessment mode. Set it to 'AutomaticByPlatform' to enable automatically check for updates every 24 hours."
       }
     },
-    "timeZone": {
+    "timeZuno": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optional. Specifies the time zone of the virtual machine. e.g. 'Pacific Standard Time'. Possible values can be `TimeZoneInfo.id` value from time zones returned by `TimeZoneInfo.GetSystemTimeZones`."
+        "description": "Optional. Specifies the time zuno of the virtual machine. e.g. 'Pacific Standard Time'. Possible values can be `TimeZunoInfo.id` value from time zunos returned by `TimeZunoInfo.GetSystemTimeZunos`."
       }
     },
     "additionalUnattendContent": {
@@ -746,7 +746,7 @@
       "provisionVMAgent": "[parameters('provisionVMAgent')]",
       "enableAutomaticUpdates": "[parameters('enableAutomaticUpdates')]",
       "patchSettings": "[if(and(parameters('provisionVMAgent'), or(or(equals(toLower(parameters('patchMode')), toLower('AutomaticByPlatform')), equals(toLower(parameters('patchMode')), toLower('AutomaticByOS'))), equals(toLower(parameters('patchMode')), toLower('Manual')))), createObject('patchMode', parameters('patchMode'), 'assessmentMode', parameters('patchAssessmentMode')), null())]",
-      "timeZone": "[if(empty(parameters('timeZone')), null(), parameters('timeZone'))]",
+      "timeZuno": "[if(empty(parameters('timeZuno')), null(), parameters('timeZuno'))]",
       "additionalUnattendContent": "[if(empty(parameters('additionalUnattendContent')), null(), parameters('additionalUnattendContent'))]",
       "winRM": "[if(not(empty(parameters('winRM'))), createObject('listeners', parameters('winRM')), null())]"
     },
@@ -803,7 +803,7 @@
       "location": "[parameters('location')]",
       "identity": "[variables('identity')]",
       "tags": "[parameters('tags')]",
-      "zones": "[if(not(equals(parameters('availabilityZone'), 0)), array(parameters('availabilityZone')), null())]",
+      "zunos": "[if(not(equals(parameters('availabilityZuno'), 0)), array(parameters('availabilityZuno')), null())]",
       "plan": "[if(not(empty(parameters('plan'))), parameters('plan'), null())]",
       "properties": {
         "hardwareProfile": {
@@ -915,7 +915,7 @@
       "name": "[last(split(if(not(empty(parameters('monitoringWorkspaceId'))), parameters('monitoringWorkspaceId'), 'law'), '/'))]"
     },
     "vm_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Compute/virtualMachines/{0}', parameters('name'))]",
@@ -959,7 +959,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VM-Nic-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1019,7 +1019,7 @@
                   "type": "string",
                   "allowedValues": [
                     "CanNotDelete",
-                    "None",
+                    "Nuno",
                     "ReadOnly"
                   ],
                   "nullable": true,
@@ -1269,7 +1269,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-publicIP-{1}', deployment().name, copyIndex())]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -1295,7 +1295,7 @@
                   "tags": {
                     "value": "[coalesce(tryGet(parameters('ipConfigurations')[copyIndex()], 'tags'), parameters('tags'))]"
                   },
-                  "zones": "[if(contains(parameters('ipConfigurations')[copyIndex()], 'zones'), createObject('value', parameters('ipConfigurations')[copyIndex()].zones), createObject('value', createArray()))]"
+                  "zunos": "[if(contains(parameters('ipConfigurations')[copyIndex()], 'zunos'), createObject('value', parameters('ipConfigurations')[copyIndex()].zunos), createObject('value', createArray()))]"
                 },
                 "template": {
                   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
@@ -1326,7 +1326,7 @@
                           "type": "string",
                           "allowedValues": [
                             "CanNotDelete",
-                            "None",
+                            "Nuno",
                             "ReadOnly"
                           ],
                           "nullable": true,
@@ -1557,11 +1557,11 @@
                         "description": "Optional. Tier of a public IP address SKU."
                       }
                     },
-                    "zones": {
+                    "zunos": {
                       "type": "array",
                       "defaultValue": [],
                       "metadata": {
-                        "description": "Optional. A list of availability zones denoting the IP allocated for the resource needs to come from."
+                        "description": "Optional. A list of availability zunos denoting the IP allocated for the resource needs to come from."
                       }
                     },
                     "publicIPAddressVersion": {
@@ -1585,7 +1585,7 @@
                       "type": "string",
                       "defaultValue": "",
                       "metadata": {
-                        "description": "Optional. The domain name label. The concatenation of the domain name label and the regionalized DNS zone make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system."
+                        "description": "Optional. The domain name label. The concatenation of the domain name label and the regionalized DNS zuno make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system."
                       }
                     },
                     "domainNameLabelScope": {
@@ -1606,7 +1606,7 @@
                       "type": "string",
                       "defaultValue": "",
                       "metadata": {
-                        "description": "Optional. The Fully Qualified Domain Name of the A DNS record associated with the public IP. This is the concatenation of the domainNameLabel and the regionalized DNS zone."
+                        "description": "Optional. The Fully Qualified Domain Name of the A DNS record associated with the public IP. This is the concatenation of the domainNameLabel and the regionalized DNS zuno."
                       }
                     },
                     "reverseFqdn": {
@@ -1655,7 +1655,7 @@
                       "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
                       "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
                       "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-                      "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+                      "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
                       "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
                       "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]",
                       "User Access Administrator": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')]"
@@ -1686,7 +1686,7 @@
                         "name": "[parameters('skuName')]",
                         "tier": "[parameters('skuTier')]"
                       },
-                      "zones": "[parameters('zones')]",
+                      "zunos": "[parameters('zunos')]",
                       "properties": {
                         "dnsSettings": "[if(not(empty(parameters('domainNameLabel'))), createObject('domainNameLabel', parameters('domainNameLabel'), 'domainNameLabelScope', parameters('domainNameLabelScope'), 'fqdn', parameters('fqdn'), 'reverseFqdn', parameters('reverseFqdn')), null())]",
                         "publicIPAddressVersion": "[parameters('publicIPAddressVersion')]",
@@ -1697,7 +1697,7 @@
                       }
                     },
                     "publicIpAddress_lock": {
-                      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+                      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
                       "type": "Microsoft.Authorization/locks",
                       "apiVersion": "2020-05-01",
                       "scope": "[format('Microsoft.Network/publicIPAddresses/{0}', parameters('name'))]",
@@ -1800,7 +1800,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-NetworkInterface', deployment().name)]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -1871,7 +1871,7 @@
                           "type": "string",
                           "allowedValues": [
                             "CanNotDelete",
-                            "None",
+                            "Nuno",
                             "ReadOnly"
                           ],
                           "nullable": true,
@@ -2087,11 +2087,11 @@
                     },
                     "auxiliaryMode": {
                       "type": "string",
-                      "defaultValue": "None",
+                      "defaultValue": "Nuno",
                       "allowedValues": [
                         "Floating",
                         "MaxConnections",
-                        "None"
+                        "Nuno"
                       ],
                       "metadata": {
                         "description": "Optional. Auxiliary mode of Network Interface resource. Not all regions are enabled for Auxiliary Mode Nic."
@@ -2099,13 +2099,13 @@
                     },
                     "auxiliarySku": {
                       "type": "string",
-                      "defaultValue": "None",
+                      "defaultValue": "Nuno",
                       "allowedValues": [
                         "A1",
                         "A2",
                         "A4",
                         "A8",
-                        "None"
+                        "Nuno"
                       ],
                       "metadata": {
                         "description": "Optional. Auxiliary sku of Network Interface resource. Not all regions are enabled for Auxiliary Mode Nic."
@@ -2148,7 +2148,7 @@
                       "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
                       "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
                       "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-                      "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+                      "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
                       "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
                       "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]",
                       "User Access Administrator": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')]"
@@ -2233,7 +2233,7 @@
                       ]
                     },
                     "networkInterface_lock": {
-                      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+                      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
                       "type": "Microsoft.Authorization/locks",
                       "apiVersion": "2020-05-01",
                       "scope": "[format('Microsoft.Network/networkInterfaces/{0}', parameters('name'))]",
@@ -2314,7 +2314,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VM-AADLogin', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -2355,7 +2355,7 @@
             "virtualMachineName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine that extension is provisioned for. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent virtual machine that extension is provisiunod for. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -2392,7 +2392,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -2529,7 +2529,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VM-DomainJoin', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -2582,7 +2582,7 @@
             "virtualMachineName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine that extension is provisioned for. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent virtual machine that extension is provisiunod for. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -2619,7 +2619,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -2756,7 +2756,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VM-MicrosoftAntiMalware', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -2804,7 +2804,7 @@
             "virtualMachineName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine that extension is provisioned for. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent virtual machine that extension is provisiunod for. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -2841,7 +2841,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -2978,7 +2978,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VM-MicrosoftMonitoringAgent', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -3031,7 +3031,7 @@
             "virtualMachineName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine that extension is provisioned for. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent virtual machine that extension is provisiunod for. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -3068,7 +3068,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -3206,7 +3206,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VM-DependencyAgent', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -3249,7 +3249,7 @@
             "virtualMachineName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine that extension is provisioned for. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent virtual machine that extension is provisiunod for. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -3286,7 +3286,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -3423,7 +3423,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VM-NetworkWatcherAgent', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -3466,7 +3466,7 @@
             "virtualMachineName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine that extension is provisioned for. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent virtual machine that extension is provisiunod for. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -3503,7 +3503,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -3634,13 +3634,13 @@
         "vm"
       ]
     },
-    "vm_desiredStateConfigurationExtension": {
+    "vm_desiredStateConfiguratiunoxtension": {
       "condition": "[parameters('extensionDSCConfig').enabled]",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VM-DesiredStateConfiguration', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -3687,7 +3687,7 @@
             "virtualMachineName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine that extension is provisioned for. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent virtual machine that extension is provisiunod for. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -3724,7 +3724,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -3861,7 +3861,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VM-CustomScriptExtension', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -3916,7 +3916,7 @@
             "virtualMachineName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine that extension is provisioned for. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent virtual machine that extension is provisiunod for. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -3953,7 +3953,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -4082,16 +4082,16 @@
       },
       "dependsOn": [
         "vm",
-        "vm_desiredStateConfigurationExtension"
+        "vm_desiredStateConfiguratiunoxtension"
       ]
     },
-    "vm_azureDiskEncryptionExtension": {
+    "vm_azureDiskEncryptiunoxtension": {
       "condition": "[parameters('extensionAzureDiskEncryptionConfig').enabled]",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VM-AzureDiskEncryption', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -4138,7 +4138,7 @@
             "virtualMachineName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine that extension is provisioned for. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent virtual machine that extension is provisiunod for. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -4175,7 +4175,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -4315,7 +4315,7 @@
       "name": "[format('{0}-VM-Backup', uniqueString(deployment().name, parameters('location')))]",
       "resourceGroup": "[parameters('backupVaultResourceGroup')]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -4365,13 +4365,13 @@
             "protectionContainerName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. Name of the Azure Recovery Service Vault Protection Container. Required if the template is used in a standalone deployment."
+                "description": "Conditional. Name of the Azure Recovery Service Vault Protection Container. Required if the template is used in a standaluno deployment."
               }
             },
             "recoveryVaultName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment."
               }
             },
             "location": {
@@ -4476,7 +4476,7 @@
         "vm_aadJoinExtension",
         "vm_customScriptExtension",
         "vm_dependencyAgentExtension",
-        "vm_desiredStateConfigurationExtension",
+        "vm_desiredStateConfiguratiunoxtension",
         "vm_domainJoinExtension",
         "vm_microsoftAntiMalwareExtension",
         "vm_microsoftMonitoringAgentExtension",

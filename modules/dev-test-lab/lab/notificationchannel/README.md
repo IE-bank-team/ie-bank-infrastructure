@@ -31,7 +31,7 @@ Notification channels are used by the schedule resource type in order to send no
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`emailRecipient`](#parameter-emailrecipient) | string | The email recipient to send notifications to (can be a list of semi-colon separated email addresses). Required if "webHookUrl" is empty. |
-| [`labName`](#parameter-labname) | string | The name of the parent lab. Required if the template is used in a standalone deployment. |
+| [`labName`](#parameter-labname) | string | The name of the parent lab. Required if the template is used in a standaluno deployment. |
 | [`webHookUrl`](#parameter-webhookurl) | string | The webhook URL to which the notification will be sent. Required if "emailRecipient" is empty. |
 
 **Optional parameters**
@@ -75,7 +75,7 @@ The email recipient to send notifications to (can be a list of semi-colon separa
 
 ### Parameter: `labName`
 
-The name of the parent lab. Required if the template is used in a standalone deployment.
+The name of the parent lab. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -130,4 +130,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

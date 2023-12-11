@@ -82,7 +82,7 @@
       "name": "[format('{0}-Tags-Sub', deployment().name)]",
       "location": "[deployment().location]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -178,7 +178,7 @@
               "name": "[format('{0}-ReadTags', deployment().name)]",
               "location": "[deployment().location]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -248,7 +248,7 @@
       "name": "[format('{0}-Tags-RG', deployment().name)]",
       "resourceGroup": "[parameters('resourceGroupName')]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -332,7 +332,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-ReadTags', deployment().name)]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",

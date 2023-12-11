@@ -326,4 +326,4 @@ Resource ID of the diagnostic log analytics workspace.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -557,7 +557,7 @@ module disk 'br:bicep/modules/compute.disk:1.0.0' = {
 | :-- | :-- | :-- |
 | [`acceleratedNetwork`](#parameter-acceleratednetwork) | bool | True if the image from which the OS disk is created supports accelerated networking. |
 | [`architecture`](#parameter-architecture) | string | CPU architecture supported by an OS disk. |
-| [`burstingEnabled`](#parameter-burstingenabled) | bool | Set to true to enable bursting beyond the provisioned performance target of the disk. |
+| [`burstingEnabled`](#parameter-burstingenabled) | bool | Set to true to enable bursting beyond the provisiunod performance target of the disk. |
 | [`completionPercent`](#parameter-completionpercent) | int | Percentage complete for the background copy when a resource is created via the CopyStart operation. |
 | [`createOption`](#parameter-createoption) | string | Sources of a disk creation. |
 | [`diskIOPSReadWrite`](#parameter-diskiopsreadwrite) | int | The number of IOPS allowed for this disk; only settable for UltraSSD disks. |
@@ -570,7 +570,7 @@ module disk 'br:bicep/modules/compute.disk:1.0.0' = {
 | [`logicalSectorSize`](#parameter-logicalsectorsize) | int | Logical sector size in bytes for Ultra disks. Supported values are 512 ad 4096. |
 | [`maxShares`](#parameter-maxshares) | int | The maximum number of VMs that can attach to the disk at the same time. Default value is 0. |
 | [`networkAccessPolicy`](#parameter-networkaccesspolicy) | string | Policy for accessing the disk via network. |
-| [`optimizedForFrequentAttach`](#parameter-optimizedforfrequentattach) | bool | Setting this property to true improves reliability and performance of data disks that are frequently (more than 5 times a day) by detached from one virtual machine and attached to another. This property should not be set for disks that are not detached and attached frequently as it causes the disks to not align with the fault domain of the virtual machine. |
+| [`optimizedForFrequentAttach`](#parameter-optimizedforfrequentattach) | bool | Setting this property to true improves reliability and performance of data disks that are frequently (more than 5 times a day) by detached from uno virtual machine and attached to another. This property should not be set for disks that are not detached and attached frequently as it causes the disks to not align with the fault domain of the virtual machine. |
 | [`osType`](#parameter-ostype) | string | Sources of a disk creation. |
 | [`publicNetworkAccess`](#parameter-publicnetworkaccess) | string | Policy for controlling export on the disk. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
@@ -648,7 +648,7 @@ CPU architecture supported by an OS disk.
 
 ### Parameter: `burstingEnabled`
 
-Set to true to enable bursting beyond the provisioned performance target of the disk.
+Set to true to enable bursting beyond the provisiunod performance target of the disk.
 
 - Required: No
 - Type: bool
@@ -764,7 +764,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -810,7 +810,7 @@ Policy for accessing the disk via network.
 
 ### Parameter: `optimizedForFrequentAttach`
 
-Setting this property to true improves reliability and performance of data disks that are frequently (more than 5 times a day) by detached from one virtual machine and attached to another. This property should not be set for disks that are not detached and attached frequently as it causes the disks to not align with the fault domain of the virtual machine.
+Setting this property to true improves reliability and performance of data disks that are frequently (more than 5 times a day) by detached from uno virtual machine and attached to another. This property should not be set for disks that are not detached and attached frequently as it causes the disks to not align with the fault domain of the virtual machine.
 
 - Required: No
 - Type: bool
@@ -987,4 +987,4 @@ If create option is Upload, this is the size of the contents of the upload inclu
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -24,7 +24,7 @@ This module deploys a Redis Cache Enterprise Database.
 | :-- | :-- | :-- |
 | [`persistenceAofFrequency`](#parameter-persistenceaoffrequency) | string | Sets the frequency at which data is written to disk. Required if AOF persistence is enabled. |
 | [`persistenceRdbFrequency`](#parameter-persistencerdbfrequency) | string | Sets the frequency at which a snapshot of the database is created. Required if RDB persistence is enabled. |
-| [`redisCacheEnterpriseName`](#parameter-rediscacheenterprisename) | string | The name of the parent Redis Cache Enterprise Cluster. Required if the template is used in a standalone deployment. |
+| [`redisCacheEnterpriseName`](#parameter-rediscacheenterprisename) | string | The name of the parent Redis Cache Enterprise Cluster. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -76,7 +76,7 @@ Sets the frequency at which a snapshot of the database is created. Required if R
 
 ### Parameter: `redisCacheEnterpriseName`
 
-The name of the parent Redis Cache Enterprise Cluster. Required if the template is used in a standalone deployment.
+The name of the parent Redis Cache Enterprise Cluster. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -199,7 +199,7 @@ TCP port of the database endpoint. Specified at create time. Default is (-1) mea
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

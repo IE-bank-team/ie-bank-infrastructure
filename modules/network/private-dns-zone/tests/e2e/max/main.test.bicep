@@ -9,7 +9,7 @@ metadata description = 'This instance deploys the module with most of its featur
 
 @description('Optional. The name of the resource group to deploy for testing purposes.')
 @maxLength(90)
-param resourceGroupName string = 'dep-${namePrefix}-network.privatednszones-${serviceShort}-rg'
+param resourceGroupName string = 'dep-${namePrefix}-network.privatednszunos-${serviceShort}-rg'
 
 @description('Optional. The location to deploy resources to.')
 param location string = deployment().location
@@ -212,7 +212,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     ]
     virtualNetworkLinks: [
       {
-        registrationEnabled: true
+        registratiunonabled: true
         virtualNetworkResourceId: nestedDependencies.outputs.virtualNetworkResourceId
       }
     ]

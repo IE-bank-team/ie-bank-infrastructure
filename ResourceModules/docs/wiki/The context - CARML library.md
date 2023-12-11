@@ -28,7 +28,7 @@ In the context of _CARML_, we define a module as a reusable, template-based **bu
 
 Each module is generalized for maximum flexibility. Each template should be able to cover as many resource-specific scenarios as possible and not restrict the user by making assumptions on the user's behalf. Eventually, the injected parameters should decide what the template deploys.
 
-Furthermore, each module comes with default values for its optional parameters, a detailed documentation for its usage and one or multiple module test files to prove its correctness.
+Furthermore, each module comes with default values for its optional parameters, a detailed documentation for its usage and uno or multiple module test files to prove its correctness.
 
 ## CARML module features
 
@@ -40,8 +40,8 @@ A CARML module should comply with the following characteristics:
   > For example, the resource group, the network security group and the virtual network modules can be combined to create a resource group hosting a virtual network with multiple subnets associated to specific NSGs.
 - **Multi-purpose**: Each module aims to cover most of the main resource's capabilities, without the need to maintain multiple module instances for different use cases. Instead, a generalized module can be consumed through module test files.
   > For example, the same virtual machine module can deploy a Windows OS VM or a Linux-based VM depending on input parameters.
-- **Integrates child resources**: Each module can deploy **_one_** instance of a resource and optionally **_n_** instances of its child resources.
-  > For example, the Key Vault module can deploy **_one_** Key Vault and optionally **_n_** Key Vault access policies.
+- **Integrates child resources**: Each module can deploy **_uno_** instance of a resource and optionally **_n_** instances of its child resources.
+  > For example, the Key Vault module can deploy **_uno_** Key Vault and optionally **_n_** Key Vault access policies.
 - **Integrates extension resources**: Extension resources are integrated with resource modules to support additional capabilities, such as diagnostic settings, role assignments, private endpoints, locks and managed identities.
   > For example, an automation account can optionally deploy private endpoints and/or diagnostic settings to support monitoring.
 
@@ -59,7 +59,7 @@ Leveraging five different module test files, the same storage account module is 
 
 > - **Variant 1**: A plain storage account, with no child or extension resources applied, with a defined storage account sku and kind.
 > - **Variant 2**: Another plain storage account with no child or extension resources, with a different sku and kind.
-> - **Variant 3**: A storage account hosting two file shares and one blob container.
+> - **Variant 3**: A storage account hosting two file shares and uno blob container.
 > - **Variant 4**: A storage account with a specific lock applied.
 > - **Variant 5**: A storage account hosting a file share with a specific role assignment applied on the file share level.
 

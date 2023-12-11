@@ -30,7 +30,7 @@ This module deploys a Log Analytics Workspace Saved Search.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`logAnalyticsWorkspaceName`](#parameter-loganalyticsworkspacename) | string | The name of the parent Log Analytics workspace. Required if the template is used in a standalone deployment. |
+| [`logAnalyticsWorkspaceName`](#parameter-loganalyticsworkspacename) | string | The name of the parent Log Analytics workspace. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -73,7 +73,7 @@ Kusto Query to be stored.
 
 ### Parameter: `logAnalyticsWorkspaceName`
 
-The name of the parent Log Analytics workspace. Required if the template is used in a standalone deployment.
+The name of the parent Log Analytics workspace. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -137,4 +137,4 @@ The version number of the query language.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

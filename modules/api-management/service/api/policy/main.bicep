@@ -2,10 +2,10 @@ metadata name = 'API Management Service APIs Policies'
 metadata description = 'This module deploys an API Management Service API Policy.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment.')
 param apiManagementServiceName string
 
-@description('Conditional. The name of the parent API. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent API. Required if the template is used in a standaluno deployment.')
 param apiName string
 
 @description('Optional. The name of the policy.')

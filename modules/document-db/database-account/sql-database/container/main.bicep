@@ -2,10 +2,10 @@ metadata name = 'DocumentDB Database Account SQL Database Containers'
 metadata description = 'This module deploys a SQL Database Container in a CosmosDB Account.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Database Account. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Database Account. Required if the template is used in a standaluno deployment.')
 param databaseAccountName string
 
-@description('Conditional. The name of the parent SQL Database. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent SQL Database. Required if the template is used in a standaluno deployment.')
 param sqlDatabaseName string
 
 @description('Required. Name of the container.')
@@ -32,7 +32,7 @@ param autoscaleSettingsMaxThroughput int = -1
 @description('Optional. Tags of the SQL Database resource.')
 param tags object?
 
-@description('Optional. List of paths using which data within the container can be partitioned.')
+@description('Optional. List of paths using which data within the container can be partitiunod.')
 param paths array = []
 
 @description('Optional. Indexing policy of the container.')

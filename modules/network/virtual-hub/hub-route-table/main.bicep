@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The route table name.')
 param name string
 
-@description('Conditional. The name of the parent virtual hub. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent virtual hub. Required if the template is used in a standaluno deployment.')
 param virtualHubName string
 
 @description('Optional. List of labels associated with this route table.')

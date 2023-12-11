@@ -15,7 +15,7 @@
     "apiManagementServiceName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
       }
     },
     "approvalRequired": {
@@ -129,7 +129,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Api-{1}', deployment().name, copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -164,13 +164,13 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
               }
             },
             "productName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Product. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Product. Required if the template is used in a standaluno deployment."
               }
             },
             "enableDefaultTelemetry": {
@@ -243,7 +243,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Group-{1}', deployment().name, copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -278,13 +278,13 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
               }
             },
             "productName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Product. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Product. Required if the template is used in a standaluno deployment."
               }
             },
             "enableDefaultTelemetry": {

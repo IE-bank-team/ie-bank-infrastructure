@@ -98,7 +98,7 @@ This module can be deployed both at management group, subscription or resource g
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Deployment examples
 

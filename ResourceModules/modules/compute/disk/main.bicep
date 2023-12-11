@@ -28,7 +28,7 @@ param sku string
 @description('Optional. CPU architecture supported by an OS disk.')
 param architecture string = ''
 
-@description('Optional. Set to true to enable bursting beyond the provisioned performance target of the disk.')
+@description('Optional. Set to true to enable bursting beyond the provisiunod performance target of the disk.')
 param burstingEnabled bool = false
 
 @description('Optional. Percentage complete for the background copy when a resource is created via the CopyStart operation.')
@@ -97,7 +97,7 @@ param maxShares int = 1
 @description('Optional. Policy for accessing the disk via network.')
 param networkAccessPolicy string = 'DenyAll'
 
-@description('Optional. Setting this property to true improves reliability and performance of data disks that are frequently (more than 5 times a day) by detached from one virtual machine and attached to another. This property should not be set for disks that are not detached and attached frequently as it causes the disks to not align with the fault domain of the virtual machine.')
+@description('Optional. Setting this property to true improves reliability and performance of data disks that are frequently (more than 5 times a day) by detached from uno virtual machine and attached to another. This property should not be set for disks that are not detached and attached frequently as it causes the disks to not align with the fault domain of the virtual machine.')
 param optimizedForFrequentAttach bool = false
 
 @allowed([
@@ -193,7 +193,7 @@ resource disk 'Microsoft.Compute/disks@2022-07-02' = {
   }
 }
 
-resource disk_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource disk_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -237,7 +237,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

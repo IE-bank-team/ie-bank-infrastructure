@@ -92,7 +92,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       kind: 'CanNotDelete'
       name: 'myCustomLockName'
     }
-    publicIpZones: [
+    publicIpZunos: [
       '1'
       '2'
       '3'

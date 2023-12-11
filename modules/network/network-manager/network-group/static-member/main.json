@@ -15,13 +15,13 @@
     "networkManagerName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment."
       }
     },
     "networkGroupName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent network group. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent network group. Required if the template is used in a standaluno deployment."
       }
     },
     "name": {

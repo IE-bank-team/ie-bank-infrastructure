@@ -27,7 +27,7 @@ This module deploys an Event Grid Domain Topic.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`domainName`](#parameter-domainname) | string | The name of the parent Event Grid Domain. Required if the template is used in a standalone deployment. |
+| [`domainName`](#parameter-domainname) | string | The name of the parent Event Grid Domain. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -45,7 +45,7 @@ The name of the Event Grid Domain Topic.
 
 ### Parameter: `domainName`
 
-The name of the parent Event Grid Domain. Required if the template is used in a standalone deployment.
+The name of the parent Event Grid Domain. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -77,4 +77,4 @@ Location for all Resources.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

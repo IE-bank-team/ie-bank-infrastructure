@@ -28,7 +28,7 @@ This module deploys a Site Auth Settings V2 Configuration.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`appName`](#parameter-appname) | string | The name of the parent site resource. Required if the template is used in a standalone deployment. |
+| [`appName`](#parameter-appname) | string | The name of the parent site resource. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -62,7 +62,7 @@ Type of site to deploy.
 
 ### Parameter: `appName`
 
-The name of the parent site resource. Required if the template is used in a standalone deployment.
+The name of the parent site resource. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -86,4 +86,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

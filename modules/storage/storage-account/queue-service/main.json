@@ -125,7 +125,7 @@
       "type": "string",
       "maxLength": 24,
       "metadata": {
-        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
       }
     },
     "queues": {
@@ -215,7 +215,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Queue-{1}', deployment().name, copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -319,7 +319,7 @@
               "type": "string",
               "maxLength": 24,
               "metadata": {
-                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {

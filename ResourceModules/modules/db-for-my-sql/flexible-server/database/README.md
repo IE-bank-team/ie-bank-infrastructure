@@ -27,7 +27,7 @@ This module deploys a DBforMySQL Flexible Server Database.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`flexibleServerName`](#parameter-flexibleservername) | string | The name of the parent MySQL flexible server. Required if the template is used in a standalone deployment. |
+| [`flexibleServerName`](#parameter-flexibleservername) | string | The name of the parent MySQL flexible server. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -47,7 +47,7 @@ The name of the database.
 
 ### Parameter: `flexibleServerName`
 
-The name of the parent MySQL flexible server. Required if the template is used in a standalone deployment.
+The name of the parent MySQL flexible server. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -95,4 +95,4 @@ Location for all resources.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

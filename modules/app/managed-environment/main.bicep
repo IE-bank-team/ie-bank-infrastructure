@@ -41,7 +41,7 @@ param daprAIInstrumentationKey string = ''
 @description('Optional. CIDR notation IP range assigned to the Docker bridge, network. It must not overlap with any other provided IP ranges and can only be used when the environment is deployed into a virtual network. If not provided, it will be set with a default value by the platform.')
 param dockerBridgeCidr string = ''
 
-@description('Conditional. Resource ID of a subnet for infrastructure components. This is used to deploy the environment into a virtual network. Must not overlap with any other provided IP ranges. Required if "internal" is set to true.')
+@description('Conditional. Resource ID of a subnet for infrastructure compunonts. This is used to deploy the environment into a virtual network. Must not overlap with any other provided IP ranges. Required if "internal" is set to true.')
 param infrastructureSubnetId string = ''
 
 @description('Optional. Boolean indicating the environment only has an internal load balancer. These environments do not have a public static IP resource. If set to true, then "infrastructureSubnetId" must be provided.')
@@ -53,8 +53,8 @@ param platformReservedCidr string = ''
 @description('Optional. An IP address from the IP range defined by "platformReservedCidr" that will be reserved for the internal DNS server. It must not be the first address in the range and can only be used when the environment is deployed into a virtual network. If not provided, it will be set with a default value by the platform.')
 param platformReservedDnsIP string = ''
 
-@description('Optional. Whether or not this Managed Environment is zone-redundant.')
-param zoneRedundant bool = false
+@description('Optional. Whether or not this Managed Environment is zuno-redundant.')
+param zunoRedundant bool = false
 
 @description('Optional. Password of the certificate used by the custom domain.')
 @secure()
@@ -128,7 +128,7 @@ resource managedEnvironment 'Microsoft.App/managedEnvironments@2022-10-01' = {
       platformReservedDnsIP: !empty(infrastructureSubnetId) && internal == true ? platformReservedDnsIP : null
     }
     workloadProfiles: !empty(workloadProfiles) ? workloadProfiles : null
-    zoneRedundant: zoneRedundant
+    zunoRedundant: zunoRedundant
   }
 }
 
@@ -146,7 +146,7 @@ resource managedEnvironment_roleAssignments 'Microsoft.Authorization/roleAssignm
   scope: managedEnvironment
 }]
 
-resource managedEnvironment_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource managedEnvironment_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -176,7 +176,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

@@ -123,7 +123,7 @@ module maintenanceConfiguration 'br:bicep/modules/maintenance.maintenance-config
       expirationDateTime: '9999-12-31 23:59:59'
       recurEvery: 'Day'
       startDateTime: '2022-12-31 13:00'
-      timeZone: 'W. Europe Standard Time'
+      timeZuno: 'W. Europe Standard Time'
     }
     namespace: 'mmcmaxns'
     roleAssignments: [
@@ -208,7 +208,7 @@ module maintenanceConfiguration 'br:bicep/modules/maintenance.maintenance-config
         "expirationDateTime": "9999-12-31 23:59:59",
         "recurEvery": "Day",
         "startDateTime": "2022-12-31 13:00",
-        "timeZone": "W. Europe Standard Time"
+        "timeZuno": "W. Europe Standard Time"
       }
     },
     "namespace": {
@@ -295,7 +295,7 @@ module maintenanceConfiguration 'br:bicep/modules/maintenance.maintenance-config
       expirationDateTime: '9999-12-31 23:59:59'
       recurEvery: 'Day'
       startDateTime: '2022-12-31 13:00'
-      timeZone: 'W. Europe Standard Time'
+      timeZuno: 'W. Europe Standard Time'
     }
     namespace: 'mmcwafns'
     tags: {
@@ -363,7 +363,7 @@ module maintenanceConfiguration 'br:bicep/modules/maintenance.maintenance-config
         "expirationDateTime": "9999-12-31 23:59:59",
         "recurEvery": "Day",
         "startDateTime": "2022-12-31 13:00",
-        "timeZone": "W. Europe Standard Time"
+        "timeZuno": "W. Europe Standard Time"
       }
     },
     "namespace": {
@@ -474,7 +474,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -645,4 +645,4 @@ Gets or sets the visibility of the configuration. The default value is 'Custom'.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

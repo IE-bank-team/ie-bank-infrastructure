@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "None",
+            "Nuno",
             "ReadOnly"
           ],
           "nullable": true,
@@ -149,11 +149,11 @@
         "description": "Optional. Tags of the proximity placement group resource."
       }
     },
-    "zones": {
+    "zunos": {
       "type": "array",
       "defaultValue": [],
       "metadata": {
-        "description": "Optional. Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the proximity placement group can be created."
+        "description": "Optional. Specifies the Availability Zuno where virtual machine, virtual machine scale set or availability set associated with the proximity placement group can be created."
       }
     },
     "colocationStatus": {
@@ -208,7 +208,7 @@
       "name": "[parameters('name')]",
       "location": "[parameters('location')]",
       "tags": "[parameters('tags')]",
-      "zones": "[parameters('zones')]",
+      "zunos": "[parameters('zunos')]",
       "properties": {
         "proximityPlacementGroupType": "[parameters('type')]",
         "colocationStatus": "[parameters('colocationStatus')]",
@@ -216,7 +216,7 @@
       }
     },
     "proximityPlacementGroup_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Compute/proximityPlacementGroups/{0}', parameters('name'))]",

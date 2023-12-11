@@ -384,20 +384,20 @@ module expressRouteCircuit 'br:bicep/modules/network.express-route-circuit:1.0.0
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`bandwidthInMbps`](#parameter-bandwidthinmbps) | int | This is the bandwidth in Mbps of the circuit being created. It must exactly match one of the available bandwidth offers List ExpressRoute Service Providers API call. |
+| [`bandwidthInMbps`](#parameter-bandwidthinmbps) | int | This is the bandwidth in Mbps of the circuit being created. It must exactly match uno of the available bandwidth offers List ExpressRoute Service Providers API call. |
 | [`name`](#parameter-name) | string | This is the name of the ExpressRoute circuit. |
-| [`peeringLocation`](#parameter-peeringlocation) | string | This is the name of the peering location and not the ARM resource location. It must exactly match one of the available peering locations from List ExpressRoute Service Providers API call. |
-| [`serviceProviderName`](#parameter-serviceprovidername) | string | This is the name of the ExpressRoute Service Provider. It must exactly match one of the Service Providers from List ExpressRoute Service Providers API call. |
+| [`peeringLocation`](#parameter-peeringlocation) | string | This is the name of the peering location and not the ARM resource location. It must exactly match uno of the available peering locations from List ExpressRoute Service Providers API call. |
+| [`serviceProviderName`](#parameter-serviceprovidername) | string | This is the name of the ExpressRoute Service Provider. It must exactly match uno of the Service Providers from List ExpressRoute Service Providers API call. |
 
 **Optional parameters**
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`allowClassicOperations`](#parameter-allowclassicoperations) | bool | Allow classic operations. You can connect to virtual networks in the classic deployment model by setting allowClassicOperations to true. |
-| [`bandwidthInGbps`](#parameter-bandwidthingbps) | int | The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource. Available when configuring Express Route Direct. Default value of 0 will set the property to null. |
+| [`bandwidthInGbps`](#parameter-bandwidthingbps) | int | The bandwidth of the circuit when the circuit is provisiunod on an ExpressRoutePort resource. Available when configuring Express Route Direct. Default value of 0 will set the property to null. |
 | [`diagnosticSettings`](#parameter-diagnosticsettings) | array | The diagnostic settings of the service. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
-| [`expressRoutePortResourceId`](#parameter-expressrouteportresourceid) | string | The reference to the ExpressRoutePort resource when the circuit is provisioned on an ExpressRoutePort resource. Available when configuring Express Route Direct. |
+| [`expressRoutePortResourceId`](#parameter-expressrouteportresourceid) | string | The reference to the ExpressRoutePort resource when the circuit is provisiunod on an ExpressRoutePort resource. Available when configuring Express Route Direct. |
 | [`globalReachEnabled`](#parameter-globalreachenabled) | bool | Flag denoting global reach status. To enable ExpressRoute Global Reach between different geopolitical regions, your circuits must be Premium SKU. |
 | [`location`](#parameter-location) | string | Location for all resources. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
@@ -415,7 +415,7 @@ module expressRouteCircuit 'br:bicep/modules/network.express-route-circuit:1.0.0
 
 ### Parameter: `bandwidthInMbps`
 
-This is the bandwidth in Mbps of the circuit being created. It must exactly match one of the available bandwidth offers List ExpressRoute Service Providers API call.
+This is the bandwidth in Mbps of the circuit being created. It must exactly match uno of the available bandwidth offers List ExpressRoute Service Providers API call.
 
 - Required: Yes
 - Type: int
@@ -429,14 +429,14 @@ This is the name of the ExpressRoute circuit.
 
 ### Parameter: `peeringLocation`
 
-This is the name of the peering location and not the ARM resource location. It must exactly match one of the available peering locations from List ExpressRoute Service Providers API call.
+This is the name of the peering location and not the ARM resource location. It must exactly match uno of the available peering locations from List ExpressRoute Service Providers API call.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `serviceProviderName`
 
-This is the name of the ExpressRoute Service Provider. It must exactly match one of the Service Providers from List ExpressRoute Service Providers API call.
+This is the name of the ExpressRoute Service Provider. It must exactly match uno of the Service Providers from List ExpressRoute Service Providers API call.
 
 - Required: Yes
 - Type: string
@@ -451,7 +451,7 @@ Allow classic operations. You can connect to virtual networks in the classic dep
 
 ### Parameter: `bandwidthInGbps`
 
-The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource. Available when configuring Express Route Direct. Default value of 0 will set the property to null.
+The bandwidth of the circuit when the circuit is provisiunod on an ExpressRoutePort resource. Available when configuring Express Route Direct. Default value of 0 will set the property to null.
 
 - Required: No
 - Type: int
@@ -558,7 +558,7 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ### Parameter: `expressRoutePortResourceId`
 
-The reference to the ExpressRoutePort resource when the circuit is provisioned on an ExpressRoutePort resource. Available when configuring Express Route Direct.
+The reference to the ExpressRoutePort resource when the circuit is provisiunod on an ExpressRoutePort resource. Available when configuring Express Route Direct.
 
 - Required: No
 - Type: string
@@ -604,7 +604,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -819,4 +819,4 @@ Specifies the identifier that is used to identify the customer.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

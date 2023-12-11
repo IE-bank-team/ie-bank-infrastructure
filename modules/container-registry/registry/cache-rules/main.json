@@ -15,7 +15,7 @@
     "registryName": {
       "type": "string",
       "metadata": {
-        "description": "Required. The name of the parent registry. Required if the template is used in a standalone deployment."
+        "description": "Required. The name of the parent registry. Required if the template is used in a standaluno deployment."
       }
     },
     "name": {

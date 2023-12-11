@@ -16,7 +16,7 @@
     "databaseAccountName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Database Account. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Database Account. Required if the template is used in a standaluno deployment."
       }
     },
     "name": {
@@ -109,7 +109,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-sqldb-{1}', uniqueString(deployment().name, parameters('name')), parameters('containers')[copyIndex()].name)]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -154,13 +154,13 @@
             "databaseAccountName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Database Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Database Account. Required if the template is used in a standaluno deployment."
               }
             },
             "sqlDatabaseName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent SQL Database. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent SQL Database. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -218,7 +218,7 @@
               "type": "array",
               "defaultValue": [],
               "metadata": {
-                "description": "Optional. List of paths using which data within the container can be partitioned."
+                "description": "Optional. List of paths using which data within the container can be partitiunod."
               }
             },
             "indexingPolicy": {

@@ -130,7 +130,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     customerManagedKeyManagedDisk: {
       keyName: nestedDependencies.outputs.keyVaultDiskKeyName
       keyVaultResourceId: nestedDependencies.outputs.keyVaultDiskResourceId
-      rotationToLatestKeyVersionEnabled: true
+      rotationToLatestKeyVersiunonabled: true
     }
     storageAccountName: 'sa${namePrefix}${serviceShort}001'
     storageAccountSkuName: 'Standard_ZRS'
@@ -149,8 +149,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     customVirtualNetworkResourceId: nestedDependencies.outputs.virtualNetworkResourceId
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          nestedDependencies.outputs.privateDNSZoneResourceId
+        privateDnsZunoResourceIds: [
+          nestedDependencies.outputs.privateDNSZunoResourceId
         ]
         subnetResourceId: nestedDependencies.outputs.defaultSubnetResourceId
         tags: {

@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "keyVaultName": {
-        "value": "one-keyvault-uat"
+        "value": "uno-keyvault-uat"
       },
       "location": {
         "value": "US East"

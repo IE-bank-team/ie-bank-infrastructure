@@ -50,7 +50,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "None",
+            "Nuno",
             "ReadOnly"
           ],
           "nullable": true,
@@ -258,7 +258,7 @@
         "PerGB2018",
         "PerNode",
         "Premium",
-        "Standalone",
+        "Standaluno",
         "Standard"
       ],
       "metadata": {
@@ -372,7 +372,7 @@
     "managedIdentities": {
       "$ref": "#/definitions/managedIdentitiesType",
       "metadata": {
-        "description": "Optional. The managed identity definition for this resource. Only one type of identity is supported: system-assigned or user-assigned, but not both."
+        "description": "Optional. The managed identity definition for this resource. Only uno type of identity is supported: system-assigned or user-assigned, but not both."
       }
     },
     "useResourcePermissions": {
@@ -504,7 +504,7 @@
       ]
     },
     "logAnalyticsWorkspace_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.OperationalInsights/workspaces/{0}', parameters('name'))]",
@@ -548,7 +548,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-LAW-StorageInsightsConfig-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -583,7 +583,7 @@
             "logAnalyticsWorkspaceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -712,7 +712,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-LAW-LinkedService-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -747,7 +747,7 @@
             "logAnalyticsWorkspaceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -858,7 +858,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-LAW-LinkedStorageAccount-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -893,7 +893,7 @@
             "logAnalyticsWorkspaceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -986,7 +986,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-LAW-SavedSearch-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1031,7 +1031,7 @@
             "logAnalyticsWorkspaceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -1171,7 +1171,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-LAW-DataExport-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1214,7 +1214,7 @@
             "workspaceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent workspaces. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent workspaces. Required if the template is used in a standaluno deployment."
               }
             },
             "destination": {
@@ -1310,7 +1310,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-LAW-DataSource-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1357,7 +1357,7 @@
             "logAnalyticsWorkspaceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -1558,7 +1558,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-LAW-Table-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1602,7 +1602,7 @@
             "workspaceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent workspaces. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent workspaces. Required if the template is used in a standaluno deployment."
               }
             },
             "enableDefaultTelemetry": {
@@ -1731,7 +1731,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-LAW-Solution-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",

@@ -27,8 +27,8 @@ This module deploys a Site Slot Hybrid Connection Namespace Relay.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`appName`](#parameter-appname) | string | The name of the parent web site. Required if the template is used in a standalone deployment. |
-| [`slotName`](#parameter-slotname) | string | The name of the site slot. Required if the template is used in a standalone deployment. |
+| [`appName`](#parameter-appname) | string | The name of the parent web site. Required if the template is used in a standaluno deployment. |
+| [`slotName`](#parameter-slotname) | string | The name of the site slot. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -47,14 +47,14 @@ The resource ID of the relay namespace hybrid connection.
 
 ### Parameter: `appName`
 
-The name of the parent web site. Required if the template is used in a standalone deployment.
+The name of the parent web site. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `slotName`
 
-The name of the site slot. Required if the template is used in a standalone deployment.
+The name of the site slot. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -94,4 +94,4 @@ Name of the authorization rule send key to use.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

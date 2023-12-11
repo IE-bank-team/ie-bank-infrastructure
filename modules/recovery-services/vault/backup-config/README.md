@@ -21,7 +21,7 @@ This module deploys a Recovery Services Vault Backup Config.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`recoveryVaultName`](#parameter-recoveryvaultname) | string | The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment. |
+| [`recoveryVaultName`](#parameter-recoveryvaultname) | string | The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -39,7 +39,7 @@ This module deploys a Recovery Services Vault Backup Config.
 
 ### Parameter: `recoveryVaultName`
 
-The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment.
+The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -118,8 +118,8 @@ Storage type.
   [
     'GeoRedundant'
     'LocallyRedundant'
-    'ReadAccessGeoZoneRedundant'
-    'ZoneRedundant'
+    'ReadAccessGeoZunoRedundant'
+    'ZunoRedundant'
   ]
   ```
 
@@ -135,8 +135,8 @@ Storage type.
   [
     'GeoRedundant'
     'LocallyRedundant'
-    'ReadAccessGeoZoneRedundant'
-    'ZoneRedundant'
+    'ReadAccessGeoZunoRedundant'
+    'ZunoRedundant'
   ]
   ```
 
@@ -166,4 +166,4 @@ Once a machine is registered against a resource, the storageTypeState is always 
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

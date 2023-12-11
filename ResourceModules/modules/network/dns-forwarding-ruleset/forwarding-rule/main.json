@@ -36,7 +36,7 @@
     "dnsForwardingRulesetName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. Name of the parent DNS Forwarding Ruleset. Required if the template is used in a standalone deployment."
+        "description": "Conditional. Name of the parent DNS Forwarding Ruleset. Required if the template is used in a standaluno deployment."
       }
     },
     "domainName": {

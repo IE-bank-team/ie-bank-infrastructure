@@ -130,7 +130,7 @@
     "serverName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent SQL Server. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent SQL Server. Required if the template is used in a standaluno deployment."
       }
     },
     "collation": {
@@ -201,11 +201,11 @@
         "description": "Optional. The name of the sample schema to apply when creating this database."
       }
     },
-    "zoneRedundant": {
+    "zunoRedundant": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
-        "description": "Optional. Whether or not this database is zone redundant."
+        "description": "Optional. Whether or not this database is zuno redundant."
       }
     },
     "licenseType": {
@@ -332,7 +332,7 @@
       "allowedValues": [
         "Geo",
         "Local",
-        "Zone",
+        "Zuno",
         ""
       ],
       "metadata": {
@@ -403,7 +403,7 @@
         "collation": "[parameters('collation')]",
         "maxSizeBytes": "[parameters('maxSizeBytes')]",
         "sampleName": "[parameters('sampleName')]",
-        "zoneRedundant": "[parameters('zoneRedundant')]",
+        "zunoRedundant": "[parameters('zunoRedundant')]",
         "licenseType": "[parameters('licenseType')]",
         "readScale": "[parameters('readScale')]",
         "minCapacity": "[if(not(empty(parameters('minCapacity'))), json(parameters('minCapacity')), 0)]",
@@ -452,7 +452,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-{1}-shBakRetPol', uniqueString(deployment().name, parameters('location')), parameters('name'))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -573,7 +573,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-{1}-lgBakRetPol', uniqueString(deployment().name, parameters('location')), parameters('name'))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",

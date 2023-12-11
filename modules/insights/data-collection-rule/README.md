@@ -86,7 +86,7 @@ module dataCollectionRule 'br:bicep/modules/insights.data-collection-rule:1.0.0'
     }
     name: 'idcrcusadv001'
     // Non-required parameters
-    dataCollectionEndpointId: '<dataCollectionEndpointId>'
+    dataCollectiunondpointId: '<dataCollectiunondpointId>'
     description: 'Collecting custom text logs with ingestion-time transformation to columns. Expected format of a log line (comma separated values): \'<DateTime><EventLevel><EventCode><Message>\' for example: \'2023-01-25T20:15:05ZERROR404Page not found\''
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     kind: 'Windows'
@@ -203,8 +203,8 @@ module dataCollectionRule 'br:bicep/modules/insights.data-collection-rule:1.0.0'
       "value": "idcrcusadv001"
     },
     // Non-required parameters
-    "dataCollectionEndpointId": {
-      "value": "<dataCollectionEndpointId>"
+    "dataCollectiunondpointId": {
+      "value": "<dataCollectiunondpointId>"
     },
     "description": {
       "value": "Collecting custom text logs with ingestion-time transformation to columns. Expected format of a log line (comma separated values): \"<DateTime>,<EventLevel>,<EventCode>,<Message>\", for example: \"2023-01-25T20:15:05Z,ERROR,404,Page not found\""
@@ -329,7 +329,7 @@ module dataCollectionRule 'br:bicep/modules/insights.data-collection-rule:1.0.0'
     }
     name: 'idcrcusbas001'
     // Non-required parameters
-    dataCollectionEndpointId: '<dataCollectionEndpointId>'
+    dataCollectiunondpointId: '<dataCollectiunondpointId>'
     description: 'Collecting custom text logs without ingestion-time transformation.'
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     kind: 'Windows'
@@ -430,8 +430,8 @@ module dataCollectionRule 'br:bicep/modules/insights.data-collection-rule:1.0.0'
       "value": "idcrcusbas001"
     },
     // Non-required parameters
-    "dataCollectionEndpointId": {
-      "value": "<dataCollectionEndpointId>"
+    "dataCollectiunondpointId": {
+      "value": "<dataCollectiunondpointId>"
     },
     "description": {
       "value": "Collecting custom text logs without ingestion-time transformation."
@@ -533,7 +533,7 @@ module dataCollectionRule 'br:bicep/modules/insights.data-collection-rule:1.0.0'
     }
     name: 'idcrcusiis001'
     // Non-required parameters
-    dataCollectionEndpointId: '<dataCollectionEndpointId>'
+    dataCollectiunondpointId: '<dataCollectiunondpointId>'
     description: 'Collecting IIS logs.'
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     kind: 'Windows'
@@ -613,8 +613,8 @@ module dataCollectionRule 'br:bicep/modules/insights.data-collection-rule:1.0.0'
       "value": "idcrcusiis001"
     },
     // Non-required parameters
-    "dataCollectionEndpointId": {
-      "value": "<dataCollectionEndpointId>"
+    "dataCollectiunondpointId": {
+      "value": "<dataCollectiunondpointId>"
     },
     "description": {
       "value": "Collecting IIS logs."
@@ -1494,7 +1494,7 @@ module dataCollectionRule 'br:bicep/modules/insights.data-collection-rule:1.0.0'
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`dataCollectionEndpointId`](#parameter-datacollectionendpointid) | string | The resource ID of the data collection endpoint that this rule can be used with. |
+| [`dataCollectiunondpointId`](#parameter-datacollectiunondpointid) | string | The resource ID of the data collection endpoint that this rule can be used with. |
 | [`description`](#parameter-description) | string | Description of the data collection rule. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via the Customer Usage Attribution ID (GUID). |
 | [`kind`](#parameter-kind) | string | The kind of the resource. |
@@ -1532,7 +1532,7 @@ The name of the data collection rule. The name is case insensitive.
 - Required: Yes
 - Type: string
 
-### Parameter: `dataCollectionEndpointId`
+### Parameter: `dataCollectiunondpointId`
 
 The resource ID of the data collection endpoint that this rule can be used with.
 
@@ -1603,7 +1603,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -1731,4 +1731,4 @@ Resource tags.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

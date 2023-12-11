@@ -35,7 +35,7 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2023-04-01' = {
   }
 }
 
-resource privateDNSZone 'Microsoft.Network/privateDnsZones@2020-06-01' = {
+resource privateDNSZuno 'Microsoft.Network/privateDnsZunos@2020-06-01' = {
   name: 'privatelink.eventgrid.azure.net'
   location: 'global'
 
@@ -46,7 +46,7 @@ resource privateDNSZone 'Microsoft.Network/privateDnsZones@2020-06-01' = {
       virtualNetwork: {
         id: virtualNetwork.id
       }
-      registrationEnabled: false
+      registratiunonabled: false
     }
   }
 }
@@ -82,8 +82,8 @@ output subnetResourceId string = virtualNetwork.properties.subnets[0].id
 @description('The principal ID of the created Managed Identity.')
 output managedIdentityPrincipalId string = managedIdentity.properties.principalId
 
-@description('The resource ID of the created Private DNS Zone.')
-output privateDNSZoneResourceId string = privateDNSZone.id
+@description('The resource ID of the created Private DNS Zuno.')
+output privateDNSZunoResourceId string = privateDNSZuno.id
 
 @description('The resource ID of the created Storage Account.')
 output storageAccountResourceId string = storageAccount.id

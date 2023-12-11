@@ -4,7 +4,7 @@ metadata description = '''This module deploys a DevTest Lab Notification Channel
 Notification channels are used by the schedule resource type in order to send notifications or events to email addresses and/or webhooks.'''
 metadata owner = 'Azure/module-maintainers'
 
-@sys.description('Conditional. The name of the parent lab. Required if the template is used in a standalone deployment.')
+@sys.description('Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment.')
 param labName string
 
 @allowed([

@@ -27,8 +27,8 @@ This module deploys a SQL Managed Instance Database Backup Long-Term Retention P
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`databaseName`](#parameter-databasename) | string | The name of the parent managed instance database. Required if the template is used in a standalone deployment. |
-| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent managed instance. Required if the template is used in a standalone deployment. |
+| [`databaseName`](#parameter-databasename) | string | The name of the parent managed instance database. Required if the template is used in a standaluno deployment. |
+| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent managed instance. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -49,14 +49,14 @@ The name of the Long Term Retention backup policy. For example "default".
 
 ### Parameter: `databaseName`
 
-The name of the parent managed instance database. Required if the template is used in a standalone deployment.
+The name of the parent managed instance database. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `managedInstanceName`
 
-The name of the parent managed instance. Required if the template is used in a standalone deployment.
+The name of the parent managed instance. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -112,4 +112,4 @@ The yearly retention policy for an LTR backup in an ISO 8601 format.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

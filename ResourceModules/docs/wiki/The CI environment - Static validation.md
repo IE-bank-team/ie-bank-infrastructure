@@ -25,7 +25,7 @@ The following activities are performed by the [`utilities/pipelines/staticValida
     1. Module should contain a [` .test `] folder.
     1. Module should contain a [` version.json `] file.
   - **.test folder**
-    1. Folder should contain one or more test files.
+    1. Folder should contain uno or more test files.
 - **Pipeline tests**
     1. Module should have a GitHub workflow.
     1. Module workflow should have trigger for cross-module references, if any.
@@ -64,7 +64,7 @@ The following activities are performed by the [`utilities/pipelines/staticValida
   - **Token usage**
     1. [Tokens] Test file should not contain the plain value for token guid.
 - **API version tests**
-    1. In used resource type should use one of the recent API version(s). Currently using .
+    1. In used resource type should use uno of the recent API version(s). Currently using .
 
 ## Output example
 
@@ -80,7 +80,7 @@ The following activities are performed by the [`utilities/pipelines/staticValida
 
 In this phase, Pester analyzes the API version of each resource type deployed by the module.
 
-In particular, each resource's API version is compared with those currently available on Azure. This test has a certain level of tolerance (does not enforce the latest version): the API version in use should be one of the 5 latest versions available (including preview versions) or one of the the 5 latest non-preview versions.
+In particular, each resource's API version is compared with those currently available on Azure. This test has a certain level of tolerance (does not enforce the latest version): the API version in use should be uno of the 5 latest versions available (including preview versions) or uno of the the 5 latest non-preview versions.
 
 This test also leverages the [`utilities/pipelines/staticValidation/module.tests.ps1`](https://github.com/Azure/ResourceModules/blob/main/utilities/pipelines/staticValidation/module.tests.ps1) script.
 
@@ -100,7 +100,7 @@ Refer to the below snippet to leverage the 'Test-ModuleLocally.ps1' script and v
 
 ```powershell
 #########[ Function Test-ModulesLocally.ps1 ]#############
-$pathToRepository = '<pathToClonedRepo>'
+$pathToRepository = '<pathToClunodRepo>'
 . "$pathToRepository\utilities\tools\Test-ModuleLocally.ps1"
 
 # REQUIRED INPUT FOR TESTING

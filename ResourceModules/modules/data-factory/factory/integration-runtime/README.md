@@ -29,7 +29,7 @@ This module deploys a Data Factory Managed or Self-Hosted Integration Runtime.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`dataFactoryName`](#parameter-datafactoryname) | string | The name of the parent Azure Data Factory. Required if the template is used in a standalone deployment. |
+| [`dataFactoryName`](#parameter-datafactoryname) | string | The name of the parent Azure Data Factory. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -62,7 +62,7 @@ The type of Integration Runtime.
 
 ### Parameter: `dataFactoryName`
 
-The name of the parent Azure Data Factory. Required if the template is used in a standalone deployment.
+The name of the parent Azure Data Factory. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -102,7 +102,7 @@ Integration Runtime type properties. Required if type is "Managed".
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

@@ -27,14 +27,14 @@ This template deploys Virtual Network Link in a Dns Forwarding Ruleset.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`dnsForwardingRulesetName`](#parameter-dnsforwardingrulesetname) | string | The name of the parent DNS Fowarding Rule Set. Required if the template is used in a standalone deployment. |
+| [`dnsForwardingRulesetName`](#parameter-dnsforwardingrulesetname) | string | The name of the parent DNS Fowarding Rule Set. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
-| [`location`](#parameter-location) | string | The location of the PrivateDNSZone. Should be global. |
+| [`location`](#parameter-location) | string | The location of the PrivateDNSZuno. Should be global. |
 | [`name`](#parameter-name) | string | The name of the virtual network link. |
 
 ### Parameter: `virtualNetworkResourceId`
@@ -46,7 +46,7 @@ Link to another virtual network resource ID.
 
 ### Parameter: `dnsForwardingRulesetName`
 
-The name of the parent DNS Fowarding Rule Set. Required if the template is used in a standalone deployment.
+The name of the parent DNS Fowarding Rule Set. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -61,7 +61,7 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ### Parameter: `location`
 
-The location of the PrivateDNSZone. Should be global.
+The location of the PrivateDNSZuno. Should be global.
 
 - Required: No
 - Type: string
@@ -86,4 +86,4 @@ The name of the virtual network link.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -27,7 +27,7 @@ This module deploys an Azure Container Registry (ACR) Webhook.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`registryName`](#parameter-registryname) | string | The name of the parent registry. Required if the template is used in a standalone deployment. |
+| [`registryName`](#parameter-registryname) | string | The name of the parent registry. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -51,7 +51,7 @@ The service URI for the webhook to post notifications.
 
 ### Parameter: `registryName`
 
-The name of the parent registry. Required if the template is used in a standalone deployment.
+The name of the parent registry. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -150,4 +150,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

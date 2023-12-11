@@ -8,8 +8,8 @@
       "version": "0.23.1.45101",
       "templateHash": "9913746381155072618"
     },
-    "name": "Private DNS Zones",
-    "description": "This module deploys a Private DNS zone.",
+    "name": "Private DNS Zunos",
+    "description": "This module deploys a Private DNS zuno.",
     "owner": "Azure/module-maintainers"
   },
   "definitions": {
@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "None",
+            "Nuno",
             "ReadOnly"
           ],
           "nullable": true,
@@ -109,7 +109,7 @@
     "name": {
       "type": "string",
       "metadata": {
-        "description": "Required. Private DNS zone name."
+        "description": "Required. Private DNS zuno name."
       }
     },
     "a": {
@@ -172,14 +172,14 @@
       "type": "array",
       "defaultValue": [],
       "metadata": {
-        "description": "Optional. Array of custom objects describing vNet links of the DNS zone. Each object should contain properties 'vnetResourceId' and 'registrationEnabled'. The 'vnetResourceId' is a resource ID of a vNet to link, 'registrationEnabled' (bool) enables automatic DNS registration in the zone for the linked vNet."
+        "description": "Optional. Array of custom objects describing vNet links of the DNS zuno. Each object should contain properties 'vnetResourceId' and 'registratiunonabled'. The 'vnetResourceId' is a resource ID of a vNet to link, 'registratiunonabled' (bool) enables automatic DNS registration in the zuno for the linked vNet."
       }
     },
     "location": {
       "type": "string",
       "defaultValue": "global",
       "metadata": {
-        "description": "Optional. The location of the PrivateDNSZone. Should be global."
+        "description": "Optional. The location of the PrivateDNSZuno. Should be global."
       }
     },
     "roleAssignments": {
@@ -214,12 +214,12 @@
     "builtInRoleNames": {
       "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
       "DNS Resolver Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')]",
-      "DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
+      "DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
       "Domain Services Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')]",
       "Domain Services Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')]",
       "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
       "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-      "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+      "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
       "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
       "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]",
       "User Access Administrator": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')]"
@@ -240,36 +240,36 @@
         }
       }
     },
-    "privateDnsZone": {
-      "type": "Microsoft.Network/privateDnsZones",
+    "privateDnsZuno": {
+      "type": "Microsoft.Network/privateDnsZunos",
       "apiVersion": "2020-06-01",
       "name": "[parameters('name')]",
       "location": "[parameters('location')]",
       "tags": "[parameters('tags')]"
     },
-    "privateDnsZone_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+    "privateDnsZuno_lock": {
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
-      "scope": "[format('Microsoft.Network/privateDnsZones/{0}', parameters('name'))]",
+      "scope": "[format('Microsoft.Network/privateDnsZunos/{0}', parameters('name'))]",
       "name": "[coalesce(tryGet(parameters('lock'), 'name'), format('lock-{0}', parameters('name')))]",
       "properties": {
         "level": "[coalesce(tryGet(parameters('lock'), 'kind'), '')]",
         "notes": "[if(equals(tryGet(parameters('lock'), 'kind'), 'CanNotDelete'), 'Cannot delete resource or child resources.', 'Cannot delete or modify the resource or child resources.')]"
       },
       "dependsOn": [
-        "privateDnsZone"
+        "privateDnsZuno"
       ]
     },
-    "privateDnsZone_roleAssignments": {
+    "privateDnsZuno_roleAssignments": {
       "copy": {
-        "name": "privateDnsZone_roleAssignments",
+        "name": "privateDnsZuno_roleAssignments",
         "count": "[length(coalesce(parameters('roleAssignments'), createArray()))]"
       },
       "type": "Microsoft.Authorization/roleAssignments",
       "apiVersion": "2022-04-01",
-      "scope": "[format('Microsoft.Network/privateDnsZones/{0}', parameters('name'))]",
-      "name": "[guid(resourceId('Microsoft.Network/privateDnsZones', parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
+      "scope": "[format('Microsoft.Network/privateDnsZunos/{0}', parameters('name'))]",
+      "name": "[guid(resourceId('Microsoft.Network/privateDnsZunos', parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
       "properties": {
         "roleDefinitionId": "[if(contains(variables('builtInRoleNames'), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName), variables('builtInRoleNames')[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName], coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
         "principalId": "[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId]",
@@ -280,24 +280,24 @@
         "delegatedManagedIdentityResourceId": "[tryGet(coalesce(parameters('roleAssignments'), createArray())[copyIndex()], 'delegatedManagedIdentityResourceId')]"
       },
       "dependsOn": [
-        "privateDnsZone"
+        "privateDnsZuno"
       ]
     },
-    "privateDnsZone_A": {
+    "privateDnsZuno_A": {
       "copy": {
-        "name": "privateDnsZone_A",
+        "name": "privateDnsZuno_A",
         "count": "[length(parameters('a'))]"
       },
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "[format('{0}-PrivateDnsZone-ARecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
+      "name": "[format('{0}-PrivateDnsZuno-ARecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
         "parameters": {
-          "privateDnsZoneName": {
+          "privateDnsZunoName": {
             "value": "[parameters('name')]"
           },
           "name": {
@@ -321,8 +321,8 @@
               "version": "0.23.1.45101",
               "templateHash": "3949185236374936253"
             },
-            "name": "Private DNS Zone A record",
-            "description": "This module deploys a Private DNS Zone A record.",
+            "name": "Private DNS Zuno A record",
+            "description": "This module deploys a Private DNS Zuno A record.",
             "owner": "Azure/module-maintainers"
           },
           "definitions": {
@@ -394,10 +394,10 @@
             }
           },
           "parameters": {
-            "privateDnsZoneName": {
+            "privateDnsZunoName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Private DNS zone. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -445,12 +445,12 @@
             "builtInRoleNames": {
               "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
               "DNS Resolver Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')]",
-              "DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
+              "DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
               "Domain Services Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')]",
               "Domain Services Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')]",
               "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
               "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-              "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+              "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
               "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
               "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]",
               "User Access Administrator": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')]"
@@ -471,23 +471,23 @@
                 }
               }
             },
-            "privateDnsZone": {
+            "privateDnsZuno": {
               "existing": true,
-              "type": "Microsoft.Network/privateDnsZones",
+              "type": "Microsoft.Network/privateDnsZunos",
               "apiVersion": "2020-06-01",
-              "name": "[parameters('privateDnsZoneName')]"
+              "name": "[parameters('privateDnsZunoName')]"
             },
             "A": {
-              "type": "Microsoft.Network/privateDnsZones/A",
+              "type": "Microsoft.Network/privateDnsZunos/A",
               "apiVersion": "2020-06-01",
-              "name": "[format('{0}/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
+              "name": "[format('{0}/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
               "properties": {
                 "aRecords": "[parameters('aRecords')]",
                 "metadata": "[parameters('metadata')]",
                 "ttl": "[parameters('ttl')]"
               },
               "dependsOn": [
-                "privateDnsZone"
+                "privateDnsZuno"
               ]
             },
             "A_roleAssignments": {
@@ -497,8 +497,8 @@
               },
               "type": "Microsoft.Authorization/roleAssignments",
               "apiVersion": "2022-04-01",
-              "scope": "[format('Microsoft.Network/privateDnsZones/{0}/A/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
-              "name": "[guid(resourceId('Microsoft.Network/privateDnsZones/A', parameters('privateDnsZoneName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
+              "scope": "[format('Microsoft.Network/privateDnsZunos/{0}/A/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
+              "name": "[guid(resourceId('Microsoft.Network/privateDnsZunos/A', parameters('privateDnsZunoName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
               "properties": {
                 "roleDefinitionId": "[if(contains(variables('builtInRoleNames'), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName), variables('builtInRoleNames')[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName], coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
                 "principalId": "[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId]",
@@ -526,7 +526,7 @@
               "metadata": {
                 "description": "The resource ID of the deployed A record."
               },
-              "value": "[resourceId('Microsoft.Network/privateDnsZones/A', parameters('privateDnsZoneName'), parameters('name'))]"
+              "value": "[resourceId('Microsoft.Network/privateDnsZunos/A', parameters('privateDnsZunoName'), parameters('name'))]"
             },
             "resourceGroupName": {
               "type": "string",
@@ -539,24 +539,24 @@
         }
       },
       "dependsOn": [
-        "privateDnsZone"
+        "privateDnsZuno"
       ]
     },
-    "privateDnsZone_AAAA": {
+    "privateDnsZuno_AAAA": {
       "copy": {
-        "name": "privateDnsZone_AAAA",
+        "name": "privateDnsZuno_AAAA",
         "count": "[length(parameters('aaaa'))]"
       },
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "[format('{0}-PrivateDnsZone-AAAARecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
+      "name": "[format('{0}-PrivateDnsZuno-AAAARecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
         "parameters": {
-          "privateDnsZoneName": {
+          "privateDnsZunoName": {
             "value": "[parameters('name')]"
           },
           "name": {
@@ -580,8 +580,8 @@
               "version": "0.23.1.45101",
               "templateHash": "18254437762408001216"
             },
-            "name": "Private DNS Zone AAAA record",
-            "description": "This module deploys a Private DNS Zone AAAA record.",
+            "name": "Private DNS Zuno AAAA record",
+            "description": "This module deploys a Private DNS Zuno AAAA record.",
             "owner": "Azure/module-maintainers"
           },
           "definitions": {
@@ -653,10 +653,10 @@
             }
           },
           "parameters": {
-            "privateDnsZoneName": {
+            "privateDnsZunoName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Private DNS zone. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -704,12 +704,12 @@
             "builtInRoleNames": {
               "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
               "DNS Resolver Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')]",
-              "DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
+              "DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
               "Domain Services Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')]",
               "Domain Services Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')]",
               "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
               "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-              "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+              "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
               "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
               "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]",
               "User Access Administrator": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')]"
@@ -730,23 +730,23 @@
                 }
               }
             },
-            "privateDnsZone": {
+            "privateDnsZuno": {
               "existing": true,
-              "type": "Microsoft.Network/privateDnsZones",
+              "type": "Microsoft.Network/privateDnsZunos",
               "apiVersion": "2020-06-01",
-              "name": "[parameters('privateDnsZoneName')]"
+              "name": "[parameters('privateDnsZunoName')]"
             },
             "AAAA": {
-              "type": "Microsoft.Network/privateDnsZones/AAAA",
+              "type": "Microsoft.Network/privateDnsZunos/AAAA",
               "apiVersion": "2020-06-01",
-              "name": "[format('{0}/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
+              "name": "[format('{0}/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
               "properties": {
                 "aaaaRecords": "[parameters('aaaaRecords')]",
                 "metadata": "[parameters('metadata')]",
                 "ttl": "[parameters('ttl')]"
               },
               "dependsOn": [
-                "privateDnsZone"
+                "privateDnsZuno"
               ]
             },
             "AAAA_roleAssignments": {
@@ -756,8 +756,8 @@
               },
               "type": "Microsoft.Authorization/roleAssignments",
               "apiVersion": "2022-04-01",
-              "scope": "[format('Microsoft.Network/privateDnsZones/{0}/AAAA/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
-              "name": "[guid(resourceId('Microsoft.Network/privateDnsZones/AAAA', parameters('privateDnsZoneName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
+              "scope": "[format('Microsoft.Network/privateDnsZunos/{0}/AAAA/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
+              "name": "[guid(resourceId('Microsoft.Network/privateDnsZunos/AAAA', parameters('privateDnsZunoName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
               "properties": {
                 "roleDefinitionId": "[if(contains(variables('builtInRoleNames'), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName), variables('builtInRoleNames')[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName], coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
                 "principalId": "[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId]",
@@ -785,7 +785,7 @@
               "metadata": {
                 "description": "The resource ID of the deployed AAAA record."
               },
-              "value": "[resourceId('Microsoft.Network/privateDnsZones/AAAA', parameters('privateDnsZoneName'), parameters('name'))]"
+              "value": "[resourceId('Microsoft.Network/privateDnsZunos/AAAA', parameters('privateDnsZunoName'), parameters('name'))]"
             },
             "resourceGroupName": {
               "type": "string",
@@ -798,24 +798,24 @@
         }
       },
       "dependsOn": [
-        "privateDnsZone"
+        "privateDnsZuno"
       ]
     },
-    "privateDnsZone_CNAME": {
+    "privateDnsZuno_CNAME": {
       "copy": {
-        "name": "privateDnsZone_CNAME",
+        "name": "privateDnsZuno_CNAME",
         "count": "[length(parameters('cname'))]"
       },
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "[format('{0}-PrivateDnsZone-CNAMERecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
+      "name": "[format('{0}-PrivateDnsZuno-CNAMERecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
         "parameters": {
-          "privateDnsZoneName": {
+          "privateDnsZunoName": {
             "value": "[parameters('name')]"
           },
           "name": {
@@ -839,8 +839,8 @@
               "version": "0.23.1.45101",
               "templateHash": "5688376231538421822"
             },
-            "name": "Private DNS Zone CNAME record",
-            "description": "This module deploys a Private DNS Zone CNAME record.",
+            "name": "Private DNS Zuno CNAME record",
+            "description": "This module deploys a Private DNS Zuno CNAME record.",
             "owner": "Azure/module-maintainers"
           },
           "definitions": {
@@ -912,10 +912,10 @@
             }
           },
           "parameters": {
-            "privateDnsZoneName": {
+            "privateDnsZunoName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Private DNS zone. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -963,12 +963,12 @@
             "builtInRoleNames": {
               "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
               "DNS Resolver Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')]",
-              "DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
+              "DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
               "Domain Services Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')]",
               "Domain Services Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')]",
               "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
               "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-              "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+              "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
               "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
               "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]",
               "User Access Administrator": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')]"
@@ -989,23 +989,23 @@
                 }
               }
             },
-            "privateDnsZone": {
+            "privateDnsZuno": {
               "existing": true,
-              "type": "Microsoft.Network/privateDnsZones",
+              "type": "Microsoft.Network/privateDnsZunos",
               "apiVersion": "2020-06-01",
-              "name": "[parameters('privateDnsZoneName')]"
+              "name": "[parameters('privateDnsZunoName')]"
             },
             "CNAME": {
-              "type": "Microsoft.Network/privateDnsZones/CNAME",
+              "type": "Microsoft.Network/privateDnsZunos/CNAME",
               "apiVersion": "2020-06-01",
-              "name": "[format('{0}/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
+              "name": "[format('{0}/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
               "properties": {
                 "cnameRecord": "[parameters('cnameRecord')]",
                 "metadata": "[parameters('metadata')]",
                 "ttl": "[parameters('ttl')]"
               },
               "dependsOn": [
-                "privateDnsZone"
+                "privateDnsZuno"
               ]
             },
             "CNAME_roleAssignments": {
@@ -1015,8 +1015,8 @@
               },
               "type": "Microsoft.Authorization/roleAssignments",
               "apiVersion": "2022-04-01",
-              "scope": "[format('Microsoft.Network/privateDnsZones/{0}/CNAME/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
-              "name": "[guid(resourceId('Microsoft.Network/privateDnsZones/CNAME', parameters('privateDnsZoneName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
+              "scope": "[format('Microsoft.Network/privateDnsZunos/{0}/CNAME/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
+              "name": "[guid(resourceId('Microsoft.Network/privateDnsZunos/CNAME', parameters('privateDnsZunoName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
               "properties": {
                 "roleDefinitionId": "[if(contains(variables('builtInRoleNames'), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName), variables('builtInRoleNames')[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName], coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
                 "principalId": "[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId]",
@@ -1044,7 +1044,7 @@
               "metadata": {
                 "description": "The resource ID of the deployed CNAME record."
               },
-              "value": "[resourceId('Microsoft.Network/privateDnsZones/CNAME', parameters('privateDnsZoneName'), parameters('name'))]"
+              "value": "[resourceId('Microsoft.Network/privateDnsZunos/CNAME', parameters('privateDnsZunoName'), parameters('name'))]"
             },
             "resourceGroupName": {
               "type": "string",
@@ -1057,24 +1057,24 @@
         }
       },
       "dependsOn": [
-        "privateDnsZone"
+        "privateDnsZuno"
       ]
     },
-    "privateDnsZone_MX": {
+    "privateDnsZuno_MX": {
       "copy": {
-        "name": "privateDnsZone_MX",
+        "name": "privateDnsZuno_MX",
         "count": "[length(parameters('mx'))]"
       },
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "[format('{0}-PrivateDnsZone-MXRecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
+      "name": "[format('{0}-PrivateDnsZuno-MXRecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
         "parameters": {
-          "privateDnsZoneName": {
+          "privateDnsZunoName": {
             "value": "[parameters('name')]"
           },
           "name": {
@@ -1098,8 +1098,8 @@
               "version": "0.23.1.45101",
               "templateHash": "6121652824910092918"
             },
-            "name": "Private DNS Zone MX record",
-            "description": "This module deploys a Private DNS Zone MX record.",
+            "name": "Private DNS Zuno MX record",
+            "description": "This module deploys a Private DNS Zuno MX record.",
             "owner": "Azure/module-maintainers"
           },
           "definitions": {
@@ -1171,10 +1171,10 @@
             }
           },
           "parameters": {
-            "privateDnsZoneName": {
+            "privateDnsZunoName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Private DNS zone. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -1222,12 +1222,12 @@
             "builtInRoleNames": {
               "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
               "DNS Resolver Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')]",
-              "DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
+              "DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
               "Domain Services Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')]",
               "Domain Services Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')]",
               "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
               "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-              "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+              "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
               "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
               "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]",
               "User Access Administrator": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')]"
@@ -1248,23 +1248,23 @@
                 }
               }
             },
-            "privateDnsZone": {
+            "privateDnsZuno": {
               "existing": true,
-              "type": "Microsoft.Network/privateDnsZones",
+              "type": "Microsoft.Network/privateDnsZunos",
               "apiVersion": "2020-06-01",
-              "name": "[parameters('privateDnsZoneName')]"
+              "name": "[parameters('privateDnsZunoName')]"
             },
             "MX": {
-              "type": "Microsoft.Network/privateDnsZones/MX",
+              "type": "Microsoft.Network/privateDnsZunos/MX",
               "apiVersion": "2020-06-01",
-              "name": "[format('{0}/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
+              "name": "[format('{0}/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
               "properties": {
                 "metadata": "[parameters('metadata')]",
                 "mxRecords": "[parameters('mxRecords')]",
                 "ttl": "[parameters('ttl')]"
               },
               "dependsOn": [
-                "privateDnsZone"
+                "privateDnsZuno"
               ]
             },
             "MX_roleAssignments": {
@@ -1274,8 +1274,8 @@
               },
               "type": "Microsoft.Authorization/roleAssignments",
               "apiVersion": "2022-04-01",
-              "scope": "[format('Microsoft.Network/privateDnsZones/{0}/MX/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
-              "name": "[guid(resourceId('Microsoft.Network/privateDnsZones/MX', parameters('privateDnsZoneName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
+              "scope": "[format('Microsoft.Network/privateDnsZunos/{0}/MX/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
+              "name": "[guid(resourceId('Microsoft.Network/privateDnsZunos/MX', parameters('privateDnsZunoName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
               "properties": {
                 "roleDefinitionId": "[if(contains(variables('builtInRoleNames'), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName), variables('builtInRoleNames')[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName], coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
                 "principalId": "[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId]",
@@ -1303,7 +1303,7 @@
               "metadata": {
                 "description": "The resource ID of the deployed MX record."
               },
-              "value": "[resourceId('Microsoft.Network/privateDnsZones/MX', parameters('privateDnsZoneName'), parameters('name'))]"
+              "value": "[resourceId('Microsoft.Network/privateDnsZunos/MX', parameters('privateDnsZunoName'), parameters('name'))]"
             },
             "resourceGroupName": {
               "type": "string",
@@ -1316,24 +1316,24 @@
         }
       },
       "dependsOn": [
-        "privateDnsZone"
+        "privateDnsZuno"
       ]
     },
-    "privateDnsZone_PTR": {
+    "privateDnsZuno_PTR": {
       "copy": {
-        "name": "privateDnsZone_PTR",
+        "name": "privateDnsZuno_PTR",
         "count": "[length(parameters('ptr'))]"
       },
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "[format('{0}-PrivateDnsZone-PTRRecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
+      "name": "[format('{0}-PrivateDnsZuno-PTRRecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
         "parameters": {
-          "privateDnsZoneName": {
+          "privateDnsZunoName": {
             "value": "[parameters('name')]"
           },
           "name": {
@@ -1357,8 +1357,8 @@
               "version": "0.23.1.45101",
               "templateHash": "13755349248029897715"
             },
-            "name": "Private DNS Zone PTR record",
-            "description": "This module deploys a Private DNS Zone PTR record.",
+            "name": "Private DNS Zuno PTR record",
+            "description": "This module deploys a Private DNS Zuno PTR record.",
             "owner": "Azure/module-maintainers"
           },
           "definitions": {
@@ -1430,10 +1430,10 @@
             }
           },
           "parameters": {
-            "privateDnsZoneName": {
+            "privateDnsZunoName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Private DNS zone. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -1481,12 +1481,12 @@
             "builtInRoleNames": {
               "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
               "DNS Resolver Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')]",
-              "DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
+              "DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
               "Domain Services Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')]",
               "Domain Services Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')]",
               "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
               "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-              "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+              "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
               "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
               "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]",
               "User Access Administrator": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')]"
@@ -1514,8 +1514,8 @@
               },
               "type": "Microsoft.Authorization/roleAssignments",
               "apiVersion": "2022-04-01",
-              "scope": "[format('Microsoft.Network/privateDnsZones/{0}/PTR/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
-              "name": "[guid(resourceId('Microsoft.Network/privateDnsZones/PTR', parameters('privateDnsZoneName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
+              "scope": "[format('Microsoft.Network/privateDnsZunos/{0}/PTR/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
+              "name": "[guid(resourceId('Microsoft.Network/privateDnsZunos/PTR', parameters('privateDnsZunoName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
               "properties": {
                 "roleDefinitionId": "[if(contains(variables('builtInRoleNames'), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName), variables('builtInRoleNames')[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName], coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
                 "principalId": "[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId]",
@@ -1529,23 +1529,23 @@
                 "PTR"
               ]
             },
-            "privateDnsZone": {
+            "privateDnsZuno": {
               "existing": true,
-              "type": "Microsoft.Network/privateDnsZones",
+              "type": "Microsoft.Network/privateDnsZunos",
               "apiVersion": "2020-06-01",
-              "name": "[parameters('privateDnsZoneName')]"
+              "name": "[parameters('privateDnsZunoName')]"
             },
             "PTR": {
-              "type": "Microsoft.Network/privateDnsZones/PTR",
+              "type": "Microsoft.Network/privateDnsZunos/PTR",
               "apiVersion": "2020-06-01",
-              "name": "[format('{0}/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
+              "name": "[format('{0}/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
               "properties": {
                 "metadata": "[parameters('metadata')]",
                 "ptrRecords": "[parameters('ptrRecords')]",
                 "ttl": "[parameters('ttl')]"
               },
               "dependsOn": [
-                "privateDnsZone"
+                "privateDnsZuno"
               ]
             }
           },
@@ -1562,7 +1562,7 @@
               "metadata": {
                 "description": "The resource ID of the deployed PTR record."
               },
-              "value": "[resourceId('Microsoft.Network/privateDnsZones/PTR', parameters('privateDnsZoneName'), parameters('name'))]"
+              "value": "[resourceId('Microsoft.Network/privateDnsZunos/PTR', parameters('privateDnsZunoName'), parameters('name'))]"
             },
             "resourceGroupName": {
               "type": "string",
@@ -1575,24 +1575,24 @@
         }
       },
       "dependsOn": [
-        "privateDnsZone"
+        "privateDnsZuno"
       ]
     },
-    "privateDnsZone_SOA": {
+    "privateDnsZuno_SOA": {
       "copy": {
-        "name": "privateDnsZone_SOA",
+        "name": "privateDnsZuno_SOA",
         "count": "[length(parameters('soa'))]"
       },
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "[format('{0}-PrivateDnsZone-SOARecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
+      "name": "[format('{0}-PrivateDnsZuno-SOARecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
         "parameters": {
-          "privateDnsZoneName": {
+          "privateDnsZunoName": {
             "value": "[parameters('name')]"
           },
           "name": {
@@ -1616,8 +1616,8 @@
               "version": "0.23.1.45101",
               "templateHash": "17071167904833492436"
             },
-            "name": "Private DNS Zone SOA record",
-            "description": "This module deploys a Private DNS Zone SOA record.",
+            "name": "Private DNS Zuno SOA record",
+            "description": "This module deploys a Private DNS Zuno SOA record.",
             "owner": "Azure/module-maintainers"
           },
           "definitions": {
@@ -1689,10 +1689,10 @@
             }
           },
           "parameters": {
-            "privateDnsZoneName": {
+            "privateDnsZunoName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Private DNS zone. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -1740,12 +1740,12 @@
             "builtInRoleNames": {
               "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
               "DNS Resolver Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')]",
-              "DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
+              "DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
               "Domain Services Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')]",
               "Domain Services Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')]",
               "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
               "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-              "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+              "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
               "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
               "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]",
               "User Access Administrator": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')]"
@@ -1766,23 +1766,23 @@
                 }
               }
             },
-            "privateDnsZone": {
+            "privateDnsZuno": {
               "existing": true,
-              "type": "Microsoft.Network/privateDnsZones",
+              "type": "Microsoft.Network/privateDnsZunos",
               "apiVersion": "2020-06-01",
-              "name": "[parameters('privateDnsZoneName')]"
+              "name": "[parameters('privateDnsZunoName')]"
             },
             "SOA": {
-              "type": "Microsoft.Network/privateDnsZones/SOA",
+              "type": "Microsoft.Network/privateDnsZunos/SOA",
               "apiVersion": "2020-06-01",
-              "name": "[format('{0}/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
+              "name": "[format('{0}/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
               "properties": {
                 "metadata": "[parameters('metadata')]",
                 "soaRecord": "[parameters('soaRecord')]",
                 "ttl": "[parameters('ttl')]"
               },
               "dependsOn": [
-                "privateDnsZone"
+                "privateDnsZuno"
               ]
             },
             "SOA_roleAssignments": {
@@ -1792,8 +1792,8 @@
               },
               "type": "Microsoft.Authorization/roleAssignments",
               "apiVersion": "2022-04-01",
-              "scope": "[format('Microsoft.Network/privateDnsZones/{0}/SOA/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
-              "name": "[guid(resourceId('Microsoft.Network/privateDnsZones/SOA', parameters('privateDnsZoneName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
+              "scope": "[format('Microsoft.Network/privateDnsZunos/{0}/SOA/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
+              "name": "[guid(resourceId('Microsoft.Network/privateDnsZunos/SOA', parameters('privateDnsZunoName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
               "properties": {
                 "roleDefinitionId": "[if(contains(variables('builtInRoleNames'), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName), variables('builtInRoleNames')[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName], coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
                 "principalId": "[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId]",
@@ -1821,7 +1821,7 @@
               "metadata": {
                 "description": "The resource ID of the deployed SOA record."
               },
-              "value": "[resourceId('Microsoft.Network/privateDnsZones/SOA', parameters('privateDnsZoneName'), parameters('name'))]"
+              "value": "[resourceId('Microsoft.Network/privateDnsZunos/SOA', parameters('privateDnsZunoName'), parameters('name'))]"
             },
             "resourceGroupName": {
               "type": "string",
@@ -1834,24 +1834,24 @@
         }
       },
       "dependsOn": [
-        "privateDnsZone"
+        "privateDnsZuno"
       ]
     },
-    "privateDnsZone_SRV": {
+    "privateDnsZuno_SRV": {
       "copy": {
-        "name": "privateDnsZone_SRV",
+        "name": "privateDnsZuno_SRV",
         "count": "[length(parameters('srv'))]"
       },
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "[format('{0}-PrivateDnsZone-SRVRecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
+      "name": "[format('{0}-PrivateDnsZuno-SRVRecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
         "parameters": {
-          "privateDnsZoneName": {
+          "privateDnsZunoName": {
             "value": "[parameters('name')]"
           },
           "name": {
@@ -1875,8 +1875,8 @@
               "version": "0.23.1.45101",
               "templateHash": "11637594462630888096"
             },
-            "name": "Private DNS Zone SRV record",
-            "description": "This module deploys a Private DNS Zone SRV record.",
+            "name": "Private DNS Zuno SRV record",
+            "description": "This module deploys a Private DNS Zuno SRV record.",
             "owner": "Azure/module-maintainers"
           },
           "definitions": {
@@ -1948,10 +1948,10 @@
             }
           },
           "parameters": {
-            "privateDnsZoneName": {
+            "privateDnsZunoName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Private DNS zone. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -1999,12 +1999,12 @@
             "builtInRoleNames": {
               "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
               "DNS Resolver Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')]",
-              "DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
+              "DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
               "Domain Services Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')]",
               "Domain Services Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')]",
               "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
               "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-              "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+              "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
               "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
               "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]",
               "User Access Administrator": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')]"
@@ -2025,23 +2025,23 @@
                 }
               }
             },
-            "privateDnsZone": {
+            "privateDnsZuno": {
               "existing": true,
-              "type": "Microsoft.Network/privateDnsZones",
+              "type": "Microsoft.Network/privateDnsZunos",
               "apiVersion": "2020-06-01",
-              "name": "[parameters('privateDnsZoneName')]"
+              "name": "[parameters('privateDnsZunoName')]"
             },
             "SRV": {
-              "type": "Microsoft.Network/privateDnsZones/SRV",
+              "type": "Microsoft.Network/privateDnsZunos/SRV",
               "apiVersion": "2020-06-01",
-              "name": "[format('{0}/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
+              "name": "[format('{0}/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
               "properties": {
                 "metadata": "[parameters('metadata')]",
                 "srvRecords": "[parameters('srvRecords')]",
                 "ttl": "[parameters('ttl')]"
               },
               "dependsOn": [
-                "privateDnsZone"
+                "privateDnsZuno"
               ]
             },
             "SRV_roleAssignments": {
@@ -2051,8 +2051,8 @@
               },
               "type": "Microsoft.Authorization/roleAssignments",
               "apiVersion": "2022-04-01",
-              "scope": "[format('Microsoft.Network/privateDnsZones/{0}/SRV/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
-              "name": "[guid(resourceId('Microsoft.Network/privateDnsZones/SRV', parameters('privateDnsZoneName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
+              "scope": "[format('Microsoft.Network/privateDnsZunos/{0}/SRV/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
+              "name": "[guid(resourceId('Microsoft.Network/privateDnsZunos/SRV', parameters('privateDnsZunoName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
               "properties": {
                 "roleDefinitionId": "[if(contains(variables('builtInRoleNames'), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName), variables('builtInRoleNames')[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName], coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
                 "principalId": "[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId]",
@@ -2080,7 +2080,7 @@
               "metadata": {
                 "description": "The resource ID of the deployed SRV record."
               },
-              "value": "[resourceId('Microsoft.Network/privateDnsZones/SRV', parameters('privateDnsZoneName'), parameters('name'))]"
+              "value": "[resourceId('Microsoft.Network/privateDnsZunos/SRV', parameters('privateDnsZunoName'), parameters('name'))]"
             },
             "resourceGroupName": {
               "type": "string",
@@ -2093,24 +2093,24 @@
         }
       },
       "dependsOn": [
-        "privateDnsZone"
+        "privateDnsZuno"
       ]
     },
-    "privateDnsZone_TXT": {
+    "privateDnsZuno_TXT": {
       "copy": {
-        "name": "privateDnsZone_TXT",
+        "name": "privateDnsZuno_TXT",
         "count": "[length(parameters('txt'))]"
       },
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "[format('{0}-PrivateDnsZone-TXTRecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
+      "name": "[format('{0}-PrivateDnsZuno-TXTRecord-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
         "parameters": {
-          "privateDnsZoneName": {
+          "privateDnsZunoName": {
             "value": "[parameters('name')]"
           },
           "name": {
@@ -2134,8 +2134,8 @@
               "version": "0.23.1.45101",
               "templateHash": "61165308790737358"
             },
-            "name": "Private DNS Zone TXT record",
-            "description": "This module deploys a Private DNS Zone TXT record.",
+            "name": "Private DNS Zuno TXT record",
+            "description": "This module deploys a Private DNS Zuno TXT record.",
             "owner": "Azure/module-maintainers"
           },
           "definitions": {
@@ -2207,10 +2207,10 @@
             }
           },
           "parameters": {
-            "privateDnsZoneName": {
+            "privateDnsZunoName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Private DNS zone. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -2258,12 +2258,12 @@
             "builtInRoleNames": {
               "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
               "DNS Resolver Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')]",
-              "DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
+              "DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
               "Domain Services Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')]",
               "Domain Services Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')]",
               "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
               "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-              "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+              "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
               "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
               "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]",
               "User Access Administrator": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')]"
@@ -2284,23 +2284,23 @@
                 }
               }
             },
-            "privateDnsZone": {
+            "privateDnsZuno": {
               "existing": true,
-              "type": "Microsoft.Network/privateDnsZones",
+              "type": "Microsoft.Network/privateDnsZunos",
               "apiVersion": "2020-06-01",
-              "name": "[parameters('privateDnsZoneName')]"
+              "name": "[parameters('privateDnsZunoName')]"
             },
             "TXT": {
-              "type": "Microsoft.Network/privateDnsZones/TXT",
+              "type": "Microsoft.Network/privateDnsZunos/TXT",
               "apiVersion": "2020-06-01",
-              "name": "[format('{0}/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
+              "name": "[format('{0}/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
               "properties": {
                 "metadata": "[parameters('metadata')]",
                 "ttl": "[parameters('ttl')]",
                 "txtRecords": "[parameters('txtRecords')]"
               },
               "dependsOn": [
-                "privateDnsZone"
+                "privateDnsZuno"
               ]
             },
             "TXT_roleAssignments": {
@@ -2310,8 +2310,8 @@
               },
               "type": "Microsoft.Authorization/roleAssignments",
               "apiVersion": "2022-04-01",
-              "scope": "[format('Microsoft.Network/privateDnsZones/{0}/TXT/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
-              "name": "[guid(resourceId('Microsoft.Network/privateDnsZones/TXT', parameters('privateDnsZoneName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
+              "scope": "[format('Microsoft.Network/privateDnsZunos/{0}/TXT/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
+              "name": "[guid(resourceId('Microsoft.Network/privateDnsZunos/TXT', parameters('privateDnsZunoName'), parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
               "properties": {
                 "roleDefinitionId": "[if(contains(variables('builtInRoleNames'), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName), variables('builtInRoleNames')[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName], coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
                 "principalId": "[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId]",
@@ -2339,7 +2339,7 @@
               "metadata": {
                 "description": "The resource ID of the deployed TXT record."
               },
-              "value": "[resourceId('Microsoft.Network/privateDnsZones/TXT', parameters('privateDnsZoneName'), parameters('name'))]"
+              "value": "[resourceId('Microsoft.Network/privateDnsZunos/TXT', parameters('privateDnsZunoName'), parameters('name'))]"
             },
             "resourceGroupName": {
               "type": "string",
@@ -2352,24 +2352,24 @@
         }
       },
       "dependsOn": [
-        "privateDnsZone"
+        "privateDnsZuno"
       ]
     },
-    "privateDnsZone_virtualNetworkLinks": {
+    "privateDnsZuno_virtualNetworkLinks": {
       "copy": {
-        "name": "privateDnsZone_virtualNetworkLinks",
+        "name": "privateDnsZuno_virtualNetworkLinks",
         "count": "[length(parameters('virtualNetworkLinks'))]"
       },
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "[format('{0}-PrivateDnsZone-VirtualNetworkLink-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
+      "name": "[format('{0}-PrivateDnsZuno-VirtualNetworkLink-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
         "parameters": {
-          "privateDnsZoneName": {
+          "privateDnsZunoName": {
             "value": "[parameters('name')]"
           },
           "name": "[if(contains(parameters('virtualNetworkLinks')[copyIndex()], 'name'), createObject('value', parameters('virtualNetworkLinks')[copyIndex()].name), createObject('value', format('{0}-vnetlink', last(split(parameters('virtualNetworkLinks')[copyIndex()].virtualNetworkResourceId, '/')))))]",
@@ -2377,7 +2377,7 @@
             "value": "[parameters('virtualNetworkLinks')[copyIndex()].virtualNetworkResourceId]"
           },
           "location": "[if(contains(parameters('virtualNetworkLinks')[copyIndex()], 'location'), createObject('value', parameters('virtualNetworkLinks')[copyIndex()].location), createObject('value', 'global'))]",
-          "registrationEnabled": "[if(contains(parameters('virtualNetworkLinks')[copyIndex()], 'registrationEnabled'), createObject('value', parameters('virtualNetworkLinks')[copyIndex()].registrationEnabled), createObject('value', false()))]",
+          "registratiunonabled": "[if(contains(parameters('virtualNetworkLinks')[copyIndex()], 'registratiunonabled'), createObject('value', parameters('virtualNetworkLinks')[copyIndex()].registratiunonabled), createObject('value', false()))]",
           "tags": {
             "value": "[coalesce(tryGet(parameters('virtualNetworkLinks')[copyIndex()], 'tags'), parameters('tags'))]"
           },
@@ -2395,15 +2395,15 @@
               "version": "0.23.1.45101",
               "templateHash": "2575181024828080198"
             },
-            "name": "Private DNS Zone Virtual Network Link",
-            "description": "This module deploys a Private DNS Zone Virtual Network Link.",
+            "name": "Private DNS Zuno Virtual Network Link",
+            "description": "This module deploys a Private DNS Zuno Virtual Network Link.",
             "owner": "Azure/module-maintainers"
           },
           "parameters": {
-            "privateDnsZoneName": {
+            "privateDnsZunoName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Private DNS zone. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -2417,7 +2417,7 @@
               "type": "string",
               "defaultValue": "global",
               "metadata": {
-                "description": "Optional. The location of the PrivateDNSZone. Should be global."
+                "description": "Optional. The location of the PrivateDNSZuno. Should be global."
               }
             },
             "tags": {
@@ -2427,11 +2427,11 @@
                 "description": "Optional. Tags of the resource."
               }
             },
-            "registrationEnabled": {
+            "registratiunonabled": {
               "type": "bool",
               "defaultValue": false,
               "metadata": {
-                "description": "Optional. Is auto-registration of virtual machine records in the virtual network in the Private DNS zone enabled?."
+                "description": "Optional. Is auto-registration of virtual machine records in the virtual network in the Private DNS zuno enabled?."
               }
             },
             "virtualNetworkResourceId": {
@@ -2463,26 +2463,26 @@
                 }
               }
             },
-            "privateDnsZone": {
+            "privateDnsZuno": {
               "existing": true,
-              "type": "Microsoft.Network/privateDnsZones",
+              "type": "Microsoft.Network/privateDnsZunos",
               "apiVersion": "2020-06-01",
-              "name": "[parameters('privateDnsZoneName')]"
+              "name": "[parameters('privateDnsZunoName')]"
             },
             "virtualNetworkLink": {
-              "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+              "type": "Microsoft.Network/privateDnsZunos/virtualNetworkLinks",
               "apiVersion": "2020-06-01",
-              "name": "[format('{0}/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
+              "name": "[format('{0}/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
               "location": "[parameters('location')]",
               "tags": "[parameters('tags')]",
               "properties": {
-                "registrationEnabled": "[parameters('registrationEnabled')]",
+                "registratiunonabled": "[parameters('registratiunonabled')]",
                 "virtualNetwork": {
                   "id": "[parameters('virtualNetworkResourceId')]"
                 }
               },
               "dependsOn": [
-                "privateDnsZone"
+                "privateDnsZuno"
               ]
             }
           },
@@ -2499,7 +2499,7 @@
               "metadata": {
                 "description": "The resource ID of the deployed virtual network link."
               },
-              "value": "[resourceId('Microsoft.Network/privateDnsZones/virtualNetworkLinks', parameters('privateDnsZoneName'), parameters('name'))]"
+              "value": "[resourceId('Microsoft.Network/privateDnsZunos/virtualNetworkLinks', parameters('privateDnsZunoName'), parameters('name'))]"
             },
             "resourceGroupName": {
               "type": "string",
@@ -2519,7 +2519,7 @@
         }
       },
       "dependsOn": [
-        "privateDnsZone"
+        "privateDnsZuno"
       ]
     }
   },
@@ -2527,30 +2527,30 @@
     "resourceGroupName": {
       "type": "string",
       "metadata": {
-        "description": "The resource group the private DNS zone was deployed into."
+        "description": "The resource group the private DNS zuno was deployed into."
       },
       "value": "[resourceGroup().name]"
     },
     "name": {
       "type": "string",
       "metadata": {
-        "description": "The name of the private DNS zone."
+        "description": "The name of the private DNS zuno."
       },
       "value": "[parameters('name')]"
     },
     "resourceId": {
       "type": "string",
       "metadata": {
-        "description": "The resource ID of the private DNS zone."
+        "description": "The resource ID of the private DNS zuno."
       },
-      "value": "[resourceId('Microsoft.Network/privateDnsZones', parameters('name'))]"
+      "value": "[resourceId('Microsoft.Network/privateDnsZunos', parameters('name'))]"
     },
     "location": {
       "type": "string",
       "metadata": {
         "description": "The location the resource was deployed into."
       },
-      "value": "[reference('privateDnsZone', '2020-06-01', 'full').location]"
+      "value": "[reference('privateDnsZuno', '2020-06-01', 'full').location]"
     }
   }
 }

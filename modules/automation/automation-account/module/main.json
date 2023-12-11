@@ -22,7 +22,7 @@
     "automationAccountName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment."
       }
     },
     "uri": {

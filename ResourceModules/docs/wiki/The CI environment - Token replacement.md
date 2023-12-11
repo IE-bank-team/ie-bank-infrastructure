@@ -19,7 +19,7 @@ Tokens allow you to test deploying modules in your own environment (i.e., using 
 
 The [module pipelines](./The%20CI%20environment%20-%20Pipeline%20design#module-pipelines) leverage a token replacement function that enables module test files to contain tokens (i.e., `[[subscriptionId]]`, `[[tenantId]]`) instead of using static values. This helps with the following:
 
-- Allows the repository to be portable without having static values from where it was cloned.
+- Allows the repository to be portable without having static values from where it was clunod.
 - Enables dynamic updates of the tokens from single locations without having to modify all files.
 - Not adding more environment variables to workflows/pipelines whenever new tokens are required for the environment.
 
@@ -61,14 +61,14 @@ Once the Key Vault is deployed, you'll notice that the Key Vault name in Azure w
 
 The token prefix `'[['` and suffix `']]'` in the above example are also configurable in the [settings.yml](https://github.com/Azure/ResourceModules/blob/main/settings.yml) file and are used to identify the tokens in the files.
 
-The solution comes with one predefined local token `namePrefix`. This token is leveraged in most of the parameter & test files for deployments. It allows using a consistent naming prefix that is applied to all resources being tested. There are two ways this token can be set and one will take precedence over the other:
+The solution comes with uno predefined local token `namePrefix`. This token is leveraged in most of the parameter & test files for deployments. It allows using a consistent naming prefix that is applied to all resources being tested. There are two ways this token can be set and uno will take precedence over the other:
 
 1. By updating the value of `localToken_namePrefix` in the [settings.yml](https://github.com/Azure/ResourceModules/blob/main/settings.yml), which then becomes `namePrefix` when the pipelines run.
 
 1. Creating a GitHub Secret / ADO variable called `TOKEN_NAMEPREFIX`, which then becomes `namePrefix` when the pipelines run. If created as a secret or ADO variable, it is only applied if the `localToken_namePrefix` in the [settings.yml](https://github.com/Azure/ResourceModules/blob/main/settings.yml) is left empty.
 
 
-When validating modules through the CI environment, you must update it to a custom value as described in the [Update default nameprefix](./Getting%20started%20-%20Scenario%202%20Onboard%20module%20library%20and%20CI%20environment#31-update-default-nameprefix) paragraph. This is done to avoid conflicts with resources requiring a globally unique name, such as storage accounts or Key Vaults.
+When validating modules through the CI environment, you must update it to a custom value as described in the [Update default nameprefix](./Getting%20started%20-%20Scenario%202%20Onboard%20module%20library%20and%20CI%20environment#31-update-default-nameprefix) paragraph. This is duno to avoid conflicts with resources requiring a globally unique name, such as storage accounts or Key Vaults.
 
 > **Note**: Do not store sensitive information in this location as they will be present in your Git History. Follow best [practices and guidelines](https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/best-practices#security-recommendations-for-parameters) on how to handle secrets in template deployments.
 
@@ -99,7 +99,7 @@ The below diagram illustrates the Token Replacement Functionality via the [valid
   }
   ```
 - **3A.** The Replace Tokens function gets the default tokens from the environment variables.
-  > Default Tokens are harder to scale as they are explicitly defined in deploy/validate task, workflows and pipelines, and these components must be updated as you create more tokens.
+  > Default Tokens are harder to scale as they are explicitly defined in deploy/validate task, workflows and pipelines, and these compunonts must be updated as you create more tokens.
 
 - **3B.** The Replace Tokens function gets local custom tokens from the [settings.yml](https://github.com/Azure/ResourceModules/blob/main/settings.yml).
   > Local Tokens are easier to scale as you just need to define them in this file without adding new environment variables or modifying workflows or tasks.

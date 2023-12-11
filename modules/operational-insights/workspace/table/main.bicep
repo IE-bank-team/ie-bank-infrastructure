@@ -9,7 +9,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the table.')
 param name string
 
-@description('Conditional. The name of the parent workspaces. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent workspaces. Required if the template is used in a standaluno deployment.')
 param workspaceName string
 
 @description('Optional. Enable telemetry via the Customer Usage Attribution ID (GUID).')

@@ -690,7 +690,7 @@ The subscription ID of the subscription to be exempted from the policy assignmen
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

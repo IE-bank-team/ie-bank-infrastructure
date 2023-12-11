@@ -8,7 +8,7 @@ param name string
 @description('Required. The short name of the action group.')
 param groupShortName string
 
-@description('Optional. Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications.')
+@description('Optional. Indicates whether this action group is enabled. If an action group is not enabled, then nuno of its receivers will receive communications.')
 param enabled bool = true
 
 @description('Optional. Array of role assignment objects that contain the \'roleDefinitionIdOrName\' and \'principalId\' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: \'/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11\'.')

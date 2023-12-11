@@ -27,7 +27,7 @@ This module deploys a Load Balancer Backend Address Pools.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`loadBalancerName`](#parameter-loadbalancername) | string | The name of the parent load balancer. Required if the template is used in a standalone deployment. |
+| [`loadBalancerName`](#parameter-loadbalancername) | string | The name of the parent load balancer. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -48,7 +48,7 @@ The name of the backend address pool.
 
 ### Parameter: `loadBalancerName`
 
-The name of the parent load balancer. Required if the template is used in a standalone deployment.
+The name of the parent load balancer. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -112,4 +112,4 @@ An array of gateway load balancer tunnel interfaces.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -29,7 +29,7 @@ This module deploys a DBforMySQL Flexible Server Administrator.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`flexibleServerName`](#parameter-flexibleservername) | string | The name of the parent DBforMySQL flexible server. Required if the template is used in a standalone deployment. |
+| [`flexibleServerName`](#parameter-flexibleservername) | string | The name of the parent DBforMySQL flexible server. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -62,7 +62,7 @@ SID (object ID) of the server administrator.
 
 ### Parameter: `flexibleServerName`
 
-The name of the parent DBforMySQL flexible server. Required if the template is used in a standalone deployment.
+The name of the parent DBforMySQL flexible server. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -102,4 +102,4 @@ The tenantId of the Active Directory administrator.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

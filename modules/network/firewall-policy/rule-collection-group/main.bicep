@@ -2,7 +2,7 @@ metadata name = 'Firewall Policy Rule Collection Groups'
 metadata description = 'This module deploys a Firewall Policy Rule Collection Group.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Firewall Policy. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Firewall Policy. Required if the template is used in a standaluno deployment.')
 param firewallPolicyName string
 
 @description('Required. The name of the rule collection group to deploy.')

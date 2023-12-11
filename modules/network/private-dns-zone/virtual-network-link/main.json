@@ -8,15 +8,15 @@
       "version": "0.22.6.54827",
       "templateHash": "14262386012436592269"
     },
-    "name": "Private DNS Zone Virtual Network Link",
-    "description": "This module deploys a Private DNS Zone Virtual Network Link.",
+    "name": "Private DNS Zuno Virtual Network Link",
+    "description": "This module deploys a Private DNS Zuno Virtual Network Link.",
     "owner": "Azure/module-maintainers"
   },
   "parameters": {
-    "privateDnsZoneName": {
+    "privateDnsZunoName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Private DNS zone. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment."
       }
     },
     "name": {
@@ -30,7 +30,7 @@
       "type": "string",
       "defaultValue": "global",
       "metadata": {
-        "description": "Optional. The location of the PrivateDNSZone. Should be global."
+        "description": "Optional. The location of the PrivateDNSZuno. Should be global."
       }
     },
     "tags": {
@@ -40,11 +40,11 @@
         "description": "Optional. Tags of the resource."
       }
     },
-    "registrationEnabled": {
+    "registratiunonabled": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
-        "description": "Optional. Is auto-registration of virtual machine records in the virtual network in the Private DNS zone enabled?."
+        "description": "Optional. Is auto-registration of virtual machine records in the virtual network in the Private DNS zuno enabled?."
       }
     },
     "virtualNetworkResourceId": {
@@ -76,26 +76,26 @@
         }
       }
     },
-    "privateDnsZone": {
+    "privateDnsZuno": {
       "existing": true,
-      "type": "Microsoft.Network/privateDnsZones",
+      "type": "Microsoft.Network/privateDnsZunos",
       "apiVersion": "2020-06-01",
-      "name": "[parameters('privateDnsZoneName')]"
+      "name": "[parameters('privateDnsZunoName')]"
     },
     "virtualNetworkLink": {
-      "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+      "type": "Microsoft.Network/privateDnsZunos/virtualNetworkLinks",
       "apiVersion": "2020-06-01",
-      "name": "[format('{0}/{1}', parameters('privateDnsZoneName'), parameters('name'))]",
+      "name": "[format('{0}/{1}', parameters('privateDnsZunoName'), parameters('name'))]",
       "location": "[parameters('location')]",
       "tags": "[parameters('tags')]",
       "properties": {
-        "registrationEnabled": "[parameters('registrationEnabled')]",
+        "registratiunonabled": "[parameters('registratiunonabled')]",
         "virtualNetwork": {
           "id": "[parameters('virtualNetworkResourceId')]"
         }
       },
       "dependsOn": [
-        "privateDnsZone"
+        "privateDnsZuno"
       ]
     }
   },
@@ -112,7 +112,7 @@
       "metadata": {
         "description": "The resource ID of the deployed virtual network link."
       },
-      "value": "[resourceId('Microsoft.Network/privateDnsZones/virtualNetworkLinks', parameters('privateDnsZoneName'), parameters('name'))]"
+      "value": "[resourceId('Microsoft.Network/privateDnsZunos/virtualNetworkLinks', parameters('privateDnsZunoName'), parameters('name'))]"
     },
     "resourceGroupName": {
       "type": "string",

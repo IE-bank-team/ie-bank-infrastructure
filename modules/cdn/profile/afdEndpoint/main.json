@@ -22,7 +22,7 @@
     "profileName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent CDN profile. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent CDN profile. Required if the template is used in a standaluno deployment."
       }
     },
     "location": {
@@ -125,7 +125,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Profile-AfdEndpoint-Route', uniqueString(deployment().name, parameters('routes')[copyIndex()].name))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",

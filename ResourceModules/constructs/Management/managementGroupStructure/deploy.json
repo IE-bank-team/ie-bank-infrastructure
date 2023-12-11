@@ -23,7 +23,7 @@
             "API Management Service Reader Role": "/providers/Microsoft.Authorization/roleDefinitions/71522526-b88f-4d52-b57f-d31fc3546d0d",
             "App Configuration Data Owner": "/providers/Microsoft.Authorization/roleDefinitions/5ae67dd6-50cb-40e7-96ff-dc2bfa4b606b",
             "App Configuration Data Reader": "/providers/Microsoft.Authorization/roleDefinitions/516239f1-63e1-4d78-a4de-a74fb236a071",
-            "Application Insights Component Contributor": "/providers/Microsoft.Authorization/roleDefinitions/ae349356-3a1b-4a5e-921d-050484c6347e",
+            "Application Insights Compunont Contributor": "/providers/Microsoft.Authorization/roleDefinitions/ae349356-3a1b-4a5e-921d-050484c6347e",
             "Application Insights Snapshot Debugger": "/providers/Microsoft.Authorization/roleDefinitions/08954f03-6346-4c2e-81c0-ec3a5cfae23b",
             "Attestation Contributor": "/providers/Microsoft.Authorization/roleDefinitions/bbf86eb8-f7b4-4cce-96e4-18cddf81d86e",
             "Attestation Reader": "/providers/Microsoft.Authorization/roleDefinitions/fd1bd22b-8476-40bc-a0bc-69b95687b9f3",
@@ -91,7 +91,7 @@
             "Data Purger": "/providers/Microsoft.Authorization/roleDefinitions/150f5e0c-0603-4f03-8c7f-cf70034c4e90",
             "Desktop Virtualization User": "/providers/Microsoft.Authorization/roleDefinitions/1d18fff3-a72a-46b5-b4a9-0b38a3cd7e63",
             "DevTest Labs User": "/providers/Microsoft.Authorization/roleDefinitions/76283e04-6283-4c54-8f91-bcf1374a3c64",
-            "DNS Zone Contributor": "/providers/Microsoft.Authorization/roleDefinitions/befefa01-2a29-4197-83a8-272ff33ce314",
+            "DNS Zuno Contributor": "/providers/Microsoft.Authorization/roleDefinitions/befefa01-2a29-4197-83a8-272ff33ce314",
             "DocumentDB Account Contributor": "/providers/Microsoft.Authorization/roleDefinitions/5bd9cd88-fe45-4216-938b-f97437e15450",
             "EventGrid EventSubscription Contributor": "/providers/Microsoft.Authorization/roleDefinitions/428e0ff0-5e57-4d9c-a221-2c70d0e0a443",
             "EventGrid EventSubscription Reader": "/providers/Microsoft.Authorization/roleDefinitions/2414bbcf-6497-4faf-8c65-045460748405",
@@ -136,7 +136,7 @@
             "Object Understanding Account Owner": "/providers/Microsoft.Authorization/roleDefinitions/4dd61c23-6743-42fe-a388-d8bdd41cb745",
             "Owner": "/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
             "Policy Insights Data Writer (Preview)": "/providers/Microsoft.Authorization/roleDefinitions/66bb4e9e-b016-4a94-8249-4c0511c2be84",
-            "Private DNS Zone Contributor": "/providers/Microsoft.Authorization/roleDefinitions/b12aa53e-6015-4669-85d0-8515ebb3ae7f",
+            "Private DNS Zuno Contributor": "/providers/Microsoft.Authorization/roleDefinitions/b12aa53e-6015-4669-85d0-8515ebb3ae7f",
             "Reader": "/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7",
             "Reader and Data Access": "/providers/Microsoft.Authorization/roleDefinitions/c12c1c16-33a1-487b-954d-41c89c60f349",
             "Redis Cache Contributor": "/providers/Microsoft.Authorization/roleDefinitions/e0f68234-74aa-48ed-b826-c38b57376e17",
@@ -279,7 +279,7 @@
             },
             "properties": {
                 "mode": "Incremental",
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                     "scope": "inner"
                 },
                 "parameters": {
@@ -335,7 +335,7 @@
                             },
                             "properties": {
                                 "mode": "Incremental",
-                                "expressionEvaluationOptions": {
+                                "expressiunovaluationOptions": {
                                     "scope": "inner"
                                 },
                                 "parameters": {

@@ -105,11 +105,11 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       }
     ]
     minimumTlsVersion: '1.2'
-    zoneRedundant: true
+    zunoRedundant: true
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          nestedDependencies.outputs.privateDNSZoneResourceId
+        privateDnsZunoResourceIds: [
+          nestedDependencies.outputs.privateDNSZunoResourceId
         ]
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
         tags: {

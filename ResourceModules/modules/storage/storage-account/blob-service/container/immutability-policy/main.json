@@ -16,13 +16,13 @@
       "type": "string",
       "maxLength": 24,
       "metadata": {
-        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
       }
     },
     "containerName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent container to apply the policy to. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent container to apply the policy to. Required if the template is used in a standaluno deployment."
       }
     },
     "immutabilityPeriodSinceCreationInDays": {

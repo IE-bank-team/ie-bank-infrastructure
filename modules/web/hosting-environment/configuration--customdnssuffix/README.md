@@ -29,7 +29,7 @@ This module deploys a Hosting Environment Custom DNS Suffix Configuration.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`hostingEnvironmentName`](#parameter-hostingenvironmentname) | string | The name of the parent Hosting Environment. Required if the template is used in a standalone deployment. |
+| [`hostingEnvironmentName`](#parameter-hostingenvironmentname) | string | The name of the parent Hosting Environment. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -60,7 +60,7 @@ The user-assigned identity to use for resolving the key vault certificate refere
 
 ### Parameter: `hostingEnvironmentName`
 
-The name of the parent Hosting Environment. Required if the template is used in a standalone deployment.
+The name of the parent Hosting Environment. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -84,4 +84,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

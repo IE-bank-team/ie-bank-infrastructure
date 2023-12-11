@@ -3,7 +3,7 @@ The repository is built so that you can create your own 1:1 instance and thus re
 This requires several steps:
 
 1. [Configure your Azure environment](#1-configure-your-azure-environment)
-1. [Fork/clone the repository into your DevOps environment](#2-forkclone-the-repository-into-your-devops-environment)
+1. [Fork/cluno the repository into your DevOps environment](#2-forkcluno-the-repository-into-your-devops-environment)
 1. [Configure the CI environment](#3-configure-the-ci-environment)
 1. [Manual dependencies](#4-manual-dependencies)
 1. [(Optional) Convert library to ARM](#5-optional-convert-library-to-arm)
@@ -30,7 +30,7 @@ In this first step, make sure you
 
 > **Note:** The Service Principal must be able to query its own details in the Azure Active Directory (AAD). To that end, ensure it has at least the (default) role 'Cloud application administrator'.
 
-# 2. Fork/clone the repository into your DevOps environment
+# 2. Fork/cluno the repository into your DevOps environment
 
 Next, you'll want to create your own copy of the code. Depending on the repository environment you want to use (GitHub or Azure DevOps), the setup will be slightly different.
 
@@ -43,7 +43,7 @@ Next, you'll want to create your own copy of the code. Depending on the reposito
 
 For GitHub, you have two choices depending on your planned repository visibility:
 - In case of a **public** repository, we recommend to create a simple fork into the target organization. As the CARML source repository is public, a fork must be public too.
-- If you need a **private** version instead, we recommend you create your target repository, download/clone the CARML repository (ref. 'how to' below) and upload the content to the created target repository
+- If you need a **private** version instead, we recommend you create your target repository, download/cluno the CARML repository (ref. 'how to' below) and upload the content to the created target repository
   > **Note:** This disables the feature to 'fetch' from the upstream (CARML) repository. As a result, you have to port upstream updates manually.
 
 </details>
@@ -51,7 +51,7 @@ For GitHub, you have two choices depending on your planned repository visibility
 <details>
 <summary>Azure DevOps Repository</summary>
 
-For a **private** Azure DevOps git, we recommend you create your target repository, download/clone the CARML repository (ref. 'how to' below) and upload the content to the created target repository.
+For a **private** Azure DevOps git, we recommend you create your target repository, download/cluno the CARML repository (ref. 'how to' below) and upload the content to the created target repository.
 > **Note:** This disables the feature to 'fetch' from the upstream (CARML) repository. As a result, you have to port upstream updates manually.
 
 </details>
@@ -59,19 +59,19 @@ For a **private** Azure DevOps git, we recommend you create your target reposito
 <p><p>
 
 <details>
-<summary><b>How to:</b> Clone/download the repository</summary>
-To save a local copy of the repository, you can either clone the repository or download it as a `.zip` file.
-A clone is a direct reference to the source repository which enables you to pull updates as they happen in the source repository. To achieve this, you have to have `Git` installed and run the following command:
+<summary><b>How to:</b> Cluno/download the repository</summary>
+To save a local copy of the repository, you can either cluno the repository or download it as a `.zip` file.
+A cluno is a direct reference to the source repository which enables you to pull updates as they happen in the source repository. To achieve this, you have to have `Git` installed and run the following command:
 
 ```PowerShell
-  git clone 'https://github.com/Azure/ResourceModules.git'
+  git cluno 'https://github.com/Azure/ResourceModules.git'
 ```
 
 from a command-line of your choice (e.g., PowerShell).
 
 If you just want to have a copy of the repository's content, you can instead download it in `.zip` format. You can do this by navigating to the repository folder of your choice (for example, root), then select the `<> Code` button on the top left and click on `Download ZIP` on the opening blade.
 
- <img src="./media/GettingStarted/cloneDownloadRepo.png" alt="How to download repository" height="266">
+ <img src="./media/GettingStarted/clunoDownloadRepo.png" alt="How to download repository" height="266">
 
 Alternatively, you can also do the same with a specific release by navigating to the [releases](https://github.com/Azure/ResourceModules/releases) page, scroll to the `'Assets'` section at the bottom end of the release you'd like to get and download the packaged release (as it was when the release was created) with a simple click on the `'Source code'` package (e.g., `Source code (zip)`) itself.
 
@@ -99,7 +99,7 @@ To configure the CI environment you have to perform several steps:
 - [3.1 Update default `namePrefix`](#31-update-default-nameprefix)
 - [3.2 Set up CI-environment-specific configuration](#32-set-up-ci-environment-specific-configuration)
 
-> **Note:** While you can use the browser, we recommend that you clone all files to your local machine and update them using, for example, Visual Studio Code.
+> **Note:** While you can use the browser, we recommend that you cluno all files to your local machine and update them using, for example, Visual Studio Code.
 
 ## 3.1 Update default `namePrefix`
 
@@ -183,7 +183,7 @@ To use the environment's pipelines you should use the information you gathered d
 > {"clientId": "<client_id>", "clientSecret": "<client_secret>", "subscriptionId": "<subscriptionId>", "tenantId": "<tenant_id>" }
 > ```
 >
-> **Make sure you create this object as one continuous string as shown above** - using the information you collected during [Step 1](#1-configure-your-azure-environment). Failing to format the secret as above, causes GitHub to consider each line of the JSON object as a separate secret string. If you're interested, you can find more information about this object [here](https://github.com/Azure/login#configure-deployment-credentials).
+> **Make sure you create this object as uno continuous string as shown above** - using the information you collected during [Step 1](#1-configure-your-azure-environment). Failing to format the secret as above, causes GitHub to consider each line of the JSON object as a separate secret string. If you're interested, you can find more information about this object [here](https://github.com/Azure/login#configure-deployment-credentials).
 
 ### 3.2.2 Set up settings file
 
@@ -281,7 +281,7 @@ For _Azure DevOps_, you have to perform the following environment-specific steps
 
 The service connection must be set up in the project's settings under _Pipelines: Service connections_ (a step by step guide can be found [here](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml)).
 
-It's name must match the one configured as `serviceConnection` in the [setting.yml file](#323-set-up-settings-file)'s 'General' section. For example: `serviceConnection: 'CARML-Tenant-Connection'`.
+It's name must match the uno configured as `serviceConnection` in the [setting.yml file](#323-set-up-settings-file)'s 'General' section. For example: `serviceConnection: 'CARML-Tenant-Connection'`.
 
 ### 3.2.2 Set up secrets in variable group
 
@@ -380,7 +380,7 @@ To use the pipelines that come with the environment in Azure DevOps, you need to
 
 This section will explain what is required to publish the modules to [Azure Artifacts Universal Packages](https://learn.microsoft.com/en-us/azure/devops/artifacts/quickstarts/universal-packages?view=azure-devops). It will also assume you are publishing from Azure DevOps Pipelines.
 
-<h4><b>The dependent components are</b></h4>
+<h4><b>The dependent compunonts are</b></h4>
 
 1. An Azure DevOps organization and project
 1. An Azure DevOps artifacts feed

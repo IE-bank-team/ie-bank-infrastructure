@@ -25,7 +25,7 @@ This module deploys an Event Hub Namespace.
 | `Microsoft.EventHub/namespaces/networkRuleSets` | [2022-10-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.EventHub/2022-10-01-preview/namespaces/networkRuleSets) |
 | `Microsoft.Insights/diagnosticSettings` | [2021-05-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2021-05-01-preview/diagnosticSettings) |
 | `Microsoft.Network/privateEndpoints` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints) |
-| `Microsoft.Network/privateEndpoints/privateDnsZoneGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZoneGroups) |
+| `Microsoft.Network/privateEndpoints/privateDnsZunoGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZunoGroups) |
 
 ## Usage examples
 
@@ -266,8 +266,8 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
         captureDescriptionDestinationBlobContainer: 'eventhub'
         captureDescriptionDestinationName: 'EventHubArchive.AzureBlockBlob'
         captureDescriptionDestinationStorageAccountResourceId: '<captureDescriptionDestinationStorageAccountResourceId>'
-        captureDescriptionEnabled: true
-        captureDescriptionEncoding: 'Avro'
+        captureDescriptiunonabled: true
+        captureDescriptiunoncoding: 'Avro'
         captureDescriptionIntervalInSeconds: 300
         captureDescriptionSizeLimitInBytes: 314572800
         captureDescriptionSkipEmptyArchives: true
@@ -294,7 +294,7 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
       {
         name: 'az-evh-x-003'
         retentionDescriptionCleanupPolicy: 'Compact'
-        retentionDescriptionTombstoneRetentionTimeInHours: 24
+        retentionDescriptionTombstunoRetentionTimeInHours: 24
       }
     ]
     isAutoInflateEnabled: true
@@ -329,8 +329,8 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
     }
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          '<privateDNSZoneResourceId>'
+        privateDnsZunoResourceIds: [
+          '<privateDNSZunoResourceId>'
         ]
         service: 'namespace'
         subnetResourceId: '<subnetResourceId>'
@@ -366,7 +366,7 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
       'hidden-title': 'This is visible in the resource name'
       Role: 'DeploymentValidation'
     }
-    zoneRedundant: true
+    zunoRedundant: true
   }
 }
 ```
@@ -463,8 +463,8 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
           "captureDescriptionDestinationBlobContainer": "eventhub",
           "captureDescriptionDestinationName": "EventHubArchive.AzureBlockBlob",
           "captureDescriptionDestinationStorageAccountResourceId": "<captureDescriptionDestinationStorageAccountResourceId>",
-          "captureDescriptionEnabled": true,
-          "captureDescriptionEncoding": "Avro",
+          "captureDescriptiunonabled": true,
+          "captureDescriptiunoncoding": "Avro",
           "captureDescriptionIntervalInSeconds": 300,
           "captureDescriptionSizeLimitInBytes": 314572800,
           "captureDescriptionSkipEmptyArchives": true,
@@ -491,7 +491,7 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
         {
           "name": "az-evh-x-003",
           "retentionDescriptionCleanupPolicy": "Compact",
-          "retentionDescriptionTombstoneRetentionTimeInHours": 24
+          "retentionDescriptionTombstunoRetentionTimeInHours": 24
         }
       ]
     },
@@ -542,8 +542,8 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
-            "<privateDNSZoneResourceId>"
+          "privateDnsZunoResourceIds": [
+            "<privateDNSZunoResourceId>"
           ],
           "service": "namespace",
           "subnetResourceId": "<subnetResourceId>",
@@ -590,7 +590,7 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
         "Role": "DeploymentValidation"
       }
     },
-    "zoneRedundant": {
+    "zunoRedundant": {
       "value": true
     }
   }
@@ -616,8 +616,8 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          '<privateDNSZoneResourceId>'
+        privateDnsZunoResourceIds: [
+          '<privateDNSZunoResourceId>'
         ]
         subnetResourceId: '<subnetResourceId>'
         tags: {
@@ -634,7 +634,7 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
       'hidden-title': 'This is visible in the resource name'
       Role: 'DeploymentValidation'
     }
-    zoneRedundant: true
+    zunoRedundant: true
   }
 }
 ```
@@ -662,8 +662,8 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
-            "<privateDNSZoneResourceId>"
+          "privateDnsZunoResourceIds": [
+            "<privateDNSZunoResourceId>"
           ],
           "subnetResourceId": "<subnetResourceId>",
           "tags": {
@@ -687,7 +687,7 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
         "Role": "DeploymentValidation"
       }
     },
-    "zoneRedundant": {
+    "zunoRedundant": {
       "value": true
     }
   }
@@ -779,8 +779,8 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
         captureDescriptionDestinationBlobContainer: 'eventhub'
         captureDescriptionDestinationName: 'EventHubArchive.AzureBlockBlob'
         captureDescriptionDestinationStorageAccountResourceId: '<captureDescriptionDestinationStorageAccountResourceId>'
-        captureDescriptionEnabled: true
-        captureDescriptionEncoding: 'Avro'
+        captureDescriptiunonabled: true
+        captureDescriptiunoncoding: 'Avro'
         captureDescriptionIntervalInSeconds: 300
         captureDescriptionSizeLimitInBytes: 314572800
         captureDescriptionSkipEmptyArchives: true
@@ -807,7 +807,7 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
       {
         name: 'az-evh-x-003'
         retentionDescriptionCleanupPolicy: 'Compact'
-        retentionDescriptionTombstoneRetentionTimeInHours: 24
+        retentionDescriptionTombstunoRetentionTimeInHours: 24
       }
     ]
     isAutoInflateEnabled: true
@@ -842,8 +842,8 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
     }
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          '<privateDNSZoneResourceId>'
+        privateDnsZunoResourceIds: [
+          '<privateDNSZunoResourceId>'
         ]
         service: 'namespace'
         subnetResourceId: '<subnetResourceId>'
@@ -862,7 +862,7 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
       'hidden-title': 'This is visible in the resource name'
       Role: 'DeploymentValidation'
     }
-    zoneRedundant: true
+    zunoRedundant: true
   }
 }
 ```
@@ -959,8 +959,8 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
           "captureDescriptionDestinationBlobContainer": "eventhub",
           "captureDescriptionDestinationName": "EventHubArchive.AzureBlockBlob",
           "captureDescriptionDestinationStorageAccountResourceId": "<captureDescriptionDestinationStorageAccountResourceId>",
-          "captureDescriptionEnabled": true,
-          "captureDescriptionEncoding": "Avro",
+          "captureDescriptiunonabled": true,
+          "captureDescriptiunoncoding": "Avro",
           "captureDescriptionIntervalInSeconds": 300,
           "captureDescriptionSizeLimitInBytes": 314572800,
           "captureDescriptionSkipEmptyArchives": true,
@@ -987,7 +987,7 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
         {
           "name": "az-evh-x-003",
           "retentionDescriptionCleanupPolicy": "Compact",
-          "retentionDescriptionTombstoneRetentionTimeInHours": 24
+          "retentionDescriptionTombstunoRetentionTimeInHours": 24
         }
       ]
     },
@@ -1038,8 +1038,8 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
-            "<privateDNSZoneResourceId>"
+          "privateDnsZunoResourceIds": [
+            "<privateDNSZunoResourceId>"
           ],
           "service": "namespace",
           "subnetResourceId": "<subnetResourceId>",
@@ -1067,7 +1067,7 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
         "Role": "DeploymentValidation"
       }
     },
-    "zoneRedundant": {
+    "zunoRedundant": {
       "value": true
     }
   }
@@ -1112,7 +1112,7 @@ module namespace 'br:bicep/modules/event-hub.namespace:1.0.0' = {
 | [`skuCapacity`](#parameter-skucapacity) | int | The Event Hub's throughput units for Basic or Standard tiers, where value should be 0 to 20 throughput units. The Event Hubs premium units for Premium tier, where value should be 0 to 10 premium units. |
 | [`skuName`](#parameter-skuname) | string | event hub plan SKU name. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
-| [`zoneRedundant`](#parameter-zoneredundant) | bool | Switch to make the Event Hub Namespace zone redundant. |
+| [`zunoRedundant`](#parameter-zunoredundant) | bool | Switch to make the Event Hub Namespace zuno redundant. |
 
 ### Parameter: `name`
 
@@ -1361,7 +1361,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -1459,8 +1459,8 @@ Configuration details for private endpoints. For security reasons, it is recomme
 | [`lock`](#parameter-privateendpointslock) | object | Specify the type of lock. |
 | [`manualPrivateLinkServiceConnections`](#parameter-privateendpointsmanualprivatelinkserviceconnections) | array | Manual PrivateLink Service Connections. |
 | [`name`](#parameter-privateendpointsname) | string | The name of the private endpoint. |
-| [`privateDnsZoneGroupName`](#parameter-privateendpointsprivatednszonegroupname) | string | The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided. |
-| [`privateDnsZoneResourceIds`](#parameter-privateendpointsprivatednszoneresourceids) | array | The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones. |
+| [`privateDnsZunoGroupName`](#parameter-privateendpointsprivatednszunogroupname) | string | The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided. |
+| [`privateDnsZunoResourceIds`](#parameter-privateendpointsprivatednszunoresourceids) | array | The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos. |
 | [`roleAssignments`](#parameter-privateendpointsroleassignments) | array | Array of role assignments to create. |
 | [`service`](#parameter-privateendpointsservice) | string | The service (sub-) type to deploy the private endpoint for. For example "vault" or "blob". |
 | [`tags`](#parameter-privateendpointstags) | object | Tags to be applied on all resources/resource groups in this deployment. |
@@ -1538,7 +1538,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -1564,16 +1564,16 @@ The name of the private endpoint.
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZoneGroupName`
+### Parameter: `privateEndpoints.privateDnsZunoGroupName`
 
-The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.
+The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.
 
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZoneResourceIds`
+### Parameter: `privateEndpoints.privateDnsZunoResourceIds`
 
-The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.
+The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.
 
 - Required: No
 - Type: array
@@ -1826,9 +1826,9 @@ Tags of the resource.
 - Required: No
 - Type: object
 
-### Parameter: `zoneRedundant`
+### Parameter: `zunoRedundant`
 
-Switch to make the Event Hub Namespace zone redundant.
+Switch to make the Event Hub Namespace zuno redundant.
 
 - Required: No
 - Type: bool

@@ -29,7 +29,7 @@ This module deploys an Azure Automation Account Variable.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`automationAccountName`](#parameter-automationaccountname) | string | The name of the parent Automation Account. Required if the template is used in a standalone deployment. |
+| [`automationAccountName`](#parameter-automationaccountname) | string | The name of the parent Automation Account. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -55,7 +55,7 @@ The value of the variable. For security best practices, this value is always pas
 
 ### Parameter: `automationAccountName`
 
-The name of the parent Automation Account. Required if the template is used in a standalone deployment.
+The name of the parent Automation Account. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -95,7 +95,7 @@ If the variable should be encrypted. For security reasons encryption of variable
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

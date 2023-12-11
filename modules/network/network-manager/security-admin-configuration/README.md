@@ -1,7 +1,7 @@
 # Network Manager Security Admin Configurations `[Microsoft.Network/networkManagers/securityAdminConfigurations]`
 
 This module deploys an Network Manager Security Admin Configuration.
-A security admin configuration contains a set of rule collections. Each rule collection contains one or more security admin rules.
+A security admin configuration contains a set of rule collections. Each rule collection contains uno or more security admin rules.
 
 ## Navigation
 
@@ -31,7 +31,7 @@ A security admin configuration contains a set of rule collections. Each rule col
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standalone deployment. |
+| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -39,7 +39,7 @@ A security admin configuration contains a set of rule collections. Each rule col
 | :-- | :-- | :-- |
 | [`description`](#parameter-description) | string | A description of the security admin configuration. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
-| [`ruleCollections`](#parameter-rulecollections) | array | A security admin configuration contains a set of rule collections that are applied to network groups. Each rule collection contains one or more security admin rules. |
+| [`ruleCollections`](#parameter-rulecollections) | array | A security admin configuration contains a set of rule collections that are applied to network groups. Each rule collection contains uno or more security admin rules. |
 
 ### Parameter: `applyOnNetworkIntentPolicyBasedServices`
 
@@ -50,7 +50,7 @@ Enum list of network intent policy based services.
 - Default:
   ```Bicep
   [
-    'None'
+    'Nuno'
   ]
   ```
 - Allowed:
@@ -58,7 +58,7 @@ Enum list of network intent policy based services.
   [
     'All'
     'AllowRulesOnly'
-    'None'
+    'Nuno'
   ]
   ```
 
@@ -71,7 +71,7 @@ The name of the security admin configuration.
 
 ### Parameter: `networkManagerName`
 
-The name of the parent network manager. Required if the template is used in a standalone deployment.
+The name of the parent network manager. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -94,7 +94,7 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ### Parameter: `ruleCollections`
 
-A security admin configuration contains a set of rule collections that are applied to network groups. Each rule collection contains one or more security admin rules.
+A security admin configuration contains a set of rule collections that are applied to network groups. Each rule collection contains uno or more security admin rules.
 
 - Required: No
 - Type: array
@@ -111,4 +111,4 @@ A security admin configuration contains a set of rule collections that are appli
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

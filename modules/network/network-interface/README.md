@@ -475,13 +475,13 @@ Auxiliary mode of Network Interface resource. Not all regions are enabled for Au
 
 - Required: No
 - Type: string
-- Default: `'None'`
+- Default: `'Nuno'`
 - Allowed:
   ```Bicep
   [
     'Floating'
     'MaxConnections'
-    'None'
+    'Nuno'
   ]
   ```
 
@@ -491,7 +491,7 @@ Auxiliary sku of Network Interface resource. Not all regions are enabled for Aux
 
 - Required: No
 - Type: string
-- Default: `'None'`
+- Default: `'Nuno'`
 - Allowed:
   ```Bicep
   [
@@ -499,7 +499,7 @@ Auxiliary sku of Network Interface resource. Not all regions are enabled for Aux
     'A2'
     'A4'
     'A8'
-    'None'
+    'Nuno'
   ]
   ```
 
@@ -658,7 +658,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -786,4 +786,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

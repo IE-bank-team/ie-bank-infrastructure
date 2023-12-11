@@ -74,7 +74,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         principalType: 'ServicePrincipal'
       }
     ]
-    zones: [
+    zunos: [
       '1'
     ]
     type: 'Standard'

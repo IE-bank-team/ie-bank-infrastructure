@@ -11,7 +11,7 @@ param startIpAddress string
 @description('Required. The end IP address of the firewall rule. Must be IPv4 format. Must be greater than or equal to startIpAddress. Use value \'0.0.0.0\' for all Azure-internal IP addresses.')
 param endIpAddress string
 
-@description('Conditional. The name of the parent MySQL flexible server. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent MySQL flexible server. Required if the template is used in a standaluno deployment.')
 param flexibleServerName string
 
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')

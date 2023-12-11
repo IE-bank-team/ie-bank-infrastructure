@@ -325,7 +325,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -477,4 +477,4 @@ Links to test the API connection.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -4,7 +4,7 @@ metadata description = '''This module deploys a DevTest Lab Policy Sets Policy.
 DevTest lab policies are used to modify the lab settings such as only allowing certain VM Size SKUs, marketplace image types, number of VMs allowed per user and other settings.'''
 metadata owner = 'Azure/module-maintainers'
 
-@sys.description('Conditional. The name of the parent lab. Required if the template is used in a standalone deployment.')
+@sys.description('Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment.')
 param labName string
 
 @sys.description('Optional. The name of the parent policy set.')

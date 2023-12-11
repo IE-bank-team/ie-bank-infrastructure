@@ -27,7 +27,7 @@ This module deploys an Azure SQL Server Security Alert Policy.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`serverName`](#parameter-servername) | string | The name of the parent SQL Server. Required if the template is used in a standalone deployment. |
+| [`serverName`](#parameter-servername) | string | The name of the parent SQL Server. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -51,7 +51,7 @@ The name of the Security Alert Policy.
 
 ### Parameter: `serverName`
 
-The name of the parent SQL Server. Required if the template is used in a standalone deployment.
+The name of the parent SQL Server. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -138,4 +138,4 @@ Specifies the blob storage endpoint. This blob storage will hold all Threat Dete
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

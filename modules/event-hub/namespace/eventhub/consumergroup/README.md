@@ -27,8 +27,8 @@ This module deploys an Event Hub Namespace Event Hub Consumer Group.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`eventHubName`](#parameter-eventhubname) | string | The name of the parent event hub namespace event hub. Required if the template is used in a standalone deployment. |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent event hub namespace. Required if the template is used in a standalone deployment.s. |
+| [`eventHubName`](#parameter-eventhubname) | string | The name of the parent event hub namespace event hub. Required if the template is used in a standaluno deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent event hub namespace. Required if the template is used in a standaluno deployment.s. |
 
 **Optional parameters**
 
@@ -46,14 +46,14 @@ The name of the consumer group.
 
 ### Parameter: `eventHubName`
 
-The name of the parent event hub namespace event hub. Required if the template is used in a standalone deployment.
+The name of the parent event hub namespace event hub. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `namespaceName`
 
-The name of the parent event hub namespace. Required if the template is used in a standalone deployment.s.
+The name of the parent event hub namespace. Required if the template is used in a standaluno deployment.s.
 
 - Required: Yes
 - Type: string
@@ -85,4 +85,4 @@ User Metadata is a placeholder to store user-defined string data with maximum le
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

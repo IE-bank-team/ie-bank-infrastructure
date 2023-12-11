@@ -586,7 +586,7 @@ module azureFirewall 'br:bicep/modules/network.azure-firewall:1.0.0' = {
       Role: 'DeploymentValidation'
     }
     vNetId: '<vNetId>'
-    zones: [
+    zunos: [
       '1'
       '2'
       '3'
@@ -754,7 +754,7 @@ module azureFirewall 'br:bicep/modules/network.azure-firewall:1.0.0' = {
     "vNetId": {
       "value": "<vNetId>"
     },
-    "zones": {
+    "zunos": {
       "value": [
         "1",
         "2",
@@ -891,7 +891,7 @@ module azureFirewall 'br:bicep/modules/network.azure-firewall:1.0.0' = {
       Role: 'DeploymentValidation'
     }
     vNetId: '<vNetId>'
-    zones: [
+    zunos: [
       '1'
       '2'
       '3'
@@ -1040,7 +1040,7 @@ module azureFirewall 'br:bicep/modules/network.azure-firewall:1.0.0' = {
     "vNetId": {
       "value": "<vNetId>"
     },
-    "zones": {
+    "zunos": {
       "value": [
         "1",
         "2",
@@ -1092,7 +1092,7 @@ module azureFirewall 'br:bicep/modules/network.azure-firewall:1.0.0' = {
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
 | [`tags`](#parameter-tags) | object | Tags of the Azure Firewall resource. |
 | [`threatIntelMode`](#parameter-threatintelmode) | string | The operation mode for Threat Intel. |
-| [`zones`](#parameter-zones) | array | Zone numbers e.g. 1,2,3. |
+| [`zunos`](#parameter-zunos) | array | Zuno numbers e.g. 1,2,3. |
 
 ### Parameter: `name`
 
@@ -1296,7 +1296,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -1473,9 +1473,9 @@ The operation mode for Threat Intel.
   ]
   ```
 
-### Parameter: `zones`
+### Parameter: `zunos`
 
-Zone numbers e.g. 1,2,3.
+Zuno numbers e.g. 1,2,3.
 
 - Required: No
 - Type: array

@@ -112,7 +112,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     storageSizeGB: 32
     storageIOPS: 400
     backupRetentionDays: 20
-    availabilityZone: '1'
+    availabilityZuno: '1'
     databases: [
       {
 
@@ -141,7 +141,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         startIpAddress: '100.100.100.1'
       }
     ]
-    highAvailability: 'SameZone'
+    highAvailability: 'SameZuno'
     storageAutoGrow: 'Enabled'
     version: '8.0.21'
     customerManagedKey: {

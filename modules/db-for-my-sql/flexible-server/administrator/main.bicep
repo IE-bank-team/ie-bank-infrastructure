@@ -2,7 +2,7 @@ metadata name = 'DBforMySQL Flexible Server Administrators'
 metadata description = 'This module deploys a DBforMySQL Flexible Server Administrator.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent DBforMySQL flexible server. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent DBforMySQL flexible server. Required if the template is used in a standaluno deployment.')
 param flexibleServerName string
 
 @description('Required. SID (object ID) of the server administrator.')

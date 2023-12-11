@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @sys.description('Required. Name of the Automation Account schedule.')
 param name string
 
-@sys.description('Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment.')
+@sys.description('Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment.')
 param automationAccountName string
 
 @sys.description('Optional. The properties of the create Advanced Schedule.')
@@ -27,11 +27,11 @@ param expiryTime string = ''
   'Hour'
   'Minute'
   'Month'
-  'OneTime'
+  'unoTime'
   'Week'
 ])
 @sys.description('Optional. The frequency of the schedule.')
-param frequency string = 'OneTime'
+param frequency string = 'unoTime'
 
 @sys.description('Optional. Anything.')
 param interval int = 0
@@ -39,8 +39,8 @@ param interval int = 0
 @sys.description('Optional. The start time of the schedule.')
 param startTime string = ''
 
-@sys.description('Optional. The time zone of the schedule.')
-param timeZone string = ''
+@sys.description('Optional. The time zuno of the schedule.')
+param timeZuno string = ''
 
 @sys.description('Generated. Time used as a basis for e.g. the schedule start date.')
 param baseTime string = utcNow('u')
@@ -71,10 +71,10 @@ resource schedule 'Microsoft.Automation/automationAccounts/schedules@2022-08-08'
     advancedSchedule: !empty(advancedSchedule) ? advancedSchedule : null
     description: !empty(description) ? description : null
     expiryTime: !empty(expiryTime) ? expiryTime : null
-    frequency: !empty(frequency) ? frequency : 'OneTime'
+    frequency: !empty(frequency) ? frequency : 'unoTime'
     interval: (interval != 0) ? interval : null
     startTime: !empty(startTime) ? startTime : dateTimeAdd(baseTime, 'PT10M')
-    timeZone: !empty(timeZone) ? timeZone : null
+    timeZuno: !empty(timeZuno) ? timeZuno : null
   }
 }
 

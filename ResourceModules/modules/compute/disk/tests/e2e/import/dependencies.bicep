@@ -39,7 +39,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
     resource container 'containers@2022-09-01' = {
       name: 'vhds'
       properties: {
-        publicAccess: 'None'
+        publicAccess: 'Nuno'
       }
     }
   }

@@ -20,7 +20,7 @@ This module deploys a Service Bus Namespace.
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
 | `Microsoft.Insights/diagnosticSettings` | [2021-05-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2021-05-01-preview/diagnosticSettings) |
 | `Microsoft.Network/privateEndpoints` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints) |
-| `Microsoft.Network/privateEndpoints/privateDnsZoneGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZoneGroups) |
+| `Microsoft.Network/privateEndpoints/privateDnsZunoGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZunoGroups) |
 | `Microsoft.ServiceBus/namespaces` | [2022-10-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.ServiceBus/2022-10-01-preview/namespaces) |
 | `Microsoft.ServiceBus/namespaces/AuthorizationRules` | [2022-10-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.ServiceBus/2022-10-01-preview/namespaces/AuthorizationRules) |
 | `Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs` | [2022-10-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.ServiceBus/2022-10-01-preview/namespaces/disasterRecoveryConfigs) |
@@ -377,8 +377,8 @@ module namespace 'br:bicep/modules/service-bus.namespace:1.0.0' = {
     premiumMessagingPartitions: 1
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          '<privateDNSZoneResourceId>'
+        privateDnsZunoResourceIds: [
+          '<privateDNSZunoResourceId>'
         ]
         service: 'namespace'
         subnetResourceId: '<subnetResourceId>'
@@ -464,7 +464,7 @@ module namespace 'br:bicep/modules/service-bus.namespace:1.0.0' = {
         ]
       }
     ]
-    zoneRedundant: true
+    zunoRedundant: true
   }
 }
 ```
@@ -572,8 +572,8 @@ module namespace 'br:bicep/modules/service-bus.namespace:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
-            "<privateDNSZoneResourceId>"
+          "privateDnsZunoResourceIds": [
+            "<privateDNSZunoResourceId>"
           ],
           "service": "namespace",
           "subnetResourceId": "<subnetResourceId>",
@@ -674,7 +674,7 @@ module namespace 'br:bicep/modules/service-bus.namespace:1.0.0' = {
         }
       ]
     },
-    "zoneRedundant": {
+    "zunoRedundant": {
       "value": true
     }
   }
@@ -700,8 +700,8 @@ module namespace 'br:bicep/modules/service-bus.namespace:1.0.0' = {
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          '<privateDNSZoneResourceId>'
+        privateDnsZunoResourceIds: [
+          '<privateDNSZunoResourceId>'
         ]
         subnetResourceId: '<subnetResourceId>'
         tags: {
@@ -745,8 +745,8 @@ module namespace 'br:bicep/modules/service-bus.namespace:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
-            "<privateDNSZoneResourceId>"
+          "privateDnsZunoResourceIds": [
+            "<privateDNSZunoResourceId>"
           ],
           "subnetResourceId": "<subnetResourceId>",
           "tags": {
@@ -860,8 +860,8 @@ module namespace 'br:bicep/modules/service-bus.namespace:1.0.0' = {
     premiumMessagingPartitions: 1
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          '<privateDNSZoneResourceId>'
+        privateDnsZunoResourceIds: [
+          '<privateDNSZunoResourceId>'
         ]
         service: 'namespace'
         subnetResourceId: '<subnetResourceId>'
@@ -947,7 +947,7 @@ module namespace 'br:bicep/modules/service-bus.namespace:1.0.0' = {
         ]
       }
     ]
-    zoneRedundant: true
+    zunoRedundant: true
   }
 }
 ```
@@ -1055,8 +1055,8 @@ module namespace 'br:bicep/modules/service-bus.namespace:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
-            "<privateDNSZoneResourceId>"
+          "privateDnsZunoResourceIds": [
+            "<privateDNSZunoResourceId>"
           ],
           "service": "namespace",
           "subnetResourceId": "<subnetResourceId>",
@@ -1157,7 +1157,7 @@ module namespace 'br:bicep/modules/service-bus.namespace:1.0.0' = {
         }
       ]
     },
-    "zoneRedundant": {
+    "zunoRedundant": {
       "value": true
     }
   }
@@ -1203,7 +1203,7 @@ module namespace 'br:bicep/modules/service-bus.namespace:1.0.0' = {
 | [`skuName`](#parameter-skuname) | string | Name of this SKU. - Basic, Standard, Premium. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`topics`](#parameter-topics) | array | The topics to create in the service bus namespace. |
-| [`zoneRedundant`](#parameter-zoneredundant) | bool | Enabling this property creates a Premium Service Bus Namespace in regions supported availability zones. |
+| [`zunoRedundant`](#parameter-zunoredundant) | bool | Enabling this property creates a Premium Service Bus Namespace in regions supported availability zunos. |
 
 ### Parameter: `name`
 
@@ -1436,7 +1436,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -1542,8 +1542,8 @@ Configuration details for private endpoints. For security reasons, it is recomme
 | [`lock`](#parameter-privateendpointslock) | object | Specify the type of lock. |
 | [`manualPrivateLinkServiceConnections`](#parameter-privateendpointsmanualprivatelinkserviceconnections) | array | Manual PrivateLink Service Connections. |
 | [`name`](#parameter-privateendpointsname) | string | The name of the private endpoint. |
-| [`privateDnsZoneGroupName`](#parameter-privateendpointsprivatednszonegroupname) | string | The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided. |
-| [`privateDnsZoneResourceIds`](#parameter-privateendpointsprivatednszoneresourceids) | array | The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones. |
+| [`privateDnsZunoGroupName`](#parameter-privateendpointsprivatednszunogroupname) | string | The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided. |
+| [`privateDnsZunoResourceIds`](#parameter-privateendpointsprivatednszunoresourceids) | array | The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos. |
 | [`roleAssignments`](#parameter-privateendpointsroleassignments) | array | Array of role assignments to create. |
 | [`service`](#parameter-privateendpointsservice) | string | The service (sub-) type to deploy the private endpoint for. For example "vault" or "blob". |
 | [`tags`](#parameter-privateendpointstags) | object | Tags to be applied on all resources/resource groups in this deployment. |
@@ -1621,7 +1621,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -1647,16 +1647,16 @@ The name of the private endpoint.
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZoneGroupName`
+### Parameter: `privateEndpoints.privateDnsZunoGroupName`
 
-The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.
+The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.
 
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZoneResourceIds`
+### Parameter: `privateEndpoints.privateDnsZunoResourceIds`
 
-The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.
+The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.
 
 - Required: No
 - Type: array
@@ -1936,9 +1936,9 @@ The topics to create in the service bus namespace.
 - Type: array
 - Default: `[]`
 
-### Parameter: `zoneRedundant`
+### Parameter: `zunoRedundant`
 
-Enabling this property creates a Premium Service Bus Namespace in regions supported availability zones.
+Enabling this property creates a Premium Service Bus Namespace in regions supported availability zunos.
 
 - Required: No
 - Type: bool

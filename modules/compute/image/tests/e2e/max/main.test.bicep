@@ -84,7 +84,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         principalType: 'ServicePrincipal'
       }
     ]
-    zoneResilient: true
+    zunoResilient: true
     diskEncryptionSetResourceId: nestedDependencies.outputs.diskEncryptionSetResourceId
     osState: 'Generalized'
     diskSizeGB: 128

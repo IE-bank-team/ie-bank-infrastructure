@@ -2,7 +2,7 @@ metadata name = 'Relay Namespace Hybrid Connections'
 metadata description = 'This module deploys a Relay Namespace Hybrid Connection.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Relay Namespace for the Relay Hybrid Connection. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Relay Namespace for the Relay Hybrid Connection. Required if the template is used in a standaluno deployment.')
 @minLength(6)
 @maxLength(50)
 param namespaceName string
@@ -100,7 +100,7 @@ module hybridConnection_authorizationRules 'authorization-rule/main.bicep' = [fo
   }
 }]
 
-resource hybridConnection_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource hybridConnection_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -141,7 +141,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

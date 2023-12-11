@@ -28,7 +28,7 @@
     "apiManagementServiceName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
       }
     },
     "apiRevision": {
@@ -62,7 +62,7 @@
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optional. Indicates the Version identifier of the API if the API is versioned."
+        "description": "Optional. Indicates the Version identifier of the API if the API is versiunod."
       }
     },
     "apiVersionSetId": {
@@ -259,7 +259,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Policy-{1}', deployment().name, copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -295,13 +295,13 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
               }
             },
             "apiName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent API. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {

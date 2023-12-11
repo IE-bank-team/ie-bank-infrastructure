@@ -2,7 +2,7 @@ metadata name = 'Redis Cache Enterprise Databases'
 metadata description = 'This module deploys a Redis Cache Enterprise Database.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Redis Cache Enterprise Cluster. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Redis Cache Enterprise Cluster. Required if the template is used in a standaluno deployment.')
 param redisCacheEnterpriseName string
 
 @allowed([

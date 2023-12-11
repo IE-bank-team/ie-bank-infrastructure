@@ -27,7 +27,7 @@ This module deploys a SQL Managed Instance Key.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent SQL managed instance. Required if the template is used in a standalone deployment. |
+| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -46,7 +46,7 @@ The name of the key. Must follow the [<keyVaultName>_<keyName>_<keyVersion>] pat
 
 ### Parameter: `managedInstanceName`
 
-The name of the parent SQL managed instance. Required if the template is used in a standalone deployment.
+The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -93,4 +93,4 @@ The URI of the key. If the ServerKeyType is AzureKeyVault, then either the URI o
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -6,31 +6,31 @@
             "value": "prod"
         },
         "postgreSQLServerName": {
-            "value": "one-dbsrv-uat"
+            "value": "uno-dbsrv-uat"
         },
         "postgreSQLDatabaseName": {
-            "value": "one-db-uat"
+            "value": "uno-db-uat"
         },
         "appServicePlanName": {
-            "value": "one-asp-uat"
+            "value": "uno-asp-uat"
         },
         "appServiceAPIAppName": {
-            "value": "one-be-uat"
+            "value": "uno-be-uat"
         },
         "appServiceAppName": {
-            "value": "one-fe-uat"
+            "value": "uno-fe-uat"
         },
         "azureMonitorName": {
-            "value": "one-am-uat"
+            "value": "uno-am-uat"
         },
         "appInsightsName": {
-            "value": "one-ai-uat"
+            "value": "uno-ai-uat"
         },
         "location": {
             "value": "US East"
         },
         "containerRegistryName": {
-            "value": "oneCRuat"
+            "value": "unoCRuat"
           },
         "containerRegistryImageName": {
             "value": "ie-bank-be"
@@ -39,7 +39,7 @@
             "value": "latest"
           },
         "keyVaultName": {
-            "value": "one-keyvault-uat"
+            "value": "uno-keyvault-uat"
         }
     }
 }

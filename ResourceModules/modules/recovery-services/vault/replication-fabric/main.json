@@ -15,7 +15,7 @@
     "recoveryVaultName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment."
       }
     },
     "location": {
@@ -85,7 +85,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-RCont-{1}', deployment().name, copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -121,13 +121,13 @@
             "recoveryVaultName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment."
               }
             },
             "replicationFabricName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Replication Fabric. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Replication Fabric. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -190,7 +190,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-Map-{1}', deployment().name, copyIndex())]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -231,19 +231,19 @@
                     "recoveryVaultName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "replicationFabricName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent Replication Fabric. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent Replication Fabric. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "sourceProtectionContainerName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent source Replication container. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent source Replication container. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "targetProtectionContainerId": {

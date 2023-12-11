@@ -27,13 +27,13 @@ This module deploys an Azure Kubernetes Service (AKS) Managed Cluster Agent Pool
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`managedClusterName`](#parameter-managedclustername) | string | The name of the parent managed cluster. Required if the template is used in a standalone deployment. |
+| [`managedClusterName`](#parameter-managedclustername) | string | The name of the parent managed cluster. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`availabilityZones`](#parameter-availabilityzones) | array | The list of Availability zones to use for nodes. This can only be specified if the AgentPoolType property is "VirtualMachineScaleSets". |
+| [`availabilityZunos`](#parameter-availabilityzunos) | array | The list of Availability zunos to use for nodes. This can only be specified if the AgentPoolType property is "VirtualMachineScaleSets". |
 | [`count`](#parameter-count) | int | Desired Number of agents (VMs) specified to host docker containers. Allowed values must be in the range of 0 to 1000 (inclusive) for user pools and in the range of 1 to 1000 (inclusive) for system pools. The default value is 1. |
 | [`enableAutoScaling`](#parameter-enableautoscaling) | bool | Whether to enable auto-scaler. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
@@ -47,7 +47,7 @@ This module deploys an Azure Kubernetes Service (AKS) Managed Cluster Agent Pool
 | [`maxPods`](#parameter-maxpods) | int | The maximum number of pods that can run on a node. |
 | [`maxSurge`](#parameter-maxsurge) | string | This can either be set to an integer (e.g. "5") or a percentage (e.g. "50%"). If a percentage is specified, it is the percentage of the total agent pool size at the time of the upgrade. For percentages, fractional nodes are rounded up. If not specified, the default is 1. For more information, including best practices, see: /azure/aks/upgrade-cluster#customize-node-surge-upgrade. |
 | [`minCount`](#parameter-mincount) | int | The minimum number of nodes for auto-scaling. |
-| [`mode`](#parameter-mode) | string | A cluster must have at least one "System" Agent Pool at all times. For additional information on agent pool restrictions and best practices, see: /azure/aks/use-system-pools. |
+| [`mode`](#parameter-mode) | string | A cluster must have at least uno "System" Agent Pool at all times. For additional information on agent pool restrictions and best practices, see: /azure/aks/use-system-pools. |
 | [`nodeLabels`](#parameter-nodelabels) | object | The node labels to be persisted across all nodes in agent pool. |
 | [`nodePublicIpPrefixId`](#parameter-nodepublicipprefixid) | string | ResourceId of the node PublicIPPrefix. |
 | [`nodeTaints`](#parameter-nodetaints) | array | The taints added to new nodes during node pool create and scale. For example, key=value:NoSchedule. |
@@ -78,14 +78,14 @@ Name of the agent pool.
 
 ### Parameter: `managedClusterName`
 
-The name of the parent managed cluster. Required if the template is used in a standalone deployment.
+The name of the parent managed cluster. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
 
-### Parameter: `availabilityZones`
+### Parameter: `availabilityZunos`
 
-The list of Availability zones to use for nodes. This can only be specified if the AgentPoolType property is "VirtualMachineScaleSets".
+The list of Availability zunos to use for nodes. This can only be specified if the AgentPoolType property is "VirtualMachineScaleSets".
 
 - Required: No
 - Type: array
@@ -158,7 +158,7 @@ GPUInstanceProfile to be used to specify GPU MIG instance profile for supported 
   ```Bicep
   [
     ''
-    'MIoneg'
+    'MIunog'
     'MIG2g'
     'MIG3g'
     'MIG4g'
@@ -208,7 +208,7 @@ The minimum number of nodes for auto-scaling.
 
 ### Parameter: `mode`
 
-A cluster must have at least one "System" Agent Pool at all times. For additional information on agent pool restrictions and best practices, see: /azure/aks/use-system-pools.
+A cluster must have at least uno "System" Agent Pool at all times. For additional information on agent pool restrictions and best practices, see: /azure/aks/use-system-pools.
 
 - Required: No
 - Type: string
@@ -432,4 +432,4 @@ Determines the type of workload a node can run.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -156,7 +156,7 @@ module frontDoorWebApplicationFirewallPolicy 'br:bicep/modules/network.front-doo
       ]
     }
     policySettings: {
-      customBlockResponseBody: 'PGh0bWw+CjxoZWFkZXI+PHRpdGxlPkhlbGxvPC90aXRsZT48L2hlYWRlcj4KPGJvZHk+CkhlbGxvIHdvcmxkCjwvYm9keT4KPC9odonesPg=='
+      customBlockResponseBody: 'PGh0bWw+CjxoZWFkZXI+PHRpdGxlPkhlbGxvPC90aXRsZT48L2hlYWRlcj4KPGJvZHk+CkhlbGxvIHdvcmxkCjwvYm9keT4KPC9odunosPg=='
       customBlockResponseStatusCode: 200
       mode: 'Prevention'
       redirectUrl: 'http://www.bing.com'
@@ -276,7 +276,7 @@ module frontDoorWebApplicationFirewallPolicy 'br:bicep/modules/network.front-doo
     },
     "policySettings": {
       "value": {
-        "customBlockResponseBody": "PGh0bWw+CjxoZWFkZXI+PHRpdGxlPkhlbGxvPC90aXRsZT48L2hlYWRlcj4KPGJvZHk+CkhlbGxvIHdvcmxkCjwvYm9keT4KPC9odonesPg==",
+        "customBlockResponseBody": "PGh0bWw+CjxoZWFkZXI+PHRpdGxlPkhlbGxvPC90aXRsZT48L2hlYWRlcj4KPGJvZHk+CkhlbGxvIHdvcmxkCjwvYm9keT4KPC9odunosPg==",
         "customBlockResponseStatusCode": 200,
         "mode": "Prevention",
         "redirectUrl": "http://www.bing.com"
@@ -396,7 +396,7 @@ module frontDoorWebApplicationFirewallPolicy 'br:bicep/modules/network.front-doo
       ]
     }
     policySettings: {
-      customBlockResponseBody: 'PGh0bWw+CjxoZWFkZXI+PHRpdGxlPkhlbGxvPC90aXRsZT48L2hlYWRlcj4KPGJvZHk+CkhlbGxvIHdvcmxkCjwvYm9keT4KPC9odonesPg=='
+      customBlockResponseBody: 'PGh0bWw+CjxoZWFkZXI+PHRpdGxlPkhlbGxvPC90aXRsZT48L2hlYWRlcj4KPGJvZHk+CkhlbGxvIHdvcmxkCjwvYm9keT4KPC9odunosPg=='
       customBlockResponseStatusCode: 200
       mode: 'Prevention'
       redirectUrl: 'http://www.bing.com'
@@ -499,7 +499,7 @@ module frontDoorWebApplicationFirewallPolicy 'br:bicep/modules/network.front-doo
     },
     "policySettings": {
       "value": {
-        "customBlockResponseBody": "PGh0bWw+CjxoZWFkZXI+PHRpdGxlPkhlbGxvPC90aXRsZT48L2hlYWRlcj4KPGJvZHk+CkhlbGxvIHdvcmxkCjwvYm9keT4KPC9odonesPg==",
+        "customBlockResponseBody": "PGh0bWw+CjxoZWFkZXI+PHRpdGxlPkhlbGxvPC90aXRsZT48L2hlYWRlcj4KPGJvZHk+CkhlbGxvIHdvcmxkCjwvYm9keT4KPC9odunosPg==",
         "customBlockResponseStatusCode": 200,
         "mode": "Prevention",
         "redirectUrl": "http://www.bing.com"
@@ -623,7 +623,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -799,4 +799,4 @@ Resource tags.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

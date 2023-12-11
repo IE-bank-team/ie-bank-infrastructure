@@ -27,7 +27,7 @@ This module deploys a Virtual Network Peering.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`localVnetName`](#parameter-localvnetname) | string | The name of the parent Virtual Network to add the peering to. Required if the template is used in a standalone deployment. |
+| [`localVnetName`](#parameter-localvnetname) | string | The name of the parent Virtual Network to add the peering to. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -39,7 +39,7 @@ This module deploys a Virtual Network Peering.
 | [`doNotVerifyRemoteGateways`](#parameter-donotverifyremotegateways) | bool | If we need to verify the provisioning state of the remote gateway. Default is true. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`name`](#parameter-name) | string | The Name of Vnet Peering resource. If not provided, default value will be localVnetName-remoteVnetName. |
-| [`useRemoteGateways`](#parameter-useremotegateways) | bool | If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway. Default is false. |
+| [`useRemoteGateways`](#parameter-useremotegateways) | bool | If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only uno peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway. Default is false. |
 
 ### Parameter: `remoteVirtualNetworkId`
 
@@ -50,7 +50,7 @@ The Resource ID of the VNet that is this Local VNet is being peered to. Should b
 
 ### Parameter: `localVnetName`
 
-The name of the parent Virtual Network to add the peering to. Required if the template is used in a standalone deployment.
+The name of the parent Virtual Network to add the peering to. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -105,7 +105,7 @@ The Name of Vnet Peering resource. If not provided, default value will be localV
 
 ### Parameter: `useRemoteGateways`
 
-If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway. Default is false.
+If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only uno peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway. Default is false.
 
 - Required: No
 - Type: bool
@@ -122,4 +122,4 @@ If remote gateways can be used on this virtual network. If the flag is set to tr
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

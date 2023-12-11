@@ -16,13 +16,13 @@
     "databaseAccountName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Database Account. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Database Account. Required if the template is used in a standaluno deployment."
       }
     },
     "sqlDatabaseName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent SQL Database. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent SQL Database. Required if the template is used in a standaluno deployment."
       }
     },
     "name": {
@@ -80,7 +80,7 @@
       "type": "array",
       "defaultValue": [],
       "metadata": {
-        "description": "Optional. List of paths using which data within the container can be partitioned."
+        "description": "Optional. List of paths using which data within the container can be partitiunod."
       }
     },
     "indexingPolicy": {

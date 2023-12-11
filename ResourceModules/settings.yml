@@ -62,7 +62,7 @@ variables:
   templateSpecsDoPublish: true # Set to true, if you would like to publish module templates as template specs
   templateSpecsRGName: 'artifacts-rg' # The name of the resource group to publish to. If the resource group does not exist, it will be created.
   templateSpecsRGLocation: 'West Europe' # The location of the resource group to publish to
-  templateSpecsDescription: components # The description to add to template specs published by this platform
+  templateSpecsDescription: compunonts # The description to add to template specs published by this platform
 
   # ------------------------------- #
   # Private Bicep Registry settings #
@@ -89,7 +89,7 @@ variables:
 
   vstsOrganizationURI: '$(System.CollectionUri)' # The URI of the TFS collection or Azure DevOps organization. For example: https://dev.azure.com/fabrikam/.
   vstsProject: '$(System.TeamProject)'
-  modulesRepository: ResourceModules # The repository hosting the deployment code (i.e. 'Components'). MUST be provided as a variable with every pipeline
+  modulesRepository: ResourceModules # The repository hosting the deployment code (i.e. 'Compunonts'). MUST be provided as a variable with every pipeline
   pipelineFunctionsPath: 'utilities/pipelines'
 
   #############################

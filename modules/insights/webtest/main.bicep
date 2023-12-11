@@ -8,7 +8,7 @@ param name string
 @sys.description('Required. User defined name if this WebTest.')
 param webTestName string
 
-@sys.description('Required. A single hidden-link tag pointing to an existing AI component is required.')
+@sys.description('Required. A single hidden-link tag pointing to an existing AI compunont is required.')
 param tags object
 
 @sys.description('Required. The collection of request properties.')
@@ -117,7 +117,7 @@ resource webtest 'Microsoft.Insights/webtests@2022-06-15' = {
   }
 }
 
-resource webtest_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource webtest_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -161,7 +161,7 @@ type lockType = {
   name: string?
 
   @sys.description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

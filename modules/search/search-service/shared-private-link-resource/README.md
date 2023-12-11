@@ -30,7 +30,7 @@ This module deploys a Search Service Private Link Resource.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`searchServiceName`](#parameter-searchservicename) | string | The name of the parent searchServices. Required if the template is used in a standalone deployment. |
+| [`searchServiceName`](#parameter-searchservicename) | string | The name of the parent searchServices. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -69,7 +69,7 @@ The request message for requesting approval of the shared private link resource.
 
 ### Parameter: `searchServiceName`
 
-The name of the parent searchServices. Required if the template is used in a standalone deployment.
+The name of the parent searchServices. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -101,4 +101,4 @@ Can be used to specify the Azure Resource Manager location of the resource to wh
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

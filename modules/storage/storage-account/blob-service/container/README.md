@@ -29,7 +29,7 @@ This module deploys a Storage Account Blob Container.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`storageAccountName`](#parameter-storageaccountname) | string | The name of the parent Storage Account. Required if the template is used in a standalone deployment. |
+| [`storageAccountName`](#parameter-storageaccountname) | string | The name of the parent Storage Account. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -56,7 +56,7 @@ The name of the storage container to deploy.
 
 ### Parameter: `storageAccountName`
 
-The name of the parent Storage Account. Required if the template is used in a standalone deployment.
+The name of the parent Storage Account. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -139,13 +139,13 @@ Specifies whether data in the container may be accessed publicly and the level o
 
 - Required: No
 - Type: string
-- Default: `'None'`
+- Default: `'Nuno'`
 - Allowed:
   ```Bicep
   [
     'Blob'
     'Container'
-    'None'
+    'Nuno'
   ]
   ```
 
@@ -249,4 +249,4 @@ The principal type of the assigned principal ID.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

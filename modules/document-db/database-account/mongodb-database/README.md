@@ -28,7 +28,7 @@ This module deploys a MongoDB Database within a CosmosDB Account.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`databaseAccountName`](#parameter-databaseaccountname) | string | The name of the parent Cosmos DB database account. Required if the template is used in a standalone deployment. |
+| [`databaseAccountName`](#parameter-databaseaccountname) | string | The name of the parent Cosmos DB database account. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -48,7 +48,7 @@ Name of the mongodb database.
 
 ### Parameter: `databaseAccountName`
 
-The name of the parent Cosmos DB database account. Required if the template is used in a standalone deployment.
+The name of the parent Cosmos DB database account. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -95,4 +95,4 @@ Name of the mongodb database.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

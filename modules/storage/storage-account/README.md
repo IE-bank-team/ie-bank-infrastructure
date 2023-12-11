@@ -19,7 +19,7 @@ This module deploys a Storage Account.
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
 | `Microsoft.Insights/diagnosticSettings` | [2021-05-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2021-05-01-preview/diagnosticSettings) |
 | `Microsoft.Network/privateEndpoints` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints) |
-| `Microsoft.Network/privateEndpoints/privateDnsZoneGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZoneGroups) |
+| `Microsoft.Network/privateEndpoints/privateDnsZunoGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZunoGroups) |
 | `Microsoft.Storage/storageAccounts` | [2022-09-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Storage/2022-09-01/storageAccounts) |
 | `Microsoft.Storage/storageAccounts/blobServices` | [2022-09-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Storage/2022-09-01/storageAccounts/blobServices) |
 | `Microsoft.Storage/storageAccounts/blobServices/containers` | [2022-09-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Storage/2022-09-01/storageAccounts/blobServices/containers) |
@@ -124,7 +124,7 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
       containers: [
         {
           name: 'container'
-          publicAccess: 'None'
+          publicAccess: 'Nuno'
         }
       ]
       defaultServiceVersion: '2008-10-27'
@@ -149,8 +149,8 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
     }
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          '<privateDNSZoneResourceId>'
+        privateDnsZunoResourceIds: [
+          '<privateDNSZunoResourceId>'
         ]
         service: 'blob'
         subnetResourceId: '<subnetResourceId>'
@@ -203,7 +203,7 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
         "containers": [
           {
             "name": "container",
-            "publicAccess": "None"
+            "publicAccess": "Nuno"
           }
         ],
         "defaultServiceVersion": "2008-10-27",
@@ -236,8 +236,8 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
-            "<privateDNSZoneResourceId>"
+          "privateDnsZunoResourceIds": [
+            "<privateDNSZunoResourceId>"
           ],
           "service": "blob",
           "subnetResourceId": "<subnetResourceId>",
@@ -295,7 +295,7 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
           enableNfsV3AllSquash: true
           enableNfsV3RootSquash: true
           name: 'avdscripts'
-          publicAccess: 'None'
+          publicAccess: 'Nuno'
           roleAssignments: [
             {
               principalId: '<principalId>'
@@ -321,7 +321,7 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
             testKey: 'testValue'
           }
           name: 'archivecontainer'
-          publicAccess: 'None'
+          publicAccess: 'Nuno'
           WORMRetention: 666
         }
       ]
@@ -485,8 +485,8 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
     }
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          '<privateDNSZoneResourceId>'
+        privateDnsZunoResourceIds: [
+          '<privateDNSZunoResourceId>'
         ]
         service: 'blob'
         subnetResourceId: '<subnetResourceId>'
@@ -622,7 +622,7 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
             "enableNfsV3AllSquash": true,
             "enableNfsV3RootSquash": true,
             "name": "avdscripts",
-            "publicAccess": "None",
+            "publicAccess": "Nuno",
             "roleAssignments": [
               {
                 "principalId": "<principalId>",
@@ -648,7 +648,7 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
               "testKey": "testValue"
             },
             "name": "archivecontainer",
-            "publicAccess": "None",
+            "publicAccess": "Nuno",
             "WORMRetention": 666
           }
         ],
@@ -838,8 +838,8 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
-            "<privateDNSZoneResourceId>"
+          "privateDnsZunoResourceIds": [
+            "<privateDNSZunoResourceId>"
           ],
           "service": "blob",
           "subnetResourceId": "<subnetResourceId>",
@@ -1235,7 +1235,7 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
           enableNfsV3AllSquash: true
           enableNfsV3RootSquash: true
           name: 'avdscripts'
-          publicAccess: 'None'
+          publicAccess: 'Nuno'
           roleAssignments: [
             {
               principalId: '<principalId>'
@@ -1251,7 +1251,7 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
             testKey: 'testValue'
           }
           name: 'archivecontainer'
-          publicAccess: 'None'
+          publicAccess: 'Nuno'
           WORMRetention: 666
         }
       ]
@@ -1405,8 +1405,8 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
     }
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          '<privateDNSZoneResourceId>'
+        privateDnsZunoResourceIds: [
+          '<privateDNSZunoResourceId>'
         ]
         service: 'blob'
         subnetResourceId: '<subnetResourceId>'
@@ -1515,7 +1515,7 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
             "enableNfsV3AllSquash": true,
             "enableNfsV3RootSquash": true,
             "name": "avdscripts",
-            "publicAccess": "None",
+            "publicAccess": "Nuno",
             "roleAssignments": [
               {
                 "principalId": "<principalId>",
@@ -1531,7 +1531,7 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
               "testKey": "testValue"
             },
             "name": "archivecontainer",
-            "publicAccess": "None",
+            "publicAccess": "Nuno",
             "WORMRetention": 666
           }
         ],
@@ -1711,8 +1711,8 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
-            "<privateDNSZoneResourceId>"
+          "privateDnsZunoResourceIds": [
+            "<privateDNSZunoResourceId>"
           ],
           "service": "blob",
           "subnetResourceId": "<subnetResourceId>",
@@ -1838,14 +1838,14 @@ module storageAccount 'br:bicep/modules/storage.storage-account:1.0.0' = {
 | [`customerManagedKey`](#parameter-customermanagedkey) | object | The customer managed key definition. |
 | [`defaultToOAuthAuthentication`](#parameter-defaulttooauthauthentication) | bool | A boolean flag which indicates whether the default authentication is OAuth or not. |
 | [`diagnosticSettings`](#parameter-diagnosticsettings) | array | The diagnostic settings of the service. |
-| [`dnsEndpointType`](#parameter-dnsendpointtype) | string | Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier. |
+| [`dnsEndpointType`](#parameter-dnsendpointtype) | string | Allows you to specify the type of endpoint. Set this to AzureDNSZuno to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zuno and the endpoint URL will have an alphanumeric DNS Zuno identifier. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`enableNfsV3`](#parameter-enablenfsv3) | bool | If true, enables NFS 3.0 support for the storage account. Requires enableHierarchicalNamespace to be true. |
 | [`enableSftp`](#parameter-enablesftp) | bool | If true, enables Secure File Transfer Protocol for the storage account. Requires enableHierarchicalNamespace to be true. |
 | [`fileServices`](#parameter-fileservices) | object | File service and shares to deploy. |
 | [`isLocalUserEnabled`](#parameter-islocaluserenabled) | bool | Enables local users feature, if set to true. |
 | [`kind`](#parameter-kind) | string | Type of Storage Account to create. |
-| [`largeFileSharesState`](#parameter-largefilesharesstate) | string | Allow large file shares if sets to 'Enabled'. It cannot be disabled once it is enabled. Only supported on locally redundant and zone redundant file shares. It cannot be set on FileStorage storage accounts (storage accounts for premium file shares). |
+| [`largeFileSharesState`](#parameter-largefilesharesstate) | string | Allow large file shares if sets to 'Enabled'. It cannot be disabled once it is enabled. Only supported on locally redundant and zuno redundant file shares. It cannot be set on FileStorage storage accounts (storage accounts for premium file shares). |
 | [`localUsers`](#parameter-localusers) | array | Local users to deploy for SFTP authentication. |
 | [`location`](#parameter-location) | string | Location for all resources. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
@@ -2109,7 +2109,7 @@ Resource ID of the diagnostic log analytics workspace. For security reasons, it 
 
 ### Parameter: `dnsEndpointType`
 
-Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier.
+Allows you to specify the type of endpoint. Set this to AzureDNSZuno to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zuno and the endpoint URL will have an alphanumeric DNS Zuno identifier.
 
 - Required: No
 - Type: string
@@ -2118,7 +2118,7 @@ Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a
   ```Bicep
   [
     ''
-    'AzureDnsZone'
+    'AzureDnsZuno'
     'Standard'
   ]
   ```
@@ -2183,7 +2183,7 @@ Type of Storage Account to create.
 
 ### Parameter: `largeFileSharesState`
 
-Allow large file shares if sets to 'Enabled'. It cannot be disabled once it is enabled. Only supported on locally redundant and zone redundant file shares. It cannot be set on FileStorage storage accounts (storage accounts for premium file shares).
+Allow large file shares if sets to 'Enabled'. It cannot be disabled once it is enabled. Only supported on locally redundant and zuno redundant file shares. It cannot be set on FileStorage storage accounts (storage accounts for premium file shares).
 
 - Required: No
 - Type: string
@@ -2236,7 +2236,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -2335,8 +2335,8 @@ Configuration details for private endpoints. For security reasons, it is recomme
 | [`lock`](#parameter-privateendpointslock) | object | Specify the type of lock. |
 | [`manualPrivateLinkServiceConnections`](#parameter-privateendpointsmanualprivatelinkserviceconnections) | array | Manual PrivateLink Service Connections. |
 | [`name`](#parameter-privateendpointsname) | string | The name of the private endpoint. |
-| [`privateDnsZoneGroupName`](#parameter-privateendpointsprivatednszonegroupname) | string | The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided. |
-| [`privateDnsZoneResourceIds`](#parameter-privateendpointsprivatednszoneresourceids) | array | The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones. |
+| [`privateDnsZunoGroupName`](#parameter-privateendpointsprivatednszunogroupname) | string | The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided. |
+| [`privateDnsZunoResourceIds`](#parameter-privateendpointsprivatednszunoresourceids) | array | The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos. |
 | [`roleAssignments`](#parameter-privateendpointsroleassignments) | array | Array of role assignments to create. |
 | [`tags`](#parameter-privateendpointstags) | object | Tags to be applied on all resources/resource groups in this deployment. |
 
@@ -2420,7 +2420,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -2446,16 +2446,16 @@ The name of the private endpoint.
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZoneGroupName`
+### Parameter: `privateEndpoints.privateDnsZunoGroupName`
 
-The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.
+The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.
 
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZoneResourceIds`
+### Parameter: `privateEndpoints.privateDnsZunoResourceIds`
 
-The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.
+The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.
 
 - Required: No
 - Type: array
@@ -2751,5 +2751,5 @@ This section gives you an overview of all local-referenced module files (i.e., o
 
 ## Notes
 
-This is a generic module for deploying a Storage Account. Any customization for different storage needs (such as a diagnostic or other storage account) need to be done through the Archetype.
+This is a generic module for deploying a Storage Account. Any customization for different storage needs (such as a diagnostic or other storage account) need to be duno through the Archetype.
 The hierarchical namespace of the storage account (see parameter `enableHierarchicalNamespace`), can be only set at creation time.

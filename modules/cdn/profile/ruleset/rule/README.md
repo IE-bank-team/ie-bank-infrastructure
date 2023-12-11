@@ -112,4 +112,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

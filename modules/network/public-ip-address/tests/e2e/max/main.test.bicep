@@ -94,7 +94,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       }
     ]
     skuName: 'Standard'
-    zones: [
+    zunos: [
       '1'
       '2'
       '3'

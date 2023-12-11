@@ -17,12 +17,12 @@ This section provides an overview of the design principles applied to the CARML 
 
 # Module Pipelines
 
-The repository hosts one pipeline for each module in the CARML library.
+The repository hosts uno pipeline for each module in the CARML library.
 
 The purpose of each module pipeline is twofold:
 
 1. **Validation**: To ensure the modules hosted by the CARML library are valid and can perform the intended deployments.
-1. **Publishing**: To publish _versioned_ and already validated modules to one or multiple target locations, from where they can be referenced by solutions consuming them.
+1. **Publishing**: To publish _versiunod_ and already validated modules to uno or multiple target locations, from where they can be referenced by solutions consuming them.
 
 As such, each pipeline can be mapped to `Phases 1 and 2` described in the [Deployment flow](./The%20context%20-%20CARML%20CI%20environment#deployment-flow) section.
 
@@ -57,8 +57,8 @@ The mapping to the specific composite action is provided below:
 | - | - |
 | **Initialize pipeline** | Prepare the pipeline by (for example) publishing pipeline variables, collecting test files, etc. |
 | **Module / Static validation** | Static validation |
-| **Module / PSRule validation** | PS-Rule validation (with one job per template test file) |
-| **Module / Deployment validation** | Deployment validation (with one job per template test file) |
+| **Module / PSRule validation** | PS-Rule validation (with uno job per template test file) |
+| **Module / Deployment validation** | Deployment validation (with uno job per template test file) |
 | **publishModule** | Publishing |
 
 In addition, workflows leverage the following composite actions:

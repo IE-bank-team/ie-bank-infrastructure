@@ -117,7 +117,7 @@ param backupRetentionIntervalInHours int = 8
 @allowed([
   'Geo'
   'Local'
-  'Zone'
+  'Zuno'
 ])
 @description('Optional. Enum to indicate type of backup residency. Only applies to periodic backup type.')
 param backupStorageRedundancy string = 'Local'
@@ -154,7 +154,7 @@ var consistencyPolicy = {
 
 var databaseAccount_locations = [for location in locations: {
   failoverPriority: location.failoverPriority
-  isZoneRedundant: location.isZoneRedundant
+  isZunoRedundant: location.isZunoRedundant
   locationName: location.locationName
 }]
 
@@ -233,7 +233,7 @@ resource databaseAccount 'Microsoft.DocumentDB/databaseAccounts@2023-04-15' = {
   properties: databaseAccount_properties
 }
 
-resource databaseAccount_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource databaseAccount_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -326,8 +326,8 @@ module databaseAccount_privateEndpoints '../../network/private-endpoint/main.bic
     enableDefaultTelemetry: privateEndpoint.?enableDefaultTelemetry ?? enableReferencedModulesTelemetry
     location: privateEndpoint.?location ?? reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZoneGroupName: privateEndpoint.?privateDnsZoneGroupName
-    privateDnsZoneResourceIds: privateEndpoint.?privateDnsZoneResourceIds
+    privateDnsZunoGroupName: privateEndpoint.?privateDnsZunoGroupName
+    privateDnsZunoResourceIds: privateEndpoint.?privateDnsZunoResourceIds
     roleAssignments: privateEndpoint.?roleAssignments
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: privateEndpoint.?manualPrivateLinkServiceConnections
@@ -370,7 +370,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {
@@ -409,11 +409,11 @@ type privateEndpointType = {
   @description('Required. Resource ID of the subnet where the endpoint needs to be created.')
   subnetResourceId: string
 
-  @description('Optional. The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.')
-  privateDnsZoneGroupName: string?
+  @description('Optional. The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.')
+  privateDnsZunoGroupName: string?
 
-  @description('Optional. The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.')
-  privateDnsZoneResourceIds: string[]?
+  @description('Optional. The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.')
+  privateDnsZunoResourceIds: string[]?
 
   @description('Optional. Custom DNS configurations.')
   customDnsConfigs: {

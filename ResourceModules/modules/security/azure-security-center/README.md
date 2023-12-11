@@ -53,7 +53,7 @@ module azureSecurityCenter 'br:bicep/modules/security.azure-security-center:1.0.
       alertNotifications: 'Off'
       alertsToAdmins: 'Off'
       email: 'foo@contoso.com'
-      phone: '+12345678'
+      phuno: '+12345678'
     }
   }
 }
@@ -84,7 +84,7 @@ module azureSecurityCenter 'br:bicep/modules/security.azure-security-center:1.0.
         "alertNotifications": "Off",
         "alertsToAdmins": "Off",
         "email": "foo@contoso.com",
-        "phone": "+12345678"
+        "phuno": "+12345678"
       }
     }
   }
@@ -115,7 +115,7 @@ module azureSecurityCenter 'br:bicep/modules/security.azure-security-center:1.0.
       alertNotifications: 'Off'
       alertsToAdmins: 'Off'
       email: 'foo@contoso.com'
-      phone: '+12345678'
+      phuno: '+12345678'
     }
   }
 }
@@ -146,7 +146,7 @@ module azureSecurityCenter 'br:bicep/modules/security.azure-security-center:1.0.
         "alertNotifications": "Off",
         "alertsToAdmins": "Off",
         "email": "foo@contoso.com",
-        "phone": "+12345678"
+        "phuno": "+12345678"
       }
     }
   }
@@ -163,7 +163,7 @@ module azureSecurityCenter 'br:bicep/modules/security.azure-security-center:1.0.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`scope`](#parameter-scope) | string | All the VMs in this scope will send their security data to the mentioned workspace unless overridden by a setting with more specific scope. |
+| [`scope`](#parameter-scope) | string | All the VMs in this scope will send their security data to the mentiunod workspace unless overridden by a setting with more specific scope. |
 | [`workspaceId`](#parameter-workspaceid) | string | The full Azure ID of the workspace to save the data in. |
 
 **Optional parameters**
@@ -192,7 +192,7 @@ module azureSecurityCenter 'br:bicep/modules/security.azure-security-center:1.0.
 
 ### Parameter: `scope`
 
-All the VMs in this scope will send their security data to the mentioned workspace unless overridden by a setting with more specific scope.
+All the VMs in this scope will send their security data to the mentiunod workspace unless overridden by a setting with more specific scope.
 
 - Required: Yes
 - Type: string
@@ -464,4 +464,4 @@ The pricing tier value for VMs. Azure Security Center is provided in two pricing
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

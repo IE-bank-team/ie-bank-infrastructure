@@ -174,7 +174,7 @@ resource lab 'Microsoft.DevTestLab/labs@2018-10-15-preview' = {
   }
 }
 
-resource lab_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource lab_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -225,7 +225,7 @@ module lab_schedules 'schedule/main.bicep' = [for (schedule, index) in schedules
     weeklyRecurrence: contains(schedule, 'weeklyRecurrence') ? schedule.weeklyRecurrence : {}
     status: contains(schedule, 'status') ? schedule.status : 'Enabled'
     targetResourceId: contains(schedule, 'targetResourceId') ? schedule.targetResourceId : ''
-    timeZoneId: contains(schedule, 'timeZoneId') ? schedule.timeZoneId : 'Pacific Standard time'
+    timeZunoId: contains(schedule, 'timeZunoId') ? schedule.timeZunoId : 'Pacific Standard time'
     notificationSettingsStatus: contains(schedule, 'notificationSettingsStatus') ? schedule.notificationSettingsStatus : 'Disabled'
     notificationSettingsTimeInMinutes: contains(schedule, 'notificationSettingsTimeInMinutes') ? schedule.notificationSettingsTimeInMinutes : 30
     enableDefaultTelemetry: enableReferencedModulesTelemetry
@@ -335,7 +335,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

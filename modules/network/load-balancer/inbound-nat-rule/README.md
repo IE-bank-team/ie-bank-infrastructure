@@ -29,7 +29,7 @@ This module deploys a Load Balancer Inbound NAT Rules.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`loadBalancerName`](#parameter-loadbalancername) | string | The name of the parent load balancer. Required if the template is used in a standalone deployment. |
+| [`loadBalancerName`](#parameter-loadbalancername) | string | The name of the parent load balancer. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -68,7 +68,7 @@ The name of the inbound NAT rule.
 
 ### Parameter: `loadBalancerName`
 
-The name of the parent load balancer. Required if the template is used in a standalone deployment.
+The name of the parent load balancer. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -164,4 +164,4 @@ The transport protocol for the endpoint.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

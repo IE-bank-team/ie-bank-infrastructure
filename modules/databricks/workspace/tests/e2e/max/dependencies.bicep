@@ -117,7 +117,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
     properties: {}
 }
 
-resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
+resource applicationInsights 'Microsoft.Insights/compunonts@2020-02-02' = {
     name: applicationInsightsName
     location: location
     kind: 'web'
@@ -154,7 +154,7 @@ resource loadBalancer 'Microsoft.Network/loadBalancers@2023-04-01' = {
         ]
         frontendIPConfigurations: [
             {
-                name: 'privateIPConfione'
+                name: 'privateIPConfiuno'
                 properties: {
                     subnet: {
                         id: virtualNetwork.properties.subnets[0].id
@@ -312,7 +312,7 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2022-01-01' = {
     }
 }
 
-resource privateDNSZone 'Microsoft.Network/privateDnsZones@2020-06-01' = {
+resource privateDNSZuno 'Microsoft.Network/privateDnsZunos@2020-06-01' = {
     name: 'privatelink.azuredatabricks.net'
     location: 'global'
 
@@ -323,7 +323,7 @@ resource privateDNSZone 'Microsoft.Network/privateDnsZones@2020-06-01' = {
             virtualNetwork: {
                 id: virtualNetwork.id
             }
-            registrationEnabled: false
+            registratiunonabled: false
         }
     }
 }
@@ -340,8 +340,8 @@ output customPrivateSubnetName string = virtualNetwork.properties.subnets[2].nam
 @description('The resource ID of the created Virtual Network.')
 output virtualNetworkResourceId string = virtualNetwork.id
 
-@description('The resource ID of the created Private DNS Zone.')
-output privateDNSZoneResourceId string = privateDNSZone.id
+@description('The resource ID of the created Private DNS Zuno.')
+output privateDNSZunoResourceId string = privateDNSZuno.id
 
 @description('The resource ID of the created Azure Machine Learning Workspace.')
 output machineLearningWorkspaceResourceId string = machineLearningWorkspace.id

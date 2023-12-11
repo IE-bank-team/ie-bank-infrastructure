@@ -2,7 +2,7 @@ metadata name = 'Recovery Services Vault Replication Alert Settings'
 metadata description = 'This module deploys a Recovery Services Vault Replication Alert Settings.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment.')
 param recoveryVaultName string
 
 @description('Optional. The name of the replication Alert Setting.')

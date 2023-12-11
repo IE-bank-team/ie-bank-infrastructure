@@ -500,7 +500,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -699,7 +699,7 @@ The DNS Time-To-Live (TTL), in seconds. This informs the local DNS resolvers and
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

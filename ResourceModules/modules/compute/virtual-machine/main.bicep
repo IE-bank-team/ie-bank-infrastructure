@@ -1,5 +1,5 @@
 metadata name = 'Virtual Machines'
-metadata description = 'This module deploys a Virtual Machine with one or multiple NICs and optionally one or multiple public IPs.'
+metadata description = 'This module deploys a Virtual Machine with uno or multiple NICs and optionally uno or multiple public IPs.'
 metadata owner = 'Azure/module-maintainers'
 
 // Main resource
@@ -36,7 +36,7 @@ param osDisk object
 @description('Optional. Specifies the data disks. For security reasons, it is recommended to specify DiskEncryptionSet into the dataDisk object. Restrictions: DiskEncryptionSet cannot be enabled if Azure Disk Encryption (guest-VM encryption using bitlocker/DM-Crypt) is enabled on your VMs.')
 param dataDisks array = []
 
-@description('Optional. The flag that enables or disables a capability to have one or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled.')
+@description('Optional. The flag that enables or disables a capability to have uno or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled.')
 param ultraSSDEnabled bool = false
 
 @description('Required. Administrator username.')
@@ -96,17 +96,17 @@ param bootDiagnosticStorageAccountUri string = '.blob.${environment().suffixes.s
 @description('Optional. Resource ID of a proximity placement group.')
 param proximityPlacementGroupResourceId string = ''
 
-@description('Optional. Resource ID of an availability set. Cannot be used in combination with availability zone nor scale set.')
+@description('Optional. Resource ID of an availability set. Cannot be used in combination with availability zuno nor scale set.')
 param availabilitySetResourceId string = ''
 
-@description('Optional. If set to 1, 2 or 3, the availability zone for all VMs is hardcoded to that value. If zero, then availability zones is not used. Cannot be used in combination with availability set nor scale set.')
+@description('Optional. If set to 1, 2 or 3, the availability zuno for all VMs is hardcoded to that value. If zero, then availability zunos is not used. Cannot be used in combination with availability set nor scale set.')
 @allowed([
   0
   1
   2
   3
 ])
-param availabilityZone int = 0
+param availabilityZuno int = 0
 
 // External resources
 @description('Required. Configures NICs and PIPs.')
@@ -215,7 +215,7 @@ param osType string
 #disable-next-line secure-secrets-in-params // Not a secret
 param disablePasswordAuthentication bool = false
 
-@description('Optional. Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.')
+@description('Optional. Indicates whether virtual machine agent should be provisiunod on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.')
 param provisionVMAgent bool = true
 
 @description('Optional. Indicates whether Automatic Updates is enabled for the Windows virtual machine. Default value is true. When patchMode is set to Manual, this parameter must be set to false. For virtual machine scale sets, this property can be updated and updates will take effect on OS reprovisioning.')
@@ -238,8 +238,8 @@ param patchMode string = ''
 ])
 param patchAssessmentMode string = 'ImageDefault'
 
-@description('Optional. Specifies the time zone of the virtual machine. e.g. \'Pacific Standard Time\'. Possible values can be `TimeZoneInfo.id` value from time zones returned by `TimeZoneInfo.GetSystemTimeZones`.')
-param timeZone string = ''
+@description('Optional. Specifies the time zuno of the virtual machine. e.g. \'Pacific Standard Time\'. Possible values can be `TimeZunoInfo.id` value from time zunos returned by `TimeZunoInfo.GetSystemTimeZunos`.')
+param timeZuno string = ''
 
 @description('Optional. Specifies additional base-64 encoded XML formatted information that can be included in the Unattend.xml file, which is used by Windows Setup. - AdditionalUnattendContent object.')
 param additionalUnattendContent array = []
@@ -279,7 +279,7 @@ var windowsConfiguration = {
     patchMode: patchMode
     assessmentMode: patchAssessmentMode
   } : null
-  timeZone: empty(timeZone) ? null : timeZone
+  timeZuno: empty(timeZuno) ? null : timeZuno
   additionalUnattendContent: empty(additionalUnattendContent) ? null : additionalUnattendContent
   winRM: !empty(winRM) ? {
     listeners: winRM
@@ -360,7 +360,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2022-11-01' = {
   location: location
   identity: identity
   tags: tags
-  zones: availabilityZone != 0 ? array(availabilityZone) : null
+  zunos: availabilityZuno != 0 ? array(availabilityZuno) : null
   plan: !empty(plan) ? plan : null
   properties: {
     hardwareProfile: {
@@ -567,7 +567,7 @@ module vm_networkWatcherAgentExtension 'extension/main.bicep' = if (extensionNet
   }
 }
 
-module vm_desiredStateConfigurationExtension 'extension/main.bicep' = if (extensionDSCConfig.enabled) {
+module vm_desiredStateConfiguratiunoxtension 'extension/main.bicep' = if (extensionDSCConfig.enabled) {
   name: '${uniqueString(deployment().name, location)}-VM-DesiredStateConfiguration'
   params: {
     virtualMachineName: vm.name
@@ -602,11 +602,11 @@ module vm_customScriptExtension 'extension/main.bicep' = if (extensionCustomScri
     enableDefaultTelemetry: enableReferencedModulesTelemetry
   }
   dependsOn: [
-    vm_desiredStateConfigurationExtension
+    vm_desiredStateConfiguratiunoxtension
   ]
 }
 
-module vm_azureDiskEncryptionExtension 'extension/main.bicep' = if (extensionAzureDiskEncryptionConfig.enabled) {
+module vm_azureDiskEncryptiunoxtension 'extension/main.bicep' = if (extensionAzureDiskEncryptionConfig.enabled) {
   name: '${uniqueString(deployment().name, location)}-VM-AzureDiskEncryption'
   params: {
     virtualMachineName: vm.name
@@ -646,12 +646,12 @@ module vm_backup '../../recovery-services/vault/backup-fabric/protection-contain
     vm_microsoftAntiMalwareExtension
     vm_networkWatcherAgentExtension
     vm_dependencyAgentExtension
-    vm_desiredStateConfigurationExtension
+    vm_desiredStateConfiguratiunoxtension
     vm_customScriptExtension
   ]
 }
 
-resource vm_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource vm_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -706,7 +706,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

@@ -11,16 +11,16 @@ param tags object?
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')
 param enableDefaultTelemetry bool = true
 
-@description('Conditional. The name of the parent Database Account. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Database Account. Required if the template is used in a standaluno deployment.')
 param databaseAccountName string
 
-@description('Conditional. The name of the parent Gremlin Database. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Gremlin Database. Required if the template is used in a standaluno deployment.')
 param gremlinDatabaseName string
 
 @description('Optional. Indexing policy of the graph.')
 param indexingPolicy object = {}
 
-@description('Optional. List of paths using which data within the container can be partitioned.')
+@description('Optional. List of paths using which data within the container can be partitiunod.')
 param partitionKeyPaths array = []
 
 resource defaultTelemetry 'Microsoft.Resources/deployments@2022-09-01' = if (enableDefaultTelemetry) {

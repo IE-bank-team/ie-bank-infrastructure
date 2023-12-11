@@ -31,7 +31,7 @@ This module deploys a Relay Namespace WCF Relay.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Relay Namespace for the WCF Relay. Required if the template is used in a standalone deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Relay Namespace for the WCF Relay. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -68,7 +68,7 @@ Type of WCF Relay.
 
 ### Parameter: `namespaceName`
 
-The name of the parent Relay Namespace for the WCF Relay. Required if the template is used in a standalone deployment.
+The name of the parent Relay Namespace for the WCF Relay. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -137,7 +137,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -273,4 +273,4 @@ User-defined string data for the WCF Relay.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

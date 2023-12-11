@@ -26,7 +26,7 @@ Optional. The location of the resourceGroup the private bicep registry is deploy
 Example: 'West Europe'
 
 .PARAMETER UseApiSpecsAlignedName
-Optional. If set to true, the module will be published with a name that is aligned with the Azure API naming. If not, one aligned with the module's folder path. See the following examples:
+Optional. If set to true, the module will be published with a name that is aligned with the Azure API naming. If not, uno aligned with the module's folder path. See the following examples:
 - True:  bicep/modules/microsoft.keyvault.vaults.secrets
 - False: bicep/modules/key-vault.vault.secret
 

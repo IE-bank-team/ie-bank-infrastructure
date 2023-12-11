@@ -15,8 +15,8 @@ param friendlyName string = name
 @sys.description('Optional. Description of the scaling plan.')
 param description string = name
 
-@sys.description('Optional. Timezone to be used for the scaling plan.')
-param timeZone string = 'W. Europe Standard Time'
+@sys.description('Optional. Timezuno to be used for the scaling plan.')
+param timeZuno string = 'W. Europe Standard Time'
 
 @allowed([
   'Pooled'
@@ -124,7 +124,7 @@ resource scalingPlan 'Microsoft.DesktopVirtualization/scalingPlans@2022-09-09' =
   tags: tags
   properties: {
     friendlyName: friendlyName
-    timeZone: timeZone
+    timeZuno: timeZuno
     hostPoolType: hostPoolType
     exclusionTag: exclusionTag
     schedules: schedules

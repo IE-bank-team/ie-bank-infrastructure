@@ -4,7 +4,7 @@ metadata description = '''This module deploys a DevTest Lab Cost.
 Manage lab costs by setting a spending target that can be viewed in the Monthly Estimated Cost Trend chart. DevTest Labs can send a notification when spending reaches the specified target threshold.'''
 metadata owner = 'Azure/module-maintainers'
 
-@sys.description('Conditional. The name of the parent lab. Required if the template is used in a standalone deployment.')
+@sys.description('Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment.')
 param labName string
 
 @allowed([

@@ -30,7 +30,7 @@ Create a cross-tenant connection to manage a resource from another tenant.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standalone deployment. |
+| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -62,7 +62,7 @@ Tenant ID of the subscription or management group that you want to manage.
 
 ### Parameter: `networkManagerName`
 
-The name of the parent network manager. Required if the template is used in a standalone deployment.
+The name of the parent network manager. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -94,4 +94,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -16,7 +16,7 @@
     "managedClusterName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent managed cluster. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent managed cluster. Required if the template is used in a standaluno deployment."
       }
     },
     "name": {
@@ -25,11 +25,11 @@
         "description": "Required. Name of the agent pool."
       }
     },
-    "availabilityZones": {
+    "availabilityZunos": {
       "type": "array",
       "defaultValue": [],
       "metadata": {
-        "description": "Optional. The list of Availability zones to use for nodes. This can only be specified if the AgentPoolType property is \"VirtualMachineScaleSets\"."
+        "description": "Optional. The list of Availability zunos to use for nodes. This can only be specified if the AgentPoolType property is \"VirtualMachineScaleSets\"."
       }
     },
     "count": {
@@ -87,7 +87,7 @@
       "type": "string",
       "defaultValue": "",
       "allowedValues": [
-        "MIoneg",
+        "MIunog",
         "MIG2g",
         "MIG3g",
         "MIG4g",
@@ -130,7 +130,7 @@
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optional. A cluster must have at least one \"System\" Agent Pool at all times. For additional information on agent pool restrictions and best practices, see: /azure/aks/use-system-pools."
+        "description": "Optional. A cluster must have at least uno \"System\" Agent Pool at all times. For additional information on agent pool restrictions and best practices, see: /azure/aks/use-system-pools."
       }
     },
     "nodeLabels": {
@@ -345,7 +345,7 @@
       "apiVersion": "2023-07-02-preview",
       "name": "[format('{0}/{1}', parameters('managedClusterName'), parameters('name'))]",
       "properties": {
-        "availabilityZones": "[parameters('availabilityZones')]",
+        "availabilityZunos": "[parameters('availabilityZunos')]",
         "count": "[parameters('count')]",
         "creationData": "[if(not(empty(parameters('sourceResourceId'))), variables('creationData'), null())]",
         "enableAutoScaling": "[parameters('enableAutoScaling')]",

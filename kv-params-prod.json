@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "keyVaultName": {
-        "value": "one-keyvault-production"
+        "value": "uno-keyvault-production"
       },
       "location": {
         "value": "US East"

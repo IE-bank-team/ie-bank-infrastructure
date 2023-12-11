@@ -79,7 +79,7 @@ resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01
     createMode: 'Default'
     highAvailability: {
       mode: 'Disabled'
-      standbyAvailabilityZone: ''
+      standbyAvailabilityZuno: ''
     }
     storage: {
       storageSizeGB: 32
@@ -161,7 +161,7 @@ resource azureMonitor 'Microsoft.OperationalInsights/workspaces@2020-08-01' = {
   location: location
 }
 
-resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
+resource appInsights 'Microsoft.Insights/compunonts@2020-02-02' = {
   name: appInsightsName
   location: location
   kind: 'web'

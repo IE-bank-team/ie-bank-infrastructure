@@ -1,7 +1,7 @@
 # Network Manager Security Admin Configuration Rule Collections `[Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections]`
 
 This module deploys an Network Manager Security Admin Configuration Rule Collection.
-A security admin configuration contains a set of rule collections. Each rule collection contains one or more security admin rules. Security admin rules allows enforcing security policy criteria that matches the conditions set. Warning: A rule collection without rule will cause a deployment configuration for security admin goal state in network manager to fail.
+A security admin configuration contains a set of rule collections. Each rule collection contains uno or more security admin rules. Security admin rules allows enforcing security policy criteria that matches the conditions set. Warning: A rule collection without rule will cause a deployment configuration for security admin goal state in network manager to fail.
 
 ## Navigation
 
@@ -23,15 +23,15 @@ A security admin configuration contains a set of rule collections. Each rule col
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`appliesToGroups`](#parameter-appliestogroups) | array | List of network groups for configuration. An admin rule collection must be associated to at least one network group. |
+| [`appliesToGroups`](#parameter-appliestogroups) | array | List of network groups for configuration. An admin rule collection must be associated to at least uno network group. |
 | [`name`](#parameter-name) | string | The name of the admin rule collection. |
 
 **Conditional parameters**
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standalone deployment. |
-| [`securityAdminConfigurationName`](#parameter-securityadminconfigurationname) | string | The name of the parent security admin configuration. Required if the template is used in a standalone deployment. |
+| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standaluno deployment. |
+| [`securityAdminConfigurationName`](#parameter-securityadminconfigurationname) | string | The name of the parent security admin configuration. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -43,7 +43,7 @@ A security admin configuration contains a set of rule collections. Each rule col
 
 ### Parameter: `appliesToGroups`
 
-List of network groups for configuration. An admin rule collection must be associated to at least one network group.
+List of network groups for configuration. An admin rule collection must be associated to at least uno network group.
 
 - Required: Yes
 - Type: array
@@ -57,14 +57,14 @@ The name of the admin rule collection.
 
 ### Parameter: `networkManagerName`
 
-The name of the parent network manager. Required if the template is used in a standalone deployment.
+The name of the parent network manager. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `securityAdminConfigurationName`
 
-The name of the parent security admin configuration. Required if the template is used in a standalone deployment.
+The name of the parent security admin configuration. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -103,4 +103,4 @@ List of rules for the admin rules collection. Security admin rules allows enforc
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -21,7 +21,7 @@ This module deploys a Digital Twins Instance ServiceBus Endpoint.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`digitalTwinInstanceName`](#parameter-digitaltwininstancename) | string | The name of the parent Digital Twin Instance resource. Required if the template is used in a standalone deployment. |
+| [`digitalTwinInstanceName`](#parameter-digitaltwininstancename) | string | The name of the parent Digital Twin Instance resource. Required if the template is used in a standaluno deployment. |
 | [`primaryConnectionString`](#parameter-primaryconnectionstring) | securestring | PrimaryConnectionString of the endpoint for key-based authentication. Will be obfuscated during read. Required if the `authenticationType` is "KeyBased". |
 
 **Optional parameters**
@@ -40,7 +40,7 @@ This module deploys a Digital Twins Instance ServiceBus Endpoint.
 
 ### Parameter: `digitalTwinInstanceName`
 
-The name of the parent Digital Twin Instance resource. Required if the template is used in a standalone deployment.
+The name of the parent Digital Twin Instance resource. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -163,4 +163,4 @@ SecondaryConnectionString of the endpoint for key-based authentication. Will be 
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

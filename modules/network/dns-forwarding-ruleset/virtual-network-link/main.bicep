@@ -2,13 +2,13 @@ metadata name = 'Dns Forwarding Rulesets Virtual Network Links'
 metadata description = 'This template deploys Virtual Network Link in a Dns Forwarding Ruleset.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent DNS Fowarding Rule Set. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent DNS Fowarding Rule Set. Required if the template is used in a standaluno deployment.')
 param dnsForwardingRulesetName string
 
 @description('Optional. The name of the virtual network link.')
 param name string = '${last(split(virtualNetworkResourceId, '/'))}-vnetlink'
 
-@description('Optional. The location of the PrivateDNSZone. Should be global.')
+@description('Optional. The location of the PrivateDNSZuno. Should be global.')
 param location string = 'global'
 
 @description('Required. Link to another virtual network resource ID.')

@@ -1,25 +1,25 @@
-metadata name = 'Private Endpoint Private DNS Zone Groups'
-metadata description = 'This module deploys a Private Endpoint Private DNS Zone Group.'
+metadata name = 'Private Endpoint Private DNS Zuno Groups'
+metadata description = 'This module deploys a Private Endpoint Private DNS Zuno Group.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent private endpoint. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent private endpoint. Required if the template is used in a standaluno deployment.')
 param privateEndpointName string
 
-@description('Required. Array of private DNS zone resource IDs. A DNS zone group can support up to 5 DNS zones.')
+@description('Required. Array of private DNS zuno resource IDs. A DNS zuno group can support up to 5 DNS zunos.')
 @minLength(1)
 @maxLength(5)
 param privateDNSResourceIds array
 
-@description('Optional. The name of the private DNS zone group.')
+@description('Optional. The name of the private DNS zuno group.')
 param name string = 'default'
 
 // @description('Optional. Enable/Disable usage telemetry for module.')
 // param enableDefaultTelemetry bool = true
 
-var privateDnsZoneConfigs = [for privateDNSResourceId in privateDNSResourceIds: {
+var privateDnsZunoConfigs = [for privateDNSResourceId in privateDNSResourceIds: {
   name: last(split(privateDNSResourceId, '/'))!
   properties: {
-    privateDnsZoneId: privateDNSResourceId
+    privateDnsZunoId: privateDNSResourceId
   }
 }]
 
@@ -39,19 +39,19 @@ resource privateEndpoint 'Microsoft.Network/privateEndpoints@2023-04-01' existin
   name: privateEndpointName
 }
 
-resource privateDnsZoneGroup 'Microsoft.Network/privateEndpoints/privateDnsZoneGroups@2023-04-01' = {
+resource privateDnsZunoGroup 'Microsoft.Network/privateEndpoints/privateDnsZunoGroups@2023-04-01' = {
   name: name
   parent: privateEndpoint
   properties: {
-    privateDnsZoneConfigs: privateDnsZoneConfigs
+    privateDnsZunoConfigs: privateDnsZunoConfigs
   }
 }
 
-@description('The name of the private endpoint DNS zone group.')
-output name string = privateDnsZoneGroup.name
+@description('The name of the private endpoint DNS zuno group.')
+output name string = privateDnsZunoGroup.name
 
-@description('The resource ID of the private endpoint DNS zone group.')
-output resourceId string = privateDnsZoneGroup.id
+@description('The resource ID of the private endpoint DNS zuno group.')
+output resourceId string = privateDnsZunoGroup.id
 
-@description('The resource group the private endpoint DNS zone group was deployed into.')
+@description('The resource group the private endpoint DNS zuno group was deployed into.')
 output resourceGroupName string = resourceGroup().name

@@ -12,13 +12,13 @@ param vmInitialNumber int = 1
 @maxValue(800)
 param vmNumberOfInstances int = 1
 
-@description('Optional. Specifies whether the computer names should be transformed. The transformation is performed on all computer names. Available transformations are \'none\' (Default), \'uppercase\' and \'lowercase\'.')
+@description('Optional. Specifies whether the computer names should be transformed. The transformation is performed on all computer names. Available transformations are \'nuno\' (Default), \'uppercase\' and \'lowercase\'.')
 @allowed([
-  'none'
+  'nuno'
   'uppercase'
   'lowercase'
 ])
-param vmComputerNamesTransformation string = 'none'
+param vmComputerNamesTransformation string = 'nuno'
 
 @description('Required. Specifies the size for the VMs.')
 param vmSize string
@@ -47,7 +47,7 @@ param osDisk object
 @description('Optional. Specifies the data disks. For security reasons, it is recommended to specify DiskEncryptionSet into the dataDisk object. Restrictions: DiskEncryptionSet cannot be enabled if Azure Disk Encryption (guest-VM encryption using bitlocker/DM-Crypt) is enabled on your VMs.')
 param dataDisks array = []
 
-@description('Optional. The flag that enables or disables a capability to have one or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled.')
+@description('Optional. The flag that enables or disables a capability to have uno or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled.')
 param ultraSSDEnabled bool = false
 
 @description('Required. Administrator username.')
@@ -107,17 +107,17 @@ param bootDiagnosticStorageAccountUri string = '.blob.${environment().suffixes.s
 @description('Optional. Resource ID of a proximity placement group.')
 param proximityPlacementGroupResourceId string = ''
 
-@description('Optional. Resource ID of an availability set. Cannot be used in combination with availability zone nor scale set.')
+@description('Optional. Resource ID of an availability set. Cannot be used in combination with availability zuno nor scale set.')
 param availabilitySetResourceId string = ''
 
-@description('Optional. If set to 1, 2 or 3, the availability zone for all VMs is hardcoded to that value. If zero, then availability zones is not used. Cannot be used in combination with availability set nor scale set.')
+@description('Optional. If set to 1, 2 or 3, the availability zuno for all VMs is hardcoded to that value. If zero, then availability zunos is not used. Cannot be used in combination with availability set nor scale set.')
 @allowed([
   0
   1
   2
   3
 ])
-param availabilityZone int = 0
+param availabilityZuno int = 0
 
 // External resources
 @description('Required. Configures NICs and PIPs.')
@@ -272,14 +272,14 @@ param osType string
 @description('Optional. Specifies whether password authentication should be disabled.')
 param disablePasswordAuthentication bool = false
 
-@description('Optional. Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.')
+@description('Optional. Indicates whether virtual machine agent should be provisiunod on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.')
 param provisionVMAgent bool = true
 
 @description('Optional. Indicates whether Automatic Updates is enabled for the Windows virtual machine. Default value is true. For virtual machine scale sets, this property can be updated and updates will take effect on OS reprovisioning.')
 param enableAutomaticUpdates bool = true
 
-@description('Optional. Specifies the time zone of the virtual machine. e.g. \'Pacific Standard Time\'. Possible values can be `TimeZoneInfo.id` value from time zones returned by `TimeZoneInfo.GetSystemTimeZones`.')
-param timeZone string = ''
+@description('Optional. Specifies the time zuno of the virtual machine. e.g. \'Pacific Standard Time\'. Possible values can be `TimeZunoInfo.id` value from time zunos returned by `TimeZunoInfo.GetSystemTimeZunos`.')
+param timeZuno string = ''
 
 @description('Optional. Specifies additional base-64 encoded XML formatted information that can be included in the Unattend.xml file, which is used by Windows Setup. - AdditionalUnattendContent object.')
 param additionalUnattendContent array = []
@@ -361,13 +361,13 @@ module virtualMachine '../../../modules/compute/virtual-machine/main.bicep' = [f
     securityType: securityType
     systemAssignedIdentity: systemAssignedIdentity
     tags: tags
-    timeZone: timeZone
+    timeZuno: timeZuno
     ultraSSDEnabled: ultraSSDEnabled
     userAssignedIdentities: userAssignedIdentities
     priority: vmPriority
     vTpmEnabled: vTpmEnabled
     winRM: winRM
-    availabilityZone: availabilityZone
+    availabilityZuno: availabilityZuno
   }
 }]
 

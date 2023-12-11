@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "None",
+            "Nuno",
             "ReadOnly"
           ],
           "nullable": true,
@@ -206,7 +206,7 @@
       }
     },
     "gallery_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Compute/galleries/{0}', parameters('name'))]",
@@ -250,7 +250,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Gallery-Application-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -383,7 +383,7 @@
               "type": "string",
               "minLength": 1,
               "metadata": {
-                "description": "Conditional. The name of the parent Azure Compute Gallery. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Azure Compute Gallery. Required if the template is used in a standaluno deployment."
               }
             },
             "description": {
@@ -571,7 +571,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Gallery-Image-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -717,7 +717,7 @@
               "type": "string",
               "minLength": 1,
               "metadata": {
-                "description": "Conditional. The name of the parent Azure Shared Image Gallery. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Azure Shared Image Gallery. Required if the template is used in a standaluno deployment."
               }
             },
             "osType": {

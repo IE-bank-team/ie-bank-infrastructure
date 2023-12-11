@@ -27,8 +27,8 @@ This module deploys a Hybrid Connection Authorization Rule.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`hybridConnectionName`](#parameter-hybridconnectionname) | string | The name of the parent Relay Namespace Hybrid Connection. Required if the template is used in a standalone deployment. |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Relay Namespace. Required if the template is used in a standalone deployment. |
+| [`hybridConnectionName`](#parameter-hybridconnectionname) | string | The name of the parent Relay Namespace Hybrid Connection. Required if the template is used in a standaluno deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Relay Namespace. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -46,14 +46,14 @@ The name of the authorization rule.
 
 ### Parameter: `hybridConnectionName`
 
-The name of the parent Relay Namespace Hybrid Connection. Required if the template is used in a standalone deployment.
+The name of the parent Relay Namespace Hybrid Connection. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `namespaceName`
 
-The name of the parent Relay Namespace. Required if the template is used in a standalone deployment.
+The name of the parent Relay Namespace. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -93,4 +93,4 @@ The rights associated with the rule.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

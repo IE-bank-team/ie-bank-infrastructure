@@ -30,7 +30,7 @@ This module deploys an API Management Service API.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standalone deployment. |
+| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -40,7 +40,7 @@ This module deploys an API Management Service API.
 | [`apiRevision`](#parameter-apirevision) | string | Describes the Revision of the API. If no value is provided, default revision 1 is created. |
 | [`apiRevisionDescription`](#parameter-apirevisiondescription) | string | Description of the API Revision. |
 | [`apiType`](#parameter-apitype) | string | Type of API to create. * http creates a REST API * soap creates a SOAP pass-through API * websocket creates websocket API * graphql creates GraphQL API. |
-| [`apiVersion`](#parameter-apiversion) | string | Indicates the Version identifier of the API if the API is versioned. |
+| [`apiVersion`](#parameter-apiversion) | string | Indicates the Version identifier of the API if the API is versiunod. |
 | [`apiVersionDescription`](#parameter-apiversiondescription) | string | Description of the API Version. |
 | [`apiVersionSetId`](#parameter-apiversionsetid) | string | Indicates the Version identifier of the API version set. |
 | [`authenticationSettings`](#parameter-authenticationsettings) | object | Collection of authentication settings included into this API. |
@@ -80,7 +80,7 @@ Relative URL uniquely identifying this API and all of its resource paths within 
 
 ### Parameter: `apiManagementServiceName`
 
-The name of the parent API Management service. Required if the template is used in a standalone deployment.
+The name of the parent API Management service. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -128,7 +128,7 @@ Type of API to create. * http creates a REST API * soap creates a SOAP pass-thro
 
 ### Parameter: `apiVersion`
 
-Indicates the Version identifier of the API if the API is versioned.
+Indicates the Version identifier of the API if the API is versiunod.
 
 - Required: No
 - Type: string
@@ -294,4 +294,4 @@ Criteria to limit import of WSDL to a subset of the document.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

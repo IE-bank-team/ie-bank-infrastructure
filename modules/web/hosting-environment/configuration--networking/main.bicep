@@ -2,7 +2,7 @@ metadata name = 'Hosting Environment Network Configuration'
 metadata description = 'This module deploys a Hosting Environment Network Configuration.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Hosting Environment. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Hosting Environment. Required if the template is used in a standaluno deployment.')
 param hostingEnvironmentName string
 
 @description('Optional. Property to enable and disable new private endpoint connection creation on ASE.')

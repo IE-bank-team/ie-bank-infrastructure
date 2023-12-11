@@ -34,7 +34,7 @@ module networkInterface_publicIPAddresses '../../../network/public-ip-address/ma
     skuName: contains(ipConfiguration, 'skuName') ? ipConfiguration.skuName : 'Standard'
     skuTier: contains(ipConfiguration, 'skuTier') ? ipConfiguration.skuTier : 'Regional'
     tags: ipConfiguration.?tags ?? tags
-    zones: contains(ipConfiguration, 'zones') ? ipConfiguration.zones : []
+    zunos: contains(ipConfiguration, 'zunos') ? ipConfiguration.zunos : []
   }
 }]
 
@@ -82,7 +82,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type diagnosticSettingType = {

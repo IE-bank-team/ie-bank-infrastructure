@@ -27,7 +27,7 @@ This module deploys a Custom Function App into a Static Web App Site using the L
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`staticSiteName`](#parameter-staticsitename) | string | The name of the parent Static Web App. Required if the template is used in a standalone deployment. |
+| [`staticSiteName`](#parameter-staticsitename) | string | The name of the parent Static Web App. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -47,7 +47,7 @@ The resource ID of the backend linked to the static site.
 
 ### Parameter: `staticSiteName`
 
-The name of the parent Static Web App. Required if the template is used in a standalone deployment.
+The name of the parent Static Web App. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -95,4 +95,4 @@ The region of the backend linked to the static site.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

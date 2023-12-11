@@ -31,8 +31,8 @@ An artifact source allows you to create custom artifacts for the VMs in the lab,
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`armTemplateFolderPath`](#parameter-armtemplatefolderpath) | string | The folder containing Azure Resource Manager templates. Required if "folderPath" is empty. |
-| [`folderPath`](#parameter-folderpath) | string | The folder containing artifacts. At least one folder path is required. Required if "armTemplateFolderPath" is empty. |
-| [`labName`](#parameter-labname) | string | The name of the parent lab. Required if the template is used in a standalone deployment. |
+| [`folderPath`](#parameter-folderpath) | string | The folder containing artifacts. At least uno folder path is required. Required if "armTemplateFolderPath" is empty. |
+| [`labName`](#parameter-labname) | string | The name of the parent lab. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -70,7 +70,7 @@ The folder containing Azure Resource Manager templates. Required if "folderPath"
 
 ### Parameter: `folderPath`
 
-The folder containing artifacts. At least one folder path is required. Required if "armTemplateFolderPath" is empty.
+The folder containing artifacts. At least uno folder path is required. Required if "armTemplateFolderPath" is empty.
 
 - Required: No
 - Type: string
@@ -78,7 +78,7 @@ The folder containing artifacts. At least one folder path is required. Required 
 
 ### Parameter: `labName`
 
-The name of the parent lab. Required if the template is used in a standalone deployment.
+The name of the parent lab. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -165,4 +165,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

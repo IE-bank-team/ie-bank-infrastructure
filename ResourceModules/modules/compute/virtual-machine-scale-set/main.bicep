@@ -32,7 +32,7 @@ param osDisk object
 @description('Optional. Specifies the data disks. For security reasons, it is recommended to specify DiskEncryptionSet into the dataDisk object. Restrictions: DiskEncryptionSet cannot be enabled if Azure Disk Encryption (guest-VM encryption using bitlocker/DM-Crypt) is enabled on your VM Scale sets.')
 param dataDisks array = []
 
-@description('Optional. The flag that enables or disables a capability to have one or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled.')
+@description('Optional. The flag that enables or disables a capability to have uno or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled.')
 param ultraSSDEnabled bool = false
 
 @description('Required. Administrator username.')
@@ -148,7 +148,7 @@ param lock lockType
 ])
 param upgradePolicyMode string = 'Manual'
 
-@description('Optional. The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling upgrade in one batch. As this is a maximum, unhealthy instances in previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher reliability.')
+@description('Optional. The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling upgrade in uno batch. As this is a maximum, unhealthy instances in previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher reliability.')
 param maxBatchInstancePercent int = 20
 
 @description('Optional. The maximum percentage of the total virtual machine instances in the scale set that can be simultaneously unhealthy, either as a result of being upgraded, or by being found in an unhealthy state by the virtual machine health checks before the rolling upgrade aborts. This constraint will be checked prior to starting any batch.')
@@ -157,7 +157,7 @@ param maxUnhealthyInstancePercent int = 20
 @description('Optional. The maximum percentage of the total virtual machine instances in the scale set that can be simultaneously unhealthy, either as a result of being upgraded, or by being found in an unhealthy state by the virtual machine health checks before the rolling upgrade aborts. This constraint will be checked prior to starting any batch.')
 param maxUnhealthyUpgradedInstancePercent int = 20
 
-@description('Optional. The wait time between completing the update for all virtual machines in one batch and starting the next batch. The time duration should be specified in ISO 8601 format.')
+@description('Optional. The wait time between completing the update for all virtual machines in uno batch and starting the next batch. The time duration should be specified in ISO 8601 format.')
 param pauseTimeBetweenBatches string = 'PT0S'
 
 @description('Optional. Indicates whether OS upgrades should automatically be applied to scale set instances in a rolling fashion when a newer version of the OS image becomes available. Default value is false. If this is set to true for Windows based scale sets, enableAutomaticUpdates is automatically set to false and cannot be set to true.')
@@ -177,14 +177,14 @@ param gracePeriod string = 'PT30M'
 @maxLength(15)
 param vmNamePrefix string = 'vmssvm'
 
-@description('Optional. Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.')
+@description('Optional. Indicates whether virtual machine agent should be provisiunod on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.')
 param provisionVMAgent bool = true
 
 @description('Optional. Indicates whether Automatic Updates is enabled for the Windows virtual machine. Default value is true. For virtual machine scale sets, this property can be updated and updates will take effect on OS reprovisioning.')
 param enableAutomaticUpdates bool = true
 
-@description('Optional. Specifies the time zone of the virtual machine. e.g. \'Pacific Standard Time\'. Possible values can be `TimeZoneInfo.id` value from time zones returned by `TimeZoneInfo.GetSystemTimeZones`.')
-param timeZone string = ''
+@description('Optional. Specifies the time zuno of the virtual machine. e.g. \'Pacific Standard Time\'. Possible values can be `TimeZunoInfo.id` value from time zunos returned by `TimeZunoInfo.GetSystemTimeZunos`.')
+param timeZuno string = ''
 
 @description('Optional. Specifies additional base-64 encoded XML formatted information that can be included in the Unattend.xml file, which is used by Windows Setup. - AdditionalUnattendContent object.')
 param additionalUnattendContent array = []
@@ -206,14 +206,14 @@ param secrets array = []
 @description('Optional. Specifies Scheduled Event related configurations.')
 param scheduledEventsProfile object = {}
 
-@description('Optional. Specifies whether the Virtual Machine Scale Set should be overprovisioned.')
+@description('Optional. Specifies whether the Virtual Machine Scale Set should be overprovisiunod.')
 param overprovision bool = false
 
-@description('Optional. When Overprovision is enabled, extensions are launched only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions do not run on the extra overprovisioned VMs.')
-param doNotRunExtensionsOnOverprovisionedVMs bool = false
+@description('Optional. When Overprovision is enabled, extensions are launched only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions do not run on the extra overprovisiunod VMs.')
+param doNotRunExtensionsOnOverprovisiunodVMs bool = false
 
-@description('Optional. Whether to force strictly even Virtual Machine distribution cross x-zones in case there is zone outage.')
-param zoneBalance bool = false
+@description('Optional. Whether to force strictly even Virtual Machine distribution cross x-zunos in case there is zuno outage.')
+param zunoBalance bool = false
 
 @description('Optional. When true this limits the scale set to a single placement group, of max size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if singlePlacementGroup is false, it may not be modified to true.')
 param singlePlacementGroup bool = true
@@ -231,8 +231,8 @@ param skuName string
 @description('Optional. The initial instance count of scale set VMs.')
 param skuCapacity int = 1
 
-@description('Optional. The virtual machine scale set zones. NOTE: Availability zones can only be set when you create the scale set.')
-param availabilityZones array = []
+@description('Optional. The virtual machine scale set zunos. NOTE: Availability zunos can only be set when you create the scale set.')
+param availabilityZunos array = []
 
 @description('Optional. Tags of the resource.')
 param tags object?
@@ -272,7 +272,7 @@ var linuxConfiguration = {
 var windowsConfiguration = {
   provisionVMAgent: provisionVMAgent
   enableAutomaticUpdates: enableAutomaticUpdates
-  timeZone: empty(timeZone) ? null : timeZone
+  timeZuno: empty(timeZuno) ? null : timeZuno
   additionalUnattendContent: empty(additionalUnattendContent) ? null : additionalUnattendContent
   winRM: !empty(winRM) ? {
     listeners: winRM
@@ -334,7 +334,7 @@ resource vmss 'Microsoft.Compute/virtualMachineScaleSets@2022-11-01' = {
   location: location
   tags: tags
   identity: identity
-  zones: availabilityZones
+  zunos: availabilityZunos
   properties: {
     proximityPlacementGroup: !empty(proximityPlacementGroupResourceId) ? {
       id: proximityPlacementGroupResourceId
@@ -436,8 +436,8 @@ resource vmss 'Microsoft.Compute/virtualMachineScaleSets@2022-11-01' = {
       scheduledEventsProfile: scheduledEventsProfile
     }
     overprovision: overprovision
-    doNotRunExtensionsOnOverprovisionedVMs: doNotRunExtensionsOnOverprovisionedVMs
-    zoneBalance: zoneBalance == 'true' ? zoneBalance : null
+    doNotRunExtensionsOnOverprovisiunodVMs: doNotRunExtensionsOnOverprovisiunodVMs
+    zunoBalance: zunoBalance == 'true' ? zunoBalance : null
     platformFaultDomainCount: scaleSetFaultDomain
     singlePlacementGroup: singlePlacementGroup
     additionalCapabilities: {
@@ -538,7 +538,7 @@ module vmss_networkWatcherAgentExtension 'extension/main.bicep' = if (extensionN
   }
 }
 
-module vmss_desiredStateConfigurationExtension 'extension/main.bicep' = if (extensionDSCConfig.enabled) {
+module vmss_desiredStateConfiguratiunoxtension 'extension/main.bicep' = if (extensionDSCConfig.enabled) {
   name: '${uniqueString(deployment().name, location)}-VMSS-DesiredStateConfiguration'
   params: {
     virtualMachineScaleSetName: vmss.name
@@ -571,11 +571,11 @@ module vmss_customScriptExtension 'extension/main.bicep' = if (extensionCustomSc
     enableDefaultTelemetry: enableReferencedModulesTelemetry
   }
   dependsOn: [
-    vmss_desiredStateConfigurationExtension
+    vmss_desiredStateConfiguratiunoxtension
   ]
 }
 
-module vmss_azureDiskEncryptionExtension 'extension/main.bicep' = if (extensionAzureDiskEncryptionConfig.enabled) {
+module vmss_azureDiskEncryptiunoxtension 'extension/main.bicep' = if (extensionAzureDiskEncryptionConfig.enabled) {
   name: '${uniqueString(deployment().name, location)}-VMSS-AzureDiskEncryption'
   params: {
     virtualMachineScaleSetName: vmss.name
@@ -595,7 +595,7 @@ module vmss_azureDiskEncryptionExtension 'extension/main.bicep' = if (extensionA
   ]
 }
 
-resource vmss_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource vmss_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -670,7 +670,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

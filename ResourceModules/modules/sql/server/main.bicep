@@ -147,7 +147,7 @@ resource server 'Microsoft.Sql/servers@2022-05-01-preview' = {
   }
 }
 
-resource server_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource server_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -194,7 +194,7 @@ module server_databases 'database/main.bicep' = [for (database, index) in databa
     requestedBackupStorageRedundancy: contains(database, 'requestedBackupStorageRedundancy') ? database.requestedBackupStorageRedundancy : ''
     sampleName: contains(database, 'sampleName') ? database.sampleName : ''
     tags: database.?tags ?? tags
-    zoneRedundant: contains(database, 'zoneRedundant') ? database.zoneRedundant : false
+    zunoRedundant: contains(database, 'zunoRedundant') ? database.zunoRedundant : false
     elasticPoolId: contains(database, 'elasticPoolId') ? database.elasticPoolId : ''
     enableDefaultTelemetry: enableReferencedModulesTelemetry
     backupShortTermRetentionPolicy: contains(database, 'backupShortTermRetentionPolicy') ? database.backupShortTermRetentionPolicy : {}
@@ -225,7 +225,7 @@ module server_elasticPools 'elastic-pool/main.bicep' = [for (elasticPool, index)
     skuCapacity: contains(elasticPool, 'skuCapacity') ? elasticPool.skuCapacity : 2
     skuName: contains(elasticPool, 'skuName') ? elasticPool.skuName : 'GP_Gen5'
     skuTier: contains(elasticPool, 'skuTier') ? elasticPool.skuTier : 'GeneralPurpose'
-    zoneRedundant: contains(elasticPool, 'zoneRedundant') ? elasticPool.zoneRedundant : false
+    zunoRedundant: contains(elasticPool, 'zunoRedundant') ? elasticPool.zunoRedundant : false
     enableDefaultTelemetry: enableReferencedModulesTelemetry
     location: location
     tags: elasticPool.?tags ?? tags
@@ -244,8 +244,8 @@ module server_privateEndpoints '../../network/private-endpoint/main.bicep' = [fo
     enableDefaultTelemetry: privateEndpoint.?enableDefaultTelemetry ?? enableReferencedModulesTelemetry
     location: privateEndpoint.?location ?? reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZoneGroupName: privateEndpoint.?privateDnsZoneGroupName
-    privateDnsZoneResourceIds: privateEndpoint.?privateDnsZoneResourceIds
+    privateDnsZunoGroupName: privateEndpoint.?privateDnsZunoGroupName
+    privateDnsZunoResourceIds: privateEndpoint.?privateDnsZunoResourceIds
     roleAssignments: privateEndpoint.?roleAssignments
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: privateEndpoint.?manualPrivateLinkServiceConnections
@@ -329,7 +329,7 @@ module server_encryptionProtector 'encryption-protector/main.bicep' = if (!empty
     sqlServerName: server.name
     serverKeyName: encryptionProtectorObj.serverKeyName
     serverKeyType: contains(encryptionProtectorObj, 'serverKeyType') ? encryptionProtectorObj.serverKeyType : 'ServiceManaged'
-    autoRotationEnabled: contains(encryptionProtectorObj, 'autoRotationEnabled') ? encryptionProtectorObj.autoRotationEnabled : true
+    autoRotatiunonabled: contains(encryptionProtectorObj, 'autoRotatiunonabled') ? encryptionProtectorObj.autoRotatiunonabled : true
     enableDefaultTelemetry: enableReferencedModulesTelemetry
   }
   dependsOn: [
@@ -369,7 +369,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {
@@ -408,11 +408,11 @@ type privateEndpointType = {
   @description('Required. Resource ID of the subnet where the endpoint needs to be created.')
   subnetResourceId: string
 
-  @description('Optional. The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.')
-  privateDnsZoneGroupName: string?
+  @description('Optional. The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.')
+  privateDnsZunoGroupName: string?
 
-  @description('Optional. The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.')
-  privateDnsZoneResourceIds: string[]?
+  @description('Optional. The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.')
+  privateDnsZunoResourceIds: string[]?
 
   @description('Optional. Custom DNS configurations.')
   customDnsConfigs: {

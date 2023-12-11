@@ -21,7 +21,7 @@
     "automationAccountName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment."
       }
     },
     "operatingSystem": {
@@ -49,7 +49,7 @@
     "frequency": {
       "type": "string",
       "allowedValues": [
-        "OneTime",
+        "unoTime",
         "Hour",
         "Day",
         "Week",
@@ -178,11 +178,11 @@
         "description": "Optional. Enables the deployment schedule."
       }
     },
-    "timeZone": {
+    "timeZuno": {
       "type": "string",
       "defaultValue": "UTC",
       "metadata": {
-        "description": "Optional. Time zone for the deployment schedule. IANA ID or a Windows Time Zone ID."
+        "description": "Optional. Time zuno for the deployment schedule. IANA ID or a Windows Time Zuno ID."
       }
     },
     "nonAzureQueries": {
@@ -315,7 +315,7 @@
       "type": "string",
       "defaultValue": "[utcNow('u')]",
       "metadata": {
-        "description": "Generated. Do not touch. Is used to provide the base time for time comparison for startTime. If startTime is specified in HH:MM format, baseTime is used to check if the provided startTime has passed, adding one day before setting the deployment schedule."
+        "description": "Generated. Do not touch. Is used to provide the base time for time comparison for startTime. If startTime is specified in HH:MM format, baseTime is used to check if the provided startTime has passed, adding uno day before setting the deployment schedule."
       }
     },
     "enableDefaultTelemetry": {
@@ -384,7 +384,7 @@
           "interval": "[parameters('interval')]",
           "frequency": "[parameters('frequency')]",
           "isEnabled": "[parameters('isEnabled')]",
-          "timeZone": "[parameters('timeZone')]",
+          "timeZuno": "[parameters('timeZuno')]",
           "advancedSchedule": {
             "weekDays": "[if(empty(parameters('weekDays')), null(), parameters('weekDays'))]",
             "monthDays": "[if(empty(parameters('monthDays')), null(), parameters('monthDays'))]",

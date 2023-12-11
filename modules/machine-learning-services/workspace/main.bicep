@@ -56,7 +56,7 @@ param tags object?
 @sys.description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')
 param enableDefaultTelemetry bool = true
 
-@sys.description('Optional. The managed identity definition for this resource. At least one identity type is required.')
+@sys.description('Optional. The managed identity definition for this resource. At least uno identity type is required.')
 param managedIdentities managedIdentitiesType = {
   systemAssigned: true
 }
@@ -207,7 +207,7 @@ module workspace_computes 'compute/main.bicep' = [for compute in computes: {
   ]
 }]
 
-resource workspace_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource workspace_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -254,8 +254,8 @@ module workspace_privateEndpoints '../../network/private-endpoint/main.bicep' = 
     enableDefaultTelemetry: privateEndpoint.?enableDefaultTelemetry ?? enableReferencedModulesTelemetry
     location: privateEndpoint.?location ?? reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZoneGroupName: privateEndpoint.?privateDnsZoneGroupName
-    privateDnsZoneResourceIds: privateEndpoint.?privateDnsZoneResourceIds
+    privateDnsZunoGroupName: privateEndpoint.?privateDnsZunoGroupName
+    privateDnsZunoResourceIds: privateEndpoint.?privateDnsZunoResourceIds
     roleAssignments: privateEndpoint.?roleAssignments
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: privateEndpoint.?manualPrivateLinkServiceConnections
@@ -316,7 +316,7 @@ type lockType = {
   name: string?
 
   @sys.description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {
@@ -355,11 +355,11 @@ type privateEndpointType = {
   @sys.description('Required. Resource ID of the subnet where the endpoint needs to be created.')
   subnetResourceId: string
 
-  @sys.description('Optional. The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.')
-  privateDnsZoneGroupName: string?
+  @sys.description('Optional. The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.')
+  privateDnsZunoGroupName: string?
 
-  @sys.description('Optional. The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.')
-  privateDnsZoneResourceIds: string[]?
+  @sys.description('Optional. The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.')
+  privateDnsZunoResourceIds: string[]?
 
   @sys.description('Optional. Custom DNS configurations.')
   customDnsConfigs: {

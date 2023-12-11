@@ -390,7 +390,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -510,4 +510,4 @@ Tags of the Firewall policy resource.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

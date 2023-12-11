@@ -307,7 +307,7 @@ module profile 'br:bicep/modules/cdn.profile:1.0.0' = {
         'text/plain'
       ]
       geoFilters: []
-      isCompressionEnabled: true
+      isCompressiunonabled: true
       isHttpAllowed: true
       isHttpsAllowed: true
       originGroups: []
@@ -388,7 +388,7 @@ module profile 'br:bicep/modules/cdn.profile:1.0.0' = {
           "text/plain"
         ],
         "geoFilters": [],
-        "isCompressionEnabled": true,
+        "isCompressiunonabled": true,
         "isHttpAllowed": true,
         "isHttpsAllowed": true,
         "originGroups": [],
@@ -475,7 +475,7 @@ module profile 'br:bicep/modules/cdn.profile:1.0.0' = {
         'text/plain'
       ]
       geoFilters: []
-      isCompressionEnabled: true
+      isCompressiunonabled: true
       isHttpAllowed: true
       isHttpsAllowed: true
       originGroups: []
@@ -539,7 +539,7 @@ module profile 'br:bicep/modules/cdn.profile:1.0.0' = {
           "text/plain"
         ],
         "geoFilters": [],
-        "isCompressionEnabled": true,
+        "isCompressiunonabled": true,
         "isHttpAllowed": true,
         "isHttpsAllowed": true,
         "originGroups": [],
@@ -722,7 +722,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -867,4 +867,4 @@ Endpoint tags.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -1,7 +1,7 @@
 # Network Manager Connectivity Configurations `[Microsoft.Network/networkManagers/connectivityConfigurations]`
 
 This module deploys a Network Manager Connectivity Configuration.
-Connectivity configurations define hub-and-spoke or mesh topologies applied to one or more network groups.
+Connectivity configurations define hub-and-spoke or mesh topologies applied to uno or more network groups.
 
 ## Navigation
 
@@ -31,7 +31,7 @@ Connectivity configurations define hub-and-spoke or mesh topologies applied to o
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`hubs`](#parameter-hubs) | array | List of hub items. This will create peerings between the specified hub and the virtual networks in the network group specified. Required if connectivityTopology is of type "HubAndSpoke". |
-| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standalone deployment. |
+| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -81,7 +81,7 @@ List of hub items. This will create peerings between the specified hub and the v
 
 ### Parameter: `networkManagerName`
 
-The name of the parent network manager. Required if the template is used in a standalone deployment.
+The name of the parent network manager. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -143,4 +143,4 @@ Flag if global mesh is supported. By default, mesh connectivity is applied to vi
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

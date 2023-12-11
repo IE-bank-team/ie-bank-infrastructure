@@ -5,13 +5,13 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. This is the name of the ExpressRoute circuit.')
 param name string
 
-@description('Required. This is the name of the ExpressRoute Service Provider. It must exactly match one of the Service Providers from List ExpressRoute Service Providers API call.')
+@description('Required. This is the name of the ExpressRoute Service Provider. It must exactly match uno of the Service Providers from List ExpressRoute Service Providers API call.')
 param serviceProviderName string
 
-@description('Required. This is the name of the peering location and not the ARM resource location. It must exactly match one of the available peering locations from List ExpressRoute Service Providers API call.')
+@description('Required. This is the name of the peering location and not the ARM resource location. It must exactly match uno of the available peering locations from List ExpressRoute Service Providers API call.')
 param peeringLocation string
 
-@description('Required. This is the bandwidth in Mbps of the circuit being created. It must exactly match one of the available bandwidth offers List ExpressRoute Service Providers API call.')
+@description('Required. This is the bandwidth in Mbps of the circuit being created. It must exactly match uno of the available bandwidth offers List ExpressRoute Service Providers API call.')
 param bandwidthInMbps int
 
 @description('Optional. Chosen SKU Tier of ExpressRoute circuit. Choose from Local, Premium or Standard SKU tiers.')
@@ -60,10 +60,10 @@ param location string = resourceGroup().location
 @description('Optional. Allow classic operations. You can connect to virtual networks in the classic deployment model by setting allowClassicOperations to true.')
 param allowClassicOperations bool = false
 
-@description('Optional. The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource. Available when configuring Express Route Direct. Default value of 0 will set the property to null.')
+@description('Optional. The bandwidth of the circuit when the circuit is provisiunod on an ExpressRoutePort resource. Available when configuring Express Route Direct. Default value of 0 will set the property to null.')
 param bandwidthInGbps int = 0
 
-@description('Optional. The reference to the ExpressRoutePort resource when the circuit is provisioned on an ExpressRoutePort resource. Available when configuring Express Route Direct.')
+@description('Optional. The reference to the ExpressRoutePort resource when the circuit is provisiunod on an ExpressRoutePort resource. Available when configuring Express Route Direct.')
 param expressRoutePortResourceId string = ''
 
 @description('Optional. Flag denoting global reach status. To enable ExpressRoute Global Reach between different geopolitical regions, your circuits must be Premium SKU.')
@@ -144,7 +144,7 @@ resource expressRouteCircuits 'Microsoft.Network/expressRouteCircuits@2023-04-01
   }
 }
 
-resource expressRouteCircuits_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource expressRouteCircuits_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -217,7 +217,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

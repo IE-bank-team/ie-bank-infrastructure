@@ -4,7 +4,7 @@ metadata description = '''This module deploys a DevTest Lab Artifact Source.
 An artifact source allows you to create custom artifacts for the VMs in the lab, or use Azure Resource Manager templates to create a custom test environment. You must add a private Git repository for the artifacts or Resource Manager templates that your team creates. The repository can be hosted on GitHub or on Azure DevOps Services.'''
 metadata owner = 'Azure/module-maintainers'
 
-@sys.description('Conditional. The name of the parent lab. Required if the template is used in a standalone deployment.')
+@sys.description('Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment.')
 param labName string
 
 @sys.description('Required. The name of the artifact source.')
@@ -19,7 +19,7 @@ param displayName string = name
 @sys.description('Optional. The artifact source\'s branch reference (e.g. main or master).')
 param branchRef string = ''
 
-@sys.description('Conditional. The folder containing artifacts. At least one folder path is required. Required if "armTemplateFolderPath" is empty.')
+@sys.description('Conditional. The folder containing artifacts. At least uno folder path is required. Required if "armTemplateFolderPath" is empty.')
 param folderPath string = ''
 
 @sys.description('Conditional. The folder containing Azure Resource Manager templates. Required if "folderPath" is empty.')

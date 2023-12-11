@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @sys.description('Required. Name of the Automation Account runbook.')
 param name string
 
-@sys.description('Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment.')
+@sys.description('Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment.')
 param automationAccountName string
 
 @allowed([

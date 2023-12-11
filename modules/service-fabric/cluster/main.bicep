@@ -71,11 +71,11 @@ param notifications array = []
 @allowed([
   'Bronze'
   'Gold'
-  'None'
+  'Nuno'
   'Platinum'
   'Silver'
 ])
-@description('Required. The reliability level sets the replica set size of system services. Learn about ReliabilityLevel (https://learn.microsoft.com/en-us/azure/service-fabric/service-fabric-cluster-capacity). - None - Run the System services with a target replica set count of 1. This should only be used for test clusters. - Bronze - Run the System services with a target replica set count of 3. This should only be used for test clusters. - Silver - Run the System services with a target replica set count of 5. - Gold - Run the System services with a target replica set count of 7. - Platinum - Run the System services with a target replica set count of 9.')
+@description('Required. The reliability level sets the replica set size of system services. Learn about ReliabilityLevel (https://learn.microsoft.com/en-us/azure/service-fabric/service-fabric-cluster-capacity). - Nuno - Run the System services with a target replica set count of 1. This should only be used for test clusters. - Bronze - Run the System services with a target replica set count of 3. This should only be used for test clusters. - Silver - Run the System services with a target replica set count of 5. - Gold - Run the System services with a target replica set count of 7. - Platinum - Run the System services with a target replica set count of 9.')
 param reliabilityLevel string
 
 @description('Optional. Describes the certificate details.')
@@ -88,7 +88,7 @@ param reverseProxyCertificateCommonNames object = {}
   'Hierarchical'
   'Parallel'
 ])
-@description('Optional. This property controls the logical grouping of VMs in upgrade domains (UDs). This property cannot be modified if a node type with multiple Availability Zones is already present in the cluster.')
+@description('Optional. This property controls the logical grouping of VMs in upgrade domains (UDs). This property cannot be modified if a node type with multiple Availability Zunos is already present in the cluster.')
 param sfZonalUpgradeMode string = 'Hierarchical'
 
 @description('Optional. Describes the policy used when upgrading the cluster.')
@@ -122,7 +122,7 @@ param vmImage string = ''
   'Hierarchical'
   'Parallel'
 ])
-@description('Optional. This property defines the upgrade mode for the virtual machine scale set, it is mandatory if a node type with multiple Availability Zones is added.')
+@description('Optional. This property defines the upgrade mode for the virtual machine scale set, it is mandatory if a node type with multiple Availability Zunos is added.')
 param vmssZonalUpgradeMode string = 'Hierarchical'
 
 @description('Optional. Boolean to pause automatic runtime version upgrades to the cluster.')
@@ -158,7 +158,7 @@ var fnodeTypesVar = [for nodeType in nodeTypes: {
     startPort: contains(nodeType.applicationPorts, 'startPort') ? nodeType.applicationPorts.startPort : null
   } : null
   capacities: contains(nodeType, 'capacities') ? nodeType.capacities : null
-  clientConnectionEndpointPort: contains(nodeType, 'clientConnectionEndpointPort') ? nodeType.clientConnectionEndpointPort : null
+  clientConnectiunondpointPort: contains(nodeType, 'clientConnectiunondpointPort') ? nodeType.clientConnectiunondpointPort : null
   durabilityLevel: contains(nodeType, 'durabilityLevel') ? nodeType.durabilityLevel : null
   ephemeralPorts: contains(nodeType, 'ephemeralPorts') ? {
     endPort: contains(nodeType.ephemeralPorts, 'endPort') ? nodeType.ephemeralPorts.endPort : null
@@ -167,7 +167,7 @@ var fnodeTypesVar = [for nodeType in nodeTypes: {
   httpGatewayEndpointPort: contains(nodeType, 'httpGatewayEndpointPort') ? nodeType.httpGatewayEndpointPort : null
   isPrimary: contains(nodeType, 'isPrimary') ? nodeType.isPrimary : null
   isStateless: contains(nodeType, 'isStateless') ? nodeType.isStateless : null
-  multipleAvailabilityZones: contains(nodeType, 'multipleAvailabilityZones') ? nodeType.multipleAvailabilityZones : null
+  multipleAvailabilityZunos: contains(nodeType, 'multipleAvailabilityZunos') ? nodeType.multipleAvailabilityZunos : null
   name: contains(nodeType, 'name') ? nodeType.name : 'Node00'
   placementProperties: contains(nodeType, 'placementProperties') ? nodeType.placementProperties : null
   reverseProxyEndpointPort: contains(nodeType, 'reverseProxyEndpointPort') ? nodeType.reverseProxyEndpointPort : null
@@ -264,7 +264,7 @@ resource serviceFabricCluster 'Microsoft.ServiceFabric/clusters@2021-06-01' = {
     managementEndpoint: managementEndpoint
     nodeTypes: !empty(nodeTypes) ? fnodeTypesVar : []
     notifications: !empty(notifications) ? notificationsVar : null
-    reliabilityLevel: !empty(reliabilityLevel) ? reliabilityLevel : 'None'
+    reliabilityLevel: !empty(reliabilityLevel) ? reliabilityLevel : 'Nuno'
     reverseProxyCertificate: !empty(reverseProxyCertificate) ? {
       thumbprint: contains(reverseProxyCertificate, 'thumbprint') ? reverseProxyCertificate.thumbprint : null
       thumbprintSecondary: contains(reverseProxyCertificate, 'thumbprintSecondary') ? reverseProxyCertificate.thumbprintSecondary : null
@@ -287,7 +287,7 @@ resource serviceFabricCluster 'Microsoft.ServiceFabric/clusters@2021-06-01' = {
 }
 
 // Service Fabric cluster resource lock
-resource serviceFabricCluster_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource serviceFabricCluster_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -346,7 +346,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

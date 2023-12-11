@@ -12,7 +12,7 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2021-06
   location: location
 }
 
-resource appInsight 'Microsoft.Insights/components@2020-02-02' = {
+resource appInsight 'Microsoft.Insights/compunonts@2020-02-02' = {
   name: appInsightName
   location: location
   kind: 'web'

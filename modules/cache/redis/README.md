@@ -20,7 +20,7 @@ This module deploys a Redis Cache.
 | `Microsoft.Cache/redis` | [2022-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Cache/2022-06-01/redis) |
 | `Microsoft.Insights/diagnosticSettings` | [2021-05-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2021-05-01-preview/diagnosticSettings) |
 | `Microsoft.Network/privateEndpoints` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints) |
-| `Microsoft.Network/privateEndpoints/privateDnsZoneGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZoneGroups) |
+| `Microsoft.Network/privateEndpoints/privateDnsZunoGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZunoGroups) |
 
 ## Usage examples
 
@@ -128,8 +128,8 @@ module redis 'br:bicep/modules/cache.redis:1.0.0' = {
     minimumTlsVersion: '1.2'
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          '<privateDNSZoneResourceId>'
+        privateDnsZunoResourceIds: [
+          '<privateDNSZunoResourceId>'
         ]
         subnetResourceId: '<subnetResourceId>'
         tags: {
@@ -147,8 +147,8 @@ module redis 'br:bicep/modules/cache.redis:1.0.0' = {
       'hidden-title': 'This is visible in the resource name'
       resourceType: 'Redis Cache'
     }
-    zoneRedundant: true
-    zones: [
+    zunoRedundant: true
+    zunos: [
       1
       2
     ]
@@ -218,8 +218,8 @@ module redis 'br:bicep/modules/cache.redis:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
-            "<privateDNSZoneResourceId>"
+          "privateDnsZunoResourceIds": [
+            "<privateDNSZunoResourceId>"
           ],
           "subnetResourceId": "<subnetResourceId>",
           "tags": {
@@ -248,10 +248,10 @@ module redis 'br:bicep/modules/cache.redis:1.0.0' = {
         "resourceType": "Redis Cache"
       }
     },
-    "zoneRedundant": {
+    "zunoRedundant": {
       "value": true
     },
-    "zones": {
+    "zunos": {
       "value": [
         1,
         2
@@ -310,8 +310,8 @@ module redis 'br:bicep/modules/cache.redis:1.0.0' = {
     minimumTlsVersion: '1.2'
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          '<privateDNSZoneResourceId>'
+        privateDnsZunoResourceIds: [
+          '<privateDNSZunoResourceId>'
         ]
         subnetResourceId: '<subnetResourceId>'
         tags: {
@@ -329,8 +329,8 @@ module redis 'br:bicep/modules/cache.redis:1.0.0' = {
       'hidden-title': 'This is visible in the resource name'
       resourceType: 'Redis Cache'
     }
-    zoneRedundant: true
-    zones: [
+    zunoRedundant: true
+    zunos: [
       1
       2
     ]
@@ -400,8 +400,8 @@ module redis 'br:bicep/modules/cache.redis:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
-            "<privateDNSZoneResourceId>"
+          "privateDnsZunoResourceIds": [
+            "<privateDNSZunoResourceId>"
           ],
           "subnetResourceId": "<subnetResourceId>",
           "tags": {
@@ -430,10 +430,10 @@ module redis 'br:bicep/modules/cache.redis:1.0.0' = {
         "resourceType": "Redis Cache"
       }
     },
-    "zoneRedundant": {
+    "zunoRedundant": {
       "value": true
     },
-    "zones": {
+    "zunos": {
       "value": [
         1,
         2
@@ -480,8 +480,8 @@ module redis 'br:bicep/modules/cache.redis:1.0.0' = {
 | [`subnetId`](#parameter-subnetid) | string | The full resource ID of a subnet in a virtual network to deploy the Redis cache in. Example format: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/Microsoft.{Network|ClassicNetwork}/VirtualNetworks/vnet1/subnets/subnet1. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`tenantSettings`](#parameter-tenantsettings) | object | A dictionary of tenant settings. |
-| [`zoneRedundant`](#parameter-zoneredundant) | bool | When true, replicas will be provisioned in availability zones specified in the zones parameter. |
-| [`zones`](#parameter-zones) | array | If the zoneRedundant parameter is true, replicas will be provisioned in the availability zones specified here. Otherwise, the service will choose where replicas are deployed. |
+| [`zunoRedundant`](#parameter-zunoredundant) | bool | When true, replicas will be provisiunod in availability zunos specified in the zunos parameter. |
+| [`zunos`](#parameter-zunos) | array | If the zunoRedundant parameter is true, replicas will be provisiunod in the availability zunos specified here. Otherwise, the service will choose where replicas are deployed. |
 
 ### Parameter: `name`
 
@@ -649,7 +649,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -731,8 +731,8 @@ Configuration details for private endpoints. For security reasons, it is recomme
 | [`lock`](#parameter-privateendpointslock) | object | Specify the type of lock. |
 | [`manualPrivateLinkServiceConnections`](#parameter-privateendpointsmanualprivatelinkserviceconnections) | array | Manual PrivateLink Service Connections. |
 | [`name`](#parameter-privateendpointsname) | string | The name of the private endpoint. |
-| [`privateDnsZoneGroupName`](#parameter-privateendpointsprivatednszonegroupname) | string | The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided. |
-| [`privateDnsZoneResourceIds`](#parameter-privateendpointsprivatednszoneresourceids) | array | The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones. |
+| [`privateDnsZunoGroupName`](#parameter-privateendpointsprivatednszunogroupname) | string | The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided. |
+| [`privateDnsZunoResourceIds`](#parameter-privateendpointsprivatednszunoresourceids) | array | The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos. |
 | [`roleAssignments`](#parameter-privateendpointsroleassignments) | array | Array of role assignments to create. |
 | [`service`](#parameter-privateendpointsservice) | string | The service (sub-) type to deploy the private endpoint for. For example "vault" or "blob". |
 | [`tags`](#parameter-privateendpointstags) | object | Tags to be applied on all resources/resource groups in this deployment. |
@@ -810,7 +810,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -836,16 +836,16 @@ The name of the private endpoint.
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZoneGroupName`
+### Parameter: `privateEndpoints.privateDnsZunoGroupName`
 
-The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.
+The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.
 
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZoneResourceIds`
+### Parameter: `privateEndpoints.privateDnsZunoResourceIds`
 
-The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.
+The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.
 
 - Required: No
 - Type: array
@@ -1152,17 +1152,17 @@ A dictionary of tenant settings.
 - Type: object
 - Default: `{}`
 
-### Parameter: `zoneRedundant`
+### Parameter: `zunoRedundant`
 
-When true, replicas will be provisioned in availability zones specified in the zones parameter.
+When true, replicas will be provisiunod in availability zunos specified in the zunos parameter.
 
 - Required: No
 - Type: bool
 - Default: `True`
 
-### Parameter: `zones`
+### Parameter: `zunos`
 
-If the zoneRedundant parameter is true, replicas will be provisioned in the availability zones specified here. Otherwise, the service will choose where replicas are deployed.
+If the zunoRedundant parameter is true, replicas will be provisiunod in the availability zunos specified here. Otherwise, the service will choose where replicas are deployed.
 
 - Required: No
 - Type: array

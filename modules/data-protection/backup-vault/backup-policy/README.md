@@ -74,7 +74,7 @@ The properties of the backup policy.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 
@@ -100,7 +100,7 @@ Create a backup policy.
                         "repeatingTimeIntervals": [
                             "R/2022-05-31T23:30:00+01:00/P1D"
                         ],
-                        "timeZone": "W. Europe Standard Time"
+                        "timeZuno": "W. Europe Standard Time"
                     },
                     "taggingCriteria": [
                         {
@@ -167,7 +167,7 @@ properties: {
                     repeatingTimeIntervals: [
                         'R/2022-05-31T23:30:00+01:00/P1D'
                     ]
-                    timeZone: 'W. Europe Standard Time'
+                    timeZuno: 'W. Europe Standard Time'
                 }
                 taggingCriteria: [
                     {

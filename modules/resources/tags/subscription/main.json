@@ -76,7 +76,7 @@
       "name": "[format('{0}-ReadTags', deployment().name)]",
       "location": "[deployment().location]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",

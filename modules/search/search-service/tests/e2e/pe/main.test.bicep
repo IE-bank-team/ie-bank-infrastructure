@@ -39,7 +39,7 @@ module nestedDependencies 'dependencies.bicep' = {
     applicationSecurityGroupName: 'dep-${namePrefix}-asg-${serviceShort}'
     storageAccountName: 'dep${namePrefix}st${serviceShort}'
     keyVaultName: 'dep-${namePrefix}-kv-${serviceShort}'
-    privateDnsZoneName: 'privatelink.search.windows.net'
+    privateDnsZunoName: 'privatelink.search.windows.net'
   }
 }
 
@@ -60,8 +60,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         applicationSecurityGroupResourceIds: [
           nestedDependencies.outputs.applicationSecurityGroupResourceId
         ]
-        privateDnsZoneResourceIds: [
-          nestedDependencies.outputs.privateDNSZoneResourceId
+        privateDnsZunoResourceIds: [
+          nestedDependencies.outputs.privateDNSZunoResourceId
         ]
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
         tags: {

@@ -13,7 +13,7 @@ param name string
 @description('Optional. The kind of the service. Defaults to R4.')
 param kind string = 'fhir-R4'
 
-@description('Conditional. The name of the parent health data services workspace. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent health data services workspace. Required if the template is used in a standaluno deployment.')
 param workspaceName string
 
 @description('Optional. List of Azure AD object IDs (User or Apps) that is allowed access to the FHIR service.')
@@ -87,11 +87,11 @@ param publicNetworkAccess string = 'Disabled'
 
 @allowed([
   'no-version'
-  'versioned'
-  'versioned-update'
+  'versiunod'
+  'versiunod-update'
 ])
 @description('Optional. The default value for tracking history across all resources.')
-param resourceVersionPolicy string = 'versioned'
+param resourceVersionPolicy string = 'versiunod'
 
 @description('Optional. A list of FHIR Resources and their version policy overrides.')
 param resourceVersionOverrides object = {}
@@ -198,7 +198,7 @@ resource fhir 'Microsoft.HealthcareApis/workspaces/fhirservices@2022-06-01' = {
   }
 }
 
-resource fhir_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource fhir_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -282,7 +282,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

@@ -29,7 +29,7 @@ This module deploys a Gremlin Database within a CosmosDB Account.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`databaseAccountName`](#parameter-databaseaccountname) | string | The name of the parent Gremlin database. Required if the template is used in a standalone deployment. |
+| [`databaseAccountName`](#parameter-databaseaccountname) | string | The name of the parent Gremlin database. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -50,7 +50,7 @@ Name of the Gremlin database.
 
 ### Parameter: `databaseAccountName`
 
-The name of the parent Gremlin database. Required if the template is used in a standalone deployment.
+The name of the parent Gremlin database. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -105,7 +105,7 @@ Request Units per second (for example 10000). Cannot be set together with `maxTh
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

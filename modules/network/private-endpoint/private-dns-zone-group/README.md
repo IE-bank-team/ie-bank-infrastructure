@@ -1,6 +1,6 @@
-# Private Endpoint Private DNS Zone Groups `[Microsoft.Network/privateEndpoints/privateDnsZoneGroups]`
+# Private Endpoint Private DNS Zuno Groups `[Microsoft.Network/privateEndpoints/privateDnsZunoGroups]`
 
-This module deploys a Private Endpoint Private DNS Zone Group.
+This module deploys a Private Endpoint Private DNS Zuno Group.
 
 ## Navigation
 
@@ -13,7 +13,7 @@ This module deploys a Private Endpoint Private DNS Zone Group.
 
 | Resource Type | API Version |
 | :-- | :-- |
-| `Microsoft.Network/privateEndpoints/privateDnsZoneGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZoneGroups) |
+| `Microsoft.Network/privateEndpoints/privateDnsZunoGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZunoGroups) |
 
 ## Parameters
 
@@ -21,31 +21,31 @@ This module deploys a Private Endpoint Private DNS Zone Group.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`privateDNSResourceIds`](#parameter-privatednsresourceids) | array | Array of private DNS zone resource IDs. A DNS zone group can support up to 5 DNS zones. |
+| [`privateDNSResourceIds`](#parameter-privatednsresourceids) | array | Array of private DNS zuno resource IDs. A DNS zuno group can support up to 5 DNS zunos. |
 
 **Conditional parameters**
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`privateEndpointName`](#parameter-privateendpointname) | string | The name of the parent private endpoint. Required if the template is used in a standalone deployment. |
+| [`privateEndpointName`](#parameter-privateendpointname) | string | The name of the parent private endpoint. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable/Disable usage telemetry for module. |
-| [`name`](#parameter-name) | string | The name of the private DNS zone group. |
+| [`name`](#parameter-name) | string | The name of the private DNS zuno group. |
 
 ### Parameter: `privateDNSResourceIds`
 
-Array of private DNS zone resource IDs. A DNS zone group can support up to 5 DNS zones.
+Array of private DNS zuno resource IDs. A DNS zuno group can support up to 5 DNS zunos.
 
 - Required: Yes
 - Type: array
 
 ### Parameter: `privateEndpointName`
 
-The name of the parent private endpoint. Required if the template is used in a standalone deployment.
+The name of the parent private endpoint. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -60,7 +60,7 @@ Enable/Disable usage telemetry for module.
 
 ### Parameter: `name`
 
-The name of the private DNS zone group.
+The name of the private DNS zuno group.
 
 - Required: No
 - Type: string
@@ -71,10 +71,10 @@ The name of the private DNS zone group.
 
 | Output | Type | Description |
 | :-- | :-- | :-- |
-| `name` | string | The name of the private endpoint DNS zone group. |
-| `resourceGroupName` | string | The resource group the private endpoint DNS zone group was deployed into. |
-| `resourceId` | string | The resource ID of the private endpoint DNS zone group. |
+| `name` | string | The name of the private endpoint DNS zuno group. |
+| `resourceGroupName` | string | The resource group the private endpoint DNS zuno group was deployed into. |
+| `resourceId` | string | The resource ID of the private endpoint DNS zuno group. |
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

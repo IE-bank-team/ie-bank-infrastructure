@@ -21,7 +21,7 @@ This module deploys a Key Vault Access Policy.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`keyVaultName`](#parameter-keyvaultname) | string | The name of the parent key vault. Required if the template is used in a standalone deployment. |
+| [`keyVaultName`](#parameter-keyvaultname) | string | The name of the parent key vault. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -32,7 +32,7 @@ This module deploys a Key Vault Access Policy.
 
 ### Parameter: `keyVaultName`
 
-The name of the parent key vault. Required if the template is used in a standalone deployment.
+The name of the parent key vault. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -64,4 +64,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

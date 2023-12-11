@@ -170,7 +170,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         }
       }
     ]
-    zones: [
+    zunos: [
       '1'
       '2'
       '3'

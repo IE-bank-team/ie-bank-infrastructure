@@ -22,7 +22,7 @@ param scopes array = [
 @description('Optional. The list of actions to take when alert triggers.')
 param actions array = []
 
-@description('Required. An Array of objects containing conditions that will cause this alert to activate. Conditions can also be combined with logical operators `allOf` and `anyOf`. Each condition can specify only one field between `equals` and `containsAny`. An alert rule condition must have exactly one category (Administrative, ServiceHealth, ResourceHealth, Alert, Autoscale, Recommendation, Security, or Policy).')
+@description('Required. An Array of objects containing conditions that will cause this alert to activate. Conditions can also be combined with logical operators `allOf` and `anyOf`. Each condition can specify only uno field between `equals` and `containsAny`. An alert rule condition must have exactly uno category (Administrative, ServiceHealth, ResourceHealth, Alert, Autoscale, Recommendation, Security, or Policy).')
 param conditions array
 
 @description('Optional. Array of role assignments to create.')

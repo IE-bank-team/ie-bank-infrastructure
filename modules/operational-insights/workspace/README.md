@@ -97,7 +97,7 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
           }
         ]
         kind: 'WindowsEvent'
-        name: 'applicationEvent'
+        name: 'applicatiunovent'
       }
       {
         counterName: '% Processor Time'
@@ -109,12 +109,12 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
       }
       {
         kind: 'IISLogs'
-        name: 'sampleIISLoone'
+        name: 'sampleIISLouno'
         state: 'OnPremiseEnabled'
       }
       {
         kind: 'LinuxSyslog'
-        name: 'sampleSysloone'
+        name: 'sampleSyslouno'
         syslogName: 'kern'
         syslogSeverities: [
           {
@@ -362,7 +362,7 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
             }
           ],
           "kind": "WindowsEvent",
-          "name": "applicationEvent"
+          "name": "applicatiunovent"
         },
         {
           "counterName": "% Processor Time",
@@ -374,12 +374,12 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
         },
         {
           "kind": "IISLogs",
-          "name": "sampleIISLoone",
+          "name": "sampleIISLouno",
           "state": "OnPremiseEnabled"
         },
         {
           "kind": "LinuxSyslog",
-          "name": "sampleSysloone",
+          "name": "sampleSyslouno",
           "syslogName": "kern",
           "syslogSeverities": [
             {
@@ -675,7 +675,7 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
           }
         ]
         kind: 'WindowsEvent'
-        name: 'applicationEvent'
+        name: 'applicatiunovent'
       }
       {
         counterName: '% Processor Time'
@@ -687,12 +687,12 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
       }
       {
         kind: 'IISLogs'
-        name: 'sampleIISLoone'
+        name: 'sampleIISLouno'
         state: 'OnPremiseEnabled'
       }
       {
         kind: 'LinuxSyslog'
-        name: 'sampleSysloone'
+        name: 'sampleSyslouno'
         syslogName: 'kern'
         syslogSeverities: [
           {
@@ -865,7 +865,7 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
             }
           ],
           "kind": "WindowsEvent",
-          "name": "applicationEvent"
+          "name": "applicatiunovent"
         },
         {
           "counterName": "% Processor Time",
@@ -877,12 +877,12 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
         },
         {
           "kind": "IISLogs",
-          "name": "sampleIISLoone",
+          "name": "sampleIISLouno",
           "state": "OnPremiseEnabled"
         },
         {
           "kind": "LinuxSyslog",
-          "name": "sampleSysloone",
+          "name": "sampleSyslouno",
           "syslogName": "kern",
           "syslogSeverities": [
             {
@@ -1083,7 +1083,7 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
           }
         ]
         kind: 'WindowsEvent'
-        name: 'applicationEvent'
+        name: 'applicatiunovent'
       }
       {
         counterName: '% Processor Time'
@@ -1095,12 +1095,12 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
       }
       {
         kind: 'IISLogs'
-        name: 'sampleIISLoone'
+        name: 'sampleIISLouno'
         state: 'OnPremiseEnabled'
       }
       {
         kind: 'LinuxSyslog'
-        name: 'sampleSysloone'
+        name: 'sampleSyslouno'
         syslogName: 'kern'
         syslogSeverities: [
           {
@@ -1273,7 +1273,7 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
             }
           ],
           "kind": "WindowsEvent",
-          "name": "applicationEvent"
+          "name": "applicatiunovent"
         },
         {
           "counterName": "% Processor Time",
@@ -1285,12 +1285,12 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
         },
         {
           "kind": "IISLogs",
-          "name": "sampleIISLoone",
+          "name": "sampleIISLouno",
           "state": "OnPremiseEnabled"
         },
         {
           "kind": "LinuxSyslog",
-          "name": "sampleSysloone",
+          "name": "sampleSyslouno",
           "syslogName": "kern",
           "syslogSeverities": [
             {
@@ -1489,7 +1489,7 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
 | [`linkedServices`](#parameter-linkedservices) | array | List of services to be linked. |
 | [`location`](#parameter-location) | string | Location for all resources. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
-| [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. Only one type of identity is supported: system-assigned or user-assigned, but not both. |
+| [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. Only uno type of identity is supported: system-assigned or user-assigned, but not both. |
 | [`publicNetworkAccessForIngestion`](#parameter-publicnetworkaccessforingestion) | string | The network access type for accessing Log Analytics ingestion. |
 | [`publicNetworkAccessForQuery`](#parameter-publicnetworkaccessforquery) | string | The network access type for accessing Log Analytics query. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignment objects that contain the 'roleDefinitionIdOrName' and 'principalId' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: '/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11'. |
@@ -1703,7 +1703,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -1717,7 +1717,7 @@ Specify the name of lock.
 
 ### Parameter: `managedIdentities`
 
-The managed identity definition for this resource. Only one type of identity is supported: system-assigned or user-assigned, but not both.
+The managed identity definition for this resource. Only uno type of identity is supported: system-assigned or user-assigned, but not both.
 
 - Required: No
 - Type: object
@@ -1894,7 +1894,7 @@ The name of the SKU.
     'PerGB2018'
     'PerNode'
     'Premium'
-    'Standalone'
+    'Standaluno'
     'Standard'
   ]
   ```

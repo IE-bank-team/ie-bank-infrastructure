@@ -73,7 +73,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         'application/json'
         'application/xml'
       ]
-      isCompressionEnabled: true
+      isCompressiunonabled: true
       isHttpAllowed: true
       isHttpsAllowed: true
       queryStringCachingBehavior: 'IgnoreQueryString'

@@ -30,7 +30,7 @@ This module deploys a Service Bus Namespace Topic.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Service Bus Namespace for the Service Bus Topic. Required if the template is used in a standalone deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Service Bus Namespace for the Service Bus Topic. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -43,7 +43,7 @@ This module deploys a Service Bus Namespace Topic.
 | [`enableBatchedOperations`](#parameter-enablebatchedoperations) | bool | Value that indicates whether server-side batched operations are enabled. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`enableExpress`](#parameter-enableexpress) | bool | A value that indicates whether Express Entities are enabled. An express topic holds a message in memory temporarily before writing it to persistent storage. |
-| [`enablePartitioning`](#parameter-enablepartitioning) | bool | A value that indicates whether the topic is to be partitioned across multiple message brokers. |
+| [`enablePartitioning`](#parameter-enablepartitioning) | bool | A value that indicates whether the topic is to be partitiunod across multiple message brokers. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
 | [`maxMessageSizeInKilobytes`](#parameter-maxmessagesizeinkilobytes) | int | Maximum size (in KB) of the message payload that can be accepted by the topic. This property is only used in Premium today and default is 1024. |
 | [`maxSizeInMegabytes`](#parameter-maxsizeinmegabytes) | int | The maximum size of the topic in megabytes, which is the size of memory allocated for the topic. Default is 1024. |
@@ -61,7 +61,7 @@ Name of the Service Bus Topic.
 
 ### Parameter: `namespaceName`
 
-The name of the parent Service Bus Namespace for the Service Bus Topic. Required if the template is used in a standalone deployment.
+The name of the parent Service Bus Namespace for the Service Bus Topic. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -138,7 +138,7 @@ A value that indicates whether Express Entities are enabled. An express topic ho
 
 ### Parameter: `enablePartitioning`
 
-A value that indicates whether the topic is to be partitioned across multiple message brokers.
+A value that indicates whether the topic is to be partitiunod across multiple message brokers.
 
 - Required: No
 - Type: bool
@@ -168,7 +168,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -334,4 +334,4 @@ Value that indicates whether the topic supports ordering.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

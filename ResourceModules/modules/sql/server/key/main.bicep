@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the key. Must follow the [<keyVaultName>_<keyName>_<keyVersion>] pattern.')
 param name string
 
-@description('Conditional. The name of the parent SQL server. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent SQL server. Required if the template is used in a standaluno deployment.')
 param serverName string
 
 @description('Optional. The encryption protector type like "ServiceManaged", "AzureKeyVault".')

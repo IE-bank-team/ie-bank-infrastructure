@@ -29,7 +29,7 @@ This module deploys a Data Factory Managed Virtual Network.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`dataFactoryName`](#parameter-datafactoryname) | string | The name of the parent Azure Data Factory. Required if the template is used in a standalone deployment. |
+| [`dataFactoryName`](#parameter-datafactoryname) | string | The name of the parent Azure Data Factory. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -47,7 +47,7 @@ The name of the Managed Virtual Network.
 
 ### Parameter: `dataFactoryName`
 
-The name of the parent Azure Data Factory. Required if the template is used in a standalone deployment.
+The name of the parent Azure Data Factory. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -79,7 +79,7 @@ An array of managed private endpoints objects created in the Data Factory manage
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

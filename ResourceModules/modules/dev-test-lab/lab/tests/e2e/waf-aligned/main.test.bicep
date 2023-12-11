@@ -181,7 +181,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         name: 'ScheduleEditPermission'
         evaluatorType: 'AllowedValuesPolicy'
         factName: 'ScheduleEditPermission'
-        threshold: ' ${string('["None","Modify"]')}'
+        threshold: ' ${string('["Nuno","Modify"]')}'
       }
       {
         name: 'GalleryImage'
@@ -202,7 +202,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         name: 'LabVmsShutdown'
         taskType: 'LabVmsShutdownTask'
         status: 'Enabled'
-        timeZoneId: 'AUS Eastern Standard Time'
+        timeZunoId: 'AUS Eastern Standard Time'
         dailyRecurrence: {
           time: '0000'
         }
@@ -213,7 +213,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         name: 'LabVmAutoStart'
         taskType: 'LabVmsStartupTask'
         status: 'Enabled'
-        timeZoneId: 'AUS Eastern Standard Time'
+        timeZunoId: 'AUS Eastern Standard Time'
         weeklyRecurrence: {
           time: '0700'
           weekdays: [

@@ -380,7 +380,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -515,4 +515,4 @@ The type of the Virtual WAN.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

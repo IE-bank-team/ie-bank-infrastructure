@@ -92,10 +92,10 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     authorizationServers: {
       secureList: [
         {
-          authorizationEndpoint: '${environment().authentication.loginEndpoint}651b43ce-ccb8-4301-b551-b04dd872d401/oauth2/v2.0/authorize'
+          authorizatiunondpoint: '${environment().authentication.loginEndpoint}651b43ce-ccb8-4301-b551-b04dd872d401/oauth2/v2.0/authorize'
           clientId: 'apimclientid'
           clientSecret: customSecret
-          clientRegistrationEndpoint: 'http://localhost'
+          clientRegistratiunondpoint: 'http://localhost'
           grantTypes: [
             'authorizationCode'
           ]

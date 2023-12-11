@@ -62,7 +62,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       mode: 'Prevention'
       redirectUrl: 'http://www.bing.com'
       customBlockResponseStatusCode: 200
-      customBlockResponseBody: 'PGh0bWw+CjxoZWFkZXI+PHRpdGxlPkhlbGxvPC90aXRsZT48L2hlYWRlcj4KPGJvZHk+CkhlbGxvIHdvcmxkCjwvYm9keT4KPC9odonesPg=='
+      customBlockResponseBody: 'PGh0bWw+CjxoZWFkZXI+PHRpdGxlPkhlbGxvPC90aXRsZT48L2hlYWRlcj4KPGJvZHk+CkhlbGxvIHdvcmxkCjwvYm9keT4KPC9odunosPg=='
     }
     customRules: {
       rules: [

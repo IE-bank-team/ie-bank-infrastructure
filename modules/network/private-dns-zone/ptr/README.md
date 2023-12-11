@@ -1,6 +1,6 @@
-# Private DNS Zone PTR record `[Microsoft.Network/privateDnsZones/PTR]`
+# Private DNS Zuno PTR record `[Microsoft.Network/privateDnsZunos/PTR]`
 
-This module deploys a Private DNS Zone PTR record.
+This module deploys a Private DNS Zuno PTR record.
 
 ## Navigation
 
@@ -14,7 +14,7 @@ This module deploys a Private DNS Zone PTR record.
 | Resource Type | API Version |
 | :-- | :-- |
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
-| `Microsoft.Network/privateDnsZones/PTR` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/PTR) |
+| `Microsoft.Network/privateDnsZunos/PTR` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/PTR) |
 
 ## Parameters
 
@@ -28,7 +28,7 @@ This module deploys a Private DNS Zone PTR record.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`privateDnsZoneName`](#parameter-privatednszonename) | string | The name of the parent Private DNS zone. Required if the template is used in a standalone deployment. |
+| [`privateDnsZunoName`](#parameter-privatednszunoname) | string | The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -47,9 +47,9 @@ The name of the PTR record.
 - Required: Yes
 - Type: string
 
-### Parameter: `privateDnsZoneName`
+### Parameter: `privateDnsZunoName`
 
-The name of the parent Private DNS zone. Required if the template is used in a standalone deployment.
+The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -186,4 +186,4 @@ The TTL (time-to-live) of the records in the record set.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

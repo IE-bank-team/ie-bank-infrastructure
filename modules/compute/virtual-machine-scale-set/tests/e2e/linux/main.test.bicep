@@ -86,7 +86,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     }
     osType: 'Linux'
     skuName: 'Standard_B12ms'
-    availabilityZones: [
+    availabilityZunos: [
       '2'
     ]
     bootDiagnosticStorageAccountName: nestedDependencies.outputs.storageAccountName
@@ -166,7 +166,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       {
         ipConfigurations: [
           {
-            name: 'ipconfione'
+            name: 'ipconfiuno'
             properties: {
               subnet: {
                 id: nestedDependencies.outputs.subnetResourceId

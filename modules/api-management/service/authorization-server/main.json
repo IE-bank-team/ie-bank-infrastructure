@@ -21,10 +21,10 @@
     "apiManagementServiceName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
       }
     },
-    "authorizationEndpoint": {
+    "authorizatiunondpoint": {
       "type": "string",
       "metadata": {
         "description": "Required. OAuth authorization endpoint. See <http://tools.ietf.org/html/rfc6749#section-3.2>."
@@ -63,7 +63,7 @@
         "description": "Required. Client or app ID registered with this authorization server."
       }
     },
-    "clientRegistrationEndpoint": {
+    "clientRegistratiunondpoint": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
@@ -176,8 +176,8 @@
         "resourceOwnerUsername": "[parameters('resourceOwnerUsername')]",
         "resourceOwnerPassword": "[parameters('resourceOwnerPassword')]",
         "displayName": "[parameters('name')]",
-        "clientRegistrationEndpoint": "[parameters('clientRegistrationEndpoint')]",
-        "authorizationEndpoint": "[parameters('authorizationEndpoint')]",
+        "clientRegistratiunondpoint": "[parameters('clientRegistratiunondpoint')]",
+        "authorizatiunondpoint": "[parameters('authorizatiunondpoint')]",
         "grantTypes": "[parameters('grantTypes')]",
         "clientId": "[parameters('clientId')]",
         "clientSecret": "[parameters('clientSecret')]"

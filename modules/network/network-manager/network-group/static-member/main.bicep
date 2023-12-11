@@ -3,10 +3,10 @@ metadata description = '''This module deploys a Network Manager Network Group St
 Static membership allows you to explicitly add virtual networks to a group by manually selecting individual virtual networks.'''
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment.')
 param networkManagerName string
 
-@description('Conditional. The name of the parent network group. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent network group. Required if the template is used in a standaluno deployment.')
 param networkGroupName string
 
 @description('Required. The name of the static member.')

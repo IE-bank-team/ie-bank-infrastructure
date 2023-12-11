@@ -32,13 +32,13 @@
     "appName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent web site. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent web site. Required if the template is used in a standaluno deployment."
       }
     },
     "slotName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent web site slot. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent web site slot. Required if the template is used in a standaluno deployment."
       }
     },
     "location": {

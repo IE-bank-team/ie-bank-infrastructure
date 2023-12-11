@@ -28,7 +28,7 @@ This module deploys a Virtual Hub Virtual Network Connection.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`virtualHubName`](#parameter-virtualhubname) | string | The name of the parent virtual hub. Required if the template is used in a standalone deployment. |
+| [`virtualHubName`](#parameter-virtualhubname) | string | The name of the parent virtual hub. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -54,7 +54,7 @@ Resource ID of the virtual network to link to.
 
 ### Parameter: `virtualHubName`
 
-The name of the parent virtual hub. Required if the template is used in a standalone deployment.
+The name of the parent virtual hub. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -94,4 +94,4 @@ Routing Configuration indicating the associated and propagated route tables for 
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

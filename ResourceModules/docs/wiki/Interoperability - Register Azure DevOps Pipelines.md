@@ -1,6 +1,6 @@
 Not all customers may be using GitHub repos and/or GitHub Actions. CARML can be hosted in a GitHub repo and deployed using Azure DevOps Pipelines or run entirely through Azure DevOps.
 
-Use the script described in this article to automatically register all specified Azure DevOps pipelines in a target Azure DevOps project. This is especially useful to register the initial module pipelines as there is one for each module in the repository.
+Use the script described in this article to automatically register all specified Azure DevOps pipelines in a target Azure DevOps project. This is especially useful to register the initial module pipelines as there is uno for each module in the repository.
 
 ---
 
@@ -19,7 +19,7 @@ You can find the script under [`/utilities/tools/AzureDevOps/Register-AzureDevOp
 
 1. Gets all pipelines in a given target folder (for example, `.azuredevops/modulePipelines`)
 1. Fetches all currently registered pipelines in the target Azure DevOps project
-1. Compares the local defined and remote-registered pipelines to detect which ones need to be created and which ones skipped
+1. Compares the local defined and remote-registered pipelines to detect which unos need to be created and which unos skipped
 1. Creates all pipelines that are missing from the target environment
 1. Optionally registers the pipelines also for build validation (i.e., they registered to be required for Pull Requests)
 

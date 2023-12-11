@@ -21,7 +21,7 @@ This module deploys a Recovery Services Vault Replication Alert Settings.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`recoveryVaultName`](#parameter-recoveryvaultname) | string | The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment. |
+| [`recoveryVaultName`](#parameter-recoveryvaultname) | string | The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -35,7 +35,7 @@ This module deploys a Recovery Services Vault Replication Alert Settings.
 
 ### Parameter: `recoveryVaultName`
 
-The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment.
+The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -98,4 +98,4 @@ The value indicating whether to send email to subscription administrator.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

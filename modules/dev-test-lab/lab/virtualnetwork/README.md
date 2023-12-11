@@ -30,7 +30,7 @@ Lab virtual machines must be deployed into a virtual network. This resource type
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`labName`](#parameter-labname) | string | The name of the parent lab. Required if the template is used in a standalone deployment. |
+| [`labName`](#parameter-labname) | string | The name of the parent lab. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -58,7 +58,7 @@ The name of the virtual network.
 
 ### Parameter: `labName`
 
-The name of the parent lab. Required if the template is used in a standalone deployment.
+The name of the parent lab. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -113,4 +113,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

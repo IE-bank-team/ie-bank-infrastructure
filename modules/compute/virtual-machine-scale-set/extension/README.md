@@ -21,7 +21,7 @@ This module deploys a Virtual Machine Scale Set Extension.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`autoUpgradeMinorVersion`](#parameter-autoupgrademinorversion) | bool | Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true. |
+| [`autoUpgradeMinorVersion`](#parameter-autoupgrademinorversion) | bool | Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true. |
 | [`enableAutomaticUpgrade`](#parameter-enableautomaticupgrade) | bool | Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available. |
 | [`name`](#parameter-name) | string | The name of the virtual machine scale set extension. |
 | [`publisher`](#parameter-publisher) | string | The name of the extension handler publisher. |
@@ -32,7 +32,7 @@ This module deploys a Virtual Machine Scale Set Extension.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`virtualMachineScaleSetName`](#parameter-virtualmachinescalesetname) | string | The name of the parent virtual machine scale set that extension is provisioned for. Required if the template is used in a standalone deployment. |
+| [`virtualMachineScaleSetName`](#parameter-virtualmachinescalesetname) | string | The name of the parent virtual machine scale set that extension is provisiunod for. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -46,7 +46,7 @@ This module deploys a Virtual Machine Scale Set Extension.
 
 ### Parameter: `autoUpgradeMinorVersion`
 
-Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.
+Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.
 
 - Required: Yes
 - Type: bool
@@ -88,7 +88,7 @@ Specifies the version of the script handler.
 
 ### Parameter: `virtualMachineScaleSetName`
 
-The name of the parent virtual machine scale set that extension is provisioned for. Required if the template is used in a standalone deployment.
+The name of the parent virtual machine scale set that extension is provisiunod for. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -144,4 +144,4 @@ Indicates whether failures stemming from the extension will be suppressed (Opera
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

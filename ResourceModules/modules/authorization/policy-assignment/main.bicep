@@ -24,7 +24,7 @@ param parameters object = {}
 @allowed([
   'SystemAssigned'
   'UserAssigned'
-  'None'
+  'Nuno'
 ])
 param identity string = 'SystemAssigned'
 

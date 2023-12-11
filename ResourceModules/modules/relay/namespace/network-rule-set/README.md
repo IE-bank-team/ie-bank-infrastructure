@@ -21,7 +21,7 @@ This module deploys a Relay Namespace Network Rule Set.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Relay Namespace for the Relay Network Rule Set. Required if the template is used in a standalone deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Relay Namespace for the Relay Network Rule Set. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -34,7 +34,7 @@ This module deploys a Relay Namespace Network Rule Set.
 
 ### Parameter: `namespaceName`
 
-The name of the parent Relay Namespace for the Relay Network Rule Set. Required if the template is used in a standalone deployment.
+The name of the parent Relay Namespace for the Relay Network Rule Set. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -96,4 +96,4 @@ This determines if traffic is allowed over public network. Default is "Enabled".
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

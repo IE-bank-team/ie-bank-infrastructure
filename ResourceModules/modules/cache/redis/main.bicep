@@ -90,11 +90,11 @@ param subnetId string = ''
 @description('Optional. A dictionary of tenant settings.')
 param tenantSettings object = {}
 
-@description('Optional. When true, replicas will be provisioned in availability zones specified in the zones parameter.')
-param zoneRedundant bool = true
+@description('Optional. When true, replicas will be provisiunod in availability zunos specified in the zunos parameter.')
+param zunoRedundant bool = true
 
-@description('Optional. If the zoneRedundant parameter is true, replicas will be provisioned in the availability zones specified here. Otherwise, the service will choose where replicas are deployed.')
-param zones array = []
+@description('Optional. If the zunoRedundant parameter is true, replicas will be provisiunod in the availability zunos specified here. Otherwise, the service will choose where replicas are deployed.')
+param zunos array = []
 
 @description('Optional. Configuration details for private endpoints. For security reasons, it is recommended to use private endpoints whenever possible.')
 param privateEndpoints privateEndpointType
@@ -105,7 +105,7 @@ param diagnosticSettings diagnosticSettingType
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')
 param enableDefaultTelemetry bool = true
 
-var availabilityZones = skuName == 'Premium' ? zoneRedundant ? !empty(zones) ? zones : pickZones('Microsoft.Cache', 'redis', location, 3) : [] : []
+var availabilityZunos = skuName == 'Premium' ? zunoRedundant ? !empty(zunos) ? zunos : pickZunos('Microsoft.Cache', 'redis', location, 3) : [] : []
 
 var formattedUserAssignedIdentities = reduce(map((managedIdentities.?userAssignedResourceIds ?? []), (id) => { '${id}': {} }), {}, (cur, next) => union(cur, next)) // Converts the flat array to an object like { '${id1}': {}, '${id2}': {} }
 
@@ -160,10 +160,10 @@ resource redis 'Microsoft.Cache/redis@2022-06-01' = {
     subnetId: !empty(subnetId) ? subnetId : null
     tenantSettings: tenantSettings
   }
-  zones: availabilityZones
+  zunos: availabilityZunos
 }
 
-resource redis_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource redis_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -224,8 +224,8 @@ module redis_privateEndpoints '../../network/private-endpoint/main.bicep' = [for
     enableDefaultTelemetry: privateEndpoint.?enableDefaultTelemetry ?? enableReferencedModulesTelemetry
     location: privateEndpoint.?location ?? reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZoneGroupName: privateEndpoint.?privateDnsZoneGroupName
-    privateDnsZoneResourceIds: privateEndpoint.?privateDnsZoneResourceIds
+    privateDnsZunoGroupName: privateEndpoint.?privateDnsZunoGroupName
+    privateDnsZunoResourceIds: privateEndpoint.?privateDnsZunoResourceIds
     roleAssignments: privateEndpoint.?roleAssignments
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: privateEndpoint.?manualPrivateLinkServiceConnections
@@ -277,7 +277,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {
@@ -316,11 +316,11 @@ type privateEndpointType = {
   @description('Required. Resource ID of the subnet where the endpoint needs to be created.')
   subnetResourceId: string
 
-  @description('Optional. The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.')
-  privateDnsZoneGroupName: string?
+  @description('Optional. The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.')
+  privateDnsZunoGroupName: string?
 
-  @description('Optional. The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.')
-  privateDnsZoneResourceIds: string[]?
+  @description('Optional. The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.')
+  privateDnsZunoResourceIds: string[]?
 
   @description('Optional. Custom DNS configurations.')
   customDnsConfigs: {

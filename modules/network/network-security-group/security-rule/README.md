@@ -30,7 +30,7 @@ This module deploys a Network Security Group (NSG) Security Rule.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`networkSecurityGroupName`](#parameter-networksecuritygroupname) | string | The name of the parent network security group to deploy the security rule into. Required if the template is used in a standalone deployment. |
+| [`networkSecurityGroupName`](#parameter-networksecuritygroupname) | string | The name of the parent network security group to deploy the security rule into. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -98,7 +98,7 @@ Network protocol this rule applies to.
 
 ### Parameter: `networkSecurityGroupName`
 
-The name of the parent network security group to deploy the security rule into. Required if the template is used in a standalone deployment.
+The name of the parent network security group to deploy the security rule into. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -225,4 +225,4 @@ The source port ranges.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

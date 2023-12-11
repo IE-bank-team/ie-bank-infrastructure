@@ -4,13 +4,13 @@ metadata description = '''This module deploys a Recovery Services Vault (RSV) Re
 > **Note**: this version of the module only supports the `instanceType: 'A2A'` scenario.'''
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment.')
 param recoveryVaultName string
 
-@description('Conditional. The name of the parent Replication Fabric. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Replication Fabric. Required if the template is used in a standaluno deployment.')
 param replicationFabricName string
 
-@description('Conditional. The name of the parent source Replication container. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent source Replication container. Required if the template is used in a standaluno deployment.')
 param sourceProtectionContainerName string
 
 @description('Optional. Resource ID of the target Replication container. Must be specified if targetContainerName is not. If specified, targetContainerFabricName and targetContainerName will be ignored.')

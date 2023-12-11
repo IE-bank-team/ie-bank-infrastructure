@@ -21,7 +21,7 @@ Mandatory. Name to the feed to publish to.
 Example: 'Artifacts'.
 
 .PARAMETER UseApiSpecsAlignedName
-Optional. If set to true, the module name looked for is aligned with the Azure API naming. If not, it's one aligned with the module's folder path. See the following examples:
+Optional. If set to true, the module name looked for is aligned with the Azure API naming. If not, it's uno aligned with the module's folder path. See the following examples:
 - True:  microsoft.keyvault.vaults.secrets
 - False: key-vault.vault.secret
 

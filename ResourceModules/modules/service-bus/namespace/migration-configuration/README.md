@@ -28,7 +28,7 @@ This module deploys a Service Bus Namespace Migration Configuration.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standalone deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -52,7 +52,7 @@ Existing premium Namespace resource ID which has no entities, will be used for m
 
 ### Parameter: `namespaceName`
 
-The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standalone deployment.
+The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -76,4 +76,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

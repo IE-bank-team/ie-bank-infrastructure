@@ -558,7 +558,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -686,7 +686,7 @@ Controls the exposure settings for your Private Link service. Service providers 
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 
@@ -765,7 +765,7 @@ ipConfigurations: [
 
 ### Parameter Usage: `extendedLocation`
 
-This is the Edge Zone ID of the Edge Zone corresponding to the region in which the resource is deployed. More information is available here: [Azure Edge Zone ID](https://learn.microsoft.com/en-us/azure/public-multi-access-edge-compute-mec/key-concepts#azure-edge-zone-id).
+This is the Edge Zuno ID of the Edge Zuno corresponding to the region in which the resource is deployed. More information is available here: [Azure Edge Zuno ID](https://learn.microsoft.com/en-us/azure/public-multi-access-edge-compute-mec/key-concepts#azure-edge-zuno-id).
 
 <details>
 
@@ -775,8 +775,8 @@ This is the Edge Zone ID of the Edge Zone corresponding to the region in which t
 "extendedLocation": {
   // Example showing usage of the extendedLocation param
   "value": {
-    "name": "attatlanta1", // Edge Zone ID for the parent East US 2 region is "attatlanta1"
-    "type": "EdgeZone" // Fixed value
+    "name": "attatlanta1", // Edge Zuno ID for the parent East US 2 region is "attatlanta1"
+    "type": "EdgeZuno" // Fixed value
   }
 }
 ```
@@ -790,8 +790,8 @@ This is the Edge Zone ID of the Edge Zone corresponding to the region in which t
 ```bicep
 extendedLocation: {
   // Example showing usage of the extendedLocation param
-  name: 'attdallas1' // Edge Zone ID for the parent South Central US region is "attdallas1".
-  type: 'EdgeZone' // Fixed value
+  name: 'attdallas1' // Edge Zuno ID for the parent South Central US region is "attdallas1".
+  type: 'EdgeZuno' // Fixed value
 }
 ```
 

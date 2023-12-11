@@ -6,7 +6,7 @@ metadata owner = 'Azure/module-maintainers'
 @minLength(1)
 param name string
 
-@description('Conditional. The name of the parent private link scope. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent private link scope. Required if the template is used in a standaluno deployment.')
 @minLength(1)
 param privateLinkScopeName string
 

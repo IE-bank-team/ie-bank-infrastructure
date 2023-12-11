@@ -32,13 +32,13 @@
     "iotConnectorName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the MedTech service to add this destination to. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the MedTech service to add this destination to. Required if the template is used in a standaluno deployment."
       }
     },
     "workspaceName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent health data services workspace. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent health data services workspace. Required if the template is used in a standaluno deployment."
       }
     },
     "fhirServiceResourceId": {

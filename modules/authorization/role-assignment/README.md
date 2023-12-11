@@ -537,7 +537,7 @@ Subscription ID of the subscription to assign the RBAC role to. If no Resource G
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

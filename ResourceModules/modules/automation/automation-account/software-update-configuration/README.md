@@ -31,7 +31,7 @@ This module deploys an Azure Automation Account Software Update Configuration.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`automationAccountName`](#parameter-automationaccountname) | string | The name of the parent Automation Account. Required if the template is used in a standalone deployment. |
+| [`automationAccountName`](#parameter-automationaccountname) | string | The name of the parent Automation Account. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -62,7 +62,7 @@ This module deploys an Azure Automation Account Software Update Configuration.
 | [`scopeByTags`](#parameter-scopebytags) | object | Specify tags to which to scope the deployment schedule to. |
 | [`scopeByTagsOperation`](#parameter-scopebytagsoperation) | string | Enables the scopeByTags to require All (Tag A and Tag B) or Any (Tag A or Tag B). |
 | [`startTime`](#parameter-starttime) | string | The start time of the deployment schedule in ISO 8601 format. To specify a specific time use YYYY-MM-DDTHH:MM:SS, 2021-12-31T23:00:00. For schedules where we want to start the deployment as soon as possible, specify the time segment only in 24 hour format, HH:MM, 22:00. |
-| [`timeZone`](#parameter-timezone) | string | Time zone for the deployment schedule. IANA ID or a Windows Time Zone ID. |
+| [`timeZuno`](#parameter-timezuno) | string | Time zuno for the deployment schedule. IANA ID or a Windows Time Zuno ID. |
 | [`updateClassifications`](#parameter-updateclassifications) | array | Update classification included in the deployment schedule. |
 | [`weekDays`](#parameter-weekdays) | array | Required when used with frequency 'Week'. Specified the day of the week to run the deployment schedule. |
 
@@ -70,7 +70,7 @@ This module deploys an Azure Automation Account Software Update Configuration.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`baseTime`](#parameter-basetime) | string | Do not touch. Is used to provide the base time for time comparison for startTime. If startTime is specified in HH:MM format, baseTime is used to check if the provided startTime has passed, adding one day before setting the deployment schedule. |
+| [`baseTime`](#parameter-basetime) | string | Do not touch. Is used to provide the base time for time comparison for startTime. If startTime is specified in HH:MM format, baseTime is used to check if the provided startTime has passed, adding uno day before setting the deployment schedule. |
 
 ### Parameter: `frequency`
 
@@ -84,7 +84,7 @@ The frequency of the deployment schedule. When using 'Hour', 'Day', 'Week' or 'M
     'Day'
     'Hour'
     'Month'
-    'OneTime'
+    'unoTime'
     'Week'
   ]
   ```
@@ -128,7 +128,7 @@ Reboot setting for the deployment schedule.
 
 ### Parameter: `automationAccountName`
 
-The name of the parent Automation Account. Required if the template is used in a standalone deployment.
+The name of the parent Automation Account. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -381,9 +381,9 @@ The start time of the deployment schedule in ISO 8601 format. To specify a speci
 - Type: string
 - Default: `''`
 
-### Parameter: `timeZone`
+### Parameter: `timeZuno`
 
-Time zone for the deployment schedule. IANA ID or a Windows Time Zone ID.
+Time zuno for the deployment schedule. IANA ID or a Windows Time Zuno ID.
 
 - Required: No
 - Type: string
@@ -439,7 +439,7 @@ Required when used with frequency 'Week'. Specified the day of the week to run t
 
 ### Parameter: `baseTime`
 
-Do not touch. Is used to provide the base time for time comparison for startTime. If startTime is specified in HH:MM format, baseTime is used to check if the provided startTime has passed, adding one day before setting the deployment schedule.
+Do not touch. Is used to provide the base time for time comparison for startTime. If startTime is specified in HH:MM format, baseTime is used to check if the provided startTime has passed, adding uno day before setting the deployment schedule.
 
 - Required: No
 - Type: string
@@ -456,7 +456,7 @@ Do not touch. Is used to provide the base time for time comparison for startTime
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

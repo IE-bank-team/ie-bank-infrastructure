@@ -349,7 +349,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -469,4 +469,4 @@ Resource tags.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

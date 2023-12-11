@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the AFD Endpoint.')
 param name string
 
-@description('Conditional. The name of the parent CDN profile. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent CDN profile. Required if the template is used in a standaluno deployment.')
 param profileName string
 
 @description('Optional. The location of the AFD Endpoint.')

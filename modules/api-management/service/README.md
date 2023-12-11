@@ -139,9 +139,9 @@ module service 'br:bicep/modules/api-management.service:1.0.0' = {
     authorizationServers: {
       secureList: [
         {
-          authorizationEndpoint: '<authorizationEndpoint>'
+          authorizatiunondpoint: '<authorizatiunondpoint>'
           clientId: 'apimclientid'
-          clientRegistrationEndpoint: 'http://localhost'
+          clientRegistratiunondpoint: 'http://localhost'
           clientSecret: '<clientSecret>'
           grantTypes: [
             'authorizationCode'
@@ -322,9 +322,9 @@ module service 'br:bicep/modules/api-management.service:1.0.0' = {
       "value": {
         "secureList": [
           {
-            "authorizationEndpoint": "<authorizationEndpoint>",
+            "authorizatiunondpoint": "<authorizatiunondpoint>",
             "clientId": "apimclientid",
-            "clientRegistrationEndpoint": "http://localhost",
+            "clientRegistratiunondpoint": "http://localhost",
             "clientSecret": "<clientSecret>",
             "grantTypes": [
               "authorizationCode"
@@ -529,9 +529,9 @@ module service 'br:bicep/modules/api-management.service:1.0.0' = {
     authorizationServers: {
       secureList: [
         {
-          authorizationEndpoint: '<authorizationEndpoint>'
+          authorizatiunondpoint: '<authorizatiunondpoint>'
           clientId: 'apimclientid'
-          clientRegistrationEndpoint: 'http://localhost'
+          clientRegistratiunondpoint: 'http://localhost'
           clientSecret: '<clientSecret>'
           grantTypes: [
             'authorizationCode'
@@ -695,9 +695,9 @@ module service 'br:bicep/modules/api-management.service:1.0.0' = {
       "value": {
         "secureList": [
           {
-            "authorizationEndpoint": "<authorizationEndpoint>",
+            "authorizatiunondpoint": "<authorizatiunondpoint>",
             "clientId": "apimclientid",
-            "clientRegistrationEndpoint": "http://localhost",
+            "clientRegistratiunondpoint": "http://localhost",
             "clientSecret": "<clientSecret>",
             "grantTypes": [
               "authorizationCode"
@@ -892,8 +892,8 @@ module service 'br:bicep/modules/api-management.service:1.0.0' = {
 | [`subnetResourceId`](#parameter-subnetresourceid) | string | The full resource ID of a subnet in a virtual network to deploy the API Management service in. |
 | [`subscriptions`](#parameter-subscriptions) | array | Subscriptions. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
-| [`virtualNetworkType`](#parameter-virtualnetworktype) | string | The type of VPN in which API Management service needs to be configured in. None (Default Value) means the API Management service is not part of any Virtual Network, External means the API Management deployment is set up inside a Virtual Network having an internet Facing Endpoint, and Internal means that API Management deployment is setup inside a Virtual Network having an Intranet Facing Endpoint only. |
-| [`zones`](#parameter-zones) | array | A list of availability zones denoting where the resource needs to come from. |
+| [`virtualNetworkType`](#parameter-virtualnetworktype) | string | The type of VPN in which API Management service needs to be configured in. Nuno (Default Value) means the API Management service is not part of any Virtual Network, External means the API Management deployment is set up inside a Virtual Network having an internet Facing Endpoint, and Internal means that API Management deployment is setup inside a Virtual Network having an Intranet Facing Endpoint only. |
+| [`zunos`](#parameter-zunos) | array | A list of availability zunos denoting where the resource needs to come from. |
 
 ### Parameter: `name`
 
@@ -1143,7 +1143,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -1394,23 +1394,23 @@ Tags of the resource.
 
 ### Parameter: `virtualNetworkType`
 
-The type of VPN in which API Management service needs to be configured in. None (Default Value) means the API Management service is not part of any Virtual Network, External means the API Management deployment is set up inside a Virtual Network having an internet Facing Endpoint, and Internal means that API Management deployment is setup inside a Virtual Network having an Intranet Facing Endpoint only.
+The type of VPN in which API Management service needs to be configured in. Nuno (Default Value) means the API Management service is not part of any Virtual Network, External means the API Management deployment is set up inside a Virtual Network having an internet Facing Endpoint, and Internal means that API Management deployment is setup inside a Virtual Network having an Intranet Facing Endpoint only.
 
 - Required: No
 - Type: string
-- Default: `'None'`
+- Default: `'Nuno'`
 - Allowed:
   ```Bicep
   [
     'External'
     'Internal'
-    'None'
+    'Nuno'
   ]
   ```
 
-### Parameter: `zones`
+### Parameter: `zunos`
 
-A list of availability zones denoting where the resource needs to come from.
+A list of availability zunos denoting where the resource needs to come from.
 
 - Required: No
 - Type: array
@@ -1429,7 +1429,7 @@ A list of availability zones denoting where the resource needs to come from.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

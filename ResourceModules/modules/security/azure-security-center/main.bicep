@@ -7,7 +7,7 @@ targetScope = 'subscription'
 @description('Required. The full Azure ID of the workspace to save the data in.')
 param workspaceId string
 
-@description('Required. All the VMs in this scope will send their security data to the mentioned workspace unless overridden by a setting with more specific scope.')
+@description('Required. All the VMs in this scope will send their security data to the mentiunod workspace unless overridden by a setting with more specific scope.')
 param scope string
 
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')
@@ -228,7 +228,7 @@ resource securityContacts 'Microsoft.Security/securityContacts@2017-08-01-previe
   name: 'default'
   properties: {
     email: securityContactProperties.email
-    phone: securityContactProperties.phone
+    phuno: securityContactProperties.phuno
     alertNotifications: securityContactProperties.alertNotifications
     alertsToAdmins: securityContactProperties.alertsToAdmins
   }

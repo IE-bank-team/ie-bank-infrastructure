@@ -79,7 +79,7 @@ module natGateway 'br:bicep/modules/network.nat-gateway:1.0.0' = {
           }
         ]
         skuTier: 'Regional'
-        zones: [
+        zunos: [
           '1'
           '2'
           '3'
@@ -164,7 +164,7 @@ module natGateway 'br:bicep/modules/network.nat-gateway:1.0.0' = {
             }
           ],
           "skuTier": "Regional",
-          "zones": [
+          "zunos": [
             "1",
             "2",
             "3"
@@ -207,7 +207,7 @@ module natGateway 'br:bicep/modules/network.nat-gateway:1.0.0' = {
 
 ### Example 2: _Combine a generated and provided Public IP Prefix_
 
-This example shows how you can provide a Public IP Prefix to the module, while also generating one in the module.
+This example shows how you can provide a Public IP Prefix to the module, while also generating uno in the module.
 
 
 <details>
@@ -399,7 +399,7 @@ module natGateway 'br:bicep/modules/network.nat-gateway:1.0.0' = {
           }
         ]
         skuTier: 'Regional'
-        zones: [
+        zunos: [
           '1'
           '2'
           '3'
@@ -467,7 +467,7 @@ module natGateway 'br:bicep/modules/network.nat-gateway:1.0.0' = {
             }
           ],
           "skuTier": "Regional",
-          "zones": [
+          "zunos": [
             "1",
             "2",
             "3"
@@ -512,7 +512,7 @@ module natGateway 'br:bicep/modules/network.nat-gateway:1.0.0' = {
 | [`publicIpResourceIds`](#parameter-publicipresourceids) | array | Existing Public IP Address resource IDs to use for the NAT Gateway. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
 | [`tags`](#parameter-tags) | object | Tags for the resource. |
-| [`zones`](#parameter-zones) | array | A list of availability zones denoting the zone in which Nat Gateway should be deployed. |
+| [`zunos`](#parameter-zunos) | array | A list of availability zunos denoting the zuno in which Nat Gateway should be deployed. |
 
 ### Parameter: `name`
 
@@ -569,7 +569,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -707,9 +707,9 @@ Tags for the resource.
 - Required: No
 - Type: object
 
-### Parameter: `zones`
+### Parameter: `zunos`
 
-A list of availability zones denoting the zone in which Nat Gateway should be deployed.
+A list of availability zunos denoting the zuno in which Nat Gateway should be deployed.
 
 - Required: No
 - Type: array

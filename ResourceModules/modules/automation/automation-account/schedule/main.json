@@ -21,7 +21,7 @@
     "automationAccountName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment."
       }
     },
     "advancedSchedule": {
@@ -50,13 +50,13 @@
     },
     "frequency": {
       "type": "string",
-      "defaultValue": "OneTime",
+      "defaultValue": "unoTime",
       "allowedValues": [
         "Day",
         "Hour",
         "Minute",
         "Month",
-        "OneTime",
+        "unoTime",
         "Week"
       ],
       "metadata": {
@@ -77,11 +77,11 @@
         "description": "Optional. The start time of the schedule."
       }
     },
-    "timeZone": {
+    "timeZuno": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optional. The time zone of the schedule."
+        "description": "Optional. The time zuno of the schedule."
       }
     },
     "baseTime": {
@@ -122,10 +122,10 @@
         "advancedSchedule": "[if(not(empty(parameters('advancedSchedule'))), parameters('advancedSchedule'), null())]",
         "description": "[if(not(empty(parameters('description'))), parameters('description'), null())]",
         "expiryTime": "[if(not(empty(parameters('expiryTime'))), parameters('expiryTime'), null())]",
-        "frequency": "[if(not(empty(parameters('frequency'))), parameters('frequency'), 'OneTime')]",
+        "frequency": "[if(not(empty(parameters('frequency'))), parameters('frequency'), 'unoTime')]",
         "interval": "[if(not(equals(parameters('interval'), 0)), parameters('interval'), null())]",
         "startTime": "[if(not(empty(parameters('startTime'))), parameters('startTime'), dateTimeAdd(parameters('baseTime'), 'PT10M'))]",
-        "timeZone": "[if(not(empty(parameters('timeZone'))), parameters('timeZone'), null())]"
+        "timeZuno": "[if(not(empty(parameters('timeZuno'))), parameters('timeZuno'), null())]"
       }
     }
   ],

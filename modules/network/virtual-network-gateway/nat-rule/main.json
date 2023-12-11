@@ -21,7 +21,7 @@
     "virtualNetworkGatewayName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Virtual Network Gateway this NAT rule is associated with. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Virtual Network Gateway this NAT rule is associated with. Required if the template is used in a standaluno deployment."
       }
     },
     "externalMappings": {
@@ -66,7 +66,7 @@
         "Static"
       ],
       "metadata": {
-        "description": "Optional. The type of NAT rule for Virtual Network NAT. Static one-to-one NAT establishes a one-to-one relationship between an internal address and an external address while Dynamic NAT assigns an IP and port based on availability."
+        "description": "Optional. The type of NAT rule for Virtual Network NAT. Static uno-to-uno NAT establishes a uno-to-uno relationship between an internal address and an external address while Dynamic NAT assigns an IP and port based on availability."
       }
     },
     "enableDefaultTelemetry": {

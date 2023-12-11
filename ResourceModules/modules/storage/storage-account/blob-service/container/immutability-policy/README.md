@@ -21,8 +21,8 @@ This module deploys a Storage Account Blob Container Immutability Policy.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`containerName`](#parameter-containername) | string | The name of the parent container to apply the policy to. Required if the template is used in a standalone deployment. |
-| [`storageAccountName`](#parameter-storageaccountname) | string | The name of the parent Storage Account. Required if the template is used in a standalone deployment. |
+| [`containerName`](#parameter-containername) | string | The name of the parent container to apply the policy to. Required if the template is used in a standaluno deployment. |
+| [`storageAccountName`](#parameter-storageaccountname) | string | The name of the parent Storage Account. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -35,14 +35,14 @@ This module deploys a Storage Account Blob Container Immutability Policy.
 
 ### Parameter: `containerName`
 
-The name of the parent container to apply the policy to. Required if the template is used in a standalone deployment.
+The name of the parent container to apply the policy to. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `storageAccountName`
 
-The name of the parent Storage Account. Required if the template is used in a standalone deployment.
+The name of the parent Storage Account. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -90,4 +90,4 @@ The immutability period for the blobs in the container since the policy creation
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

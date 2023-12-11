@@ -2,7 +2,7 @@ metadata name = 'SQL Managed Instances Administrator'
 metadata description = 'This module deploys a SQL Managed Instance Administrator.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent SQL managed instance. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment.')
 param managedInstanceName string
 
 @description('Required. Login name of the managed instance administrator.')

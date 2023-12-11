@@ -380,13 +380,13 @@ module diskEncryptionSet 'br:bicep/modules/compute.disk-encryption-set:1.0.0' = 
 | :-- | :-- | :-- |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`encryptionType`](#parameter-encryptiontype) | string | The type of key used to encrypt the data of the disk. For security reasons, it is recommended to set encryptionType to EncryptionAtRestWithPlatformAndCustomerKeys. |
-| [`federatedClientId`](#parameter-federatedclientid) | string | Multi-tenant application client ID to access key vault in a different tenant. Setting the value to "None" will clear the property. |
+| [`federatedClientId`](#parameter-federatedclientid) | string | Multi-tenant application client ID to access key vault in a different tenant. Setting the value to "Nuno" will clear the property. |
 | [`keyVersion`](#parameter-keyversion) | string | The version of the customer managed key to reference for encryption. If not provided, the latest key version is used. |
 | [`location`](#parameter-location) | string | Resource location. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
-| [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. At least one identity type is required. |
+| [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. At least uno identity type is required. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
-| [`rotationToLatestKeyVersionEnabled`](#parameter-rotationtolatestkeyversionenabled) | bool | Set this flag to true to enable auto-updating of this disk encryption set to the latest key version. |
+| [`rotationToLatestKeyVersiunonabled`](#parameter-rotationtolatestkeyversiunonabled) | bool | Set this flag to true to enable auto-updating of this disk encryption set to the latest key version. |
 | [`tags`](#parameter-tags) | object | Tags of the disk encryption resource. |
 
 ### Parameter: `keyName`
@@ -435,11 +435,11 @@ The type of key used to encrypt the data of the disk. For security reasons, it i
 
 ### Parameter: `federatedClientId`
 
-Multi-tenant application client ID to access key vault in a different tenant. Setting the value to "None" will clear the property.
+Multi-tenant application client ID to access key vault in a different tenant. Setting the value to "Nuno" will clear the property.
 
 - Required: No
 - Type: string
-- Default: `'None'`
+- Default: `'Nuno'`
 
 ### Parameter: `keyVersion`
 
@@ -481,7 +481,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -495,7 +495,7 @@ Specify the name of lock.
 
 ### Parameter: `managedIdentities`
 
-The managed identity definition for this resource. At least one identity type is required.
+The managed identity definition for this resource. At least uno identity type is required.
 
 - Required: No
 - Type: object
@@ -616,7 +616,7 @@ The principal type of the assigned principal ID.
   ]
   ```
 
-### Parameter: `rotationToLatestKeyVersionEnabled`
+### Parameter: `rotationToLatestKeyVersiunonabled`
 
 Set this flag to true to enable auto-updating of this disk encryption set to the latest key version.
 

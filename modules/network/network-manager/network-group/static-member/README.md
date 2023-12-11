@@ -29,8 +29,8 @@ Static membership allows you to explicitly add virtual networks to a group by ma
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`networkGroupName`](#parameter-networkgroupname) | string | The name of the parent network group. Required if the template is used in a standalone deployment. |
-| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standalone deployment. |
+| [`networkGroupName`](#parameter-networkgroupname) | string | The name of the parent network group. Required if the template is used in a standaluno deployment. |
+| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -54,14 +54,14 @@ Resource ID of the virtual network.
 
 ### Parameter: `networkGroupName`
 
-The name of the parent network group. Required if the template is used in a standalone deployment.
+The name of the parent network group. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `networkManagerName`
 
-The name of the parent network manager. Required if the template is used in a standalone deployment.
+The name of the parent network manager. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -85,4 +85,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the database.')
 param name string
 
-@description('Conditional. The name of the parent SQL Server. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent SQL Server. Required if the template is used in a standaluno deployment.')
 param serverName string
 
 @description('Optional. The collation of the database.')
@@ -40,8 +40,8 @@ param maxSizeBytes int = 34359738368
 @description('Optional. The name of the sample schema to apply when creating this database.')
 param sampleName string = ''
 
-@description('Optional. Whether or not this database is zone redundant.')
-param zoneRedundant bool = false
+@description('Optional. Whether or not this database is zuno redundant.')
+param zunoRedundant bool = false
 
 @description('Optional. The license type to apply for this database.')
 param licenseType string = ''
@@ -106,7 +106,7 @@ param restorePointInTime string = ''
 @allowed([
   'Geo'
   'Local'
-  'Zone'
+  'Zuno'
   ''
 ])
 param requestedBackupStorageRedundancy string = ''
@@ -162,7 +162,7 @@ resource database 'Microsoft.Sql/servers/databases@2022-05-01-preview' = {
     collation: collation
     maxSizeBytes: maxSizeBytes
     sampleName: sampleName
-    zoneRedundant: zoneRedundant
+    zunoRedundant: zunoRedundant
     licenseType: licenseType
     readScale: readScale
     minCapacity: !empty(minCapacity) ? json(minCapacity) : 0 // The json() function is used to allow specifying a decimal value.

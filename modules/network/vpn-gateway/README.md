@@ -487,7 +487,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -542,7 +542,7 @@ The scale unit for this VPN gateway.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

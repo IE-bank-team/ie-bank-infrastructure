@@ -67,7 +67,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     osDiskCaching: 'ReadWrite'
     osType: 'Windows'
     hyperVGeneration: 'V1'
-    zoneResilient: true
+    zunoResilient: true
     diskEncryptionSetResourceId: nestedDependencies.outputs.diskEncryptionSetResourceId
     osState: 'Generalized'
     diskSizeGB: 128

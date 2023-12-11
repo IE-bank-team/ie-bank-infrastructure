@@ -15,7 +15,7 @@
     "appName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent site resource. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent site resource. Required if the template is used in a standaluno deployment."
       }
     },
     "kind": {

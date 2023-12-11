@@ -83,8 +83,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       {
         service: 'blob'
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
-        privateDnsZoneResourceIds: [
-          nestedDependencies.outputs.privateDNSZoneResourceId
+        privateDnsZunoResourceIds: [
+          nestedDependencies.outputs.privateDNSZunoResourceId
         ]
         tags: {
           'hidden-title': 'This is visible in the resource name'
@@ -147,7 +147,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
           name: 'avdscripts'
           enableNfsV3AllSquash: true
           enableNfsV3RootSquash: true
-          publicAccess: 'None'
+          publicAccess: 'Nuno'
           roleAssignments: [
             {
               roleDefinitionIdOrName: 'Owner'
@@ -168,7 +168,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         }
         {
           name: 'archivecontainer'
-          publicAccess: 'None'
+          publicAccess: 'Nuno'
           metadata: {
             testKey: 'testValue'
           }

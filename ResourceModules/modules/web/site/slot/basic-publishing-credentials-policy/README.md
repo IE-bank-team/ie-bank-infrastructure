@@ -27,8 +27,8 @@ This module deploys a Web Site Slot Basic Publishing Credentials Policy.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`appName`](#parameter-appname) | string | The name of the parent web site. Required if the template is used in a standalone deployment. |
-| [`slotName`](#parameter-slotname) | string | The name of the parent web site slot. Required if the template is used in a standalone deployment. |
+| [`appName`](#parameter-appname) | string | The name of the parent web site. Required if the template is used in a standaluno deployment. |
+| [`slotName`](#parameter-slotname) | string | The name of the parent web site slot. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -54,14 +54,14 @@ The name of the resource.
 
 ### Parameter: `appName`
 
-The name of the parent web site. Required if the template is used in a standalone deployment.
+The name of the parent web site. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `slotName`
 
-The name of the parent web site slot. Required if the template is used in a standalone deployment.
+The name of the parent web site slot. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -102,4 +102,4 @@ Location for all Resources.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -111,8 +111,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     ]
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          nestedDependencies.outputs.privateDNSZoneResourceId
+        privateDnsZunoResourceIds: [
+          nestedDependencies.outputs.privateDNSZunoResourceId
         ]
         service: 'Webhook'
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
@@ -123,8 +123,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         }
       }
       {
-        privateDnsZoneResourceIds: [
-          nestedDependencies.outputs.privateDNSZoneResourceId
+        privateDnsZunoResourceIds: [
+          nestedDependencies.outputs.privateDNSZunoResourceId
         ]
         service: 'DSCAndHybridWorker'
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
@@ -169,7 +169,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         interval: 12
         name: 'TestSchedule'
         startTime: ''
-        timeZone: 'Europe/Berlin'
+        timeZuno: 'Europe/Berlin'
       }
     ]
     softwareUpdateConfigurations: [
@@ -213,7 +213,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         excludeUpdates: [
           'icacls'
         ]
-        frequency: 'OneTime'
+        frequency: 'unoTime'
         includeUpdates: [
           'kernel'
         ]

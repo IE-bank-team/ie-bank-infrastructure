@@ -1,9 +1,9 @@
 metadata name = 'Network Manager Security Admin Configurations'
 metadata description = '''This module deploys an Network Manager Security Admin Configuration.
-A security admin configuration contains a set of rule collections. Each rule collection contains one or more security admin rules.'''
+A security admin configuration contains a set of rule collections. Each rule collection contains uno or more security admin rules.'''
 metadata owner = 'Azure/module-maintainers'
 
-@sys.description('Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment.')
+@sys.description('Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment.')
 param networkManagerName string
 
 @maxLength(64)
@@ -15,14 +15,14 @@ param name string
 param description string = ''
 
 @allowed([
-  'None'
+  'Nuno'
   'All'
   'AllowRulesOnly'
 ])
 @sys.description('Required. Enum list of network intent policy based services.')
-param applyOnNetworkIntentPolicyBasedServices array = [ 'None' ]
+param applyOnNetworkIntentPolicyBasedServices array = [ 'Nuno' ]
 
-@sys.description('Optional. A security admin configuration contains a set of rule collections that are applied to network groups. Each rule collection contains one or more security admin rules.')
+@sys.description('Optional. A security admin configuration contains a set of rule collections that are applied to network groups. Each rule collection contains uno or more security admin rules.')
 param ruleCollections array = []
 
 @sys.description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')

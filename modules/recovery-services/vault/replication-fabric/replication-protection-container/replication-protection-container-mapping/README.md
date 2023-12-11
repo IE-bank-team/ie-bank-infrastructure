@@ -23,9 +23,9 @@ This module deploys a Recovery Services Vault (RSV) Replication Protection Conta
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`recoveryVaultName`](#parameter-recoveryvaultname) | string | The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment. |
-| [`replicationFabricName`](#parameter-replicationfabricname) | string | The name of the parent Replication Fabric. Required if the template is used in a standalone deployment. |
-| [`sourceProtectionContainerName`](#parameter-sourceprotectioncontainername) | string | The name of the parent source Replication container. Required if the template is used in a standalone deployment. |
+| [`recoveryVaultName`](#parameter-recoveryvaultname) | string | The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment. |
+| [`replicationFabricName`](#parameter-replicationfabricname) | string | The name of the parent Replication Fabric. Required if the template is used in a standaluno deployment. |
+| [`sourceProtectionContainerName`](#parameter-sourceprotectioncontainername) | string | The name of the parent source Replication container. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -41,21 +41,21 @@ This module deploys a Recovery Services Vault (RSV) Replication Protection Conta
 
 ### Parameter: `recoveryVaultName`
 
-The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment.
+The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `replicationFabricName`
 
-The name of the parent Replication Fabric. Required if the template is used in a standalone deployment.
+The name of the parent Replication Fabric. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `sourceProtectionContainerName`
 
-The name of the parent source Replication container. Required if the template is used in a standalone deployment.
+The name of the parent source Replication container. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -127,4 +127,4 @@ Resource ID of the target Replication container. Must be specified if targetCont
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

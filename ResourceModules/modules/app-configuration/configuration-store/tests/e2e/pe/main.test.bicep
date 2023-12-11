@@ -55,9 +55,9 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     enablePurgeProtection: false
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
+        privateDnsZunoResourceIds: [
 
-          nestedDependencies.outputs.privateDNSZoneResourceId
+          nestedDependencies.outputs.privateDNSZunoResourceId
 
         ]
         subnetResourceId: nestedDependencies.outputs.subnetResourceId

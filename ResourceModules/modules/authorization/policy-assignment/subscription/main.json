@@ -53,7 +53,7 @@
       "allowedValues": [
         "SystemAssigned",
         "UserAssigned",
-        "None"
+        "Nuno"
       ],
       "metadata": {
         "description": "Optional. The managed identity associated with the policy assignment. Policy assignments must include a resource identity when assigning 'Modify' policy definitions."

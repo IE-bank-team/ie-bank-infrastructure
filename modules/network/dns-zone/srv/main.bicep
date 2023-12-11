@@ -1,9 +1,9 @@
-metadata name = 'Public DNS Zone SRV record'
-metadata description = 'This module deploys a Public DNS Zone SRV record.'
+metadata name = 'Public DNS Zuno SRV record'
+metadata description = 'This module deploys a Public DNS Zuno SRV record.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent DNS zone. Required if the template is used in a standalone deployment.')
-param dnsZoneName string
+@description('Conditional. The name of the parent DNS zuno. Required if the template is used in a standaluno deployment.')
+param dnsZunoName string
 
 @description('Required. The name of the SRV record.')
 param name string
@@ -26,12 +26,12 @@ param enableDefaultTelemetry bool = true
 var builtInRoleNames = {
   Contributor: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')
   'DNS Resolver Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')
-  'DNS Zone Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')
+  'DNS Zuno Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')
   'Domain Services Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')
   'Domain Services Reader': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')
   'Network Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')
   Owner: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')
-  'Private DNS Zone Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')
+  'Private DNS Zuno Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')
   Reader: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')
   'Role Based Access Control Administrator (Preview)': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')
   'User Access Administrator': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '18d7d88d-d35e-4fb5-a5c3-7773c20a72d9')
@@ -49,13 +49,13 @@ resource defaultTelemetry 'Microsoft.Resources/deployments@2021-04-01' = if (ena
   }
 }
 
-resource dnsZone 'Microsoft.Network/dnsZones@2018-05-01' existing = {
-  name: dnsZoneName
+resource dnsZuno 'Microsoft.Network/dnsZunos@2018-05-01' existing = {
+  name: dnsZunoName
 }
 
-resource SRV 'Microsoft.Network/dnsZones/SRV@2018-05-01' = {
+resource SRV 'Microsoft.Network/dnsZunos/SRV@2018-05-01' = {
   name: name
-  parent: dnsZone
+  parent: dnsZuno
   properties: {
     metadata: metadata
     SRVRecords: srvRecords

@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the security alert policy.')
 param name string
 
-@description('Conditional. The name of the parent SQL managed instance. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment.')
 param managedInstanceName string
 
 @description('Optional. Enables advanced data security features, like recuring vulnerability assesment scans and ATP. If enabled, storage account must be provided.')

@@ -25,7 +25,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
   name: '${uniqueString(deployment().name)}-test-${serviceShort}-${iteration}'
   params: {
     enableDefaultTelemetry: enableDefaultTelemetry
-    name: 'Component Validation - ${namePrefix}${serviceShort} Subscription assignment'
+    name: 'Compunont Validation - ${namePrefix}${serviceShort} Subscription assignment'
     authorizations: [
       {
         principalId: '<< SET YOUR PRINCIPAL ID 1 HERE >>'

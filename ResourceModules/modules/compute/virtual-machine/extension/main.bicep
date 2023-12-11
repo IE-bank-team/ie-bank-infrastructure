@@ -2,7 +2,7 @@ metadata name = 'Virtual Machine Extensions'
 metadata description = 'This module deploys a Virtual Machine Extension.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent virtual machine that extension is provisioned for. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent virtual machine that extension is provisiunod for. Required if the template is used in a standaluno deployment.')
 param virtualMachineName string
 
 @description('Required. The name of the virtual machine extension.')
@@ -20,7 +20,7 @@ param type string
 @description('Required. Specifies the version of the script handler.')
 param typeHandlerVersion string
 
-@description('Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.')
+@description('Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.')
 param autoUpgradeMinorVersion bool
 
 @description('Optional. How the extension handler should be forced to update even if the extension configuration has not changed.')

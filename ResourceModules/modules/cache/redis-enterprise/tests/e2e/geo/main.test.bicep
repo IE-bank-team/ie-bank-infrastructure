@@ -54,7 +54,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     enableDefaultTelemetry: enableDefaultTelemetry
     name: redisCacheEnterpriseName
     capacity: 2
-    zoneRedundant: true
+    zunoRedundant: true
     databases: [
       {
         clusteringPolicy: 'EnterpriseCluster'

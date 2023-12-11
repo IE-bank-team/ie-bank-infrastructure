@@ -19,7 +19,7 @@ This module deploys a Private Endpoint.
 | `Microsoft.Authorization/locks` | [2020-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2020-05-01/locks) |
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
 | `Microsoft.Network/privateEndpoints` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints) |
-| `Microsoft.Network/privateEndpoints/privateDnsZoneGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZoneGroups) |
+| `Microsoft.Network/privateEndpoints/privateDnsZunoGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZunoGroups) |
 
 ## Usage examples
 
@@ -145,8 +145,8 @@ module privateEndpoint 'br:bicep/modules/network.private-endpoint:1.0.0' = {
       kind: 'CanNotDelete'
       name: 'myCustomLockName'
     }
-    privateDnsZoneResourceIds: [
-      '<privateDNSZoneResourceId>'
+    privateDnsZunoResourceIds: [
+      '<privateDNSZunoResourceId>'
     ]
     roleAssignments: [
       {
@@ -231,9 +231,9 @@ module privateEndpoint 'br:bicep/modules/network.private-endpoint:1.0.0' = {
         "name": "myCustomLockName"
       }
     },
-    "privateDnsZoneResourceIds": {
+    "privateDnsZunoResourceIds": {
       "value": [
-        "<privateDNSZoneResourceId>"
+        "<privateDNSZunoResourceId>"
       ]
     },
     "roleAssignments": {
@@ -307,8 +307,8 @@ module privateEndpoint 'br:bicep/modules/network.private-endpoint:1.0.0' = {
       kind: 'CanNotDelete'
       name: 'myCustomLockName'
     }
-    privateDnsZoneResourceIds: [
-      '<privateDNSZoneResourceId>'
+    privateDnsZunoResourceIds: [
+      '<privateDNSZunoResourceId>'
     ]
     roleAssignments: [
       {
@@ -393,9 +393,9 @@ module privateEndpoint 'br:bicep/modules/network.private-endpoint:1.0.0' = {
         "name": "myCustomLockName"
       }
     },
-    "privateDnsZoneResourceIds": {
+    "privateDnsZunoResourceIds": {
       "value": [
-        "<privateDNSZoneResourceId>"
+        "<privateDNSZunoResourceId>"
       ]
     },
     "roleAssignments": {
@@ -445,8 +445,8 @@ module privateEndpoint 'br:bicep/modules/network.private-endpoint:1.0.0' = {
 | [`location`](#parameter-location) | string | Location for all Resources. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
 | [`manualPrivateLinkServiceConnections`](#parameter-manualprivatelinkserviceconnections) | array | Manual PrivateLink Service Connections. |
-| [`privateDnsZoneGroupName`](#parameter-privatednszonegroupname) | string | The name of the private DNS zone group to create if `privateDnsZoneResourceIds` were provided. |
-| [`privateDnsZoneResourceIds`](#parameter-privatednszoneresourceids) | array | The private DNS zone groups to associate the private endpoint. A DNS zone group can support up to 5 DNS zones. |
+| [`privateDnsZunoGroupName`](#parameter-privatednszunogroupname) | string | The name of the private DNS zuno group to create if `privateDnsZunoResourceIds` were provided. |
+| [`privateDnsZunoResourceIds`](#parameter-privatednszunoresourceids) | array | The private DNS zuno groups to associate the private endpoint. A DNS zuno group can support up to 5 DNS zunos. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignment objects that contain the 'roleDefinitionIdOrName' and 'principalId' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: '/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11'. |
 | [`tags`](#parameter-tags) | object | Tags to be applied on all resources/resource groups in this deployment. |
 
@@ -588,7 +588,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -607,16 +607,16 @@ Manual PrivateLink Service Connections.
 - Required: No
 - Type: array
 
-### Parameter: `privateDnsZoneGroupName`
+### Parameter: `privateDnsZunoGroupName`
 
-The name of the private DNS zone group to create if `privateDnsZoneResourceIds` were provided.
+The name of the private DNS zuno group to create if `privateDnsZunoResourceIds` were provided.
 
 - Required: No
 - Type: string
 
-### Parameter: `privateDnsZoneResourceIds`
+### Parameter: `privateDnsZunoResourceIds`
 
-The private DNS zone groups to associate the private endpoint. A DNS zone group can support up to 5 DNS zones.
+The private DNS zuno groups to associate the private endpoint. A DNS zuno group can support up to 5 DNS zunos.
 
 - Required: No
 - Type: array
@@ -729,4 +729,4 @@ Tags to be applied on all resources/resource groups in this deployment.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

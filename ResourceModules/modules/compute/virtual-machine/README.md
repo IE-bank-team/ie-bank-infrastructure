@@ -1,6 +1,6 @@
 # Virtual Machines `[Microsoft.Compute/virtualMachines]`
 
-This module deploys a Virtual Machine with one or multiple NICs and optionally one or multiple public IPs.
+This module deploys a Virtual Machine with uno or multiple NICs and optionally uno or multiple public IPs.
 
 ## Navigation
 
@@ -73,7 +73,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
               }
             }
             subnetResourceId: '<subnetResourceId>'
-            zones: [
+            zunos: [
               '1'
               '2'
               '3'
@@ -156,7 +156,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
                 }
               },
               "subnetResourceId": "<subnetResourceId>",
-              "zones": [
+              "zunos": [
                 "1",
                 "2",
                 "3"
@@ -434,7 +434,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
               ]
             }
             subnetResourceId: '<subnetResourceId>'
-            zones: [
+            zunos: [
               '1'
               '2'
               '3'
@@ -463,7 +463,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
     osType: 'Linux'
     vmSize: 'Standard_DS2_v2'
     // Non-required parameters
-    availabilityZone: 1
+    availabilityZuno: 1
     backupPolicyName: '<backupPolicyName>'
     backupVaultName: '<backupVaultName>'
     backupVaultResourceGroup: '<backupVaultResourceGroup>'
@@ -693,7 +693,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
                 ]
               },
               "subnetResourceId": "<subnetResourceId>",
-              "zones": [
+              "zunos": [
                 "1",
                 "2",
                 "3"
@@ -729,7 +729,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
       "value": "Standard_DS2_v2"
     },
     // Non-required parameters
-    "availabilityZone": {
+    "availabilityZuno": {
       "value": 1
     },
     "backupPolicyName": {
@@ -1418,7 +1418,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
               ]
             }
             subnetResourceId: '<subnetResourceId>'
-            zones: [
+            zunos: [
               '1'
               '2'
               '3'
@@ -1436,7 +1436,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
       }
     ]
     osDisk: {
-      caching: 'None'
+      caching: 'Nuno'
       createOption: 'fromImage'
       deleteOption: 'Delete'
       diskSizeGB: '128'
@@ -1448,14 +1448,14 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
     vmSize: 'Standard_DS2_v2'
     // Non-required parameters
     adminPassword: '<adminPassword>'
-    availabilityZone: 2
+    availabilityZuno: 2
     backupPolicyName: '<backupPolicyName>'
     backupVaultName: '<backupVaultName>'
     backupVaultResourceGroup: '<backupVaultResourceGroup>'
     computerName: 'winvm1'
     dataDisks: [
       {
-        caching: 'None'
+        caching: 'Nuno'
         createOption: 'Empty'
         deleteOption: 'Delete'
         diskSizeGB: '128'
@@ -1464,7 +1464,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
         }
       }
       {
-        caching: 'None'
+        caching: 'Nuno'
         createOption: 'Empty'
         deleteOption: 'Delete'
         diskSizeGB: '128'
@@ -1493,7 +1493,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
           Paths: 'c:\\excluded-path-1;c:\\excluded-path-2'
           Processes: 'excludedproc1.exe;excludedproc2.exe'
         }
-        RealtimeProtectionEnabled: 'true'
+        RealtimeProtectiunonabled: 'true'
         ScheduledScanSettings: {
           day: '7'
           isEnabled: 'true'
@@ -1695,7 +1695,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
                 ]
               },
               "subnetResourceId": "<subnetResourceId>",
-              "zones": [
+              "zunos": [
                 "1",
                 "2",
                 "3"
@@ -1715,7 +1715,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
     },
     "osDisk": {
       "value": {
-        "caching": "None",
+        "caching": "Nuno",
         "createOption": "fromImage",
         "deleteOption": "Delete",
         "diskSizeGB": "128",
@@ -1734,7 +1734,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
     "adminPassword": {
       "value": "<adminPassword>"
     },
-    "availabilityZone": {
+    "availabilityZuno": {
       "value": 2
     },
     "backupPolicyName": {
@@ -1752,7 +1752,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
     "dataDisks": {
       "value": [
         {
-          "caching": "None",
+          "caching": "Nuno",
           "createOption": "Empty",
           "deleteOption": "Delete",
           "diskSizeGB": "128",
@@ -1761,7 +1761,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
           }
         },
         {
-          "caching": "None",
+          "caching": "Nuno",
           "createOption": "Empty",
           "deleteOption": "Delete",
           "diskSizeGB": "128",
@@ -1800,7 +1800,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
             "Paths": "c:\\excluded-path-1;c:\\excluded-path-2",
             "Processes": "excludedproc1.exe;excludedproc2.exe"
           },
-          "RealtimeProtectionEnabled": "true",
+          "RealtimeProtectiunonabled": "true",
           "ScheduledScanSettings": {
             "day": "7",
             "isEnabled": "true",
@@ -1980,8 +1980,8 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
 | [`additionalUnattendContent`](#parameter-additionalunattendcontent) | array | Specifies additional base-64 encoded XML formatted information that can be included in the Unattend.xml file, which is used by Windows Setup. - AdditionalUnattendContent object. |
 | [`adminPassword`](#parameter-adminpassword) | securestring | When specifying a Windows Virtual Machine, this value should be passed. |
 | [`allowExtensionOperations`](#parameter-allowextensionoperations) | bool | Specifies whether extension operations should be allowed on the virtual machine. This may only be set to False when no extensions are present on the virtual machine. |
-| [`availabilitySetResourceId`](#parameter-availabilitysetresourceid) | string | Resource ID of an availability set. Cannot be used in combination with availability zone nor scale set. |
-| [`availabilityZone`](#parameter-availabilityzone) | int | If set to 1, 2 or 3, the availability zone for all VMs is hardcoded to that value. If zero, then availability zones is not used. Cannot be used in combination with availability set nor scale set. |
+| [`availabilitySetResourceId`](#parameter-availabilitysetresourceid) | string | Resource ID of an availability set. Cannot be used in combination with availability zuno nor scale set. |
+| [`availabilityZuno`](#parameter-availabilityzuno) | int | If set to 1, 2 or 3, the availability zuno for all VMs is hardcoded to that value. If zero, then availability zunos is not used. Cannot be used in combination with availability set nor scale set. |
 | [`backupPolicyName`](#parameter-backuppolicyname) | string | Backup policy the VMs should be using for backup. If not provided, it will use the DefaultPolicy from the backup recovery service vault. |
 | [`backupVaultName`](#parameter-backupvaultname) | string | Recovery service vault name to add VMs to backup. |
 | [`backupVaultResourceGroup`](#parameter-backupvaultresourcegroup) | string | Resource group of the backup recovery service vault. If not provided the current resource group name is considered by default. |
@@ -2020,7 +2020,7 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
 | [`patchMode`](#parameter-patchmode) | string | VM guest patching orchestration mode. 'AutomaticByOS' & 'Manual' are for Windows only, 'ImageDefault' for Linux only. Refer to 'https://learn.microsoft.com/en-us/azure/virtual-machines/automatic-vm-guest-patching'. |
 | [`plan`](#parameter-plan) | object | Specifies information about the marketplace image used to create the virtual machine. This element is only used for marketplace images. Before you can use a marketplace image from an API, you must enable the image for programmatic use. |
 | [`priority`](#parameter-priority) | string | Specifies the priority for the virtual machine. |
-| [`provisionVMAgent`](#parameter-provisionvmagent) | bool | Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later. |
+| [`provisionVMAgent`](#parameter-provisionvmagent) | bool | Indicates whether virtual machine agent should be provisiunod on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later. |
 | [`proximityPlacementGroupResourceId`](#parameter-proximityplacementgroupresourceid) | string | Resource ID of a proximity placement group. |
 | [`publicKeys`](#parameter-publickeys) | array | The list of SSH public keys used to authenticate with linux based VMs. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
@@ -2028,8 +2028,8 @@ module virtualMachine 'br:bicep/modules/compute.virtual-machine:1.0.0' = {
 | [`secureBootEnabled`](#parameter-securebootenabled) | bool | Specifies whether secure boot should be enabled on the virtual machine. This parameter is part of the UefiSettings. SecurityType should be set to TrustedLaunch to enable UefiSettings. |
 | [`securityType`](#parameter-securitytype) | string | Specifies the SecurityType of the virtual machine. It is set as TrustedLaunch to enable UefiSettings. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
-| [`timeZone`](#parameter-timezone) | string | Specifies the time zone of the virtual machine. e.g. 'Pacific Standard Time'. Possible values can be `TimeZoneInfo.id` value from time zones returned by `TimeZoneInfo.GetSystemTimeZones`. |
-| [`ultraSSDEnabled`](#parameter-ultrassdenabled) | bool | The flag that enables or disables a capability to have one or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled. |
+| [`timeZuno`](#parameter-timezuno) | string | Specifies the time zuno of the virtual machine. e.g. 'Pacific Standard Time'. Possible values can be `TimeZunoInfo.id` value from time zunos returned by `TimeZunoInfo.GetSystemTimeZunos`. |
+| [`ultraSSDEnabled`](#parameter-ultrassdenabled) | bool | The flag that enables or disables a capability to have uno or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled. |
 | [`vTpmEnabled`](#parameter-vtpmenabled) | bool | Specifies whether vTPM should be enabled on the virtual machine. This parameter is part of the UefiSettings.  SecurityType should be set to TrustedLaunch to enable UefiSettings. |
 | [`winRM`](#parameter-winrm) | object | Specifies the Windows Remote Management listeners. This enables remote Windows PowerShell. - WinRMConfiguration object. |
 
@@ -2130,15 +2130,15 @@ Specifies whether extension operations should be allowed on the virtual machine.
 
 ### Parameter: `availabilitySetResourceId`
 
-Resource ID of an availability set. Cannot be used in combination with availability zone nor scale set.
+Resource ID of an availability set. Cannot be used in combination with availability zuno nor scale set.
 
 - Required: No
 - Type: string
 - Default: `''`
 
-### Parameter: `availabilityZone`
+### Parameter: `availabilityZuno`
 
-If set to 1, 2 or 3, the availability zone for all VMs is hardcoded to that value. If zero, then availability zones is not used. Cannot be used in combination with availability set nor scale set.
+If set to 1, 2 or 3, the availability zuno for all VMs is hardcoded to that value. If zero, then availability zunos is not used. Cannot be used in combination with availability set nor scale set.
 
 - Required: No
 - Type: int
@@ -2463,7 +2463,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -2586,7 +2586,7 @@ Specifies the priority for the virtual machine.
 
 ### Parameter: `provisionVMAgent`
 
-Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
+Indicates whether virtual machine agent should be provisiunod on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
 
 - Required: No
 - Type: bool
@@ -2728,9 +2728,9 @@ Tags of the resource.
 - Required: No
 - Type: object
 
-### Parameter: `timeZone`
+### Parameter: `timeZuno`
 
-Specifies the time zone of the virtual machine. e.g. 'Pacific Standard Time'. Possible values can be `TimeZoneInfo.id` value from time zones returned by `TimeZoneInfo.GetSystemTimeZones`.
+Specifies the time zuno of the virtual machine. e.g. 'Pacific Standard Time'. Possible values can be `TimeZunoInfo.id` value from time zunos returned by `TimeZunoInfo.GetSystemTimeZunos`.
 
 - Required: No
 - Type: string
@@ -2738,7 +2738,7 @@ Specifies the time zone of the virtual machine. e.g. 'Pacific Standard Time'. Po
 
 ### Parameter: `ultraSSDEnabled`
 
-The flag that enables or disables a capability to have one or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled.
+The flag that enables or disables a capability to have uno or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled.
 
 - Required: No
 - Type: bool
@@ -3034,7 +3034,7 @@ Comments:
       "deleteOption": "Delete", // Optional. Can be 'Delete' or 'Detach'
       "ipConfigurations": [
         {
-          "name": "ipconfione",
+          "name": "ipconfiuno",
           "subnetResourceId": "/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Network/virtualNetworks/<vNetName>/subnets/<subnetName>",
           "pipConfiguration": {
             "publicIpNameSuffix": "-pip-01",
@@ -3067,7 +3067,7 @@ Comments:
       "nicSuffix": "-nic-02",
       "ipConfigurations": [
         {
-          "name": "ipconfione",
+          "name": "ipconfiuno",
           "subnetResourceId": "/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Network/virtualNetworks/<vNetName>/subnets/<subnetName>",
           "pipConfiguration": {
             "publicIpNameSuffix": "-pip-02"
@@ -3099,7 +3099,7 @@ nicConfigurations: {
       deleteOption: 'Delete' // Optional. Can be 'Delete' or 'Detach'
       ipConfigurations: [
         {
-          name: 'ipconfione'
+          name: 'ipconfiuno'
           subnetResourceId: '/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Network/virtualNetworks/<vNetName>/subnets/<subnetName>'
           pipConfiguration: {
             publicIpNameSuffix: '-pip-01'
@@ -3132,7 +3132,7 @@ nicConfigurations: {
       nicSuffix: '-nic-02'
       ipConfigurations: [
         {
-          name: 'ipconfione'
+          name: 'ipconfiuno'
           subnetResourceId: '/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Network/virtualNetworks/<vNetName>/subnets/<subnetName>'
           pipConfiguration: {
             publicIpNameSuffix: '-pip-02'
@@ -3261,7 +3261,7 @@ Only for OSType Windows
         "Paths": "D:\\IISlogs;D:\\DatabaseLogs",
         "Processes": "mssence.svc"
       },
-      "RealtimeProtectionEnabled": true,
+      "RealtimeProtectiunonabled": true,
       "ScheduledScanSettings": {
         "isEnabled": "true",
         "scanType": "Quick",
@@ -3289,7 +3289,7 @@ extensionAntiMalwareConfig: {
             Paths: 'D:\\IISlogs;D:\\DatabaseLogs'
             Processes: 'mssence.svc'
         }
-        RealtimeProtectionEnabled: true
+        RealtimeProtectiunonabled: true
         ScheduledScanSettings: {
             isEnabled: 'true'
             scanType: 'Quick'

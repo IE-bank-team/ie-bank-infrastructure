@@ -16,7 +16,7 @@
     "databaseAccountName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Cosmos DB database account. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Cosmos DB database account. Required if the template is used in a standaluno deployment."
       }
     },
     "name": {
@@ -102,7 +102,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-collection-{1}', uniqueString(deployment().name, parameters('name')), parameters('collections')[copyIndex()].name)]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -143,13 +143,13 @@
             "databaseAccountName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Cosmos DB database account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Cosmos DB database account. Required if the template is used in a standaluno deployment."
               }
             },
             "mongodbDatabaseName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent mongodb database. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent mongodb database. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {

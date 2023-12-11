@@ -34,7 +34,7 @@ module resourceGroupResources 'dependencies.bicep' = {
   scope: resourceGroup
   name: '${uniqueString(deployment().name, location)}-paramNested'
   params: {
-    dataCollectionEndpointName: 'dep-${namePrefix}-dce-${serviceShort}'
+    dataCollectiunondpointName: 'dep-${namePrefix}-dce-${serviceShort}'
     logAnalyticsWorkspaceName: 'dep-${namePrefix}-law-${serviceShort}'
     managedIdentityName: 'dep-${namePrefix}-msi-${serviceShort}'
     location: location
@@ -51,7 +51,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
   name: '${uniqueString(deployment().name, location)}-test-${serviceShort}-${iteration}'
   params: {
     name: '${namePrefix}${serviceShort}001'
-    dataCollectionEndpointId: resourceGroupResources.outputs.dataCollectionEndpointResourceId
+    dataCollectiunondpointId: resourceGroupResources.outputs.dataCollectiunondpointResourceId
     description: 'Collecting custom text logs with ingestion-time transformation to columns. Expected format of a log line (comma separated values): "<DateTime>,<EventLevel>,<EventCode>,<Message>", for example: "2023-01-25T20:15:05Z,ERROR,404,Page not found"'
     dataFlows: [
       {

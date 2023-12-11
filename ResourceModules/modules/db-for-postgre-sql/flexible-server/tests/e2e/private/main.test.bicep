@@ -111,7 +111,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       }
     ]
     geoRedundantBackup: 'Enabled'
-    privateDnsZoneArmResourceId: nestedDependencies.outputs.privateDNSZoneResourceId
+    privateDnsZunoArmResourceId: nestedDependencies.outputs.privateDNSZunoResourceId
     tags: {
       'hidden-title': 'This is visible in the resource name'
       Environment: 'Non-Prod'

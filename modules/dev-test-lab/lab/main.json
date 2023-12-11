@@ -42,7 +42,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "None",
+            "Nuno",
             "ReadOnly"
           ],
           "nullable": true,
@@ -408,7 +408,7 @@
       }
     },
     "lab_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.DevTestLab/labs/{0}', parameters('name'))]",
@@ -452,7 +452,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Lab-VirtualNetwork-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -494,7 +494,7 @@
             "labName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent lab. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -620,7 +620,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Lab-PolicySets-Policy-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -667,7 +667,7 @@
             "labName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent lab. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment."
               }
             },
             "policySetName": {
@@ -825,7 +825,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Lab-Schedules-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -847,7 +847,7 @@
           "weeklyRecurrence": "[if(contains(parameters('schedules')[copyIndex()], 'weeklyRecurrence'), createObject('value', parameters('schedules')[copyIndex()].weeklyRecurrence), createObject('value', createObject()))]",
           "status": "[if(contains(parameters('schedules')[copyIndex()], 'status'), createObject('value', parameters('schedules')[copyIndex()].status), createObject('value', 'Enabled'))]",
           "targetResourceId": "[if(contains(parameters('schedules')[copyIndex()], 'targetResourceId'), createObject('value', parameters('schedules')[copyIndex()].targetResourceId), createObject('value', ''))]",
-          "timeZoneId": "[if(contains(parameters('schedules')[copyIndex()], 'timeZoneId'), createObject('value', parameters('schedules')[copyIndex()].timeZoneId), createObject('value', 'Pacific Standard time'))]",
+          "timeZunoId": "[if(contains(parameters('schedules')[copyIndex()], 'timeZunoId'), createObject('value', parameters('schedules')[copyIndex()].timeZunoId), createObject('value', 'Pacific Standard time'))]",
           "notificationSettingsStatus": "[if(contains(parameters('schedules')[copyIndex()], 'notificationSettingsStatus'), createObject('value', parameters('schedules')[copyIndex()].notificationSettingsStatus), createObject('value', 'Disabled'))]",
           "notificationSettingsTimeInMinutes": "[if(contains(parameters('schedules')[copyIndex()], 'notificationSettingsTimeInMinutes'), createObject('value', parameters('schedules')[copyIndex()].notificationSettingsTimeInMinutes), createObject('value', 30))]",
           "enableDefaultTelemetry": {
@@ -872,7 +872,7 @@
             "labName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent lab. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -941,11 +941,11 @@
                 "description": "Optional. The resource ID to which the schedule belongs."
               }
             },
-            "timeZoneId": {
+            "timeZunoId": {
               "type": "string",
               "defaultValue": "Pacific Standard time",
               "metadata": {
-                "description": "Optional. The time zone ID (e.g. Pacific Standard time)."
+                "description": "Optional. The time zuno ID (e.g. Pacific Standard time)."
               }
             },
             "notificationSettingsStatus": {
@@ -1007,7 +1007,7 @@
                 "weeklyRecurrence": "[if(not(empty(parameters('weeklyRecurrence'))), parameters('weeklyRecurrence'), null())]",
                 "status": "[parameters('status')]",
                 "targetResourceId": "[if(not(empty(parameters('targetResourceId'))), parameters('targetResourceId'), null())]",
-                "timeZoneId": "[parameters('timeZoneId')]",
+                "timeZunoId": "[parameters('timeZunoId')]",
                 "notificationSettings": "[if(equals(parameters('notificationSettingsStatus'), 'Enabled'), createObject('status', parameters('notificationSettingsStatus'), 'timeInMinutes', parameters('notificationSettingsTimeInMinutes')), createObject())]"
               },
               "dependsOn": [
@@ -1053,7 +1053,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Lab-NotificationChannels-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1096,7 +1096,7 @@
             "labName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent lab. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -1235,7 +1235,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Lab-ArtifactSources-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1280,7 +1280,7 @@
             "labName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent lab. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -1314,7 +1314,7 @@
               "type": "string",
               "defaultValue": "",
               "metadata": {
-                "description": "Conditional. The folder containing artifacts. At least one folder path is required. Required if \"armTemplateFolderPath\" is empty."
+                "description": "Conditional. The folder containing artifacts. At least uno folder path is required. Required if \"armTemplateFolderPath\" is empty."
               }
             },
             "armTemplateFolderPath": {
@@ -1445,7 +1445,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Lab-Costs', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1496,7 +1496,7 @@
             "labName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent lab. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment."
               }
             },
             "cycleType": {

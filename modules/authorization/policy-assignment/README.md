@@ -932,7 +932,7 @@ The managed identity associated with the policy assignment. Policy assignments m
 - Allowed:
   ```Bicep
   [
-    'None'
+    'Nuno'
     'SystemAssigned'
     'UserAssigned'
   ]
@@ -1046,7 +1046,7 @@ The Resource ID for the user assigned identity to assign to the policy assignmen
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

@@ -41,8 +41,8 @@ param tier string
   '2'
   '3'
 ])
-@description('Optional. Availability zone information of the server. Default will have no preference set.')
-param availabilityZone string = ''
+@description('Optional. Availability zuno information of the server. Default will have no preference set.')
+param availabilityZuno string = ''
 
 @minValue(1)
 @maxValue(35)
@@ -76,10 +76,10 @@ param customerManagedKeyGeo customerManagedKeyType
 
 @allowed([
   'Disabled'
-  'SameZone'
-  'ZoneRedundant'
+  'SameZuno'
+  'ZunoRedundant'
 ])
-@description('Optional. The mode for High Availability (HA). It is not supported for the Burstable pricing tier and Zone redundant HA can only be set during server provisioning.')
+@description('Optional. The mode for High Availability (HA). It is not supported for the Burstable pricing tier and Zuno redundant HA can only be set during server provisioning.')
 param highAvailability string = 'Disabled'
 
 @description('Optional. Properties for the maintenence window. If provided, "customWindow" property must exist and set to "Enabled".')
@@ -88,19 +88,19 @@ param maintenanceWindow object = {}
 @description('Optional. Delegated subnet arm resource ID. Used when the desired connectivity mode is "Private Access" - virtual network integration. Delegation must be enabled on the subnet for MySQL Flexible Servers and subnet CIDR size is /29.')
 param delegatedSubnetResourceId string = ''
 
-@description('Conditional. Private dns zone arm resource ID. Used when the desired connectivity mode is "Private Access". Required if "delegatedSubnetResourceId" is used and the Private DNS Zone name must end with mysql.database.azure.com in order to be linked to the MySQL Flexible Server.')
-param privateDnsZoneResourceId string = ''
+@description('Conditional. Private dns zuno arm resource ID. Used when the desired connectivity mode is "Private Access". Required if "delegatedSubnetResourceId" is used and the Private DNS Zuno name must end with mysql.database.azure.com in order to be linked to the MySQL Flexible Server.')
+param privateDnsZunoResourceId string = ''
 
 @description('Conditional. Restore point creation time (ISO8601 format), specifying the time to restore from. Required if "createMode" is set to "PointInTimeRestore".')
 param restorePointInTime string = ''
 
 @allowed([
-  'None'
+  'Nuno'
   'Replica'
   'Source'
 ])
 @description('Optional. The replication role.')
-param replicationRole string = 'None'
+param replicationRole string = 'Nuno'
 
 @description('Conditional. The source MySQL server ID. Required if "createMode" is set to "PointInTimeRestore".')
 param sourceServerResourceId string = ''
@@ -232,7 +232,7 @@ resource flexibleServer 'Microsoft.DBforMySQL/flexibleServers@2022-09-30-preview
   properties: {
     administratorLogin: !empty(administratorLogin) ? administratorLogin : null
     administratorLoginPassword: !empty(administratorLoginPassword) ? administratorLoginPassword : null
-    availabilityZone: availabilityZone
+    availabilityZuno: availabilityZuno
     backup: {
       backupRetentionDays: backupRetentionDays
       geoRedundantBackup: geoRedundantBackup
@@ -247,7 +247,7 @@ resource flexibleServer 'Microsoft.DBforMySQL/flexibleServers@2022-09-30-preview
     } : null
     highAvailability: {
       mode: highAvailability
-      standbyAvailabilityZone: highAvailability == 'SameZone' ? availabilityZone : null
+      standbyAvailabilityZuno: highAvailability == 'SameZuno' ? availabilityZuno : null
     }
     maintenanceWindow: !empty(maintenanceWindow) ? {
       customWindow: maintenanceWindow.customWindow
@@ -257,7 +257,7 @@ resource flexibleServer 'Microsoft.DBforMySQL/flexibleServers@2022-09-30-preview
     } : null
     network: !empty(delegatedSubnetResourceId) && empty(firewallRules) ? {
       delegatedSubnetResourceId: delegatedSubnetResourceId
-      privateDnsZoneResourceId: privateDnsZoneResourceId
+      privateDnsZunoResourceId: privateDnsZunoResourceId
     } : null
     replicationRole: replicationRole
     restorePointInTime: restorePointInTime
@@ -272,7 +272,7 @@ resource flexibleServer 'Microsoft.DBforMySQL/flexibleServers@2022-09-30-preview
   }
 }
 
-resource flexibleServer_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource flexibleServer_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -380,7 +380,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

@@ -328,7 +328,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -407,7 +407,7 @@ Specifies a VPN shared key. The same value has to be specified on both Virtual N
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 
@@ -532,7 +532,7 @@ Format of the full customIPSecPolicy parameter in parameter file.
         "ikeEncryption": "AES256",
         "ikeIntegrity": "SHA256",
         "dhGroup": "DHGroup14",
-        "pfsGroup": "None"
+        "pfsGroup": "Nuno"
     }
 }
 ```
@@ -552,7 +552,7 @@ customIPSecPolicy: {
     ikeEncryption: 'AES256'
     ikeIntegrity: 'SHA256'
     dhGroup: 'DHGroup14'
-    pfsGroup: 'None'
+    pfsGroup: 'Nuno'
 }
 ```
 

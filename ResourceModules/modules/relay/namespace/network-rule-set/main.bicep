@@ -2,7 +2,7 @@ metadata name = 'Relay Namespace Network Rules Sets'
 metadata description = 'This module deploys a Relay Namespace Network Rule Set.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Relay Namespace for the Relay Network Rule Set. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Relay Namespace for the Relay Network Rule Set. Required if the template is used in a standaluno deployment.')
 @minLength(6)
 @maxLength(50)
 param namespaceName string

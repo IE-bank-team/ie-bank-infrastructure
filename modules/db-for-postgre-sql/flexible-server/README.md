@@ -157,7 +157,7 @@ module flexibleServer 'br:bicep/modules/db-for-postgre-sql.flexible-server:1.0.0
     ]
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     geoRedundantBackup: 'Enabled'
-    privateDnsZoneArmResourceId: '<privateDnsZoneArmResourceId>'
+    privateDnsZunoArmResourceId: '<privateDnsZunoArmResourceId>'
     tags: {
       Environment: 'Non-Prod'
       'hidden-title': 'This is visible in the resource name'
@@ -247,8 +247,8 @@ module flexibleServer 'br:bicep/modules/db-for-postgre-sql.flexible-server:1.0.0
     "geoRedundantBackup": {
       "value": "Enabled"
     },
-    "privateDnsZoneArmResourceId": {
-      "value": "<privateDnsZoneArmResourceId>"
+    "privateDnsZunoArmResourceId": {
+      "value": "<privateDnsZunoArmResourceId>"
     },
     "tags": {
       "value": {
@@ -286,7 +286,7 @@ module flexibleServer 'br:bicep/modules/db-for-postgre-sql.flexible-server:1.0.0
         principalType: 'ServicePrincipal'
       }
     ]
-    availabilityZone: '1'
+    availabilityZuno: '1'
     backupRetentionDays: 20
     configurations: [
       {
@@ -343,7 +343,7 @@ module flexibleServer 'br:bicep/modules/db-for-postgre-sql.flexible-server:1.0.0
       }
     ]
     geoRedundantBackup: 'Disabled'
-    highAvailability: 'SameZone'
+    highAvailability: 'SameZuno'
     location: '<location>'
     managedIdentities: {
       userAssignedResourceIds: [
@@ -393,7 +393,7 @@ module flexibleServer 'br:bicep/modules/db-for-postgre-sql.flexible-server:1.0.0
         }
       ]
     },
-    "availabilityZone": {
+    "availabilityZuno": {
       "value": "1"
     },
     "backupRetentionDays": {
@@ -469,7 +469,7 @@ module flexibleServer 'br:bicep/modules/db-for-postgre-sql.flexible-server:1.0.0
       "value": "Disabled"
     },
     "highAvailability": {
-      "value": "SameZone"
+      "value": "SameZuno"
     },
     "location": {
       "value": "<location>"
@@ -528,7 +528,7 @@ module flexibleServer 'br:bicep/modules/db-for-postgre-sql.flexible-server:1.0.0
 | [`administratorLogin`](#parameter-administratorlogin) | string | The administrator login name of a server. Can only be specified when the PostgreSQL server is being created. |
 | [`administratorLoginPassword`](#parameter-administratorloginpassword) | securestring | The administrator login password. |
 | [`administrators`](#parameter-administrators) | array | The Azure AD administrators when AAD authentication enabled. |
-| [`availabilityZone`](#parameter-availabilityzone) | string | Availability zone information of the server. Default will have no preference set. |
+| [`availabilityZuno`](#parameter-availabilityzuno) | string | Availability zuno information of the server. Default will have no preference set. |
 | [`backupRetentionDays`](#parameter-backupretentiondays) | int | Backup retention days for the server. |
 | [`configurations`](#parameter-configurations) | array | The configurations to create in the server. |
 | [`createMode`](#parameter-createmode) | string | The mode to create a new PostgreSQL server. |
@@ -544,7 +544,7 @@ module flexibleServer 'br:bicep/modules/db-for-postgre-sql.flexible-server:1.0.0
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
 | [`maintenanceWindow`](#parameter-maintenancewindow) | object | Properties for the maintenence window. If provided, "customWindow" property must exist and set to "Enabled". |
 | [`passwordAuth`](#parameter-passwordauth) | string | If Enabled, password authentication is enabled. |
-| [`privateDnsZoneArmResourceId`](#parameter-privatednszonearmresourceid) | string | Private dns zone arm resource ID. Used when the desired connectivity mode is "Private Access" and required when "delegatedSubnetResourceId" is used. The Private DNS Zone must be lined to the Virtual Network referenced in "delegatedSubnetResourceId". |
+| [`privateDnsZunoArmResourceId`](#parameter-privatednszunoarmresourceid) | string | Private dns zuno arm resource ID. Used when the desired connectivity mode is "Private Access" and required when "delegatedSubnetResourceId" is used. The Private DNS Zuno must be lined to the Virtual Network referenced in "delegatedSubnetResourceId". |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
 | [`storageSizeGB`](#parameter-storagesizegb) | int | Max storage allowed for a server. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
@@ -655,9 +655,9 @@ The Azure AD administrators when AAD authentication enabled.
 - Type: array
 - Default: `[]`
 
-### Parameter: `availabilityZone`
+### Parameter: `availabilityZuno`
 
-Availability zone information of the server. Default will have no preference set.
+Availability zuno information of the server. Default will have no preference set.
 
 - Required: No
 - Type: string
@@ -903,8 +903,8 @@ The mode for high availability.
   ```Bicep
   [
     'Disabled'
-    'SameZone'
-    'ZoneRedundant'
+    'SameZuno'
+    'ZunoRedundant'
   ]
   ```
 
@@ -940,7 +940,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -975,9 +975,9 @@ If Enabled, password authentication is enabled.
   ]
   ```
 
-### Parameter: `privateDnsZoneArmResourceId`
+### Parameter: `privateDnsZunoArmResourceId`
 
-Private dns zone arm resource ID. Used when the desired connectivity mode is "Private Access" and required when "delegatedSubnetResourceId" is used. The Private DNS Zone must be lined to the Virtual Network referenced in "delegatedSubnetResourceId".
+Private dns zuno arm resource ID. Used when the desired connectivity mode is "Private Access" and required when "delegatedSubnetResourceId" is used. The Private DNS Zuno must be lined to the Virtual Network referenced in "delegatedSubnetResourceId".
 
 - Required: No
 - Type: string
@@ -1140,4 +1140,4 @@ PostgreSQL Server version.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -29,7 +29,7 @@ This module deploys a Healthcare API Workspace DICOM Service.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`workspaceName`](#parameter-workspacename) | string | The name of the parent health data services workspace. Required if the template is used in a standalone deployment. |
+| [`workspaceName`](#parameter-workspacename) | string | The name of the parent health data services workspace. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -57,7 +57,7 @@ The name of the DICOM service.
 
 ### Parameter: `workspaceName`
 
-The name of the parent health data services workspace. Required if the template is used in a standalone deployment.
+The name of the parent health data services workspace. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -244,7 +244,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -319,4 +319,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -62,7 +62,7 @@ resource defaultTelemetry 'Microsoft.Resources/deployments@2021-04-01' = if (ena
   }
 }
 
-resource dataCollectionEndpoint 'Microsoft.Insights/dataCollectionEndpoints@2021-04-01' = {
+resource dataCollectiunondpoint 'Microsoft.Insights/dataCollectiunondpoints@2021-04-01' = {
   kind: kind
   location: location
   name: name
@@ -74,17 +74,17 @@ resource dataCollectionEndpoint 'Microsoft.Insights/dataCollectionEndpoints@2021
   }
 }
 
-resource dataCollectionEndpoint_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource dataCollectiunondpoint_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
     notes: lock.?kind == 'CanNotDelete' ? 'Cannot delete resource or child resources.' : 'Cannot delete or modify the resource or child resources.'
   }
-  scope: dataCollectionEndpoint
+  scope: dataCollectiunondpoint
 }
 
-resource dataCollectionEndpoint_roleAssignments 'Microsoft.Authorization/roleAssignments@2022-04-01' = [for (roleAssignment, index) in (roleAssignments ?? []): {
-  name: guid(dataCollectionEndpoint.id, roleAssignment.principalId, roleAssignment.roleDefinitionIdOrName)
+resource dataCollectiunondpoint_roleAssignments 'Microsoft.Authorization/roleAssignments@2022-04-01' = [for (roleAssignment, index) in (roleAssignments ?? []): {
+  name: guid(dataCollectiunondpoint.id, roleAssignment.principalId, roleAssignment.roleDefinitionIdOrName)
   properties: {
     roleDefinitionId: contains(builtInRoleNames, roleAssignment.roleDefinitionIdOrName) ? builtInRoleNames[roleAssignment.roleDefinitionIdOrName] : contains(roleAssignment.roleDefinitionIdOrName, '/providers/Microsoft.Authorization/roleDefinitions/') ? roleAssignment.roleDefinitionIdOrName : subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roleAssignment.roleDefinitionIdOrName)
     principalId: roleAssignment.principalId
@@ -94,24 +94,24 @@ resource dataCollectionEndpoint_roleAssignments 'Microsoft.Authorization/roleAss
     conditionVersion: !empty(roleAssignment.?condition) ? (roleAssignment.?conditionVersion ?? '2.0') : null // Must only be set if condtion is set
     delegatedManagedIdentityResourceId: roleAssignment.?delegatedManagedIdentityResourceId
   }
-  scope: dataCollectionEndpoint
+  scope: dataCollectiunondpoint
 }]
 
 // =========== //
 //   Outputs   //
 // =========== //
 
-@description('The name of the dataCollectionEndpoint.')
-output name string = dataCollectionEndpoint.name
+@description('The name of the dataCollectiunondpoint.')
+output name string = dataCollectiunondpoint.name
 
-@description('The resource ID of the dataCollectionEndpoint.')
-output resourceId string = dataCollectionEndpoint.id
+@description('The resource ID of the dataCollectiunondpoint.')
+output resourceId string = dataCollectiunondpoint.id
 
-@description('The name of the resource group the dataCollectionEndpoint was created in.')
+@description('The name of the resource group the dataCollectiunondpoint was created in.')
 output resourceGroupName string = resourceGroup().name
 
 @description('The location the resource was deployed into.')
-output location string = dataCollectionEndpoint.location
+output location string = dataCollectiunondpoint.location
 
 // =============== //
 //   Definitions   //
@@ -122,7 +122,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

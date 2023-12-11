@@ -28,7 +28,7 @@ This module deploys an Azure Automation Account Runbook.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`automationAccountName`](#parameter-automationaccountname) | string | The name of the parent Automation Account. Required if the template is used in a standalone deployment. |
+| [`automationAccountName`](#parameter-automationaccountname) | string | The name of the parent Automation Account. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -75,7 +75,7 @@ The type of the runbook.
 
 ### Parameter: `automationAccountName`
 
-The name of the parent Automation Account. Required if the template is used in a standalone deployment.
+The name of the parent Automation Account. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -162,4 +162,4 @@ Time used as a basis for e.g. the schedule start date.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

@@ -42,7 +42,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "None",
+            "Nuno",
             "ReadOnly"
           ],
           "nullable": true,
@@ -265,7 +265,7 @@
       }
     },
     "netAppAccount_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.NetApp/netAppAccounts/{0}', parameters('name'))]",
@@ -309,7 +309,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-ANFAccount-CapPool-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -425,7 +425,7 @@
             "netAppAccountName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent NetApp account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent NetApp account. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -464,7 +464,7 @@
             "size": {
               "type": "int",
               "metadata": {
-                "description": "Required. Provisioned size of the pool (in bytes). Allowed values are in 4TiB chunks (value must be multiply of 4398046511104)."
+                "description": "Required. Provisiunod size of the pool (in bytes). Allowed values are in 4TiB chunks (value must be multiply of 4398046511104)."
               }
             },
             "qosType": {
@@ -598,7 +598,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-Vol-{1}', deployment().name, copyIndex())]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -718,13 +718,13 @@
                     "netAppAccountName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent NetApp account. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent NetApp account. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "capacityPoolName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent capacity pool. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent capacity pool. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "name": {
@@ -750,7 +750,7 @@
                         "Ultra"
                       ],
                       "metadata": {
-                        "description": "Optional. The pool service level. Must match the one of the parent capacity pool."
+                        "description": "Optional. The pool service level. Must match the uno of the parent capacity pool."
                       }
                     },
                     "creationToken": {

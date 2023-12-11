@@ -24,13 +24,13 @@ This module deploys an Azure NetApp Files Capacity Pool.
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`name`](#parameter-name) | string | The name of the capacity pool. |
-| [`size`](#parameter-size) | int | Provisioned size of the pool (in bytes). Allowed values are in 4TiB chunks (value must be multiply of 4398046511104). |
+| [`size`](#parameter-size) | int | Provisiunod size of the pool (in bytes). Allowed values are in 4TiB chunks (value must be multiply of 4398046511104). |
 
 **Conditional parameters**
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`netAppAccountName`](#parameter-netappaccountname) | string | The name of the parent NetApp account. Required if the template is used in a standalone deployment. |
+| [`netAppAccountName`](#parameter-netappaccountname) | string | The name of the parent NetApp account. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -55,14 +55,14 @@ The name of the capacity pool.
 
 ### Parameter: `size`
 
-Provisioned size of the pool (in bytes). Allowed values are in 4TiB chunks (value must be multiply of 4398046511104).
+Provisiunod size of the pool (in bytes). Allowed values are in 4TiB chunks (value must be multiply of 4398046511104).
 
 - Required: Yes
 - Type: int
 
 ### Parameter: `netAppAccountName`
 
-The name of the parent NetApp account. Required if the template is used in a standalone deployment.
+The name of the parent NetApp account. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -254,4 +254,4 @@ List of volumnes to create in the capacity pool.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

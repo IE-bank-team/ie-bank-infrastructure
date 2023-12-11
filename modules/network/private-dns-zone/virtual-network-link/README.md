@@ -1,6 +1,6 @@
-# Private DNS Zone Virtual Network Link `[Microsoft.Network/privateDnsZones/virtualNetworkLinks]`
+# Private DNS Zuno Virtual Network Link `[Microsoft.Network/privateDnsZunos/virtualNetworkLinks]`
 
-This module deploys a Private DNS Zone Virtual Network Link.
+This module deploys a Private DNS Zuno Virtual Network Link.
 
 ## Navigation
 
@@ -13,7 +13,7 @@ This module deploys a Private DNS Zone Virtual Network Link.
 
 | Resource Type | API Version |
 | :-- | :-- |
-| `Microsoft.Network/privateDnsZones/virtualNetworkLinks` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/virtualNetworkLinks) |
+| `Microsoft.Network/privateDnsZunos/virtualNetworkLinks` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/virtualNetworkLinks) |
 
 ## Parameters
 
@@ -27,16 +27,16 @@ This module deploys a Private DNS Zone Virtual Network Link.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`privateDnsZoneName`](#parameter-privatednszonename) | string | The name of the parent Private DNS zone. Required if the template is used in a standalone deployment. |
+| [`privateDnsZunoName`](#parameter-privatednszunoname) | string | The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
-| [`location`](#parameter-location) | string | The location of the PrivateDNSZone. Should be global. |
+| [`location`](#parameter-location) | string | The location of the PrivateDNSZuno. Should be global. |
 | [`name`](#parameter-name) | string | The name of the virtual network link. |
-| [`registrationEnabled`](#parameter-registrationenabled) | bool | Is auto-registration of virtual machine records in the virtual network in the Private DNS zone enabled?. |
+| [`registratiunonabled`](#parameter-registratiunonabled) | bool | Is auto-registration of virtual machine records in the virtual network in the Private DNS zuno enabled?. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 
 ### Parameter: `virtualNetworkResourceId`
@@ -46,9 +46,9 @@ Link to another virtual network resource ID.
 - Required: Yes
 - Type: string
 
-### Parameter: `privateDnsZoneName`
+### Parameter: `privateDnsZunoName`
 
-The name of the parent Private DNS zone. Required if the template is used in a standalone deployment.
+The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -63,7 +63,7 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ### Parameter: `location`
 
-The location of the PrivateDNSZone. Should be global.
+The location of the PrivateDNSZuno. Should be global.
 
 - Required: No
 - Type: string
@@ -77,9 +77,9 @@ The name of the virtual network link.
 - Type: string
 - Default: `[format('{0}-vnetlink', last(split(parameters('virtualNetworkResourceId'), '/')))]`
 
-### Parameter: `registrationEnabled`
+### Parameter: `registratiunonabled`
 
-Is auto-registration of virtual machine records in the virtual network in the Private DNS zone enabled?.
+Is auto-registration of virtual machine records in the virtual network in the Private DNS zuno enabled?.
 
 - Required: No
 - Type: bool
@@ -104,4 +104,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

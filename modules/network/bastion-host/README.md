@@ -75,7 +75,7 @@ module bastionHost 'br:bicep/modules/network.bastion-host:1.0.0' = {
       ]
       skuName: 'Standard'
       skuTier: 'Regional'
-      zones: [
+      zunos: [
         '1'
         '2'
         '3'
@@ -141,7 +141,7 @@ module bastionHost 'br:bicep/modules/network.bastion-host:1.0.0' = {
         ],
         "skuName": "Standard",
         "skuTier": "Regional",
-        "zones": [
+        "zunos": [
           "1",
           "2",
           "3"
@@ -709,7 +709,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```

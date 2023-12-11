@@ -1,6 +1,6 @@
-# Public DNS Zone AAAA record `[Microsoft.Network/dnsZones/AAAA]`
+# Public DNS Zuno AAAA record `[Microsoft.Network/dnsZunos/AAAA]`
 
-This module deploys a Public DNS Zone AAAA record.
+This module deploys a Public DNS Zuno AAAA record.
 
 ## Navigation
 
@@ -14,7 +14,7 @@ This module deploys a Public DNS Zone AAAA record.
 | Resource Type | API Version |
 | :-- | :-- |
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
-| `Microsoft.Network/dnsZones/AAAA` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/AAAA) |
+| `Microsoft.Network/dnsZunos/AAAA` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/AAAA) |
 
 ## Parameters
 
@@ -28,7 +28,7 @@ This module deploys a Public DNS Zone AAAA record.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`dnsZoneName`](#parameter-dnszonename) | string | The name of the parent DNS zone. Required if the template is used in a standalone deployment. |
+| [`dnsZunoName`](#parameter-dnszunoname) | string | The name of the parent DNS zuno. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -38,7 +38,7 @@ This module deploys a Public DNS Zone AAAA record.
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`metadata`](#parameter-metadata) | object | The metadata attached to the record set. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignment objects that contain the 'roleDefinitionIdOrName' and 'principalId' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: '/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11'. |
-| [`targetResourceId`](#parameter-targetresourceid) | string | A reference to an azure resource from where the dns resource value is taken. Also known as an alias record sets and are only supported for record types A, AAAA and CNAME. A resource ID can be an Azure Traffic Manager, Azure CDN, Front Door, Static Web App, or a resource ID of a record set of the same type in the DNS zone (i.e. A, AAAA or CNAME). Cannot be used in conjuction with the "aRecords" property. |
+| [`targetResourceId`](#parameter-targetresourceid) | string | A reference to an azure resource from where the dns resource value is taken. Also known as an alias record sets and are only supported for record types A, AAAA and CNAME. A resource ID can be an Azure Traffic Manager, Azure CDN, Front Door, Static Web App, or a resource ID of a record set of the same type in the DNS zuno (i.e. A, AAAA or CNAME). Cannot be used in conjuction with the "aRecords" property. |
 | [`ttl`](#parameter-ttl) | int | The TTL (time-to-live) of the records in the record set. |
 
 ### Parameter: `name`
@@ -48,9 +48,9 @@ The name of the AAAA record.
 - Required: Yes
 - Type: string
 
-### Parameter: `dnsZoneName`
+### Parameter: `dnsZunoName`
 
-The name of the parent DNS zone. Required if the template is used in a standalone deployment.
+The name of the parent DNS zuno. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -170,7 +170,7 @@ The principal type of the assigned principal ID.
 
 ### Parameter: `targetResourceId`
 
-A reference to an azure resource from where the dns resource value is taken. Also known as an alias record sets and are only supported for record types A, AAAA and CNAME. A resource ID can be an Azure Traffic Manager, Azure CDN, Front Door, Static Web App, or a resource ID of a record set of the same type in the DNS zone (i.e. A, AAAA or CNAME). Cannot be used in conjuction with the "aRecords" property.
+A reference to an azure resource from where the dns resource value is taken. Also known as an alias record sets and are only supported for record types A, AAAA and CNAME. A resource ID can be an Azure Traffic Manager, Azure CDN, Front Door, Static Web App, or a resource ID of a record set of the same type in the DNS zuno (i.e. A, AAAA or CNAME). Cannot be used in conjuction with the "aRecords" property.
 
 - Required: No
 - Type: string
@@ -195,4 +195,4 @@ The TTL (time-to-live) of the records in the record set.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

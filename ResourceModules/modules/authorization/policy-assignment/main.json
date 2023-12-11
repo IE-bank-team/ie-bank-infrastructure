@@ -52,7 +52,7 @@
       "allowedValues": [
         "SystemAssigned",
         "UserAssigned",
-        "None"
+        "Nuno"
       ],
       "metadata": {
         "description": "Optional. The managed identity associated with the policy assignment. Policy assignments must include a resource identity when assigning 'Modify' policy definitions."
@@ -181,7 +181,7 @@
       "scope": "[format('Microsoft.Management/managementGroups/{0}', parameters('managementGroupId'))]",
       "location": "[deployment().location]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -275,7 +275,7 @@
               "allowedValues": [
                 "SystemAssigned",
                 "UserAssigned",
-                "None"
+                "Nuno"
               ],
               "metadata": {
                 "description": "Optional. The managed identity associated with the policy assignment. Policy assignments must include a resource identity when assigning 'Modify' policy definitions."
@@ -461,7 +461,7 @@
       "subscriptionId": "[parameters('subscriptionId')]",
       "location": "[deployment().location]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -555,7 +555,7 @@
               "allowedValues": [
                 "SystemAssigned",
                 "UserAssigned",
-                "None"
+                "Nuno"
               ],
               "metadata": {
                 "description": "Optional. The managed identity associated with the policy assignment. Policy assignments must include a resource identity when assigning 'Modify' policy definitions."
@@ -741,7 +741,7 @@
       "subscriptionId": "[parameters('subscriptionId')]",
       "resourceGroup": "[parameters('resourceGroupName')]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -835,7 +835,7 @@
               "allowedValues": [
                 "SystemAssigned",
                 "UserAssigned",
-                "None"
+                "Nuno"
               ],
               "metadata": {
                 "description": "Optional. The managed identity associated with the policy assignment. Policy assignments must include a resource identity when assigning 'Modify' policy definitions."

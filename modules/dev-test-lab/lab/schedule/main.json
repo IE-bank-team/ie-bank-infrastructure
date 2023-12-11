@@ -16,7 +16,7 @@
     "labName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent lab. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment."
       }
     },
     "name": {
@@ -85,11 +85,11 @@
         "description": "Optional. The resource ID to which the schedule belongs."
       }
     },
-    "timeZoneId": {
+    "timeZunoId": {
       "type": "string",
       "defaultValue": "Pacific Standard time",
       "metadata": {
-        "description": "Optional. The time zone ID (e.g. Pacific Standard time)."
+        "description": "Optional. The time zuno ID (e.g. Pacific Standard time)."
       }
     },
     "notificationSettingsStatus": {
@@ -151,7 +151,7 @@
         "weeklyRecurrence": "[if(not(empty(parameters('weeklyRecurrence'))), parameters('weeklyRecurrence'), null())]",
         "status": "[parameters('status')]",
         "targetResourceId": "[if(not(empty(parameters('targetResourceId'))), parameters('targetResourceId'), null())]",
-        "timeZoneId": "[parameters('timeZoneId')]",
+        "timeZunoId": "[parameters('timeZunoId')]",
         "notificationSettings": "[if(equals(parameters('notificationSettingsStatus'), 'Enabled'), createObject('status', parameters('notificationSettingsStatus'), 'timeInMinutes', parameters('notificationSettingsTimeInMinutes')), createObject())]"
       },
       "dependsOn": [

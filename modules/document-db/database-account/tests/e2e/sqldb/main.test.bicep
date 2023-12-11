@@ -68,12 +68,12 @@ module testDeployment '../../../main.bicep' = {
     locations: [
       {
         failoverPriority: 0
-        isZoneRedundant: false
+        isZunoRedundant: false
         locationName: location
       }
       {
         failoverPriority: 1
-        isZoneRedundant: false
+        isZunoRedundant: false
         locationName: nestedDependencies.outputs.pairedRegionName
       }
     ]
@@ -94,8 +94,8 @@ module testDeployment '../../../main.bicep' = {
     location: location
     privateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
-          nestedDependencies.outputs.privateDNSZoneResourceId
+        privateDnsZunoResourceIds: [
+          nestedDependencies.outputs.privateDNSZunoResourceId
         ]
         service: 'Sql'
         subnetResourceId: nestedDependencies.outputs.subnetResourceId

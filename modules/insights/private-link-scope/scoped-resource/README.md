@@ -28,7 +28,7 @@ This module deploys a Private Link Scope Scoped Resource.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`privateLinkScopeName`](#parameter-privatelinkscopename) | string | The name of the parent private link scope. Required if the template is used in a standalone deployment. |
+| [`privateLinkScopeName`](#parameter-privatelinkscopename) | string | The name of the parent private link scope. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -52,7 +52,7 @@ Name of the private link scoped resource.
 
 ### Parameter: `privateLinkScopeName`
 
-The name of the parent private link scope. Required if the template is used in a standalone deployment.
+The name of the parent private link scope. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -76,4 +76,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

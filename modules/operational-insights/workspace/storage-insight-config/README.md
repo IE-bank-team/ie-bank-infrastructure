@@ -27,7 +27,7 @@ This module deploys a Log Analytics Workspace Storage Insight Config.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`logAnalyticsWorkspaceName`](#parameter-loganalyticsworkspacename) | string | The name of the parent Log Analytics workspace. Required if the template is used in a standalone deployment. |
+| [`logAnalyticsWorkspaceName`](#parameter-loganalyticsworkspacename) | string | The name of the parent Log Analytics workspace. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -48,7 +48,7 @@ The Azure Resource Manager ID of the storage account resource.
 
 ### Parameter: `logAnalyticsWorkspaceName`
 
-The name of the parent Log Analytics workspace. Required if the template is used in a standalone deployment.
+The name of the parent Log Analytics workspace. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -103,4 +103,4 @@ Tags to configure in the resource.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

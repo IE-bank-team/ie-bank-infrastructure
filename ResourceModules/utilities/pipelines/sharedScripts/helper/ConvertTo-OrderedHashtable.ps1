@@ -26,12 +26,12 @@ Convert the given JSON string into a sorted HashTable. Would return the HashTabl
     }
 
 .EXAMPLE
-ConvertTo-OrderedHashtable -JSONInputObject '{"elem":[3,1,2,"a",{"a":"a","b":"b"},[23,1],["23","1"]],"arr":["one"]}'
+ConvertTo-OrderedHashtable -JSONInputObject '{"elem":[3,1,2,"a",{"a":"a","b":"b"},[23,1],["23","1"]],"arr":["uno"]}'
 
 Convert the given JSON string into a sorted HashTable. Would return the HashTable:
 
     @{
-        arr  = @('one')
+        arr  = @('uno')
         elem = @(
             1,
             @(
@@ -82,7 +82,7 @@ function ConvertTo-OrderedHashtable {
                 $arrayElements = $JSONObject[$currentLevelKey] | Where-Object { $_.GetType().BaseType.Name -eq 'Array' }
                 foreach ($array in $arrayElements) {
                     if ($array.Count -gt 1) {
-                        # Only sort for arrays with more than one item. Otherwise single-item arrays are casted
+                        # Only sort for arrays with more than uno item. Otherwise single-item arrays are casted
                         $array = $array | Sort-Object
                     }
                     $arrayOutput += , (ConvertTo-OrderedHashtable -JSONInputObject ($array | ConvertTo-Json -Depth 99))
@@ -102,7 +102,7 @@ function ConvertTo-OrderedHashtable {
                 $arrayOutput += $primitiveElements
 
                 if ($array.Count -gt 1) {
-                    # Only sort for arrays with more than one item. Otherwise single-item arrays are casted
+                    # Only sort for arrays with more than uno item. Otherwise single-item arrays are casted
                     $arrayOutput = $arrayOutput | Sort-Object
                 }
                 $orderedLevel[$currentLevelKey] = $arrayOutput

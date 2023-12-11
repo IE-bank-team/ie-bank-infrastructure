@@ -29,7 +29,7 @@ This module deploys an Azure Compute Gallery Application.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`galleryName`](#parameter-galleryname) | string | The name of the parent Azure Compute Gallery. Required if the template is used in a standalone deployment. |
+| [`galleryName`](#parameter-galleryname) | string | The name of the parent Azure Compute Gallery. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -56,7 +56,7 @@ Name of the application definition.
 
 ### Parameter: `galleryName`
 
-The name of the parent Azure Compute Gallery. Required if the template is used in a standalone deployment.
+The name of the parent Azure Compute Gallery. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -248,7 +248,7 @@ Tags for all resources.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 

@@ -21,13 +21,13 @@
     "protectionContainerName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. Name of the Azure Recovery Service Vault Protection Container. Required if the template is used in a standalone deployment."
+        "description": "Conditional. Name of the Azure Recovery Service Vault Protection Container. Required if the template is used in a standaluno deployment."
       }
     },
     "recoveryVaultName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment."
       }
     },
     "location": {

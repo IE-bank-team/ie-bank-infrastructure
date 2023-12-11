@@ -108,7 +108,7 @@ module testDeployment '../../../main.bicep' = {
                 }
               ]
             }
-            zones: [
+            zunos: [
               '1'
               '2'
               '3'
@@ -165,7 +165,7 @@ module testDeployment '../../../main.bicep' = {
     }
     osType: 'Linux'
     vmSize: 'Standard_DS2_v2'
-    availabilityZone: 1
+    availabilityZuno: 1
     backupPolicyName: nestedDependencies.outputs.recoveryServicesVaultBackupPolicyName
     backupVaultName: nestedDependencies.outputs.recoveryServicesVaultName
     backupVaultResourceGroup: nestedDependencies.outputs.recoveryServicesVaultResourceGroupName

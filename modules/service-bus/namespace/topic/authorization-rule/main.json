@@ -21,13 +21,13 @@
     "namespaceName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Service Bus Namespace. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Service Bus Namespace. Required if the template is used in a standaluno deployment."
       }
     },
     "topicName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Service Bus Namespace Topic. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent Service Bus Namespace Topic. Required if the template is used in a standaluno deployment."
       }
     },
     "rights": {

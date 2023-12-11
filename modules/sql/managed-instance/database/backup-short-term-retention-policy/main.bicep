@@ -5,10 +5,10 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the Short Term Retention backup policy. For example "default".')
 param name string
 
-@description('Conditional. The name of the parent SQL managed instance database. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent SQL managed instance database. Required if the template is used in a standaluno deployment.')
 param databaseName string
 
-@description('Conditional. The name of the parent SQL managed instance. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment.')
 param managedInstanceName string
 
 @description('Optional. The backup retention period in days. This is how many days Point-in-Time Restore will be supported.')

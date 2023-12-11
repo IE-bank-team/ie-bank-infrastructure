@@ -31,7 +31,7 @@ This module deploys an Event Hub Namespace Event Hub.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent event hub namespace. Required if the template is used in a standalone deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent event hub namespace. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -42,8 +42,8 @@ This module deploys an Event Hub Namespace Event Hub.
 | [`captureDescriptionDestinationBlobContainer`](#parameter-capturedescriptiondestinationblobcontainer) | string | Blob container Name. |
 | [`captureDescriptionDestinationName`](#parameter-capturedescriptiondestinationname) | string | Name for capture destination. |
 | [`captureDescriptionDestinationStorageAccountResourceId`](#parameter-capturedescriptiondestinationstorageaccountresourceid) | string | Resource ID of the storage account to be used to create the blobs. |
-| [`captureDescriptionEnabled`](#parameter-capturedescriptionenabled) | bool | A value that indicates whether capture description is enabled. |
-| [`captureDescriptionEncoding`](#parameter-capturedescriptionencoding) | string | Enumerates the possible values for the encoding format of capture description. Note: "AvroDeflate" will be deprecated in New API Version. |
+| [`captureDescriptiunonabled`](#parameter-capturedescriptiunonabled) | bool | A value that indicates whether capture description is enabled. |
+| [`captureDescriptiunoncoding`](#parameter-capturedescriptiunoncoding) | string | Enumerates the possible values for the encoding format of capture description. Note: "AvroDeflate" will be deprecated in New API Version. |
 | [`captureDescriptionIntervalInSeconds`](#parameter-capturedescriptionintervalinseconds) | int | The time window allows you to set the frequency with which the capture to Azure Blobs will happen. |
 | [`captureDescriptionSizeLimitInBytes`](#parameter-capturedescriptionsizelimitinbytes) | int | The size window defines the amount of data built up in your Event Hub before an capture operation. |
 | [`captureDescriptionSkipEmptyArchives`](#parameter-capturedescriptionskipemptyarchives) | bool | A value that indicates whether to Skip Empty Archives. |
@@ -54,7 +54,7 @@ This module deploys an Event Hub Namespace Event Hub.
 | [`partitionCount`](#parameter-partitioncount) | int | Number of partitions created for the Event Hub, allowed values are from 1 to 32 partitions. |
 | [`retentionDescriptionCleanupPolicy`](#parameter-retentiondescriptioncleanuppolicy) | string | Retention cleanup policy. Enumerates the possible values for cleanup policy. |
 | [`retentionDescriptionRetentionTimeInHours`](#parameter-retentiondescriptionretentiontimeinhours) | int | Retention time in hours. Number of hours to retain the events for this Event Hub. This value is only used when cleanupPolicy is Delete. If cleanupPolicy is Compact the returned value of this property is Long.MaxValue. |
-| [`retentionDescriptionTombstoneRetentionTimeInHours`](#parameter-retentiondescriptiontombstoneretentiontimeinhours) | int | Retention cleanup policy. Number of hours to retain the tombstone markers of a compacted Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstone marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key described by the tombstone marker within the compacted Event Hub. |
+| [`retentionDescriptionTombstunoRetentionTimeInHours`](#parameter-retentiondescriptiontombstunoretentiontimeinhours) | int | Retention cleanup policy. Number of hours to retain the tombstuno markers of a compacted Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstuno marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key described by the tombstuno marker within the compacted Event Hub. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
 | [`status`](#parameter-status) | string | Enumerates the possible values for the status of the Event Hub. |
 
@@ -67,7 +67,7 @@ The name of the event hub.
 
 ### Parameter: `namespaceName`
 
-The name of the parent event hub namespace. Required if the template is used in a standalone deployment.
+The name of the parent event hub namespace. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -124,7 +124,7 @@ Resource ID of the storage account to be used to create the blobs.
 - Type: string
 - Default: `''`
 
-### Parameter: `captureDescriptionEnabled`
+### Parameter: `captureDescriptiunonabled`
 
 A value that indicates whether capture description is enabled.
 
@@ -132,7 +132,7 @@ A value that indicates whether capture description is enabled.
 - Type: bool
 - Default: `False`
 
-### Parameter: `captureDescriptionEncoding`
+### Parameter: `captureDescriptiunoncoding`
 
 Enumerates the possible values for the encoding format of capture description. Note: "AvroDeflate" will be deprecated in New API Version.
 
@@ -218,7 +218,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -269,9 +269,9 @@ Retention time in hours. Number of hours to retain the events for this Event Hub
 - Type: int
 - Default: `1`
 
-### Parameter: `retentionDescriptionTombstoneRetentionTimeInHours`
+### Parameter: `retentionDescriptionTombstunoRetentionTimeInHours`
 
-Retention cleanup policy. Number of hours to retain the tombstone markers of a compacted Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstone marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key described by the tombstone marker within the compacted Event Hub.
+Retention cleanup policy. Number of hours to retain the tombstuno markers of a compacted Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstuno marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key described by the tombstuno marker within the compacted Event Hub.
 
 - Required: No
 - Type: int
@@ -400,4 +400,4 @@ Enumerates the possible values for the status of the Event Hub.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

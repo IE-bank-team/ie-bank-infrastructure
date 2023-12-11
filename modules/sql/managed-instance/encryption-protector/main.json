@@ -15,7 +15,7 @@
     "managedInstanceName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent SQL managed instance. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment."
       }
     },
     "serverKeyName": {
@@ -35,7 +35,7 @@
         "description": "Optional. The encryption protector type like \"ServiceManaged\", \"AzureKeyVault\"."
       }
     },
-    "autoRotationEnabled": {
+    "autoRotatiunonabled": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
@@ -70,7 +70,7 @@
       "apiVersion": "2022-05-01-preview",
       "name": "[format('{0}/{1}', parameters('managedInstanceName'), 'current')]",
       "properties": {
-        "autoRotationEnabled": "[parameters('autoRotationEnabled')]",
+        "autoRotatiunonabled": "[parameters('autoRotatiunonabled')]",
         "serverKeyName": "[parameters('serverKeyName')]",
         "serverKeyType": "[parameters('serverKeyType')]"
       }

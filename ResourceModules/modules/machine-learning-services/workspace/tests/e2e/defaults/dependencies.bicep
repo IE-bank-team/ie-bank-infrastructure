@@ -28,7 +28,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2022-07-01' = {
     }
 }
 
-resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
+resource applicationInsights 'Microsoft.Insights/compunonts@2020-02-02' = {
     name: applicationInsightsName
     location: location
     kind: ''

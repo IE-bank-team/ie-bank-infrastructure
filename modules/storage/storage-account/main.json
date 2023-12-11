@@ -50,7 +50,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "None",
+            "Nuno",
             "ReadOnly"
           ],
           "nullable": true,
@@ -158,21 +158,21 @@
               "description": "Required. Resource ID of the subnet where the endpoint needs to be created."
             }
           },
-          "privateDnsZoneGroupName": {
+          "privateDnsZunoGroupName": {
             "type": "string",
             "nullable": true,
             "metadata": {
-              "description": "Optional. The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided."
+              "description": "Optional. The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided."
             }
           },
-          "privateDnsZoneResourceIds": {
+          "privateDnsZunoResourceIds": {
             "type": "array",
             "items": {
               "type": "string"
             },
             "nullable": true,
             "metadata": {
-              "description": "Optional. The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones."
+              "description": "Optional. The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos."
             }
           },
           "customDnsConfigs": {
@@ -492,7 +492,7 @@
         "Enabled"
       ],
       "metadata": {
-        "description": "Optional. Allow large file shares if sets to 'Enabled'. It cannot be disabled once it is enabled. Only supported on locally redundant and zone redundant file shares. It cannot be set on FileStorage storage accounts (storage accounts for premium file shares)."
+        "description": "Optional. Allow large file shares if sets to 'Enabled'. It cannot be disabled once it is enabled. Only supported on locally redundant and zuno redundant file shares. It cannot be set on FileStorage storage accounts (storage accounts for premium file shares)."
       }
     },
     "azureFilesIdentityBasedAuthentication": {
@@ -569,11 +569,11 @@
       "defaultValue": "",
       "allowedValues": [
         "",
-        "AzureDnsZone",
+        "AzureDnsZuno",
         "Standard"
       ],
       "metadata": {
-        "description": "Optional. Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier."
+        "description": "Optional. Allows you to specify the type of endpoint. Set this to AzureDNSZuno to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zuno and the endpoint URL will have an alphanumeric DNS Zuno identifier."
       }
     },
     "blobServices": {
@@ -884,7 +884,7 @@
       ]
     },
     "storageAccount_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Storage/storageAccounts/{0}', parameters('name'))]",
@@ -928,7 +928,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-storageAccount-PrivateEndpoint-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -956,11 +956,11 @@
           "lock": {
             "value": "[coalesce(tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'lock'), parameters('lock'))]"
           },
-          "privateDnsZoneGroupName": {
-            "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'privateDnsZoneGroupName')]"
+          "privateDnsZunoGroupName": {
+            "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'privateDnsZunoGroupName')]"
           },
-          "privateDnsZoneResourceIds": {
-            "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'privateDnsZoneResourceIds')]"
+          "privateDnsZunoResourceIds": {
+            "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'privateDnsZunoResourceIds')]"
           },
           "roleAssignments": {
             "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'roleAssignments')]"
@@ -1079,7 +1079,7 @@
                   "type": "string",
                   "allowedValues": [
                     "CanNotDelete",
-                    "None",
+                    "Nuno",
                     "ReadOnly"
                   ],
                   "nullable": true,
@@ -1202,18 +1202,18 @@
                 "description": "Required. Subtype(s) of the connection to be created. The allowed values depend on the type serviceResourceId refers to."
               }
             },
-            "privateDnsZoneGroupName": {
+            "privateDnsZunoGroupName": {
               "type": "string",
               "nullable": true,
               "metadata": {
-                "description": "Optional. The name of the private DNS zone group to create if `privateDnsZoneResourceIds` were provided."
+                "description": "Optional. The name of the private DNS zuno group to create if `privateDnsZunoResourceIds` were provided."
               }
             },
-            "privateDnsZoneResourceIds": {
+            "privateDnsZunoResourceIds": {
               "type": "array",
               "nullable": true,
               "metadata": {
-                "description": "Optional. The private DNS zone groups to associate the private endpoint. A DNS zone group can support up to 5 DNS zones."
+                "description": "Optional. The private DNS zuno groups to associate the private endpoint. A DNS zuno group can support up to 5 DNS zunos."
               }
             },
             "location": {
@@ -1269,12 +1269,12 @@
             "builtInRoleNames": {
               "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
               "DNS Resolver Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')]",
-              "DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
+              "DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
               "Domain Services Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')]",
               "Domain Services Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')]",
               "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
               "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-              "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+              "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
               "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
               "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]"
             }
@@ -1329,7 +1329,7 @@
               }
             },
             "privateEndpoint_lock": {
-              "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
+              "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
               "type": "Microsoft.Authorization/locks",
               "apiVersion": "2020-05-01",
               "scope": "[format('Microsoft.Network/privateEndpoints/{0}', parameters('name'))]",
@@ -1364,22 +1364,22 @@
                 "privateEndpoint"
               ]
             },
-            "privateEndpoint_privateDnsZoneGroup": {
-              "condition": "[not(empty(parameters('privateDnsZoneResourceIds')))]",
+            "privateEndpoint_privateDnsZunoGroup": {
+              "condition": "[not(empty(parameters('privateDnsZunoResourceIds')))]",
               "type": "Microsoft.Resources/deployments",
               "apiVersion": "2022-09-01",
-              "name": "[format('{0}-PrivateEndpoint-PrivateDnsZoneGroup', uniqueString(deployment().name))]",
+              "name": "[format('{0}-PrivateEndpoint-PrivateDnsZunoGroup', uniqueString(deployment().name))]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
                 "parameters": {
                   "name": {
-                    "value": "[coalesce(parameters('privateDnsZoneGroupName'), 'default')]"
+                    "value": "[coalesce(parameters('privateDnsZunoGroupName'), 'default')]"
                   },
                   "privateDNSResourceIds": {
-                    "value": "[coalesce(parameters('privateDnsZoneResourceIds'), createArray())]"
+                    "value": "[coalesce(parameters('privateDnsZunoResourceIds'), createArray())]"
                   },
                   "privateEndpointName": {
                     "value": "[parameters('name')]"
@@ -1397,15 +1397,15 @@
                       "version": "0.23.1.45101",
                       "templateHash": "17578977753131828304"
                     },
-                    "name": "Private Endpoint Private DNS Zone Groups",
-                    "description": "This module deploys a Private Endpoint Private DNS Zone Group.",
+                    "name": "Private Endpoint Private DNS Zuno Groups",
+                    "description": "This module deploys a Private Endpoint Private DNS Zuno Group.",
                     "owner": "Azure/module-maintainers"
                   },
                   "parameters": {
                     "privateEndpointName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent private endpoint. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent private endpoint. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "privateDNSResourceIds": {
@@ -1413,14 +1413,14 @@
                       "minLength": 1,
                       "maxLength": 5,
                       "metadata": {
-                        "description": "Required. Array of private DNS zone resource IDs. A DNS zone group can support up to 5 DNS zones."
+                        "description": "Required. Array of private DNS zuno resource IDs. A DNS zuno group can support up to 5 DNS zunos."
                       }
                     },
                     "name": {
                       "type": "string",
                       "defaultValue": "default",
                       "metadata": {
-                        "description": "Optional. The name of the private DNS zone group."
+                        "description": "Optional. The name of the private DNS zuno group."
                       }
                     },
                     "enableDefaultTelemetry": {
@@ -1434,12 +1434,12 @@
                   "variables": {
                     "copy": [
                       {
-                        "name": "privateDnsZoneConfigs",
+                        "name": "privateDnsZunoConfigs",
                         "count": "[length(parameters('privateDNSResourceIds'))]",
                         "input": {
-                          "name": "[last(split(parameters('privateDNSResourceIds')[copyIndex('privateDnsZoneConfigs')], '/'))]",
+                          "name": "[last(split(parameters('privateDNSResourceIds')[copyIndex('privateDnsZunoConfigs')], '/'))]",
                           "properties": {
-                            "privateDnsZoneId": "[parameters('privateDNSResourceIds')[copyIndex('privateDnsZoneConfigs')]]"
+                            "privateDnsZunoId": "[parameters('privateDNSResourceIds')[copyIndex('privateDnsZunoConfigs')]]"
                           }
                         }
                       }
@@ -1461,11 +1461,11 @@
                       }
                     },
                     {
-                      "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+                      "type": "Microsoft.Network/privateEndpoints/privateDnsZunoGroups",
                       "apiVersion": "2023-04-01",
                       "name": "[format('{0}/{1}', parameters('privateEndpointName'), parameters('name'))]",
                       "properties": {
-                        "privateDnsZoneConfigs": "[variables('privateDnsZoneConfigs')]"
+                        "privateDnsZunoConfigs": "[variables('privateDnsZunoConfigs')]"
                       }
                     }
                   ],
@@ -1473,21 +1473,21 @@
                     "name": {
                       "type": "string",
                       "metadata": {
-                        "description": "The name of the private endpoint DNS zone group."
+                        "description": "The name of the private endpoint DNS zuno group."
                       },
                       "value": "[parameters('name')]"
                     },
                     "resourceId": {
                       "type": "string",
                       "metadata": {
-                        "description": "The resource ID of the private endpoint DNS zone group."
+                        "description": "The resource ID of the private endpoint DNS zuno group."
                       },
-                      "value": "[resourceId('Microsoft.Network/privateEndpoints/privateDnsZoneGroups', parameters('privateEndpointName'), parameters('name'))]"
+                      "value": "[resourceId('Microsoft.Network/privateEndpoints/privateDnsZunoGroups', parameters('privateEndpointName'), parameters('name'))]"
                     },
                     "resourceGroupName": {
                       "type": "string",
                       "metadata": {
-                        "description": "The resource group the private endpoint DNS zone group was deployed into."
+                        "description": "The resource group the private endpoint DNS zuno group was deployed into."
                       },
                       "value": "[resourceGroup().name]"
                     }
@@ -1541,7 +1541,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Storage-ManagementPolicies', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1574,7 +1574,7 @@
               "type": "string",
               "maxLength": 24,
               "metadata": {
-                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
               }
             },
             "rules": {
@@ -1657,7 +1657,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Storage-LocalUsers-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1702,7 +1702,7 @@
               "type": "string",
               "maxLength": 24,
               "metadata": {
-                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -1822,7 +1822,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Storage-BlobServices', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1988,7 +1988,7 @@
               "type": "string",
               "maxLength": 24,
               "metadata": {
-                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
               }
             },
             "automaticSnapshotPolicyEnabled": {
@@ -2214,7 +2214,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-Container-{1}', deployment().name, copyIndex())]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -2231,7 +2231,7 @@
                   "enableNfsV3RootSquash": "[if(contains(parameters('containers')[copyIndex()], 'enableNfsV3RootSquash'), createObject('value', parameters('containers')[copyIndex()].enableNfsV3RootSquash), createObject('value', false()))]",
                   "immutableStorageWithVersioningEnabled": "[if(contains(parameters('containers')[copyIndex()], 'immutableStorageWithVersioningEnabled'), createObject('value', parameters('containers')[copyIndex()].immutableStorageWithVersioningEnabled), createObject('value', false()))]",
                   "metadata": "[if(contains(parameters('containers')[copyIndex()], 'metadata'), createObject('value', parameters('containers')[copyIndex()].metadata), createObject('value', createObject()))]",
-                  "publicAccess": "[if(contains(parameters('containers')[copyIndex()], 'publicAccess'), createObject('value', parameters('containers')[copyIndex()].publicAccess), createObject('value', 'None'))]",
+                  "publicAccess": "[if(contains(parameters('containers')[copyIndex()], 'publicAccess'), createObject('value', parameters('containers')[copyIndex()].publicAccess), createObject('value', 'Nuno'))]",
                   "roleAssignments": "[if(contains(parameters('containers')[copyIndex()], 'roleAssignments'), createObject('value', parameters('containers')[copyIndex()].roleAssignments), createObject('value', createArray()))]",
                   "immutabilityPolicyProperties": "[if(contains(parameters('containers')[copyIndex()], 'immutabilityPolicyProperties'), createObject('value', parameters('containers')[copyIndex()].immutabilityPolicyProperties), createObject('value', createObject()))]",
                   "enableDefaultTelemetry": {
@@ -2325,7 +2325,7 @@
                       "type": "string",
                       "maxLength": 24,
                       "metadata": {
-                        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "name": {
@@ -2392,11 +2392,11 @@
                     },
                     "publicAccess": {
                       "type": "string",
-                      "defaultValue": "None",
+                      "defaultValue": "Nuno",
                       "allowedValues": [
                         "Container",
                         "Blob",
-                        "None"
+                        "Nuno"
                       ],
                       "metadata": {
                         "description": "Optional. Specifies whether data in the container may be accessed publicly and the level of access."
@@ -2518,7 +2518,7 @@
                       "apiVersion": "2022-09-01",
                       "name": "[parameters('immutabilityPolicyName')]",
                       "properties": {
-                        "expressionEvaluationOptions": {
+                        "expressiunovaluationOptions": {
                           "scope": "inner"
                         },
                         "mode": "Incremental",
@@ -2554,13 +2554,13 @@
                               "type": "string",
                               "maxLength": 24,
                               "metadata": {
-                                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
                               }
                             },
                             "containerName": {
                               "type": "string",
                               "metadata": {
-                                "description": "Conditional. The name of the parent container to apply the policy to. Required if the template is used in a standalone deployment."
+                                "description": "Conditional. The name of the parent container to apply the policy to. Required if the template is used in a standaluno deployment."
                               }
                             },
                             "immutabilityPeriodSinceCreationInDays": {
@@ -2714,7 +2714,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Storage-FileServices', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -2859,7 +2859,7 @@
               "type": "string",
               "maxLength": 24,
               "metadata": {
-                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {
@@ -2975,7 +2975,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-shares-{1}', deployment().name, copyIndex())]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -3085,14 +3085,14 @@
                       "type": "string",
                       "maxLength": 24,
                       "metadata": {
-                        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "fileServicesName": {
                       "type": "string",
                       "defaultValue": "default",
                       "metadata": {
-                        "description": "Conditional. The name of the parent file service. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent file service. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "name": {
@@ -3317,7 +3317,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Storage-QueueServices', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -3460,7 +3460,7 @@
               "type": "string",
               "maxLength": 24,
               "metadata": {
-                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
               }
             },
             "queues": {
@@ -3550,7 +3550,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-Queue-{1}', deployment().name, copyIndex())]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -3654,7 +3654,7 @@
                       "type": "string",
                       "maxLength": 24,
                       "metadata": {
-                        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "name": {
@@ -3839,7 +3839,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Storage-TableServices', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -3982,7 +3982,7 @@
               "type": "string",
               "maxLength": 24,
               "metadata": {
-                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
               }
             },
             "tables": {
@@ -4072,7 +4072,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-Table-{1}', deployment().name, copyIndex())]",
               "properties": {
-                "expressionEvaluationOptions": {
+                "expressiunovaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -4105,7 +4105,7 @@
                       "type": "string",
                       "maxLength": 24,
                       "metadata": {
-                        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
+                        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
                       }
                     },
                     "name": {

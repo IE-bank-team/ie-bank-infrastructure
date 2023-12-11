@@ -114,7 +114,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
           Paths: 'D:\\IISlogs;D:\\DatabaseLogs'
           Processes: 'mssence.svc'
         }
-        RealtimeProtectionEnabled: true
+        RealtimeProtectiunonabled: true
         ScheduledScanSettings: {
           day: '7'
           isEnabled: 'true'
@@ -168,7 +168,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       {
         ipConfigurations: [
           {
-            name: 'ipconfione'
+            name: 'ipconfiuno'
             properties: {
               subnet: {
                 id: nestedDependencies.outputs.subnetResourceId

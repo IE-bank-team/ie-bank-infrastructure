@@ -27,13 +27,13 @@ param keyVersion string = ''
 ])
 param encryptionType string = 'EncryptionAtRestWithPlatformAndCustomerKeys'
 
-@description('Optional. Multi-tenant application client ID to access key vault in a different tenant. Setting the value to "None" will clear the property.')
-param federatedClientId string = 'None'
+@description('Optional. Multi-tenant application client ID to access key vault in a different tenant. Setting the value to "Nuno" will clear the property.')
+param federatedClientId string = 'Nuno'
 
 @description('Optional. Set this flag to true to enable auto-updating of this disk encryption set to the latest key version.')
-param rotationToLatestKeyVersionEnabled bool = false
+param rotationToLatestKeyVersiunonabled bool = false
 
-@description('Optional. The managed identity definition for this resource. At least one identity type is required.')
+@description('Optional. The managed identity definition for this resource. At least uno identity type is required.')
 param managedIdentities managedIdentitiesType = {
   systemAssigned: true
 }
@@ -96,7 +96,7 @@ module keyVaultPermissions 'modules/nested_keyVaultPermissions.bicep' = [for (us
     keyName: keyName
     keyVaultResourceId: keyVaultResourceId
     userAssignedIdentityResourceId: userAssignedIdentityResourceId
-    rbacAuthorizationEnabled: keyVault.properties.enableRbacAuthorization
+    rbacAuthorizatiunonabled: keyVault.properties.enableRbacAuthorization
   }
   scope: resourceGroup(split(keyVaultResourceId, '/')[2], split(keyVaultResourceId, '/')[4])
 }]
@@ -115,7 +115,7 @@ resource diskEncryptionSet 'Microsoft.Compute/diskEncryptionSets@2022-07-02' = {
     }
     encryptionType: encryptionType
     federatedClientId: federatedClientId
-    rotationToLatestKeyVersionEnabled: rotationToLatestKeyVersionEnabled
+    rotationToLatestKeyVersiunonabled: rotationToLatestKeyVersiunonabled
   }
   dependsOn: [
     keyVaultPermissions
@@ -136,7 +136,7 @@ resource diskEncryptionSet_roleAssignments 'Microsoft.Authorization/roleAssignme
   scope: diskEncryptionSet
 }]
 
-resource diskEncryptionSet_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource diskEncryptionSet_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -183,7 +183,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

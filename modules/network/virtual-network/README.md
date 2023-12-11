@@ -688,7 +688,7 @@ module virtualNetwork 'br:bicep/modules/network.virtual-network:1.0.0' = {
 | [`subnets`](#parameter-subnets) | array | An Array of subnets to deploy to the Virtual Network. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`vnetEncryption`](#parameter-vnetencryption) | bool | Indicates if encryption is enabled on virtual network and if VM without encryption is allowed in encrypted VNet. Requires the EnableVNetEncryption feature to be registered for the subscription and a supported region to use this property. |
-| [`vnetEncryptionEnforcement`](#parameter-vnetencryptionenforcement) | string | If the encrypted VNet allows VM that does not support encryption. Can only be used when vnetEncryption is enabled. |
+| [`vnetEncryptiunonforcement`](#parameter-vnetencryptiunonforcement) | string | If the encrypted VNet allows VM that does not support encryption. Can only be used when vnetEncryption is enabled. |
 
 ### Parameter: `addressPrefixes`
 
@@ -859,7 +859,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -991,7 +991,7 @@ Indicates if encryption is enabled on virtual network and if VM without encrypti
 - Type: bool
 - Default: `False`
 
-### Parameter: `vnetEncryptionEnforcement`
+### Parameter: `vnetEncryptiunonforcement`
 
 If the encrypted VNet allows VM that does not support encryption. Can only be used when vnetEncryption is enabled.
 
@@ -1020,7 +1020,7 @@ If the encrypted VNet allows VM that does not support encryption. Can only be us
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_
 
 ## Notes
 
@@ -1030,7 +1030,7 @@ The network security group and route table resources must reside in the same res
 
 ### Parameter Usage: `peerings`
 
-As the virtual network peering array allows you to deploy not only a one-way but also two-way peering (i.e reverse), you can use the following ***additional*** properties on top of what is documented in _[virtualNetworkPeering](virtual-network-peering/README.md)_.
+As the virtual network peering array allows you to deploy not only a uno-way but also two-way peering (i.e reverse), you can use the following ***additional*** properties on top of what is documented in _[virtualNetworkPeering](virtual-network-peering/README.md)_.
 
 | Parameter Name | Type | Default Value | Possible Values | Description |
 | :-- | :-- | :-- | :-- | :-- |
@@ -1040,4 +1040,4 @@ As the virtual network peering array allows you to deploy not only a one-way but
 | `remotePeeringAllowGatewayTransit` | bool | `false` | | Optional. If gateway links can be used in remote virtual networking to link to this virtual network. |
 | `remotePeeringAllowVirtualNetworkAccess` | bool | `true` | | Optional. Whether the VMs in the local virtual network space would be able to access the VMs in remote virtual network space. |
 | `remotePeeringDoNotVerifyRemoteGateways` | bool | `true` | | Optional. If we need to verify the provisioning state of the remote gateway. |
-| `remotePeeringUseRemoteGateways` | bool | `false` | |  Optional. If remote gateways can be used on this virtual network. If the flag is set to `true`, and allowGatewayTransit on local peering is also `true`, virtual network will use gateways of local virtual network for transit. Only one peering can have this flag set to `true`. This flag cannot be set if virtual network already has a gateway.  |
+| `remotePeeringUseRemoteGateways` | bool | `false` | |  Optional. If remote gateways can be used on this virtual network. If the flag is set to `true`, and allowGatewayTransit on local peering is also `true`, virtual network will use gateways of local virtual network for transit. Only uno peering can have this flag set to `true`. This flag cannot be set if virtual network already has a gateway.  |

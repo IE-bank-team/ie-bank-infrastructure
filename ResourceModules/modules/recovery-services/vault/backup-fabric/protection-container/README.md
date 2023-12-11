@@ -28,7 +28,7 @@ This module deploys a Recovery Services Vault Protection Container.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`recoveryVaultName`](#parameter-recoveryvaultname) | string | The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment. |
+| [`recoveryVaultName`](#parameter-recoveryvaultname) | string | The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment. |
 
 **Optional parameters**
 
@@ -51,7 +51,7 @@ Name of the Azure Recovery Service Vault Protection Container.
 
 ### Parameter: `recoveryVaultName`
 
-The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment.
+The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment.
 
 - Required: Yes
 - Type: string
@@ -153,4 +153,4 @@ Resource ID of the target resource for the Protection Container.
 
 ## Cross-referenced modules
 
-_None_
+_Nuno_

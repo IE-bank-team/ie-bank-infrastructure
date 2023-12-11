@@ -18,7 +18,7 @@ This module deploys a Purview Account.
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
 | `Microsoft.Insights/diagnosticSettings` | [2021-05-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2021-05-01-preview/diagnosticSettings) |
 | `Microsoft.Network/privateEndpoints` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints) |
-| `Microsoft.Network/privateEndpoints/privateDnsZoneGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZoneGroups) |
+| `Microsoft.Network/privateEndpoints/privateDnsZunoGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZunoGroups) |
 | `Microsoft.Purview/accounts` | [2021-07-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Purview/2021-07-01/accounts) |
 
 ## Usage examples
@@ -103,7 +103,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     // Non-required parameters
     accountPrivateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
+        privateDnsZunoResourceIds: [
           '<purviewAccountPrivateDNSResourceId>'
         ]
         service: 'account'
@@ -132,7 +132,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     eventHubPrivateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
+        privateDnsZunoResourceIds: [
           '<eventHubPrivateDNSResourceId>'
         ]
         service: 'namespace'
@@ -157,7 +157,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     managedResourceGroupName: 'pvamax001-managed-rg'
     portalPrivateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
+        privateDnsZunoResourceIds: [
           '<purviewPortalPrivateDNSResourceId>'
         ]
         service: 'portal'
@@ -189,7 +189,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     ]
     storageBlobPrivateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
+        privateDnsZunoResourceIds: [
           '<storageBlobPrivateDNSResourceId>'
         ]
         service: 'blob'
@@ -203,7 +203,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     ]
     storageQueuePrivateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
+        privateDnsZunoResourceIds: [
           '<storageQueuePrivateDNSResourceId>'
         ]
         service: 'queue'
@@ -244,7 +244,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     "accountPrivateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
+          "privateDnsZunoResourceIds": [
             "<purviewAccountPrivateDNSResourceId>"
           ],
           "service": "account",
@@ -279,7 +279,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     "eventHubPrivateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
+          "privateDnsZunoResourceIds": [
             "<eventHubPrivateDNSResourceId>"
           ],
           "service": "namespace",
@@ -314,7 +314,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     "portalPrivateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
+          "privateDnsZunoResourceIds": [
             "<purviewPortalPrivateDNSResourceId>"
           ],
           "service": "portal",
@@ -352,7 +352,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     "storageBlobPrivateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
+          "privateDnsZunoResourceIds": [
             "<storageBlobPrivateDNSResourceId>"
           ],
           "service": "blob",
@@ -368,7 +368,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     "storageQueuePrivateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
+          "privateDnsZunoResourceIds": [
             "<storageQueuePrivateDNSResourceId>"
           ],
           "service": "queue",
@@ -413,7 +413,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     // Non-required parameters
     accountPrivateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
+        privateDnsZunoResourceIds: [
           '<purviewAccountPrivateDNSResourceId>'
         ]
         service: 'account'
@@ -442,7 +442,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     eventHubPrivateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
+        privateDnsZunoResourceIds: [
           '<eventHubPrivateDNSResourceId>'
         ]
         service: 'namespace'
@@ -467,7 +467,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     managedResourceGroupName: 'pvawaf001-managed-rg'
     portalPrivateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
+        privateDnsZunoResourceIds: [
           '<purviewPortalPrivateDNSResourceId>'
         ]
         service: 'portal'
@@ -482,7 +482,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     publicNetworkAccess: 'Disabled'
     storageBlobPrivateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
+        privateDnsZunoResourceIds: [
           '<storageBlobPrivateDNSResourceId>'
         ]
         service: 'blob'
@@ -496,7 +496,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     ]
     storageQueuePrivateEndpoints: [
       {
-        privateDnsZoneResourceIds: [
+        privateDnsZunoResourceIds: [
           '<storageQueuePrivateDNSResourceId>'
         ]
         service: 'queue'
@@ -537,7 +537,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     "accountPrivateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
+          "privateDnsZunoResourceIds": [
             "<purviewAccountPrivateDNSResourceId>"
           ],
           "service": "account",
@@ -572,7 +572,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     "eventHubPrivateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
+          "privateDnsZunoResourceIds": [
             "<eventHubPrivateDNSResourceId>"
           ],
           "service": "namespace",
@@ -607,7 +607,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     "portalPrivateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
+          "privateDnsZunoResourceIds": [
             "<purviewPortalPrivateDNSResourceId>"
           ],
           "service": "portal",
@@ -626,7 +626,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     "storageBlobPrivateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
+          "privateDnsZunoResourceIds": [
             "<storageBlobPrivateDNSResourceId>"
           ],
           "service": "blob",
@@ -642,7 +642,7 @@ module account 'br:bicep/modules/purview.account:1.0.0' = {
     "storageQueuePrivateEndpoints": {
       "value": [
         {
-          "privateDnsZoneResourceIds": [
+          "privateDnsZunoResourceIds": [
             "<storageQueuePrivateDNSResourceId>"
           ],
           "service": "queue",
@@ -851,7 +851,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```

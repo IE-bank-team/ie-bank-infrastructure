@@ -108,12 +108,12 @@ function Test-TemplateDeployment {
         $DeploymentInputs = @{
             TemplateFile = $templateFilePath
             Verbose      = $true
-            OutVariable  = 'ValidationErrors'
+            OutVariable  = 'Validatiunorrors'
         }
         if (-not [String]::IsNullOrEmpty($parameterFilePath)) {
             $DeploymentInputs['TemplateParameterFile'] = $parameterFilePath
         }
-        $ValidationErrors = $null
+        $Validatiunorrors = $null
 
         # Additional parameter object provided yes/no
         if ($additionalParameters) {
@@ -178,7 +178,7 @@ function Test-TemplateDeployment {
                 throw "[$deploymentScope] is a non-supported template scope"
             }
         }
-        if ($ValidationErrors) {
+        if ($Validatiunorrors) {
             if ($res.Details) { Write-Warning ($res.Details | ConvertTo-Json -Depth 10 | Out-String) }
             if ($res.Message) { Write-Warning $res.Message }
             Write-Error 'Template is not valid.'

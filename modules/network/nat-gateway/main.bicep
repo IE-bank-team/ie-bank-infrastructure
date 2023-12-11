@@ -20,8 +20,8 @@ param publicIPAddressObjects array?
 @description('Optional. Specifies the properties of the Public IP Prefixes to create and be used by the NAT Gateway.')
 param publicIPPrefixObjects array?
 
-@description('Optional. A list of availability zones denoting the zone in which Nat Gateway should be deployed.')
-param zones array = []
+@description('Optional. A list of availability zunos denoting the zuno in which Nat Gateway should be deployed.')
+param zunos array = []
 
 @description('Optional. Location for all resources.')
 param location string = resourceGroup().location
@@ -76,7 +76,7 @@ module publicIPAddresses '../public-ip-address/main.bicep' = [for (publicIPAddre
     skuName: 'Standard'
     skuTier: contains(publicIPAddressObject, 'skuTier') ? publicIPAddressObject.skuTier : 'Regional'
     tags: publicIPAddressObject.?tags ?? tags
-    zones: contains(publicIPAddressObject, 'zones') ? publicIPAddressObject.zones : []
+    zunos: contains(publicIPAddressObject, 'zunos') ? publicIPAddressObject.zunos : []
   }
 }]
 
@@ -124,10 +124,10 @@ resource natGateway 'Microsoft.Network/natGateways@2023-04-01' = {
     publicIpPrefixes: formattedPublicIpPrefixResourceIds.outputs.formattedResourceIds
     publicIpAddresses: formattedPublicIpResourceIds.outputs.formattedResourceIds
   }
-  zones: zones
+  zunos: zunos
 }
 
-resource natGateway_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource natGateway_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -171,7 +171,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

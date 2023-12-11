@@ -21,13 +21,13 @@
     "slotName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the site slot. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the site slot. Required if the template is used in a standaluno deployment."
       }
     },
     "appName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent web site. Required if the template is used in a standalone deployment."
+        "description": "Conditional. The name of the parent web site. Required if the template is used in a standaluno deployment."
       }
     },
     "sendKeyName": {

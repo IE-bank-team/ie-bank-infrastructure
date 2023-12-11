@@ -17,7 +17,7 @@ resource publicIP 'Microsoft.Network/publicIPAddresses@2023-04-01' = {
   properties: {
     publicIPAllocationMethod: 'Static'
   }
-  zones: [
+  zunos: [
     '1'
     '2'
     '3'

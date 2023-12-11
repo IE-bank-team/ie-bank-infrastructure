@@ -19,8 +19,8 @@ param keyVaultName string
 @description('Required. The name of the Proximity Placement Group to create.')
 param proximityPlacementGroupName string
 
-@description('Required. The name of the DNS Zone to create.')
-param dnsZoneName string
+@description('Required. The name of the DNS Zuno to create.')
+param dnsZunoName string
 
 @description('Required. The name of the log analytics workspace to create.')
 param logAnalyticsWorkspaceName string
@@ -130,8 +130,8 @@ resource proximityPlacementGroup 'Microsoft.Compute/proximityPlacementGroups@202
   location: location
 }
 
-resource dnsZone 'Microsoft.Network/dnsZones@2018-05-01' = {
-  name: dnsZoneName
+resource dnsZuno 'Microsoft.Network/dnsZunos@2018-05-01' = {
+  name: dnsZunoName
   location: 'global'
 }
 
@@ -165,8 +165,8 @@ output diskEncryptionSetResourceId string = diskEncryptionSet.id
 @description('The resource ID of the created Proximity Placement Group.')
 output proximityPlacementGroupResourceId string = proximityPlacementGroup.id
 
-@description('The resource ID of the created DNS Zone.')
-output dnsZoneResourceId string = dnsZone.id
+@description('The resource ID of the created DNS Zuno.')
+output dnsZunoResourceId string = dnsZuno.id
 
 @description('The resource ID of the created Log Analytics Workspace.')
 output logAnalyticsWorkspaceResourceId string = logAnalyticsWorkspace.id

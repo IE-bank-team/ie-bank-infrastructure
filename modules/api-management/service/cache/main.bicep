@@ -2,7 +2,7 @@ metadata name = 'API Management Service Caches'
 metadata description = 'This module deploys an API Management Service Cache.'
 metadata owner = 'Azure/module-maintainers'
 
-@sys.description('Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment.')
+@sys.description('Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment.')
 param apiManagementServiceName string
 
 @sys.description('Required. Identifier of the Cache entity. Cache identifier (should be either \'default\' or valid Azure region identifier).')

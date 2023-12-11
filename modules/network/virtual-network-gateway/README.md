@@ -72,7 +72,7 @@ module virtualNetworkGateway 'br:bicep/modules/network.virtual-network-gateway:1
       kind: 'CanNotDelete'
       name: 'myCustomLockName'
     }
-    publicIpZones: [
+    publicIpZunos: [
       '1'
       '2'
       '3'
@@ -174,7 +174,7 @@ module virtualNetworkGateway 'br:bicep/modules/network.virtual-network-gateway:1
         "name": "myCustomLockName"
       }
     },
-    "publicIpZones": {
+    "publicIpZunos": {
       "value": [
         "1",
         "2",
@@ -265,7 +265,7 @@ module virtualNetworkGateway 'br:bicep/modules/network.virtual-network-gateway:1
     ]
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     gatewayPipName: 'pip-nvger'
-    publicIpZones: [
+    publicIpZunos: [
       '1'
       '2'
       '3'
@@ -343,7 +343,7 @@ module virtualNetworkGateway 'br:bicep/modules/network.virtual-network-gateway:1
     "gatewayPipName": {
       "value": "pip-nvger"
     },
-    "publicIpZones": {
+    "publicIpZunos": {
       "value": [
         "1",
         "2",
@@ -455,7 +455,7 @@ module virtualNetworkGateway 'br:bicep/modules/network.virtual-network-gateway:1
         type: 'Dynamic'
       }
     ]
-    publicIpZones: [
+    publicIpZunos: [
       '1'
       '2'
       '3'
@@ -588,7 +588,7 @@ module virtualNetworkGateway 'br:bicep/modules/network.virtual-network-gateway:1
         }
       ]
     },
-    "publicIpZones": {
+    "publicIpZunos": {
       "value": [
         "1",
         "2",
@@ -662,12 +662,12 @@ module virtualNetworkGateway 'br:bicep/modules/network.virtual-network-gateway:1
 | [`natRules`](#parameter-natrules) | array | NatRules for virtual network gateway. NAT is supported on the the following SKUs: VpnGw2~5, VpnGw2AZ~5AZ and is supported for IPsec/IKE cross-premises connections only. |
 | [`publicIpDiagnosticSettings`](#parameter-publicipdiagnosticsettings) | array | The diagnostic settings of the Public IP. |
 | [`publicIPPrefixResourceId`](#parameter-publicipprefixresourceid) | string | Resource ID of the Public IP Prefix object. This is only needed if you want your Public IPs created in a PIP Prefix. |
-| [`publicIpZones`](#parameter-publicipzones) | array | Specifies the zones of the Public IP address. Basic IP SKU does not support Availability Zones. |
+| [`publicIpZunos`](#parameter-publicipzunos) | array | Specifies the zunos of the Public IP address. Basic IP SKU does not support Availability Zunos. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`vpnClientAadConfiguration`](#parameter-vpnclientaadconfiguration) | object | Configuration for AAD Authentication for P2S Tunnel Type, Cannot be configured if clientRootCertData is provided. |
 | [`vpnClientAddressPoolPrefix`](#parameter-vpnclientaddresspoolprefix) | string | The IP address range from which VPN clients will receive an IP address when connected. Range specified must not overlap with on-premise network. |
-| [`vpnGatewayGeneration`](#parameter-vpngatewaygeneration) | string | The generation for this VirtualNetworkGateway. Must be None if virtualNetworkGatewayType is not VPN. |
+| [`vpnGatewayGeneration`](#parameter-vpngatewaygeneration) | string | The generation for this VirtualNetworkGateway. Must be Nuno if virtualNetworkGatewayType is not VPN. |
 | [`vpnType`](#parameter-vpntype) | string | Specifies the VPN type. |
 
 ### Parameter: `gatewayType`
@@ -978,7 +978,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'None'
+    'Nuno'
     'ReadOnly'
   ]
   ```
@@ -1097,9 +1097,9 @@ Resource ID of the Public IP Prefix object. This is only needed if you want your
 - Type: string
 - Default: `''`
 
-### Parameter: `publicIpZones`
+### Parameter: `publicIpZunos`
 
-Specifies the zones of the Public IP address. Basic IP SKU does not support Availability Zones.
+Specifies the zunos of the Public IP address. Basic IP SKU does not support Availability Zunos.
 
 - Required: No
 - Type: array
@@ -1219,17 +1219,17 @@ The IP address range from which VPN clients will receive an IP address when conn
 
 ### Parameter: `vpnGatewayGeneration`
 
-The generation for this VirtualNetworkGateway. Must be None if virtualNetworkGatewayType is not VPN.
+The generation for this VirtualNetworkGateway. Must be Nuno if virtualNetworkGatewayType is not VPN.
 
 - Required: No
 - Type: string
-- Default: `'None'`
+- Default: `'Nuno'`
 - Allowed:
   ```Bicep
   [
     'Generation1'
     'Generation2'
-    'None'
+    'Nuno'
   ]
   ```
 

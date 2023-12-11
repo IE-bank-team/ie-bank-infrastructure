@@ -20,7 +20,7 @@ param enableDefaultTelemetry bool = true
 @description('Optional. Parameters for the definition template.')
 param definitionParameters object = {}
 
-@description('Optional. The managed identity definition for this resource. Only one type of identity is supported: system-assigned or user-assigned, but not both.')
+@description('Optional. The managed identity definition for this resource. Only uno type of identity is supported: system-assigned or user-assigned, but not both.')
 param managedIdentities managedIdentitiesType
 
 @description('Optional. The integration account.')
@@ -58,7 +58,7 @@ param tags object?
 @description('Optional. The access control configuration for invoking workflow triggers.')
 param triggersAccessControlConfiguration object = {}
 
-@description('Optional. The definitions for one or more actions to execute at workflow runtime.')
+@description('Optional. The definitions for uno or more actions to execute at workflow runtime.')
 param workflowActions object = {}
 
 @description('Optional. The endpoints configuration:  Access endpoint and outgoing IP addresses for the workflow.')
@@ -70,13 +70,13 @@ param workflowManagementAccessControlConfiguration object = {}
 @description('Optional. The definitions for the outputs to return from a workflow run.')
 param workflowOutputs object = {}
 
-@description('Optional. The definitions for one or more parameters that pass the values to use at your logic app\'s runtime.')
+@description('Optional. The definitions for uno or more parameters that pass the values to use at your logic app\'s runtime.')
 param workflowParameters object = {}
 
-@description('Optional. The definitions for one or more static results returned by actions as mock outputs when static results are enabled on those actions. In each action definition, the runtimeConfiguration.staticResult.name attribute references the corresponding definition inside staticResults.')
+@description('Optional. The definitions for uno or more static results returned by actions as mock outputs when static results are enabled on those actions. In each action definition, the runtimeConfiguration.staticResult.name attribute references the corresponding definition inside staticResults.')
 param workflowStaticResults object = {}
 
-@description('Optional. The definitions for one or more triggers that instantiate your workflow. You can define more than one trigger, but only with the Workflow Definition Language, not visually through the Logic Apps Designer.')
+@description('Optional. The definitions for uno or more triggers that instantiate your workflow. You can define more than uno trigger, but only with the Workflow Definition Language, not visually through the Logic Apps Designer.')
 param workflowTriggers object = {}
 
 var formattedUserAssignedIdentities = reduce(map((managedIdentities.?userAssignedResourceIds ?? []), (id) => { '${id}': {} }), {}, (cur, next) => union(cur, next)) // Converts the flat array to an object like { '${id1}': {}, '${id2}': {} }
@@ -143,7 +143,7 @@ resource logicApp 'Microsoft.Logic/workflows@2019-05-01' = {
   }
 }
 
-resource logicApp_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource logicApp_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -224,7 +224,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {

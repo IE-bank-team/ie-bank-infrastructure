@@ -89,7 +89,7 @@ function Invoke-GitHubWorkflow {
 Get a list of all GitHub module workflows
 
 .DESCRIPTION
-Get a list of all GitHub module workflows. Does not return all properties but only the relevant ones.
+Get a list of all GitHub module workflows. Does not return all properties but only the relevant unos.
 
 .PARAMETER PersonalAccessToken
 Mandatory. The GitHub PAT to leverage when interacting with the GitHub API.

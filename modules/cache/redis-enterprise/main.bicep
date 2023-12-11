@@ -40,8 +40,8 @@ param capacity int = 2
 @description('Optional. The type of Redis Enterprise Cluster to deploy.')
 param skuName string = 'Enterprise_E10'
 
-@description('Optional. When true, the cluster will be deployed across availability zones.')
-param zoneRedundant bool = true
+@description('Optional. When true, the cluster will be deployed across availability zunos.')
+param zunoRedundant bool = true
 
 @description('Optional. Configuration details for private endpoints. For security reasons, it is recommended to use private endpoints whenever possible.')
 param privateEndpoints privateEndpointType
@@ -55,7 +55,7 @@ param diagnosticSettings diagnosticSettingType
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')
 param enableDefaultTelemetry bool = true
 
-var availabilityZones = zoneRedundant ? pickZones('Microsoft.Cache', 'redisEnterprise', location, 3) : []
+var availabilityZunos = zunoRedundant ? pickZunos('Microsoft.Cache', 'redisEnterprise', location, 3) : []
 
 var enableReferencedModulesTelemetry = false
 
@@ -91,10 +91,10 @@ resource redisEnterprise 'Microsoft.Cache/redisEnterprise@2022-01-01' = {
   properties: {
     minimumTlsVersion: minimumTlsVersion
   }
-  zones: availabilityZones
+  zunos: availabilityZunos
 }
 
-resource redisEnterprise_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
+resource redisEnterprise_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -168,8 +168,8 @@ module redisEnterprise_privateEndpoints '../../network/private-endpoint/main.bic
     enableDefaultTelemetry: privateEndpoint.?enableDefaultTelemetry ?? enableReferencedModulesTelemetry
     location: privateEndpoint.?location ?? reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZoneGroupName: privateEndpoint.?privateDnsZoneGroupName
-    privateDnsZoneResourceIds: privateEndpoint.?privateDnsZoneResourceIds
+    privateDnsZunoGroupName: privateEndpoint.?privateDnsZunoGroupName
+    privateDnsZunoResourceIds: privateEndpoint.?privateDnsZunoResourceIds
     roleAssignments: privateEndpoint.?roleAssignments
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: privateEndpoint.?manualPrivateLinkServiceConnections
@@ -204,7 +204,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
 }?
 
 type roleAssignmentType = {
@@ -243,11 +243,11 @@ type privateEndpointType = {
   @description('Required. Resource ID of the subnet where the endpoint needs to be created.')
   subnetResourceId: string
 
-  @description('Optional. The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.')
-  privateDnsZoneGroupName: string?
+  @description('Optional. The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.')
+  privateDnsZunoGroupName: string?
 
-  @description('Optional. The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.')
-  privateDnsZoneResourceIds: string[]?
+  @description('Optional. The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.')
+  privateDnsZunoResourceIds: string[]?
 
   @description('Optional. Custom DNS configurations.')
   customDnsConfigs: {

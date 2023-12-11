@@ -4,7 +4,7 @@ metadata description = '''This module deploys a Recovery Services Vault Replicat
 > **Note**: this version of the module only supports the `instanceType: 'A2A'` scenario.'''
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment.')
 param recoveryVaultName string
 
 @description('Required. The name of the replication policy.')

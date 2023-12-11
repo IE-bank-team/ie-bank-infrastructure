@@ -280,7 +280,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-firewallPolicy_ruleCollectionGroups-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressionEvaluationOptions": {
+        "expressiunovaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -318,7 +318,7 @@
             "firewallPolicyName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Firewall Policy. Required if the template is used in a standalone deployment."
+                "description": "Conditional. The name of the parent Firewall Policy. Required if the template is used in a standaluno deployment."
               }
             },
             "name": {

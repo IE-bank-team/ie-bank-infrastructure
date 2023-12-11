@@ -11,7 +11,7 @@ param ignoreMissingVnetServiceEndpoint bool = false
 @description('Required. The resource ID of the virtual network subnet.')
 param virtualNetworkSubnetId string
 
-@description('Conditional. The name of the parent SQL Server. Required if the template is used in a standalone deployment.')
+@description('Conditional. The name of the parent SQL Server. Required if the template is used in a standaluno deployment.')
 param serverName string
 
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')
