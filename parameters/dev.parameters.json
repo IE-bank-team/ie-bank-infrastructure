@@ -1,45 +1,45 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "environmentType": {
-      "value": "nonprod"
-    },
-    "postgreSQLServerName": {
-      "value": "softwareonthego-dbsrv-dev"
-    },
-    "postgreSQLDatabaseName": {
-      "value": "softwareonthego-db-dev"
-    },
-    "appServicePlanName": {
-      "value": "softwareonthego-asp-dev"
-    },
-    "appServiceAPIAppName": {
-      "value": "softwareonthego-be-dev"
-    },
-    "appServiceAppName": {
-      "value": "softwareonthego-fe-dev"
-    },
-    "azureMonitorName": {
-      "value": "softwareonthego-am-dev"
-    },
-    "appInsightsName": {
-      "value": "softwareonthego-ai-dev"
-    },
-    "location": {
-      "value": "Japan West"
-    },
-    "containerRegistryName": {
-      "value": "softwareonthegoCRdev"
-    },
-    "containerRegistryImageName": {
-      "value": "ie-bank-be"
-    },
-    "containerRegistryImageVersion": {
-      "value": "latest"
-    },
-    "keyVaultName": {
-      "value": "softwareonthego-keyvault-dev"
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "environmentType": {
+            "value": "nonprod"
+        },
+        "postgreSQLServerName": {
+            "value": "softwareonthego-dbsrv-dev"
+        },
+        "postgreSQLDatabaseName": {
+            "value": "softwareonthego-db-dev"
+        },
+        "appServicePlanName": {
+            "value": "softwareonthego-asp-dev"
+        },
+        "appServiceAPIAppName": {
+            "value": "softwareonthego-be-dev"
+        },
+        "appServiceAppName": {
+            "value": "softwareonthego-fe-dev"
+        },
+        "azureMonitorName": {
+            "value": "softwareonthego-am-dev"
+        },
+        "appInsightsName": {
+            "value": "softwareonthego-ai-dev"
+        },
+        "location": {
+            "value": "Japan West"
+        },
+        "containerRegistryName": {
+            "value": "softwareonthegoCRdev"
+          },
+          "containerRegistryImageName": {
+            "value": "ie-bank-be"
+          },
+          "containerRegistryImageVersion": {
+            "value": "latest"
+          },
+        "keyVaultName": {
+            "value": "softwareonthego-keyvault-dev"
+        }
     }
-  }
 }
