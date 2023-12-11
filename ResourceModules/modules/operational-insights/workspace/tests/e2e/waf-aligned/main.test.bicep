@@ -97,12 +97,12 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       }
       {
         kind: 'IISLogs'
-        name: 'sampleIISLog1'
+        name: 'sampleIISLokhaled'
         state: 'OnPremiseEnabled'
       }
       {
         kind: 'LinuxSyslog'
-        name: 'sampleSyslog1'
+        name: 'sampleSyslokhaled'
         syslogName: 'kern'
         syslogSeverities: [
           {

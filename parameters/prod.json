@@ -6,31 +6,31 @@
             "value": "prod"
         },
         "postgreSQLServerName": {
-            "value": "g1-dbsrv-prod"
+            "value": "khaled-dbsrv-prod"
         },
         "postgreSQLDatabaseName": {
-            "value": "g1-db-prod"
+            "value": "khaled-db-prod"
         },
         "appServicePlanName": {
-            "value": "g1-asp-prod"
+            "value": "khaled-asp-prod"
         },
         "appServiceAPIAppName": {
-            "value": "g1-be-prod"
+            "value": "khaled-be-prod"
         },
         "appServiceAppName": {
-            "value": "g1-fe-prod"
+            "value": "khaled-fe-prod"
         },
         "azureMonitorName": {
-            "value": "g1-am-prod"
+            "value": "khaled-am-prod"
         },
         "appInsightsName": {
-            "value": "g1-ai-prod"
+            "value": "khaled-ai-prod"
         },
         "location": {
-            "value": "Qatar Central"
+            "value": "Japan West"
         },
         "containerRegistryName": {
-            "value": "g1CRprod"
+            "value": "khaledCRprod"
           },
         "containerRegistryImageName": {
             "value": "ie-bank-be"
@@ -39,7 +39,7 @@
             "value": "latest"
           },
         "keyVaultName": {
-            "value": "g1-keyvault-production"
+            "value": "khaled-keyvault-production"
         }
     }
 }

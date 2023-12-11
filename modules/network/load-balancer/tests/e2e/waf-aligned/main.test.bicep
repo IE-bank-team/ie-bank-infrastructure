@@ -69,7 +69,7 @@ module testDeployment '../../../main.bicep' = {
     name: '${namePrefix}${serviceShort}001'
     frontendIPConfigurations: [
       {
-        name: 'publicIPConfig1'
+        name: 'publicIPConfikhaled'
         publicIPAddressId: nestedDependencies.outputs.publicIPResourceId
       }
     ]
@@ -100,7 +100,7 @@ module testDeployment '../../../main.bicep' = {
         backendPort: 443
         enableFloatingIP: false
         enableTcpReset: false
-        frontendIPConfigurationName: 'publicIPConfig1'
+        frontendIPConfigurationName: 'publicIPConfikhaled'
         frontendPort: 443
         idleTimeoutInMinutes: 4
         name: 'inboundNatRule1'
@@ -108,7 +108,7 @@ module testDeployment '../../../main.bicep' = {
       }
       {
         backendPort: 3389
-        frontendIPConfigurationName: 'publicIPConfig1'
+        frontendIPConfigurationName: 'publicIPConfikhaled'
         frontendPort: 3389
         name: 'inboundNatRule2'
       }
@@ -120,7 +120,7 @@ module testDeployment '../../../main.bicep' = {
         disableOutboundSnat: true
         enableFloatingIP: false
         enableTcpReset: false
-        frontendIPConfigurationName: 'publicIPConfig1'
+        frontendIPConfigurationName: 'publicIPConfikhaled'
         frontendPort: 80
         idleTimeoutInMinutes: 5
         loadDistribution: 'Default'
@@ -131,7 +131,7 @@ module testDeployment '../../../main.bicep' = {
       {
         backendAddressPoolName: 'backendAddressPool2'
         backendPort: 8080
-        frontendIPConfigurationName: 'publicIPConfig1'
+        frontendIPConfigurationName: 'publicIPConfikhaled'
         frontendPort: 8080
         loadDistribution: 'Default'
         name: 'publicIPLBRule2'
@@ -146,7 +146,7 @@ module testDeployment '../../../main.bicep' = {
       {
         allocatedOutboundPorts: 63984
         backendAddressPoolName: 'backendAddressPool1'
-        frontendIPConfigurationName: 'publicIPConfig1'
+        frontendIPConfigurationName: 'publicIPConfikhaled'
         name: 'outboundRule1'
       }
     ]

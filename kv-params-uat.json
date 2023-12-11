@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "keyVaultName": {
-        "value": "g1-keyvault-uat"
+        "value": "khaled-keyvault-uat"
       },
       "location": {
-        "value": "Qatar Central"
+        "value": "Japan West"
       }
     }
   }

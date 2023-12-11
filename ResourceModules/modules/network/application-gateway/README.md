@@ -265,7 +265,7 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
           ipConfigurations: [
             {
               id: '<id>'
-              name: 'privateLinkIpConfig1'
+              name: 'privateLinkIpConfikhaled'
               properties: {
                 primary: false
                 privateIPAllocationMethod: 'Dynamic'
@@ -744,7 +744,7 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
             "ipConfigurations": [
               {
                 "id": "<id>",
-                "name": "privateLinkIpConfig1",
+                "name": "privateLinkIpConfikhaled",
                 "properties": {
                   "primary": false,
                   "privateIPAllocationMethod": "Dynamic",
@@ -1219,7 +1219,7 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
           ipConfigurations: [
             {
               id: '<id>'
-              name: 'privateLinkIpConfig1'
+              name: 'privateLinkIpConfikhaled'
               properties: {
                 primary: false
                 privateIPAllocationMethod: 'Dynamic'
@@ -1681,7 +1681,7 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
             "ipConfigurations": [
               {
                 "id": "<id>",
-                "name": "privateLinkIpConfig1",
+                "name": "privateLinkIpConfikhaled",
                 "properties": {
                   "primary": false,
                   "privateIPAllocationMethod": "Dynamic",

@@ -158,7 +158,7 @@ GPUInstanceProfile to be used to specify GPU MIG instance profile for supported 
   ```Bicep
   [
     ''
-    'MIG1g'
+    'MIkhaledg'
     'MIG2g'
     'MIG3g'
     'MIG4g'
