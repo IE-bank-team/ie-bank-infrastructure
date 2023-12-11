@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "keyVaultName": {
-        "value": "software1-keyvault-uat"
+        "value": "g1-keyvault-uat"
       },
       "location": {
-        "value": "Japan West"
+        "value": "Qatar Central"
       }
     }
   }

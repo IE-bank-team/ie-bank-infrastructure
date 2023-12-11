@@ -6,31 +6,31 @@
             "value": "prod"
         },
         "postgreSQLServerName": {
-            "value": "software1-dbsrv-uat"
+            "value": "g1-dbsrv-uat"
         },
         "postgreSQLDatabaseName": {
-            "value": "software1-db-uat"
+            "value": "g1-db-uat"
         },
         "appServicePlanName": {
-            "value": "software1-asp-uat"
+            "value": "g1-asp-uat"
         },
         "appServiceAPIAppName": {
-            "value": "software1-be-uat"
+            "value": "g1-be-uat"
         },
         "appServiceAppName": {
-            "value": "software1-fe-uat"
+            "value": "g1-fe-uat"
         },
         "azureMonitorName": {
-            "value": "software1-am-uat"
+            "value": "g1-am-uat"
         },
         "appInsightsName": {
-            "value": "software1-ai-uat"
+            "value": "g1-ai-uat"
         },
         "location": {
-            "value": "Japan West"
+            "value": "Qatar Central"
         },
         "containerRegistryName": {
-            "value": "software1CRuat"
+            "value": "g1CRuat"
           },
         "containerRegistryImageName": {
             "value": "ie-bank-be"
@@ -39,7 +39,7 @@
             "value": "latest"
           },
         "keyVaultName": {
-            "value": "software1-keyvault-uat"
+            "value": "g1-keyvault-uat"
         }
     }
 }
