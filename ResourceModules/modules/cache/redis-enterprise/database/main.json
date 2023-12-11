@@ -15,7 +15,7 @@
     "redisCacheEnterpriseName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Redis Cache Enterprise Cluster. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent Redis Cache Enterprise Cluster. Required if the template is used in a standalone deployment."
       }
     },
     "clientProtocol": {

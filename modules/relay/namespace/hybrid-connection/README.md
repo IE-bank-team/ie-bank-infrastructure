@@ -31,7 +31,7 @@ This module deploys a Relay Namespace Hybrid Connection.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Relay Namespace for the Relay Hybrid Connection. Required if the template is used in a standaluno deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Relay Namespace for the Relay Hybrid Connection. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -59,7 +59,7 @@ The user metadata is a placeholder to store user-defined string data for the hyb
 
 ### Parameter: `namespaceName`
 
-The name of the parent Relay Namespace for the Relay Hybrid Connection. Required if the template is used in a standaluno deployment.
+The name of the parent Relay Namespace for the Relay Hybrid Connection. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -128,7 +128,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -248,4 +248,4 @@ The principal type of the assigned principal ID.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

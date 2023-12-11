@@ -71,8 +71,8 @@ module testDeployment '../../../main.bicep' = {
       {
         service: 'amlworkspace'
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
-        privateDnsZunoResourceIds: [
-          nestedDependencies.outputs.privateDNSZunoResourceId
+        privateDnsZoneResourceIds: [
+          nestedDependencies.outputs.privateDNSZoneResourceId
         ]
         tags: {
           'hidden-title': 'This is visible in the resource name'

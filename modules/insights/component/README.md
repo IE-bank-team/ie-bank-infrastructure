@@ -1,8 +1,8 @@
-# Application Insights `[Microsoft.Insights/compunonts]`
+# Application Insights `[Microsoft.Insights/components]`
 
 > This module has already been migrated to [AVM](https://github.com/Azure/bicep-registry-modules/tree/main/avm/res). Only the AVM version is expected to receive updates / new features. Please do not work on improving this module in [CARML](https://aka.ms/carml).
 
-This compunont deploys an Application Insights instance.
+This component deploys an Application Insights instance.
 
 ## Navigation
 
@@ -17,7 +17,7 @@ This compunont deploys an Application Insights instance.
 | Resource Type | API Version |
 | :-- | :-- |
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
-| `Microsoft.Insights/compunonts` | [2020-02-02](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2020-02-02/compunonts) |
+| `Microsoft.Insights/components` | [2020-02-02](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2020-02-02/components) |
 | `Microsoft.Insights/diagnosticSettings` | [2021-05-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2021-05-01-preview/diagnosticSettings) |
 
 ## Usage examples
@@ -26,7 +26,7 @@ The following section provides usage examples for the module, which were used to
 
 >**Note**: Each example lists all the required parameters first, followed by the rest - each in alphabetical order.
 
->**Note**: To reference the module, please use the following syntax `br:bicep/modules/insights.compunont:1.0.0`.
+>**Note**: To reference the module, please use the following syntax `br:bicep/modules/insights.component:1.0.0`.
 
 - [Using only defaults](#example-1-using-only-defaults)
 - [Using large parameter set](#example-2-using-large-parameter-set)
@@ -42,7 +42,7 @@ This instance deploys the module with the minimum set of required parameters.
 <summary>via Bicep module</summary>
 
 ```bicep
-module compunont 'br:bicep/modules/insights.compunont:1.0.0' = {
+module component 'br:bicep/modules/insights.component:1.0.0' = {
   name: '${uniqueString(deployment().name, location)}-test-icmin'
   params: {
     // Required parameters
@@ -94,7 +94,7 @@ This instance deploys the module with most of its features enabled.
 <summary>via Bicep module</summary>
 
 ```bicep
-module compunont 'br:bicep/modules/insights.compunont:1.0.0' = {
+module component 'br:bicep/modules/insights.component:1.0.0' = {
   name: '${uniqueString(deployment().name, location)}-test-icmax'
   params: {
     // Required parameters
@@ -204,7 +204,7 @@ This instance deploys the module in alignment with the best-practices of the Azu
 <summary>via Bicep module</summary>
 
 ```bicep
-module compunont 'br:bicep/modules/insights.compunont:1.0.0' = {
+module component 'br:bicep/modules/insights.component:1.0.0' = {
   name: '${uniqueString(deployment().name, location)}-test-icwaf'
   params: {
     // Required parameters
@@ -321,7 +321,7 @@ module compunont 'br:bicep/modules/insights.compunont:1.0.0' = {
 | [`applicationType`](#parameter-applicationtype) | string | Application type. |
 | [`diagnosticSettings`](#parameter-diagnosticsettings) | array | The diagnostic settings of the service. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
-| [`kind`](#parameter-kind) | string | The kind of application that this compunont refers to, used to customize UI. This value is a freeform string, values should typically be uno of the following: web, ios, other, store, java, phuno. |
+| [`kind`](#parameter-kind) | string | The kind of application that this component refers to, used to customize UI. This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone. |
 | [`location`](#parameter-location) | string | Location for all Resources. |
 | [`publicNetworkAccessForIngestion`](#parameter-publicnetworkaccessforingestion) | string | The network access type for accessing Application Insights ingestion. - Enabled or Disabled. |
 | [`publicNetworkAccessForQuery`](#parameter-publicnetworkaccessforquery) | string | The network access type for accessing Application Insights query. - Enabled or Disabled. |
@@ -460,7 +460,7 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ### Parameter: `kind`
 
-The kind of application that this compunont refers to, used to customize UI. This value is a freeform string, values should typically be uno of the following: web, ios, other, store, java, phuno.
+The kind of application that this component refers to, used to customize UI. This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
 
 - Required: No
 - Type: string
@@ -635,13 +635,13 @@ Tags of the resource.
 
 | Output | Type | Description |
 | :-- | :-- | :-- |
-| `applicationId` | string | The application ID of the application insights compunont. |
-| `instrumentationKey` | string | Application Insights Instrumentation key. A read-only value that applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new Application Insights compunont. |
+| `applicationId` | string | The application ID of the application insights component. |
+| `instrumentationKey` | string | Application Insights Instrumentation key. A read-only value that applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new Application Insights component. |
 | `location` | string | The location the resource was deployed into. |
-| `name` | string | The name of the application insights compunont. |
-| `resourceGroupName` | string | The resource group the application insights compunont was deployed into. |
-| `resourceId` | string | The resource ID of the application insights compunont. |
+| `name` | string | The name of the application insights component. |
+| `resourceGroupName` | string | The resource group the application insights component was deployed into. |
+| `resourceId` | string | The resource ID of the application insights component. |
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -1,8 +1,8 @@
-# Private DNS Zunos `[Microsoft.Network/privateDnsZunos]`
+# Private DNS Zones `[Microsoft.Network/privateDnsZones]`
 
 > This module has already been migrated to [AVM](https://github.com/Azure/bicep-registry-modules/tree/main/avm/res). Only the AVM version is expected to receive updates / new features. Please do not work on improving this module in [CARML](https://aka.ms/carml).
 
-This module deploys a Private DNS zuno.
+This module deploys a Private DNS zone.
 
 ## Navigation
 
@@ -18,16 +18,16 @@ This module deploys a Private DNS zuno.
 | :-- | :-- |
 | `Microsoft.Authorization/locks` | [2020-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2020-05-01/locks) |
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
-| `Microsoft.Network/privateDnsZunos` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos) |
-| `Microsoft.Network/privateDnsZunos/A` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/A) |
-| `Microsoft.Network/privateDnsZunos/AAAA` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/AAAA) |
-| `Microsoft.Network/privateDnsZunos/CNAME` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/CNAME) |
-| `Microsoft.Network/privateDnsZunos/MX` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/MX) |
-| `Microsoft.Network/privateDnsZunos/PTR` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/PTR) |
-| `Microsoft.Network/privateDnsZunos/SOA` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/SOA) |
-| `Microsoft.Network/privateDnsZunos/SRV` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/SRV) |
-| `Microsoft.Network/privateDnsZunos/TXT` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/TXT) |
-| `Microsoft.Network/privateDnsZunos/virtualNetworkLinks` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/virtualNetworkLinks) |
+| `Microsoft.Network/privateDnsZones` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones) |
+| `Microsoft.Network/privateDnsZones/A` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/A) |
+| `Microsoft.Network/privateDnsZones/AAAA` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/AAAA) |
+| `Microsoft.Network/privateDnsZones/CNAME` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/CNAME) |
+| `Microsoft.Network/privateDnsZones/MX` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/MX) |
+| `Microsoft.Network/privateDnsZones/PTR` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/PTR) |
+| `Microsoft.Network/privateDnsZones/SOA` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/SOA) |
+| `Microsoft.Network/privateDnsZones/SRV` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/SRV) |
+| `Microsoft.Network/privateDnsZones/TXT` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/TXT) |
+| `Microsoft.Network/privateDnsZones/virtualNetworkLinks` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/virtualNetworkLinks) |
 
 ## Usage examples
 
@@ -35,7 +35,7 @@ The following section provides usage examples for the module, which were used to
 
 >**Note**: Each example lists all the required parameters first, followed by the rest - each in alphabetical order.
 
->**Note**: To reference the module, please use the following syntax `br:bicep/modules/network.private-dns-zuno:1.0.0`.
+>**Note**: To reference the module, please use the following syntax `br:bicep/modules/network.private-dns-zone:1.0.0`.
 
 - [Using only defaults](#example-1-using-only-defaults)
 - [Using large parameter set](#example-2-using-large-parameter-set)
@@ -51,7 +51,7 @@ This instance deploys the module with the minimum set of required parameters.
 <summary>via Bicep module</summary>
 
 ```bicep
-module privateDnsZuno 'br:bicep/modules/network.private-dns-zuno:1.0.0' = {
+module privateDnsZone 'br:bicep/modules/network.private-dns-zone:1.0.0' = {
   name: '${uniqueString(deployment().name, location)}-test-npdzmin'
   params: {
     // Required parameters
@@ -99,7 +99,7 @@ This instance deploys the module with most of its features enabled.
 <summary>via Bicep module</summary>
 
 ```bicep
-module privateDnsZuno 'br:bicep/modules/network.private-dns-zuno:1.0.0' = {
+module privateDnsZone 'br:bicep/modules/network.private-dns-zone:1.0.0' = {
   name: '${uniqueString(deployment().name, location)}-test-npdzmax'
   params: {
     // Required parameters
@@ -269,7 +269,7 @@ module privateDnsZuno 'br:bicep/modules/network.private-dns-zuno:1.0.0' = {
     ]
     virtualNetworkLinks: [
       {
-        registratiunonabled: true
+        registrationEnabled: true
         virtualNetworkResourceId: '<virtualNetworkResourceId>'
       }
     ]
@@ -483,7 +483,7 @@ module privateDnsZuno 'br:bicep/modules/network.private-dns-zuno:1.0.0' = {
     "virtualNetworkLinks": {
       "value": [
         {
-          "registratiunonabled": true,
+          "registrationEnabled": true,
           "virtualNetworkResourceId": "<virtualNetworkResourceId>"
         }
       ]
@@ -505,7 +505,7 @@ This instance deploys the module in alignment with the best-practices of the Azu
 <summary>via Bicep module</summary>
 
 ```bicep
-module privateDnsZuno 'br:bicep/modules/network.private-dns-zuno:1.0.0' = {
+module privateDnsZone 'br:bicep/modules/network.private-dns-zone:1.0.0' = {
   name: '${uniqueString(deployment().name, location)}-test-npdzwaf'
   params: {
     // Required parameters
@@ -675,7 +675,7 @@ module privateDnsZuno 'br:bicep/modules/network.private-dns-zuno:1.0.0' = {
     ]
     virtualNetworkLinks: [
       {
-        registratiunonabled: true
+        registrationEnabled: true
         virtualNetworkResourceId: '<virtualNetworkResourceId>'
       }
     ]
@@ -889,7 +889,7 @@ module privateDnsZuno 'br:bicep/modules/network.private-dns-zuno:1.0.0' = {
     "virtualNetworkLinks": {
       "value": [
         {
-          "registratiunonabled": true,
+          "registrationEnabled": true,
           "virtualNetworkResourceId": "<virtualNetworkResourceId>"
         }
       ]
@@ -908,7 +908,7 @@ module privateDnsZuno 'br:bicep/modules/network.private-dns-zuno:1.0.0' = {
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`name`](#parameter-name) | string | Private DNS zuno name. |
+| [`name`](#parameter-name) | string | Private DNS zone name. |
 
 **Optional parameters**
 
@@ -918,7 +918,7 @@ module privateDnsZuno 'br:bicep/modules/network.private-dns-zuno:1.0.0' = {
 | [`aaaa`](#parameter-aaaa) | array | Array of AAAA records. |
 | [`cname`](#parameter-cname) | array | Array of CNAME records. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
-| [`location`](#parameter-location) | string | The location of the PrivateDNSZuno. Should be global. |
+| [`location`](#parameter-location) | string | The location of the PrivateDNSZone. Should be global. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
 | [`mx`](#parameter-mx) | array | Array of MX records. |
 | [`ptr`](#parameter-ptr) | array | Array of PTR records. |
@@ -927,11 +927,11 @@ module privateDnsZuno 'br:bicep/modules/network.private-dns-zuno:1.0.0' = {
 | [`srv`](#parameter-srv) | array | Array of SRV records. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`txt`](#parameter-txt) | array | Array of TXT records. |
-| [`virtualNetworkLinks`](#parameter-virtualnetworklinks) | array | Array of custom objects describing vNet links of the DNS zuno. Each object should contain properties 'vnetResourceId' and 'registratiunonabled'. The 'vnetResourceId' is a resource ID of a vNet to link, 'registratiunonabled' (bool) enables automatic DNS registration in the zuno for the linked vNet. |
+| [`virtualNetworkLinks`](#parameter-virtualnetworklinks) | array | Array of custom objects describing vNet links of the DNS zone. Each object should contain properties 'vnetResourceId' and 'registrationEnabled'. The 'vnetResourceId' is a resource ID of a vNet to link, 'registrationEnabled' (bool) enables automatic DNS registration in the zone for the linked vNet. |
 
 ### Parameter: `name`
 
-Private DNS zuno name.
+Private DNS zone name.
 
 - Required: Yes
 - Type: string
@@ -970,7 +970,7 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ### Parameter: `location`
 
-The location of the PrivateDNSZuno. Should be global.
+The location of the PrivateDNSZone. Should be global.
 
 - Required: No
 - Type: string
@@ -1000,7 +1000,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1150,7 +1150,7 @@ Array of TXT records.
 
 ### Parameter: `virtualNetworkLinks`
 
-Array of custom objects describing vNet links of the DNS zuno. Each object should contain properties 'vnetResourceId' and 'registratiunonabled'. The 'vnetResourceId' is a resource ID of a vNet to link, 'registratiunonabled' (bool) enables automatic DNS registration in the zuno for the linked vNet.
+Array of custom objects describing vNet links of the DNS zone. Each object should contain properties 'vnetResourceId' and 'registrationEnabled'. The 'vnetResourceId' is a resource ID of a vNet to link, 'registrationEnabled' (bool) enables automatic DNS registration in the zone for the linked vNet.
 
 - Required: No
 - Type: array
@@ -1162,10 +1162,10 @@ Array of custom objects describing vNet links of the DNS zuno. Each object shoul
 | Output | Type | Description |
 | :-- | :-- | :-- |
 | `location` | string | The location the resource was deployed into. |
-| `name` | string | The name of the private DNS zuno. |
-| `resourceGroupName` | string | The resource group the private DNS zuno was deployed into. |
-| `resourceId` | string | The resource ID of the private DNS zuno. |
+| `name` | string | The name of the private DNS zone. |
+| `resourceGroupName` | string | The resource group the private DNS zone was deployed into. |
+| `resourceId` | string | The resource ID of the private DNS zone. |
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -42,7 +42,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -338,7 +338,7 @@
         "description": "Required. The tier of the particular SKU. Tier must align with the \"skuName\" property. Example, tier cannot be \"Burstable\" if skuName is \"Standard_D4s_v3\"."
       }
     },
-    "availabilityZuno": {
+    "availabilityZone": {
       "type": "string",
       "defaultValue": "",
       "allowedValues": [
@@ -348,7 +348,7 @@
         "3"
       ],
       "metadata": {
-        "description": "Optional. Availability zuno information of the server. Default will have no preference set."
+        "description": "Optional. Availability zone information of the server. Default will have no preference set."
       }
     },
     "backupRetentionDays": {
@@ -409,8 +409,8 @@
       "defaultValue": "Disabled",
       "allowedValues": [
         "Disabled",
-        "SameZuno",
-        "ZunoRedundant"
+        "SameZone",
+        "ZoneRedundant"
       ],
       "metadata": {
         "description": "Optional. The mode for high availability."
@@ -469,11 +469,11 @@
         "description": "Optional. Delegated subnet arm resource ID. Used when the desired connectivity mode is \"Private Access\" - virtual network integration."
       }
     },
-    "privateDnsZunoArmResourceId": {
+    "privateDnsZoneArmResourceId": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optional. Private dns zuno arm resource ID. Used when the desired connectivity mode is \"Private Access\" and required when \"delegatedSubnetResourceId\" is used. The Private DNS Zuno must be lined to the Virtual Network referenced in \"delegatedSubnetResourceId\"."
+        "description": "Optional. Private dns zone arm resource ID. Used when the desired connectivity mode is \"Private Access\" and required when \"delegatedSubnetResourceId\" is used. The Private DNS Zone must be lined to the Virtual Network referenced in \"delegatedSubnetResourceId\"."
       }
     },
     "firewallRules": {
@@ -606,7 +606,7 @@
           "passwordAuth": "[parameters('passwordAuth')]",
           "tenantId": "[if(not(empty(parameters('tenantId'))), parameters('tenantId'), null())]"
         },
-        "availabilityZuno": "[parameters('availabilityZuno')]",
+        "availabilityZone": "[parameters('availabilityZone')]",
         "backup": {
           "backupRetentionDays": "[parameters('backupRetentionDays')]",
           "geoRedundantBackup": "[parameters('geoRedundantBackup')]"
@@ -615,10 +615,10 @@
         "dataEncryption": "[if(not(empty(parameters('customerManagedKey'))), createObject('primaryKeyURI', if(not(empty(coalesce(tryGet(parameters('customerManagedKey'), 'keyVersion'), ''))), format('{0}/{1}', reference('cMKKeyVault::cMKKey').keyUri, parameters('customerManagedKey').keyVersion), reference('cMKKeyVault::cMKKey').keyUriWithVersion), 'primaryUserAssignedIdentityId', extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', split(coalesce(tryGet(parameters('customerManagedKey'), 'userAssignedIdentityResourceId'), '//'), '/')[2], split(coalesce(tryGet(parameters('customerManagedKey'), 'userAssignedIdentityResourceId'), '////'), '/')[4]), 'Microsoft.ManagedIdentity/userAssignedIdentities', last(split(coalesce(tryGet(parameters('customerManagedKey'), 'userAssignedIdentityResourceId'), 'dummyMsi'), '/'))), 'type', 'AzureKeyVault'), null())]",
         "highAvailability": {
           "mode": "[parameters('highAvailability')]",
-          "standbyAvailabilityZuno": "[if(equals(parameters('highAvailability'), 'SameZuno'), parameters('availabilityZuno'), null())]"
+          "standbyAvailabilityZone": "[if(equals(parameters('highAvailability'), 'SameZone'), parameters('availabilityZone'), null())]"
         },
         "maintenanceWindow": "[if(not(empty(parameters('maintenanceWindow'))), createObject('customWindow', parameters('maintenanceWindow').customWindow, 'dayOfWeek', if(equals(parameters('maintenanceWindow').customWindow, 'Enabled'), parameters('maintenanceWindow').dayOfWeek, 0), 'startHour', if(equals(parameters('maintenanceWindow').customWindow, 'Enabled'), parameters('maintenanceWindow').startHour, 0), 'startMinute', if(equals(parameters('maintenanceWindow').customWindow, 'Enabled'), parameters('maintenanceWindow').startMinute, 0)), null())]",
-        "network": "[if(and(not(empty(parameters('delegatedSubnetResourceId'))), empty(parameters('firewallRules'))), createObject('delegatedSubnetResourceId', parameters('delegatedSubnetResourceId'), 'privateDnsZunoArmResourceId', parameters('privateDnsZunoArmResourceId')), null())]",
+        "network": "[if(and(not(empty(parameters('delegatedSubnetResourceId'))), empty(parameters('firewallRules'))), createObject('delegatedSubnetResourceId', parameters('delegatedSubnetResourceId'), 'privateDnsZoneArmResourceId', parameters('privateDnsZoneArmResourceId')), null())]",
         "pointInTimeUTC": "[if(equals(parameters('createMode'), 'PointInTimeRestore'), parameters('pointInTimeUTC'), null())]",
         "sourceServerResourceId": "[if(equals(parameters('createMode'), 'PointInTimeRestore'), parameters('sourceServerResourceId'), null())]",
         "storage": {
@@ -632,7 +632,7 @@
       ]
     },
     "flexibleServer_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.DBforPostgreSQL/flexibleServers/{0}', parameters('name'))]",
@@ -699,7 +699,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-PostgreSQL-DB-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -739,7 +739,7 @@
             "flexibleServerName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent PostgreSQL flexible server. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent PostgreSQL flexible server. Required if the template is used in a standalone deployment."
               }
             },
             "collation": {
@@ -834,7 +834,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-PostgreSQL-FirewallRules-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -890,7 +890,7 @@
             "flexibleServerName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent PostgreSQL flexible server. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent PostgreSQL flexible server. Required if the template is used in a standalone deployment."
               }
             },
             "enableDefaultTelemetry": {
@@ -967,7 +967,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-PostgreSQL-Configurations-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1007,7 +1007,7 @@
             "flexibleServerName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent PostgreSQL flexible server. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent PostgreSQL flexible server. Required if the template is used in a standalone deployment."
               }
             },
             "source": {
@@ -1103,7 +1103,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-PostgreSQL-Administrators-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1139,7 +1139,7 @@
             "flexibleServerName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent PostgreSQL flexible server. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent PostgreSQL flexible server. Required if the template is used in a standalone deployment."
               }
             },
             "objectId": {

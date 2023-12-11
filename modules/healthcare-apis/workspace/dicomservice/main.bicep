@@ -6,7 +6,7 @@ metadata owner = 'Azure/module-maintainers'
 @maxLength(50)
 param name string
 
-@description('Conditional. The name of the parent health data services workspace. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent health data services workspace. Required if the template is used in a standalone deployment.')
 param workspaceName string
 
 @description('Optional. Specify URLs of origin sites that can access this API, or use "*" to allow access from any site.')
@@ -101,7 +101,7 @@ resource dicom 'Microsoft.HealthcareApis/workspaces/dicomservices@2022-06-01' = 
   }
 }
 
-resource dicom_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource dicom_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -168,7 +168,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type diagnosticSettingType = {

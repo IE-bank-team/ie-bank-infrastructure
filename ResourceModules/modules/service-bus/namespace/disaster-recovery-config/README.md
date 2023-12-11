@@ -21,7 +21,7 @@ This module deploys a Service Bus Namespace Disaster Recovery Config
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standaluno deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -34,7 +34,7 @@ This module deploys a Service Bus Namespace Disaster Recovery Config
 
 ### Parameter: `namespaceName`
 
-The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standaluno deployment.
+The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -82,4 +82,4 @@ Resource ID of the Primary/Secondary event hub namespace name, which is part of 
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

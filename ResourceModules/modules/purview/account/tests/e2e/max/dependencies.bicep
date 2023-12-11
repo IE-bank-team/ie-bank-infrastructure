@@ -9,7 +9,7 @@ param managedIdentityName string
 
 var addressPrefix = '10.0.0.0/16'
 
-var privateDNSZunoNames = [
+var privateDNSZoneNames = [
   'privatelink.purview.azure.com'
   'privatelink.purviewstudio.azure.com'
   'privatelink.blob.${environment().suffixes.storage}'
@@ -43,8 +43,8 @@ resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2018-
 }
 
 @batchSize(1)
-resource privateDNSZunos 'Microsoft.Network/privateDnsZunos@2020-06-01' = [for privateDNSZuno in privateDNSZunoNames: {
-  name: privateDNSZuno
+resource privateDNSZones 'Microsoft.Network/privateDnsZones@2020-06-01' = [for privateDNSZone in privateDNSZoneNames: {
+  name: privateDNSZone
   location: 'global'
 }]
 
@@ -57,17 +57,17 @@ output managedIdentityPrincipalId string = managedIdentity.properties.principalI
 @description('The resource ID of the created Managed Identity.')
 output managedIdentityResourceId string = managedIdentity.id
 
-@description('The resource ID of the created Private DNS Zuno for Purview Account.')
-output purviewAccountPrivateDNSResourceId string = privateDNSZunos[0].id
+@description('The resource ID of the created Private DNS Zone for Purview Account.')
+output purviewAccountPrivateDNSResourceId string = privateDNSZones[0].id
 
-@description('The resource ID of the created Private DNS Zuno for Purview Portal.')
-output purviewPortalPrivateDNSResourceId string = privateDNSZunos[1].id
+@description('The resource ID of the created Private DNS Zone for Purview Portal.')
+output purviewPortalPrivateDNSResourceId string = privateDNSZones[1].id
 
-@description('The resource ID of the created Private DNS Zuno for Storage Account Blob.')
-output storageBlobPrivateDNSResourceId string = privateDNSZunos[2].id
+@description('The resource ID of the created Private DNS Zone for Storage Account Blob.')
+output storageBlobPrivateDNSResourceId string = privateDNSZones[2].id
 
-@description('The resource ID of the created Private DNS Zuno for Storage Account Queue.')
-output storageQueuePrivateDNSResourceId string = privateDNSZunos[3].id
+@description('The resource ID of the created Private DNS Zone for Storage Account Queue.')
+output storageQueuePrivateDNSResourceId string = privateDNSZones[3].id
 
-@description('The resource ID of the created Private DNS Zuno for Event Hub Namespace.')
-output eventHubPrivateDNSResourceId string = privateDNSZunos[4].id
+@description('The resource ID of the created Private DNS Zone for Event Hub Namespace.')
+output eventHubPrivateDNSResourceId string = privateDNSZones[4].id

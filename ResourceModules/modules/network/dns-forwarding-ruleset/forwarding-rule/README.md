@@ -29,7 +29,7 @@ This template deploys Forwarding Rule in a Dns Forwarding Ruleset.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`dnsForwardingRulesetName`](#parameter-dnsforwardingrulesetname) | string | Name of the parent DNS Forwarding Ruleset. Required if the template is used in a standaluno deployment. |
+| [`dnsForwardingRulesetName`](#parameter-dnsforwardingrulesetname) | string | Name of the parent DNS Forwarding Ruleset. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -63,7 +63,7 @@ DNS servers to forward the DNS query to.
 
 ### Parameter: `dnsForwardingRulesetName`
 
-Name of the parent DNS Forwarding Ruleset. Required if the template is used in a standaluno deployment.
+Name of the parent DNS Forwarding Ruleset. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -118,4 +118,4 @@ Metadata attached to the forwarding rule.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

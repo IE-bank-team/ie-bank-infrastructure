@@ -1,21 +1,21 @@
-metadata name = 'Private DNS Zuno Virtual Network Link'
-metadata description = 'This module deploys a Private DNS Zuno Virtual Network Link.'
+metadata name = 'Private DNS Zone Virtual Network Link'
+metadata description = 'This module deploys a Private DNS Zone Virtual Network Link.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment.')
-param privateDnsZunoName string
+@description('Conditional. The name of the parent Private DNS zone. Required if the template is used in a standalone deployment.')
+param privateDnsZoneName string
 
 @description('Optional. The name of the virtual network link.')
 param name string = '${last(split(virtualNetworkResourceId, '/'))}-vnetlink'
 
-@description('Optional. The location of the PrivateDNSZuno. Should be global.')
+@description('Optional. The location of the PrivateDNSZone. Should be global.')
 param location string = 'global'
 
 @description('Optional. Tags of the resource.')
 param tags object?
 
-@description('Optional. Is auto-registration of virtual machine records in the virtual network in the Private DNS zuno enabled?.')
-param registratiunonabled bool = false
+@description('Optional. Is auto-registration of virtual machine records in the virtual network in the Private DNS zone enabled?.')
+param registrationEnabled bool = false
 
 @description('Required. Link to another virtual network resource ID.')
 param virtualNetworkResourceId string
@@ -35,17 +35,17 @@ resource defaultTelemetry 'Microsoft.Resources/deployments@2021-04-01' = if (ena
   }
 }
 
-resource privateDnsZuno 'Microsoft.Network/privateDnsZunos@2020-06-01' existing = {
-  name: privateDnsZunoName
+resource privateDnsZone 'Microsoft.Network/privateDnsZones@2020-06-01' existing = {
+  name: privateDnsZoneName
 }
 
-resource virtualNetworkLink 'Microsoft.Network/privateDnsZunos/virtualNetworkLinks@2020-06-01' = {
+resource virtualNetworkLink 'Microsoft.Network/privateDnsZones/virtualNetworkLinks@2020-06-01' = {
   name: name
-  parent: privateDnsZuno
+  parent: privateDnsZone
   location: location
   tags: tags
   properties: {
-    registratiunonabled: registratiunonabled
+    registrationEnabled: registrationEnabled
     virtualNetwork: {
       id: virtualNetworkResourceId
     }

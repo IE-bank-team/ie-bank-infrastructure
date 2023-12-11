@@ -29,7 +29,7 @@ This module deploys a Key Vault Key.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`keyVaultName`](#parameter-keyvaultname) | string | The name of the parent key vault. Required if the template is used in a standaluno deployment. |
+| [`keyVaultName`](#parameter-keyvaultname) | string | The name of the parent key vault. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -56,7 +56,7 @@ The name of the key.
 
 ### Parameter: `keyVaultName`
 
-The name of the parent key vault. Required if the template is used in a standaluno deployment.
+The name of the parent key vault. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -270,7 +270,7 @@ Resource tags.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 
@@ -280,7 +280,7 @@ Configures a [auto-rotation policy](https://learn.microsoft.com/en-us/azure/key-
 Remarks:
 
 - The times should use the ISO 8601 duration format, e.g. `P1Y` (1 year), `P2M`, (2 months), `P90D` (90 days).
-- The `trigger` property of `lifetimeActions` can contain uno of the following properties:
+- The `trigger` property of `lifetimeActions` can contain one of the following properties:
   - `timeAfterCreate` - The time duration after key creation to rotate the key. It only applies to rotate.
   - `timeBeforeExpiry` - The time duration before key expiring to rotate or notify. To use this, the key must have an expiration date configured.
 

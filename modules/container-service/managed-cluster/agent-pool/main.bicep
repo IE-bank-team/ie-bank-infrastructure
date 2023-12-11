@@ -2,14 +2,14 @@ metadata name = 'Azure Kubernetes Service (AKS) Managed Cluster Agent Pools'
 metadata description = 'This module deploys an Azure Kubernetes Service (AKS) Managed Cluster Agent Pool.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent managed cluster. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent managed cluster. Required if the template is used in a standalone deployment.')
 param managedClusterName string
 
 @description('Required. Name of the agent pool.')
 param name string
 
-@description('Optional. The list of Availability zunos to use for nodes. This can only be specified if the AgentPoolType property is "VirtualMachineScaleSets".')
-param availabilityZunos array = []
+@description('Optional. The list of Availability zones to use for nodes. This can only be specified if the AgentPoolType property is "VirtualMachineScaleSets".')
+param availabilityZones array = []
 
 @description('Optional. Desired Number of agents (VMs) specified to host docker containers. Allowed values must be in the range of 0 to 1000 (inclusive) for user pools and in the range of 1 to 1000 (inclusive) for system pools. The default value is 1.')
 @minValue(0)
@@ -36,7 +36,7 @@ param enableUltraSSD bool = false
 
 @description('Optional. GPUInstanceProfile to be used to specify GPU MIG instance profile for supported GPU VM SKU.')
 @allowed([
-  'MIunog'
+  'MIG1g'
   'MIG2g'
   'MIG3g'
   'MIG4g'
@@ -57,7 +57,7 @@ param maxPods int = -1
 @description('Optional. The minimum number of nodes for auto-scaling.')
 param minCount int = -1
 
-@description('Optional. A cluster must have at least uno "System" Agent Pool at all times. For additional information on agent pool restrictions and best practices, see: /azure/aks/use-system-pools.')
+@description('Optional. A cluster must have at least one "System" Agent Pool at all times. For additional information on agent pool restrictions and best practices, see: /azure/aks/use-system-pools.')
 param mode string = ''
 
 @description('Optional. The node labels to be persisted across all nodes in agent pool.')
@@ -181,7 +181,7 @@ resource agentPool 'Microsoft.ContainerService/managedClusters/agentPools@2023-0
   name: name
   parent: managedCluster
   properties: {
-    availabilityZunos: availabilityZunos
+    availabilityZones: availabilityZones
     count: count
     creationData: !empty(sourceResourceId) ? creationData : null
     enableAutoScaling: enableAutoScaling

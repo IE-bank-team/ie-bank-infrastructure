@@ -52,7 +52,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
           endPort: 30000
           startPort: 20000
         }
-        clientConnectiunondpointPort: 19000
+        clientConnectionEndpointPort: 19000
         durabilityLevel: 'Bronze'
         ephemeralPorts: {
           endPort: 65534
@@ -63,7 +63,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
         name: 'Node01'
       }
     ]
-    reliabilityLevel: 'Nuno'
+    reliabilityLevel: 'None'
     // Non-required parameters
     certificate: {
       thumbprint: '0AC113D5E1D94C401DDEB0EE2B1B96CC130'
@@ -105,7 +105,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
             "endPort": 30000,
             "startPort": 20000
           },
-          "clientConnectiunondpointPort": 19000,
+          "clientConnectionEndpointPort": 19000,
           "durabilityLevel": "Bronze",
           "ephemeralPorts": {
             "endPort": 65534,
@@ -118,7 +118,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
       ]
     },
     "reliabilityLevel": {
-      "value": "Nuno"
+      "value": "None"
     },
     // Non-required parameters
     "certificate": {
@@ -166,7 +166,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
           endPort: 30000
           startPort: 20000
         }
-        clientConnectiunondpointPort: 19000
+        clientConnectionEndpointPort: 19000
         durabilityLevel: 'Bronze'
         ephemeralPorts: {
           endPort: 65534
@@ -177,7 +177,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
         name: 'Node01'
       }
     ]
-    reliabilityLevel: 'Nuno'
+    reliabilityLevel: 'None'
     // Non-required parameters
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
   }
@@ -210,7 +210,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
             "endPort": 30000,
             "startPort": 20000
           },
-          "clientConnectiunondpointPort": 19000,
+          "clientConnectionEndpointPort": 19000,
           "durabilityLevel": "Bronze",
           "ephemeralPorts": {
             "endPort": 65534,
@@ -223,7 +223,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
       ]
     },
     "reliabilityLevel": {
-      "value": "Nuno"
+      "value": "None"
     },
     // Non-required parameters
     "enableDefaultTelemetry": {
@@ -258,7 +258,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
           endPort: 30000
           startPort: 20000
         }
-        clientConnectiunondpointPort: 19000
+        clientConnectionEndpointPort: 19000
         durabilityLevel: 'Silver'
         ephemeralPorts: {
           endPort: 65534
@@ -267,7 +267,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
         httpGatewayEndpointPort: 19080
         isPrimary: true
         isStateless: false
-        multipleAvailabilityZunos: false
+        multipleAvailabilityZones: false
         name: 'Node01'
         placementProperties: {}
         reverseProxyEndpointPort: ''
@@ -278,7 +278,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
           endPort: 30000
           startPort: 20000
         }
-        clientConnectiunondpointPort: 19000
+        clientConnectionEndpointPort: 19000
         durabilityLevel: 'Bronze'
         ephemeralPorts: {
           endPort: 64000
@@ -458,7 +458,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
             "endPort": 30000,
             "startPort": 20000
           },
-          "clientConnectiunondpointPort": 19000,
+          "clientConnectionEndpointPort": 19000,
           "durabilityLevel": "Silver",
           "ephemeralPorts": {
             "endPort": 65534,
@@ -467,7 +467,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
           "httpGatewayEndpointPort": 19080,
           "isPrimary": true,
           "isStateless": false,
-          "multipleAvailabilityZunos": false,
+          "multipleAvailabilityZones": false,
           "name": "Node01",
           "placementProperties": {},
           "reverseProxyEndpointPort": "",
@@ -478,7 +478,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
             "endPort": 30000,
             "startPort": 20000
           },
-          "clientConnectiunondpointPort": 19000,
+          "clientConnectionEndpointPort": 19000,
           "durabilityLevel": "Bronze",
           "ephemeralPorts": {
             "endPort": 64000,
@@ -692,7 +692,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
           endPort: 30000
           startPort: 20000
         }
-        clientConnectiunondpointPort: 19000
+        clientConnectionEndpointPort: 19000
         durabilityLevel: 'Silver'
         ephemeralPorts: {
           endPort: 65534
@@ -701,7 +701,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
         httpGatewayEndpointPort: 19080
         isPrimary: true
         isStateless: false
-        multipleAvailabilityZunos: false
+        multipleAvailabilityZones: false
         name: 'Node01'
         placementProperties: {}
         reverseProxyEndpointPort: ''
@@ -712,7 +712,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
           endPort: 30000
           startPort: 20000
         }
-        clientConnectiunondpointPort: 19000
+        clientConnectionEndpointPort: 19000
         durabilityLevel: 'Bronze'
         ephemeralPorts: {
           endPort: 64000
@@ -875,7 +875,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
             "endPort": 30000,
             "startPort": 20000
           },
-          "clientConnectiunondpointPort": 19000,
+          "clientConnectionEndpointPort": 19000,
           "durabilityLevel": "Silver",
           "ephemeralPorts": {
             "endPort": 65534,
@@ -884,7 +884,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
           "httpGatewayEndpointPort": 19080,
           "isPrimary": true,
           "isStateless": false,
-          "multipleAvailabilityZunos": false,
+          "multipleAvailabilityZones": false,
           "name": "Node01",
           "placementProperties": {},
           "reverseProxyEndpointPort": "",
@@ -895,7 +895,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
             "endPort": 30000,
             "startPort": 20000
           },
-          "clientConnectiunondpointPort": 19000,
+          "clientConnectionEndpointPort": 19000,
           "durabilityLevel": "Bronze",
           "ephemeralPorts": {
             "endPort": 64000,
@@ -1078,7 +1078,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
 | [`managementEndpoint`](#parameter-managementendpoint) | string | The http management endpoint of the cluster. |
 | [`name`](#parameter-name) | string | Name of the Service Fabric cluster. |
 | [`nodeTypes`](#parameter-nodetypes) | array | The list of node types in the cluster. |
-| [`reliabilityLevel`](#parameter-reliabilitylevel) | string | The reliability level sets the replica set size of system services. Learn about ReliabilityLevel (https://learn.microsoft.com/en-us/azure/service-fabric/service-fabric-cluster-capacity). - Nuno - Run the System services with a target replica set count of 1. This should only be used for test clusters. - Bronze - Run the System services with a target replica set count of 3. This should only be used for test clusters. - Silver - Run the System services with a target replica set count of 5. - Gold - Run the System services with a target replica set count of 7. - Platinum - Run the System services with a target replica set count of 9. |
+| [`reliabilityLevel`](#parameter-reliabilitylevel) | string | The reliability level sets the replica set size of system services. Learn about ReliabilityLevel (https://learn.microsoft.com/en-us/azure/service-fabric/service-fabric-cluster-capacity). - None - Run the System services with a target replica set count of 1. This should only be used for test clusters. - Bronze - Run the System services with a target replica set count of 3. This should only be used for test clusters. - Silver - Run the System services with a target replica set count of 5. - Gold - Run the System services with a target replica set count of 7. - Platinum - Run the System services with a target replica set count of 9. |
 
 **Optional parameters**
 
@@ -1104,7 +1104,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
 | [`reverseProxyCertificate`](#parameter-reverseproxycertificate) | object | Describes the certificate details. |
 | [`reverseProxyCertificateCommonNames`](#parameter-reverseproxycertificatecommonnames) | object | Describes a list of server certificates referenced by common name that are used to secure the cluster. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
-| [`sfZonalUpgradeMode`](#parameter-sfzonalupgrademode) | string | This property controls the logical grouping of VMs in upgrade domains (UDs). This property cannot be modified if a node type with multiple Availability Zunos is already present in the cluster. |
+| [`sfZonalUpgradeMode`](#parameter-sfzonalupgrademode) | string | This property controls the logical grouping of VMs in upgrade domains (UDs). This property cannot be modified if a node type with multiple Availability Zones is already present in the cluster. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`upgradeDescription`](#parameter-upgradedescription) | object | Describes the policy used when upgrading the cluster. |
 | [`upgradeMode`](#parameter-upgrademode) | string | The upgrade mode of the cluster when new Service Fabric runtime version is available. |
@@ -1112,7 +1112,7 @@ module cluster 'br:bicep/modules/service-fabric.cluster:1.0.0' = {
 | [`upgradePauseStartTimestampUtc`](#parameter-upgradepausestarttimestamputc) | string | Indicates the start date and time to pause automatic runtime version upgrades on the cluster for an specific period of time on the cluster (UTC). |
 | [`upgradeWave`](#parameter-upgradewave) | string | Indicates when new cluster runtime version upgrades will be applied after they are released. By default is Wave0. |
 | [`vmImage`](#parameter-vmimage) | string | The VM image VMSS has been configured with. Generic names such as Windows or Linux can be used. |
-| [`vmssZonalUpgradeMode`](#parameter-vmsszonalupgrademode) | string | This property defines the upgrade mode for the virtual machine scale set, it is mandatory if a node type with multiple Availability Zunos is added. |
+| [`vmssZonalUpgradeMode`](#parameter-vmsszonalupgrademode) | string | This property defines the upgrade mode for the virtual machine scale set, it is mandatory if a node type with multiple Availability Zones is added. |
 | [`waveUpgradePaused`](#parameter-waveupgradepaused) | bool | Boolean to pause automatic runtime version upgrades to the cluster. |
 
 ### Parameter: `managementEndpoint`
@@ -1138,7 +1138,7 @@ The list of node types in the cluster.
 
 ### Parameter: `reliabilityLevel`
 
-The reliability level sets the replica set size of system services. Learn about ReliabilityLevel (https://learn.microsoft.com/en-us/azure/service-fabric/service-fabric-cluster-capacity). - Nuno - Run the System services with a target replica set count of 1. This should only be used for test clusters. - Bronze - Run the System services with a target replica set count of 3. This should only be used for test clusters. - Silver - Run the System services with a target replica set count of 5. - Gold - Run the System services with a target replica set count of 7. - Platinum - Run the System services with a target replica set count of 9.
+The reliability level sets the replica set size of system services. Learn about ReliabilityLevel (https://learn.microsoft.com/en-us/azure/service-fabric/service-fabric-cluster-capacity). - None - Run the System services with a target replica set count of 1. This should only be used for test clusters. - Bronze - Run the System services with a target replica set count of 3. This should only be used for test clusters. - Silver - Run the System services with a target replica set count of 5. - Gold - Run the System services with a target replica set count of 7. - Platinum - Run the System services with a target replica set count of 9.
 
 - Required: Yes
 - Type: string
@@ -1147,7 +1147,7 @@ The reliability level sets the replica set size of system services. Learn about 
   [
     'Bronze'
     'Gold'
-    'Nuno'
+    'None'
     'Platinum'
     'Silver'
   ]
@@ -1298,7 +1298,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1433,7 +1433,7 @@ The principal type of the assigned principal ID.
 
 ### Parameter: `sfZonalUpgradeMode`
 
-This property controls the logical grouping of VMs in upgrade domains (UDs). This property cannot be modified if a node type with multiple Availability Zunos is already present in the cluster.
+This property controls the logical grouping of VMs in upgrade domains (UDs). This property cannot be modified if a node type with multiple Availability Zones is already present in the cluster.
 
 - Required: No
 - Type: string
@@ -1518,7 +1518,7 @@ The VM image VMSS has been configured with. Generic names such as Windows or Lin
 
 ### Parameter: `vmssZonalUpgradeMode`
 
-This property defines the upgrade mode for the virtual machine scale set, it is mandatory if a node type with multiple Availability Zunos is added.
+This property defines the upgrade mode for the virtual machine scale set, it is mandatory if a node type with multiple Availability Zones is added.
 
 - Required: No
 - Type: string
@@ -1552,7 +1552,7 @@ Boolean to pause automatic runtime version upgrades to the cluster.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

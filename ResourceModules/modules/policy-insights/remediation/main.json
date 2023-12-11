@@ -137,7 +137,7 @@
       "scope": "[format('Microsoft.Management/managementGroups/{0}', parameters('managementGroupId'))]",
       "location": "[deployment().location]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -333,7 +333,7 @@
       "subscriptionId": "[parameters('subscriptionId')]",
       "location": "[deployment().location]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -529,7 +529,7 @@
       "subscriptionId": "[parameters('subscriptionId')]",
       "resourceGroup": "[parameters('resourceGroupName')]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",

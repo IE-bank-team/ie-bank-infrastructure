@@ -123,7 +123,7 @@ module backupVault 'br:bicep/modules/data-protection.backup-vault:1.0.0' = {
                   repeatingTimeIntervals: [
                     'R/2022-05-31T23:30:00+01:00/P1D'
                   ]
-                  timeZuno: 'W. Europe Standard Time'
+                  timeZone: 'W. Europe Standard Time'
                 }
                 taggingCriteria: [
                   {
@@ -240,7 +240,7 @@ module backupVault 'br:bicep/modules/data-protection.backup-vault:1.0.0' = {
                     "repeatingTimeIntervals": [
                       "R/2022-05-31T23:30:00+01:00/P1D"
                     ],
-                    "timeZuno": "W. Europe Standard Time"
+                    "timeZone": "W. Europe Standard Time"
                   },
                   "taggingCriteria": [
                     {
@@ -367,7 +367,7 @@ module backupVault 'br:bicep/modules/data-protection.backup-vault:1.0.0' = {
                   repeatingTimeIntervals: [
                     'R/2022-05-31T23:30:00+01:00/P1D'
                   ]
-                  timeZuno: 'W. Europe Standard Time'
+                  timeZone: 'W. Europe Standard Time'
                 }
                 taggingCriteria: [
                   {
@@ -467,7 +467,7 @@ module backupVault 'br:bicep/modules/data-protection.backup-vault:1.0.0' = {
                     "repeatingTimeIntervals": [
                       "R/2022-05-31T23:30:00+01:00/P1D"
                     ],
-                    "timeZuno": "W. Europe Standard Time"
+                    "timeZone": "W. Europe Standard Time"
                   },
                   "taggingCriteria": [
                     {
@@ -547,7 +547,7 @@ module backupVault 'br:bicep/modules/data-protection.backup-vault:1.0.0' = {
 | :-- | :-- | :-- |
 | [`azureMonitorAlertSettingsAlertsForAllJobFailures`](#parameter-azuremonitoralertsettingsalertsforalljobfailures) | string | Settings for Azure Monitor based alerts for job failures. |
 | [`backupPolicies`](#parameter-backuppolicies) | array | List of all backup policies. |
-| [`dataStoreType`](#parameter-datastoretype) | string | The datastore type to use. ArchiveStore does not support ZunoRedundancy. |
+| [`dataStoreType`](#parameter-datastoretype) | string | The datastore type to use. ArchiveStore does not support ZoneRedundancy. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`featureSettings`](#parameter-featuresettings) | object | Feature settings for the backup vault. |
 | [`location`](#parameter-location) | string | Location for all resources. |
@@ -590,7 +590,7 @@ List of all backup policies.
 
 ### Parameter: `dataStoreType`
 
-The datastore type to use. ArchiveStore does not support ZunoRedundancy.
+The datastore type to use. ArchiveStore does not support ZoneRedundancy.
 
 - Required: No
 - Type: string
@@ -652,7 +652,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -800,7 +800,7 @@ The vault redundancy level to use.
   [
     'GeoRedundant'
     'LocallyRedundant'
-    'ZunoRedundant'
+    'ZoneRedundant'
   ]
   ```
 
@@ -817,7 +817,7 @@ The vault redundancy level to use.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 
@@ -845,7 +845,7 @@ Create backup policies in the backupvault.
                                 "repeatingTimeIntervals": [
                                     "R/2022-05-31T23:30:00+01:00/P1D"
                                 ],
-                                "timeZuno": "W. Europe Standard Time"
+                                "timeZone": "W. Europe Standard Time"
                             },
                             "taggingCriteria": [
                                 {
@@ -917,7 +917,7 @@ backupPolicies: [
                             repeatingTimeIntervals: [
                                 'R/2022-05-31T23:30:00+01:00/P1D'
                             ]
-                            timeZuno: 'W. Europe Standard Time'
+                            timeZone: 'W. Europe Standard Time'
                         }
                         taggingCriteria: [
                             {

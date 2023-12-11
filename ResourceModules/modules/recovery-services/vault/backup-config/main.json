@@ -15,7 +15,7 @@
     "recoveryVaultName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment."
       }
     },
     "name": {
@@ -60,8 +60,8 @@
       "allowedValues": [
         "GeoRedundant",
         "LocallyRedundant",
-        "ReadAccessGeoZunoRedundant",
-        "ZunoRedundant"
+        "ReadAccessGeoZoneRedundant",
+        "ZoneRedundant"
       ],
       "metadata": {
         "description": "Optional. Storage type."
@@ -73,8 +73,8 @@
       "allowedValues": [
         "GeoRedundant",
         "LocallyRedundant",
-        "ReadAccessGeoZunoRedundant",
-        "ZunoRedundant"
+        "ReadAccessGeoZoneRedundant",
+        "ZoneRedundant"
       ],
       "metadata": {
         "description": "Optional. Storage type."

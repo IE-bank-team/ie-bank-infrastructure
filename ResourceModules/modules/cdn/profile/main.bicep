@@ -100,7 +100,7 @@ resource profile 'Microsoft.Cdn/profiles@2023-05-01' = {
   tags: tags
 }
 
-resource profile_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource profile_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -157,7 +157,7 @@ module profile_custom_domain 'customdomain/main.bicep' = [for (customDomain, ind
     name: customDomain.name
     profileName: profile.name
     hostName: customDomain.hostName
-    azureDnsZunoResourceId: contains(customDomain, 'azureDnsZunoResourceId') ? customDomain.azureDnsZunoResourceId : ''
+    azureDnsZoneResourceId: contains(customDomain, 'azureDnsZoneResourceId') ? customDomain.azureDnsZoneResourceId : ''
     extendedProperties: contains(customDomain, 'extendedProperties') ? customDomain.extendedProperties : {}
     certificateType: customDomain.certificateType
     minimumTlsVersion: contains(customDomain, 'minimumTlsVersion') ? customDomain.minimumTlsVersion : 'TLS12'
@@ -234,7 +234,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

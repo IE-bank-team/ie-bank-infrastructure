@@ -50,7 +50,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -179,7 +179,7 @@
     "workspaceName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent health data services workspace. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent health data services workspace. Required if the template is used in a standalone deployment."
       }
     },
     "corsOrigins": {
@@ -323,7 +323,7 @@
       ]
     },
     "dicom_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.HealthcareApis/workspaces/{0}/dicomservices/{1}', parameters('workspaceName'), parameters('name'))]",

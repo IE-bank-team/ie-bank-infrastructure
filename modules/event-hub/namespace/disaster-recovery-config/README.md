@@ -27,7 +27,7 @@ This module deploys an Event Hub Namespace Disaster Recovery Config.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent event hub namespace. Required if the template is used in a standaluno deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent event hub namespace. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -45,7 +45,7 @@ The name of the disaster recovery config.
 
 ### Parameter: `namespaceName`
 
-The name of the parent event hub namespace. Required if the template is used in a standaluno deployment.
+The name of the parent event hub namespace. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -77,4 +77,4 @@ Resource ID of the Primary/Secondary event hub namespace name, which is part of 
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

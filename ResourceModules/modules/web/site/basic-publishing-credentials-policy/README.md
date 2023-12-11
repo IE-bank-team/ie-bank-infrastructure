@@ -27,7 +27,7 @@ This module deploys a Web Site Basic Publishing Credentials Policy.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`webAppName`](#parameter-webappname) | string | The name of the parent web site. Required if the template is used in a standaluno deployment. |
+| [`webAppName`](#parameter-webappname) | string | The name of the parent web site. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -53,7 +53,7 @@ The name of the resource.
 
 ### Parameter: `webAppName`
 
-The name of the parent web site. Required if the template is used in a standaluno deployment.
+The name of the parent web site. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -94,4 +94,4 @@ Location for all Resources.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

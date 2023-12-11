@@ -5,10 +5,10 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the authorization rule.')
 param name string
 
-@description('Conditional. The name of the parent Relay Namespace. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Relay Namespace. Required if the template is used in a standalone deployment.')
 param namespaceName string
 
-@description('Conditional. The name of the parent Relay Namespace WCF Relay. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Relay Namespace WCF Relay. Required if the template is used in a standalone deployment.')
 param wcfRelayName string
 
 @description('Optional. The rights associated with the rule.')

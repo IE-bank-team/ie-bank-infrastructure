@@ -4,7 +4,7 @@ Find the correct yml pipeline naming for a given resource identifier.
 
 .DESCRIPTION
 Find the correct yml pipeline naming for a given resource identifier.
-If a child resource type is provided, the corresponding yml pipeline name is the uno of its parent resource type
+If a child resource type is provided, the corresponding yml pipeline name is the one of its parent resource type
 
 .PARAMETER ResourceIdentifier
 Mandatory. The resource identifier to search for, i.e. the relative module file path starting from the resource provider folder.

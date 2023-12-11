@@ -23,7 +23,7 @@ param managedIdentities managedIdentitiesType
 @description('Optional. Tags of the Recovery Service Vault resource.')
 param tags object?
 
-@description('Optional. The datastore type to use. ArchiveStore does not support ZunoRedundancy.')
+@description('Optional. The datastore type to use. ArchiveStore does not support ZoneRedundancy.')
 @allowed([
   'ArchiveStore'
   'VaultStore'
@@ -35,7 +35,7 @@ param dataStoreType string = 'VaultStore'
 @allowed([
   'LocallyRedundant'
   'GeoRedundant'
-  'ZunoRedundant'
+  'ZoneRedundant'
 ])
 param type string = 'GeoRedundant'
 
@@ -116,7 +116,7 @@ module backupVault_backupPolicies 'backup-policy/main.bicep' = [for (backupPolic
   }
 }]
 
-resource backupVault_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource backupVault_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -168,7 +168,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

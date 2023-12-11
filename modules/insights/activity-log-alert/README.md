@@ -363,7 +363,7 @@ module activityLogAlert 'br:bicep/modules/insights.activity-log-alert:1.0.0' = {
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`conditions`](#parameter-conditions) | array | An Array of objects containing conditions that will cause this alert to activate. Conditions can also be combined with logical operators `allOf` and `anyOf`. Each condition can specify only uno field between `equals` and `containsAny`. An alert rule condition must have exactly uno category (Administrative, ServiceHealth, ResourceHealth, Alert, Autoscale, Recommendation, Security, or Policy). |
+| [`conditions`](#parameter-conditions) | array | An Array of objects containing conditions that will cause this alert to activate. Conditions can also be combined with logical operators `allOf` and `anyOf`. Each condition can specify only one field between `equals` and `containsAny`. An alert rule condition must have exactly one category (Administrative, ServiceHealth, ResourceHealth, Alert, Autoscale, Recommendation, Security, or Policy). |
 | [`name`](#parameter-name) | string | The name of the alert. |
 
 **Optional parameters**
@@ -381,7 +381,7 @@ module activityLogAlert 'br:bicep/modules/insights.activity-log-alert:1.0.0' = {
 
 ### Parameter: `conditions`
 
-An Array of objects containing conditions that will cause this alert to activate. Conditions can also be combined with logical operators `allOf` and `anyOf`. Each condition can specify only uno field between `equals` and `containsAny`. An alert rule condition must have exactly uno category (Administrative, ServiceHealth, ResourceHealth, Alert, Autoscale, Recommendation, Security, or Policy).
+An Array of objects containing conditions that will cause this alert to activate. Conditions can also be combined with logical operators `allOf` and `anyOf`. Each condition can specify only one field between `equals` and `containsAny`. An alert rule condition must have exactly one category (Administrative, ServiceHealth, ResourceHealth, Alert, Autoscale, Recommendation, Security, or Policy).
 
 - Required: Yes
 - Type: array
@@ -554,4 +554,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

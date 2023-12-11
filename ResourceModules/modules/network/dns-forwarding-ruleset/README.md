@@ -434,7 +434,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -562,4 +562,4 @@ Array of virtual network links.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

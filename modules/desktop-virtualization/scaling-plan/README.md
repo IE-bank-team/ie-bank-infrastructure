@@ -486,7 +486,7 @@ module scalingPlan 'br:bicep/modules/desktop-virtualization.scaling-plan:1.0.0' 
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignment objects that contain the 'roleDefinitionIdOrName' and 'principalIds' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: '/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11'. |
 | [`schedules`](#parameter-schedules) | array | The schedules related to this scaling plan. If no value is provided a default schedule will be provided. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
-| [`timeZuno`](#parameter-timezuno) | string | Timezuno to be used for the scaling plan. |
+| [`timeZone`](#parameter-timezone) | string | Timezone to be used for the scaling plan. |
 
 ### Parameter: `name`
 
@@ -786,9 +786,9 @@ Tags of the resource.
 - Required: No
 - Type: object
 
-### Parameter: `timeZuno`
+### Parameter: `timeZone`
 
-Timezuno to be used for the scaling plan.
+Timezone to be used for the scaling plan.
 
 - Required: No
 - Type: string
@@ -806,4 +806,4 @@ Timezuno to be used for the scaling plan.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

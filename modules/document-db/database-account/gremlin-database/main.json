@@ -54,7 +54,7 @@
     "databaseAccountName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent Gremlin database. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent Gremlin database. Required if the template is used in a standalone deployment."
       }
     },
     "graphs": {
@@ -134,7 +134,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-gremlindb-{1}', uniqueString(deployment().name, parameters('name')), parameters('graphs')[copyIndex()].name)]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -192,13 +192,13 @@
             "databaseAccountName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Database Account. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent Database Account. Required if the template is used in a standalone deployment."
               }
             },
             "gremlinDatabaseName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Gremlin Database. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent Gremlin Database. Required if the template is used in a standalone deployment."
               }
             },
             "indexingPolicy": {
@@ -212,7 +212,7 @@
               "type": "array",
               "defaultValue": [],
               "metadata": {
-                "description": "Optional. List of paths using which data within the container can be partitiunod."
+                "description": "Optional. List of paths using which data within the container can be partitioned."
               }
             }
           },

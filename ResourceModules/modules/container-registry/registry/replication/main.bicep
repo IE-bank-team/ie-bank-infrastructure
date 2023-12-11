@@ -2,7 +2,7 @@ metadata name = 'Azure Container Registry (ACR) Replications'
 metadata description = 'This module deploys an Azure Container Registry (ACR) Replication.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent registry. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent registry. Required if the template is used in a standalone deployment.')
 param registryName string
 
 @description('Required. The name of the replication.')
@@ -15,14 +15,14 @@ param location string = resourceGroup().location
 param tags object?
 
 @description('Optional. Specifies whether the replication regional endpoint is enabled. Requests will not be routed to a replication whose regional endpoint is disabled, however its data will continue to be synced with other replications.')
-param regiunondpointEnabled bool = true
+param regionEndpointEnabled bool = true
 
 @allowed([
   'Disabled'
   'Enabled'
 ])
-@description('Optional. Whether or not zuno redundancy is enabled for this container registry.')
-param zunoRedundancy string = 'Disabled'
+@description('Optional. Whether or not zone redundancy is enabled for this container registry.')
+param zoneRedundancy string = 'Disabled'
 
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')
 param enableDefaultTelemetry bool = true
@@ -49,8 +49,8 @@ resource replication 'Microsoft.ContainerRegistry/registries/replications@2023-0
   location: location
   tags: tags
   properties: {
-    regiunondpointEnabled: regiunondpointEnabled
-    zunoRedundancy: zunoRedundancy
+    regionEndpointEnabled: regionEndpointEnabled
+    zoneRedundancy: zoneRedundancy
   }
 }
 

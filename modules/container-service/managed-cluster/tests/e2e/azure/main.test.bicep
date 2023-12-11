@@ -45,7 +45,7 @@ module nestedDependencies 'dependencies.bicep' = {
     proximityPlacementGroupName: 'dep-${namePrefix}-ppg-${serviceShort}'
     // Adding base time to make the name unique as purge protection must be enabled (but may not be longer than 24 characters total)
     keyVaultName: 'dep-${namePrefix}-kv-${serviceShort}-${substring(uniqueString(baseTime), 0, 3)}'
-    dnsZunoName: 'dep-${namePrefix}-dns-${serviceShort}.com'
+    dnsZoneName: 'dep-${namePrefix}-dns-${serviceShort}.com'
     logAnalyticsWorkspaceName: 'dep-${namePrefix}-law-${serviceShort}'
   }
 }
@@ -76,7 +76,7 @@ module testDeployment '../../../main.bicep' = {
     name: '${namePrefix}${serviceShort}001'
     primaryAgentPoolProfile: [
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 1
@@ -97,7 +97,7 @@ module testDeployment '../../../main.bicep' = {
     ]
     agentPools: [
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 2
@@ -123,7 +123,7 @@ module testDeployment '../../../main.bicep' = {
         proximityPlacementGroupResourceId: nestedDependencies.outputs.proximityPlacementGroupResourceId
       }
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 2
@@ -261,7 +261,7 @@ module testDeployment '../../../main.bicep' = {
               dependsOn: []
               timeoutInSeconds: 600
               syncIntervalInSeconds: 600
-              validation: 'nuno'
+              validation: 'none'
               prune: true
             }
             apps: {

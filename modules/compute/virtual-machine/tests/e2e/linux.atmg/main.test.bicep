@@ -79,7 +79,7 @@ module testDeployment '../../../main.bicep' = {
                 Role: 'DeploymentValidation'
               }
             }
-            zunos: [
+            zones: [
               '1'
               '2'
               '3'

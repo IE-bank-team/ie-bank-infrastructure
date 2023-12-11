@@ -29,7 +29,7 @@ This module deploys an API Management Service Named Value.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standaluno deployment. |
+| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -57,7 +57,7 @@ Named value Name.
 
 ### Parameter: `apiManagementServiceName`
 
-The name of the parent API Management service. Required if the template is used in a standaluno deployment.
+The name of the parent API Management service. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -112,7 +112,7 @@ Value of the NamedValue. Can contain policy expressions. It may not be empty or 
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

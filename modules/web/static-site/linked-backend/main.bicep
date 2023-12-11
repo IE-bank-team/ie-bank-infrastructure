@@ -8,7 +8,7 @@ param backendResourceId string
 @description('Optional. The region of the backend linked to the static site.')
 param region string = resourceGroup().location
 
-@description('Conditional. The name of the parent Static Web App. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Static Web App. Required if the template is used in a standalone deployment.')
 param staticSiteName string
 
 @description('Optional. Name of the backend to link to the static site.')

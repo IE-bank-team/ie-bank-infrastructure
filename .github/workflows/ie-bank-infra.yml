@@ -16,7 +16,7 @@ env:
   SUBSCRIPTION_ID_DEV: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
   SUBSCRIPTION_ID_UAT: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
   SUBSCRIPTION_ID_PROD: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
-  USER_ALIAS: uno
+  USER_ALIAS: grp1
 
 jobs:
   build:
@@ -27,8 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ENV: dev
-      DBHOST: uno-dbsrv-dev.postgres.database.azure.com
-      DBNAME: uno-db-dev
+      DBHOST: grp1-dbsrv-dev.postgres.database.azure.com
+      DBNAME: grp1-db-dev
       DBUSER: 'iebankdbadmin'
       DBPASS: 'IE.Bank.DB.Admin.Pa$$'
       FLASK_APP: app.py
@@ -71,14 +71,15 @@ jobs:
           category: checkov
 
   deploy-dev:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'Development'
     env:
       ENV: dev
-      DBHOST: uno-dbsrv-dev.postgres.database.azure.com
-      DBNAME: uno-db-dev
+      DBHOST: grp1-dbsrv-dev.postgres.database.azure.com
+      DBNAME: grp1-db-dev
       DBUSER: 'iebankdbadmin'
       DBPASS: 'IE.Bank.DB.Admin.Pa$$'
       FLASK_APP: app.py
@@ -113,14 +114,15 @@ jobs:
           deploymentName: '${{ github.run_id }}-${{ env.USER_ALIAS }}-dev'
 
   deploy-uat:
+    if: github.event.pull_request.base.ref == 'main' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'User Acceptance Testing'
     env:
       ENV: uat
-      DBHOST: uno-dbsrv-uat.postgres.database.azure.com
-      DBNAME: uno-db-uat
+      DBHOST: grp1-dbsrv-uat.postgres.database.azure.com
+      DBNAME: grp1-db-uat
       DBUSER: 'iebankdbadmin'
       DBPASS: 'IE.Bank.DB.Admin.Pa$$'
       FLASK_APP: app.py
@@ -155,14 +157,15 @@ jobs:
           deploymentName: '${{ github.run_id }}-${{ env.USER_ALIAS }}-uat'
 
   deploy-prod:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'Production'
     env:
       ENV: prod
-      DBHOST: uno-dbsrv-uat.postgres.database.azure.com
-      DBNAME: uno-db-uat
+      DBHOST: grp1-dbsrv-uat.postgres.database.azure.com
+      DBNAME: grp1-db-uat
       DBUSER: 'iebankdbadmin'
       DBPASS: 'IE.Bank.DB.Admin.Pa$$'
       FLASK_APP: app.py

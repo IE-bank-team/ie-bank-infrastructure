@@ -9,7 +9,7 @@ Convert the given template file path into a valid Template Specs repository name
 Mandatory. The template file path to convert
 
 .PARAMETER UseApiSpecsAlignedName
-Optional. If set to true, the returned name will be aligned with the Azure API naming. If not, the uno aligned with the module's folder path. See the following examples:
+Optional. If set to true, the returned name will be aligned with the Azure API naming. If not, the one aligned with the module's folder path. See the following examples:
 - True:  microsoft.keyvault.vaults.secrets
 - False: key-vault.vault.secret
 

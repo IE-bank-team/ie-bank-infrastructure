@@ -291,10 +291,10 @@ module deploymentScript 'br:bicep/modules/resources.deployment-script:1.0.0' = {
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
 | [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. |
 | [`primaryScriptUri`](#parameter-primaryscripturi) | string | Uri for the external script. This is the entry point for the external script. To run an internal script, use the scriptContent instead. |
-| [`retentionInterval`](#parameter-retentioninterval) | string | Interval for which the service retains the script resource after it reaches a terminal state. Resource will be deleted when this duration expires. Duration is based on ISO 8601 pattern (for example P7D means uno week). |
+| [`retentionInterval`](#parameter-retentioninterval) | string | Interval for which the service retains the script resource after it reaches a terminal state. Resource will be deleted when this duration expires. Duration is based on ISO 8601 pattern (for example P7D means one week). |
 | [`runOnce`](#parameter-runonce) | bool | When set to false, script will run every time the template is deployed. When set to true, the script will only run once. |
 | [`scriptContent`](#parameter-scriptcontent) | string | Script body. Max length: 32000 characters. To run an external script, use primaryScriptURI instead. |
-| [`storageAccountResourceId`](#parameter-storageaccountresourceid) | string | The resource ID of the storage account to use for this deployment script. If nuno is provided, the deployment script uses a temporary, managed storage account. |
+| [`storageAccountResourceId`](#parameter-storageaccountresourceid) | string | The resource ID of the storage account to use for this deployment script. If none is provided, the deployment script uses a temporary, managed storage account. |
 | [`supportingScriptUris`](#parameter-supportingscripturis) | array | List of supporting files for the external script (defined in primaryScriptUri). Does not work with internal scripts (code defined in scriptContent). |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`timeout`](#parameter-timeout) | string | Maximum allowed script execution time specified in ISO 8601 format. Default value is PT1H - 1 hour; 'PT30M' - 30 minutes; 'P5D' - 5 days; 'P1Y' 1 year. |
@@ -347,7 +347,7 @@ The clean up preference when the script execution gets in a terminal state. Spec
   ```Bicep
   [
     'Always'
-    'unoxpiration'
+    'OnExpiration'
     'OnSuccess'
   ]
   ```
@@ -423,7 +423,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -465,7 +465,7 @@ Uri for the external script. This is the entry point for the external script. To
 
 ### Parameter: `retentionInterval`
 
-Interval for which the service retains the script resource after it reaches a terminal state. Resource will be deleted when this duration expires. Duration is based on ISO 8601 pattern (for example P7D means uno week).
+Interval for which the service retains the script resource after it reaches a terminal state. Resource will be deleted when this duration expires. Duration is based on ISO 8601 pattern (for example P7D means one week).
 
 - Required: No
 - Type: string
@@ -489,7 +489,7 @@ Script body. Max length: 32000 characters. To run an external script, use primar
 
 ### Parameter: `storageAccountResourceId`
 
-The resource ID of the storage account to use for this deployment script. If nuno is provided, the deployment script uses a temporary, managed storage account.
+The resource ID of the storage account to use for this deployment script. If none is provided, the deployment script uses a temporary, managed storage account.
 
 - Required: No
 - Type: string
@@ -539,4 +539,4 @@ Do not provide a value! This date value is used to make sure the script run ever
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -1,6 +1,6 @@
-# Public DNS Zuno SRV record `[Microsoft.Network/dnsZunos/SRV]`
+# Public DNS Zone SRV record `[Microsoft.Network/dnsZones/SRV]`
 
-This module deploys a Public DNS Zuno SRV record.
+This module deploys a Public DNS Zone SRV record.
 
 ## Navigation
 
@@ -14,7 +14,7 @@ This module deploys a Public DNS Zuno SRV record.
 | Resource Type | API Version |
 | :-- | :-- |
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
-| `Microsoft.Network/dnsZunos/SRV` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/SRV) |
+| `Microsoft.Network/dnsZones/SRV` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/SRV) |
 
 ## Parameters
 
@@ -28,7 +28,7 @@ This module deploys a Public DNS Zuno SRV record.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`dnsZunoName`](#parameter-dnszunoname) | string | The name of the parent DNS zuno. Required if the template is used in a standaluno deployment. |
+| [`dnsZoneName`](#parameter-dnszonename) | string | The name of the parent DNS zone. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -47,9 +47,9 @@ The name of the SRV record.
 - Required: Yes
 - Type: string
 
-### Parameter: `dnsZunoName`
+### Parameter: `dnsZoneName`
 
-The name of the parent DNS zuno. Required if the template is used in a standaluno deployment.
+The name of the parent DNS zone. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -186,4 +186,4 @@ The TTL (time-to-live) of the records in the record set.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

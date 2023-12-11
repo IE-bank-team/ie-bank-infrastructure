@@ -2,7 +2,7 @@ metadata name = 'Site App Settings'
 metadata description = 'This module deploys a Site App Setting.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent site resource. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent site resource. Required if the template is used in a standalone deployment.')
 param appName string
 
 @description('Required. Type of site to deploy.')
@@ -47,7 +47,7 @@ resource app 'Microsoft.Web/sites@2022-09-01' existing = {
   name: appName
 }
 
-resource appInsight 'Microsoft.Insights/compunonts@2020-02-02' existing = if (!empty(appInsightResourceId)) {
+resource appInsight 'Microsoft.Insights/components@2020-02-02' existing = if (!empty(appInsightResourceId)) {
   name: last(split(appInsightResourceId, '/'))!
   scope: resourceGroup(split(appInsightResourceId, '/')[2], split(appInsightResourceId, '/')[4])
 }

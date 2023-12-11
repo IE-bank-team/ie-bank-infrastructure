@@ -8,7 +8,7 @@ param name string
 @description('Optional. Tags of the Gremlin database resource.')
 param tags object?
 
-@description('Conditional. The name of the parent Gremlin database. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Gremlin database. Required if the template is used in a standalone deployment.')
 param databaseAccountName string
 
 @description('Optional. Array of graphs to deploy in the Gremlin database.')

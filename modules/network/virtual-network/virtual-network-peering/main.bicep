@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Optional. The Name of Vnet Peering resource. If not provided, default value will be localVnetName-remoteVnetName.')
 param name string = '${localVnetName}-${last(split(remoteVirtualNetworkId, '/'))}'
 
-@description('Conditional. The name of the parent Virtual Network to add the peering to. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Virtual Network to add the peering to. Required if the template is used in a standalone deployment.')
 param localVnetName string
 
 @description('Required. The Resource ID of the VNet that is this Local VNet is being peered to. Should be in the format of a Resource ID.')
@@ -23,7 +23,7 @@ param allowVirtualNetworkAccess bool = true
 @description('Optional. If we need to verify the provisioning state of the remote gateway. Default is true.')
 param doNotVerifyRemoteGateways bool = true
 
-@description('Optional. If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only uno peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway. Default is false.')
+@description('Optional. If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway. Default is false.')
 param useRemoteGateways bool = false
 
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')

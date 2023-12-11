@@ -27,7 +27,7 @@ This module deploys a Log Analytics Workspace Data Export.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`workspaceName`](#parameter-workspacename) | string | The name of the parent workspaces. Required if the template is used in a standaluno deployment. |
+| [`workspaceName`](#parameter-workspacename) | string | The name of the parent workspaces. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -47,7 +47,7 @@ The data export rule name.
 
 ### Parameter: `workspaceName`
 
-The name of the parent workspaces. Required if the template is used in a standaluno deployment.
+The name of the parent workspaces. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -95,4 +95,4 @@ An array of tables to export, for example: ['Heartbeat', 'SecurityEvent'].
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

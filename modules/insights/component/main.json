@@ -9,7 +9,7 @@
       "templateHash": "16117162182230487170"
     },
     "name": "Application Insights",
-    "description": "This compunont deploys an Application Insights instance.",
+    "description": "This component deploys an Application Insights instance.",
     "owner": "Azure/module-maintainers"
   },
   "definitions": {
@@ -263,7 +263,7 @@
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optional. The kind of application that this compunont refers to, used to customize UI. This value is a freeform string, values should typically be uno of the following: web, ios, other, store, java, phuno."
+        "description": "Optional. The kind of application that this component refers to, used to customize UI. This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone."
       }
     },
     "location": {
@@ -325,7 +325,7 @@
       }
     },
     "appInsights": {
-      "type": "Microsoft.Insights/compunonts",
+      "type": "Microsoft.Insights/components",
       "apiVersion": "2020-02-02",
       "name": "[parameters('name')]",
       "location": "[parameters('location')]",
@@ -347,8 +347,8 @@
       },
       "type": "Microsoft.Authorization/roleAssignments",
       "apiVersion": "2022-04-01",
-      "scope": "[format('Microsoft.Insights/compunonts/{0}', parameters('name'))]",
-      "name": "[guid(resourceId('Microsoft.Insights/compunonts', parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
+      "scope": "[format('Microsoft.Insights/components/{0}', parameters('name'))]",
+      "name": "[guid(resourceId('Microsoft.Insights/components', parameters('name')), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId, coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
       "properties": {
         "roleDefinitionId": "[if(contains(variables('builtInRoleNames'), coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName), variables('builtInRoleNames')[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName], coalesce(parameters('roleAssignments'), createArray())[copyIndex()].roleDefinitionIdOrName)]",
         "principalId": "[coalesce(parameters('roleAssignments'), createArray())[copyIndex()].principalId]",
@@ -369,7 +369,7 @@
       },
       "type": "Microsoft.Insights/diagnosticSettings",
       "apiVersion": "2021-05-01-preview",
-      "scope": "[format('Microsoft.Insights/compunonts/{0}', parameters('name'))]",
+      "scope": "[format('Microsoft.Insights/components/{0}', parameters('name'))]",
       "name": "[coalesce(tryGet(coalesce(parameters('diagnosticSettings'), createArray())[copyIndex()], 'name'), format('{0}-diagnosticSettings', parameters('name')))]",
       "properties": {
         "storageAccountId": "[tryGet(coalesce(parameters('diagnosticSettings'), createArray())[copyIndex()], 'storageAccountResourceId')]",
@@ -390,28 +390,28 @@
     "name": {
       "type": "string",
       "metadata": {
-        "description": "The name of the application insights compunont."
+        "description": "The name of the application insights component."
       },
       "value": "[parameters('name')]"
     },
     "resourceId": {
       "type": "string",
       "metadata": {
-        "description": "The resource ID of the application insights compunont."
+        "description": "The resource ID of the application insights component."
       },
-      "value": "[resourceId('Microsoft.Insights/compunonts', parameters('name'))]"
+      "value": "[resourceId('Microsoft.Insights/components', parameters('name'))]"
     },
     "resourceGroupName": {
       "type": "string",
       "metadata": {
-        "description": "The resource group the application insights compunont was deployed into."
+        "description": "The resource group the application insights component was deployed into."
       },
       "value": "[resourceGroup().name]"
     },
     "applicationId": {
       "type": "string",
       "metadata": {
-        "description": "The application ID of the application insights compunont."
+        "description": "The application ID of the application insights component."
       },
       "value": "[reference('appInsights').AppId]"
     },
@@ -425,7 +425,7 @@
     "instrumentationKey": {
       "type": "string",
       "metadata": {
-        "description": "Application Insights Instrumentation key. A read-only value that applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new Application Insights compunont."
+        "description": "Application Insights Instrumentation key. A read-only value that applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new Application Insights component."
       },
       "value": "[reference('appInsights').InstrumentationKey]"
     }

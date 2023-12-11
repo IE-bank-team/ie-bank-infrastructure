@@ -30,8 +30,8 @@ This module deploys a Healthcare API Workspace IoT Connector FHIR Destination.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`iotConnectorName`](#parameter-iotconnectorname) | string | The name of the MedTech service to add this destination to. Required if the template is used in a standaluno deployment. |
-| [`workspaceName`](#parameter-workspacename) | string | The name of the parent health data services workspace. Required if the template is used in a standaluno deployment. |
+| [`iotConnectorName`](#parameter-iotconnectorname) | string | The name of the MedTech service to add this destination to. Required if the template is used in a standalone deployment. |
+| [`workspaceName`](#parameter-workspacename) | string | The name of the parent health data services workspace. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -71,14 +71,14 @@ The name of the FHIR destination.
 
 ### Parameter: `iotConnectorName`
 
-The name of the MedTech service to add this destination to. Required if the template is used in a standaluno deployment.
+The name of the MedTech service to add this destination to. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `workspaceName`
 
-The name of the parent health data services workspace. Required if the template is used in a standaluno deployment.
+The name of the parent health data services workspace. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -127,7 +127,7 @@ Determines how resource identity is resolved on the destination.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

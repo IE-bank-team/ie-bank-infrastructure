@@ -1,4 +1,4 @@
-# Data Collection Endpoints `[Microsoft.Insights/dataCollectiunondpoints]`
+# Data Collection Endpoints `[Microsoft.Insights/dataCollectionEndpoints]`
 
 This module deploys a Data Collection Endpoint.
 
@@ -16,7 +16,7 @@ This module deploys a Data Collection Endpoint.
 | :-- | :-- |
 | `Microsoft.Authorization/locks` | [2020-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2020-05-01/locks) |
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
-| `Microsoft.Insights/dataCollectiunondpoints` | [2021-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2021-04-01/dataCollectiunondpoints) |
+| `Microsoft.Insights/dataCollectionEndpoints` | [2021-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2021-04-01/dataCollectionEndpoints) |
 
 ## Usage examples
 
@@ -40,7 +40,7 @@ This instance deploys the module with the minimum set of required parameters.
 <summary>via Bicep module</summary>
 
 ```bicep
-module dataCollectiunondpoint 'br:bicep/modules/insights.data-collection-endpoint:1.0.0' = {
+module dataCollectionEndpoint 'br:bicep/modules/insights.data-collection-endpoint:1.0.0' = {
   name: '${uniqueString(deployment().name, location)}-test-idcemin'
   params: {
     // Required parameters
@@ -88,7 +88,7 @@ This instance deploys the module with most of its features enabled.
 <summary>via Bicep module</summary>
 
 ```bicep
-module dataCollectiunondpoint 'br:bicep/modules/insights.data-collection-endpoint:1.0.0' = {
+module dataCollectionEndpoint 'br:bicep/modules/insights.data-collection-endpoint:1.0.0' = {
   name: '${uniqueString(deployment().name, location)}-test-idcemax'
   params: {
     // Required parameters
@@ -182,7 +182,7 @@ This instance deploys the module in alignment with the best-practices of the Azu
 <summary>via Bicep module</summary>
 
 ```bicep
-module dataCollectiunondpoint 'br:bicep/modules/insights.data-collection-endpoint:1.0.0' = {
+module dataCollectionEndpoint 'br:bicep/modules/insights.data-collection-endpoint:1.0.0' = {
   name: '${uniqueString(deployment().name, location)}-test-idcewaf'
   params: {
     // Required parameters
@@ -349,7 +349,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -478,10 +478,10 @@ Resource tags.
 | Output | Type | Description |
 | :-- | :-- | :-- |
 | `location` | string | The location the resource was deployed into. |
-| `name` | string | The name of the dataCollectiunondpoint. |
-| `resourceGroupName` | string | The name of the resource group the dataCollectiunondpoint was created in. |
-| `resourceId` | string | The resource ID of the dataCollectiunondpoint. |
+| `name` | string | The name of the dataCollectionEndpoint. |
+| `resourceGroupName` | string | The name of the resource group the dataCollectionEndpoint was created in. |
+| `resourceId` | string | The resource ID of the dataCollectionEndpoint. |
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

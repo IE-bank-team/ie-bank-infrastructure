@@ -30,7 +30,7 @@ This module deploys a User Assigned Identity Federated Identity Credential.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`userAssignedIdentityName`](#parameter-userassignedidentityname) | string | The name of the parent user assigned identity. Required if the template is used in a standaluno deployment. |
+| [`userAssignedIdentityName`](#parameter-userassignedidentityname) | string | The name of the parent user assigned identity. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -68,7 +68,7 @@ The identifier of the external software workload within the external identity pr
 
 ### Parameter: `userAssignedIdentityName`
 
-The name of the parent user assigned identity. Required if the template is used in a standaluno deployment.
+The name of the parent user assigned identity. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -92,4 +92,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

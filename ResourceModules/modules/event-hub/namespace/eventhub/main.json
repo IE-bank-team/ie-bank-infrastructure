@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -109,7 +109,7 @@
     "namespaceName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent event hub namespace. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent event hub namespace. Required if the template is used in a standalone deployment."
       }
     },
     "name": {
@@ -221,14 +221,14 @@
         "description": "Optional. Resource ID of the storage account to be used to create the blobs."
       }
     },
-    "captureDescriptiunonabled": {
+    "captureDescriptionEnabled": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
         "description": "Optional. A value that indicates whether capture description is enabled."
       }
     },
-    "captureDescriptiunoncoding": {
+    "captureDescriptionEncoding": {
       "type": "string",
       "defaultValue": "Avro",
       "allowedValues": [
@@ -284,13 +284,13 @@
         "description": "Optional. Retention time in hours. Number of hours to retain the events for this Event Hub. This value is only used when cleanupPolicy is Delete. If cleanupPolicy is Compact the returned value of this property is Long.MaxValue."
       }
     },
-    "retentionDescriptionTombstunoRetentionTimeInHours": {
+    "retentionDescriptionTombstoneRetentionTimeInHours": {
       "type": "int",
       "defaultValue": 1,
       "minValue": 1,
       "maxValue": 168,
       "metadata": {
-        "description": "Optional. Retention cleanup policy. Number of hours to retain the tombstuno markers of a compacted Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstuno marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key described by the tombstuno marker within the compacted Event Hub."
+        "description": "Optional. Retention cleanup policy. Number of hours to retain the tombstone markers of a compacted Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstone marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key described by the tombstone marker within the compacted Event Hub."
       }
     },
     "enableDefaultTelemetry": {
@@ -310,7 +310,7 @@
       "retentionDescription": {
         "cleanupPolicy": "[parameters('retentionDescriptionCleanupPolicy')]",
         "retentionTimeInHours": "[if(equals(parameters('retentionDescriptionCleanupPolicy'), 'Delete'), parameters('retentionDescriptionRetentionTimeInHours'), null())]",
-        "tombstunoRetentionTimeInHours": "[if(equals(parameters('retentionDescriptionCleanupPolicy'), 'Compact'), parameters('retentionDescriptionTombstunoRetentionTimeInHours'), null())]"
+        "tombstoneRetentionTimeInHours": "[if(equals(parameters('retentionDescriptionCleanupPolicy'), 'Compact'), parameters('retentionDescriptionTombstoneRetentionTimeInHours'), null())]"
       }
     },
     "eventHubPropertiesCapture": {
@@ -323,8 +323,8 @@
             "storageAccountResourceId": "[parameters('captureDescriptionDestinationStorageAccountResourceId')]"
           }
         },
-        "enabled": "[parameters('captureDescriptiunonabled')]",
-        "encoding": "[parameters('captureDescriptiunoncoding')]",
+        "enabled": "[parameters('captureDescriptionEnabled')]",
+        "encoding": "[parameters('captureDescriptionEncoding')]",
         "intervalInSeconds": "[parameters('captureDescriptionIntervalInSeconds')]",
         "sizeLimitInBytes": "[parameters('captureDescriptionSizeLimitInBytes')]",
         "skipEmptyArchives": "[parameters('captureDescriptionSkipEmptyArchives')]"
@@ -366,13 +366,13 @@
       "type": "Microsoft.EventHub/namespaces/eventhubs",
       "apiVersion": "2022-10-01-preview",
       "name": "[format('{0}/{1}', parameters('namespaceName'), parameters('name'))]",
-      "properties": "[if(parameters('captureDescriptiunonabled'), union(variables('eventHubProperties'), variables('eventHubPropertiesCapture')), variables('eventHubProperties'))]",
+      "properties": "[if(parameters('captureDescriptionEnabled'), union(variables('eventHubProperties'), variables('eventHubPropertiesCapture')), variables('eventHubProperties'))]",
       "dependsOn": [
         "namespace"
       ]
     },
     "eventHub_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.EventHub/namespaces/{0}/eventhubs/{1}', parameters('namespaceName'), parameters('name'))]",
@@ -416,7 +416,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-ConsumerGroup-{1}', deployment().name, copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -452,13 +452,13 @@
             "namespaceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent event hub namespace. Required if the template is used in a standaluno deployment.s."
+                "description": "Conditional. The name of the parent event hub namespace. Required if the template is used in a standalone deployment.s."
               }
             },
             "eventHubName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent event hub namespace event hub. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent event hub namespace event hub. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -544,7 +544,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-AuthRule-{1}', deployment().name, copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -580,13 +580,13 @@
             "namespaceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent event hub namespace. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent event hub namespace. Required if the template is used in a standalone deployment."
               }
             },
             "eventHubName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent event hub namespace event hub. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent event hub namespace event hub. Required if the template is used in a standalone deployment."
               }
             },
             "name": {

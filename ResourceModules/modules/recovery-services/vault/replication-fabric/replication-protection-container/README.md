@@ -30,8 +30,8 @@ This module deploys a Recovery Services Vault Replication Protection Container.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`recoveryVaultName`](#parameter-recoveryvaultname) | string | The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment. |
-| [`replicationFabricName`](#parameter-replicationfabricname) | string | The name of the parent Replication Fabric. Required if the template is used in a standaluno deployment. |
+| [`recoveryVaultName`](#parameter-recoveryvaultname) | string | The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment. |
+| [`replicationFabricName`](#parameter-replicationfabricname) | string | The name of the parent Replication Fabric. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -49,14 +49,14 @@ The name of the replication container.
 
 ### Parameter: `recoveryVaultName`
 
-The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment.
+The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `replicationFabricName`
 
-The name of the parent Replication Fabric. Required if the template is used in a standaluno deployment.
+The name of the parent Replication Fabric. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -88,4 +88,4 @@ Replication containers mappings to create.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -118,7 +118,7 @@ module publicIPAddress '../public-ip-address/main.bicep' = if (empty(bastionSubn
     skuName: contains(publicIPAddressObject, 'skuName') ? publicIPAddressObject.skuName : 'Standard'
     skuTier: contains(publicIPAddressObject, 'skuTier') ? publicIPAddressObject.skuTier : 'Regional'
     tags: publicIPAddressObject.?tags ?? tags
-    zunos: contains(publicIPAddressObject, 'zunos') ? publicIPAddressObject.zunos : []
+    zones: contains(publicIPAddressObject, 'zones') ? publicIPAddressObject.zones : []
   }
 }
 
@@ -145,7 +145,7 @@ resource azureBastion 'Microsoft.Network/bastionHosts@2022-11-01' = {
   properties: bastionpropertiesVar
 }
 
-resource azureBastion_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource azureBastion_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -211,7 +211,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

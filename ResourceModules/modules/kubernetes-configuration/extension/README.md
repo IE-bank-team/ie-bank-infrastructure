@@ -371,7 +371,7 @@ module extension 'br:bicep/modules/kubernetes-configuration.extension:1.0.0' = {
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`clusterName`](#parameter-clustername) | string | The name of the AKS cluster that should be configured. |
-| [`extensionType`](#parameter-extensiontype) | string | Type of the Extension, of which this resource is an instance of. It must be uno of the Extension Types registered with Microsoft.KubernetesConfiguration by the Extension publisher. |
+| [`extensionType`](#parameter-extensiontype) | string | Type of the Extension, of which this resource is an instance of. It must be one of the Extension Types registered with Microsoft.KubernetesConfiguration by the Extension publisher. |
 | [`name`](#parameter-name) | string | The name of the Flux Configuration. |
 
 **Optional parameters**
@@ -397,7 +397,7 @@ The name of the AKS cluster that should be configured.
 
 ### Parameter: `extensionType`
 
-Type of the Extension, of which this resource is an instance of. It must be uno of the Extension Types registered with Microsoft.KubernetesConfiguration by the Extension publisher.
+Type of the Extension, of which this resource is an instance of. It must be one of the Extension Types registered with Microsoft.KubernetesConfiguration by the Extension publisher.
 
 - Required: Yes
 - Type: string

@@ -17,8 +17,8 @@ param activeGatewayPipName string = '${name}-pip2'
 @description('Optional. Resource ID of the Public IP Prefix object. This is only needed if you want your Public IPs created in a PIP Prefix.')
 param publicIPPrefixResourceId string = ''
 
-@description('Optional. Specifies the zunos of the Public IP address. Basic IP SKU does not support Availability Zunos.')
-param publicIpZunos array = []
+@description('Optional. Specifies the zones of the Public IP address. Basic IP SKU does not support Availability Zones.')
+param publicIpZones array = []
 
 @description('Optional. DNS name(s) of the Public IP resource(s). If you enabled active-active configuration, you need to provide 2 DNS names, if you want to use this feature. A region specific suffix will be appended to it, e.g.: your-DNS-name.westeurope.cloudapp.azure.com.')
 param domainNameLabel array = []
@@ -30,13 +30,13 @@ param domainNameLabel array = []
 ])
 param gatewayType string
 
-@description('Optional. The generation for this VirtualNetworkGateway. Must be Nuno if virtualNetworkGatewayType is not VPN.')
+@description('Optional. The generation for this VirtualNetworkGateway. Must be None if virtualNetworkGatewayType is not VPN.')
 @allowed([
   'Generation1'
   'Generation2'
-  'Nuno'
+  'None'
 ])
-param vpnGatewayGeneration string = 'Nuno'
+param vpnGatewayGeneration string = 'None'
 
 @description('Required. The SKU of the Gateway.')
 @allowed([
@@ -138,7 +138,7 @@ param vpnClientAadConfiguration object = {}
 // ================//
 
 // Other Variables
-var zunoRedundantSkus = [
+var zoneRedundantSkus = [
   'VpnGw1AZ'
   'VpnGw2AZ'
   'VpnGw3AZ'
@@ -148,8 +148,8 @@ var zunoRedundantSkus = [
   'ErGw2AZ'
   'ErGw3AZ'
 ]
-var gatewayPipSku = contains(zunoRedundantSkus, skuName) ? 'Standard' : 'Basic'
-var gatewayPipAllocationMethod = contains(zunoRedundantSkus, skuName) ? 'Static' : 'Dynamic'
+var gatewayPipSku = contains(zoneRedundantSkus, skuName) ? 'Standard' : 'Basic'
+var gatewayPipAllocationMethod = contains(zoneRedundantSkus, skuName) ? 'Static' : 'Dynamic'
 
 var isActiveActiveValid = gatewayType != 'ExpressRoute' ? activeActive : false
 var virtualGatewayPipNameVar = isActiveActiveValid ? [
@@ -178,7 +178,7 @@ var ipConfiguration = isActiveActiveValid ? [
         id: az.resourceId('Microsoft.Network/publicIPAddresses', gatewayPipName)
       }
     }
-    name: 'vNetGatewayConfiuno'
+    name: 'vNetGatewayConfig1'
   }
   {
     properties: {
@@ -203,7 +203,7 @@ var ipConfiguration = isActiveActiveValid ? [
         id: az.resourceId('Microsoft.Network/publicIPAddresses', gatewayPipName)
       }
     }
-    name: 'vNetGatewayConfiuno'
+    name: 'vNetGatewayConfig1'
   }
 ]
 
@@ -284,7 +284,7 @@ module publicIPAddress '../public-ip-address/main.bicep' = [for (virtualGatewayP
     publicIPPrefixResourceId: !empty(publicIPPrefixResourceId) ? publicIPPrefixResourceId : ''
     tags: tags
     skuName: gatewayPipSku
-    zunos: contains(zunoRedundantSkus, skuName) ? publicIpZunos : []
+    zones: contains(zoneRedundantSkus, skuName) ? publicIpZones : []
   }
 }]
 
@@ -315,7 +315,7 @@ resource virtualNetworkGateway 'Microsoft.Network/virtualNetworkGateways@2023-04
     }
     vpnType: vpnTypeVar
     vpnClientConfiguration: !empty(vpnClientAddressPoolPrefix) ? vpnClientConfiguration : null
-    vpnGatewayGeneration: gatewayType == 'Vpn' ? vpnGatewayGeneration : 'Nuno'
+    vpnGatewayGeneration: gatewayType == 'Vpn' ? vpnGatewayGeneration : 'None'
   }
   dependsOn: [
     publicIPAddress
@@ -336,7 +336,7 @@ module virtualNetworkGateway_natRules 'nat-rule/main.bicep' = [for (natRule, ind
   }
 }]
 
-resource virtualNetworkGateway_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource virtualNetworkGateway_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -412,7 +412,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

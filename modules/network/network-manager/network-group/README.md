@@ -29,7 +29,7 @@ A network group is a collection of same-type network resources that you can asso
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standaluno deployment. |
+| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -48,7 +48,7 @@ The name of the network group.
 
 ### Parameter: `networkManagerName`
 
-The name of the parent network manager. Required if the template is used in a standaluno deployment.
+The name of the parent network manager. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -88,4 +88,4 @@ Static Members to create for the network group. Contains virtual networks to add
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

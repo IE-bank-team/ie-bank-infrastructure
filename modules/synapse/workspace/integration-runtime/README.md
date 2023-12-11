@@ -29,7 +29,7 @@ This module deploys a Synapse Workspace Integration Runtime.
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`typeProperties`](#parameter-typeproperties) | object | Integration Runtime type properties. Required if type is "Managed". |
-| [`workspaceName`](#parameter-workspacename) | string | The name of the parent Synapse Workspace. Required if the template is used in a standaluno deployment. |
+| [`workspaceName`](#parameter-workspacename) | string | The name of the parent Synapse Workspace. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -68,7 +68,7 @@ Integration Runtime type properties. Required if type is "Managed".
 
 ### Parameter: `workspaceName`
 
-The name of the parent Synapse Workspace. Required if the template is used in a standaluno deployment.
+The name of the parent Synapse Workspace. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -92,4 +92,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

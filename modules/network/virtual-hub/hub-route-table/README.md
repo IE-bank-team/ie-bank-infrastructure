@@ -27,7 +27,7 @@ This module deploys a Virtual Hub Route Table.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`virtualHubName`](#parameter-virtualhubname) | string | The name of the parent virtual hub. Required if the template is used in a standaluno deployment. |
+| [`virtualHubName`](#parameter-virtualhubname) | string | The name of the parent virtual hub. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -46,7 +46,7 @@ The route table name.
 
 ### Parameter: `virtualHubName`
 
-The name of the parent virtual hub. Required if the template is used in a standaluno deployment.
+The name of the parent virtual hub. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -86,4 +86,4 @@ List of all routes.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

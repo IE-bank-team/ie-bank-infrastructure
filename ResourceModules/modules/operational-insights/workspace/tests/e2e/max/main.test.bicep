@@ -85,7 +85,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
           }
         ]
         kind: 'WindowsEvent'
-        name: 'applicatiunovent'
+        name: 'applicationEvent'
       }
       {
         counterName: '% Processor Time'
@@ -97,12 +97,12 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       }
       {
         kind: 'IISLogs'
-        name: 'sampleIISLouno'
+        name: 'sampleIISLog1'
         state: 'OnPremiseEnabled'
       }
       {
         kind: 'LinuxSyslog'
-        name: 'sampleSyslouno'
+        name: 'sampleSyslog1'
         syslogName: 'kern'
         syslogSeverities: [
           {

@@ -15,7 +15,7 @@
     "virtualMachineScaleSetName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent virtual machine scale set that extension is provisiunod for. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent virtual machine scale set that extension is provisioned for. Required if the template is used in a standalone deployment."
       }
     },
     "name": {
@@ -45,7 +45,7 @@
     "autoUpgradeMinorVersion": {
       "type": "bool",
       "metadata": {
-        "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+        "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
       }
     },
     "forceUpdateTag": {

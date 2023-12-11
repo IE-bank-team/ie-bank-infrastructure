@@ -27,13 +27,13 @@ This module deploys an Azure SQL Server Elastic Pool.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`serverName`](#parameter-servername) | string | The name of the parent SQL Server. Required if the template is used in a standaluno deployment. |
+| [`serverName`](#parameter-servername) | string | The name of the parent SQL Server. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`databaseMaxCapacity`](#parameter-databasemaxcapacity) | int | The maximum capacity any uno database can consume. |
+| [`databaseMaxCapacity`](#parameter-databasemaxcapacity) | int | The maximum capacity any one database can consume. |
 | [`databaseMinCapacity`](#parameter-databasemincapacity) | int | The minimum capacity all databases are guaranteed. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`highAvailabilityReplicaCount`](#parameter-highavailabilityreplicacount) | int | The number of secondary replicas associated with the elastic pool that are used to provide high availability. Applicable only to Hyperscale elastic pools. |
@@ -46,7 +46,7 @@ This module deploys an Azure SQL Server Elastic Pool.
 | [`skuName`](#parameter-skuname) | string | The name of the SKU, typically, a letter + Number code, e.g. P3. |
 | [`skuTier`](#parameter-skutier) | string | The tier or edition of the particular SKU, e.g. Basic, Premium. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
-| [`zunoRedundant`](#parameter-zunoredundant) | bool | Whether or not this elastic pool is zuno redundant, which means the replicas of this elastic pool will be spread across multiple availability zunos. |
+| [`zoneRedundant`](#parameter-zoneredundant) | bool | Whether or not this elastic pool is zone redundant, which means the replicas of this elastic pool will be spread across multiple availability zones. |
 
 ### Parameter: `name`
 
@@ -57,14 +57,14 @@ The name of the Elastic Pool.
 
 ### Parameter: `serverName`
 
-The name of the parent SQL Server. Required if the template is used in a standaluno deployment.
+The name of the parent SQL Server. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `databaseMaxCapacity`
 
-The maximum capacity any uno database can consume.
+The maximum capacity any one database can consume.
 
 - Required: No
 - Type: int
@@ -172,9 +172,9 @@ Tags of the resource.
 - Required: No
 - Type: object
 
-### Parameter: `zunoRedundant`
+### Parameter: `zoneRedundant`
 
-Whether or not this elastic pool is zuno redundant, which means the replicas of this elastic pool will be spread across multiple availability zunos.
+Whether or not this elastic pool is zone redundant, which means the replicas of this elastic pool will be spread across multiple availability zones.
 
 - Required: No
 - Type: bool
@@ -192,4 +192,4 @@ Whether or not this elastic pool is zuno redundant, which means the replicas of 
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

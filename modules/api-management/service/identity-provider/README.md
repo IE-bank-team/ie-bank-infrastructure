@@ -27,7 +27,7 @@ This module deploys an API Management Service Identity Provider.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standaluno deployment. |
+| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standalone deployment. |
 | [`clientId`](#parameter-clientid) | string | Client ID of the Application in the external Identity Provider. Required if identity provider is used. |
 | [`clientSecret`](#parameter-clientsecret) | securestring | Client secret of the Application in external Identity Provider, used to authenticate login request. Required if identity provider is used. |
 
@@ -55,7 +55,7 @@ Identity provider name.
 
 ### Parameter: `apiManagementServiceName`
 
-The name of the parent API Management service. Required if the template is used in a standaluno deployment.
+The name of the parent API Management service. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -178,4 +178,4 @@ Identity Provider Type identifier.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

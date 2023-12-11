@@ -30,11 +30,11 @@
         "description": "Required. The host name of the domain. Must be a domain name."
       }
     },
-    "azureDnsZunoResourceId": {
+    "azureDnsZoneResourceId": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optonal. Resource reference to the Azure DNS zuno."
+        "description": "Optonal. Resource reference to the Azure DNS zone."
       }
     },
     "extendedProperties": {
@@ -107,7 +107,7 @@
       "apiVersion": "2023-05-01",
       "name": "[format('{0}/{1}', parameters('profileName'), parameters('name'))]",
       "properties": {
-        "azureDnsZuno": "[if(not(empty(parameters('azureDnsZunoResourceId'))), createObject('id', parameters('azureDnsZunoResourceId')), null())]",
+        "azureDnsZone": "[if(not(empty(parameters('azureDnsZoneResourceId'))), createObject('id', parameters('azureDnsZoneResourceId')), null())]",
         "extendedProperties": "[if(not(empty(parameters('extendedProperties'))), parameters('extendedProperties'), null())]",
         "hostName": "[parameters('hostName')]",
         "preValidatedCustomDomainResourceId": "[if(not(empty(parameters('preValidatedCustomDomainResourceId'))), createObject('id', parameters('preValidatedCustomDomainResourceId')), null())]",

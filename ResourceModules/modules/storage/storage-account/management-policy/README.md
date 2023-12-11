@@ -27,7 +27,7 @@ This module deploys a Storage Account Management Policy.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`storageAccountName`](#parameter-storageaccountname) | string | The name of the parent Storage Account. Required if the template is used in a standaluno deployment. |
+| [`storageAccountName`](#parameter-storageaccountname) | string | The name of the parent Storage Account. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -44,7 +44,7 @@ The Storage Account ManagementPolicies Rules.
 
 ### Parameter: `storageAccountName`
 
-The name of the parent Storage Account. Required if the template is used in a standaluno deployment.
+The name of the parent Storage Account. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -68,4 +68,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

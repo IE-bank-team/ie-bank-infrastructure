@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The custom domain name.')
 param name string
 
-@description('Conditional. The name of the parent Static Web App. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Static Web App. Required if the template is used in a standalone deployment.')
 param staticSiteName string
 
 @description('Optional. Validation method for adding a custom domain.')

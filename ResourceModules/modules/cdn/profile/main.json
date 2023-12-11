@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -266,7 +266,7 @@
       "tags": "[parameters('tags')]"
     },
     "profile_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Cdn/profiles/{0}', parameters('name'))]",
@@ -307,7 +307,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Profile-Endpoint', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -344,7 +344,7 @@
             "profileName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent CDN profile. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent CDN profile. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -425,7 +425,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-origins-{1}', parameters('name'), parameters('properties').origins[copyIndex()].name)]",
               "properties": {
-                "expressiunovaluationOptions": {
+                "expressionEvaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -674,7 +674,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Profile-Secret-{1}', uniqueString(deployment().name), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -723,7 +723,7 @@
             "profileName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent CDN profile. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent CDN profile. Required if the template is used in a standalone deployment."
               }
             },
             "type": {
@@ -837,7 +837,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-CustomDomain-{1}', uniqueString(deployment().name), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -851,7 +851,7 @@
           "hostName": {
             "value": "[parameters('customDomains')[copyIndex()].hostName]"
           },
-          "azureDnsZunoResourceId": "[if(contains(parameters('customDomains')[copyIndex()], 'azureDnsZunoResourceId'), createObject('value', parameters('customDomains')[copyIndex()].azureDnsZunoResourceId), createObject('value', ''))]",
+          "azureDnsZoneResourceId": "[if(contains(parameters('customDomains')[copyIndex()], 'azureDnsZoneResourceId'), createObject('value', parameters('customDomains')[copyIndex()].azureDnsZoneResourceId), createObject('value', ''))]",
           "extendedProperties": "[if(contains(parameters('customDomains')[copyIndex()], 'extendedProperties'), createObject('value', parameters('customDomains')[copyIndex()].extendedProperties), createObject('value', createObject()))]",
           "certificateType": {
             "value": "[parameters('customDomains')[copyIndex()].certificateType]"
@@ -895,11 +895,11 @@
                 "description": "Required. The host name of the domain. Must be a domain name."
               }
             },
-            "azureDnsZunoResourceId": {
+            "azureDnsZoneResourceId": {
               "type": "string",
               "defaultValue": "",
               "metadata": {
-                "description": "Optonal. Resource reference to the Azure DNS zuno."
+                "description": "Optonal. Resource reference to the Azure DNS zone."
               }
             },
             "extendedProperties": {
@@ -972,7 +972,7 @@
               "apiVersion": "2023-05-01",
               "name": "[format('{0}/{1}', parameters('profileName'), parameters('name'))]",
               "properties": {
-                "azureDnsZuno": "[if(not(empty(parameters('azureDnsZunoResourceId'))), createObject('id', parameters('azureDnsZunoResourceId')), null())]",
+                "azureDnsZone": "[if(not(empty(parameters('azureDnsZoneResourceId'))), createObject('id', parameters('azureDnsZoneResourceId')), null())]",
                 "extendedProperties": "[if(not(empty(parameters('extendedProperties'))), parameters('extendedProperties'), null())]",
                 "hostName": "[parameters('hostName')]",
                 "preValidatedCustomDomainResourceId": "[if(not(empty(parameters('preValidatedCustomDomainResourceId'))), createObject('id', parameters('preValidatedCustomDomainResourceId')), null())]",
@@ -1023,7 +1023,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Profile-OrigionGroup-{1}', uniqueString(deployment().name), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1157,7 +1157,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-OriginGroup-Origin-{1}', uniqueString(deployment().name), copyIndex())]",
               "properties": {
-                "expressiunovaluationOptions": {
+                "expressionEvaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -1399,7 +1399,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Profile-RuleSet-{1}', uniqueString(deployment().name), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1490,7 +1490,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-RuleSet-Rule-{1}-{2}', uniqueString(deployment().name), parameters('rules')[copyIndex()].name, copyIndex())]",
               "properties": {
-                "expressiunovaluationOptions": {
+                "expressionEvaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -1678,7 +1678,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Profile-AfdEndpoint-{1}', uniqueString(deployment().name), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1726,7 +1726,7 @@
             "profileName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent CDN profile. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent CDN profile. Required if the template is used in a standalone deployment."
               }
             },
             "location": {
@@ -1829,7 +1829,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-Profile-AfdEndpoint-Route', uniqueString(deployment().name, parameters('routes')[copyIndex()].name))]",
               "properties": {
-                "expressiunovaluationOptions": {
+                "expressionEvaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",

@@ -644,7 +644,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -897,4 +897,4 @@ Workload profile type to pin for container app execution.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -3,7 +3,7 @@ metadata description = '''This module deploys a Network Manager Scope Connection
 Create a cross-tenant connection to manage a resource from another tenant.'''
 metadata owner = 'Azure/module-maintainers'
 
-@sys.description('Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment.')
+@sys.description('Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment.')
 param networkManagerName string
 
 @maxLength(64)

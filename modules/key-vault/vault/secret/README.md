@@ -29,7 +29,7 @@ This module deploys a Key Vault Secret.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`keyVaultName`](#parameter-keyvaultname) | string | The name of the parent key vault. Required if the template is used in a standaluno deployment. |
+| [`keyVaultName`](#parameter-keyvaultname) | string | The name of the parent key vault. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -59,7 +59,7 @@ The value of the secret. NOTE: "value" will never be returned from the service, 
 
 ### Parameter: `keyVaultName`
 
-The name of the parent key vault. Required if the template is used in a standaluno deployment.
+The name of the parent key vault. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -211,4 +211,4 @@ Resource tags.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

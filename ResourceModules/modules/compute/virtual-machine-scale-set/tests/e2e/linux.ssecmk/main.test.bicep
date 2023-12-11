@@ -71,7 +71,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       {
         ipConfigurations: [
           {
-            name: 'ipconfiuno'
+            name: 'ipconfig1'
             properties: {
               subnet: {
                 id: nestedDependencies.outputs.subnetResourceId

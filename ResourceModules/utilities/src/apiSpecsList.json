@@ -1877,7 +1877,7 @@
       "2023-05-02-preview",
       "2023-08-01-preview"
     ],
-    "connectedEnvironments/daprCompunonts": [
+    "connectedEnvironments/daprComponents": [
       "2022-06-01-preview",
       "2022-10-01",
       "2022-11-01-preview",
@@ -2101,7 +2101,7 @@
       "2023-05-02-preview",
       "2023-08-01-preview"
     ],
-    "managedEnvironments/daprCompunonts": [
+    "managedEnvironments/daprComponents": [
       "2022-01-01-preview",
       "2022-03-01",
       "2022-06-01-preview",
@@ -2112,7 +2112,7 @@
       "2023-05-02-preview",
       "2023-08-01-preview"
     ],
-    "managedEnvironments/daprCompunonts/resiliencyPolicies": [
+    "managedEnvironments/daprComponents/resiliencyPolicies": [
       "2023-08-01-preview"
     ],
     "managedEnvironments/daprSubscriptions": [
@@ -3907,7 +3907,7 @@
       "2022-05-01",
       "2023-03-01"
     ],
-    "privateClouds/workloadNetworks/dnsZunos": [
+    "privateClouds/workloadNetworks/dnsZones": [
       "2020-07-17-preview",
       "2021-01-01-preview",
       "2021-06-01",
@@ -5142,7 +5142,7 @@
       "2019-10-01-preview",
       "2020-11-01-privatepreview"
     ],
-    "billingAccounts/billingProfiles/invoiceSections/validateDeleteInvoiceSectiunoligibility": [
+    "billingAccounts/billingProfiles/invoiceSections/validateDeleteInvoiceSectionEligibility": [
       "2020-11-01-privatepreview"
     ],
     "billingAccounts/billingProfiles/notificationContacts": [
@@ -5365,7 +5365,7 @@
     "billingAccounts/incentiveSchedules": [
       "2022-10-01-beta"
     ],
-    "billingAccounts/incentiveSchedules/milestunos": [
+    "billingAccounts/incentiveSchedules/milestones": [
       "2022-10-01-beta"
     ],
     "billingAccounts/invoices": [
@@ -5659,7 +5659,7 @@
     "incentiveSchedules": [
       "2023-07-01-beta"
     ],
-    "incentiveSchedules/milestunos": [
+    "incentiveSchedules/milestones": [
       "2023-07-01-beta"
     ],
     "listSellerResources": [
@@ -6789,13 +6789,13 @@
     ]
   },
   "Microsoft.Carbon": {
-    "carbunomissionReports": [
+    "carbonEmissionReports": [
       "2023-04-01-preview"
     ],
     "operations": [
       "2023-04-01-preview"
     ],
-    "queryCarbunomissionDataAvailableDateRange": [
+    "queryCarbonEmissionDataAvailableDateRange": [
       "2023-04-01-preview"
     ]
   },
@@ -8794,7 +8794,7 @@
       "2023-04-02",
       "2023-10-02"
     ],
-    "locations/edgeZunos": [
+    "locations/edgeZones": [
       "2020-12-01",
       "2021-03-01",
       "2021-04-01",
@@ -8807,7 +8807,7 @@
       "2023-07-01",
       "2023-09-01"
     ],
-    "locations/edgeZunos/publishers": [
+    "locations/edgeZones/publishers": [
       "2020-12-01",
       "2021-03-01",
       "2021-04-01",
@@ -8820,7 +8820,7 @@
       "2023-07-01",
       "2023-09-01"
     ],
-    "locations/edgeZunos/vmimages": [
+    "locations/edgeZones/vmimages": [
       "2020-12-01",
       "2021-03-01",
       "2021-04-01",
@@ -13958,7 +13958,7 @@
     "replicationVaults/protectedItems": [
       "2021-02-16-preview"
     ],
-    "replicationVaults/replicatiunoxtensions": [
+    "replicationVaults/replicationExtensions": [
       "2021-02-16-preview"
     ],
     "replicationVaults/replicationPolicies": [
@@ -14312,7 +14312,7 @@
       "2022-09-30-preview",
       "2023-06-30"
     ],
-    "getPrivateDnsZunoSuffix": [
+    "getPrivateDnsZoneSuffix": [
       "2020-07-01-preview",
       "2020-07-01-privatepreview",
       "2021-05-01",
@@ -14669,7 +14669,7 @@
     "flexibleServers/virtualendpoints": [
       "2023-06-01-preview"
     ],
-    "getPrivateDnsZunoSuffix": [],
+    "getPrivateDnsZoneSuffix": [],
     "locations": [
       "2017-12-01",
       "2017-12-01-preview"
@@ -20391,34 +20391,34 @@
       "2023-11-15-preview",
       "2024-01-01"
     ],
-    "provisiunodClusterInstances": [
+    "provisionedClusterInstances": [
       "2023-11-15-preview"
     ],
-    "provisiunodClusterInstances/agentPools": [
+    "provisionedClusterInstances/agentPools": [
       "2023-11-15-preview"
     ],
-    "provisiunodClusterInstances/hybridIdentityMetadata": [
+    "provisionedClusterInstances/hybridIdentityMetadata": [
       "2023-11-15-preview"
     ],
-    "provisiunodClusters": [
+    "provisionedClusters": [
       "2021-08-01-preview",
       "2021-09-01-preview",
       "2022-01-01-preview",
       "2022-05-01-preview",
       "2022-09-01-preview"
     ],
-    "provisiunodClusters/agentPools": [
+    "provisionedClusters/agentPools": [
       "2022-01-01-preview",
       "2022-05-01-preview",
       "2022-09-01-preview"
     ],
-    "provisiunodClusters/hybridIdentityMetadata": [
+    "provisionedClusters/hybridIdentityMetadata": [
       "2021-09-01-preview",
       "2022-01-01-preview",
       "2022-05-01-preview",
       "2022-09-01-preview"
     ],
-    "provisiunodClusters/upgradeProfiles": [
+    "provisionedClusters/upgradeProfiles": [
       "2022-09-01-preview"
     ],
     "skus": [
@@ -20480,7 +20480,7 @@
       "2023-01-01",
       "2023-09-01"
     ],
-    "networkFunctions/compunonts": [
+    "networkFunctions/components": [
       "2022-09-01-preview",
       "2023-01-01",
       "2023-09-01"
@@ -20607,7 +20607,7 @@
       "2022-10-01",
       "2023-01-01-preview"
     ],
-    "compunonts": [
+    "components": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20616,10 +20616,10 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/{scopePath}": [
+    "components/{scopePath}": [
       "2015-05-01"
     ],
-    "compunonts/aggregate": [
+    "components/aggregate": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20628,7 +20628,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/analyticsItems": [
+    "components/analyticsItems": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20637,7 +20637,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/Annotations": [
+    "components/Annotations": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20646,7 +20646,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/api": [
+    "components/api": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20655,7 +20655,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/apiKeys": [
+    "components/apiKeys": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20664,7 +20664,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/currentbillingfeatures": [
+    "components/currentbillingfeatures": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20673,7 +20673,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/defaultWorkItemConfig": [
+    "components/defaultWorkItemConfig": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20682,10 +20682,10 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/events": [
+    "components/events": [
       "2018-04-20"
     ],
-    "compunonts/exportconfiguration": [
+    "components/exportconfiguration": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20694,7 +20694,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/extendQueries": [
+    "components/extendQueries": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20703,7 +20703,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/favorites": [
+    "components/favorites": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20712,7 +20712,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/featureCapabilities": [
+    "components/featureCapabilities": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20721,7 +20721,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/getAvailableBillingFeatures": [
+    "components/getAvailableBillingFeatures": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20730,13 +20730,13 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/linkedStorageAccounts": [
+    "components/linkedStorageAccounts": [
       "2020-03-01-preview"
     ],
-    "compunonts/metadata": [
+    "components/metadata": [
       "2018-04-20"
     ],
-    "compunonts/metricDefinitions": [
+    "components/metricDefinitions": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20745,11 +20745,11 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/metrics": [
+    "components/metrics": [
       "2014-04-01",
       "2018-04-20"
     ],
-    "compunonts/move": [
+    "components/move": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20758,7 +20758,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/myAnalyticsItems": [
+    "components/myAnalyticsItems": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20767,7 +20767,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/myFavorites": [
+    "components/myFavorites": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20776,7 +20776,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/operations": [
+    "components/operations": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20785,10 +20785,10 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/pricingPlans": [
+    "components/pricingPlans": [
       "2017-10-01"
     ],
-    "compunonts/ProactiveDetectionConfigs": [
+    "components/ProactiveDetectionConfigs": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20797,7 +20797,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/purge": [
+    "components/purge": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20806,10 +20806,10 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/query": [
+    "components/query": [
       "2018-04-20"
     ],
-    "compunonts/quotaStatus": [
+    "components/quotaStatus": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20818,7 +20818,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/syntheticmonitorlocations": [
+    "components/syntheticmonitorlocations": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20827,7 +20827,7 @@
       "2020-02-02",
       "2020-02-02-preview"
     ],
-    "compunonts/webtests": [
+    "components/webtests": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20837,7 +20837,7 @@
       "2020-02-02-preview",
       "2022-06-15"
     ],
-    "compunonts/workItemConfigs": [
+    "components/workItemConfigs": [
       "2014-04-01",
       "2014-08-01",
       "2014-12-01-preview",
@@ -20854,12 +20854,12 @@
       "2023-05-01",
       "2023-05-01-preview"
     ],
-    "dataCollectiunondpoints": [
+    "dataCollectionEndpoints": [
       "2021-04-01",
       "2021-09-01-preview",
       "2022-06-01"
     ],
-    "dataCollectiunondpoints/scopedPrivateLinkProxies": [
+    "dataCollectionEndpoints/scopedPrivateLinkProxies": [
       "2021-04-01",
       "2021-09-01-preview"
     ],
@@ -20970,7 +20970,7 @@
     "migratealertrules": [
       "2018-03-01"
     ],
-    "migrateTunowPricingModel": [
+    "migrateToNewPricingModel": [
       "2017-10-01"
     ],
     "monitoredObjects": [
@@ -22787,7 +22787,7 @@
       "2023-08-01-preview",
       "2023-10-01"
     ],
-    "registries/compunonts": [
+    "registries/components": [
       "2022-10-01-preview",
       "2022-12-01-preview",
       "2023-02-01-preview",
@@ -22797,7 +22797,7 @@
       "2023-08-01-preview",
       "2023-10-01"
     ],
-    "registries/compunonts/versions": [
+    "registries/components/versions": [
       "2022-10-01-preview",
       "2022-12-01-preview",
       "2023-02-01-preview",
@@ -22970,7 +22970,7 @@
       "2023-08-01-preview",
       "2023-10-01"
     ],
-    "workspaces/compunonts": [
+    "workspaces/components": [
       "2021-10-01",
       "2022-02-01-preview",
       "2022-05-01",
@@ -22985,7 +22985,7 @@
       "2023-08-01-preview",
       "2023-10-01"
     ],
-    "workspaces/compunonts/versions": [
+    "workspaces/components/versions": [
       "2021-10-01",
       "2022-02-01-preview",
       "2022-05-01",
@@ -23589,7 +23589,7 @@
       "2023-02-01-preview",
       "2023-06-15"
     ],
-    "networkFabrics/networkTunotworkInterconnects": [
+    "networkFabrics/networkToNetworkInterconnects": [
       "2023-02-01-preview",
       "2023-06-15"
     ],
@@ -23852,13 +23852,13 @@
       "2021-10-01",
       "2022-07-31"
     ],
-    "locations/edgeZunos": [
+    "locations/edgeZones": [
       "2018-08-01-beta",
       "2021-06-01",
       "2021-10-01",
       "2022-07-31"
     ],
-    "locations/edgeZunos/products": [
+    "locations/edgeZones/products": [
       "2018-08-01-beta",
       "2021-06-01",
       "2021-10-01",
@@ -26464,7 +26464,7 @@
       "2023-07-01",
       "2023-07-01-preview"
     ],
-    "dnsZunos": [
+    "dnsZones": [
       "2015-05-04-preview",
       "2016-04-01",
       "2017-09-01",
@@ -26474,7 +26474,7 @@
       "2018-05-01",
       "2023-07-01-preview"
     ],
-    "dnsZunos/A": [
+    "dnsZones/A": [
       "2015-05-04-preview",
       "2016-04-01",
       "2017-09-01",
@@ -26484,7 +26484,7 @@
       "2018-05-01",
       "2023-07-01-preview"
     ],
-    "dnsZunos/AAAA": [
+    "dnsZones/AAAA": [
       "2015-05-04-preview",
       "2016-04-01",
       "2017-09-01",
@@ -26494,7 +26494,7 @@
       "2018-05-01",
       "2023-07-01-preview"
     ],
-    "dnszunos/all": [
+    "dnszones/all": [
       "2015-05-04-preview",
       "2016-04-01",
       "2017-09-01",
@@ -26504,7 +26504,7 @@
       "2018-05-01",
       "2023-07-01-preview"
     ],
-    "dnsZunos/CAA": [
+    "dnsZones/CAA": [
       "2017-09-01",
       "2017-09-15-preview",
       "2017-10-01",
@@ -26512,7 +26512,7 @@
       "2018-05-01",
       "2023-07-01-preview"
     ],
-    "dnsZunos/CNAME": [
+    "dnsZones/CNAME": [
       "2015-05-04-preview",
       "2016-04-01",
       "2017-09-01",
@@ -26522,13 +26522,13 @@
       "2018-05-01",
       "2023-07-01-preview"
     ],
-    "dnsZunos/dnssecConfigs": [
+    "dnsZones/dnssecConfigs": [
       "2023-07-01-preview"
     ],
-    "dnszunos/DS": [
+    "dnszones/DS": [
       "2023-07-01-preview"
     ],
-    "dnsZunos/MX": [
+    "dnsZones/MX": [
       "2015-05-04-preview",
       "2016-04-01",
       "2017-09-01",
@@ -26538,10 +26538,10 @@
       "2018-05-01",
       "2023-07-01-preview"
     ],
-    "dnszunos/NAPTR": [
+    "dnszones/NAPTR": [
       "2023-07-01-preview"
     ],
-    "dnsZunos/NS": [
+    "dnsZones/NS": [
       "2015-05-04-preview",
       "2016-04-01",
       "2017-09-01",
@@ -26551,7 +26551,7 @@
       "2018-05-01",
       "2023-07-01-preview"
     ],
-    "dnsZunos/PTR": [
+    "dnsZones/PTR": [
       "2015-05-04-preview",
       "2016-04-01",
       "2017-09-01",
@@ -26561,7 +26561,7 @@
       "2018-05-01",
       "2023-07-01-preview"
     ],
-    "dnszunos/recordsets": [
+    "dnszones/recordsets": [
       "2015-05-04-preview",
       "2016-04-01",
       "2017-09-01",
@@ -26571,7 +26571,7 @@
       "2018-05-01",
       "2023-07-01-preview"
     ],
-    "dnsZunos/SOA": [
+    "dnsZones/SOA": [
       "2015-05-04-preview",
       "2016-04-01",
       "2017-09-01",
@@ -26581,7 +26581,7 @@
       "2018-05-01",
       "2023-07-01-preview"
     ],
-    "dnsZunos/SRV": [
+    "dnsZones/SRV": [
       "2015-05-04-preview",
       "2016-04-01",
       "2017-09-01",
@@ -26591,10 +26591,10 @@
       "2018-05-01",
       "2023-07-01-preview"
     ],
-    "dnszunos/TLSA": [
+    "dnszones/TLSA": [
       "2023-07-01-preview"
     ],
-    "dnsZunos/TXT": [
+    "dnsZones/TXT": [
       "2015-05-04-preview",
       "2016-04-01",
       "2017-09-01",
@@ -28216,7 +28216,7 @@
       "2023-06-01",
       "2023-09-01"
     ],
-    "locations/hybridEdgeZuno": [
+    "locations/hybridEdgeZone": [
       "2022-01-01",
       "2022-05-01",
       "2022-07-01",
@@ -29932,62 +29932,62 @@
       "2020-01-01",
       "2020-06-01"
     ],
-    "privateDnsZunos": [
+    "privateDnsZones": [
       "2018-09-01",
       "2020-01-01",
       "2020-06-01"
     ],
-    "privateDnsZunos/A": [
+    "privateDnsZones/A": [
       "2018-09-01",
       "2020-01-01",
       "2020-06-01"
     ],
-    "privateDnsZunos/AAAA": [
+    "privateDnsZones/AAAA": [
       "2018-09-01",
       "2020-01-01",
       "2020-06-01"
     ],
-    "privateDnsZunos/all": [
+    "privateDnsZones/all": [
       "2018-09-01",
       "2020-01-01",
       "2020-06-01"
     ],
-    "privateDnsZunos/CNAME": [
+    "privateDnsZones/CNAME": [
       "2018-09-01",
       "2020-01-01",
       "2020-06-01"
     ],
-    "privateDnsZunos/MX": [
+    "privateDnsZones/MX": [
       "2018-09-01",
       "2020-01-01",
       "2020-06-01"
     ],
-    "privateDnsZunos/PTR": [
+    "privateDnsZones/PTR": [
       "2018-09-01",
       "2020-01-01",
       "2020-06-01"
     ],
-    "privateDnsZunos/SOA": [
+    "privateDnsZones/SOA": [
       "2018-09-01",
       "2020-01-01",
       "2020-06-01"
     ],
-    "privateDnsZunos/SRV": [
+    "privateDnsZones/SRV": [
       "2018-09-01",
       "2020-01-01",
       "2020-06-01"
     ],
-    "privateDnsZunos/TXT": [
+    "privateDnsZones/TXT": [
       "2018-09-01",
       "2020-01-01",
       "2020-06-01"
     ],
-    "privateDnsZunos/virtualNetworkLinks": [
+    "privateDnsZones/virtualNetworkLinks": [
       "2018-09-01",
       "2020-01-01",
       "2020-06-01"
     ],
-    "privateDnsZunosInternal": [
+    "privateDnsZonesInternal": [
       "2020-01-01",
       "2020-06-01"
     ],
@@ -30060,7 +30060,7 @@
       "2023-06-01",
       "2023-09-01"
     ],
-    "privateEndpoints/privateDnsZunoGroups": [
+    "privateEndpoints/privateDnsZoneGroups": [
       "2020-03-01",
       "2020-04-01",
       "2020-05-01",
@@ -31074,7 +31074,7 @@
       "2023-06-01",
       "2023-09-01"
     ],
-    "virtualNetworks/privateDnsZunoLinks": [
+    "virtualNetworks/privateDnsZoneLinks": [
       "2020-06-01"
     ],
     "virtualNetworks/subnets": [
@@ -32596,7 +32596,7 @@
       "2022-03-01",
       "2023-03-01"
     ],
-    "compunontPolicyStates": [
+    "componentPolicyStates": [
       "2022-04-01"
     ],
     "eventGridFilters": [
@@ -33385,7 +33385,7 @@
       "2023-06-01",
       "2023-07-01-preview"
     ],
-    "replicatiunoligibilityResults": [
+    "replicationEligibilityResults": [
       "2018-07-10",
       "2021-02-10",
       "2021-06-01",
@@ -38147,10 +38147,10 @@
     "checkNameAvailability": [
       "2023-09-28-preview"
     ],
-    "landingZunoConfigurations": [
+    "landingZoneConfigurations": [
       "2023-09-28-preview"
     ],
-    "landingZunoRegistrations": [
+    "landingZoneRegistrations": [
       "2023-09-28-preview"
     ],
     "Locations": [
@@ -47583,7 +47583,7 @@
       "2023-09-01"
     ]
   },
-  "PaloAltunotworks.Cloudngfw": {
+  "PaloAltoNetworks.Cloudngfw": {
     "checkNameAvailability": [
       "2022-08-29",
       "2022-08-29-preview",

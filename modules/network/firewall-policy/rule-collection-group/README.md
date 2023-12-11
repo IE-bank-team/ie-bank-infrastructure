@@ -28,7 +28,7 @@ This module deploys a Firewall Policy Rule Collection Group.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`firewallPolicyName`](#parameter-firewallpolicyname) | string | The name of the parent Firewall Policy. Required if the template is used in a standaluno deployment. |
+| [`firewallPolicyName`](#parameter-firewallpolicyname) | string | The name of the parent Firewall Policy. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -53,7 +53,7 @@ Priority of the Firewall Policy Rule Collection Group resource.
 
 ### Parameter: `firewallPolicyName`
 
-The name of the parent Firewall Policy. Required if the template is used in a standaluno deployment.
+The name of the parent Firewall Policy. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -85,4 +85,4 @@ Group of Firewall Policy rule collections.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

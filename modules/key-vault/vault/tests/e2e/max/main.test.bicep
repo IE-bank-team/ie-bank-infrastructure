@@ -143,8 +143,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     }
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          nestedDependencies.outputs.privateDNSZunoResourceId
+        privateDnsZoneResourceIds: [
+          nestedDependencies.outputs.privateDNSZoneResourceId
         ]
         service: 'vault'
         subnetResourceId: nestedDependencies.outputs.subnetResourceId

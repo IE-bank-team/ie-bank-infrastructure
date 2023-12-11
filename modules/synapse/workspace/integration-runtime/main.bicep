@@ -2,7 +2,7 @@ metadata name = 'Synapse Workspace Integration Runtimes'
 metadata description = 'This module deploys a Synapse Workspace Integration Runtime.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Synapse Workspace. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Synapse Workspace. Required if the template is used in a standalone deployment.')
 param workspaceName string
 
 @description('Required. The name of the Integration Runtime.')

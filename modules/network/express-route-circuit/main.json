@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -221,19 +221,19 @@
     "serviceProviderName": {
       "type": "string",
       "metadata": {
-        "description": "Required. This is the name of the ExpressRoute Service Provider. It must exactly match uno of the Service Providers from List ExpressRoute Service Providers API call."
+        "description": "Required. This is the name of the ExpressRoute Service Provider. It must exactly match one of the Service Providers from List ExpressRoute Service Providers API call."
       }
     },
     "peeringLocation": {
       "type": "string",
       "metadata": {
-        "description": "Required. This is the name of the peering location and not the ARM resource location. It must exactly match uno of the available peering locations from List ExpressRoute Service Providers API call."
+        "description": "Required. This is the name of the peering location and not the ARM resource location. It must exactly match one of the available peering locations from List ExpressRoute Service Providers API call."
       }
     },
     "bandwidthInMbps": {
       "type": "int",
       "metadata": {
-        "description": "Required. This is the bandwidth in Mbps of the circuit being created. It must exactly match uno of the available bandwidth offers List ExpressRoute Service Providers API call."
+        "description": "Required. This is the bandwidth in Mbps of the circuit being created. It must exactly match one of the available bandwidth offers List ExpressRoute Service Providers API call."
       }
     },
     "skuTier": {
@@ -330,14 +330,14 @@
       "type": "int",
       "defaultValue": 0,
       "metadata": {
-        "description": "Optional. The bandwidth of the circuit when the circuit is provisiunod on an ExpressRoutePort resource. Available when configuring Express Route Direct. Default value of 0 will set the property to null."
+        "description": "Optional. The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource. Available when configuring Express Route Direct. Default value of 0 will set the property to null."
       }
     },
     "expressRoutePortResourceId": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optional. The reference to the ExpressRoutePort resource when the circuit is provisiunod on an ExpressRoutePort resource. Available when configuring Express Route Direct."
+        "description": "Optional. The reference to the ExpressRoutePort resource when the circuit is provisioned on an ExpressRoutePort resource. Available when configuring Express Route Direct."
       }
     },
     "globalReachEnabled": {
@@ -443,7 +443,7 @@
       }
     },
     "expressRouteCircuits_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Network/expressRouteCircuits/{0}', parameters('name'))]",

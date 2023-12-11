@@ -50,7 +50,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -159,21 +159,21 @@
               "description": "Required. Resource ID of the subnet where the endpoint needs to be created."
             }
           },
-          "privateDnsZunoGroupName": {
+          "privateDnsZoneGroupName": {
             "type": "string",
             "nullable": true,
             "metadata": {
-              "description": "Optional. The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided."
+              "description": "Optional. The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided."
             }
           },
-          "privateDnsZunoResourceIds": {
+          "privateDnsZoneResourceIds": {
             "type": "array",
             "items": {
               "type": "string"
             },
             "nullable": true,
             "metadata": {
-              "description": "Optional. The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos."
+              "description": "Optional. The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones."
             }
           },
           "customDnsConfigs": {
@@ -586,7 +586,7 @@
       "defaultValue": "AzureServices",
       "allowedValues": [
         "AzureServices",
-        "Nuno"
+        "None"
       ],
       "metadata": {
         "description": "Optional. Whether to allow trusted Azure services to access a network restricted registry."
@@ -616,7 +616,7 @@
         "description": "Optional. Configuration details for private endpoints. For security reasons, it is recommended to use private endpoints whenever possible. Note, requires the 'acrSku' to be 'Premium'."
       }
     },
-    "zunoRedundancy": {
+    "zoneRedundancy": {
       "type": "string",
       "defaultValue": "Disabled",
       "allowedValues": [
@@ -624,7 +624,7 @@
         "Enabled"
       ],
       "metadata": {
-        "description": "Optional. Whether or not zuno redundancy is enabled for this container registry."
+        "description": "Optional. Whether or not zone redundancy is enabled for this container registry."
       }
     },
     "replications": {
@@ -793,7 +793,7 @@
         "publicNetworkAccess": "[if(not(empty(parameters('publicNetworkAccess'))), parameters('publicNetworkAccess'), if(and(not(empty(parameters('privateEndpoints'))), empty(parameters('networkRuleSetIpRules'))), 'Disabled', null()))]",
         "networkRuleBypassOptions": "[parameters('networkRuleBypassOptions')]",
         "networkRuleSet": "[if(not(empty(parameters('networkRuleSetIpRules'))), createObject('defaultAction', parameters('networkRuleSetDefaultAction'), 'ipRules', parameters('networkRuleSetIpRules')), null())]",
-        "zunoRedundancy": "[if(equals(parameters('acrSku'), 'Premium'), parameters('zunoRedundancy'), null())]"
+        "zoneRedundancy": "[if(equals(parameters('acrSku'), 'Premium'), parameters('zoneRedundancy'), null())]"
       },
       "dependsOn": [
         "cMKKeyVault",
@@ -801,7 +801,7 @@
       ]
     },
     "registry_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.ContainerRegistry/registries/{0}', parameters('name'))]",
@@ -868,7 +868,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Registry-Replication-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -882,8 +882,8 @@
           "location": {
             "value": "[parameters('replications')[copyIndex()].location]"
           },
-          "regiunondpointEnabled": "[if(contains(parameters('replications')[copyIndex()], 'regiunondpointEnabled'), createObject('value', parameters('replications')[copyIndex()].regiunondpointEnabled), createObject('value', true()))]",
-          "zunoRedundancy": "[if(contains(parameters('replications')[copyIndex()], 'zunoRedundancy'), createObject('value', parameters('replications')[copyIndex()].zunoRedundancy), createObject('value', 'Disabled'))]",
+          "regionEndpointEnabled": "[if(contains(parameters('replications')[copyIndex()], 'regionEndpointEnabled'), createObject('value', parameters('replications')[copyIndex()].regionEndpointEnabled), createObject('value', true()))]",
+          "zoneRedundancy": "[if(contains(parameters('replications')[copyIndex()], 'zoneRedundancy'), createObject('value', parameters('replications')[copyIndex()].zoneRedundancy), createObject('value', 'Disabled'))]",
           "tags": {
             "value": "[coalesce(tryGet(parameters('replications')[copyIndex()], 'tags'), parameters('tags'))]"
           },
@@ -909,7 +909,7 @@
             "registryName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent registry. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent registry. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -932,14 +932,14 @@
                 "description": "Optional. Tags of the resource."
               }
             },
-            "regiunondpointEnabled": {
+            "regionEndpointEnabled": {
               "type": "bool",
               "defaultValue": true,
               "metadata": {
                 "description": "Optional. Specifies whether the replication regional endpoint is enabled. Requests will not be routed to a replication whose regional endpoint is disabled, however its data will continue to be synced with other replications."
               }
             },
-            "zunoRedundancy": {
+            "zoneRedundancy": {
               "type": "string",
               "defaultValue": "Disabled",
               "allowedValues": [
@@ -947,7 +947,7 @@
                 "Enabled"
               ],
               "metadata": {
-                "description": "Optional. Whether or not zuno redundancy is enabled for this container registry."
+                "description": "Optional. Whether or not zone redundancy is enabled for this container registry."
               }
             },
             "enableDefaultTelemetry": {
@@ -986,8 +986,8 @@
               "location": "[parameters('location')]",
               "tags": "[parameters('tags')]",
               "properties": {
-                "regiunondpointEnabled": "[parameters('regiunondpointEnabled')]",
-                "zunoRedundancy": "[parameters('zunoRedundancy')]"
+                "regionEndpointEnabled": "[parameters('regionEndpointEnabled')]",
+                "zoneRedundancy": "[parameters('zoneRedundancy')]"
               },
               "dependsOn": [
                 "registry"
@@ -1039,7 +1039,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Registry-Cache-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1074,7 +1074,7 @@
             "registryName": {
               "type": "string",
               "metadata": {
-                "description": "Required. The name of the parent registry. Required if the template is used in a standaluno deployment."
+                "description": "Required. The name of the parent registry. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -1176,7 +1176,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Registry-Webhook-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1220,7 +1220,7 @@
             "registryName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent registry. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent registry. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -1403,7 +1403,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-registry-PrivateEndpoint-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1431,11 +1431,11 @@
           "lock": {
             "value": "[coalesce(tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'lock'), parameters('lock'))]"
           },
-          "privateDnsZunoGroupName": {
-            "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'privateDnsZunoGroupName')]"
+          "privateDnsZoneGroupName": {
+            "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'privateDnsZoneGroupName')]"
           },
-          "privateDnsZunoResourceIds": {
-            "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'privateDnsZunoResourceIds')]"
+          "privateDnsZoneResourceIds": {
+            "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'privateDnsZoneResourceIds')]"
           },
           "roleAssignments": {
             "value": "[tryGet(coalesce(parameters('privateEndpoints'), createArray())[copyIndex()], 'roleAssignments')]"
@@ -1554,7 +1554,7 @@
                   "type": "string",
                   "allowedValues": [
                     "CanNotDelete",
-                    "Nuno",
+                    "None",
                     "ReadOnly"
                   ],
                   "nullable": true,
@@ -1677,18 +1677,18 @@
                 "description": "Required. Subtype(s) of the connection to be created. The allowed values depend on the type serviceResourceId refers to."
               }
             },
-            "privateDnsZunoGroupName": {
+            "privateDnsZoneGroupName": {
               "type": "string",
               "nullable": true,
               "metadata": {
-                "description": "Optional. The name of the private DNS zuno group to create if `privateDnsZunoResourceIds` were provided."
+                "description": "Optional. The name of the private DNS zone group to create if `privateDnsZoneResourceIds` were provided."
               }
             },
-            "privateDnsZunoResourceIds": {
+            "privateDnsZoneResourceIds": {
               "type": "array",
               "nullable": true,
               "metadata": {
-                "description": "Optional. The private DNS zuno groups to associate the private endpoint. A DNS zuno group can support up to 5 DNS zunos."
+                "description": "Optional. The private DNS zone groups to associate the private endpoint. A DNS zone group can support up to 5 DNS zones."
               }
             },
             "location": {
@@ -1744,12 +1744,12 @@
             "builtInRoleNames": {
               "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
               "DNS Resolver Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')]",
-              "DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
+              "DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
               "Domain Services Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')]",
               "Domain Services Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')]",
               "Network Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')]",
               "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
-              "Private DNS Zuno Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
+              "Private DNS Zone Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')]",
               "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]",
               "Role Based Access Control Administrator (Preview)": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')]"
             }
@@ -1804,7 +1804,7 @@
               }
             },
             "privateEndpoint_lock": {
-              "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+              "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
               "type": "Microsoft.Authorization/locks",
               "apiVersion": "2020-05-01",
               "scope": "[format('Microsoft.Network/privateEndpoints/{0}', parameters('name'))]",
@@ -1839,22 +1839,22 @@
                 "privateEndpoint"
               ]
             },
-            "privateEndpoint_privateDnsZunoGroup": {
-              "condition": "[not(empty(parameters('privateDnsZunoResourceIds')))]",
+            "privateEndpoint_privateDnsZoneGroup": {
+              "condition": "[not(empty(parameters('privateDnsZoneResourceIds')))]",
               "type": "Microsoft.Resources/deployments",
               "apiVersion": "2022-09-01",
-              "name": "[format('{0}-PrivateEndpoint-PrivateDnsZunoGroup', uniqueString(deployment().name))]",
+              "name": "[format('{0}-PrivateEndpoint-PrivateDnsZoneGroup', uniqueString(deployment().name))]",
               "properties": {
-                "expressiunovaluationOptions": {
+                "expressionEvaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
                 "parameters": {
                   "name": {
-                    "value": "[coalesce(parameters('privateDnsZunoGroupName'), 'default')]"
+                    "value": "[coalesce(parameters('privateDnsZoneGroupName'), 'default')]"
                   },
                   "privateDNSResourceIds": {
-                    "value": "[coalesce(parameters('privateDnsZunoResourceIds'), createArray())]"
+                    "value": "[coalesce(parameters('privateDnsZoneResourceIds'), createArray())]"
                   },
                   "privateEndpointName": {
                     "value": "[parameters('name')]"
@@ -1872,15 +1872,15 @@
                       "version": "0.23.1.45101",
                       "templateHash": "17578977753131828304"
                     },
-                    "name": "Private Endpoint Private DNS Zuno Groups",
-                    "description": "This module deploys a Private Endpoint Private DNS Zuno Group.",
+                    "name": "Private Endpoint Private DNS Zone Groups",
+                    "description": "This module deploys a Private Endpoint Private DNS Zone Group.",
                     "owner": "Azure/module-maintainers"
                   },
                   "parameters": {
                     "privateEndpointName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent private endpoint. Required if the template is used in a standaluno deployment."
+                        "description": "Conditional. The name of the parent private endpoint. Required if the template is used in a standalone deployment."
                       }
                     },
                     "privateDNSResourceIds": {
@@ -1888,14 +1888,14 @@
                       "minLength": 1,
                       "maxLength": 5,
                       "metadata": {
-                        "description": "Required. Array of private DNS zuno resource IDs. A DNS zuno group can support up to 5 DNS zunos."
+                        "description": "Required. Array of private DNS zone resource IDs. A DNS zone group can support up to 5 DNS zones."
                       }
                     },
                     "name": {
                       "type": "string",
                       "defaultValue": "default",
                       "metadata": {
-                        "description": "Optional. The name of the private DNS zuno group."
+                        "description": "Optional. The name of the private DNS zone group."
                       }
                     },
                     "enableDefaultTelemetry": {
@@ -1909,12 +1909,12 @@
                   "variables": {
                     "copy": [
                       {
-                        "name": "privateDnsZunoConfigs",
+                        "name": "privateDnsZoneConfigs",
                         "count": "[length(parameters('privateDNSResourceIds'))]",
                         "input": {
-                          "name": "[last(split(parameters('privateDNSResourceIds')[copyIndex('privateDnsZunoConfigs')], '/'))]",
+                          "name": "[last(split(parameters('privateDNSResourceIds')[copyIndex('privateDnsZoneConfigs')], '/'))]",
                           "properties": {
-                            "privateDnsZunoId": "[parameters('privateDNSResourceIds')[copyIndex('privateDnsZunoConfigs')]]"
+                            "privateDnsZoneId": "[parameters('privateDNSResourceIds')[copyIndex('privateDnsZoneConfigs')]]"
                           }
                         }
                       }
@@ -1936,11 +1936,11 @@
                       }
                     },
                     {
-                      "type": "Microsoft.Network/privateEndpoints/privateDnsZunoGroups",
+                      "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
                       "apiVersion": "2023-04-01",
                       "name": "[format('{0}/{1}', parameters('privateEndpointName'), parameters('name'))]",
                       "properties": {
-                        "privateDnsZunoConfigs": "[variables('privateDnsZunoConfigs')]"
+                        "privateDnsZoneConfigs": "[variables('privateDnsZoneConfigs')]"
                       }
                     }
                   ],
@@ -1948,21 +1948,21 @@
                     "name": {
                       "type": "string",
                       "metadata": {
-                        "description": "The name of the private endpoint DNS zuno group."
+                        "description": "The name of the private endpoint DNS zone group."
                       },
                       "value": "[parameters('name')]"
                     },
                     "resourceId": {
                       "type": "string",
                       "metadata": {
-                        "description": "The resource ID of the private endpoint DNS zuno group."
+                        "description": "The resource ID of the private endpoint DNS zone group."
                       },
-                      "value": "[resourceId('Microsoft.Network/privateEndpoints/privateDnsZunoGroups', parameters('privateEndpointName'), parameters('name'))]"
+                      "value": "[resourceId('Microsoft.Network/privateEndpoints/privateDnsZoneGroups', parameters('privateEndpointName'), parameters('name'))]"
                     },
                     "resourceGroupName": {
                       "type": "string",
                       "metadata": {
-                        "description": "The resource group the private endpoint DNS zuno group was deployed into."
+                        "description": "The resource group the private endpoint DNS zone group was deployed into."
                       },
                       "value": "[resourceGroup().name]"
                     }

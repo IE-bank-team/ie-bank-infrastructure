@@ -16,7 +16,7 @@ param location string = resourceGroup().location
   'PerGB2018'
   'PerNode'
   'Premium'
-  'Standaluno'
+  'Standalone'
   'Standard'
 ])
 param skuName string = 'PerGB2018'
@@ -73,7 +73,7 @@ param publicNetworkAccessForIngestion string = 'Enabled'
 ])
 param publicNetworkAccessForQuery string = 'Enabled'
 
-@description('Optional. The managed identity definition for this resource. Only uno type of identity is supported: system-assigned or user-assigned, but not both.')
+@description('Optional. The managed identity definition for this resource. Only one type of identity is supported: system-assigned or user-assigned, but not both.')
 param managedIdentities managedIdentitiesType
 
 @description('Optional. Set to \'true\' to use resource or workspace permissions and \'false\' (or leave empty) to require workspace permissions.')
@@ -293,7 +293,7 @@ module logAnalyticsWorkspace_solutions '../../operations-management/solution/mai
   }
 }]
 
-resource logAnalyticsWorkspace_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource logAnalyticsWorkspace_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -351,7 +351,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

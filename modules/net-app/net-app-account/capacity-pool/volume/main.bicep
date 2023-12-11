@@ -2,10 +2,10 @@ metadata name = 'Azure NetApp Files Capacity Pool Volumes'
 metadata description = 'This module deploys an Azure NetApp Files Capacity Pool Volume.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent NetApp account. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent NetApp account. Required if the template is used in a standalone deployment.')
 param netAppAccountName string
 
-@description('Conditional. The name of the parent capacity pool. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent capacity pool. Required if the template is used in a standalone deployment.')
 param capacityPoolName string
 
 @description('Required. The name of the pool volume.')
@@ -14,7 +14,7 @@ param name string
 @description('Optional. Location of the pool volume.')
 param location string = resourceGroup().location
 
-@description('Optional. The pool service level. Must match the uno of the parent capacity pool.')
+@description('Optional. The pool service level. Must match the one of the parent capacity pool.')
 @allowed([
   'Premium'
   'Standard'

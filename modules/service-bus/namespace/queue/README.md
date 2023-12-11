@@ -30,7 +30,7 @@ This module deploys a Service Bus Namespace Queue.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standaluno deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -44,7 +44,7 @@ This module deploys a Service Bus Namespace Queue.
 | [`enableBatchedOperations`](#parameter-enablebatchedoperations) | bool | Value that indicates whether server-side batched operations are enabled. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`enableExpress`](#parameter-enableexpress) | bool | A value that indicates whether Express Entities are enabled. An express queue holds a message in memory temporarily before writing it to persistent storage. |
-| [`enablePartitioning`](#parameter-enablepartitioning) | bool | A value that indicates whether the queue is to be partitiunod across multiple message brokers. |
+| [`enablePartitioning`](#parameter-enablepartitioning) | bool | A value that indicates whether the queue is to be partitioned across multiple message brokers. |
 | [`forwardDeadLetteredMessagesTo`](#parameter-forwarddeadletteredmessagesto) | string | Queue/Topic name to forward the Dead Letter message. |
 | [`forwardTo`](#parameter-forwardto) | string | Queue/Topic name to forward the messages. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
@@ -66,7 +66,7 @@ Name of the Service Bus Queue.
 
 ### Parameter: `namespaceName`
 
-The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standaluno deployment.
+The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -151,7 +151,7 @@ A value that indicates whether Express Entities are enabled. An express queue ho
 
 ### Parameter: `enablePartitioning`
 
-A value that indicates whether the queue is to be partitiunod across multiple message brokers.
+A value that indicates whether the queue is to be partitioned across multiple message brokers.
 
 - Required: No
 - Type: bool
@@ -197,7 +197,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -379,4 +379,4 @@ Enumerates the possible values for the status of a messaging entity. - Active, D
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -29,7 +29,7 @@ This module deploys a Synapse Workspaces Key.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`workspaceName`](#parameter-workspacename) | string | The name of the parent Synapse Workspace. Required if the template is used in a standaluno deployment. |
+| [`workspaceName`](#parameter-workspacename) | string | The name of the parent Synapse Workspace. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -61,7 +61,7 @@ Encryption key name.
 
 ### Parameter: `workspaceName`
 
-The name of the parent Synapse Workspace. Required if the template is used in a standaluno deployment.
+The name of the parent Synapse Workspace. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -93,4 +93,4 @@ The geo-location where the resource lives.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

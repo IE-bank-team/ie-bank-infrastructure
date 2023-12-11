@@ -27,7 +27,7 @@ This module deploys a Static Web App Site Custom Domain.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`staticSiteName`](#parameter-staticsitename) | string | The name of the parent Static Web App. Required if the template is used in a standaluno deployment. |
+| [`staticSiteName`](#parameter-staticsitename) | string | The name of the parent Static Web App. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -46,7 +46,7 @@ The custom domain name.
 
 ### Parameter: `staticSiteName`
 
-The name of the parent Static Web App. Required if the template is used in a standaluno deployment.
+The name of the parent Static Web App. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -86,4 +86,4 @@ Validation method for adding a custom domain.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -83,7 +83,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
                   repeatingTimeIntervals: [
                     'R/2022-05-31T23:30:00+01:00/P1D'
                   ]
-                  timeZuno: 'W. Europe Standard Time'
+                  timeZone: 'W. Europe Standard Time'
                 }
                 taggingCriteria: [
                   {

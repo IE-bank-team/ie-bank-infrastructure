@@ -2,7 +2,7 @@ metadata name = 'Site Slot Auth Settings V2 Config'
 metadata description = 'This module deploys a Site Auth Settings V2 Configuration.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent site resource. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent site resource. Required if the template is used in a standalone deployment.')
 param appName string
 
 @description('Required. Slot name to be configured.')

@@ -444,18 +444,18 @@ module workflow 'br:bicep/modules/logic.workflow:1.0.0' = {
 | [`integrationServiceEnvironmentResourceId`](#parameter-integrationserviceenvironmentresourceid) | string | The integration service environment Id. |
 | [`location`](#parameter-location) | string | Location for all resources. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
-| [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. Only uno type of identity is supported: system-assigned or user-assigned, but not both. |
+| [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. Only one type of identity is supported: system-assigned or user-assigned, but not both. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignment objects that contain the 'roleDefinitionIdOrName' and 'principalId' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: '/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11'. |
 | [`state`](#parameter-state) | string | The state. - NotSpecified, Completed, Enabled, Disabled, Deleted, Suspended. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`triggersAccessControlConfiguration`](#parameter-triggersaccesscontrolconfiguration) | object | The access control configuration for invoking workflow triggers. |
-| [`workflowActions`](#parameter-workflowactions) | object | The definitions for uno or more actions to execute at workflow runtime. |
+| [`workflowActions`](#parameter-workflowactions) | object | The definitions for one or more actions to execute at workflow runtime. |
 | [`workflowEndpointsConfiguration`](#parameter-workflowendpointsconfiguration) | object | The endpoints configuration:  Access endpoint and outgoing IP addresses for the workflow. |
 | [`workflowManagementAccessControlConfiguration`](#parameter-workflowmanagementaccesscontrolconfiguration) | object | The access control configuration for workflow management. |
 | [`workflowOutputs`](#parameter-workflowoutputs) | object | The definitions for the outputs to return from a workflow run. |
-| [`workflowParameters`](#parameter-workflowparameters) | object | The definitions for uno or more parameters that pass the values to use at your logic app's runtime. |
-| [`workflowStaticResults`](#parameter-workflowstaticresults) | object | The definitions for uno or more static results returned by actions as mock outputs when static results are enabled on those actions. In each action definition, the runtimeConfiguration.staticResult.name attribute references the corresponding definition inside staticResults. |
-| [`workflowTriggers`](#parameter-workflowtriggers) | object | The definitions for uno or more triggers that instantiate your workflow. You can define more than uno trigger, but only with the Workflow Definition Language, not visually through the Logic Apps Designer. |
+| [`workflowParameters`](#parameter-workflowparameters) | object | The definitions for one or more parameters that pass the values to use at your logic app's runtime. |
+| [`workflowStaticResults`](#parameter-workflowstaticresults) | object | The definitions for one or more static results returned by actions as mock outputs when static results are enabled on those actions. In each action definition, the runtimeConfiguration.staticResult.name attribute references the corresponding definition inside staticResults. |
+| [`workflowTriggers`](#parameter-workflowtriggers) | object | The definitions for one or more triggers that instantiate your workflow. You can define more than one trigger, but only with the Workflow Definition Language, not visually through the Logic Apps Designer. |
 
 ### Parameter: `name`
 
@@ -643,7 +643,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -657,7 +657,7 @@ Specify the name of lock.
 
 ### Parameter: `managedIdentities`
 
-The managed identity definition for this resource. Only uno type of identity is supported: system-assigned or user-assigned, but not both.
+The managed identity definition for this resource. Only one type of identity is supported: system-assigned or user-assigned, but not both.
 
 - Required: No
 - Type: object
@@ -808,7 +808,7 @@ The access control configuration for invoking workflow triggers.
 
 ### Parameter: `workflowActions`
 
-The definitions for uno or more actions to execute at workflow runtime.
+The definitions for one or more actions to execute at workflow runtime.
 
 - Required: No
 - Type: object
@@ -840,7 +840,7 @@ The definitions for the outputs to return from a workflow run.
 
 ### Parameter: `workflowParameters`
 
-The definitions for uno or more parameters that pass the values to use at your logic app's runtime.
+The definitions for one or more parameters that pass the values to use at your logic app's runtime.
 
 - Required: No
 - Type: object
@@ -848,7 +848,7 @@ The definitions for uno or more parameters that pass the values to use at your l
 
 ### Parameter: `workflowStaticResults`
 
-The definitions for uno or more static results returned by actions as mock outputs when static results are enabled on those actions. In each action definition, the runtimeConfiguration.staticResult.name attribute references the corresponding definition inside staticResults.
+The definitions for one or more static results returned by actions as mock outputs when static results are enabled on those actions. In each action definition, the runtimeConfiguration.staticResult.name attribute references the corresponding definition inside staticResults.
 
 - Required: No
 - Type: object
@@ -856,7 +856,7 @@ The definitions for uno or more static results returned by actions as mock outpu
 
 ### Parameter: `workflowTriggers`
 
-The definitions for uno or more triggers that instantiate your workflow. You can define more than uno trigger, but only with the Workflow Definition Language, not visually through the Logic Apps Designer.
+The definitions for one or more triggers that instantiate your workflow. You can define more than one trigger, but only with the Workflow Definition Language, not visually through the Logic Apps Designer.
 
 - Required: No
 - Type: object
@@ -875,7 +875,7 @@ The definitions for uno or more triggers that instantiate your workflow. You can
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

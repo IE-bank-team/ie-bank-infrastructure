@@ -47,7 +47,7 @@ They can be deployed in different configurations just by changing the input para
 - The 'constructs' folder contains examples of deployment logic built on top of resource modules included in the 'modules' folder, allowing for example, deployment loops on top-level resources.
   > **Example:** The VirtualNetworkPeering construct leverages the VirtualNetworkPeering module to deploy multiple virtual network peering connections at once.
 - Where the resource type in question supports it, the module should have support for:
-  1. **Diagnostic logs** and **metrics** (you can have them sent to uno ore more of the following destination types: storage account, log analytics and event hub).
+  1. **Diagnostic logs** and **metrics** (you can have them sent to one ore more of the following destination types: storage account, log analytics and event hub).
   1. Resource and child-resource level **RBAC** (for example, providing data contributor access on a storage account; granting file share/blob container level access in a storage account)
   1. **Tags** (as objects)
   1. **Locks**
@@ -66,7 +66,7 @@ They can be deployed in different configurations just by changing the input para
 A **CARML module** consists of
 
 - The Bicep template deployment file (`main.bicep`).
-- uno or multiple module test files (`main.test.bicep`) that will be used for testing, located in the `.test` folder and its subfolders.
+- One or multiple module test files (`main.test.bicep`) that will be used for testing, located in the `.test` folder and its subfolders.
 - A `README.md` file which describes the module itself.
 - A `version.json` file which contains information on the module's major and minor version.
 
@@ -146,7 +146,7 @@ The locks extension can be added as a `resource` to the resource template direct
 @description('Optional. The lock settings of the service.')
 param lock lockType
 
-resource <mainResource>_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource <mainResource>_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -362,7 +362,7 @@ resource <mainResource>_diagnosticSettings 'Microsoft.Insights/diagnosticsetting
 
 ### Private Endpoints
 
-The Private Endpoint deployment has 2 elements. A module that contains the implementation, and a module reference in the parent resource. The first uno loops through the endpoints we want to create, the second uno processes them.
+The Private Endpoint deployment has 2 elements. A module that contains the implementation, and a module reference in the parent resource. The first one loops through the endpoints we want to create, the second one processes them.
 
 <details>
 <summary>Details</summary>
@@ -385,7 +385,7 @@ module <mainResource>_privateEndpoints 'https://github.com/Azure/ResourceModules
     enableDefaultTelemetry: enableReferencedModulesTelemetry
     location: contains(privateEndpoint, 'location') ? privateEndpoint.location : reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: contains(privateEndpoint, 'lock') ? privateEndpoint.lock : lock
-    privateDnsZunoGroup: contains(privateEndpoint, 'privateDnsZunoGroup') ? privateEndpoint.privateDnsZunoGroup : {}
+    privateDnsZoneGroup: contains(privateEndpoint, 'privateDnsZoneGroup') ? privateEndpoint.privateDnsZoneGroup : {}
     roleAssignments: contains(privateEndpoint, 'roleAssignments') ? privateEndpoint.roleAssignments : []
     tags: contains(privateEndpoint, 'tags') ? privateEndpoint.tags : {}
     manualPrivateLinkServiceConnections: contains(privateEndpoint, 'manualPrivateLinkServiceConnections') ? privateEndpoint.manualPrivateLinkServiceConnections : []
@@ -423,7 +423,7 @@ Within a bicep file, use the following conventions:
   > For example, the input parameter of the Key Vault module which maps to the `name` resource property should be just `name` and not `keyVaultName`. The rationale is that the consumers know that the name is for the Key Vault if they deploy its module.
 - If a property value allows a single value only, there is no need to introduce a parameter for it. Instead it can be hardcoded into the deployment.
   > For example, the name of a Blob Container Immutability Policy resource can only be `default`. Hence we can implement its name property directly as `name: 'default'`.
-- If a property value allows a single value only, but the value is used in more than uno place, a variable should be introduced to be leveraged in the multiple occurrences.
+- If a property value allows a single value only, but the value is used in more than one place, a variable should be introduced to be leveraged in the multiple occurrences.
   > For example, in cases where the resource name can be hardcoded and the resource supports diagnostic settings, also the default value for the diagnostic settings name `"<resourceName>-diagnosticSettings"` is affected. In those cases, we recommend to introduce an additional variable `'var name = '<theHardcodedValue>'`' (e.g., `var name = 'default'`) to be used both in the main resource's name (e.g., `'name: name'`), as well as the diagnostic settings name: `'name: !empty(diagnosticSettingsName) ? diagnosticSettingsName : '${name}-diagnosticSettings'`'.
 
 ## Variables
@@ -510,13 +510,13 @@ There are some constraints that needs to be considered when naming the deploymen
 
 - Deployment name length can't exceed 64 chars.
 - Two deployments with the same name created in different Azure locations (e.g., WestEurope & EastUS) in the same scope (e.g., resource group deployments) will fail.
-- Using the same deployment name more than once, will surface only the most recent deployed uno in the Azure Portal.
-- If more than uno deployment with the same name runs at the same time to the same scope, race condition might happen.
+- Using the same deployment name more than once, will surface only the most recent deployed one in the Azure Portal.
+- If more than one deployment with the same name runs at the same time to the same scope, race condition might happen.
 - Human-readable names are preferable, even if not necessary.
 
 While exceptions might be needed, the following guidance should be followed as much as possible:
 
-- When deploying more than uno resource of the same referenced module is needed, we leverage loops using integer index and items in an array as per [Bicep loop syntax](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/loops#loop-syntax). In this case, we also use `-${index}` as a suffix of the deployment name to avoid race condition:
+- When deploying more than one resource of the same referenced module is needed, we leverage loops using integer index and items in an array as per [Bicep loop syntax](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/loops#loop-syntax). In this case, we also use `-${index}` as a suffix of the deployment name to avoid race condition:
 
   ```bicep
   module symbolic_name 'path/to/referenced/module/main.bicep' = [for (<item>, <index>) in <collection>: {
@@ -572,7 +572,7 @@ While exceptions might be needed, the following guidance should be followed as m
 # ReadMe
 
 Each module must come with a ReadMe Markdown file that outlines what the module contains and 'how' it can be used.
-Its primary compunonts are in order:
+Its primary components are in order:
 
 - A title with a reference to the primary resource in Start Case followed by the primary resource namespace e.g., <code>Key Vaults `[Microsoft.KeyVault/vaults]`</code>.
 - A short description
@@ -607,14 +607,14 @@ Test file (`main.test.bicep`) guidelines:
 - Parameters
   - Each file should define a parameter `serviceShort`. This parameter should be unique to this file (i.e, no two test files should share the same) as it is injected into all resource deployments, making them unique too and account for corresponding requirements.
     - As a reference you can create a identifier by combining a substring of the resource type and test scenario (e.g., in case of a Linux Virtual Machine Deployment: `vmlin`).
-    - For the substring, we recommend to take the first character and subsequent upper-case characters from the resource type identifier and combine them into uno string. Following you can find a few examples for reference:
+    - For the substring, we recommend to take the first character and subsequent upper-case characters from the resource type identifier and combine them into one string. Following you can find a few examples for reference:
       - `Microsoft.DBforPostgreSQL/flexibleServers` with a test folder `common` could be: `dfpsfscom`
       - `Microsoft.Storage/storageAccounts` with a test folder `min` could be: `ssamin`
       > **Note:** If the combination of the `servicesShort` with the rest of a resource name becomes too long, it may be necessary to bend the above recommendations and shorten the name. This can especially happen when deploying resources such as Virtual Machines or Storage Accounts that only allow comparatively short names.
   - If the module deploys a resource group level resource, the template should further have a `resourceGroupName` parameter and subsequent resource deployment. As a reference for the default name you can use `ms.<providerNamespace>.<resourceType>-${serviceShort}-test-rg`.
   - Each file should also provide a `location` parameter that may default to the deployments default location
 - It is recommended to define all major resource names in the `main.test.bicep` file as it makes later maintenance easier. To implement this, make sure to pass all resource names to any referenced module.
-- Further, for any test file (including the `dependencies.bicep` file), the usage of variables should be reduced to the absolute minimum. In other words: You should only use variables if you must use them in more than uno place. The idea is to keep the test files as simple as possible
+- Further, for any test file (including the `dependencies.bicep` file), the usage of variables should be reduced to the absolute minimum. In other words: You should only use variables if you must use them in more than one place. The idea is to keep the test files as simple as possible
 - References to dependencies should be implemented using resource references in combination with outputs. In other words: You should not hardcode any references into the module template's deployment. Instead use references such as `nestedDependencies.outputs.managedIdentityPrincipalId`
 - If any diagnostic resources (e.g., a Log Analytics workspace) are required for a test scenario, you can reference the centralized `modules/.shared/.templates/diagnostic.dependencies.bicep` template. It will also provide you with all outputs you'd need.
 
@@ -647,7 +647,7 @@ Each module in CARML contains a `defaultTelemetry` deployment `'pid-<GUID>-${uni
 
 > **Note:** Though implemented at each level in a module hierarchy (e.g., storage account & blobServices), the deployment will only happen for the top-level module in a deployment, but not for its children. To illustrate this better, see the following examples:
 >
-> - Deployment of the KeyVault module and 2 Secrets: Results in 1 `PID` deployment for the KeyVault (and nuno for the secrets)
+> - Deployment of the KeyVault module and 2 Secrets: Results in 1 `PID` deployment for the KeyVault (and none for the secrets)
 > - Deployment of the Secret module: Results in 1 `PID` deployment for the Secret
 
 ## Opting Out

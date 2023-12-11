@@ -21,7 +21,7 @@ Optional. The order of resource types to apply for deletion. If order is provide
 .EXAMPLE
 Get-OrderedResourcesList -ResourcesToOrder @(@{ name = 'myAccount'; resourceId '(..)/Microsoft.Automation/automationAccounts/myAccount'; type = 'Microsoft.Automation/automationAccounts'}) -Order @('Microsoft.Insights/diagnosticSettings','Microsoft.Automation/automationAccounts')
 
-Order the given list of resources which would put the diagnostic settings to the front of the list, then the automation account, then the rest. As only uno item exists, the list is returned as is.
+Order the given list of resources which would put the diagnostic settings to the front of the list, then the automation account, then the rest. As only one item exists, the list is returned as is.
 #>
 function Get-OrderedResourcesList {
 

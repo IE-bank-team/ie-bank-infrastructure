@@ -387,7 +387,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -523,4 +523,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

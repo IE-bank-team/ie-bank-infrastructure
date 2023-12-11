@@ -60,7 +60,7 @@ Example: 'Artifacts'.
 Optional. The bearer token to use to authenticate the request. If not provided it MUST be existing in your environment as `$env:TOKEN`
 
 .PARAMETER UseApiSpecsAlignedName
-Optional. If set to true, the module will be published with a name that is aligned with the Azure API naming. If not, uno aligned with the module's folder path. See the following examples:
+Optional. If set to true, the module will be published with a name that is aligned with the Azure API naming. If not, one aligned with the module's folder path. See the following examples:
 - True:  microsoft.keyvault.vaults.secrets
 - False: key-vault.vault.secret
 

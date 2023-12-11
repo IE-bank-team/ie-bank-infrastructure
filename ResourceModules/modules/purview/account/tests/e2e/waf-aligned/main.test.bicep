@@ -96,7 +96,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     ]
     accountPrivateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
+        privateDnsZoneResourceIds: [
           nestedDependencies.outputs.purviewAccountPrivateDNSResourceId
         ]
         service: 'account'
@@ -110,7 +110,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     ]
     portalPrivateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
+        privateDnsZoneResourceIds: [
           nestedDependencies.outputs.purviewPortalPrivateDNSResourceId
         ]
         service: 'portal'
@@ -124,7 +124,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     ]
     storageBlobPrivateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
+        privateDnsZoneResourceIds: [
           nestedDependencies.outputs.storageBlobPrivateDNSResourceId
         ]
         service: 'blob'
@@ -138,7 +138,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     ]
     storageQueuePrivateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
+        privateDnsZoneResourceIds: [
           nestedDependencies.outputs.storageQueuePrivateDNSResourceId
         ]
         service: 'queue'
@@ -152,7 +152,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     ]
     eventHubPrivateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
+        privateDnsZoneResourceIds: [
           nestedDependencies.outputs.eventHubPrivateDNSResourceId
         ]
         service: 'namespace'

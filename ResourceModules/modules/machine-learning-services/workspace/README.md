@@ -21,7 +21,7 @@ This module deploys a Machine Learning Services Workspace.
 | `Microsoft.MachineLearningServices/workspaces` | [2022-10-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.MachineLearningServices/2022-10-01/workspaces) |
 | `Microsoft.MachineLearningServices/workspaces/computes` | [2022-10-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.MachineLearningServices/2022-10-01/workspaces/computes) |
 | `Microsoft.Network/privateEndpoints` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints) |
-| `Microsoft.Network/privateEndpoints/privateDnsZunoGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZunoGroups) |
+| `Microsoft.Network/privateEndpoints/privateDnsZoneGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZoneGroups) |
 
 ## Usage examples
 
@@ -140,8 +140,8 @@ module workspace 'br:bicep/modules/machine-learning-services.workspace:1.0.0' = 
     primaryUserAssignedIdentity: '<primaryUserAssignedIdentity>'
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         service: 'amlworkspace'
         subnetResourceId: '<subnetResourceId>'
@@ -214,8 +214,8 @@ module workspace 'br:bicep/modules/machine-learning-services.workspace:1.0.0' = 
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "service": "amlworkspace",
           "subnetResourceId": "<subnetResourceId>",
@@ -322,8 +322,8 @@ module workspace 'br:bicep/modules/machine-learning-services.workspace:1.0.0' = 
     primaryUserAssignedIdentity: '<primaryUserAssignedIdentity>'
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         subnetResourceId: '<subnetResourceId>'
         tags: {
@@ -468,8 +468,8 @@ module workspace 'br:bicep/modules/machine-learning-services.workspace:1.0.0' = 
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "subnetResourceId": "<subnetResourceId>",
           "tags": {
@@ -594,8 +594,8 @@ module workspace 'br:bicep/modules/machine-learning-services.workspace:1.0.0' = 
     primaryUserAssignedIdentity: '<primaryUserAssignedIdentity>'
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         subnetResourceId: '<subnetResourceId>'
         tags: {
@@ -723,8 +723,8 @@ module workspace 'br:bicep/modules/machine-learning-services.workspace:1.0.0' = 
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "subnetResourceId": "<subnetResourceId>",
           "tags": {
@@ -784,7 +784,7 @@ module workspace 'br:bicep/modules/machine-learning-services.workspace:1.0.0' = 
 | [`imageBuildCompute`](#parameter-imagebuildcompute) | string | The compute name for image build. |
 | [`location`](#parameter-location) | string | Location for all resources. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
-| [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. At least uno identity type is required. |
+| [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. At least one identity type is required. |
 | [`privateEndpoints`](#parameter-privateendpoints) | array | Configuration details for private endpoints. For security reasons, it is recommended to use private endpoints whenever possible. |
 | [`publicNetworkAccess`](#parameter-publicnetworkaccess) | string | Whether or not public network access is allowed for this resource. For security reasons it should be disabled. If not specified, it will be disabled by default if private endpoints are set. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignment objects that contain the 'roleDefinitionIdOrName' and 'principalId' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: '/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11'. |
@@ -1080,7 +1080,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1094,7 +1094,7 @@ Specify the name of lock.
 
 ### Parameter: `managedIdentities`
 
-The managed identity definition for this resource. At least uno identity type is required.
+The managed identity definition for this resource. At least one identity type is required.
 
 - Required: No
 - Type: object
@@ -1152,8 +1152,8 @@ Configuration details for private endpoints. For security reasons, it is recomme
 | [`lock`](#parameter-privateendpointslock) | object | Specify the type of lock. |
 | [`manualPrivateLinkServiceConnections`](#parameter-privateendpointsmanualprivatelinkserviceconnections) | array | Manual PrivateLink Service Connections. |
 | [`name`](#parameter-privateendpointsname) | string | The name of the private endpoint. |
-| [`privateDnsZunoGroupName`](#parameter-privateendpointsprivatednszunogroupname) | string | The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided. |
-| [`privateDnsZunoResourceIds`](#parameter-privateendpointsprivatednszunoresourceids) | array | The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos. |
+| [`privateDnsZoneGroupName`](#parameter-privateendpointsprivatednszonegroupname) | string | The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided. |
+| [`privateDnsZoneResourceIds`](#parameter-privateendpointsprivatednszoneresourceids) | array | The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones. |
 | [`roleAssignments`](#parameter-privateendpointsroleassignments) | array | Array of role assignment objects that contain the 'roleDefinitionIdOrName' and 'principalId' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: '/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11'. |
 | [`service`](#parameter-privateendpointsservice) | string | The service (sub-) type to deploy the private endpoint for. For example "vault" or "blob". |
 | [`tags`](#parameter-privateendpointstags) | object | Tags to be applied on all resources/resource groups in this deployment. |
@@ -1231,7 +1231,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1257,16 +1257,16 @@ The name of the private endpoint.
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZunoGroupName`
+### Parameter: `privateEndpoints.privateDnsZoneGroupName`
 
-The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.
+The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.
 
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZunoResourceIds`
+### Parameter: `privateEndpoints.privateDnsZoneResourceIds`
 
-The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.
+The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.
 
 - Required: No
 - Type: array

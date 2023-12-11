@@ -4,8 +4,8 @@ param location string = resourceGroup().location
 @description('Required. The name of the Managed Identity to create.')
 param managedIdentityName string
 
-@description('Required. The Private DNS Zuno Name to create for Private AKS Cluster.')
-param privateDnsZunoName string
+@description('Required. The Private DNS Zone Name to create for Private AKS Cluster.')
+param privateDnsZoneName string
 
 @description('Required. The Name of the Virtual Network to create.')
 param virtualNetworkName string
@@ -17,8 +17,8 @@ resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-
   location: location
 }
 
-resource privateDnsZuno 'Microsoft.Network/privateDnsZunos@2020-06-01' = {
-  name: privateDnsZunoName
+resource privateDnsZone 'Microsoft.Network/privateDnsZones@2020-06-01' = {
+  name: privateDnsZoneName
   location: 'global'
 }
 
@@ -40,12 +40,12 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2023-04-01' = {
   }
 }
 
-resource privateDNSZunoVNetLink 'Microsoft.Network/privateDnsZunos/virtualNetworkLinks@2020-06-01' = {
-  name: 'pDnsLink-${virtualNetworkName}-${privateDnsZunoName}'
+resource privateDNSZoneVNetLink 'Microsoft.Network/privateDnsZones/virtualNetworkLinks@2020-06-01' = {
+  name: 'pDnsLink-${virtualNetworkName}-${privateDnsZoneName}'
   location: 'global'
-  parent: privateDnsZuno
+  parent: privateDnsZone
   properties: {
-    registratiunonabled: true
+    registrationEnabled: true
     virtualNetwork: {
       id: virtualNetwork.id
     }
@@ -62,12 +62,12 @@ resource msiVnetRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-
   }
 }
 
-resource msiPrivDnsZunoRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  name: guid(resourceGroup().id, 'PrivateDNSZunoContributor', managedIdentity.id)
-  scope: privateDnsZuno
+resource msiPrivDnsZoneRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+  name: guid(resourceGroup().id, 'PrivateDNSZoneContributor', managedIdentity.id)
+  scope: privateDnsZone
   properties: {
     principalId: managedIdentity.properties.principalId
-    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f') // Private DNS Zuno Contributor
+    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f') // Private DNS Zone Contributor
     principalType: 'ServicePrincipal'
   }
 }
@@ -78,8 +78,8 @@ output managedIdentityPrincipalId string = managedIdentity.properties.principalI
 @description('The resource ID of the created Managed Identity.')
 output managedIdentityResourceId string = managedIdentity.id
 
-@description('The resource ID of the private DNS Zuno created.')
-output privateDnsZunoResourceId string = privateDnsZuno.id
+@description('The resource ID of the private DNS Zone created.')
+output privateDnsZoneResourceId string = privateDnsZone.id
 
 @description('The resource ID of the VirtualNetwork created.')
 output vNetResourceId string = virtualNetwork.id

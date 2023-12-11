@@ -6,7 +6,7 @@ metadata owner = 'Azure/module-maintainers'
 //   Parameters   //
 // ============== //
 
-@description('Required. The name of the Azure Cognitive Search service to create or update. Search service names must only contain lowercase letters, digits or dashes, cannot use dash as the first two or last uno characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search service names must be globally unique since they are part of the service URI (https://<name>.search.windows.net). You cannot change the service name after the service is created.')
+@description('Required. The name of the Azure Cognitive Search service to create or update. Search service names must only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search service names must be globally unique since they are part of the service URI (https://<name>.search.windows.net). You cannot change the service name after the service is created.')
 param name string
 
 @description('Optional. Defines the options for how the data plane API of a Search service authenticates requests. Must remain an empty object {} if \'disableLocalAuth\' is set to true.')
@@ -174,7 +174,7 @@ resource searchService_diagnosticSettings 'Microsoft.Insights/diagnosticSettings
   scope: searchService
 }]
 
-resource searchService_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource searchService_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -209,8 +209,8 @@ module searchService_privateEndpoints '../../network/private-endpoint/main.bicep
     enableDefaultTelemetry: privateEndpoint.?enableDefaultTelemetry ?? enableReferencedModulesTelemetry
     location: privateEndpoint.?location ?? reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZunoGroupName: privateEndpoint.?privateDnsZunoGroupName
-    privateDnsZunoResourceIds: privateEndpoint.?privateDnsZunoResourceIds
+    privateDnsZoneGroupName: privateEndpoint.?privateDnsZoneGroupName
+    privateDnsZoneResourceIds: privateEndpoint.?privateDnsZoneResourceIds
     roleAssignments: privateEndpoint.?roleAssignments
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: privateEndpoint.?manualPrivateLinkServiceConnections
@@ -223,7 +223,7 @@ module searchService_privateEndpoints '../../network/private-endpoint/main.bicep
 
 // The Shared Private Link Resources must be deployed sequentially
 // othersie the deployment may fail.
-// Using batchSize(1) to deploy them uno by uno
+// Using batchSize(1) to deploy them one by one
 @batchSize(1)
 module searchService_sharedPrivateLinkResources 'shared-private-link-resource/main.bicep' = [for (sharedPrivateLinkResource, index) in sharedPrivateLinkResources: {
   name: '${uniqueString(deployment().name, location)}-searchService-SharedPrivateLink-${index}'
@@ -271,7 +271,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {
@@ -310,11 +310,11 @@ type privateEndpointType = {
   @description('Required. Resource ID of the subnet where the endpoint needs to be created.')
   subnetResourceId: string
 
-  @description('Optional. The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.')
-  privateDnsZunoGroupName: string?
+  @description('Optional. The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.')
+  privateDnsZoneGroupName: string?
 
-  @description('Optional. The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.')
-  privateDnsZunoResourceIds: string[]?
+  @description('Optional. The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.')
+  privateDnsZoneResourceIds: string[]?
 
   @description('Optional. Custom DNS configurations.')
   customDnsConfigs: {

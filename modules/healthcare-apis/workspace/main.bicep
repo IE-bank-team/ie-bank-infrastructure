@@ -80,7 +80,7 @@ resource workspace 'Microsoft.HealthcareApis/workspaces@2022-06-01' = {
   }
 }
 
-resource workspace_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource workspace_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -130,7 +130,7 @@ module workspace_fhirservices 'fhirservice/main.bicep' = [for (fhir, index) in f
     importEnabled: contains(fhir, 'importEnabled') ? fhir.importEnabled : false
     initialImportMode: contains(fhir, 'initialImportMode') ? fhir.initialImportMode : false
     lock: fhir.?lock ?? lock
-    resourceVersionPolicy: contains(fhir, 'resourceVersionPolicy') ? fhir.resourceVersionPolicy : 'versiunod'
+    resourceVersionPolicy: contains(fhir, 'resourceVersionPolicy') ? fhir.resourceVersionPolicy : 'versioned'
     resourceVersionOverrides: contains(fhir, 'resourceVersionOverrides') ? fhir.resourceVersionOverrides : {}
     smartProxyEnabled: contains(fhir, 'smartProxyEnabled') ? fhir.smartProxyEnabled : false
     enableDefaultTelemetry: enableReferencedModulesTelemetry
@@ -200,7 +200,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

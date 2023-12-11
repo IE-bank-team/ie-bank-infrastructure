@@ -68,7 +68,7 @@ module testDeployment '../../../main.bicep' = {
   params: {
     enableDefaultTelemetry: enableDefaultTelemetry
     name: '${namePrefix}${serviceShort}001'
-    zunoRedundant: true
+    zoneRedundant: true
     skuName: 'Standard'
     skuCapacity: 2
     authorizationRules: [
@@ -136,8 +136,8 @@ module testDeployment '../../../main.bicep' = {
         captureDescriptionDestinationBlobContainer: 'eventhub'
         captureDescriptionDestinationName: 'EventHubArchive.AzureBlockBlob'
         captureDescriptionDestinationStorageAccountResourceId: nestedDependencies.outputs.storageAccountResourceId
-        captureDescriptiunonabled: true
-        captureDescriptiunoncoding: 'Avro'
+        captureDescriptionEnabled: true
+        captureDescriptionEncoding: 'Avro'
         captureDescriptionIntervalInSeconds: 300
         captureDescriptionSizeLimitInBytes: 314572800
         captureDescriptionSkipEmptyArchives: true
@@ -163,7 +163,7 @@ module testDeployment '../../../main.bicep' = {
       {
         name: '${namePrefix}-az-evh-x-003'
         retentionDescriptionCleanupPolicy: 'Compact'
-        retentionDescriptionTombstunoRetentionTimeInHours: 24
+        retentionDescriptionTombstoneRetentionTimeInHours: 24
       }
     ]
     lock: {
@@ -188,8 +188,8 @@ module testDeployment '../../../main.bicep' = {
     }
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          nestedDependencies.outputs.privateDNSZunoResourceId
+        privateDnsZoneResourceIds: [
+          nestedDependencies.outputs.privateDNSZoneResourceId
         ]
         service: 'namespace'
         subnetResourceId: nestedDependencies.outputs.subnetResourceId

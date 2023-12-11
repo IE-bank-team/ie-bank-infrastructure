@@ -130,7 +130,7 @@ module publicIpAddress 'br:bicep/modules/network.public-ip-address:1.0.0' = {
       'hidden-title': 'This is visible in the resource name'
       Role: 'DeploymentValidation'
     }
-    zunos: [
+    zones: [
       '1'
       '2'
       '3'
@@ -203,7 +203,7 @@ module publicIpAddress 'br:bicep/modules/network.public-ip-address:1.0.0' = {
         "Role": "DeploymentValidation"
       }
     },
-    "zunos": {
+    "zones": {
       "value": [
         "1",
         "2",
@@ -266,7 +266,7 @@ module publicIpAddress 'br:bicep/modules/network.public-ip-address:1.0.0' = {
       'hidden-title': 'This is visible in the resource name'
       Role: 'DeploymentValidation'
     }
-    zunos: [
+    zones: [
       '1'
       '2'
       '3'
@@ -339,7 +339,7 @@ module publicIpAddress 'br:bicep/modules/network.public-ip-address:1.0.0' = {
         "Role": "DeploymentValidation"
       }
     },
-    "zunos": {
+    "zones": {
       "value": [
         "1",
         "2",
@@ -367,10 +367,10 @@ module publicIpAddress 'br:bicep/modules/network.public-ip-address:1.0.0' = {
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`diagnosticSettings`](#parameter-diagnosticsettings) | array | The diagnostic settings of the service. |
-| [`domainNameLabel`](#parameter-domainnamelabel) | string | The domain name label. The concatenation of the domain name label and the regionalized DNS zuno make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system. |
+| [`domainNameLabel`](#parameter-domainnamelabel) | string | The domain name label. The concatenation of the domain name label and the regionalized DNS zone make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system. |
 | [`domainNameLabelScope`](#parameter-domainnamelabelscope) | string | The domain name label scope. If a domain name label and a domain name label scope are specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system with a hashed value includes in FQDN. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
-| [`fqdn`](#parameter-fqdn) | string | The Fully Qualified Domain Name of the A DNS record associated with the public IP. This is the concatenation of the domainNameLabel and the regionalized DNS zuno. |
+| [`fqdn`](#parameter-fqdn) | string | The Fully Qualified Domain Name of the A DNS record associated with the public IP. This is the concatenation of the domainNameLabel and the regionalized DNS zone. |
 | [`location`](#parameter-location) | string | Location for all resources. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
 | [`publicIPAddressVersion`](#parameter-publicipaddressversion) | string | IP address version. |
@@ -381,7 +381,7 @@ module publicIpAddress 'br:bicep/modules/network.public-ip-address:1.0.0' = {
 | [`skuName`](#parameter-skuname) | string | Name of a public IP address SKU. |
 | [`skuTier`](#parameter-skutier) | string | Tier of a public IP address SKU. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
-| [`zunos`](#parameter-zunos) | array | A list of availability zunos denoting the IP allocated for the resource needs to come from. |
+| [`zones`](#parameter-zones) | array | A list of availability zones denoting the IP allocated for the resource needs to come from. |
 
 ### Parameter: `name`
 
@@ -483,7 +483,7 @@ Resource ID of the diagnostic log analytics workspace. For security reasons, it 
 
 ### Parameter: `domainNameLabel`
 
-The domain name label. The concatenation of the domain name label and the regionalized DNS zuno make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system.
+The domain name label. The concatenation of the domain name label and the regionalized DNS zone make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system.
 
 - Required: No
 - Type: string
@@ -517,7 +517,7 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ### Parameter: `fqdn`
 
-The Fully Qualified Domain Name of the A DNS record associated with the public IP. This is the concatenation of the domainNameLabel and the regionalized DNS zuno.
+The Fully Qualified Domain Name of the A DNS record associated with the public IP. This is the concatenation of the domainNameLabel and the regionalized DNS zone.
 
 - Required: No
 - Type: string
@@ -555,7 +555,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -739,9 +739,9 @@ Tags of the resource.
 - Required: No
 - Type: object
 
-### Parameter: `zunos`
+### Parameter: `zones`
 
-A list of availability zunos denoting the IP allocated for the resource needs to come from.
+A list of availability zones denoting the IP allocated for the resource needs to come from.
 
 - Required: No
 - Type: array
@@ -760,4 +760,4 @@ A list of availability zunos denoting the IP allocated for the resource needs to
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

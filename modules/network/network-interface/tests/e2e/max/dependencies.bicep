@@ -55,7 +55,7 @@ resource loadBalancer 'Microsoft.Network/loadBalancers@2023-04-01' = {
   properties: {
     frontendIPConfigurations: [
       {
-        name: 'privateIPConfiuno'
+        name: 'privateIPConfig1'
         properties: {
           subnet: {
             id: virtualNetwork.properties.subnets[0].id

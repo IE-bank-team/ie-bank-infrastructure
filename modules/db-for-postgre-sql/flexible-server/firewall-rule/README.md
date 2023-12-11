@@ -29,7 +29,7 @@ This module deploys a DBforPostgreSQL Flexible Server Firewall Rule.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`flexibleServerName`](#parameter-flexibleservername) | string | The name of the parent PostgreSQL flexible server. Required if the template is used in a standaluno deployment. |
+| [`flexibleServerName`](#parameter-flexibleservername) | string | The name of the parent PostgreSQL flexible server. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -60,7 +60,7 @@ The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0
 
 ### Parameter: `flexibleServerName`
 
-The name of the parent PostgreSQL flexible server. Required if the template is used in a standaluno deployment.
+The name of the parent PostgreSQL flexible server. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -84,4 +84,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

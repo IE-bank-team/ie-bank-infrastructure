@@ -66,7 +66,7 @@ module networkManager 'br:bicep/modules/network.network-manager:1.0.0' = {
       {
         appliesToGroups: [
           {
-            groupConnectivity: 'Nuno'
+            groupConnectivity: 'None'
             isGlobal: 'False'
             networkGroupId: '<networkGroupId>'
             useHubGateway: 'False'
@@ -87,7 +87,7 @@ module networkManager 'br:bicep/modules/network.network-manager:1.0.0' = {
       {
         appliesToGroups: [
           {
-            groupConnectivity: 'Nuno'
+            groupConnectivity: 'None'
             isGlobal: 'False'
             networkGroupId: '<networkGroupId>'
             useHubGateway: 'False'
@@ -295,7 +295,7 @@ module networkManager 'br:bicep/modules/network.network-manager:1.0.0' = {
         {
           "appliesToGroups": [
             {
-              "groupConnectivity": "Nuno",
+              "groupConnectivity": "None",
               "isGlobal": "False",
               "networkGroupId": "<networkGroupId>",
               "useHubGateway": "False"
@@ -316,7 +316,7 @@ module networkManager 'br:bicep/modules/network.network-manager:1.0.0' = {
         {
           "appliesToGroups": [
             {
-              "groupConnectivity": "Nuno",
+              "groupConnectivity": "None",
               "isGlobal": "False",
               "networkGroupId": "<networkGroupId>",
               "useHubGateway": "False"
@@ -536,7 +536,7 @@ module networkManager 'br:bicep/modules/network.network-manager:1.0.0' = {
       {
         appliesToGroups: [
           {
-            groupConnectivity: 'Nuno'
+            groupConnectivity: 'None'
             isGlobal: 'False'
             networkGroupId: '<networkGroupId>'
             useHubGateway: 'False'
@@ -557,7 +557,7 @@ module networkManager 'br:bicep/modules/network.network-manager:1.0.0' = {
       {
         appliesToGroups: [
           {
-            groupConnectivity: 'Nuno'
+            groupConnectivity: 'None'
             isGlobal: 'False'
             networkGroupId: '<networkGroupId>'
             useHubGateway: 'False'
@@ -748,7 +748,7 @@ module networkManager 'br:bicep/modules/network.network-manager:1.0.0' = {
         {
           "appliesToGroups": [
             {
-              "groupConnectivity": "Nuno",
+              "groupConnectivity": "None",
               "isGlobal": "False",
               "networkGroupId": "<networkGroupId>",
               "useHubGateway": "False"
@@ -769,7 +769,7 @@ module networkManager 'br:bicep/modules/network.network-manager:1.0.0' = {
         {
           "appliesToGroups": [
             {
-              "groupConnectivity": "Nuno",
+              "groupConnectivity": "None",
               "isGlobal": "False",
               "networkGroupId": "<networkGroupId>",
               "useHubGateway": "False"
@@ -962,14 +962,14 @@ module networkManager 'br:bicep/modules/network.network-manager:1.0.0' = {
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`connectivityConfigurations`](#parameter-connectivityconfigurations) | array | Connectivity Configurations to create for the network manager. Network manager must contain at least uno network group in order to define connectivity configurations. |
+| [`connectivityConfigurations`](#parameter-connectivityconfigurations) | array | Connectivity Configurations to create for the network manager. Network manager must contain at least one network group in order to define connectivity configurations. |
 | [`description`](#parameter-description) | string | A description of the network manager. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`location`](#parameter-location) | string | Location for all resources. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignment objects that contain the 'roleDefinitionIdOrName' and 'principalId' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: '/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11'. |
 | [`scopeConnections`](#parameter-scopeconnections) | array | Scope Connections to create for the network manager. Allows network manager to manage resources from another tenant. Supports management groups or subscriptions from another tenant. |
-| [`securityAdminConfigurations`](#parameter-securityadminconfigurations) | array | Security Admin Configurations, Rule Collections and Rules to create for the network manager. Azure Virtual Network Manager provides two different types of configurations you can deploy across your virtual networks, uno of them being a SecurityAdmin configuration. A security admin configuration contains a set of rule collections. Each rule collection contains uno or more security admin rules. You then associate the rule collection with the network groups that you want to apply the security admin rules to. |
+| [`securityAdminConfigurations`](#parameter-securityadminconfigurations) | array | Security Admin Configurations, Rule Collections and Rules to create for the network manager. Azure Virtual Network Manager provides two different types of configurations you can deploy across your virtual networks, one of them being a SecurityAdmin configuration. A security admin configuration contains a set of rule collections. Each rule collection contains one or more security admin rules. You then associate the rule collection with the network groups that you want to apply the security admin rules to. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 
 ### Parameter: `name`
@@ -1003,7 +1003,7 @@ Network Groups and static members to create for the network manager. Required if
 
 ### Parameter: `connectivityConfigurations`
 
-Connectivity Configurations to create for the network manager. Network manager must contain at least uno network group in order to define connectivity configurations.
+Connectivity Configurations to create for the network manager. Network manager must contain at least one network group in order to define connectivity configurations.
 
 - Required: No
 - Type: array
@@ -1057,7 +1057,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1168,7 +1168,7 @@ Scope Connections to create for the network manager. Allows network manager to m
 
 ### Parameter: `securityAdminConfigurations`
 
-Security Admin Configurations, Rule Collections and Rules to create for the network manager. Azure Virtual Network Manager provides two different types of configurations you can deploy across your virtual networks, uno of them being a SecurityAdmin configuration. A security admin configuration contains a set of rule collections. Each rule collection contains uno or more security admin rules. You then associate the rule collection with the network groups that you want to apply the security admin rules to.
+Security Admin Configurations, Rule Collections and Rules to create for the network manager. Azure Virtual Network Manager provides two different types of configurations you can deploy across your virtual networks, one of them being a SecurityAdmin configuration. A security admin configuration contains a set of rule collections. Each rule collection contains one or more security admin rules. You then associate the rule collection with the network groups that you want to apply the security admin rules to.
 
 - Required: No
 - Type: array
@@ -1193,7 +1193,7 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

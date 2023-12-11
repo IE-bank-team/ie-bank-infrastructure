@@ -84,7 +84,7 @@
     "netAppAccountName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent NetApp account. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent NetApp account. Required if the template is used in a standalone deployment."
       }
     },
     "name": {
@@ -123,7 +123,7 @@
     "size": {
       "type": "int",
       "metadata": {
-        "description": "Required. Provisiunod size of the pool (in bytes). Allowed values are in 4TiB chunks (value must be multiply of 4398046511104)."
+        "description": "Required. Provisioned size of the pool (in bytes). Allowed values are in 4TiB chunks (value must be multiply of 4398046511104)."
       }
     },
     "qosType": {
@@ -257,7 +257,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Vol-{1}', deployment().name, copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -377,13 +377,13 @@
             "netAppAccountName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent NetApp account. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent NetApp account. Required if the template is used in a standalone deployment."
               }
             },
             "capacityPoolName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent capacity pool. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent capacity pool. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -409,7 +409,7 @@
                 "Ultra"
               ],
               "metadata": {
-                "description": "Optional. The pool service level. Must match the uno of the parent capacity pool."
+                "description": "Optional. The pool service level. Must match the one of the parent capacity pool."
               }
             },
             "creationToken": {

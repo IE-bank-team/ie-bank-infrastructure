@@ -2,14 +2,14 @@ metadata name = 'Azure SQL Server Encryption Protector'
 metadata description = 'This module deploys an Azure SQL Server Encryption Protector.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the sql server. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the sql server. Required if the template is used in a standalone deployment.')
 param sqlServerName string
 
 @description('Required. The name of the server key.')
 param serverKeyName string
 
 @description('Optional. Key auto rotation opt-in.')
-param autoRotatiunonabled bool = false
+param autoRotationEnabled bool = false
 
 @description('Optional. The encryption protector type.')
 @allowed([
@@ -42,7 +42,7 @@ resource encryptionProtector 'Microsoft.Sql/servers/encryptionProtector@2022-05-
   parent: sqlServer
   properties: {
     serverKeyType: serverKeyType
-    autoRotatiunonabled: autoRotatiunonabled
+    autoRotationEnabled: autoRotationEnabled
     serverKeyName: serverKeyName
   }
 }

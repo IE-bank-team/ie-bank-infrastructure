@@ -16,7 +16,7 @@ Optional. Path to the template file/folder that is to be tested with the templat
 Optional. A switch parameter that triggers a Pester test for the module
 
 .PARAMETER ValidateOrDeployParameters
-Optional. An object consisting of the compunonts that are required when using the Validate test or DeploymentTest switch parameter.  Mandatory if the DeploymentTest/ValidationTest switches are set.
+Optional. An object consisting of the components that are required when using the Validate test or DeploymentTest switch parameter.  Mandatory if the DeploymentTest/ValidationTest switches are set.
 
 .PARAMETER DeploymentTest
 Optional. A switch parameter that triggers the deployment of the module

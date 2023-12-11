@@ -15,7 +15,7 @@
     "networkManagerName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment."
       }
     },
     "name": {
@@ -83,7 +83,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-NetworkGroup-StaticMembers-{1}', uniqueString(deployment().name), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -121,13 +121,13 @@
             "networkManagerName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment."
               }
             },
             "networkGroupName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent network group. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent network group. Required if the template is used in a standalone deployment."
               }
             },
             "name": {

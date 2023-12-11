@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -253,12 +253,12 @@
       "allowedValues": [
         "Bronze",
         "Gold",
-        "Nuno",
+        "None",
         "Platinum",
         "Silver"
       ],
       "metadata": {
-        "description": "Required. The reliability level sets the replica set size of system services. Learn about ReliabilityLevel (https://learn.microsoft.com/en-us/azure/service-fabric/service-fabric-cluster-capacity). - Nuno - Run the System services with a target replica set count of 1. This should only be used for test clusters. - Bronze - Run the System services with a target replica set count of 3. This should only be used for test clusters. - Silver - Run the System services with a target replica set count of 5. - Gold - Run the System services with a target replica set count of 7. - Platinum - Run the System services with a target replica set count of 9."
+        "description": "Required. The reliability level sets the replica set size of system services. Learn about ReliabilityLevel (https://learn.microsoft.com/en-us/azure/service-fabric/service-fabric-cluster-capacity). - None - Run the System services with a target replica set count of 1. This should only be used for test clusters. - Bronze - Run the System services with a target replica set count of 3. This should only be used for test clusters. - Silver - Run the System services with a target replica set count of 5. - Gold - Run the System services with a target replica set count of 7. - Platinum - Run the System services with a target replica set count of 9."
       }
     },
     "reverseProxyCertificate": {
@@ -283,7 +283,7 @@
         "Parallel"
       ],
       "metadata": {
-        "description": "Optional. This property controls the logical grouping of VMs in upgrade domains (UDs). This property cannot be modified if a node type with multiple Availability Zunos is already present in the cluster."
+        "description": "Optional. This property controls the logical grouping of VMs in upgrade domains (UDs). This property cannot be modified if a node type with multiple Availability Zones is already present in the cluster."
       }
     },
     "upgradeDescription": {
@@ -345,7 +345,7 @@
         "Parallel"
       ],
       "metadata": {
-        "description": "Optional. This property defines the upgrade mode for the virtual machine scale set, it is mandatory if a node type with multiple Availability Zunos is added."
+        "description": "Optional. This property defines the upgrade mode for the virtual machine scale set, it is mandatory if a node type with multiple Availability Zones is added."
       }
     },
     "waveUpgradePaused": {
@@ -402,13 +402,13 @@
         "input": {
           "applicationPorts": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'applicationPorts'), createObject('endPort', if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')].applicationPorts, 'endPort'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].applicationPorts.endPort, null()), 'startPort', if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')].applicationPorts, 'startPort'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].applicationPorts.startPort, null())), null())]",
           "capacities": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'capacities'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].capacities, null())]",
-          "clientConnectiunondpointPort": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'clientConnectiunondpointPort'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].clientConnectiunondpointPort, null())]",
+          "clientConnectionEndpointPort": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'clientConnectionEndpointPort'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].clientConnectionEndpointPort, null())]",
           "durabilityLevel": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'durabilityLevel'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].durabilityLevel, null())]",
           "ephemeralPorts": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'ephemeralPorts'), createObject('endPort', if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')].ephemeralPorts, 'endPort'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].ephemeralPorts.endPort, null()), 'startPort', if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')].ephemeralPorts, 'startPort'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].ephemeralPorts.startPort, null())), null())]",
           "httpGatewayEndpointPort": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'httpGatewayEndpointPort'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].httpGatewayEndpointPort, null())]",
           "isPrimary": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'isPrimary'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].isPrimary, null())]",
           "isStateless": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'isStateless'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].isStateless, null())]",
-          "multipleAvailabilityZunos": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'multipleAvailabilityZunos'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].multipleAvailabilityZunos, null())]",
+          "multipleAvailabilityZones": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'multipleAvailabilityZones'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].multipleAvailabilityZones, null())]",
           "name": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'name'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].name, 'Node00')]",
           "placementProperties": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'placementProperties'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].placementProperties, null())]",
           "reverseProxyEndpointPort": "[if(contains(parameters('nodeTypes')[copyIndex('fnodeTypesVar')], 'reverseProxyEndpointPort'), parameters('nodeTypes')[copyIndex('fnodeTypesVar')].reverseProxyEndpointPort, null())]",
@@ -475,7 +475,7 @@
         "managementEndpoint": "[parameters('managementEndpoint')]",
         "nodeTypes": "[if(not(empty(parameters('nodeTypes'))), variables('fnodeTypesVar'), createArray())]",
         "notifications": "[if(not(empty(parameters('notifications'))), variables('notificationsVar'), null())]",
-        "reliabilityLevel": "[if(not(empty(parameters('reliabilityLevel'))), parameters('reliabilityLevel'), 'Nuno')]",
+        "reliabilityLevel": "[if(not(empty(parameters('reliabilityLevel'))), parameters('reliabilityLevel'), 'None')]",
         "reverseProxyCertificate": "[if(not(empty(parameters('reverseProxyCertificate'))), createObject('thumbprint', if(contains(parameters('reverseProxyCertificate'), 'thumbprint'), parameters('reverseProxyCertificate').thumbprint, null()), 'thumbprintSecondary', if(contains(parameters('reverseProxyCertificate'), 'thumbprintSecondary'), parameters('reverseProxyCertificate').thumbprintSecondary, null()), 'x509StoreName', if(contains(parameters('reverseProxyCertificate'), 'x509StoreName'), parameters('reverseProxyCertificate').x509StoreName, null())), null())]",
         "reverseProxyCertificateCommonNames": "[if(not(empty(parameters('reverseProxyCertificateCommonNames'))), createObject('commonNames', if(contains(parameters('reverseProxyCertificateCommonNames'), 'commonNames'), parameters('reverseProxyCertificateCommonNames').commonNames, null()), 'x509StoreName', if(contains(parameters('reverseProxyCertificateCommonNames'), 'x509StoreName'), parameters('reverseProxyCertificateCommonNames').x509StoreName, null())), null())]",
         "sfZonalUpgradeMode": "[if(not(empty(parameters('sfZonalUpgradeMode'))), parameters('sfZonalUpgradeMode'), null())]",
@@ -490,7 +490,7 @@
       }
     },
     "serviceFabricCluster_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.ServiceFabric/clusters/{0}', parameters('name'))]",
@@ -534,7 +534,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-SFC-{1}', uniqueString(deployment().name, parameters('location')), parameters('applicationTypes')[copyIndex()].name)]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -570,7 +570,7 @@
             "serviceFabricClusterName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Service Fabric cluster. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent Service Fabric cluster. Required if the template is used in a standalone deployment."
               }
             },
             "name": {

@@ -28,7 +28,7 @@ This module deploys an Azure Compute Gallery Image Definition.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`galleryName`](#parameter-galleryname) | string | The name of the parent Azure Shared Image Gallery. Required if the template is used in a standaluno deployment. |
+| [`galleryName`](#parameter-galleryname) | string | The name of the parent Azure Shared Image Gallery. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -70,7 +70,7 @@ Name of the image definition.
 
 ### Parameter: `galleryName`
 
-The name of the parent Azure Shared Image Gallery. Required if the template is used in a standaluno deployment.
+The name of the parent Azure Shared Image Gallery. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -420,4 +420,4 @@ Tags for all resources.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

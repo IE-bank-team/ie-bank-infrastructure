@@ -70,7 +70,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       {
         countryCode: '1'
         name: 'TestUser_-SMSAction-'
-        phunoNumber: '2345678901'
+        phoneNumber: '2345678901'
       }
     ]
     roleAssignments: [

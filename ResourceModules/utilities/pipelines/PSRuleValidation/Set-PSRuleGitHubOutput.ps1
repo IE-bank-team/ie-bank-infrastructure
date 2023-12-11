@@ -12,7 +12,7 @@ Mandatory. The path to the output file created by PSRule in csv format.
 Optional. The path to the formatted .md file to be created.
 
 .PARAMETER skipPassedRulesReport
-Optional. Whether to add the detail of passed PSRule to the output markdown file or to limit the list to the failed unos.
+Optional. Whether to add the detail of passed PSRule to the output markdown file or to limit the list to the failed ones.
 
 .EXAMPLE
 Set-PSRuleGitHubOutput -inputFilePath 'C:/PSRule-output.csv'

@@ -421,14 +421,14 @@ module hostingEnvironment 'br:bicep/modules/web.hosting-environment:1.0.0' = {
 | [`allowNewPrivateEndpointConnections`](#parameter-allownewprivateendpointconnections) | bool | Property to enable and disable new private endpoint connection creation on ASE. Ignored when kind is set to ASEv2. |
 | [`clusterSettings`](#parameter-clustersettings) | array | Custom settings for changing the behavior of the App Service Environment. |
 | [`customDnsSuffix`](#parameter-customdnssuffix) | string | Enable the default custom domain suffix to use for all sites deployed on the ASE. If provided, then customDnsSuffixCertificateUrl and customDnsSuffixKeyVaultReferenceIdentity are required. Cannot be used when kind is set to ASEv2. |
-| [`dedicatedHostCount`](#parameter-dedicatedhostcount) | int | The Dedicated Host Count. If `zunoRedundant` is false, and you want physical hardware isolation enabled, set to 2. Otherwise 0. Cannot be used when kind is set to ASEv2. |
+| [`dedicatedHostCount`](#parameter-dedicatedhostcount) | int | The Dedicated Host Count. If `zoneRedundant` is false, and you want physical hardware isolation enabled, set to 2. Otherwise 0. Cannot be used when kind is set to ASEv2. |
 | [`diagnosticSettings`](#parameter-diagnosticsettings) | array | The diagnostic settings of the service. |
 | [`dnsSuffix`](#parameter-dnssuffix) | string | DNS suffix of the App Service Environment. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`frontEndScaleFactor`](#parameter-frontendscalefactor) | int | Scale factor for frontends. |
 | [`ftpEnabled`](#parameter-ftpenabled) | bool | Property to enable and disable FTP on ASEV3. Ignored when kind is set to ASEv2. |
 | [`inboundIpAddressOverride`](#parameter-inboundipaddressoverride) | string | Customer provided Inbound IP Address. Only able to be set on Ase create. Ignored when kind is set to ASEv2. |
-| [`internalLoadBalancingMode`](#parameter-internalloadbalancingmode) | string | Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. - Nuno, Web, Publishing, Web,Publishing. "Nuno" Exposes the ASE-hosted apps on an internet-accessible IP address. |
+| [`internalLoadBalancingMode`](#parameter-internalloadbalancingmode) | string | Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. - None, Web, Publishing, Web,Publishing. "None" Exposes the ASE-hosted apps on an internet-accessible IP address. |
 | [`ipsslAddressCount`](#parameter-ipssladdresscount) | int | Number of IP SSL addresses reserved for the App Service Environment. Cannot be used when kind is set to ASEv3. |
 | [`kind`](#parameter-kind) | string | Kind of resource. |
 | [`location`](#parameter-location) | string | Location for all resources. |
@@ -440,7 +440,7 @@ module hostingEnvironment 'br:bicep/modules/web.hosting-environment:1.0.0' = {
 | [`tags`](#parameter-tags) | object | Resource tags. |
 | [`upgradePreference`](#parameter-upgradepreference) | string | Specify preference for when and how the planned maintenance is applied. |
 | [`userWhitelistedIpRanges`](#parameter-userwhitelistedipranges) | array | User added IP ranges to whitelist on ASE DB. Cannot be used with 'kind' `ASEv3`. |
-| [`zunoRedundant`](#parameter-zunoredundant) | bool | Switch to make the App Service Environment zuno redundant. If enabled, the minimum App Service plan instance count will be three, otherwise 1. If enabled, the `dedicatedHostCount` must be set to `-1`. |
+| [`zoneRedundant`](#parameter-zoneredundant) | bool | Switch to make the App Service Environment zone redundant. If enabled, the minimum App Service plan instance count will be three, otherwise 1. If enabled, the `dedicatedHostCount` must be set to `-1`. |
 
 ### Parameter: `name`
 
@@ -506,7 +506,7 @@ Enable the default custom domain suffix to use for all sites deployed on the ASE
 
 ### Parameter: `dedicatedHostCount`
 
-The Dedicated Host Count. If `zunoRedundant` is false, and you want physical hardware isolation enabled, set to 2. Otherwise 0. Cannot be used when kind is set to ASEv2.
+The Dedicated Host Count. If `zoneRedundant` is false, and you want physical hardware isolation enabled, set to 2. Otherwise 0. Cannot be used when kind is set to ASEv2.
 
 - Required: No
 - Type: int
@@ -637,15 +637,15 @@ Customer provided Inbound IP Address. Only able to be set on Ase create. Ignored
 
 ### Parameter: `internalLoadBalancingMode`
 
-Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. - Nuno, Web, Publishing, Web,Publishing. "Nuno" Exposes the ASE-hosted apps on an internet-accessible IP address.
+Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. - None, Web, Publishing, Web,Publishing. "None" Exposes the ASE-hosted apps on an internet-accessible IP address.
 
 - Required: No
 - Type: string
-- Default: `'Nuno'`
+- Default: `'None'`
 - Allowed:
   ```Bicep
   [
-    'Nuno'
+    'None'
     'Publishing'
     'Web'
     'Web Publishing'
@@ -707,7 +707,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -881,14 +881,14 @@ Specify preference for when and how the planned maintenance is applied.
 
 - Required: No
 - Type: string
-- Default: `'Nuno'`
+- Default: `'None'`
 - Allowed:
   ```Bicep
   [
     'Early'
     'Late'
     'Manual'
-    'Nuno'
+    'None'
   ]
   ```
 
@@ -900,9 +900,9 @@ User added IP ranges to whitelist on ASE DB. Cannot be used with 'kind' `ASEv3`.
 - Type: array
 - Default: `[]`
 
-### Parameter: `zunoRedundant`
+### Parameter: `zoneRedundant`
 
-Switch to make the App Service Environment zuno redundant. If enabled, the minimum App Service plan instance count will be three, otherwise 1. If enabled, the `dedicatedHostCount` must be set to `-1`.
+Switch to make the App Service Environment zone redundant. If enabled, the minimum App Service plan instance count will be three, otherwise 1. If enabled, the `dedicatedHostCount` must be set to `-1`.
 
 - Required: No
 - Type: bool
@@ -920,4 +920,4 @@ Switch to make the App Service Environment zuno redundant. If enabled, the minim
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

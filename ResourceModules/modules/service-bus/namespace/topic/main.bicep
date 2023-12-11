@@ -2,7 +2,7 @@ metadata name = 'Service Bus Namespace Topic'
 metadata description = 'This module deploys a Service Bus Namespace Topic.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Service Bus Namespace for the Service Bus Topic. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Service Bus Namespace for the Service Bus Topic. Required if the template is used in a standalone deployment.')
 @minLength(6)
 @maxLength(50)
 param namespaceName string
@@ -50,7 +50,7 @@ param autoDeleteOnIdle string = 'PT5M'
 ])
 param status string = 'Active'
 
-@description('Optional. A value that indicates whether the topic is to be partitiunod across multiple message brokers.')
+@description('Optional. A value that indicates whether the topic is to be partitioned across multiple message brokers.')
 param enablePartitioning bool = false
 
 @description('Optional. A value that indicates whether Express Entities are enabled. An express topic holds a message in memory temporarily before writing it to persistent storage.')
@@ -137,7 +137,7 @@ module topic_authorizationRules 'authorization-rule/main.bicep' = [for (authoriz
   }
 }]
 
-resource topic_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource topic_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -178,7 +178,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

@@ -67,12 +67,12 @@ module testDeployment '../../../main.bicep' = {
     locations: [
       {
         failoverPriority: 0
-        isZunoRedundant: false
+        isZoneRedundant: false
         locationName: location
       }
       {
         failoverPriority: 1
-        isZunoRedundant: false
+        isZoneRedundant: false
         locationName: nestedDependencies.outputs.pairedRegionName
       }
     ]

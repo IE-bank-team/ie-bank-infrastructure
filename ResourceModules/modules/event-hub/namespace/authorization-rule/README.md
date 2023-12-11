@@ -27,7 +27,7 @@ This module deploys an Event Hub Namespace Authorization Rule.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent event hub namespace. Required if the template is used in a standaluno deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent event hub namespace. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -45,7 +45,7 @@ The name of the authorization rule.
 
 ### Parameter: `namespaceName`
 
-The name of the parent event hub namespace. Required if the template is used in a standaluno deployment.
+The name of the parent event hub namespace. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -85,4 +85,4 @@ The rights associated with the rule.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

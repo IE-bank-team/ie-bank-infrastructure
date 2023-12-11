@@ -69,7 +69,7 @@ module testDeployment '../../../main.bicep' = {
     name: '${namePrefix}${serviceShort}001'
     frontendIPConfigurations: [
       {
-        name: 'publicIPConfiuno'
+        name: 'publicIPConfig1'
         publicIPAddressId: nestedDependencies.outputs.publicIPResourceId
       }
     ]
@@ -100,7 +100,7 @@ module testDeployment '../../../main.bicep' = {
         backendPort: 443
         enableFloatingIP: false
         enableTcpReset: false
-        frontendIPConfigurationName: 'publicIPConfiuno'
+        frontendIPConfigurationName: 'publicIPConfig1'
         frontendPort: 443
         idleTimeoutInMinutes: 4
         name: 'inboundNatRule1'
@@ -108,7 +108,7 @@ module testDeployment '../../../main.bicep' = {
       }
       {
         backendPort: 3389
-        frontendIPConfigurationName: 'publicIPConfiuno'
+        frontendIPConfigurationName: 'publicIPConfig1'
         frontendPort: 3389
         name: 'inboundNatRule2'
       }
@@ -120,7 +120,7 @@ module testDeployment '../../../main.bicep' = {
         disableOutboundSnat: true
         enableFloatingIP: false
         enableTcpReset: false
-        frontendIPConfigurationName: 'publicIPConfiuno'
+        frontendIPConfigurationName: 'publicIPConfig1'
         frontendPort: 80
         idleTimeoutInMinutes: 5
         loadDistribution: 'Default'
@@ -131,7 +131,7 @@ module testDeployment '../../../main.bicep' = {
       {
         backendAddressPoolName: 'backendAddressPool2'
         backendPort: 8080
-        frontendIPConfigurationName: 'publicIPConfiuno'
+        frontendIPConfigurationName: 'publicIPConfig1'
         frontendPort: 8080
         loadDistribution: 'Default'
         name: 'publicIPLBRule2'
@@ -146,7 +146,7 @@ module testDeployment '../../../main.bicep' = {
       {
         allocatedOutboundPorts: 63984
         backendAddressPoolName: 'backendAddressPool1'
-        frontendIPConfigurationName: 'publicIPConfiuno'
+        frontendIPConfigurationName: 'publicIPConfig1'
         name: 'outboundRule1'
       }
     ]

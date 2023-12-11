@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -266,7 +266,7 @@
         "description": "Optional. Indicates if encryption is enabled on virtual network and if VM without encryption is allowed in encrypted VNet. Requires the EnableVNetEncryption feature to be registered for the subscription and a supported region to use this property."
       }
     },
-    "vnetEncryptiunonforcement": {
+    "vnetEncryptionEnforcement": {
       "type": "string",
       "defaultValue": "AllowUnencrypted",
       "allowedValues": [
@@ -386,12 +386,12 @@
         "ddosProtectionPlan": "[if(not(empty(parameters('ddosProtectionPlanId'))), variables('ddosProtectionPlan'), null())]",
         "dhcpOptions": "[if(not(empty(parameters('dnsServers'))), variables('dnsServersVar'), null())]",
         "enableDdosProtection": "[not(empty(parameters('ddosProtectionPlanId')))]",
-        "encryption": "[if(equals(parameters('vnetEncryption'), true()), createObject('enabled', parameters('vnetEncryption'), 'enforcement', parameters('vnetEncryptiunonforcement')), null())]",
+        "encryption": "[if(equals(parameters('vnetEncryption'), true()), createObject('enabled', parameters('vnetEncryption'), 'enforcement', parameters('vnetEncryptionEnforcement')), null())]",
         "flowTimeoutInMinutes": "[if(not(equals(parameters('flowTimeoutInMinutes'), 0)), parameters('flowTimeoutInMinutes'), null())]"
       }
     },
     "virtualNetwork_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Network/virtualNetworks/{0}', parameters('name'))]",
@@ -458,7 +458,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-subnet-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -580,7 +580,7 @@
             "virtualNetworkName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual network. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent virtual network. Required if the template is used in a standalone deployment."
               }
             },
             "addressPrefix": {
@@ -818,7 +818,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-virtualNetworkPeering-local-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -863,7 +863,7 @@
             "localVnetName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Virtual Network to add the peering to. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent Virtual Network to add the peering to. Required if the template is used in a standalone deployment."
               }
             },
             "remoteVirtualNetworkId": {
@@ -904,7 +904,7 @@
               "type": "bool",
               "defaultValue": false,
               "metadata": {
-                "description": "Optional. If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only uno peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway. Default is false."
+                "description": "Optional. If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway. Default is false."
               }
             },
             "enableDefaultTelemetry": {
@@ -987,7 +987,7 @@
       "subscriptionId": "[split(parameters('peerings')[copyIndex()].remoteVirtualNetworkId, '/')[2]]",
       "resourceGroup": "[split(parameters('peerings')[copyIndex()].remoteVirtualNetworkId, '/')[4]]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1032,7 +1032,7 @@
             "localVnetName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Virtual Network to add the peering to. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent Virtual Network to add the peering to. Required if the template is used in a standalone deployment."
               }
             },
             "remoteVirtualNetworkId": {
@@ -1073,7 +1073,7 @@
               "type": "bool",
               "defaultValue": false,
               "metadata": {
-                "description": "Optional. If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only uno peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway. Default is false."
+                "description": "Optional. If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway. Default is false."
               }
             },
             "enableDefaultTelemetry": {

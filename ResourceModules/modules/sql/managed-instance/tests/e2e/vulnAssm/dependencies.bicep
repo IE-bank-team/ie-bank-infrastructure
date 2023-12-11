@@ -119,14 +119,14 @@ resource networkSecurityGroup 'Microsoft.Network/networkSecurityGroups@2023-04-0
         }
       }
       {
-        name: 'Microsoft.Sql-managedInstances_UseOnly_mi-unodsc-out-${addressPrefixString}-v11'
+        name: 'Microsoft.Sql-managedInstances_UseOnly_mi-onedsc-out-${addressPrefixString}-v11'
         properties: {
-          description: 'Allow communication with the uno DS Collector over https'
+          description: 'Allow communication with the One DS Collector over https'
           protocol: 'Tcp'
           sourcePortRange: '*'
           destinationPortRange: '443'
           sourceAddressPrefix: addressPrefix
-          destinationAddressPrefix: 'unoDsCollector'
+          destinationAddressPrefix: 'OneDsCollector'
           access: 'Allow'
           priority: 102
           direction: 'Outbound'
@@ -274,9 +274,9 @@ resource routeTable 'Microsoft.Network/routeTables@2023-04-01' = {
         }
       }
       {
-        name: 'Microsoft.Sql-managedInstances_UseOnly_mi-unoDsCollector'
+        name: 'Microsoft.Sql-managedInstances_UseOnly_mi-OneDsCollector'
         properties: {
-          addressPrefix: 'unoDsCollector'
+          addressPrefix: 'OneDsCollector'
           nextHopType: 'Internet'
           hasBgpOverride: false
         }

@@ -270,13 +270,13 @@ module lab 'br:bicep/modules/dev-test-lab.lab:1.0.0' = {
         notificationSettingsTimeInMinutes: 30
         status: 'Enabled'
         taskType: 'LabVmsShutdownTask'
-        timeZunoId: 'AUS Eastern Standard Time'
+        timeZoneId: 'AUS Eastern Standard Time'
       }
       {
         name: 'LabVmAutoStart'
         status: 'Enabled'
         taskType: 'LabVmsStartupTask'
-        timeZunoId: 'AUS Eastern Standard Time'
+        timeZoneId: 'AUS Eastern Standard Time'
         weeklyRecurrence: {
           time: '0700'
           weekdays: [
@@ -567,13 +567,13 @@ module lab 'br:bicep/modules/dev-test-lab.lab:1.0.0' = {
           "notificationSettingsTimeInMinutes": 30,
           "status": "Enabled",
           "taskType": "LabVmsShutdownTask",
-          "timeZunoId": "AUS Eastern Standard Time"
+          "timeZoneId": "AUS Eastern Standard Time"
         },
         {
           "name": "LabVmAutoStart",
           "status": "Enabled",
           "taskType": "LabVmsStartupTask",
-          "timeZunoId": "AUS Eastern Standard Time",
+          "timeZoneId": "AUS Eastern Standard Time",
           "weeklyRecurrence": {
             "time": "0700",
             "weekdays": [
@@ -815,13 +815,13 @@ module lab 'br:bicep/modules/dev-test-lab.lab:1.0.0' = {
         notificationSettingsTimeInMinutes: 30
         status: 'Enabled'
         taskType: 'LabVmsShutdownTask'
-        timeZunoId: 'AUS Eastern Standard Time'
+        timeZoneId: 'AUS Eastern Standard Time'
       }
       {
         name: 'LabVmAutoStart'
         status: 'Enabled'
         taskType: 'LabVmsStartupTask'
-        timeZunoId: 'AUS Eastern Standard Time'
+        timeZoneId: 'AUS Eastern Standard Time'
         weeklyRecurrence: {
           time: '0700'
           weekdays: [
@@ -1093,13 +1093,13 @@ module lab 'br:bicep/modules/dev-test-lab.lab:1.0.0' = {
           "notificationSettingsTimeInMinutes": 30,
           "status": "Enabled",
           "taskType": "LabVmsShutdownTask",
-          "timeZunoId": "AUS Eastern Standard Time"
+          "timeZoneId": "AUS Eastern Standard Time"
         },
         {
           "name": "LabVmAutoStart",
           "status": "Enabled",
           "taskType": "LabVmsStartupTask",
-          "timeZunoId": "AUS Eastern Standard Time",
+          "timeZoneId": "AUS Eastern Standard Time",
           "weeklyRecurrence": {
             "time": "0700",
             "weekdays": [
@@ -1406,7 +1406,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1627,4 +1627,4 @@ Resource Group allocation for virtual machines. If left empty, virtual machines 
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -16,7 +16,7 @@ resource redisCacheEnterprise 'Microsoft.Cache/redisEnterprise@2022-01-01' = {
   properties: {
     minimumTlsVersion: '1.2'
   }
-  zunos: [
+  zones: [
     '1'
     '2'
     '3'

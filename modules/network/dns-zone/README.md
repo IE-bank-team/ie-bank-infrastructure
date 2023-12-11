@@ -1,8 +1,8 @@
-# Public DNS Zunos `[Microsoft.Network/dnsZunos]`
+# Public DNS Zones `[Microsoft.Network/dnsZones]`
 
 > This module has already been migrated to [AVM](https://github.com/Azure/bicep-registry-modules/tree/main/avm/res). Only the AVM version is expected to receive updates / new features. Please do not work on improving this module in [CARML](https://aka.ms/carml).
 
-This module deploys a Public DNS zuno.
+This module deploys a Public DNS zone.
 
 ## Navigation
 
@@ -18,17 +18,17 @@ This module deploys a Public DNS zuno.
 | :-- | :-- |
 | `Microsoft.Authorization/locks` | [2020-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2020-05-01/locks) |
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
-| `Microsoft.Network/dnsZunos` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos) |
-| `Microsoft.Network/dnsZunos/A` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/A) |
-| `Microsoft.Network/dnsZunos/AAAA` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/AAAA) |
-| `Microsoft.Network/dnsZunos/CAA` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/CAA) |
-| `Microsoft.Network/dnsZunos/CNAME` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/CNAME) |
-| `Microsoft.Network/dnsZunos/MX` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/MX) |
-| `Microsoft.Network/dnsZunos/NS` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/NS) |
-| `Microsoft.Network/dnsZunos/PTR` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/PTR) |
-| `Microsoft.Network/dnsZunos/SOA` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/SOA) |
-| `Microsoft.Network/dnsZunos/SRV` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/SRV) |
-| `Microsoft.Network/dnsZunos/TXT` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/TXT) |
+| `Microsoft.Network/dnsZones` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones) |
+| `Microsoft.Network/dnsZones/A` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/A) |
+| `Microsoft.Network/dnsZones/AAAA` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/AAAA) |
+| `Microsoft.Network/dnsZones/CAA` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/CAA) |
+| `Microsoft.Network/dnsZones/CNAME` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/CNAME) |
+| `Microsoft.Network/dnsZones/MX` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/MX) |
+| `Microsoft.Network/dnsZones/NS` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/NS) |
+| `Microsoft.Network/dnsZones/PTR` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/PTR) |
+| `Microsoft.Network/dnsZones/SOA` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/SOA) |
+| `Microsoft.Network/dnsZones/SRV` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/SRV) |
+| `Microsoft.Network/dnsZones/TXT` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/TXT) |
 
 ## Usage examples
 
@@ -36,7 +36,7 @@ The following section provides usage examples for the module, which were used to
 
 >**Note**: Each example lists all the required parameters first, followed by the rest - each in alphabetical order.
 
->**Note**: To reference the module, please use the following syntax `br:bicep/modules/network.dns-zuno:1.0.0`.
+>**Note**: To reference the module, please use the following syntax `br:bicep/modules/network.dns-zone:1.0.0`.
 
 - [Using only defaults](#example-1-using-only-defaults)
 - [Using large parameter set](#example-2-using-large-parameter-set)
@@ -52,7 +52,7 @@ This instance deploys the module with the minimum set of required parameters.
 <summary>via Bicep module</summary>
 
 ```bicep
-module dnsZuno 'br:bicep/modules/network.dns-zuno:1.0.0' = {
+module dnsZone 'br:bicep/modules/network.dns-zone:1.0.0' = {
   name: '${uniqueString(deployment().name, location)}-test-ndzmin'
   params: {
     // Required parameters
@@ -100,7 +100,7 @@ This instance deploys the module with most of its features enabled.
 <summary>via Bicep module</summary>
 
 ```bicep
-module dnsZuno 'br:bicep/modules/network.dns-zuno:1.0.0' = {
+module dnsZone 'br:bicep/modules/network.dns-zone:1.0.0' = {
   name: '${uniqueString(deployment().name, location)}-test-ndzmax'
   params: {
     // Required parameters
@@ -500,7 +500,7 @@ This instance deploys the module in alignment with the best-practices of the Azu
 <summary>via Bicep module</summary>
 
 ```bicep
-module dnsZuno 'br:bicep/modules/network.dns-zuno:1.0.0' = {
+module dnsZone 'br:bicep/modules/network.dns-zone:1.0.0' = {
   name: '${uniqueString(deployment().name, location)}-test-ndzwaf'
   params: {
     // Required parameters
@@ -897,7 +897,7 @@ module dnsZuno 'br:bicep/modules/network.dns-zuno:1.0.0' = {
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`name`](#parameter-name) | string | DNS zuno name. |
+| [`name`](#parameter-name) | string | DNS zone name. |
 
 **Optional parameters**
 
@@ -908,7 +908,7 @@ module dnsZuno 'br:bicep/modules/network.dns-zuno:1.0.0' = {
 | [`caa`](#parameter-caa) | array | Array of CAA records. |
 | [`cname`](#parameter-cname) | array | Array of CNAME records. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
-| [`location`](#parameter-location) | string | The location of the dnsZuno. Should be global. |
+| [`location`](#parameter-location) | string | The location of the dnsZone. Should be global. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
 | [`mx`](#parameter-mx) | array | Array of MX records. |
 | [`ns`](#parameter-ns) | array | Array of NS records. |
@@ -921,7 +921,7 @@ module dnsZuno 'br:bicep/modules/network.dns-zuno:1.0.0' = {
 
 ### Parameter: `name`
 
-DNS zuno name.
+DNS zone name.
 
 - Required: Yes
 - Type: string
@@ -968,7 +968,7 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ### Parameter: `location`
 
-The location of the dnsZuno. Should be global.
+The location of the dnsZone. Should be global.
 
 - Required: No
 - Type: string
@@ -998,7 +998,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1160,10 +1160,10 @@ Array of TXT records.
 | Output | Type | Description |
 | :-- | :-- | :-- |
 | `location` | string | The location the resource was deployed into. |
-| `name` | string | The name of the DNS zuno. |
-| `resourceGroupName` | string | The resource group the DNS zuno was deployed into. |
-| `resourceId` | string | The resource ID of the DNS zuno. |
+| `name` | string | The name of the DNS zone. |
+| `resourceGroupName` | string | The resource group the DNS zone was deployed into. |
+| `resourceId` | string | The resource ID of the DNS zone. |
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

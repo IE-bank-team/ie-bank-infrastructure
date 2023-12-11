@@ -75,7 +75,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     skuName: 'Premium'
     skuCapacity: 2
     premiumMessagingPartitions: 1
-    zunoRedundant: true
+    zoneRedundant: true
     tags: {
       'hidden-title': 'This is visible in the resource name'
       Environment: 'Non-Prod'
@@ -204,8 +204,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       {
         service: 'namespace'
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
-        privateDnsZunoResourceIds: [
-          nestedDependencies.outputs.privateDNSZunoResourceId
+        privateDnsZoneResourceIds: [
+          nestedDependencies.outputs.privateDNSZoneResourceId
         ]
         tags: {
           'hidden-title': 'This is visible in the resource name'

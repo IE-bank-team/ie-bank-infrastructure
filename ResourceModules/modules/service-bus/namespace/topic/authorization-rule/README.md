@@ -27,8 +27,8 @@ This module deploys a Service Bus Namespace Topic Authorization Rule.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Service Bus Namespace. Required if the template is used in a standaluno deployment. |
-| [`topicName`](#parameter-topicname) | string | The name of the parent Service Bus Namespace Topic. Required if the template is used in a standaluno deployment. |
+| [`namespaceName`](#parameter-namespacename) | string | The name of the parent Service Bus Namespace. Required if the template is used in a standalone deployment. |
+| [`topicName`](#parameter-topicname) | string | The name of the parent Service Bus Namespace Topic. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -46,14 +46,14 @@ The name of the service bus namespace topic.
 
 ### Parameter: `namespaceName`
 
-The name of the parent Service Bus Namespace. Required if the template is used in a standaluno deployment.
+The name of the parent Service Bus Namespace. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `topicName`
 
-The name of the parent Service Bus Namespace Topic. Required if the template is used in a standaluno deployment.
+The name of the parent Service Bus Namespace Topic. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -93,4 +93,4 @@ The rights associated with the rule.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

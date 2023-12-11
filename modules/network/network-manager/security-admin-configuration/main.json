@@ -8,14 +8,14 @@
       "templateHash": "14740794033127814314"
     },
     "name": "Network Manager Security Admin Configurations",
-    "description": "This module deploys an Network Manager Security Admin Configuration.\r\nA security admin configuration contains a set of rule collections. Each rule collection contains uno or more security admin rules.",
+    "description": "This module deploys an Network Manager Security Admin Configuration.\r\nA security admin configuration contains a set of rule collections. Each rule collection contains one or more security admin rules.",
     "owner": "Azure/module-maintainers"
   },
   "parameters": {
     "networkManagerName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment."
       }
     },
     "name": {
@@ -36,10 +36,10 @@
     "applyOnNetworkIntentPolicyBasedServices": {
       "type": "array",
       "defaultValue": [
-        "Nuno"
+        "None"
       ],
       "allowedValues": [
-        "Nuno",
+        "None",
         "All",
         "AllowRulesOnly"
       ],
@@ -51,7 +51,7 @@
       "type": "array",
       "defaultValue": [],
       "metadata": {
-        "description": "Optional. A security admin configuration contains a set of rule collections that are applied to network groups. Each rule collection contains uno or more security admin rules."
+        "description": "Optional. A security admin configuration contains a set of rule collections that are applied to network groups. Each rule collection contains one or more security admin rules."
       }
     },
     "enableDefaultTelemetry": {
@@ -98,7 +98,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-SecurityAdminConfigurations-RuleCollections-{1}', uniqueString(deployment().name), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -130,20 +130,20 @@
               "templateHash": "11695176114935586913"
             },
             "name": "Network Manager Security Admin Configuration Rule Collections",
-            "description": "This module deploys an Network Manager Security Admin Configuration Rule Collection.\r\nA security admin configuration contains a set of rule collections. Each rule collection contains uno or more security admin rules. Security admin rules allows enforcing security policy criteria that matches the conditions set. Warning: A rule collection without rule will cause a deployment configuration for security admin goal state in network manager to fail.",
+            "description": "This module deploys an Network Manager Security Admin Configuration Rule Collection.\r\nA security admin configuration contains a set of rule collections. Each rule collection contains one or more security admin rules. Security admin rules allows enforcing security policy criteria that matches the conditions set. Warning: A rule collection without rule will cause a deployment configuration for security admin goal state in network manager to fail.",
             "owner": "Azure/module-maintainers"
           },
           "parameters": {
             "networkManagerName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment."
               }
             },
             "securityAdminConfigurationName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent security admin configuration. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent security admin configuration. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -164,7 +164,7 @@
             "appliesToGroups": {
               "type": "array",
               "metadata": {
-                "description": "Required. List of network groups for configuration. An admin rule collection must be associated to at least uno network group."
+                "description": "Required. List of network groups for configuration. An admin rule collection must be associated to at least one network group."
               }
             },
             "rules": {
@@ -217,7 +217,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-RuleCollections-Rules-{1}', uniqueString(deployment().name), copyIndex())]",
               "properties": {
-                "expressiunovaluationOptions": {
+                "expressionEvaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -265,26 +265,26 @@
                       "templateHash": "8150493920671936292"
                     },
                     "name": "Network Manager Security Admin Configuration Rule Collection Rules",
-                    "description": "This module deploys an Azure Virtual Network Manager (AVNM) Security Admin Configuration Rule Collection Rule.\r\nA security admin configuration contains a set of rule collections. Each rule collection contains uno or more security admin rules.",
+                    "description": "This module deploys an Azure Virtual Network Manager (AVNM) Security Admin Configuration Rule Collection Rule.\r\nA security admin configuration contains a set of rule collections. Each rule collection contains one or more security admin rules.",
                     "owner": "Azure/module-maintainers"
                   },
                   "parameters": {
                     "networkManagerName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment."
+                        "description": "Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment."
                       }
                     },
                     "securityAdminConfigurationName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent security admin configuration. Required if the template is used in a standaluno deployment."
+                        "description": "Conditional. The name of the parent security admin configuration. Required if the template is used in a standalone deployment."
                       }
                     },
                     "ruleCollectionName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent rule collection. Required if the template is used in a standaluno deployment."
+                        "description": "Conditional. The name of the parent rule collection. Required if the template is used in a standalone deployment."
                       }
                     },
                     "name": {
@@ -324,7 +324,7 @@
                       "type": "array",
                       "defaultValue": [],
                       "metadata": {
-                        "description": "Optional. The destnations filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in uno rule filter is not permitted."
+                        "description": "Optional. The destnations filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in one rule filter is not permitted."
                       }
                     },
                     "direction": {
@@ -370,7 +370,7 @@
                       "type": "array",
                       "defaultValue": [],
                       "metadata": {
-                        "description": "Optional. The source filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in uno rule filter is not permitted."
+                        "description": "Optional. The source filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in one rule filter is not permitted."
                       }
                     },
                     "enableDefaultTelemetry": {

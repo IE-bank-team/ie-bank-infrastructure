@@ -1,5 +1,5 @@
 @description('Required. A boolean to specify whether or not the used Key Vault has RBAC authentication enabled or not.')
-param rbacAuthorizatiunonabled bool = true
+param rbacAuthorizationEnabled bool = true
 
 @description('Required. The resourceID of the User Assigned Identity to assign permissions to.')
 param userAssignedIdentityResourceId string
@@ -33,7 +33,7 @@ module userAssignedIdentity 'nested_managedIdentityReference.bicep' = {
 // Role Assignment //
 // =============== //
 
-resource keyVaultKeyRBAC 'Microsoft.Authorization/roleAssignments@2022-04-01' = if (rbacAuthorizatiunonabled == true) {
+resource keyVaultKeyRBAC 'Microsoft.Authorization/roleAssignments@2022-04-01' = if (rbacAuthorizationEnabled == true) {
   name: guid('msi-${keyVault::key.id}-${location}-${userAssignedIdentityResourceId}-Key-Reader-RoleAssignment')
   scope: keyVault::key
   properties: {
@@ -47,7 +47,7 @@ resource keyVaultKeyRBAC 'Microsoft.Authorization/roleAssignments@2022-04-01' = 
 // Access Policy //
 // ============= //
 
-module keyVaultAccessPolicies '../../../key-vault/vault/access-policy/main.bicep' = if (rbacAuthorizatiunonabled != true) {
+module keyVaultAccessPolicies '../../../key-vault/vault/access-policy/main.bicep' = if (rbacAuthorizationEnabled != true) {
   name: '${uniqueString(deployment().name, location)}-DiskEncrSet-KVAccessPolicies'
   params: {
     keyVaultName: last(split(keyVaultResourceId, '/'))!

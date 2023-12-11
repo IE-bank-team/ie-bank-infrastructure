@@ -77,19 +77,19 @@ param subnetResourceId string = ''
 @description('Optional. Tags of the resource.')
 param tags object?
 
-@description('Optional. The type of VPN in which API Management service needs to be configured in. Nuno (Default Value) means the API Management service is not part of any Virtual Network, External means the API Management deployment is set up inside a Virtual Network having an internet Facing Endpoint, and Internal means that API Management deployment is setup inside a Virtual Network having an Intranet Facing Endpoint only.')
+@description('Optional. The type of VPN in which API Management service needs to be configured in. None (Default Value) means the API Management service is not part of any Virtual Network, External means the API Management deployment is set up inside a Virtual Network having an internet Facing Endpoint, and Internal means that API Management deployment is setup inside a Virtual Network having an Intranet Facing Endpoint only.')
 @allowed([
-  'Nuno'
+  'None'
   'External'
   'Internal'
 ])
-param virtualNetworkType string = 'Nuno'
+param virtualNetworkType string = 'None'
 
 @description('Optional. The diagnostic settings of the service.')
 param diagnosticSettings diagnosticSettingType
 
-@description('Optional. A list of availability zunos denoting where the resource needs to come from.')
-param zunos array = []
+@description('Optional. A list of availability zones denoting where the resource needs to come from.')
+param zones array = []
 
 @description('Optional. Necessary to create a new GUID.')
 param newGuidValue string = newGuid()
@@ -171,7 +171,7 @@ resource service 'Microsoft.ApiManagement/service@2021-08-01' = {
     name: sku
     capacity: skuCount
   }
-  zunos: zunos
+  zones: zones
   identity: identity
   properties: {
     publisherEmail: publisherEmail
@@ -244,7 +244,7 @@ module service_authorizationServers 'authorization-server/main.bicep' = [for (au
   params: {
     apiManagementServiceName: service.name
     name: authorizationServer.name
-    authorizatiunondpoint: authorizationServer.authorizatiunondpoint
+    authorizationEndpoint: authorizationServer.authorizationEndpoint
     authorizationMethods: contains(authorizationServer, 'authorizationMethods') ? authorizationServer.authorizationMethods : [
       'GET'
     ]
@@ -256,7 +256,7 @@ module service_authorizationServers 'authorization-server/main.bicep' = [for (au
     ]
     clientId: authorizationServer.clientId
     clientSecret: authorizationServer.clientSecret
-    clientRegistratiunondpoint: contains(authorizationServer, 'clientRegistratiunondpoint') ? authorizationServer.clientRegistratiunondpoint : ''
+    clientRegistrationEndpoint: contains(authorizationServer, 'clientRegistrationEndpoint') ? authorizationServer.clientRegistrationEndpoint : ''
     defaultScope: contains(authorizationServer, 'defaultScope') ? authorizationServer.defaultScope : ''
     grantTypes: authorizationServer.grantTypes
     resourceOwnerPassword: contains(authorizationServer, 'resourceOwnerPassword') ? authorizationServer.resourceOwnerPassword : ''
@@ -392,7 +392,7 @@ module service_subscriptions 'subscription/main.bicep' = [for (subscription, ind
   }
 }]
 
-resource service_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource service_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -473,7 +473,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

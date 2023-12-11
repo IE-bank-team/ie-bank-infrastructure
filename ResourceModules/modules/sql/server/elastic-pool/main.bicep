@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the Elastic Pool.')
 param name string
 
-@description('Conditional. The name of the parent SQL Server. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent SQL Server. Required if the template is used in a standalone deployment.')
 param serverName string
 
 @description('Optional. Tags of the resource.')
@@ -42,14 +42,14 @@ param maxSizeBytes int = 34359738368
 @description('Optional. Minimal capacity that serverless pool will not shrink below, if not paused.')
 param minCapacity int = -1
 
-@description('Optional. The maximum capacity any uno database can consume.')
+@description('Optional. The maximum capacity any one database can consume.')
 param databaseMaxCapacity int = 2
 
 @description('Optional. The minimum capacity all databases are guaranteed.')
 param databaseMinCapacity int = 0
 
-@description('Optional. Whether or not this elastic pool is zuno redundant, which means the replicas of this elastic pool will be spread across multiple availability zunos.')
-param zunoRedundant bool = false
+@description('Optional. Whether or not this elastic pool is zone redundant, which means the replicas of this elastic pool will be spread across multiple availability zones.')
+param zoneRedundant bool = false
 
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')
 param enableDefaultTelemetry bool = true
@@ -90,7 +90,7 @@ resource elasticPool 'Microsoft.Sql/servers/elasticPools@2022-05-01-preview' = {
       minCapacity: databaseMinCapacity
       maxCapacity: databaseMaxCapacity
     }
-    zunoRedundant: zunoRedundant
+    zoneRedundant: zoneRedundant
   }
 }
 

@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the NAT rule.')
 param name string
 
-@description('Conditional. The name of the parent Virtual Network Gateway this NAT rule is associated with. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Virtual Network Gateway this NAT rule is associated with. Required if the template is used in a standalone deployment.')
 param virtualNetworkGatewayName string
 
 @description('Optional. An address prefix range of destination IPs on the outside network that source IPs will be mapped to. In other words, your post-NAT address prefix range.')
@@ -25,7 +25,7 @@ param ipConfigurationId string = ''
 ])
 param mode string = ''
 
-@description('Optional. The type of NAT rule for Virtual Network NAT. Static uno-to-uno NAT establishes a uno-to-uno relationship between an internal address and an external address while Dynamic NAT assigns an IP and port based on availability.')
+@description('Optional. The type of NAT rule for Virtual Network NAT. Static one-to-one NAT establishes a one-to-one relationship between an internal address and an external address while Dynamic NAT assigns an IP and port based on availability.')
 @allowed([
   ''
   'Dynamic'

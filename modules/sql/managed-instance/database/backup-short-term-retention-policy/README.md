@@ -27,8 +27,8 @@ This module deploys a SQL Managed Instance Database Backup Short-Term Retention 
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`databaseName`](#parameter-databasename) | string | The name of the parent SQL managed instance database. Required if the template is used in a standaluno deployment. |
-| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment. |
+| [`databaseName`](#parameter-databasename) | string | The name of the parent SQL managed instance database. Required if the template is used in a standalone deployment. |
+| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent SQL managed instance. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -46,14 +46,14 @@ The name of the Short Term Retention backup policy. For example "default".
 
 ### Parameter: `databaseName`
 
-The name of the parent SQL managed instance database. Required if the template is used in a standaluno deployment.
+The name of the parent SQL managed instance database. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `managedInstanceName`
 
-The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment.
+The name of the parent SQL managed instance. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -85,4 +85,4 @@ The backup retention period in days. This is how many days Point-in-Time Restore
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

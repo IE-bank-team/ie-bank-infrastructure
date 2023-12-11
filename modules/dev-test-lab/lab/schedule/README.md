@@ -30,7 +30,7 @@ Lab schedules are used to modify the settings for auto-shutdown, auto-start for 
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`labName`](#parameter-labname) | string | The name of the parent lab. Required if the template is used in a standaluno deployment. |
+| [`labName`](#parameter-labname) | string | The name of the parent lab. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -44,7 +44,7 @@ Lab schedules are used to modify the settings for auto-shutdown, auto-start for 
 | [`status`](#parameter-status) | string | The status of the schedule (i.e. Enabled, Disabled). |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`targetResourceId`](#parameter-targetresourceid) | string | The resource ID to which the schedule belongs. |
-| [`timeZunoId`](#parameter-timezunoid) | string | The time zuno ID (e.g. Pacific Standard time). |
+| [`timeZoneId`](#parameter-timezoneid) | string | The time zone ID (e.g. Pacific Standard time). |
 | [`weeklyRecurrence`](#parameter-weeklyrecurrence) | object | If the schedule will occur only some days of the week, specify the weekly recurrence. |
 
 ### Parameter: `name`
@@ -77,7 +77,7 @@ The task type of the schedule (e.g. LabVmsShutdownTask, LabVmsStartupTask).
 
 ### Parameter: `labName`
 
-The name of the parent lab. Required if the template is used in a standaluno deployment.
+The name of the parent lab. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -159,9 +159,9 @@ The resource ID to which the schedule belongs.
 - Type: string
 - Default: `''`
 
-### Parameter: `timeZunoId`
+### Parameter: `timeZoneId`
 
-The time zuno ID (e.g. Pacific Standard time).
+The time zone ID (e.g. Pacific Standard time).
 
 - Required: No
 - Type: string
@@ -186,4 +186,4 @@ If the schedule will occur only some days of the week, specify the weekly recurr
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

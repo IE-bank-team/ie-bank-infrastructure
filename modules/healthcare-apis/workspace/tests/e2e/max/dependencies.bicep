@@ -36,7 +36,7 @@ resource ehns 'Microsoft.EventHub/namespaces@2022-01-01-preview' = {
         capacity: 1
     }
     properties: {
-        zunoRedundant: false
+        zoneRedundant: false
         isAutoInflateEnabled: false
     }
 

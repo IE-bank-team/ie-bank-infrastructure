@@ -49,7 +49,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -179,12 +179,12 @@
     },
     "federatedClientId": {
       "type": "string",
-      "defaultValue": "Nuno",
+      "defaultValue": "None",
       "metadata": {
-        "description": "Optional. Multi-tenant application client ID to access key vault in a different tenant. Setting the value to \"Nuno\" will clear the property."
+        "description": "Optional. Multi-tenant application client ID to access key vault in a different tenant. Setting the value to \"None\" will clear the property."
       }
     },
-    "rotationToLatestKeyVersiunonabled": {
+    "rotationToLatestKeyVersionEnabled": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
@@ -197,7 +197,7 @@
         "systemAssigned": true
       },
       "metadata": {
-        "description": "Optional. The managed identity definition for this resource. At least uno identity type is required."
+        "description": "Optional. The managed identity definition for this resource. At least one identity type is required."
       }
     },
     "roleAssignments": {
@@ -287,7 +287,7 @@
         },
         "encryptionType": "[parameters('encryptionType')]",
         "federatedClientId": "[parameters('federatedClientId')]",
-        "rotationToLatestKeyVersiunonabled": "[parameters('rotationToLatestKeyVersiunonabled')]"
+        "rotationToLatestKeyVersionEnabled": "[parameters('rotationToLatestKeyVersionEnabled')]"
       },
       "dependsOn": [
         "keyVault",
@@ -317,7 +317,7 @@
       ]
     },
     "diskEncryptionSet_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Compute/diskEncryptionSets/{0}', parameters('name'))]",
@@ -341,7 +341,7 @@
       "subscriptionId": "[split(parameters('keyVaultResourceId'), '/')[2]]",
       "resourceGroup": "[split(parameters('keyVaultResourceId'), '/')[4]]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -355,7 +355,7 @@
           "userAssignedIdentityResourceId": {
             "value": "[coalesce(tryGet(parameters('managedIdentities'), 'userAssignedResourceIds'), createArray())[copyIndex()]]"
           },
-          "rbacAuthorizatiunonabled": {
+          "rbacAuthorizationEnabled": {
             "value": "[reference('keyVault').enableRbacAuthorization]"
           }
         },
@@ -370,7 +370,7 @@
             }
           },
           "parameters": {
-            "rbacAuthorizatiunonabled": {
+            "rbacAuthorizationEnabled": {
               "type": "bool",
               "defaultValue": true,
               "metadata": {
@@ -405,7 +405,7 @@
           },
           "resources": [
             {
-              "condition": "[equals(parameters('rbacAuthorizatiunonabled'), true())]",
+              "condition": "[equals(parameters('rbacAuthorizationEnabled'), true())]",
               "type": "Microsoft.Authorization/roleAssignments",
               "apiVersion": "2022-04-01",
               "scope": "[format('Microsoft.KeyVault/vaults/{0}/keys/{1}', last(split(parameters('keyVaultResourceId'), '/')), parameters('keyName'))]",
@@ -426,7 +426,7 @@
               "subscriptionId": "[split(parameters('userAssignedIdentityResourceId'), '/')[2]]",
               "resourceGroup": "[split(parameters('userAssignedIdentityResourceId'), '/')[4]]",
               "properties": {
-                "expressiunovaluationOptions": {
+                "expressionEvaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -478,12 +478,12 @@
               }
             },
             {
-              "condition": "[not(equals(parameters('rbacAuthorizatiunonabled'), true()))]",
+              "condition": "[not(equals(parameters('rbacAuthorizationEnabled'), true()))]",
               "type": "Microsoft.Resources/deployments",
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-DiskEncrSet-KVAccessPolicies', uniqueString(deployment().name, parameters('location')))]",
               "properties": {
-                "expressiunovaluationOptions": {
+                "expressionEvaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -524,7 +524,7 @@
                     "keyVaultName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent key vault. Required if the template is used in a standaluno deployment."
+                        "description": "Conditional. The name of the parent key vault. Required if the template is used in a standalone deployment."
                       }
                     },
                     "accessPolicies": {

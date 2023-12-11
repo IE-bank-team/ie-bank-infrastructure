@@ -12,7 +12,7 @@ param kind string
 @description('Required. App settings.')
 param properties object
 
-@description('Conditional. The name of the parent Static Web App. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Static Web App. Required if the template is used in a standalone deployment.')
 param staticSiteName string
 
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')

@@ -55,7 +55,7 @@
     "extensionType": {
       "type": "string",
       "metadata": {
-        "description": "Required. Type of the Extension, of which this resource is an instance of. It must be uno of the Extension Types registered with Microsoft.KubernetesConfiguration by the Extension publisher."
+        "description": "Required. Type of the Extension, of which this resource is an instance of. It must be one of the Extension Types registered with Microsoft.KubernetesConfiguration by the Extension publisher."
       }
     },
     "releaseTrain": {
@@ -136,7 +136,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-ManagedCluster-FluxConfiguration{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",

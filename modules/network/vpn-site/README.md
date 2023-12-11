@@ -577,7 +577,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -713,7 +713,7 @@ List of all VPN site links.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

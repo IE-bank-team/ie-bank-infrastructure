@@ -11,7 +11,7 @@ metadata owner = 'Azure/module-maintainers'
 @maxLength(63)
 param name string
 
-@description('Conditional. The name of the parent workspaces. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent workspaces. Required if the template is used in a standalone deployment.')
 param workspaceName string
 
 @description('Optional. Destination properties.')

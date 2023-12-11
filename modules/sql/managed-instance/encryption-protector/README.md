@@ -27,13 +27,13 @@ This module deploys a SQL Managed Instance Encryption Protector.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment. |
+| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent SQL managed instance. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`autoRotatiunonabled`](#parameter-autorotatiunonabled) | bool | Key auto rotation opt-in flag. |
+| [`autoRotationEnabled`](#parameter-autorotationenabled) | bool | Key auto rotation opt-in flag. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`serverKeyType`](#parameter-serverkeytype) | string | The encryption protector type like "ServiceManaged", "AzureKeyVault". |
 
@@ -46,12 +46,12 @@ The name of the SQL managed instance key.
 
 ### Parameter: `managedInstanceName`
 
-The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment.
+The name of the parent SQL managed instance. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
-### Parameter: `autoRotatiunonabled`
+### Parameter: `autoRotationEnabled`
 
 Key auto rotation opt-in flag.
 
@@ -93,4 +93,4 @@ The encryption protector type like "ServiceManaged", "AzureKeyVault".
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

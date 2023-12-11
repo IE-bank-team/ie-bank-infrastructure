@@ -193,7 +193,7 @@ function New-TemplateDeploymentInner {
         }
 
         # Additional tags provides yes/no
-        # Append tags to parameters if resource supports them (all tags must be in uno object)
+        # Append tags to parameters if resource supports them (all tags must be in one object)
         if ($additionalTags) {
 
             # Parameter tags

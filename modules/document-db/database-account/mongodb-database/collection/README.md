@@ -30,8 +30,8 @@ This module deploys a MongoDB Database Collection.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`databaseAccountName`](#parameter-databaseaccountname) | string | The name of the parent Cosmos DB database account. Required if the template is used in a standaluno deployment. |
-| [`mongodbDatabaseName`](#parameter-mongodbdatabasename) | string | The name of the parent mongodb database. Required if the template is used in a standaluno deployment. |
+| [`databaseAccountName`](#parameter-databaseaccountname) | string | The name of the parent Cosmos DB database account. Required if the template is used in a standalone deployment. |
+| [`mongodbDatabaseName`](#parameter-mongodbdatabasename) | string | The name of the parent mongodb database. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -63,14 +63,14 @@ ShardKey for the collection.
 
 ### Parameter: `databaseAccountName`
 
-The name of the parent Cosmos DB database account. Required if the template is used in a standaluno deployment.
+The name of the parent Cosmos DB database account. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `mongodbDatabaseName`
 
-The name of the parent mongodb database. Required if the template is used in a standaluno deployment.
+The name of the parent mongodb database. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -102,7 +102,7 @@ Name of the mongodb database.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

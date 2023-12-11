@@ -8,14 +8,14 @@
       "templateHash": "5280310149581848411"
     },
     "name": "Network Manager Connectivity Configurations",
-    "description": "This module deploys a Network Manager Connectivity Configuration.\r\nConnectivity configurations define hub-and-spoke or mesh topologies applied to uno or more network groups.",
+    "description": "This module deploys a Network Manager Connectivity Configuration.\r\nConnectivity configurations define hub-and-spoke or mesh topologies applied to one or more network groups.",
     "owner": "Azure/module-maintainers"
   },
   "parameters": {
     "networkManagerName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment."
       }
     },
     "name": {

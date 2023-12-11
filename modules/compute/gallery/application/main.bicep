@@ -11,7 +11,7 @@ param enableDefaultTelemetry bool = true
 @sys.description('Optional. Location for all resources.')
 param location string = resourceGroup().location
 
-@sys.description('Conditional. The name of the parent Azure Compute Gallery. Required if the template is used in a standaluno deployment.')
+@sys.description('Conditional. The name of the parent Azure Compute Gallery. Required if the template is used in a standalone deployment.')
 @minLength(1)
 param galleryName string
 

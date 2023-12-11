@@ -10,7 +10,7 @@ This page provides an overview of the CARML CI environment. For further details,
 
 ---
 
-The Continuous Integration environment (CI environment) is a set of automation compunonts that are used for continuously validating and publishing module artifacts (Bicep registry repositories, template specs, universal packages). Technically, the CI environment consists of a DevOps platform (GitHub or Azure DevOps) hosting related pipelines and scripts, as well as an Azure environment (Azure AD tenant with management group(s) and subscription(s)) in which the modules are validated by the automation pipelines and scripts.
+The Continuous Integration environment (CI environment) is a set of automation components that are used for continuously validating and publishing module artifacts (Bicep registry repositories, template specs, universal packages). Technically, the CI environment consists of a DevOps platform (GitHub or Azure DevOps) hosting related pipelines and scripts, as well as an Azure environment (Azure AD tenant with management group(s) and subscription(s)) in which the modules are validated by the automation pipelines and scripts.
 
 In the following chapters, we're going to explain where the CI environment fits and how it is used.
 
@@ -22,7 +22,7 @@ This paragraph provides an overview of the standard development-to-deployment fl
 
 This flow generally covers 3 phases:
 
-1. In the **Develop modules** phase modules are first implemented/updated and then validated using uno or multiple module test files, testing their successful deployment to a sandbox subscription to prove their correctness.
+1. In the **Develop modules** phase modules are first implemented/updated and then validated using one or multiple module test files, testing their successful deployment to a sandbox subscription to prove their correctness.
 
 1. The next phase, **Publish modules**, packages and publishes the tested and approved modules to a target location for later consumption. The target location (also known as package store or artifact store) should support versioning to allow referencing a specific module version and to avoid breaking changes when referencing them.
 
@@ -30,7 +30,7 @@ This flow generally covers 3 phases:
 
 ## Module versioning
 
-Deploying resources by referencing their corresponding modules from source control has uno major drawback: If your deployments directly rely on your source repository, then they will by default use the latest code.
+Deploying resources by referencing their corresponding modules from source control has one major drawback: If your deployments directly rely on your source repository, then they will by default use the latest code.
 
 Applying software development lifecycle concepts like _publishing build artifacts and versioning_ enables you to have a point in time version of a module. By introducing versions to your modules, the consuming orchestration can and should specify a module version needed, and deploy the Azure solution leveraging it.
 
@@ -41,11 +41,11 @@ Also, if you reference a module version that was tested in and has passed throug
 # Where does the CARML CI environment fit in?
 
 To ensure the modules hosted by the CARML library are valid and can perform the intended deployments, the repository comes with a continuous integration (CI) environment for each module.
-If the validation is successful, the CI environment is also publishing versiunod modules to uno or multiple target locations, from where they can be referenced by solutions consuming them.
+If the validation is successful, the CI environment is also publishing versioned modules to one or multiple target locations, from where they can be referenced by solutions consuming them.
 
 The CARML CI environment covers `Phase #1`, (the validation) & `Phase #2` (the publishing) of the [deployment flow](#deployment-flow) section - these include the steps typically performed by the *CARML module developer* persona.
 
-The *CARML solution developer* and *solution consumer* personas are usually working in `Phase #2` and `Phase #3`, i.e., building/leveraging complex, multi-module solutions by consuming the already tested and versiunod modules previously placed in an artifact store.
+The *CARML solution developer* and *solution consumer* personas are usually working in `Phase #2` and `Phase #3`, i.e., building/leveraging complex, multi-module solutions by consuming the already tested and versioned modules previously placed in an artifact store.
 
 <img src="./media/Context/Deployment_flow_users.png" alt="Deployment flow" height="400">
 

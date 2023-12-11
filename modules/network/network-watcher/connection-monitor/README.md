@@ -118,4 +118,4 @@ Specify the Log Analytics Workspace Resource ID.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

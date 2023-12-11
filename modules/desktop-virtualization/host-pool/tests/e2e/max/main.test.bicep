@@ -130,7 +130,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     agentUpdate: {
       type: 'Scheduled'
       useSessionHostLocalTime: false
-      maintenanceWindowTimeZuno: 'Alaskan Standard Time'
+      maintenanceWindowTimeZone: 'Alaskan Standard Time'
       maintenanceWindows: [
         {
           hour: 7

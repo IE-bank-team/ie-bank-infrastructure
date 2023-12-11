@@ -2,7 +2,7 @@ metadata name = 'DBforPostgreSQL Flexible Server Administrators'
 metadata description = 'This module deploys a DBforPostgreSQL Flexible Server Administrator.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent PostgreSQL flexible server. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent PostgreSQL flexible server. Required if the template is used in a standalone deployment.')
 param flexibleServerName string
 
 @description('Required. The objectId of the Active Directory administrator.')

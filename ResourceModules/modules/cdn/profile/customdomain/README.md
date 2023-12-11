@@ -40,7 +40,7 @@ This module deploys a CDN Profile Custom Domains.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`azureDnsZunoResourceId`](#parameter-azurednszunoresourceid) | string | Resource reference to the Azure DNS zuno. |
+| [`azureDnsZoneResourceId`](#parameter-azurednszoneresourceid) | string | Resource reference to the Azure DNS zone. |
 
 ### Parameter: `certificateType`
 
@@ -124,9 +124,9 @@ The name of the secret. ie. subs/rg/profile/secret.
 - Type: string
 - Default: `''`
 
-### Parameter: `azureDnsZunoResourceId`
+### Parameter: `azureDnsZoneResourceId`
 
-Resource reference to the Azure DNS zuno.
+Resource reference to the Azure DNS zone.
 
 - Required: No
 - Type: string
@@ -143,4 +143,4 @@ Resource reference to the Azure DNS zuno.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

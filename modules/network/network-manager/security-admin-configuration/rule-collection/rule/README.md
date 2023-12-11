@@ -1,7 +1,7 @@
 # Network Manager Security Admin Configuration Rule Collection Rules `[Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/rules]`
 
 This module deploys an Azure Virtual Network Manager (AVNM) Security Admin Configuration Rule Collection Rule.
-A security admin configuration contains a set of rule collections. Each rule collection contains uno or more security admin rules.
+A security admin configuration contains a set of rule collections. Each rule collection contains one or more security admin rules.
 
 ## Navigation
 
@@ -32,9 +32,9 @@ A security admin configuration contains a set of rule collections. Each rule col
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standaluno deployment. |
-| [`ruleCollectionName`](#parameter-rulecollectionname) | string | The name of the parent rule collection. Required if the template is used in a standaluno deployment. |
-| [`securityAdminConfigurationName`](#parameter-securityadminconfigurationname) | string | The name of the parent security admin configuration. Required if the template is used in a standaluno deployment. |
+| [`networkManagerName`](#parameter-networkmanagername) | string | The name of the parent network manager. Required if the template is used in a standalone deployment. |
+| [`ruleCollectionName`](#parameter-rulecollectionname) | string | The name of the parent rule collection. Required if the template is used in a standalone deployment. |
+| [`securityAdminConfigurationName`](#parameter-securityadminconfigurationname) | string | The name of the parent security admin configuration. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -42,10 +42,10 @@ A security admin configuration contains a set of rule collections. Each rule col
 | :-- | :-- | :-- |
 | [`description`](#parameter-description) | string | A description of the rule. |
 | [`destinationPortRanges`](#parameter-destinationportranges) | array | List of destination port ranges. This specifies on which ports traffic will be allowed or denied by this rule. Provide an (*) to allow traffic on any port. Port ranges are between 1-65535. |
-| [`destinations`](#parameter-destinations) | array | The destnations filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in uno rule filter is not permitted. |
+| [`destinations`](#parameter-destinations) | array | The destnations filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in one rule filter is not permitted. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`sourcePortRanges`](#parameter-sourceportranges) | array | List of destination port ranges. This specifies on which ports traffic will be allowed or denied by this rule. Provide an (*) to allow traffic on any port. Port ranges are between 1-65535. |
-| [`sources`](#parameter-sources) | array | The source filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in uno rule filter is not permitted. |
+| [`sources`](#parameter-sources) | array | The source filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in one rule filter is not permitted. |
 
 ### Parameter: `access`
 
@@ -110,21 +110,21 @@ Network protocol this rule applies to.
 
 ### Parameter: `networkManagerName`
 
-The name of the parent network manager. Required if the template is used in a standaluno deployment.
+The name of the parent network manager. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `ruleCollectionName`
 
-The name of the parent rule collection. Required if the template is used in a standaluno deployment.
+The name of the parent rule collection. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `securityAdminConfigurationName`
 
-The name of the parent security admin configuration. Required if the template is used in a standaluno deployment.
+The name of the parent security admin configuration. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -147,7 +147,7 @@ List of destination port ranges. This specifies on which ports traffic will be a
 
 ### Parameter: `destinations`
 
-The destnations filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in uno rule filter is not permitted.
+The destnations filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in one rule filter is not permitted.
 
 - Required: No
 - Type: array
@@ -171,7 +171,7 @@ List of destination port ranges. This specifies on which ports traffic will be a
 
 ### Parameter: `sources`
 
-The source filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in uno rule filter is not permitted.
+The source filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in one rule filter is not permitted.
 
 - Required: No
 - Type: array
@@ -188,4 +188,4 @@ The source filter can be an IP Address or a service tag. Each filter contains th
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

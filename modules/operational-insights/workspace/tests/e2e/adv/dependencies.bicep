@@ -50,7 +50,7 @@ resource eventHubNamespace 'Microsoft.EventHub/namespaces@2022-10-01-preview' = 
     isAutoInflateEnabled: false
     maximumThroughputUnits: 0
     kafkaEnabled: false
-    zunoRedundant: true
+    zoneRedundant: true
   }
 
   resource eventHub 'eventhubs@2022-10-01-preview' = {

@@ -11,8 +11,8 @@ param profileName string
 @description('Required. The host name of the domain. Must be a domain name.')
 param hostName string
 
-@description('Optonal. Resource reference to the Azure DNS zuno.')
-param azureDnsZunoResourceId string = ''
+@description('Optonal. Resource reference to the Azure DNS zone.')
+param azureDnsZoneResourceId string = ''
 
 @description('Optional. Key-Value pair representing migration properties for domains.')
 param extendedProperties object = {}
@@ -64,8 +64,8 @@ resource profile_custom_domain 'Microsoft.Cdn/profiles/customDomains@2023-05-01'
   name: name
   parent: profile
   properties: {
-    azureDnsZuno: !empty(azureDnsZunoResourceId) ? {
-      id: azureDnsZunoResourceId
+    azureDnsZone: !empty(azureDnsZoneResourceId) ? {
+      id: azureDnsZoneResourceId
     } : null
     extendedProperties: !empty(extendedProperties) ? extendedProperties : null
     hostName: hostName

@@ -34,7 +34,7 @@ You have a public fork of public CARML source repository in your target organiza
 
 You have created your GitHub target repository and uploaded there the content of the CARML repository.
 
-Cluno/download CARML repository to create a local copy of it, as explained in Azure DevOps Repository section in [Getting started - Scenario 2 Onboard module library and CI environment](./Getting%20started%20-%20Scenario%202%20Onboard%20module%20library%20and%20CI%20environment#2-forkcluno-the-repository-into-your-devops-environment)
+Clone/download CARML repository to create a local copy of it, as explained in Azure DevOps Repository section in [Getting started - Scenario 2 Onboard module library and CI environment](./Getting%20started%20-%20Scenario%202%20Onboard%20module%20library%20and%20CI%20environment#2-forkclone-the-repository-into-your-devops-environment)
 
 </details>
 <p>
@@ -44,7 +44,7 @@ Cluno/download CARML repository to create a local copy of it, as explained in Az
 
 You have created your target repository and uploaded there the content of the CARML repository.
 
-Cluno/download CARML repository to create a local copy of it, as explained in Azure DevOps Repository section in [Getting started - Scenario 2 Onboard module library and CI environment](./Getting%20started%20-%20Scenario%202%20Onboard%20module%20library%20and%20CI%20environment#2-forkcluno-the-repository-into-your-devops-environment)
+Clone/download CARML repository to create a local copy of it, as explained in Azure DevOps Repository section in [Getting started - Scenario 2 Onboard module library and CI environment](./Getting%20started%20-%20Scenario%202%20Onboard%20module%20library%20and%20CI%20environment#2-forkclone-the-repository-into-your-devops-environment)
 
 </details>
 <p>
@@ -65,7 +65,7 @@ In special cases, manual actions may be required to provision certain resources 
 
 # 6. (Optional) Customize modules and CI environment
 
-The backup folder from step 1, can be used to compare your local copy with your synced copy coming from the latest version. For example, the `'Compare selected'` [function](https://vscode.uno/diff-vscode/) in Visual Studio Code can be leveraged for that purpose.
+The backup folder from step 1, can be used to compare your local copy with your synced copy coming from the latest version. For example, the `'Compare selected'` [function](https://vscode.one/diff-vscode/) in Visual Studio Code can be leveraged for that purpose.
 
 If your copy deviates from the upstream version due to customizations you applied to the code, you'll have to re-apply those customizations to the updated code. This process may be automated, by script or CI, if customization tasks are repeatable.
 

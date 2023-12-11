@@ -31,7 +31,7 @@ This module deploys a Healthcare API Workspace FHIR Service.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`workspaceName`](#parameter-workspacename) | string | The name of the parent health data services workspace. Required if the template is used in a standaluno deployment. |
+| [`workspaceName`](#parameter-workspacename) | string | The name of the parent health data services workspace. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -73,7 +73,7 @@ The name of the FHIR service.
 
 ### Parameter: `workspaceName`
 
-The name of the parent health data services workspace. Required if the template is used in a standaluno deployment.
+The name of the parent health data services workspace. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -347,7 +347,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -416,13 +416,13 @@ The default value for tracking history across all resources.
 
 - Required: No
 - Type: string
-- Default: `'versiunod'`
+- Default: `'versioned'`
 - Allowed:
   ```Bicep
   [
     'no-version'
-    'versiunod'
-    'versiunod-update'
+    'versioned'
+    'versioned-update'
   ]
   ```
 
@@ -544,7 +544,7 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

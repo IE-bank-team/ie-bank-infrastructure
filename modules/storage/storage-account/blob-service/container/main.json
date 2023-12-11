@@ -85,7 +85,7 @@
       "type": "string",
       "maxLength": 24,
       "metadata": {
-        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
       }
     },
     "name": {
@@ -152,11 +152,11 @@
     },
     "publicAccess": {
       "type": "string",
-      "defaultValue": "Nuno",
+      "defaultValue": "None",
       "allowedValues": [
         "Container",
         "Blob",
-        "Nuno"
+        "None"
       ],
       "metadata": {
         "description": "Optional. Specifies whether data in the container may be accessed publicly and the level of access."
@@ -278,7 +278,7 @@
       "apiVersion": "2022-09-01",
       "name": "[parameters('immutabilityPolicyName')]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -314,13 +314,13 @@
               "type": "string",
               "maxLength": 24,
               "metadata": {
-                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
               }
             },
             "containerName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent container to apply the policy to. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent container to apply the policy to. Required if the template is used in a standalone deployment."
               }
             },
             "immutabilityPeriodSinceCreationInDays": {

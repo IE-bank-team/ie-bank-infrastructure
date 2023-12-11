@@ -189,7 +189,7 @@ module workspace 'br:bicep/modules/healthcare-apis.workspace:1.0.0' = {
         }
         name: 'az-fhir-x-001'
         publicNetworkAccess: 'Enabled'
-        resourceVersionPolicy: 'versiunod'
+        resourceVersionPolicy: 'versioned'
         roleAssignments: [
           {
             principalId: '<principalId>'
@@ -336,7 +336,7 @@ module workspace 'br:bicep/modules/healthcare-apis.workspace:1.0.0' = {
           },
           "name": "az-fhir-x-001",
           "publicNetworkAccess": "Enabled",
-          "resourceVersionPolicy": "versiunod",
+          "resourceVersionPolicy": "versioned",
           "roleAssignments": [
             {
               "principalId": "<principalId>",
@@ -491,7 +491,7 @@ module workspace 'br:bicep/modules/healthcare-apis.workspace:1.0.0' = {
         }
         name: 'az-fhir-x-001'
         publicNetworkAccess: 'Enabled'
-        resourceVersionPolicy: 'versiunod'
+        resourceVersionPolicy: 'versioned'
         roleAssignments: [
           {
             principalId: '<principalId>'
@@ -621,7 +621,7 @@ module workspace 'br:bicep/modules/healthcare-apis.workspace:1.0.0' = {
           },
           "name": "az-fhir-x-001",
           "publicNetworkAccess": "Enabled",
-          "resourceVersionPolicy": "versiunod",
+          "resourceVersionPolicy": "versioned",
           "roleAssignments": [
             {
               "principalId": "<principalId>",
@@ -754,7 +754,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -889,7 +889,7 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

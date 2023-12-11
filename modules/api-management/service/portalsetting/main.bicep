@@ -2,7 +2,7 @@ metadata name = 'API Management Service Portal Settings'
 metadata description = 'This module deploys an API Management Service Portal Setting.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment.')
 param apiManagementServiceName string
 
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')

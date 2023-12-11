@@ -27,7 +27,7 @@ This module deploys a Log Analytics Workspace Table.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`workspaceName`](#parameter-workspacename) | string | The name of the parent workspaces. Required if the template is used in a standaluno deployment. |
+| [`workspaceName`](#parameter-workspacename) | string | The name of the parent workspaces. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -50,7 +50,7 @@ The name of the table.
 
 ### Parameter: `workspaceName`
 
-The name of the parent workspaces. Required if the template is used in a standaluno deployment.
+The name of the parent workspaces. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -129,4 +129,4 @@ The table total retention in days, between 4 and 2555. Setting this property to 
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

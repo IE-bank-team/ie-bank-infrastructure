@@ -19,7 +19,7 @@ This module deploys a Network Application Gateway.
 | `Microsoft.Insights/diagnosticSettings` | [2021-05-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2021-05-01-preview/diagnosticSettings) |
 | `Microsoft.Network/applicationGateways` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/applicationGateways) |
 | `Microsoft.Network/privateEndpoints` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints) |
-| `Microsoft.Network/privateEndpoints/privateDnsZunoGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZunoGroups) |
+| `Microsoft.Network/privateEndpoints/privateDnsZoneGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZoneGroups) |
 
 ## Usage examples
 
@@ -246,8 +246,8 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
     }
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         service: 'public'
         subnetResourceId: '<subnetResourceId>'
@@ -265,7 +265,7 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
           ipConfigurations: [
             {
               id: '<id>'
-              name: 'privateLinkIpConfiuno'
+              name: 'privateLinkIpConfig1'
               properties: {
                 primary: false
                 privateIPAllocationMethod: 'Dynamic'
@@ -723,8 +723,8 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "service": "public",
           "subnetResourceId": "<subnetResourceId>",
@@ -744,7 +744,7 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
             "ipConfigurations": [
               {
                 "id": "<id>",
-                "name": "privateLinkIpConfiuno",
+                "name": "privateLinkIpConfig1",
                 "properties": {
                   "primary": false,
                   "privateIPAllocationMethod": "Dynamic",
@@ -1200,8 +1200,8 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
     }
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         service: 'public'
         subnetResourceId: '<subnetResourceId>'
@@ -1219,7 +1219,7 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
           ipConfigurations: [
             {
               id: '<id>'
-              name: 'privateLinkIpConfiuno'
+              name: 'privateLinkIpConfig1'
               properties: {
                 primary: false
                 privateIPAllocationMethod: 'Dynamic'
@@ -1660,8 +1660,8 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "service": "public",
           "subnetResourceId": "<subnetResourceId>",
@@ -1681,7 +1681,7 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
             "ipConfigurations": [
               {
                 "id": "<id>",
-                "name": "privateLinkIpConfiuno",
+                "name": "privateLinkIpConfig1",
                 "properties": {
                   "primary": false,
                   "privateIPAllocationMethod": "Dynamic",
@@ -1961,7 +1961,7 @@ module applicationGateway 'br:bicep/modules/network.application-gateway:1.0.0' =
 | [`trustedRootCertificates`](#parameter-trustedrootcertificates) | array | Trusted Root certificates of the application gateway resource. |
 | [`urlPathMaps`](#parameter-urlpathmaps) | array | URL path map of the application gateway resource. |
 | [`webApplicationFirewallConfiguration`](#parameter-webapplicationfirewallconfiguration) | object | Application gateway web application firewall configuration. Should be configured for security reasons. |
-| [`zunos`](#parameter-zunos) | array | A list of availability zunos denoting where the resource needs to come from. |
+| [`zones`](#parameter-zones) | array | A list of availability zones denoting where the resource needs to come from. |
 
 ### Parameter: `name`
 
@@ -2253,7 +2253,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -2312,8 +2312,8 @@ Configuration details for private endpoints. For security reasons, it is recomme
 | [`lock`](#parameter-privateendpointslock) | object | Specify the type of lock. |
 | [`manualPrivateLinkServiceConnections`](#parameter-privateendpointsmanualprivatelinkserviceconnections) | array | Manual PrivateLink Service Connections. |
 | [`name`](#parameter-privateendpointsname) | string | The name of the private endpoint. |
-| [`privateDnsZunoGroupName`](#parameter-privateendpointsprivatednszunogroupname) | string | The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided. |
-| [`privateDnsZunoResourceIds`](#parameter-privateendpointsprivatednszunoresourceids) | array | The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos. |
+| [`privateDnsZoneGroupName`](#parameter-privateendpointsprivatednszonegroupname) | string | The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided. |
+| [`privateDnsZoneResourceIds`](#parameter-privateendpointsprivatednszoneresourceids) | array | The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones. |
 | [`roleAssignments`](#parameter-privateendpointsroleassignments) | array | Array of role assignments to create. |
 | [`tags`](#parameter-privateendpointstags) | object | Tags to be applied on all resources/resource groups in this deployment. |
 
@@ -2397,7 +2397,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -2423,16 +2423,16 @@ The name of the private endpoint.
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZunoGroupName`
+### Parameter: `privateEndpoints.privateDnsZoneGroupName`
 
-The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.
+The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.
 
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZunoResourceIds`
+### Parameter: `privateEndpoints.privateDnsZoneResourceIds`
 
-The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.
+The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.
 
 - Required: No
 - Type: array
@@ -2844,9 +2844,9 @@ Application gateway web application firewall configuration. Should be configured
 - Type: object
 - Default: `{}`
 
-### Parameter: `zunos`
+### Parameter: `zones`
 
-A list of availability zunos denoting where the resource needs to come from.
+A list of availability zones denoting where the resource needs to come from.
 
 - Required: No
 - Type: array

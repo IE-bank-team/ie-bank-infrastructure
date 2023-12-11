@@ -51,11 +51,11 @@ module testDeployment '../../../main.bicep' = {
     name: '${namePrefix}${serviceShort}001'
     skuName: 'Premium'
     skuCapacity: 2
-    zunoRedundant: true
+    zoneRedundant: true
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          nestedDependencies.outputs.privateDNSZunoResourceId
+        privateDnsZoneResourceIds: [
+          nestedDependencies.outputs.privateDNSZoneResourceId
         ]
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
         tags: {

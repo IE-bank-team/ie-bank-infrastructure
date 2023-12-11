@@ -28,7 +28,7 @@ This module deploys a Recovery Services Vault Backup Policy.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`recoveryVaultName`](#parameter-recoveryvaultname) | string | The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment. |
+| [`recoveryVaultName`](#parameter-recoveryvaultname) | string | The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -52,7 +52,7 @@ Configuration of the Azure Recovery Service Vault Backup Policy.
 
 ### Parameter: `recoveryVaultName`
 
-The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment.
+The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -76,4 +76,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

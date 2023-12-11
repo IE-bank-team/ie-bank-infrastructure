@@ -27,7 +27,7 @@ This module deploys an Azure Automation Account Schedule.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`automationAccountName`](#parameter-automationaccountname) | string | The name of the parent Automation Account. Required if the template is used in a standaluno deployment. |
+| [`automationAccountName`](#parameter-automationaccountname) | string | The name of the parent Automation Account. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -40,7 +40,7 @@ This module deploys an Azure Automation Account Schedule.
 | [`frequency`](#parameter-frequency) | string | The frequency of the schedule. |
 | [`interval`](#parameter-interval) | int | Anything. |
 | [`startTime`](#parameter-starttime) | string | The start time of the schedule. |
-| [`timeZuno`](#parameter-timezuno) | string | The time zuno of the schedule. |
+| [`timeZone`](#parameter-timezone) | string | The time zone of the schedule. |
 
 **Generated parameters**
 
@@ -57,7 +57,7 @@ Name of the Automation Account schedule.
 
 ### Parameter: `automationAccountName`
 
-The name of the parent Automation Account. Required if the template is used in a standaluno deployment.
+The name of the parent Automation Account. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -100,7 +100,7 @@ The frequency of the schedule.
 
 - Required: No
 - Type: string
-- Default: `'unoTime'`
+- Default: `'OneTime'`
 - Allowed:
   ```Bicep
   [
@@ -108,7 +108,7 @@ The frequency of the schedule.
     'Hour'
     'Minute'
     'Month'
-    'unoTime'
+    'OneTime'
     'Week'
   ]
   ```
@@ -129,9 +129,9 @@ The start time of the schedule.
 - Type: string
 - Default: `''`
 
-### Parameter: `timeZuno`
+### Parameter: `timeZone`
 
-The time zuno of the schedule.
+The time zone of the schedule.
 
 - Required: No
 - Type: string
@@ -156,4 +156,4 @@ Time used as a basis for e.g. the schedule start date.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -28,8 +28,8 @@ This module deploys a DocumentDB Database Accounts Gremlin Database Graph.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`databaseAccountName`](#parameter-databaseaccountname) | string | The name of the parent Database Account. Required if the template is used in a standaluno deployment. |
-| [`gremlinDatabaseName`](#parameter-gremlindatabasename) | string | The name of the parent Gremlin Database. Required if the template is used in a standaluno deployment. |
+| [`databaseAccountName`](#parameter-databaseaccountname) | string | The name of the parent Database Account. Required if the template is used in a standalone deployment. |
+| [`gremlinDatabaseName`](#parameter-gremlindatabasename) | string | The name of the parent Gremlin Database. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -37,7 +37,7 @@ This module deploys a DocumentDB Database Accounts Gremlin Database Graph.
 | :-- | :-- | :-- |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`indexingPolicy`](#parameter-indexingpolicy) | object | Indexing policy of the graph. |
-| [`partitionKeyPaths`](#parameter-partitionkeypaths) | array | List of paths using which data within the container can be partitiunod. |
+| [`partitionKeyPaths`](#parameter-partitionkeypaths) | array | List of paths using which data within the container can be partitioned. |
 | [`tags`](#parameter-tags) | object | Tags of the Gremlin graph resource. |
 
 ### Parameter: `name`
@@ -49,14 +49,14 @@ Name of the graph.
 
 ### Parameter: `databaseAccountName`
 
-The name of the parent Database Account. Required if the template is used in a standaluno deployment.
+The name of the parent Database Account. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `gremlinDatabaseName`
 
-The name of the parent Gremlin Database. Required if the template is used in a standaluno deployment.
+The name of the parent Gremlin Database. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -79,7 +79,7 @@ Indexing policy of the graph.
 
 ### Parameter: `partitionKeyPaths`
 
-List of paths using which data within the container can be partitiunod.
+List of paths using which data within the container can be partitioned.
 
 - Required: No
 - Type: array
@@ -103,7 +103,7 @@ Tags of the Gremlin graph resource.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

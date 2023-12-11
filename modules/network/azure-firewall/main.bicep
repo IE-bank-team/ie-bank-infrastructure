@@ -59,8 +59,8 @@ param virtualHubId string = ''
 @description('Optional. The operation mode for Threat Intel.')
 param threatIntelMode string = 'Deny'
 
-@description('Optional. Zuno numbers e.g. 1,2,3.')
-param zunos array = [
+@description('Optional. Zone numbers e.g. 1,2,3.')
+param zones array = [
   '1'
   '2'
   '3'
@@ -110,7 +110,7 @@ var ipConfigurations = concat([
             id: '${vNetId}/subnets/AzureFirewallSubnet' // The subnet name must be AzureFirewallSubnet
           }
         }, (!empty(publicIPResourceID) || !empty(publicIPAddressObject)) ? {
-          //Use existing Public IP, new Public IP created in this module, or nuno if neither
+          //Use existing Public IP, new Public IP created in this module, or none if neither
           publicIPAddress: {
             id: !empty(publicIPResourceID) ? publicIPResourceID : publicIPAddress.outputs.resourceId
           }
@@ -130,7 +130,7 @@ var managementIPConfiguration = {
         id: '${vNetId}/subnets/AzureFirewallManagementSubnet' // The subnet name must be AzureFirewallManagementSubnet for a 'Basic' SKU tier firewall
       }
     }, (!empty(publicIPResourceID) || !empty(managementIPAddressObject)) ? {
-      // Use existing Management Public IP, new Management Public IP created in this module, or nuno if neither
+      // Use existing Management Public IP, new Management Public IP created in this module, or none if neither
       publicIPAddress: {
         id: !empty(managementIPResourceID) ? managementIPResourceID : managementIPAddress.outputs.resourceId
       }
@@ -174,12 +174,12 @@ module publicIPAddress '../../network/public-ip-address/main.bicep' = if (empty(
     location: location
     lock: lock
     tags: publicIPAddressObject.?tags ?? tags
-    zunos: zunos
+    zones: zones
     enableDefaultTelemetry: enableReferencedModulesTelemetry
   }
 }
 
-// create a Management Public IP address if uno is not provided and the flag is true
+// create a Management Public IP address if one is not provided and the flag is true
 module managementIPAddress '../../network/public-ip-address/main.bicep' = if (isCreateDefaultManagementIP && azureSkuName == 'AZFW_VNet') {
   name: '${uniqueString(deployment().name, location)}-Firewall-MIP'
   params: {
@@ -192,7 +192,7 @@ module managementIPAddress '../../network/public-ip-address/main.bicep' = if (is
     diagnosticSettings: managementIPAddressObject.?diagnosticSettings
     location: location
     tags: managementIPAddressObject.?tags ?? tags
-    zunos: zunos
+    zones: zones
     enableDefaultTelemetry: enableReferencedModulesTelemetry
   }
 }
@@ -200,7 +200,7 @@ module managementIPAddress '../../network/public-ip-address/main.bicep' = if (is
 resource azureFirewall 'Microsoft.Network/azureFirewalls@2023-04-01' = {
   name: name
   location: location
-  zunos: length(zunos) == 0 ? null : zunos
+  zones: length(zones) == 0 ? null : zones
   tags: tags
   properties: azureSkuName == 'AZFW_VNet' ? {
     threatIntelMode: threatIntelMode
@@ -231,7 +231,7 @@ resource azureFirewall 'Microsoft.Network/azureFirewalls@2023-04-01' = {
   }
 }
 
-resource azureFirewall_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource azureFirewall_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -316,7 +316,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

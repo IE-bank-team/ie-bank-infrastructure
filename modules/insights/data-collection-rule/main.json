@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -112,7 +112,7 @@
         "description": "Required. The name of the data collection rule. The name is case insensitive."
       }
     },
-    "dataCollectiunondpointId": {
+    "dataCollectionEndpointId": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
@@ -231,13 +231,13 @@
         "dataSources": "[parameters('dataSources')]",
         "destinations": "[parameters('destinations')]",
         "dataFlows": "[parameters('dataFlows')]",
-        "dataCollectiunondpointId": "[if(not(empty(parameters('dataCollectiunondpointId'))), parameters('dataCollectiunondpointId'), null())]",
+        "dataCollectionEndpointId": "[if(not(empty(parameters('dataCollectionEndpointId'))), parameters('dataCollectionEndpointId'), null())]",
         "streamDeclarations": "[if(not(empty(parameters('streamDeclarations'))), parameters('streamDeclarations'), null())]",
         "description": "[if(not(empty(parameters('description'))), parameters('description'), null())]"
       }
     },
     "dataCollectionRule_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Insights/dataCollectionRules/{0}', parameters('name'))]",

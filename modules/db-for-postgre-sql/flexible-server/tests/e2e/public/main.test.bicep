@@ -78,7 +78,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     ]
     skuName: 'Standard_D2s_v3'
     tier: 'GeneralPurpose'
-    availabilityZuno: '1'
+    availabilityZone: '1'
     backupRetentionDays: 20
     configurations: [
       {
@@ -129,7 +129,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       }
     ]
     geoRedundantBackup: 'Disabled'
-    highAvailability: 'SameZuno'
+    highAvailability: 'SameZone'
     location: location
     storageSizeGB: 1024
     version: '14'

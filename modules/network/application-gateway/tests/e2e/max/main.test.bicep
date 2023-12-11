@@ -142,8 +142,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         properties: {
           ipConfigurations: [
             {
-              name: 'privateLinkIpConfiuno'
-              id: '${appGWExpectedResourceID}/privateLinkConfigurations/pvtlink01/ipConfigurations/privateLinkIpConfiuno'
+              name: 'privateLinkIpConfig1'
+              id: '${appGWExpectedResourceID}/privateLinkConfigurations/pvtlink01/ipConfigurations/privateLinkIpConfig1'
               properties: {
                 privateIPAllocationMethod: 'Dynamic'
                 primary: false
@@ -158,8 +158,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     ]
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          nestedDependencies.outputs.privateDNSZunoResourceId
+        privateDnsZoneResourceIds: [
+          nestedDependencies.outputs.privateDNSZoneResourceId
         ]
         service: 'public'
         subnetResourceId: nestedDependencies.outputs.privateLinkSubnetResourceId

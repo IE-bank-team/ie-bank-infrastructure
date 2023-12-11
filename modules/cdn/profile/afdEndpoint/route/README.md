@@ -205,4 +205,4 @@ The supported protocols of the rule.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

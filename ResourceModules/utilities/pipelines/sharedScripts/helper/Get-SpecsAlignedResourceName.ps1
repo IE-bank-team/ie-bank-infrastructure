@@ -95,7 +95,7 @@ function Get-SpecsAlignedResourceName {
     if ($resourceType.count -gt 1) {
         switch ($rawResourceType) {
             'service/api/policy' {
-                # Setting explicitely as both [apimanagement/service/apis/policies] & [apimanagement/service/apis/policy] exist in the specs and the later seem to have been an initial incorrect publish (only uno API version exists)
+                # Setting explicitely as both [apimanagement/service/apis/policies] & [apimanagement/service/apis/policy] exist in the specs and the later seem to have been an initial incorrect publish (only one API version exists)
                 $resourceType = 'service/apis/policies'
             }
             Default {
@@ -104,7 +104,7 @@ function Get-SpecsAlignedResourceName {
         }
     }
 
-    # Special case handling: If no resource type is found, fall back uno level (e.g., for 'authorization\role-definition\management-group' as 'management-group' in this context is no actual resource type)
+    # Special case handling: If no resource type is found, fall back one level (e.g., for 'authorization\role-definition\management-group' as 'management-group' in this context is no actual resource type)
     if (-not $resourceType) {
         $fallbackResourceTypeRegex = '{0}$' -f ($resourceTypeRegex -split $reducedResourceTypeElements[-1])[0]
         $resourceType = $innerResourceTypes | Where-Object { $_ -match $fallbackResourceTypeRegex }

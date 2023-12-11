@@ -69,7 +69,7 @@ param purviewResourceID string = ''
 @description('Required. Login for administrator access to the workspace\'s SQL pools.')
 param sqlAdministratorLogin string
 
-@description('Optional. Password for administrator access to the workspace\'s SQL pools. If you don\'t provide a password, uno will be automatically generated. You can change the password later.')
+@description('Optional. Password for administrator access to the workspace\'s SQL pools. If you don\'t provide a password, one will be automatically generated. You can change the password later.')
 #disable-next-line secure-secrets-in-params // Not a secret
 param sqlAdministratorLoginPassword string = ''
 
@@ -231,7 +231,7 @@ module workspace_key 'key/main.bicep' = if (encryptionActivateWorkspace) {
 }
 
 // Resource Lock
-resource workspace_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource workspace_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -268,8 +268,8 @@ module workspace_privateEndpoints '../../network/private-endpoint/main.bicep' = 
     enableDefaultTelemetry: privateEndpoint.?enableDefaultTelemetry ?? enableReferencedModulesTelemetry
     location: privateEndpoint.?location ?? reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZunoGroupName: privateEndpoint.?privateDnsZunoGroupName
-    privateDnsZunoResourceIds: privateEndpoint.?privateDnsZunoResourceIds
+    privateDnsZoneGroupName: privateEndpoint.?privateDnsZoneGroupName
+    privateDnsZoneResourceIds: privateEndpoint.?privateDnsZoneResourceIds
     roleAssignments: privateEndpoint.?roleAssignments
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: privateEndpoint.?manualPrivateLinkServiceConnections
@@ -332,7 +332,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {
@@ -371,11 +371,11 @@ type privateEndpointType = {
   @description('Required. Resource ID of the subnet where the endpoint needs to be created.')
   subnetResourceId: string
 
-  @description('Optional. The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.')
-  privateDnsZunoGroupName: string?
+  @description('Optional. The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.')
+  privateDnsZoneGroupName: string?
 
-  @description('Optional. The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.')
-  privateDnsZunoResourceIds: string[]?
+  @description('Optional. The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.')
+  privateDnsZoneResourceIds: string[]?
 
   @description('Optional. Custom DNS configurations.')
   customDnsConfigs: {

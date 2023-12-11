@@ -25,7 +25,7 @@ This module deploys a Storage Account Blob Service.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`storageAccountName`](#parameter-storageaccountname) | string | The name of the parent Storage Account. Required if the template is used in a standaluno deployment. |
+| [`storageAccountName`](#parameter-storageaccountname) | string | The name of the parent Storage Account. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -52,7 +52,7 @@ This module deploys a Storage Account Blob Service.
 
 ### Parameter: `storageAccountName`
 
-The name of the parent Storage Account. Required if the template is used in a standaluno deployment.
+The name of the parent Storage Account. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -291,4 +291,4 @@ The blob service properties for blob restore policy. If point-in-time restore is
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

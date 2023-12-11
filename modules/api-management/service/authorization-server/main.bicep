@@ -5,11 +5,11 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. Identifier of the authorization server.')
 param name string
 
-@description('Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment.')
 param apiManagementServiceName string
 
 @description('Required. OAuth authorization endpoint. See <http://tools.ietf.org/html/rfc6749#section-3.2>.')
-param authorizatiunondpoint string
+param authorizationEndpoint string
 
 @description('Optional. HTTP verbs supported by the authorization endpoint. GET must be always present. POST is optional. - HEAD, OPTIONS, TRACE, GET, POST, PUT, PATCH, DELETE.')
 param authorizationMethods array = [
@@ -31,7 +31,7 @@ param clientAuthenticationMethod array = [
 param clientId string
 
 @description('Optional. Optional reference to a page where client or app registration for this authorization server is performed. Contains absolute URL to entity being referenced.')
-param clientRegistratiunondpoint string = ''
+param clientRegistrationEndpoint string = ''
 
 @description('Required. Client or app secret registered with this authorization server. This property will not be filled on \'GET\' operations! Use \'/listSecrets\' POST request to get the value.')
 @secure()
@@ -101,8 +101,8 @@ resource authorizationServer 'Microsoft.ApiManagement/service/authorizationServe
     resourceOwnerUsername: resourceOwnerUsername
     resourceOwnerPassword: resourceOwnerPassword
     displayName: name
-    clientRegistratiunondpoint: clientRegistratiunondpoint
-    authorizatiunondpoint: authorizatiunondpoint
+    clientRegistrationEndpoint: clientRegistrationEndpoint
+    authorizationEndpoint: authorizationEndpoint
     grantTypes: grantTypes
     clientId: clientId
     clientSecret: clientSecret

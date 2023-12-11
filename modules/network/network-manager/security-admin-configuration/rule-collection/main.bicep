@@ -1,12 +1,12 @@
 metadata name = 'Network Manager Security Admin Configuration Rule Collections'
 metadata description = '''This module deploys an Network Manager Security Admin Configuration Rule Collection.
-A security admin configuration contains a set of rule collections. Each rule collection contains uno or more security admin rules. Security admin rules allows enforcing security policy criteria that matches the conditions set. Warning: A rule collection without rule will cause a deployment configuration for security admin goal state in network manager to fail.'''
+A security admin configuration contains a set of rule collections. Each rule collection contains one or more security admin rules. Security admin rules allows enforcing security policy criteria that matches the conditions set. Warning: A rule collection without rule will cause a deployment configuration for security admin goal state in network manager to fail.'''
 metadata owner = 'Azure/module-maintainers'
 
-@sys.description('Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment.')
+@sys.description('Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment.')
 param networkManagerName string
 
-@sys.description('Conditional. The name of the parent security admin configuration. Required if the template is used in a standaluno deployment.')
+@sys.description('Conditional. The name of the parent security admin configuration. Required if the template is used in a standalone deployment.')
 param securityAdminConfigurationName string
 
 @maxLength(64)
@@ -17,7 +17,7 @@ param name string
 @sys.description('Optional. A description of the admin rule collection.')
 param description string = ''
 
-@sys.description('Required. List of network groups for configuration. An admin rule collection must be associated to at least uno network group.')
+@sys.description('Required. List of network groups for configuration. An admin rule collection must be associated to at least one network group.')
 param appliesToGroups array
 
 @sys.description('Optional. List of rules for the admin rules collection. Security admin rules allows enforcing security policy criteria that matches the conditions set. Warning: A rule collection without rule will cause a deployment configuration for security admin goal state in network manager to fail.')

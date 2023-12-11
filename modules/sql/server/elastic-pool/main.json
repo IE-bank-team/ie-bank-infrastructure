@@ -22,7 +22,7 @@
     "serverName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent SQL Server. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent SQL Server. Required if the template is used in a standalone deployment."
       }
     },
     "tags": {
@@ -103,7 +103,7 @@
       "type": "int",
       "defaultValue": 2,
       "metadata": {
-        "description": "Optional. The maximum capacity any uno database can consume."
+        "description": "Optional. The maximum capacity any one database can consume."
       }
     },
     "databaseMinCapacity": {
@@ -113,11 +113,11 @@
         "description": "Optional. The minimum capacity all databases are guaranteed."
       }
     },
-    "zunoRedundant": {
+    "zoneRedundant": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
-        "description": "Optional. Whether or not this elastic pool is zuno redundant, which means the replicas of this elastic pool will be spread across multiple availability zunos."
+        "description": "Optional. Whether or not this elastic pool is zone redundant, which means the replicas of this elastic pool will be spread across multiple availability zones."
       }
     },
     "enableDefaultTelemetry": {
@@ -170,7 +170,7 @@
           "minCapacity": "[parameters('databaseMinCapacity')]",
           "maxCapacity": "[parameters('databaseMaxCapacity')]"
         },
-        "zunoRedundant": "[parameters('zunoRedundant')]"
+        "zoneRedundant": "[parameters('zoneRedundant')]"
       },
       "dependsOn": [
         "server"

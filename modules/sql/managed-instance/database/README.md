@@ -32,7 +32,7 @@ This module deploys a SQL Managed Instance Database.
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`longTermRetentionBackupResourceId`](#parameter-longtermretentionbackupresourceid) | string | The resource ID of the Long Term Retention backup to be used for restore of this managed database. Required if createMode is RestoreLongTermRetentionBackup. |
-| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment. |
+| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent SQL managed instance. Required if the template is used in a standalone deployment. |
 | [`recoverableDatabaseId`](#parameter-recoverabledatabaseid) | string | The resource identifier of the recoverable database associated with create operation of this database. Required if createMode is Recovery. |
 | [`restorePointInTime`](#parameter-restorepointintime) | string | Specifies the point in time (ISO8601 format) of the source database that will be restored to create the new database. Required if createMode is PointInTimeRestore. |
 | [`sourceDatabaseId`](#parameter-sourcedatabaseid) | string | The resource identifier of the source database associated with create operation of this database. Required if createMode is PointInTimeRestore. |
@@ -72,7 +72,7 @@ The resource ID of the Long Term Retention backup to be used for restore of this
 
 ### Parameter: `managedInstanceName`
 
-The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment.
+The name of the parent SQL managed instance. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -290,7 +290,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -329,4 +329,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

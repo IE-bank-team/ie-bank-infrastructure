@@ -28,7 +28,7 @@ This module deploys an Azure SQL Server Virtual Network Rule.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`serverName`](#parameter-servername) | string | The name of the parent SQL Server. Required if the template is used in a standaluno deployment. |
+| [`serverName`](#parameter-servername) | string | The name of the parent SQL Server. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -53,7 +53,7 @@ The resource ID of the virtual network subnet.
 
 ### Parameter: `serverName`
 
-The name of the parent SQL Server. Required if the template is used in a standaluno deployment.
+The name of the parent SQL Server. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -85,4 +85,4 @@ Allow creating a firewall rule before the virtual network has vnet service endpo
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

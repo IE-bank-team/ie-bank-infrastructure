@@ -28,7 +28,7 @@ This module deploys a SQL Managed Instance Administrator.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment. |
+| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent SQL managed instance. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -53,7 +53,7 @@ SID (object ID) of the managed instance administrator.
 
 ### Parameter: `managedInstanceName`
 
-The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment.
+The name of the parent SQL managed instance. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -85,4 +85,4 @@ Tenant ID of the managed instance administrator.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

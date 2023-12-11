@@ -570,7 +570,7 @@ function Set-CrossReferencesSection {
 
     if ($SectionContent.Count -eq 4) {
         # No content was added, adding placeholder
-        $SectionContent = @('_Nuno_')
+        $SectionContent = @('_None_')
 
     }
 
@@ -587,8 +587,8 @@ Add comments to indicate required & non-required parameters to the given Bicep e
 
 .DESCRIPTION
 Add comments to indicate required & non-required parameters to the given Bicep example.
-'Required' is only added if the example has at least uno required parameter
-'Non-Required' is only added if the example has at least uno required parameter and at least uno non-required parameter
+'Required' is only added if the example has at least one required parameter
+'Non-Required' is only added if the example has at least one required parameter and at least one non-required parameter
 
 .PARAMETER BicepParams
 Mandatory. The Bicep parameter block to add the comments to (i.e., should contain everything in between the brackets of a 'params: {...} block)
@@ -602,7 +602,7 @@ Mandatory. A list of all required top-level (i.e. non-nested) parameter names
 .EXAMPLE
 Add-BicepParameterTypeComment -AllParametersList @('name', 'lock') -RequiredParametersList @('name') -BicepParams "name: 'carml'\nlock: 'CanNotDelete'"
 
-Add type comments to given bicep params string, using uno required parameter 'name'. Would return:
+Add type comments to given bicep params string, using one required parameter 'name'. Would return:
 
 '
     // Required parameters
@@ -740,7 +740,7 @@ Mandatory. A list of all required top-level (i.e. non-nested) parameter names
 .EXAMPLE
 Build-OrderedJSONObject -RequiredParametersList @('name') -ParametersJSON '{ "lock": { "value": "CanNotDelete" }, "name": { "value": "carml" } }'
 
-Build a formatted Parameter-JSON object with uno required parameter. Would result into:
+Build a formatted Parameter-JSON object with one required parameter. Would result into:
 
 '{
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
@@ -773,42 +773,42 @@ function Build-OrderedJSONObject {
     $orderedJSONParameters = Get-OrderedParametersJSON -ParametersJSON $ParametersJSON -RequiredParametersList $RequiredParametersList
 
     # [2/9] Build the ordered parameter file syntax back up
-    $jsunoxample = ([ordered]@{
+    $jsonExample = ([ordered]@{
             '$schema'      = 'https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#'
             contentVersion = '1.0.0.0'
             parameters     = (-not [String]::IsNullOrEmpty($orderedJSONParameters)) ? $orderedJSONParameters : @{}
         } | ConvertTo-Json -Depth 99)
 
-    # [3/8] If we have at least uno required and uno other parameter we want to add a comment
+    # [3/8] If we have at least one required and one other parameter we want to add a comment
     if ($RequiredParametersList.Count -ge 1 -and $OrderedJSONParameters.Keys.Count -ge 2) {
 
-        $jsunoxampleArray = $jsunoxample -split '\n'
+        $jsonExampleArray = $jsonExample -split '\n'
 
         # [4/8] Check where the 'last' required parameter is located in the example (and what its indent is)
         $parameterToSplitAt = $RequiredParametersList[-1]
-        $parameterStartIndex = ($jsunoxampleArray | Select-String '.*"parameters": \{.*' | ForEach-Object { $_.LineNumber - 1 })[0]
-        $requiredParameterIndent = ([regex]::Match($jsunoxampleArray[($parameterStartIndex + 1)], '^(\s+).*')).Captures.Groups[1].Value.Length
+        $parameterStartIndex = ($jsonExampleArray | Select-String '.*"parameters": \{.*' | ForEach-Object { $_.LineNumber - 1 })[0]
+        $requiredParameterIndent = ([regex]::Match($jsonExampleArray[($parameterStartIndex + 1)], '^(\s+).*')).Captures.Groups[1].Value.Length
 
         # [5/8] Add a comment where the required parameters start
-        $jsunoxampleArray = $jsunoxampleArray[0..$parameterStartIndex] + ('{0}// Required parameters' -f (' ' * $requiredParameterIndent)) + $jsunoxampleArray[(($parameterStartIndex + 1) .. ($jsunoxampleArray.Count))]
+        $jsonExampleArray = $jsonExampleArray[0..$parameterStartIndex] + ('{0}// Required parameters' -f (' ' * $requiredParameterIndent)) + $jsonExampleArray[(($parameterStartIndex + 1) .. ($jsonExampleArray.Count))]
 
         # [6/8] Find the location if the last required parameter
-        $requiredParameterStartIndex = ($jsunoxampleArray | Select-String "^[\s]{$requiredParameterIndent}`"$parameterToSplitAt`": \{.*" | ForEach-Object { $_.LineNumber - 1 })[0]
+        $requiredParameterStartIndex = ($jsonExampleArray | Select-String "^[\s]{$requiredParameterIndent}`"$parameterToSplitAt`": \{.*" | ForEach-Object { $_.LineNumber - 1 })[0]
 
         # [7/8] If we have more than only required parameters, let's add a corresponding comment
         if ($orderedJSONParameters.Keys.Count -gt $RequiredParametersList.Count ) {
             # Search in rest of array for the next closing bracket with the same indent - and then add the search index (1) & initial index (1) count back in
-            $requiredParameterEndIndex = ($jsunoxampleArray[($requiredParameterStartIndex + 1)..($jsunoxampleArray.Count)] | Select-String "^[\s]{$requiredParameterIndent}\}" | ForEach-Object { $_.LineNumber - 1 })[0] + 1 + $requiredParameterStartIndex
+            $requiredParameterEndIndex = ($jsonExampleArray[($requiredParameterStartIndex + 1)..($jsonExampleArray.Count)] | Select-String "^[\s]{$requiredParameterIndent}\}" | ForEach-Object { $_.LineNumber - 1 })[0] + 1 + $requiredParameterStartIndex
 
             # Add a comment where the non-required parameters start
-            $jsunoxampleArray = $jsunoxampleArray[0..$requiredParameterEndIndex] + ('{0}// Non-required parameters' -f (' ' * $requiredParameterIndent)) + $jsunoxampleArray[(($requiredParameterEndIndex + 1) .. ($jsunoxampleArray.Count))]
+            $jsonExampleArray = $jsonExampleArray[0..$requiredParameterEndIndex] + ('{0}// Non-required parameters' -f (' ' * $requiredParameterIndent)) + $jsonExampleArray[(($requiredParameterEndIndex + 1) .. ($jsonExampleArray.Count))]
         }
 
         # [8/8] Convert the processed array back into a string
-        return $jsunoxampleArray | Out-String
+        return $jsonExampleArray | Out-String
     }
 
-    return $jsunoxample
+    return $jsonExample
 }
 
 <#
@@ -973,7 +973,7 @@ Mandatory. A list of all required top-level (i.e. non-nested) parameter names
 .EXAMPLE
 ConvertTo-FormattedBicep -RequiredParametersList @('name') -JSONParameters @{ lock = @{ value = 'carml' }; lock = @{ value = 'CanNotDelete' } }
 
-Convert the given JSONParameters object with uno required parameter to a formatted Bicep object. Would result into:
+Convert the given JSONParameters object with one required parameter to a formatted Bicep object. Would result into:
 
 '
     // Required parameters
@@ -1278,13 +1278,13 @@ function Set-UsageExamplesSection {
                 $dependsOnStartIndex = $detected[0]
 
                 # Find out where the 'dependsOn' ends
-                $dependsunondIndex = $dependsOnStartIndex
+                $dependsOnEndIndex = $dependsOnStartIndex
                 do {
-                    $dependsunondIndex++
-                } while ($formattedBicepExample[$dependsunondIndex] -notmatch '^\s*\]\s*$')
+                    $dependsOnEndIndex++
+                } while ($formattedBicepExample[$dependsOnEndIndex] -notmatch '^\s*\]\s*$')
 
                 # Cut the 'dependsOn' block out
-                $formattedBicepExample = $formattedBicepExample[0..($dependsOnStartIndex - 1)] + $formattedBicepExample[($dependsunondIndex + 1)..($formattedBicepExample.Count)]
+                $formattedBicepExample = $formattedBicepExample[0..($dependsOnStartIndex - 1)] + $formattedBicepExample[($dependsOnEndIndex + 1)..($formattedBicepExample.Count)]
             }
 
             # Build result
@@ -1313,7 +1313,7 @@ function Set-UsageExamplesSection {
                 ParametersJSON         = $paramsInJSONFormat | ConvertTo-Json -Depth 99
                 RequiredParametersList = $RequiredParametersList
             }
-            $orderedJSunoxample = Build-OrderedJSONObject @orderingInputObject
+            $orderedJSONExample = Build-OrderedJSONObject @orderingInputObject
 
             # [2/2] Create the final content block
             $testFilesContent += @(
@@ -1323,7 +1323,7 @@ function Set-UsageExamplesSection {
                 '<summary>via JSON Parameter file</summary>'
                 ''
                 '```json',
-                $orderedJSunoxample.Trim()
+                $orderedJSONExample.Trim()
                 '```',
                 '',
                 '</details>',

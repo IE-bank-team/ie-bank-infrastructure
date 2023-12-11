@@ -2,7 +2,7 @@ metadata name = 'Recovery Services Vault Backup Storage Config'
 metadata description = 'This module deploys a Recovery Service Vault Backup Storage Configuration.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment.')
 param recoveryVaultName string
 
 @description('Optional. The name of the backup storage config.')
@@ -12,8 +12,8 @@ param name string = 'vaultstorageconfig'
 @allowed([
   'GeoRedundant'
   'LocallyRedundant'
-  'ReadAccessGeoZunoRedundant'
-  'ZunoRedundant'
+  'ReadAccessGeoZoneRedundant'
+  'ZoneRedundant'
 ])
 param storageModelType string = 'GeoRedundant'
 

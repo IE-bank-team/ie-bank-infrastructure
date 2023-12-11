@@ -27,7 +27,7 @@ This module deploys an API Management Service Policy.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standaluno deployment. |
+| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -46,7 +46,7 @@ Contents of the Policy as defined by the format.
 
 ### Parameter: `apiManagementServiceName`
 
-The name of the parent API Management service. Required if the template is used in a standaluno deployment.
+The name of the parent API Management service. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -95,4 +95,4 @@ The name of the policy.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -42,7 +42,7 @@ param customDnsSuffixCertificateUrl string = ''
 @description('Conditional. The user-assigned identity to use for resolving the key vault certificate reference. If not specified, the system-assigned ASE identity will be used if available. Required if customDnsSuffix is not empty. Cannot be used when kind is set to ASEv2.')
 param customDnsSuffixKeyVaultReferenceIdentity string = ''
 
-@description('Optional. The Dedicated Host Count. If `zunoRedundant` is false, and you want physical hardware isolation enabled, set to 2. Otherwise 0. Cannot be used when kind is set to ASEv2.')
+@description('Optional. The Dedicated Host Count. If `zoneRedundant` is false, and you want physical hardware isolation enabled, set to 2. Otherwise 0. Cannot be used when kind is set to ASEv2.')
 param dedicatedHostCount int = 0
 
 @description('Optional. DNS suffix of the App Service Environment.')
@@ -51,14 +51,14 @@ param dnsSuffix string = ''
 @description('Optional. Scale factor for frontends.')
 param frontEndScaleFactor int = 15
 
-@description('Optional. Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. - Nuno, Web, Publishing, Web,Publishing. "Nuno" Exposes the ASE-hosted apps on an internet-accessible IP address.')
+@description('Optional. Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. - None, Web, Publishing, Web,Publishing. "None" Exposes the ASE-hosted apps on an internet-accessible IP address.')
 @allowed([
-  'Nuno'
+  'None'
   'Web'
   'Publishing'
   'Web, Publishing'
 ])
-param internalLoadBalancingMode string = 'Nuno'
+param internalLoadBalancingMode string = 'None'
 
 @description('Optional. Number of IP SSL addresses reserved for the App Service Environment. Cannot be used when kind is set to ASEv3.')
 param ipsslAddressCount int = 0
@@ -96,9 +96,9 @@ param remoteDebugEnabled bool = false
   'Early'
   'Late'
   'Manual'
-  'Nuno'
+  'None'
 ])
-param upgradePreference string = 'Nuno'
+param upgradePreference string = 'None'
 
 @description('Required. ResourceId for the subnet.')
 param subnetResourceId string
@@ -106,8 +106,8 @@ param subnetResourceId string
 @description('Optional. User added IP ranges to whitelist on ASE DB. Cannot be used with \'kind\' `ASEv3`.')
 param userWhitelistedIpRanges array = []
 
-@description('Optional. Switch to make the App Service Environment zuno redundant. If enabled, the minimum App Service plan instance count will be three, otherwise 1. If enabled, the `dedicatedHostCount` must be set to `-1`.')
-param zunoRedundant bool = false
+@description('Optional. Switch to make the App Service Environment zone redundant. If enabled, the minimum App Service plan instance count will be three, otherwise 1. If enabled, the `dedicatedHostCount` must be set to `-1`.')
+param zoneRedundant bool = false
 
 @description('Optional. The managed identity definition for this resource.')
 param managedIdentities managedIdentitiesType
@@ -167,7 +167,7 @@ resource appServiceEnvironment 'Microsoft.Web/hostingEnvironments@2022-03-01' = 
       id: subnetResourceId
       subnet: last(split(subnetResourceId, '/'))
     }
-    zunoRedundant: zunoRedundant
+    zoneRedundant: zoneRedundant
   }
 }
 
@@ -194,7 +194,7 @@ module appServiceEnvironment_configurations_customDnsSuffix 'configuration--cust
   }
 }
 
-resource appServiceEnvironment_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource appServiceEnvironment_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -265,7 +265,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

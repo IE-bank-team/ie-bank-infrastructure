@@ -5,10 +5,10 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the service bus namepace queue.')
 param name string
 
-@description('Conditional. The name of the parent Service Bus Namespace. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Service Bus Namespace. Required if the template is used in a standalone deployment.')
 param namespaceName string
 
-@description('Conditional. The name of the parent Service Bus Namespace Queue. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Service Bus Namespace Queue. Required if the template is used in a standalone deployment.')
 param queueName string
 
 @description('Optional. The rights associated with the rule.')

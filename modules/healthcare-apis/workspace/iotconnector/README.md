@@ -34,7 +34,7 @@ This module deploys a Healthcare API Workspace IoT Connector.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`workspaceName`](#parameter-workspacename) | string | The name of the parent health data services workspace. Required if the template is used in a standaluno deployment. |
+| [`workspaceName`](#parameter-workspacename) | string | The name of the parent health data services workspace. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -86,7 +86,7 @@ The name of the MedTech service.
 
 ### Parameter: `workspaceName`
 
-The name of the parent health data services workspace. Required if the template is used in a standaluno deployment.
+The name of the parent health data services workspace. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -238,7 +238,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -299,7 +299,7 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

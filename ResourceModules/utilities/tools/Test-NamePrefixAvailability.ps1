@@ -89,7 +89,7 @@ function Test-NamePrefixAvailability {
 
                 $temp = $null
 
-                # determine if entry is of uno of the resourceTypes using the filter variable
+                # determine if entry is of one of the resourceTypes using the filter variable
                 $temp = $fileContent | ForEach-Object {
                     if ($_ -match "$filter\s'") { $_ }
                 }
@@ -201,7 +201,7 @@ function Test-NamePrefixAvailability {
         Write-Host "`nRESULT" -ForegroundColor 'Cyan'
         Write-Host '======' -ForegroundColor 'Cyan'
         if (-not $prefixAvailable) {
-            Write-Error "=> Prefix [$namePrefix] is not available for all resources. Please try a different uno."
+            Write-Error "=> Prefix [$namePrefix] is not available for all resources. Please try a different one."
         } else {
             Write-Host "=> Prefix [$namePrefix] is available for all resources." -ForegroundColor 'Green'
         }

@@ -28,11 +28,11 @@ function Get-EndIndex {
         [int] $startIndex,
 
         [Parameter(Mandatory = $false)]
-        [ValidateSet('table', 'list', 'nuno')]
-        [string] $ContentType = 'nuno'
+        [ValidateSet('table', 'list', 'none')]
+        [string] $ContentType = 'none'
     )
 
-    # shift uno further
+    # shift one further
     $endIndex = $startIndex + 1
 
     if ($endIndex -ge $readMeFileContent.Count) {
@@ -87,7 +87,7 @@ Mandatory. The new content to merge into the original
 Mandatory. The identifier/header to search for. If not found, the new section is added at the end of the content array
 
 .PARAMETER ParentStartIdentifier
-Optional. Tell the function that you're currently processing a sub-section (indented by uno #) by providing the parent identifier
+Optional. Tell the function that you're currently processing a sub-section (indented by one #) by providing the parent identifier
 
 .EXAMPLE
 Merge-FileWithNewContent -OldContent @('# Title', '', '## Section 1', ...) -NewContent @('# Title', '', '## Section 1', ...) -SectionStartIdentifier '## Resource Types'
@@ -111,8 +111,8 @@ function Merge-FileWithNewContent {
         [string] $SectionStartIdentifier,
 
         [Parameter(Mandatory = $false)]
-        [ValidateSet('table', 'list', 'nuno', 'nextH2')]
-        [string] $ContentType = 'nuno'
+        [ValidateSet('table', 'list', 'none', 'nextH2')]
+        [string] $ContentType = 'none'
     )
 
     $startIndex = 0
@@ -120,7 +120,7 @@ function Merge-FileWithNewContent {
         $startIndex++
     }
 
-    # In case we're processing a child section (indented by uno #) we should search until the main section starts / end of file is reached
+    # In case we're processing a child section (indented by one #) we should search until the main section starts / end of file is reached
     if ($startIndex -eq $OldContent.Count - 1 -and -not [String]::IsNullOrEmpty($ParentStartIdentifier)) {
         $level = $ParentStartIdentifier.TrimStart().Split(' ')[0]
 
@@ -200,7 +200,7 @@ function Merge-FileWithNewContent {
                     }
                 }
             }
-            'nuno' {
+            'none' {
                 if ($OldContent[$startIndex + 1] -like "$level *" -and -not [String]::IsNullOrEmpty($ParentStartIdentifier)) {
                     # section was not found - let's insert it at the end of the sub-section
                     $startContent = $OldContent[0..($startIndex)]

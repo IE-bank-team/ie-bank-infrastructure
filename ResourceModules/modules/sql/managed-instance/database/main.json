@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -137,7 +137,7 @@
     "managedInstanceName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent SQL managed instance. Required if the template is used in a standalone deployment."
       }
     },
     "location": {
@@ -312,7 +312,7 @@
       ]
     },
     "database_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Sql/managedInstances/{0}/databases/{1}', parameters('managedInstanceName'), parameters('name'))]",
@@ -353,7 +353,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-BackupShortTRetPol', deployment().name)]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -395,13 +395,13 @@
             "databaseName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent SQL managed instance database. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent SQL managed instance database. Required if the template is used in a standalone deployment."
               }
             },
             "managedInstanceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent SQL managed instance. Required if the template is used in a standalone deployment."
               }
             },
             "retentionDays": {
@@ -478,7 +478,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-BackupLongTRetPol', deployment().name)]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -523,13 +523,13 @@
             "databaseName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent managed instance database. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent managed instance database. Required if the template is used in a standalone deployment."
               }
             },
             "managedInstanceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent managed instance. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent managed instance. Required if the template is used in a standalone deployment."
               }
             },
             "weekOfYear": {

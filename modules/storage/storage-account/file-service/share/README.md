@@ -29,8 +29,8 @@ This module deploys a Storage Account File Share.
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`accessTier`](#parameter-accesstier) | string | Access tier for specific share. Required if the Storage Account kind is set to FileStorage (should be set to "Premium"). GpV2 account can choose between TransactionOptimized (default), Hot, and Cool. |
-| [`fileServicesName`](#parameter-fileservicesname) | string | The name of the parent file service. Required if the template is used in a standaluno deployment. |
-| [`storageAccountName`](#parameter-storageaccountname) | string | The name of the parent Storage Account. Required if the template is used in a standaluno deployment. |
+| [`fileServicesName`](#parameter-fileservicesname) | string | The name of the parent file service. Required if the template is used in a standalone deployment. |
+| [`storageAccountName`](#parameter-storageaccountname) | string | The name of the parent Storage Account. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -68,7 +68,7 @@ Access tier for specific share. Required if the Storage Account kind is set to F
 
 ### Parameter: `fileServicesName`
 
-The name of the parent file service. Required if the template is used in a standaluno deployment.
+The name of the parent file service. Required if the template is used in a standalone deployment.
 
 - Required: No
 - Type: string
@@ -76,7 +76,7 @@ The name of the parent file service. Required if the template is used in a stand
 
 ### Parameter: `storageAccountName`
 
-The name of the parent Storage Account. Required if the template is used in a standaluno deployment.
+The name of the parent Storage Account. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -228,4 +228,4 @@ The maximum size of the share, in gigabytes. Must be greater than 0, and less th
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

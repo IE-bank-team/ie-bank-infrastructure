@@ -15,7 +15,7 @@
     "sqlServerName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the sql server. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the sql server. Required if the template is used in a standalone deployment."
       }
     },
     "serverKeyName": {
@@ -24,7 +24,7 @@
         "description": "Required. The name of the server key."
       }
     },
-    "autoRotatiunonabled": {
+    "autoRotationEnabled": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
@@ -71,7 +71,7 @@
       "name": "[format('{0}/{1}', parameters('sqlServerName'), 'current')]",
       "properties": {
         "serverKeyType": "[parameters('serverKeyType')]",
-        "autoRotatiunonabled": "[parameters('autoRotatiunonabled')]",
+        "autoRotationEnabled": "[parameters('autoRotationEnabled')]",
         "serverKeyName": "[parameters('serverKeyName')]"
       }
     }

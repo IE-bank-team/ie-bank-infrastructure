@@ -2,7 +2,7 @@ metadata name = 'Search Services Private Link Resources'
 metadata description = 'This module deploys a Search Service Private Link Resource.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent searchServices. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent searchServices. Required if the template is used in a standalone deployment.')
 param searchServiceName string
 
 @description('Required. The name of the shared private link resource managed by the Azure Cognitive Search service within the specified resource group.')

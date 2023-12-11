@@ -16,7 +16,7 @@
     "labName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent lab. Required if the template is used in a standalone deployment."
       }
     },
     "name": {
@@ -50,7 +50,7 @@
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Conditional. The folder containing artifacts. At least uno folder path is required. Required if \"armTemplateFolderPath\" is empty."
+        "description": "Conditional. The folder containing artifacts. At least one folder path is required. Required if \"armTemplateFolderPath\" is empty."
       }
     },
     "armTemplateFolderPath": {

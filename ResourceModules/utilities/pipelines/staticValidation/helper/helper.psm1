@@ -65,11 +65,11 @@ Required. The content to search in
 Required. The index where the section starts
 
 .EXAMPLE
-Get-MarkdownSectiunondIndex -ReadMeContent @('somrthing', '# Parameters', 'other content', '# Other header') -SectionStartIndex 2
+Get-MarkdownSectionEndIndex -ReadMeContent @('somrthing', '# Parameters', 'other content', '# Other header') -SectionStartIndex 2
 
 Search for the end index of the section starting in index 2 in array @('somrthing', '# Parameters', 'other content', '# Other header'). Would return 3.
 #>
-function Get-MarkdownSectiunondIndex {
+function Get-MarkdownSectionEndIndex {
 
     [CmdletBinding()]
     param (
@@ -80,12 +80,12 @@ function Get-MarkdownSectiunondIndex {
         [int] $SectionStartIndex
     )
 
-    $sectiunondIndex = $sectionStartIndex + 1
-    while ($readMeContent[$sectiunondIndex] -notlike '*# *' -and -not ($sectiunondIndex -ge $ReadMeContent.count)) {
-        $sectiunondIndex++
+    $sectionEndIndex = $sectionStartIndex + 1
+    while ($readMeContent[$sectionEndIndex] -notlike '*# *' -and -not ($sectionEndIndex -ge $ReadMeContent.count)) {
+        $sectionEndIndex++
     }
 
-    return $sectiunondIndex
+    return $sectionEndIndex
 }
 
 <#

@@ -28,7 +28,7 @@ This module deploys a Static Web App Site Config.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`staticSiteName`](#parameter-staticsitename) | string | The name of the parent Static Web App. Required if the template is used in a standaluno deployment. |
+| [`staticSiteName`](#parameter-staticsitename) | string | The name of the parent Static Web App. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -60,7 +60,7 @@ App settings.
 
 ### Parameter: `staticSiteName`
 
-The name of the parent Static Web App. Required if the template is used in a standaluno deployment.
+The name of the parent Static Web App. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -92,4 +92,4 @@ Location for all resources.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

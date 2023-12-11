@@ -307,7 +307,7 @@ module webtest 'br:bicep/modules/insights.webtest:1.0.0' = {
 | :-- | :-- | :-- |
 | [`name`](#parameter-name) | string | Name of the webtest. |
 | [`request`](#parameter-request) | object | The collection of request properties. |
-| [`tags`](#parameter-tags) | object | A single hidden-link tag pointing to an existing AI compunont is required. |
+| [`tags`](#parameter-tags) | object | A single hidden-link tag pointing to an existing AI component is required. |
 | [`webTestName`](#parameter-webtestname) | string | User defined name if this WebTest. |
 
 **Optional parameters**
@@ -345,7 +345,7 @@ The collection of request properties.
 
 ### Parameter: `tags`
 
-A single hidden-link tag pointing to an existing AI compunont is required.
+A single hidden-link tag pointing to an existing AI component is required.
 
 - Required: Yes
 - Type: object
@@ -472,7 +472,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -617,4 +617,4 @@ The collection of validation rule properties.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -64,7 +64,7 @@ function Convert-TokensInFileList {
 
     process {
         # Combine All Input Token Types, Remove Duplicates and Only Select entries with on empty values
-        $FilteredTokens = ($Tokens | Sort-Object -Unique).Cluno()
+        $FilteredTokens = ($Tokens | Sort-Object -Unique).Clone()
         @($FilteredTokens.Keys) | ForEach-Object {
             if ([String]::IsNullOrEmpty($FilteredTokens[$_])) {
                 $FilteredTokens.Remove($_)
@@ -85,7 +85,7 @@ function Convert-TokensInFileList {
                 # Prepare Input to Token Converter Function
                 $ConvertTokenListFunctionInput = @{
                     FilePath             = $FilePath
-                    TokenNameValueObject = $FilteredTokens.Cluno()
+                    TokenNameValueObject = $FilteredTokens.Clone()
                     SwapValueWithName    = $SwapValueWithName
                 }
                 if ($OutputDirectory) {

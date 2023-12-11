@@ -27,7 +27,7 @@ This module deploys an Azure Container Registry (ACR) Replication.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`registryName`](#parameter-registryname) | string | The name of the parent registry. Required if the template is used in a standaluno deployment. |
+| [`registryName`](#parameter-registryname) | string | The name of the parent registry. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -35,9 +35,9 @@ This module deploys an Azure Container Registry (ACR) Replication.
 | :-- | :-- | :-- |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`location`](#parameter-location) | string | Location for all resources. |
-| [`regiunondpointEnabled`](#parameter-regiunondpointenabled) | bool | Specifies whether the replication regional endpoint is enabled. Requests will not be routed to a replication whose regional endpoint is disabled, however its data will continue to be synced with other replications. |
+| [`regionEndpointEnabled`](#parameter-regionendpointenabled) | bool | Specifies whether the replication regional endpoint is enabled. Requests will not be routed to a replication whose regional endpoint is disabled, however its data will continue to be synced with other replications. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
-| [`zunoRedundancy`](#parameter-zunoredundancy) | string | Whether or not zuno redundancy is enabled for this container registry. |
+| [`zoneRedundancy`](#parameter-zoneredundancy) | string | Whether or not zone redundancy is enabled for this container registry. |
 
 ### Parameter: `name`
 
@@ -48,7 +48,7 @@ The name of the replication.
 
 ### Parameter: `registryName`
 
-The name of the parent registry. Required if the template is used in a standaluno deployment.
+The name of the parent registry. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -69,7 +69,7 @@ Location for all resources.
 - Type: string
 - Default: `[resourceGroup().location]`
 
-### Parameter: `regiunondpointEnabled`
+### Parameter: `regionEndpointEnabled`
 
 Specifies whether the replication regional endpoint is enabled. Requests will not be routed to a replication whose regional endpoint is disabled, however its data will continue to be synced with other replications.
 
@@ -84,9 +84,9 @@ Tags of the resource.
 - Required: No
 - Type: object
 
-### Parameter: `zunoRedundancy`
+### Parameter: `zoneRedundancy`
 
-Whether or not zuno redundancy is enabled for this container registry.
+Whether or not zone redundancy is enabled for this container registry.
 
 - Required: No
 - Type: string
@@ -111,4 +111,4 @@ Whether or not zuno redundancy is enabled for this container registry.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

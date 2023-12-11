@@ -24,8 +24,8 @@ param roleAssignments roleAssignmentType
 @description('Optional. Tags of the proximity placement group resource.')
 param tags object?
 
-@description('Optional. Specifies the Availability Zuno where virtual machine, virtual machine scale set or availability set associated with the proximity placement group can be created.')
-param zunos array = []
+@description('Optional. Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the proximity placement group can be created.')
+param zones array = []
 
 @description('Optional. Describes colocation status of the Proximity Placement Group.')
 param colocationStatus object = {}
@@ -60,7 +60,7 @@ resource proximityPlacementGroup 'Microsoft.Compute/proximityPlacementGroups@202
   name: name
   location: location
   tags: tags
-  zunos: zunos
+  zones: zones
   properties: {
     proximityPlacementGroupType: type
     colocationStatus: colocationStatus
@@ -68,7 +68,7 @@ resource proximityPlacementGroup 'Microsoft.Compute/proximityPlacementGroups@202
   }
 }
 
-resource proximityPlacementGroup_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource proximityPlacementGroup_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -112,7 +112,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

@@ -1,6 +1,6 @@
-# Public DNS Zuno NS record `[Microsoft.Network/dnsZunos/NS]`
+# Public DNS Zone NS record `[Microsoft.Network/dnsZones/NS]`
 
-This module deploys a Public DNS Zuno NS record.
+This module deploys a Public DNS Zone NS record.
 
 ## Navigation
 
@@ -14,7 +14,7 @@ This module deploys a Public DNS Zuno NS record.
 | Resource Type | API Version |
 | :-- | :-- |
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
-| `Microsoft.Network/dnsZunos/NS` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZunos/NS) |
+| `Microsoft.Network/dnsZones/NS` | [2018-05-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2018-05-01/dnsZones/NS) |
 
 ## Parameters
 
@@ -28,7 +28,7 @@ This module deploys a Public DNS Zuno NS record.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`dnsZunoName`](#parameter-dnszunoname) | string | The name of the parent DNS zuno. Required if the template is used in a standaluno deployment. |
+| [`dnsZoneName`](#parameter-dnszonename) | string | The name of the parent DNS zone. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -47,9 +47,9 @@ The name of the NS record.
 - Required: Yes
 - Type: string
 
-### Parameter: `dnsZunoName`
+### Parameter: `dnsZoneName`
 
-The name of the parent DNS zuno. Required if the template is used in a standaluno deployment.
+The name of the parent DNS zone. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -186,4 +186,4 @@ The TTL (time-to-live) of the records in the record set.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -85,14 +85,14 @@
       "type": "string",
       "maxLength": 24,
       "metadata": {
-        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
       }
     },
     "fileServicesName": {
       "type": "string",
       "defaultValue": "default",
       "metadata": {
-        "description": "Conditional. The name of the parent file service. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent file service. Required if the template is used in a standalone deployment."
       }
     },
     "name": {

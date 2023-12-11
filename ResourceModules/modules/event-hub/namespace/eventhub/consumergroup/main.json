@@ -15,13 +15,13 @@
     "namespaceName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent event hub namespace. Required if the template is used in a standaluno deployment.s."
+        "description": "Conditional. The name of the parent event hub namespace. Required if the template is used in a standalone deployment.s."
       }
     },
     "eventHubName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent event hub namespace event hub. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent event hub namespace event hub. Required if the template is used in a standalone deployment."
       }
     },
     "name": {

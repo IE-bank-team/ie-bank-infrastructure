@@ -155,7 +155,7 @@ module managedInstance 'br:bicep/modules/sql.managed-instance:1.0.0' = {
         workspaceResourceId: '<workspaceResourceId>'
       }
     ]
-    dnsZunoPartner: ''
+    dnsZonePartner: ''
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     encryptionProtectorObj: {
       serverKeyName: '<serverKeyName>'
@@ -209,7 +209,7 @@ module managedInstance 'br:bicep/modules/sql.managed-instance:1.0.0' = {
     skuName: 'GP_Gen5'
     skuTier: 'GeneralPurpose'
     storageSizeInGB: 32
-    timezunoId: 'UTC'
+    timezoneId: 'UTC'
     vCores: 4
     vulnerabilityAssessmentsObj: {
       emailSubscriptionAdmins: true
@@ -295,7 +295,7 @@ module managedInstance 'br:bicep/modules/sql.managed-instance:1.0.0' = {
         }
       ]
     },
-    "dnsZunoPartner": {
+    "dnsZonePartner": {
       "value": ""
     },
     "enableDefaultTelemetry": {
@@ -383,7 +383,7 @@ module managedInstance 'br:bicep/modules/sql.managed-instance:1.0.0' = {
     "storageSizeInGB": {
       "value": 32
     },
-    "timezunoId": {
+    "timezoneId": {
       "value": "UTC"
     },
     "vCores": {
@@ -580,7 +580,7 @@ module managedInstance 'br:bicep/modules/sql.managed-instance:1.0.0' = {
         workspaceResourceId: '<workspaceResourceId>'
       }
     ]
-    dnsZunoPartner: ''
+    dnsZonePartner: ''
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     encryptionProtectorObj: {
       serverKeyName: '<serverKeyName>'
@@ -617,7 +617,7 @@ module managedInstance 'br:bicep/modules/sql.managed-instance:1.0.0' = {
     skuName: 'GP_Gen5'
     skuTier: 'GeneralPurpose'
     storageSizeInGB: 32
-    timezunoId: 'UTC'
+    timezoneId: 'UTC'
     vCores: 4
     vulnerabilityAssessmentsObj: {
       emailSubscriptionAdmins: true
@@ -703,7 +703,7 @@ module managedInstance 'br:bicep/modules/sql.managed-instance:1.0.0' = {
         }
       ]
     },
-    "dnsZunoPartner": {
+    "dnsZonePartner": {
       "value": ""
     },
     "enableDefaultTelemetry": {
@@ -772,7 +772,7 @@ module managedInstance 'br:bicep/modules/sql.managed-instance:1.0.0' = {
     "storageSizeInGB": {
       "value": 32
     },
-    "timezunoId": {
+    "timezoneId": {
       "value": "UTC"
     },
     "vCores": {
@@ -828,7 +828,7 @@ module managedInstance 'br:bicep/modules/sql.managed-instance:1.0.0' = {
 | [`collation`](#parameter-collation) | string | Collation of the managed instance. |
 | [`databases`](#parameter-databases) | array | Databases to create in this server. |
 | [`diagnosticSettings`](#parameter-diagnosticsettings) | array | The diagnostic settings of the service. |
-| [`dnsZunoPartner`](#parameter-dnszunopartner) | string | The resource ID of another managed instance whose DNS zuno this managed instance will share after creation. |
+| [`dnsZonePartner`](#parameter-dnszonepartner) | string | The resource ID of another managed instance whose DNS zone this managed instance will share after creation. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`encryptionProtectorObj`](#parameter-encryptionprotectorobj) | object | The encryption protection configuration. |
 | [`hardwareFamily`](#parameter-hardwarefamily) | string | If the service has different generations of hardware, for the same SKU, then that can be captured here. |
@@ -852,10 +852,10 @@ module managedInstance 'br:bicep/modules/sql.managed-instance:1.0.0' = {
 | [`sourceManagedInstanceId`](#parameter-sourcemanagedinstanceid) | string | The resource identifier of the source managed instance associated with create operation of this instance. |
 | [`storageSizeInGB`](#parameter-storagesizeingb) | int | Storage size in GB. Minimum value: 32. Maximum value: 8192. Increments of 32 GB allowed only. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
-| [`timezunoId`](#parameter-timezunoid) | string | ID of the timezuno. Allowed values are timezunos supported by Windows. |
+| [`timezoneId`](#parameter-timezoneid) | string | ID of the timezone. Allowed values are timezones supported by Windows. |
 | [`vCores`](#parameter-vcores) | int | The number of vCores. Allowed values: 8, 16, 24, 32, 40, 64, 80. |
 | [`vulnerabilityAssessmentsObj`](#parameter-vulnerabilityassessmentsobj) | object | The vulnerability assessment configuration. |
-| [`zunoRedundant`](#parameter-zunoredundant) | bool | Whether or not multi-az is enabled. |
+| [`zoneRedundant`](#parameter-zoneredundant) | bool | Whether or not multi-az is enabled. |
 
 ### Parameter: `administratorLogin`
 
@@ -1008,9 +1008,9 @@ Resource ID of the diagnostic log analytics workspace. For security reasons, it 
 - Required: No
 - Type: string
 
-### Parameter: `dnsZunoPartner`
+### Parameter: `dnsZonePartner`
 
-The resource ID of another managed instance whose DNS zuno this managed instance will share after creation.
+The resource ID of another managed instance whose DNS zone this managed instance will share after creation.
 
 - Required: No
 - Type: string
@@ -1103,7 +1103,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1171,7 +1171,7 @@ Minimal TLS version allowed.
     '1.0'
     '1.1'
     '1.2'
-    'Nuno'
+    'None'
   ]
   ```
 
@@ -1210,9 +1210,9 @@ The storage account type used to store backups for this database.
   ```Bicep
   [
     'Geo'
-    'GeoZuno'
+    'GeoZone'
     'Local'
-    'Zuno'
+    'Zone'
   ]
   ```
 
@@ -1327,11 +1327,11 @@ Service principal type. If using AD Authentication and applying Admin, must be s
 
 - Required: No
 - Type: string
-- Default: `'Nuno'`
+- Default: `'None'`
 - Allowed:
   ```Bicep
   [
-    'Nuno'
+    'None'
     'SystemAssigned'
   ]
   ```
@@ -1375,9 +1375,9 @@ Tags of the resource.
 - Required: No
 - Type: object
 
-### Parameter: `timezunoId`
+### Parameter: `timezoneId`
 
-ID of the timezuno. Allowed values are timezunos supported by Windows.
+ID of the timezone. Allowed values are timezones supported by Windows.
 
 - Required: No
 - Type: string
@@ -1399,7 +1399,7 @@ The vulnerability assessment configuration.
 - Type: object
 - Default: `{}`
 
-### Parameter: `zunoRedundant`
+### Parameter: `zoneRedundant`
 
 Whether or not multi-az is enabled.
 
@@ -1420,7 +1420,7 @@ Whether or not multi-az is enabled.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

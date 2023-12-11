@@ -66,7 +66,7 @@ module registrationDefinition 'br:bicep/modules/managed-services.registration-de
       }
     ]
     managedByTenantId: '<< SET YOUR TENANT ID HERE >>'
-    name: 'Compunont Validation - msrdmax Subscription assignment'
+    name: 'Component Validation - msrdmax Subscription assignment'
     registrationDescription: 'Managed by Lighthouse'
     // Non-required parameters
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
@@ -110,7 +110,7 @@ module registrationDefinition 'br:bicep/modules/managed-services.registration-de
       "value": "<< SET YOUR TENANT ID HERE >>"
     },
     "name": {
-      "value": "Compunont Validation - msrdmax Subscription assignment"
+      "value": "Component Validation - msrdmax Subscription assignment"
     },
     "registrationDescription": {
       "value": "Managed by Lighthouse"
@@ -155,7 +155,7 @@ module registrationDefinition 'br:bicep/modules/managed-services.registration-de
       }
     ]
     managedByTenantId: '<< SET YOUR TENANT ID HERE >>'
-    name: 'Compunont Validation - msrdrg Resource group assignment'
+    name: 'Component Validation - msrdrg Resource group assignment'
     registrationDescription: 'Managed by Lighthouse'
     // Non-required parameters
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
@@ -200,7 +200,7 @@ module registrationDefinition 'br:bicep/modules/managed-services.registration-de
       "value": "<< SET YOUR TENANT ID HERE >>"
     },
     "name": {
-      "value": "Compunont Validation - msrdrg Resource group assignment"
+      "value": "Component Validation - msrdrg Resource group assignment"
     },
     "registrationDescription": {
       "value": "Managed by Lighthouse"
@@ -251,7 +251,7 @@ module registrationDefinition 'br:bicep/modules/managed-services.registration-de
       }
     ]
     managedByTenantId: '<< SET YOUR TENANT ID HERE >>'
-    name: 'Compunont Validation - msrdwaf Subscription assignment'
+    name: 'Component Validation - msrdwaf Subscription assignment'
     registrationDescription: 'Managed by Lighthouse'
     // Non-required parameters
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
@@ -295,7 +295,7 @@ module registrationDefinition 'br:bicep/modules/managed-services.registration-de
       "value": "<< SET YOUR TENANT ID HERE >>"
     },
     "name": {
-      "value": "Compunont Validation - msrdwaf Subscription assignment"
+      "value": "Component Validation - msrdwaf Subscription assignment"
     },
     "registrationDescription": {
       "value": "Managed by Lighthouse"
@@ -329,7 +329,7 @@ module registrationDefinition 'br:bicep/modules/managed-services.registration-de
 | :-- | :-- | :-- |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`location`](#parameter-location) | string | Location deployment metadata. |
-| [`resourceGroupName`](#parameter-resourcegroupname) | string | Specify the name of the Resource Group to delegate access to. If not provided, delegation will be duno on the targeted subscription. |
+| [`resourceGroupName`](#parameter-resourcegroupname) | string | Specify the name of the Resource Group to delegate access to. If not provided, delegation will be done on the targeted subscription. |
 
 ### Parameter: `authorizations`
 
@@ -377,7 +377,7 @@ Location deployment metadata.
 
 ### Parameter: `resourceGroupName`
 
-Specify the name of the Resource Group to delegate access to. If not provided, delegation will be duno on the targeted subscription.
+Specify the name of the Resource Group to delegate access to. If not provided, delegation will be done on the targeted subscription.
 
 - Required: No
 - Type: string
@@ -395,7 +395,7 @@ Specify the name of the Resource Group to delegate access to. If not provided, d
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 
@@ -408,7 +408,7 @@ This module can be deployed both at subscription and resource group level:
 
 #### Permissions required to create delegations
 
-This deployment must be duno by a non-guest account in the customer's tenant which has a role with the `Microsoft.Authorization/roleAssignments/write` permission,
+This deployment must be done by a non-guest account in the customer's tenant which has a role with the `Microsoft.Authorization/roleAssignments/write` permission,
 such as [`Owner`](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner) for the subscription being onboarded (or which contains the resource groups that are being onboarded).
 
 If the subscription was created through the Cloud Solution Provider (CSP) program, any user who has the AdminAgent role in your service provider tenant can perform the deployment.

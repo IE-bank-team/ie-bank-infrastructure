@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "keyVaultName": {
-        "value": "uno-keyvault-production"
+        "value": "grp1-keyvault-production"
       },
       "location": {
-        "value": "US East"
+        "value": "Norway East"
       }
     }
   }

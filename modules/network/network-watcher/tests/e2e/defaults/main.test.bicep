@@ -34,7 +34,7 @@ resource resourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 // ============== //
 // Test Execution //
 // ============== //
-#disable-next-line no-hardcoded-location // Disabled as the default RG & location are created in always uno location, but each test has to deploy into a different uno
+#disable-next-line no-hardcoded-location // Disabled as the default RG & location are created in always one location, but each test has to deploy into a different one
 var testLocation = 'northeurope'
 @batchSize(1)
 module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem' ]: {

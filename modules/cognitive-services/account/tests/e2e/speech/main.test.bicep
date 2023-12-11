@@ -54,8 +54,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     customSubDomainName: '${namePrefix}speechdomain'
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          nestedDependencies.outputs.privateDNSZunoResourceId
+        privateDnsZoneResourceIds: [
+          nestedDependencies.outputs.privateDNSZoneResourceId
         ]
         service: 'account'
         subnetResourceId: nestedDependencies.outputs.subnetResourceId

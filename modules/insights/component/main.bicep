@@ -1,5 +1,5 @@
 metadata name = 'Application Insights'
-metadata description = 'This compunont deploys an Application Insights instance.'
+metadata description = 'This component deploys an Application Insights instance.'
 metadata owner = 'Azure/module-maintainers'
 
 @description('Required. Name of the Application Insights.')
@@ -48,7 +48,7 @@ param retentionInDays int = 365
 @maxValue(100)
 param samplingPercentage int = 100
 
-@description('Optional. The kind of application that this compunont refers to, used to customize UI. This value is a freeform string, values should typically be uno of the following: web, ios, other, store, java, phuno.')
+@description('Optional. The kind of application that this component refers to, used to customize UI. This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.')
 param kind string = ''
 
 @description('Optional. Location for all Resources.')
@@ -86,7 +86,7 @@ resource defaultTelemetry 'Microsoft.Resources/deployments@2021-04-01' = if (ena
   }
 }
 
-resource appInsights 'Microsoft.Insights/compunonts@2020-02-02' = {
+resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
   name: name
   location: location
   tags: tags
@@ -140,22 +140,22 @@ resource appInsights_diagnosticSettings 'Microsoft.Insights/diagnosticSettings@2
   }
   scope: appInsights
 }]
-@description('The name of the application insights compunont.')
+@description('The name of the application insights component.')
 output name string = appInsights.name
 
-@description('The resource ID of the application insights compunont.')
+@description('The resource ID of the application insights component.')
 output resourceId string = appInsights.id
 
-@description('The resource group the application insights compunont was deployed into.')
+@description('The resource group the application insights component was deployed into.')
 output resourceGroupName string = resourceGroup().name
 
-@description('The application ID of the application insights compunont.')
+@description('The application ID of the application insights component.')
 output applicationId string = appInsights.properties.AppId
 
 @description('The location the resource was deployed into.')
 output location string = appInsights.location
 
-@description('Application Insights Instrumentation key. A read-only value that applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new Application Insights compunont.')
+@description('Application Insights Instrumentation key. A read-only value that applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new Application Insights component.')
 output instrumentationKey string = appInsights.properties.InstrumentationKey
 // =============== //
 //   Definitions   //

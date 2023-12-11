@@ -64,7 +64,7 @@ module diagnosticDependencies '../../../../../.shared/.templates/diagnostic.depe
 // ============== //
 // Test Execution //
 // ============== //
-#disable-next-line no-hardcoded-location // Disabled as the default RG & location are created in always uno location, but each test has to deploy into a different uno
+#disable-next-line no-hardcoded-location // Disabled as the default RG & location are created in always one location, but each test has to deploy into a different one
 var testLocation = 'westeurope'
 @batchSize(1)
 module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem' ]: {

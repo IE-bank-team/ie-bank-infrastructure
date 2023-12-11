@@ -90,7 +90,7 @@ resource keyVaultDataPermissions 'Microsoft.Authorization/roleAssignments@2022-0
   }
 }
 
-resource applicationInsights 'Microsoft.Insights/compunonts@2020-02-02' = {
+resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
   name: applicationInsightsName
   location: location
   kind: ''
@@ -106,7 +106,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-09-01' = {
   kind: 'StorageV2'
 }
 
-resource privateDNSZuno 'Microsoft.Network/privateDnsZunos@2020-06-01' = {
+resource privateDNSZone 'Microsoft.Network/privateDnsZones@2020-06-01' = {
   name: 'privatelink.api.azureml.ms'
   location: 'global'
 
@@ -117,7 +117,7 @@ resource privateDNSZuno 'Microsoft.Network/privateDnsZunos@2020-06-01' = {
       virtualNetwork: {
         id: virtualNetwork.id
       }
-      registratiunonabled: false
+      registrationEnabled: false
     }
   }
 }
@@ -140,5 +140,5 @@ output storageAccountResourceId string = storageAccount.id
 @description('The name of the Key Vault Encryption Key.')
 output keyVaultEncryptionKeyName string = keyVault::key.name
 
-@description('The resource ID of the created Private DNS Zuno.')
-output privateDNSZunoResourceId string = privateDNSZuno.id
+@description('The resource ID of the created Private DNS Zone.')
+output privateDNSZoneResourceId string = privateDNSZone.id

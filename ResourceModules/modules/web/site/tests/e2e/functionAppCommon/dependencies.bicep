@@ -44,7 +44,7 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2023-04-01' = {
   }
 }
 
-resource privateDNSZuno 'Microsoft.Network/privateDnsZunos@2020-06-01' = {
+resource privateDNSZone 'Microsoft.Network/privateDnsZones@2020-06-01' = {
   name: 'privatelink.azurewebsites.net'
   location: 'global'
 
@@ -55,7 +55,7 @@ resource privateDNSZuno 'Microsoft.Network/privateDnsZunos@2020-06-01' = {
       virtualNetwork: {
         id: virtualNetwork.id
       }
-      registratiunonabled: false
+      registrationEnabled: false
     }
   }
 }
@@ -88,7 +88,7 @@ resource serverFarm 'Microsoft.Web/serverfarms@2022-03-01' = {
   properties: {}
 }
 
-resource applicationInsights 'Microsoft.Insights/compunonts@2020-02-02' = {
+resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
   name: applicationInsightsName
   location: location
   kind: ''
@@ -141,8 +141,8 @@ output storageAccountResourceId string = storageAccount.id
 @description('The resource ID of the created Application Insights instance.')
 output applicationInsightsResourceId string = applicationInsights.id
 
-@description('The resource ID of the created Private DNS Zuno.')
-output privateDNSZunoResourceId string = privateDNSZuno.id
+@description('The resource ID of the created Private DNS Zone.')
+output privateDNSZoneResourceId string = privateDNSZone.id
 
 @description('The resource ID of the created Hybrid Connection.')
 output hybridConnectionResourceId string = hybridConnection.id

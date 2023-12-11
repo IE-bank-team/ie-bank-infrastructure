@@ -59,8 +59,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     administratorLoginPassword: password
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          nestedDependencies.outputs.privateDNSZunoResourceId
+        privateDnsZoneResourceIds: [
+          nestedDependencies.outputs.privateDNSZoneResourceId
         ]
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
         tags: {

@@ -22,8 +22,8 @@ param skuName string = 'Standard'
 @maxValue(20)
 param skuCapacity int = 1
 
-@description('Optional. Switch to make the Event Hub Namespace zuno redundant.')
-param zunoRedundant bool = false
+@description('Optional. Switch to make the Event Hub Namespace zone redundant.')
+param zoneRedundant bool = false
 
 @description('Optional. Switch to enable the Auto Inflate feature of Event Hub. Auto Inflate is not supported in Premium SKU EventHub.')
 param isAutoInflateEnabled bool = false
@@ -183,7 +183,7 @@ resource eventHubNamespace 'Microsoft.EventHub/namespaces@2022-10-01-preview' = 
     maximumThroughputUnits: maximumThroughputUnitsVar
     minimumTlsVersion: minimumTlsVersion
     publicNetworkAccess: contains(networkRuleSets, 'publicNetworkAccess') ? networkRuleSets.publicNetworkAccess : (!empty(privateEndpoints) && empty(networkRuleSets) ? 'Disabled' : publicNetworkAccess)
-    zunoRedundant: zunoRedundant
+    zoneRedundant: zoneRedundant
   }
 }
 
@@ -226,8 +226,8 @@ module eventHubNamespace_eventhubs 'eventhub/main.bicep' = [for (eventHub, index
     captureDescriptionDestinationBlobContainer: contains(eventHub, 'captureDescriptionDestinationBlobContainer') ? eventHub.captureDescriptionDestinationBlobContainer : ''
     captureDescriptionDestinationName: contains(eventHub, 'captureDescriptionDestinationName') ? eventHub.captureDescriptionDestinationName : 'EventHubArchive.AzureBlockBlob'
     captureDescriptionDestinationStorageAccountResourceId: contains(eventHub, 'captureDescriptionDestinationStorageAccountResourceId') ? eventHub.captureDescriptionDestinationStorageAccountResourceId : ''
-    captureDescriptiunonabled: contains(eventHub, 'captureDescriptiunonabled') ? eventHub.captureDescriptiunonabled : false
-    captureDescriptiunoncoding: contains(eventHub, 'captureDescriptiunoncoding') ? eventHub.captureDescriptiunoncoding : 'Avro'
+    captureDescriptionEnabled: contains(eventHub, 'captureDescriptionEnabled') ? eventHub.captureDescriptionEnabled : false
+    captureDescriptionEncoding: contains(eventHub, 'captureDescriptionEncoding') ? eventHub.captureDescriptionEncoding : 'Avro'
     captureDescriptionIntervalInSeconds: contains(eventHub, 'captureDescriptionIntervalInSeconds') ? eventHub.captureDescriptionIntervalInSeconds : 300
     captureDescriptionSizeLimitInBytes: contains(eventHub, 'captureDescriptionSizeLimitInBytes') ? eventHub.captureDescriptionSizeLimitInBytes : 314572800
     captureDescriptionSkipEmptyArchives: contains(eventHub, 'captureDescriptionSkipEmptyArchives') ? eventHub.captureDescriptionSkipEmptyArchives : false
@@ -239,7 +239,7 @@ module eventHubNamespace_eventhubs 'eventhub/main.bicep' = [for (eventHub, index
     status: contains(eventHub, 'status') ? eventHub.status : 'Active'
     retentionDescriptionCleanupPolicy: contains(eventHub, 'retentionDescriptionCleanupPolicy') ? eventHub.retentionDescriptionCleanupPolicy : 'Delete'
     retentionDescriptionRetentionTimeInHours: contains(eventHub, 'retentionDescriptionRetentionTimeInHours') ? eventHub.retentionDescriptionRetentionTimeInHours : 1
-    retentionDescriptionTombstunoRetentionTimeInHours: contains(eventHub, 'retentionDescriptionTombstunoRetentionTimeInHours') ? eventHub.retentionDescriptionTombstunoRetentionTimeInHours : 1
+    retentionDescriptionTombstoneRetentionTimeInHours: contains(eventHub, 'retentionDescriptionTombstoneRetentionTimeInHours') ? eventHub.retentionDescriptionTombstoneRetentionTimeInHours : 1
     enableDefaultTelemetry: enableReferencedModulesTelemetry
   }
 }]
@@ -269,8 +269,8 @@ module eventHubNamespace_privateEndpoints '../../network/private-endpoint/main.b
     enableDefaultTelemetry: privateEndpoint.?enableDefaultTelemetry ?? enableReferencedModulesTelemetry
     location: privateEndpoint.?location ?? reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZunoGroupName: privateEndpoint.?privateDnsZunoGroupName
-    privateDnsZunoResourceIds: privateEndpoint.?privateDnsZunoResourceIds
+    privateDnsZoneGroupName: privateEndpoint.?privateDnsZoneGroupName
+    privateDnsZoneResourceIds: privateEndpoint.?privateDnsZoneResourceIds
     roleAssignments: privateEndpoint.?roleAssignments
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: privateEndpoint.?manualPrivateLinkServiceConnections
@@ -295,7 +295,7 @@ resource eventHubNamespace_roleAssignments 'Microsoft.Authorization/roleAssignme
   scope: eventHubNamespace
 }]
 
-resource eventHubNamespace_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource eventHubNamespace_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -362,7 +362,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {
@@ -401,11 +401,11 @@ type privateEndpointType = {
   @description('Required. Resource ID of the subnet where the endpoint needs to be created.')
   subnetResourceId: string
 
-  @description('Optional. The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.')
-  privateDnsZunoGroupName: string?
+  @description('Optional. The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.')
+  privateDnsZoneGroupName: string?
 
-  @description('Optional. The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.')
-  privateDnsZunoResourceIds: string[]?
+  @description('Optional. The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.')
+  privateDnsZoneResourceIds: string[]?
 
   @description('Optional. Custom DNS configurations.')
   customDnsConfigs: {

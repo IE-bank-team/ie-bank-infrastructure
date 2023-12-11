@@ -20,7 +20,7 @@ This module deploys an Event Grid Domain.
 | `Microsoft.EventGrid/domains/topics` | [2022-06-15](https://learn.microsoft.com/en-us/azure/templates/Microsoft.EventGrid/2022-06-15/domains/topics) |
 | `Microsoft.Insights/diagnosticSettings` | [2021-05-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2021-05-01-preview/diagnosticSettings) |
 | `Microsoft.Network/privateEndpoints` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints) |
-| `Microsoft.Network/privateEndpoints/privateDnsZunoGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZunoGroups) |
+| `Microsoft.Network/privateEndpoints/privateDnsZoneGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZoneGroups) |
 
 ## Usage examples
 
@@ -126,8 +126,8 @@ module domain 'br:bicep/modules/event-grid.domain:1.0.0' = {
     }
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         service: 'domain'
         subnetResourceId: '<subnetResourceId>'
@@ -210,8 +210,8 @@ module domain 'br:bicep/modules/event-grid.domain:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "service": "domain",
           "subnetResourceId": "<subnetResourceId>",
@@ -267,8 +267,8 @@ module domain 'br:bicep/modules/event-grid.domain:1.0.0' = {
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         subnetResourceId: '<subnetResourceId>'
         tags: {
@@ -310,8 +310,8 @@ module domain 'br:bicep/modules/event-grid.domain:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "subnetResourceId": "<subnetResourceId>",
           "tags": {
@@ -379,8 +379,8 @@ module domain 'br:bicep/modules/event-grid.domain:1.0.0' = {
     }
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         service: 'domain'
         subnetResourceId: '<subnetResourceId>'
@@ -463,8 +463,8 @@ module domain 'br:bicep/modules/event-grid.domain:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "service": "domain",
           "subnetResourceId": "<subnetResourceId>",
@@ -692,7 +692,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -730,8 +730,8 @@ Configuration details for private endpoints. For security reasons, it is recomme
 | [`lock`](#parameter-privateendpointslock) | object | Specify the type of lock. |
 | [`manualPrivateLinkServiceConnections`](#parameter-privateendpointsmanualprivatelinkserviceconnections) | array | Manual PrivateLink Service Connections. |
 | [`name`](#parameter-privateendpointsname) | string | The name of the private endpoint. |
-| [`privateDnsZunoGroupName`](#parameter-privateendpointsprivatednszunogroupname) | string | The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided. |
-| [`privateDnsZunoResourceIds`](#parameter-privateendpointsprivatednszunoresourceids) | array | The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos. |
+| [`privateDnsZoneGroupName`](#parameter-privateendpointsprivatednszonegroupname) | string | The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided. |
+| [`privateDnsZoneResourceIds`](#parameter-privateendpointsprivatednszoneresourceids) | array | The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones. |
 | [`roleAssignments`](#parameter-privateendpointsroleassignments) | array | Array of role assignment objects that contain the 'roleDefinitionIdOrName' and 'principalId' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: '/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11'. |
 | [`service`](#parameter-privateendpointsservice) | string | The service (sub-) type to deploy the private endpoint for. For example "vault" or "blob". |
 | [`tags`](#parameter-privateendpointstags) | object | Tags to be applied on all resources/resource groups in this deployment. |
@@ -809,7 +809,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -835,16 +835,16 @@ The name of the private endpoint.
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZunoGroupName`
+### Parameter: `privateEndpoints.privateDnsZoneGroupName`
 
-The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.
+The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.
 
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZunoResourceIds`
+### Parameter: `privateEndpoints.privateDnsZoneResourceIds`
 
-The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.
+The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.
 
 - Required: No
 - Type: array

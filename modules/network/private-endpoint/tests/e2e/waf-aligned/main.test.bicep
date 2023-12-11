@@ -65,8 +65,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       kind: 'CanNotDelete'
       name: 'myCustomLockName'
     }
-    privateDnsZunoResourceIds: [
-      nestedDependencies.outputs.privateDNSZunoResourceId
+    privateDnsZoneResourceIds: [
+      nestedDependencies.outputs.privateDNSZoneResourceId
     ]
     roleAssignments: [
       {

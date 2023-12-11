@@ -102,7 +102,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       Role: 'DeploymentValidation'
       ServiceName: 'DeploymentValidation'
     }
-    publicIpZunos: [
+    publicIpZones: [
       '1'
       '2'
       '3'

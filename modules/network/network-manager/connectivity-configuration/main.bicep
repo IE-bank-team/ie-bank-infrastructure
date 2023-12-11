@@ -1,9 +1,9 @@
 metadata name = 'Network Manager Connectivity Configurations'
 metadata description = '''This module deploys a Network Manager Connectivity Configuration.
-Connectivity configurations define hub-and-spoke or mesh topologies applied to uno or more network groups.'''
+Connectivity configurations define hub-and-spoke or mesh topologies applied to one or more network groups.'''
 metadata owner = 'Azure/module-maintainers'
 
-@sys.description('Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment.')
+@sys.description('Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment.')
 param networkManagerName string
 
 @maxLength(64)

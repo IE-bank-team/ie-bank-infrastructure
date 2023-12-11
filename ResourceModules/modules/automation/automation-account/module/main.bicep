@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. Name of the Automation Account module.')
 param name string
 
-@description('Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment.')
 param automationAccountName string
 
 @description('Required. Module package URI, e.g. https://www.powershellgallery.com/api/v2/package.')

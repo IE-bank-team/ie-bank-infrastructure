@@ -31,7 +31,7 @@ This module deploys a Data Factory Managed Virtual Network Managed Private Endpo
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`dataFactoryName`](#parameter-datafactoryname) | string | The name of the parent data factory. Required if the template is used in a standaluno deployment. |
+| [`dataFactoryName`](#parameter-datafactoryname) | string | The name of the parent data factory. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -76,7 +76,7 @@ The ARM resource ID of the resource to which the managed private endpoint is cre
 
 ### Parameter: `dataFactoryName`
 
-The name of the parent data factory. Required if the template is used in a standaluno deployment.
+The name of the parent data factory. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -100,4 +100,4 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

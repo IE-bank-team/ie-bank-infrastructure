@@ -63,8 +63,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       {
         service: 'blob'
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
-        privateDnsZunoResourceIds: [
-          nestedDependencies.outputs.privateDNSZunoResourceId
+        privateDnsZoneResourceIds: [
+          nestedDependencies.outputs.privateDNSZoneResourceId
         ]
         tags: {
           'hidden-title': 'This is visible in the resource name'
@@ -77,7 +77,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       containers: [
         {
           name: '${namePrefix}container'
-          publicAccess: 'Nuno'
+          publicAccess: 'None'
         }
       ]
       automaticSnapshotPolicyEnabled: true

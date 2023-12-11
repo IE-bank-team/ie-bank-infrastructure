@@ -28,7 +28,7 @@ This module deploys a CDN Profile Secret.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`profileName`](#parameter-profilename) | string | The name of the parent CDN profile. Required if the template is used in a standaluno deployment. |
+| [`profileName`](#parameter-profilename) | string | The name of the parent CDN profile. Required if the template is used in a standalone deployment. |
 | [`secretSourceResourceId`](#parameter-secretsourceresourceid) | string | The resource ID of the secrect source. Required if the type is CustomerCertificate. |
 
 **Optional parameters**
@@ -66,7 +66,7 @@ The type of the secrect.
 
 ### Parameter: `profileName`
 
-The name of the parent CDN profile. Required if the template is used in a standaluno deployment.
+The name of the parent CDN profile. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -122,4 +122,4 @@ Indicates whether to use the latest version of the secrect.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

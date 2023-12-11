@@ -28,7 +28,7 @@ This module deploys an Azure Automation Account Module.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`automationAccountName`](#parameter-automationaccountname) | string | The name of the parent Automation Account. Required if the template is used in a standaluno deployment. |
+| [`automationAccountName`](#parameter-automationaccountname) | string | The name of the parent Automation Account. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -55,7 +55,7 @@ Module package URI, e.g. https://www.powershellgallery.com/api/v2/package.
 
 ### Parameter: `automationAccountName`
 
-The name of the parent Automation Account. Required if the template is used in a standaluno deployment.
+The name of the parent Automation Account. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -103,4 +103,4 @@ Module version or specify latest to get the latest version.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

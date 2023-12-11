@@ -11,7 +11,7 @@ param location string = resourceGroup().location
 @description('Optional. Specifies the DNS prefix specified when creating the managed cluster.')
 param dnsPrefix string = name
 
-@description('Optional. The managed identity definition for this resource. Only uno type of identity is supported: system-assigned or user-assigned, but not both.')
+@description('Optional. The managed identity definition for this resource. Only one type of identity is supported: system-assigned or user-assigned, but not both.')
 param managedIdentities managedIdentitiesType
 
 @description('Optional. Network dataplane used in the Kubernetes cluster. Not compatible with kubenet network plugin.')
@@ -134,13 +134,13 @@ param enablePrivateCluster bool = false
 @description('Optional. Whether to create additional public FQDN for private cluster or not.')
 param enablePrivateClusterPublicFQDN bool = false
 
-@description('Optional. Private DNS Zuno configuration. Set to \'system\' and AKS will create a private DNS zuno in the node resource group. Set to \'\' to disable private DNS Zuno creation and use public DNS. Supply the resource ID here of an existing Private DNS zuno to use an existing zuno.')
-param privateDNSZuno string = ''
+@description('Optional. Private DNS Zone configuration. Set to \'system\' and AKS will create a private DNS zone in the node resource group. Set to \'\' to disable private DNS Zone creation and use public DNS. Supply the resource ID here of an existing Private DNS zone to use an existing zone.')
+param privateDNSZone string = ''
 
 @description('Required. Properties of the primary agent pool.')
 param primaryAgentPoolProfile array
 
-@description('Optional. Define uno or more secondary/additional agent pools.')
+@description('Optional. Define one or more secondary/additional agent pools.')
 param agentPools array = []
 
 @description('Optional. Specifies whether the httpApplicationRouting add-on is enabled or not.')
@@ -149,11 +149,11 @@ param httpApplicationRoutingEnabled bool = false
 @description('Optional. Specifies whether the webApplicationRoutingEnabled add-on is enabled or not.')
 param webApplicationRoutingEnabled bool = false
 
-@description('Optional. Specifies the resource ID of connected DNS zuno. It will be ignored if `webApplicationRoutingEnabled` is set to `false`.')
-param dnsZunoResourceId string = ''
+@description('Optional. Specifies the resource ID of connected DNS zone. It will be ignored if `webApplicationRoutingEnabled` is set to `false`.')
+param dnsZoneResourceId string = ''
 
-@description('Optional. Specifies whether assing the DNS zuno contributor role to the cluster service principal. It will be ignored if `webApplicationRoutingEnabled` is set to `false` or `dnsZunoResourceId` not provided.')
-param enableDnsZunoContributorRoleAssignment bool = true
+@description('Optional. Specifies whether assing the DNS zone contributor role to the cluster service principal. It will be ignored if `webApplicationRoutingEnabled` is set to `false` or `dnsZoneResourceId` not provided.')
+param enableDnsZoneContributorRoleAssignment bool = true
 
 @description('Optional. Specifies whether the ingressApplicationGateway (AGIC) add-on is enabled or not.')
 param ingressApplicationGatewayEnabled bool = false
@@ -259,7 +259,7 @@ param autoScalerProfileSkipNodesWithSystemPods string = 'true'
 
 @allowed([
   'node-image'
-  'nuno'
+  'none'
   'patch'
   'rapid'
   'stable'
@@ -442,8 +442,8 @@ resource managedCluster 'Microsoft.ContainerService/managedClusters@2023-07-02-p
     ingressProfile: {
       webAppRouting: {
         enabled: webApplicationRoutingEnabled
-        dnsZunoResourceIds: !empty(dnsZunoResourceId) ? [
-          dnsZunoResourceId
+        dnsZoneResourceIds: !empty(dnsZoneResourceId) ? [
+          dnsZoneResourceId
         ] : null
       }
     }
@@ -542,7 +542,7 @@ resource managedCluster 'Microsoft.ContainerService/managedClusters@2023-07-02-p
       disableRunCommand: disableRunCommand
       enablePrivateCluster: enablePrivateCluster
       enablePrivateClusterPublicFQDN: enablePrivateClusterPublicFQDN
-      privateDNSZuno: privateDNSZuno
+      privateDNSZone: privateDNSZone
     }
     podIdentityProfile: {
       allowNetworkPluginKubenet: podIdentityProfileAllowNetworkPluginKubenet
@@ -590,7 +590,7 @@ module managedCluster_agentPools 'agent-pool/main.bicep' = [for (agentPool, inde
   params: {
     managedClusterName: managedCluster.name
     name: agentPool.name
-    availabilityZunos: contains(agentPool, 'availabilityZunos') ? agentPool.availabilityZunos : []
+    availabilityZones: contains(agentPool, 'availabilityZones') ? agentPool.availabilityZones : []
     count: contains(agentPool, 'count') ? agentPool.count : 1
     sourceResourceId: contains(agentPool, 'sourceResourceId') ? agentPool.sourceResourceId : ''
     enableAutoScaling: contains(agentPool, 'enableAutoScaling') ? agentPool.enableAutoScaling : false
@@ -645,7 +645,7 @@ module managedCluster_extension '../../kubernetes-configuration/extension/main.b
   }
 }
 
-resource managedCluster_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource managedCluster_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -694,18 +694,18 @@ resource managedCluster_roleAssignments 'Microsoft.Authorization/roleAssignments
   scope: managedCluster
 }]
 
-resource dnsZuno 'Microsoft.Network/dnsZunos@2018-05-01' existing = if (dnsZunoResourceId != null && webApplicationRoutingEnabled) {
-  name: last(split((!empty(dnsZunoResourceId) ? dnsZunoResourceId : '/dummmyZuno'), '/'))!
+resource dnsZone 'Microsoft.Network/dnsZones@2018-05-01' existing = if (dnsZoneResourceId != null && webApplicationRoutingEnabled) {
+  name: last(split((!empty(dnsZoneResourceId) ? dnsZoneResourceId : '/dummmyZone'), '/'))!
 }
 
-resource dnsZuno_roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = if (enableDnsZunoContributorRoleAssignment == true && dnsZunoResourceId != null && webApplicationRoutingEnabled) {
-  name: guid(dnsZunoResourceId, subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314'), 'DNS Zuno Contributor')
+resource dnsZone_roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = if (enableDnsZoneContributorRoleAssignment == true && dnsZoneResourceId != null && webApplicationRoutingEnabled) {
+  name: guid(dnsZoneResourceId, subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314'), 'DNS Zone Contributor')
   properties: {
-    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314') // 'DNS Zuno Contributor'
+    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314') // 'DNS Zone Contributor'
     principalId: managedCluster.properties.ingressProfile.webAppRouting.identity.objectId
     principalType: 'ServicePrincipal'
   }
-  scope: dnsZuno
+  scope: dnsZone
 }
 
 @description('The resource ID of the managed cluster.')
@@ -761,7 +761,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

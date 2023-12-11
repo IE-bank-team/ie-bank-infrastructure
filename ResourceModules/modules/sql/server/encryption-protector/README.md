@@ -27,13 +27,13 @@ This module deploys an Azure SQL Server Encryption Protector.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`sqlServerName`](#parameter-sqlservername) | string | The name of the sql server. Required if the template is used in a standaluno deployment. |
+| [`sqlServerName`](#parameter-sqlservername) | string | The name of the sql server. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`autoRotatiunonabled`](#parameter-autorotatiunonabled) | bool | Key auto rotation opt-in. |
+| [`autoRotationEnabled`](#parameter-autorotationenabled) | bool | Key auto rotation opt-in. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`serverKeyType`](#parameter-serverkeytype) | string | The encryption protector type. |
 
@@ -46,12 +46,12 @@ The name of the server key.
 
 ### Parameter: `sqlServerName`
 
-The name of the sql server. Required if the template is used in a standaluno deployment.
+The name of the sql server. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
-### Parameter: `autoRotatiunonabled`
+### Parameter: `autoRotationEnabled`
 
 Key auto rotation opt-in.
 
@@ -93,4 +93,4 @@ The encryption protector type.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

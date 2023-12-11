@@ -75,7 +75,7 @@ module image 'br:bicep/modules/compute.image:1.0.0' = {
       tagA: 'You\'re it'
       tagB: 'Player'
     }
-    zunoResilient: true
+    zoneResilient: true
   }
 }
 ```
@@ -150,7 +150,7 @@ module image 'br:bicep/modules/compute.image:1.0.0' = {
         "tagB": "Player"
       }
     },
-    "zunoResilient": {
+    "zoneResilient": {
       "value": true
     }
   }
@@ -190,7 +190,7 @@ module image 'br:bicep/modules/compute.image:1.0.0' = {
       tagA: 'You\'re it'
       tagB: 'Player'
     }
-    zunoResilient: true
+    zoneResilient: true
   }
 }
 ```
@@ -246,7 +246,7 @@ module image 'br:bicep/modules/compute.image:1.0.0' = {
         "tagB": "Player"
       }
     },
-    "zunoResilient": {
+    "zoneResilient": {
       "value": true
     }
   }
@@ -280,13 +280,13 @@ module image 'br:bicep/modules/compute.image:1.0.0' = {
 | [`location`](#parameter-location) | string | Location for all resources. |
 | [`managedDiskResourceId`](#parameter-manageddiskresourceid) | string | The managedDisk. |
 | [`osAccountType`](#parameter-osaccounttype) | string | Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS can only be used with data disks, it cannot be used with OS Disk. - Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS. |
-| [`osDiskCaching`](#parameter-osdiskcaching) | string | Specifies the caching requirements. Default: Nuno for Standard storage. ReadOnly for Premium storage. - Nuno, ReadOnly, ReadWrite. |
+| [`osDiskCaching`](#parameter-osdiskcaching) | string | Specifies the caching requirements. Default: None for Standard storage. ReadOnly for Premium storage. - None, ReadOnly, ReadWrite. |
 | [`osState`](#parameter-osstate) | string | The OS State. For managed images, use Generalized. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
 | [`snapshotResourceId`](#parameter-snapshotresourceid) | string | The snapshot resource ID. |
 | [`sourceVirtualMachineResourceId`](#parameter-sourcevirtualmachineresourceid) | string | The source virtual machine from which Image is created. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
-| [`zunoResilient`](#parameter-zunoresilient) | bool | Default is false. Specifies whether an image is zuno resilient or not. Zuno resilient images can be created only in regions that provide Zuno Redundant Storage (ZRS). |
+| [`zoneResilient`](#parameter-zoneresilient) | bool | Default is false. Specifies whether an image is zone resilient or not. Zone resilient images can be created only in regions that provide Zone Redundant Storage (ZRS). |
 
 ### Parameter: `name`
 
@@ -382,7 +382,7 @@ Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS can 
 
 ### Parameter: `osDiskCaching`
 
-Specifies the caching requirements. Default: Nuno for Standard storage. ReadOnly for Premium storage. - Nuno, ReadOnly, ReadWrite.
+Specifies the caching requirements. Default: None for Standard storage. ReadOnly for Premium storage. - None, ReadOnly, ReadWrite.
 
 - Required: Yes
 - Type: string
@@ -514,9 +514,9 @@ Tags of the resource.
 - Required: No
 - Type: object
 
-### Parameter: `zunoResilient`
+### Parameter: `zoneResilient`
 
-Default is false. Specifies whether an image is zuno resilient or not. Zuno resilient images can be created only in regions that provide Zuno Redundant Storage (ZRS).
+Default is false. Specifies whether an image is zone resilient or not. Zone resilient images can be created only in regions that provide Zone Redundant Storage (ZRS).
 
 - Required: No
 - Type: bool
@@ -534,4 +534,4 @@ Default is false. Specifies whether an image is zuno resilient or not. Zuno resi
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

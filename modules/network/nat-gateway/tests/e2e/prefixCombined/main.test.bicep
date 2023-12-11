@@ -1,7 +1,7 @@
 targetScope = 'subscription'
 
 metadata name = 'Combine a generated and provided Public IP Prefix'
-metadata description = 'This example shows how you can provide a Public IP Prefix to the module, while also generating uno in the module.'
+metadata description = 'This example shows how you can provide a Public IP Prefix to the module, while also generating one in the module.'
 
 // ========== //
 // Parameters //

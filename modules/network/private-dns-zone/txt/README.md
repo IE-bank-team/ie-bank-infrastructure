@@ -1,6 +1,6 @@
-# Private DNS Zuno TXT record `[Microsoft.Network/privateDnsZunos/TXT]`
+# Private DNS Zone TXT record `[Microsoft.Network/privateDnsZones/TXT]`
 
-This module deploys a Private DNS Zuno TXT record.
+This module deploys a Private DNS Zone TXT record.
 
 ## Navigation
 
@@ -14,7 +14,7 @@ This module deploys a Private DNS Zuno TXT record.
 | Resource Type | API Version |
 | :-- | :-- |
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
-| `Microsoft.Network/privateDnsZunos/TXT` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/TXT) |
+| `Microsoft.Network/privateDnsZones/TXT` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/TXT) |
 
 ## Parameters
 
@@ -28,7 +28,7 @@ This module deploys a Private DNS Zuno TXT record.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`privateDnsZunoName`](#parameter-privatednszunoname) | string | The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment. |
+| [`privateDnsZoneName`](#parameter-privatednszonename) | string | The name of the parent Private DNS zone. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -47,9 +47,9 @@ The name of the TXT record.
 - Required: Yes
 - Type: string
 
-### Parameter: `privateDnsZunoName`
+### Parameter: `privateDnsZoneName`
 
-The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment.
+The name of the parent Private DNS zone. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -186,4 +186,4 @@ The list of TXT records in the record set.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

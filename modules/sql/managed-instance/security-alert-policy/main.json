@@ -21,7 +21,7 @@
     "managedInstanceName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent SQL managed instance. Required if the template is used in a standalone deployment."
       }
     },
     "state": {

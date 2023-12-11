@@ -84,13 +84,13 @@
     "netAppAccountName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent NetApp account. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent NetApp account. Required if the template is used in a standalone deployment."
       }
     },
     "capacityPoolName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent capacity pool. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent capacity pool. Required if the template is used in a standalone deployment."
       }
     },
     "name": {
@@ -116,7 +116,7 @@
         "Ultra"
       ],
       "metadata": {
-        "description": "Optional. The pool service level. Must match the uno of the parent capacity pool."
+        "description": "Optional. The pool service level. Must match the one of the parent capacity pool."
       }
     },
     "creationToken": {

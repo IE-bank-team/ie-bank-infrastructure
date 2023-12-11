@@ -3,7 +3,7 @@ metadata description = 'This module deploys a Storage Account Blob Service.'
 metadata owner = 'Azure/module-maintainers'
 
 @maxLength(24)
-@description('Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment.')
 param storageAccountName string
 
 @description('Optional. Automatic Snapshot is enabled if set to true.')
@@ -161,7 +161,7 @@ module blobServices_container 'container/main.bicep' = [for (container, index) i
     enableNfsV3RootSquash: contains(container, 'enableNfsV3RootSquash') ? container.enableNfsV3RootSquash : false
     immutableStorageWithVersioningEnabled: contains(container, 'immutableStorageWithVersioningEnabled') ? container.immutableStorageWithVersioningEnabled : false
     metadata: contains(container, 'metadata') ? container.metadata : {}
-    publicAccess: contains(container, 'publicAccess') ? container.publicAccess : 'Nuno'
+    publicAccess: contains(container, 'publicAccess') ? container.publicAccess : 'None'
     roleAssignments: contains(container, 'roleAssignments') ? container.roleAssignments : []
     immutabilityPolicyProperties: contains(container, 'immutabilityPolicyProperties') ? container.immutabilityPolicyProperties : {}
     enableDefaultTelemetry: enableReferencedModulesTelemetry

@@ -144,7 +144,7 @@ module flexibleServer 'br:bicep/modules/db-for-my-sql.flexible-server:1.0.0' = {
       }
     ]
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
-    highAvailability: 'SameZuno'
+    highAvailability: 'SameZone'
     location: '<location>'
     lock: {
       kind: 'CanNotDelete'
@@ -155,7 +155,7 @@ module flexibleServer 'br:bicep/modules/db-for-my-sql.flexible-server:1.0.0' = {
         '<managedIdentityResourceId>'
       ]
     }
-    privateDnsZunoResourceId: '<privateDnsZunoResourceId>'
+    privateDnsZoneResourceId: '<privateDnsZoneResourceId>'
     roleAssignments: [
       {
         principalId: '<principalId>'
@@ -257,7 +257,7 @@ module flexibleServer 'br:bicep/modules/db-for-my-sql.flexible-server:1.0.0' = {
       "value": "<enableDefaultTelemetry>"
     },
     "highAvailability": {
-      "value": "SameZuno"
+      "value": "SameZone"
     },
     "location": {
       "value": "<location>"
@@ -275,8 +275,8 @@ module flexibleServer 'br:bicep/modules/db-for-my-sql.flexible-server:1.0.0' = {
         ]
       }
     },
-    "privateDnsZunoResourceId": {
-      "value": "<privateDnsZunoResourceId>"
+    "privateDnsZoneResourceId": {
+      "value": "<privateDnsZoneResourceId>"
     },
     "roleAssignments": {
       "value": [
@@ -340,7 +340,7 @@ module flexibleServer 'br:bicep/modules/db-for-my-sql.flexible-server:1.0.0' = {
     // Non-required parameters
     administratorLogin: 'adminUserName'
     administratorLoginPassword: '<administratorLoginPassword>'
-    availabilityZuno: '1'
+    availabilityZone: '1'
     backupRetentionDays: 20
     customerManagedKey: {
       keyName: '<keyName>'
@@ -395,7 +395,7 @@ module flexibleServer 'br:bicep/modules/db-for-my-sql.flexible-server:1.0.0' = {
       }
     ]
     geoRedundantBackup: 'Enabled'
-    highAvailability: 'SameZuno'
+    highAvailability: 'SameZone'
     location: '<location>'
     lock: {
       kind: 'CanNotDelete'
@@ -457,7 +457,7 @@ module flexibleServer 'br:bicep/modules/db-for-my-sql.flexible-server:1.0.0' = {
     "administratorLoginPassword": {
       "value": "<administratorLoginPassword>"
     },
-    "availabilityZuno": {
+    "availabilityZone": {
       "value": "1"
     },
     "backupRetentionDays": {
@@ -531,7 +531,7 @@ module flexibleServer 'br:bicep/modules/db-for-my-sql.flexible-server:1.0.0' = {
       "value": "Enabled"
     },
     "highAvailability": {
-      "value": "SameZuno"
+      "value": "SameZone"
     },
     "location": {
       "value": "<location>"
@@ -604,7 +604,7 @@ module flexibleServer 'br:bicep/modules/db-for-my-sql.flexible-server:1.0.0' = {
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. Required if 'customerManagedKey' is not empty. |
-| [`privateDnsZunoResourceId`](#parameter-privatednszunoresourceid) | string | Private dns zuno arm resource ID. Used when the desired connectivity mode is "Private Access". Required if "delegatedSubnetResourceId" is used and the Private DNS Zuno name must end with mysql.database.azure.com in order to be linked to the MySQL Flexible Server. |
+| [`privateDnsZoneResourceId`](#parameter-privatednszoneresourceid) | string | Private dns zone arm resource ID. Used when the desired connectivity mode is "Private Access". Required if "delegatedSubnetResourceId" is used and the Private DNS Zone name must end with mysql.database.azure.com in order to be linked to the MySQL Flexible Server. |
 | [`restorePointInTime`](#parameter-restorepointintime) | string | Restore point creation time (ISO8601 format), specifying the time to restore from. Required if "createMode" is set to "PointInTimeRestore". |
 | [`sourceServerResourceId`](#parameter-sourceserverresourceid) | string | The source MySQL server ID. Required if "createMode" is set to "PointInTimeRestore". |
 | [`storageAutoGrow`](#parameter-storageautogrow) | string | Enable Storage Auto Grow or not. Storage auto-growth prevents a server from running out of storage and becoming read-only. Required if "highAvailability" is not "Disabled". |
@@ -616,7 +616,7 @@ module flexibleServer 'br:bicep/modules/db-for-my-sql.flexible-server:1.0.0' = {
 | [`administratorLogin`](#parameter-administratorlogin) | string | The administrator login name of a server. Can only be specified when the MySQL server is being created. |
 | [`administratorLoginPassword`](#parameter-administratorloginpassword) | securestring | The administrator login password. |
 | [`administrators`](#parameter-administrators) | array | The Azure AD administrators when AAD authentication enabled. |
-| [`availabilityZuno`](#parameter-availabilityzuno) | string | Availability zuno information of the server. Default will have no preference set. |
+| [`availabilityZone`](#parameter-availabilityzone) | string | Availability zone information of the server. Default will have no preference set. |
 | [`backupRetentionDays`](#parameter-backupretentiondays) | int | Backup retention days for the server. |
 | [`createMode`](#parameter-createmode) | string | The mode to create a new MySQL server. |
 | [`customerManagedKey`](#parameter-customermanagedkey) | object | The customer managed key definition to use for the managed service. |
@@ -627,7 +627,7 @@ module flexibleServer 'br:bicep/modules/db-for-my-sql.flexible-server:1.0.0' = {
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`firewallRules`](#parameter-firewallrules) | array | The firewall rules to create in the MySQL flexible server. |
 | [`geoRedundantBackup`](#parameter-georedundantbackup) | string | A value indicating whether Geo-Redundant backup is enabled on the server. If "Enabled" and "cMKKeyName" is not empty, then "geoBackupCMKKeyVaultResourceId" and "cMKUserAssignedIdentityResourceId" are also required. |
-| [`highAvailability`](#parameter-highavailability) | string | The mode for High Availability (HA). It is not supported for the Burstable pricing tier and Zuno redundant HA can only be set during server provisioning. |
+| [`highAvailability`](#parameter-highavailability) | string | The mode for High Availability (HA). It is not supported for the Burstable pricing tier and Zone redundant HA can only be set during server provisioning. |
 | [`location`](#parameter-location) | string | Location for all resources. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
 | [`maintenanceWindow`](#parameter-maintenancewindow) | object | Properties for the maintenence window. If provided, "customWindow" property must exist and set to "Enabled". |
@@ -688,9 +688,9 @@ The resource ID(s) to assign to the resource.
 - Required: Yes
 - Type: array
 
-### Parameter: `privateDnsZunoResourceId`
+### Parameter: `privateDnsZoneResourceId`
 
-Private dns zuno arm resource ID. Used when the desired connectivity mode is "Private Access". Required if "delegatedSubnetResourceId" is used and the Private DNS Zuno name must end with mysql.database.azure.com in order to be linked to the MySQL Flexible Server.
+Private dns zone arm resource ID. Used when the desired connectivity mode is "Private Access". Required if "delegatedSubnetResourceId" is used and the Private DNS Zone name must end with mysql.database.azure.com in order to be linked to the MySQL Flexible Server.
 
 - Required: No
 - Type: string
@@ -751,9 +751,9 @@ The Azure AD administrators when AAD authentication enabled.
 - Type: array
 - Default: `[]`
 
-### Parameter: `availabilityZuno`
+### Parameter: `availabilityZone`
 
-Availability zuno information of the server. Default will have no preference set.
+Availability zone information of the server. Default will have no preference set.
 
 - Required: No
 - Type: string
@@ -1031,7 +1031,7 @@ A value indicating whether Geo-Redundant backup is enabled on the server. If "En
 
 ### Parameter: `highAvailability`
 
-The mode for High Availability (HA). It is not supported for the Burstable pricing tier and Zuno redundant HA can only be set during server provisioning.
+The mode for High Availability (HA). It is not supported for the Burstable pricing tier and Zone redundant HA can only be set during server provisioning.
 
 - Required: No
 - Type: string
@@ -1040,8 +1040,8 @@ The mode for High Availability (HA). It is not supported for the Burstable prici
   ```Bicep
   [
     'Disabled'
-    'SameZuno'
-    'ZunoRedundant'
+    'SameZone'
+    'ZoneRedundant'
   ]
   ```
 
@@ -1077,7 +1077,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1103,11 +1103,11 @@ The replication role.
 
 - Required: No
 - Type: string
-- Default: `'Nuno'`
+- Default: `'None'`
 - Allowed:
   ```Bicep
   [
-    'Nuno'
+    'None'
     'Replica'
     'Source'
   ]
@@ -1283,4 +1283,4 @@ MySQL Server version.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

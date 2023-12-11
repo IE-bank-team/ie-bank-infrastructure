@@ -127,7 +127,7 @@ module virtualHub 'br:bicep/modules/network.virtual-hub:1.0.0' = {
               }
             ]
             labels: [
-              'nuno'
+              'none'
             ]
           }
         }
@@ -195,7 +195,7 @@ module virtualHub 'br:bicep/modules/network.virtual-hub:1.0.0' = {
                 }
               ],
               "labels": [
-                "nuno"
+                "none"
               ]
             }
           }
@@ -261,7 +261,7 @@ module virtualHub 'br:bicep/modules/network.virtual-hub:1.0.0' = {
               }
             ]
             labels: [
-              'nuno'
+              'none'
             ]
           }
         }
@@ -329,7 +329,7 @@ module virtualHub 'br:bicep/modules/network.virtual-hub:1.0.0' = {
                 }
               ],
               "labels": [
-                "nuno"
+                "none"
               ]
             }
           }
@@ -483,7 +483,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -515,7 +515,7 @@ The preferred routing gateway types.
   [
     ''
     'ExpressRoute'
-    'Nuno'
+    'None'
     'VpnGateway'
   ]
   ```
@@ -610,4 +610,4 @@ Resource ID of the VPN Gateway to link to.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

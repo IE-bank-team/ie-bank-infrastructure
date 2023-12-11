@@ -24,7 +24,7 @@ In case you aren't using Bicep you need to follow this procedure: [(Optional) Co
 
 # 4. (Optional) Customize modules
 
-The backup folder from step 1, can be used to compare customized modules with the unos coming from the latest version and to implement the required changes. For example, the `'Compare selected'` [function](https://vscode.uno/diff-vscode/) in Visual Studio Code can be leveraged for that purpose.
+The backup folder from step 1, can be used to compare customized modules with the ones coming from the latest version and to implement the required changes. For example, the `'Compare selected'` [function](https://vscode.one/diff-vscode/) in Visual Studio Code can be leveraged for that purpose.
 
 If your copy deviates from the upstream version due to customizations you applied to the code, you'll have to re-apply your customizations to the updated code. This process may be automated, by script or CI, if customization tasks are repeatable.
 

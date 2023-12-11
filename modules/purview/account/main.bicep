@@ -99,7 +99,7 @@ resource account 'Microsoft.Purview/accounts@2021-07-01' = {
   }
 }
 
-resource account_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource account_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -146,8 +146,8 @@ module account_privateEndpoints '../../network/private-endpoint/main.bicep' = [f
     enableDefaultTelemetry: enableReferencedModulesTelemetry
     location: contains(privateEndpoint, 'location') ? privateEndpoint.location : reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZunoGroupName: contains(privateEndpoint, 'privateDnsZunoGroupName') ? privateEndpoint.privateDnsZunoGroupName : 'default'
-    privateDnsZunoResourceIds: contains(privateEndpoint, 'privateDnsZunoResourceIds') ? privateEndpoint.privateDnsZunoResourceIds : []
+    privateDnsZoneGroupName: contains(privateEndpoint, 'privateDnsZoneGroupName') ? privateEndpoint.privateDnsZoneGroupName : 'default'
+    privateDnsZoneResourceIds: contains(privateEndpoint, 'privateDnsZoneResourceIds') ? privateEndpoint.privateDnsZoneResourceIds : []
     roleAssignments: contains(privateEndpoint, 'roleAssignments') ? privateEndpoint.roleAssignments : []
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: contains(privateEndpoint, 'manualPrivateLinkServiceConnections') ? privateEndpoint.manualPrivateLinkServiceConnections : []
@@ -170,8 +170,8 @@ module portal_privateEndpoints '../../network/private-endpoint/main.bicep' = [fo
     enableDefaultTelemetry: enableReferencedModulesTelemetry
     location: contains(privateEndpoint, 'location') ? privateEndpoint.location : reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZunoGroupName: contains(privateEndpoint, 'privateDnsZunoGroupName') ? privateEndpoint.privateDnsZunoGroupName : 'default'
-    privateDnsZunoResourceIds: contains(privateEndpoint, 'privateDnsZunoResourceIds') ? privateEndpoint.privateDnsZunoResourceIds : []
+    privateDnsZoneGroupName: contains(privateEndpoint, 'privateDnsZoneGroupName') ? privateEndpoint.privateDnsZoneGroupName : 'default'
+    privateDnsZoneResourceIds: contains(privateEndpoint, 'privateDnsZoneResourceIds') ? privateEndpoint.privateDnsZoneResourceIds : []
     roleAssignments: contains(privateEndpoint, 'roleAssignments') ? privateEndpoint.roleAssignments : []
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: contains(privateEndpoint, 'manualPrivateLinkServiceConnections') ? privateEndpoint.manualPrivateLinkServiceConnections : []
@@ -194,8 +194,8 @@ module blob_privateEndpoints '../../network/private-endpoint/main.bicep' = [for 
     enableDefaultTelemetry: enableReferencedModulesTelemetry
     location: contains(privateEndpoint, 'location') ? privateEndpoint.location : reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZunoGroupName: contains(privateEndpoint, 'privateDnsZunoGroupName') ? privateEndpoint.privateDnsZunoGroupName : 'default'
-    privateDnsZunoResourceIds: contains(privateEndpoint, 'privateDnsZunoResourceIds') ? privateEndpoint.privateDnsZunoResourceIds : []
+    privateDnsZoneGroupName: contains(privateEndpoint, 'privateDnsZoneGroupName') ? privateEndpoint.privateDnsZoneGroupName : 'default'
+    privateDnsZoneResourceIds: contains(privateEndpoint, 'privateDnsZoneResourceIds') ? privateEndpoint.privateDnsZoneResourceIds : []
     roleAssignments: contains(privateEndpoint, 'roleAssignments') ? privateEndpoint.roleAssignments : []
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: contains(privateEndpoint, 'manualPrivateLinkServiceConnections') ? privateEndpoint.manualPrivateLinkServiceConnections : []
@@ -218,8 +218,8 @@ module queue_privateEndpoints '../../network/private-endpoint/main.bicep' = [for
     enableDefaultTelemetry: enableReferencedModulesTelemetry
     location: contains(privateEndpoint, 'location') ? privateEndpoint.location : reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZunoGroupName: contains(privateEndpoint, 'privateDnsZunoGroupName') ? privateEndpoint.privateDnsZunoGroupName : 'default'
-    privateDnsZunoResourceIds: contains(privateEndpoint, 'privateDnsZunoResourceIds') ? privateEndpoint.privateDnsZunoResourceIds : []
+    privateDnsZoneGroupName: contains(privateEndpoint, 'privateDnsZoneGroupName') ? privateEndpoint.privateDnsZoneGroupName : 'default'
+    privateDnsZoneResourceIds: contains(privateEndpoint, 'privateDnsZoneResourceIds') ? privateEndpoint.privateDnsZoneResourceIds : []
     roleAssignments: contains(privateEndpoint, 'roleAssignments') ? privateEndpoint.roleAssignments : []
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: contains(privateEndpoint, 'manualPrivateLinkServiceConnections') ? privateEndpoint.manualPrivateLinkServiceConnections : []
@@ -242,8 +242,8 @@ module eventHub_privateEndpoints '../../network/private-endpoint/main.bicep' = [
     enableDefaultTelemetry: enableReferencedModulesTelemetry
     location: contains(privateEndpoint, 'location') ? privateEndpoint.location : reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZunoGroupName: contains(privateEndpoint, 'privateDnsZunoGroupName') ? privateEndpoint.privateDnsZunoGroupName : 'default'
-    privateDnsZunoResourceIds: contains(privateEndpoint, 'privateDnsZunoResourceIds') ? privateEndpoint.privateDnsZunoResourceIds : []
+    privateDnsZoneGroupName: contains(privateEndpoint, 'privateDnsZoneGroupName') ? privateEndpoint.privateDnsZoneGroupName : 'default'
+    privateDnsZoneResourceIds: contains(privateEndpoint, 'privateDnsZoneResourceIds') ? privateEndpoint.privateDnsZoneResourceIds : []
     roleAssignments: contains(privateEndpoint, 'roleAssignments') ? privateEndpoint.roleAssignments : []
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: contains(privateEndpoint, 'manualPrivateLinkServiceConnections') ? privateEndpoint.manualPrivateLinkServiceConnections : []
@@ -309,7 +309,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

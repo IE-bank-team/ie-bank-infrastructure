@@ -27,7 +27,7 @@ This module deploys an Azure SQL Server Firewall Rule.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`serverName`](#parameter-servername) | string | The name of the parent SQL Server. Required if the template is used in a standaluno deployment. |
+| [`serverName`](#parameter-servername) | string | The name of the parent SQL Server. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -46,7 +46,7 @@ The name of the Server Firewall Rule.
 
 ### Parameter: `serverName`
 
-The name of the parent SQL Server. Required if the template is used in a standaluno deployment.
+The name of the parent SQL Server. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -86,4 +86,4 @@ The start IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

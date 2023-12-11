@@ -31,7 +31,7 @@ param vnetEncryption bool = false
   'DropUnencrypted'
 ])
 @description('Optional. If the encrypted VNet allows VM that does not support encryption. Can only be used when vnetEncryption is enabled.')
-param vnetEncryptiunonforcement string = 'AllowUnencrypted'
+param vnetEncryptionEnforcement string = 'AllowUnencrypted'
 
 @maxValue(30)
 @description('Optional. The flow timeout in minutes for the Virtual Network, which is used to enable connection tracking for intra-VM flows. Possible values are between 4 and 30 minutes. Default value 0 will set the property to null.')
@@ -96,7 +96,7 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2023-04-01' = {
     enableDdosProtection: !empty(ddosProtectionPlanId)
     encryption: vnetEncryption == true ? {
       enabled: vnetEncryption
-      enforcement: vnetEncryptiunonforcement
+      enforcement: vnetEncryptionEnforcement
     } : null
     flowTimeoutInMinutes: flowTimeoutInMinutes != 0 ? flowTimeoutInMinutes : null
     subnets: [for subnet in subnets: {
@@ -127,7 +127,7 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2023-04-01' = {
 
 //NOTE Start: ------------------------------------
 // The below module (virtualNetwork_subnets) is a duplicate of the child resource (subnets) defined in the parent module (virtualNetwork).
-// The reason it exists so that deployment validation tests can be performed on the child module (subnets), in case that module needed to be deployed aluno outside of this template.
+// The reason it exists so that deployment validation tests can be performed on the child module (subnets), in case that module needed to be deployed alone outside of this template.
 // The reason for duplication is due to the current design for the (virtualNetworks) resource from Azure, where if the child module (subnets) does not exist within it, causes
 //    an issue, where the child resource (subnets) gets all of its properties removed, hence not as 'idempotent' as it should be. See https://github.com/Azure/azure-quickstart-templates/issues/2786 for more details.
 // You can safely remove the below child module (virtualNetwork_subnets) in your consumption of the module (virtualNetworks) to reduce the template size and duplication.
@@ -188,7 +188,7 @@ module virtualNetwork_peering_remote 'virtual-network-peering/main.bicep' = [for
   }
 }]
 
-resource virtualNetwork_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource virtualNetwork_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -264,7 +264,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

@@ -27,7 +27,7 @@ This module deploys an API Management Service Portal Setting.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standaluno deployment. |
+| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -53,7 +53,7 @@ Portal setting name.
 
 ### Parameter: `apiManagementServiceName`
 
-The name of the parent API Management service. Required if the template is used in a standaluno deployment.
+The name of the parent API Management service. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -85,4 +85,4 @@ Portal setting properties.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

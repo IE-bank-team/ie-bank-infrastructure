@@ -29,7 +29,7 @@ This module deploys an API Management Service Cache.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standaluno deployment. |
+| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -62,7 +62,7 @@ Location identifier to use cache from (should be either 'default' or valid Azure
 
 ### Parameter: `apiManagementServiceName`
 
-The name of the parent API Management service. Required if the template is used in a standaluno deployment.
+The name of the parent API Management service. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -102,4 +102,4 @@ Original uri of entity in external system cache points to.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

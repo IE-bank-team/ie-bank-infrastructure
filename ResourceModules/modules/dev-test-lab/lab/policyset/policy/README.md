@@ -32,7 +32,7 @@ DevTest lab policies are used to modify the lab settings such as only allowing c
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`labName`](#parameter-labname) | string | The name of the parent lab. Required if the template is used in a standaluno deployment. |
+| [`labName`](#parameter-labname) | string | The name of the parent lab. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -97,7 +97,7 @@ The threshold of the policy (i.e. a number for MaxValuePolicy, and a JSON array 
 
 ### Parameter: `labName`
 
-The name of the parent lab. Required if the template is used in a standaluno deployment.
+The name of the parent lab. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -168,4 +168,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

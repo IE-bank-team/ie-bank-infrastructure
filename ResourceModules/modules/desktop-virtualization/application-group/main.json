@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -340,7 +340,7 @@
       ]
     },
     "appGroup_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.DesktopVirtualization/applicationGroups/{0}', parameters('name'))]",
@@ -406,7 +406,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-AppGroup-App-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -448,7 +448,7 @@
             "appGroupName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Application Group to create the application(s) in. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent Application Group to create the application(s) in. Required if the template is used in a standalone deployment."
               }
             },
             "name": {

@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -111,7 +111,7 @@
       "minLength": 6,
       "maxLength": 50,
       "metadata": {
-        "description": "Conditional. The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent Service Bus Namespace for the Service Bus Queue. Required if the template is used in a standalone deployment."
       }
     },
     "name": {
@@ -235,7 +235,7 @@
       "type": "bool",
       "defaultValue": false,
       "metadata": {
-        "description": "Optional. A value that indicates whether the queue is to be partitiunod across multiple message brokers."
+        "description": "Optional. A value that indicates whether the queue is to be partitioned across multiple message brokers."
       }
     },
     "enableExpress": {
@@ -344,7 +344,7 @@
       ]
     },
     "queue_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.ServiceBus/namespaces/{0}/queues/{1}', parameters('namespaceName'), parameters('name'))]",
@@ -388,7 +388,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-AuthRule-{1}', deployment().name, copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -430,13 +430,13 @@
             "namespaceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Service Bus Namespace. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent Service Bus Namespace. Required if the template is used in a standalone deployment."
               }
             },
             "queueName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent Service Bus Namespace Queue. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent Service Bus Namespace Queue. Required if the template is used in a standalone deployment."
               }
             },
             "rights": {

@@ -2,7 +2,7 @@ metadata name = 'Load Balancer Backend Address Pools'
 metadata description = 'This module deploys a Load Balancer Backend Address Pools.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent load balancer. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent load balancer. Required if the template is used in a standalone deployment.')
 param loadBalancerName string
 
 @description('Required. The name of the backend address pool.')

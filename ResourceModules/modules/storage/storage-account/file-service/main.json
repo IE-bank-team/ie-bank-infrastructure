@@ -125,7 +125,7 @@
       "type": "string",
       "maxLength": 24,
       "metadata": {
-        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
       }
     },
     "name": {
@@ -241,7 +241,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-shares-{1}', deployment().name, copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -351,14 +351,14 @@
               "type": "string",
               "maxLength": 24,
               "metadata": {
-                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment."
               }
             },
             "fileServicesName": {
               "type": "string",
               "defaultValue": "default",
               "metadata": {
-                "description": "Conditional. The name of the parent file service. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent file service. Required if the template is used in a standalone deployment."
               }
             },
             "name": {

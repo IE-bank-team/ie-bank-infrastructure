@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The connection name.')
 param name string
 
-@description('Conditional. The name of the parent virtual hub. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent virtual hub. Required if the template is used in a standalone deployment.')
 param virtualHubName string
 
 @description('Optional. Enable internet security.')

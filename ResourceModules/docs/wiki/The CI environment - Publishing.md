@@ -118,7 +118,7 @@ The publishing works as follows:
          > Example: Using the Bicep registry, the reference to a `major.minor` could look like: `br/modules:resources.resource-group:0.4` which means that the template will always consume whatever the potentially overwritten/updated version `0.4` contains.
    1. For a changed child module, the direct parent hierarchy is also registered for an update, following the same procedure as above.
    1. The list of module files paths and their versions are passed on as a array list.
-1. The [Get-ModulesMissingFrom*.ps1](https://github.com/Azure/ResourceModules/tree/main/utilities/pipelines/resourcePublish) scripts further check if a given module is missing from the corresponding target location (e.g., Azure Container Registry) and adds each missing entry to to aforementiunod array - using the version specified in the module's `version.json` file.
+1. The [Get-ModulesMissingFrom*.ps1](https://github.com/Azure/ResourceModules/tree/main/utilities/pipelines/resourcePublish) scripts further check if a given module is missing from the corresponding target location (e.g., Azure Container Registry) and adds each missing entry to to aforementioned array - using the version specified in the module's `version.json` file.
 1. The different publishing scripts run (Artifact, Template Spec or Bicep Registry) and publish the module to the respective target location for each item on the list.
 
 ## Example scenario
@@ -144,7 +144,7 @@ Let's look at an example run where we would do a patch change on the `fileShares
    - If the PR for the changes to `fileShare` is squash merged as commit number 503, the patch version on the child and parent module is then `503`, resulting in a version `0.3.503` being published.
 1. The merge triggers cascading updates in the following way:
    - The module is published with a `major.minor.patch` version. In addition, only for Template Specs and Bicep Registry, the module is also published with `major.minor` and `major` version updates, allowing consumers to target the latest major or latest minor version respectively.
-   - All parent module are published following the steps mentiunod above.
+   - All parent module are published following the steps mentioned above.
 
 ```
                   \         \

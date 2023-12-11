@@ -29,7 +29,7 @@ This module deploys a CDN Profile Endpoint.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`profileName`](#parameter-profilename) | string | The name of the parent CDN profile. Required if the template is used in a standaluno deployment. |
+| [`profileName`](#parameter-profilename) | string | The name of the parent CDN profile. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -55,7 +55,7 @@ Endpoint properties (see https://learn.microsoft.com/en-us/azure/templates/micro
 
 ### Parameter: `profileName`
 
-The name of the parent CDN profile. Required if the template is used in a standaluno deployment.
+The name of the parent CDN profile. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -96,4 +96,4 @@ Endpoint tags.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

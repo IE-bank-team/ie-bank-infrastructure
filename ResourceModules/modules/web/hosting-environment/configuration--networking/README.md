@@ -21,7 +21,7 @@ This module deploys a Hosting Environment Network Configuration.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`hostingEnvironmentName`](#parameter-hostingenvironmentname) | string | The name of the parent Hosting Environment. Required if the template is used in a standaluno deployment. |
+| [`hostingEnvironmentName`](#parameter-hostingenvironmentname) | string | The name of the parent Hosting Environment. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -35,7 +35,7 @@ This module deploys a Hosting Environment Network Configuration.
 
 ### Parameter: `hostingEnvironmentName`
 
-The name of the parent Hosting Environment. Required if the template is used in a standaluno deployment.
+The name of the parent Hosting Environment. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -91,4 +91,4 @@ Property to enable and disable Remote Debug on ASEv3.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

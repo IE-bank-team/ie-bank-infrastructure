@@ -27,7 +27,7 @@ This module deploys a SQL Managed Instance Security Alert Policy.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment. |
+| [`managedInstanceName`](#parameter-managedinstancename) | string | The name of the parent SQL managed instance. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -46,7 +46,7 @@ The name of the security alert policy.
 
 ### Parameter: `managedInstanceName`
 
-The name of the parent SQL managed instance. Required if the template is used in a standaluno deployment.
+The name of the parent SQL managed instance. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -93,4 +93,4 @@ Enables advanced data security features, like recuring vulnerability assesment s
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

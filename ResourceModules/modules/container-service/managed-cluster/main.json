@@ -50,7 +50,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -293,7 +293,7 @@
     "managedIdentities": {
       "$ref": "#/definitions/managedIdentitiesType",
       "metadata": {
-        "description": "Optional. The managed identity definition for this resource. Only uno type of identity is supported: system-assigned or user-assigned, but not both."
+        "description": "Optional. The managed identity definition for this resource. Only one type of identity is supported: system-assigned or user-assigned, but not both."
       }
     },
     "networkDataplane": {
@@ -531,11 +531,11 @@
         "description": "Optional. Whether to create additional public FQDN for private cluster or not."
       }
     },
-    "privateDNSZuno": {
+    "privateDNSZone": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optional. Private DNS Zuno configuration. Set to 'system' and AKS will create a private DNS zuno in the node resource group. Set to '' to disable private DNS Zuno creation and use public DNS. Supply the resource ID here of an existing Private DNS zuno to use an existing zuno."
+        "description": "Optional. Private DNS Zone configuration. Set to 'system' and AKS will create a private DNS zone in the node resource group. Set to '' to disable private DNS Zone creation and use public DNS. Supply the resource ID here of an existing Private DNS zone to use an existing zone."
       }
     },
     "primaryAgentPoolProfile": {
@@ -548,7 +548,7 @@
       "type": "array",
       "defaultValue": [],
       "metadata": {
-        "description": "Optional. Define uno or more secondary/additional agent pools."
+        "description": "Optional. Define one or more secondary/additional agent pools."
       }
     },
     "httpApplicationRoutingEnabled": {
@@ -565,18 +565,18 @@
         "description": "Optional. Specifies whether the webApplicationRoutingEnabled add-on is enabled or not."
       }
     },
-    "dnsZunoResourceId": {
+    "dnsZoneResourceId": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optional. Specifies the resource ID of connected DNS zuno. It will be ignored if `webApplicationRoutingEnabled` is set to `false`."
+        "description": "Optional. Specifies the resource ID of connected DNS zone. It will be ignored if `webApplicationRoutingEnabled` is set to `false`."
       }
     },
-    "enableDnsZunoContributorRoleAssignment": {
+    "enableDnsZoneContributorRoleAssignment": {
       "type": "bool",
       "defaultValue": true,
       "metadata": {
-        "description": "Optional. Specifies whether assing the DNS zuno contributor role to the cluster service principal. It will be ignored if `webApplicationRoutingEnabled` is set to `false` or `dnsZunoResourceId` not provided."
+        "description": "Optional. Specifies whether assing the DNS zone contributor role to the cluster service principal. It will be ignored if `webApplicationRoutingEnabled` is set to `false` or `dnsZoneResourceId` not provided."
       }
     },
     "ingressApplicationGatewayEnabled": {
@@ -788,7 +788,7 @@
       "defaultValue": "",
       "allowedValues": [
         "node-image",
-        "nuno",
+        "none",
         "patch",
         "rapid",
         "stable",
@@ -1103,7 +1103,7 @@
         "ingressProfile": {
           "webAppRouting": {
             "enabled": "[parameters('webApplicationRoutingEnabled')]",
-            "dnsZunoResourceIds": "[if(not(empty(parameters('dnsZunoResourceId'))), createArray(parameters('dnsZunoResourceId')), null())]"
+            "dnsZoneResourceIds": "[if(not(empty(parameters('dnsZoneResourceId'))), createArray(parameters('dnsZoneResourceId')), null())]"
           }
         },
         "addonProfiles": {
@@ -1190,7 +1190,7 @@
           "disableRunCommand": "[parameters('disableRunCommand')]",
           "enablePrivateCluster": "[parameters('enablePrivateCluster')]",
           "enablePrivateClusterPublicFQDN": "[parameters('enablePrivateClusterPublicFQDN')]",
-          "privateDNSZuno": "[parameters('privateDNSZuno')]"
+          "privateDNSZone": "[parameters('privateDNSZone')]"
         },
         "azureMonitorProfile": {
           "metrics": "[if(parameters('enableAzureMonitorProfileMetrics'), createObject('enabled', true(), 'kubeStateMetrics', createObject('metricAnnotationsAllowList', parameters('metricAnnotationsAllowList'), 'metricLabelsAllowlist', parameters('metricLabelsAllowlist'))), null())]"
@@ -1227,7 +1227,7 @@
       ]
     },
     "managedCluster_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.ContainerService/managedClusters/{0}', parameters('name'))]",
@@ -1285,26 +1285,26 @@
         "managedCluster"
       ]
     },
-    "dnsZuno": {
-      "condition": "[and(not(equals(parameters('dnsZunoResourceId'), null())), parameters('webApplicationRoutingEnabled'))]",
+    "dnsZone": {
+      "condition": "[and(not(equals(parameters('dnsZoneResourceId'), null())), parameters('webApplicationRoutingEnabled'))]",
       "existing": true,
-      "type": "Microsoft.Network/dnsZunos",
+      "type": "Microsoft.Network/dnsZones",
       "apiVersion": "2018-05-01",
-      "name": "[last(split(if(not(empty(parameters('dnsZunoResourceId'))), parameters('dnsZunoResourceId'), '/dummmyZuno'), '/'))]"
+      "name": "[last(split(if(not(empty(parameters('dnsZoneResourceId'))), parameters('dnsZoneResourceId'), '/dummmyZone'), '/'))]"
     },
-    "dnsZuno_roleAssignment": {
-      "condition": "[and(and(equals(parameters('enableDnsZunoContributorRoleAssignment'), true()), not(equals(parameters('dnsZunoResourceId'), null()))), parameters('webApplicationRoutingEnabled'))]",
+    "dnsZone_roleAssignment": {
+      "condition": "[and(and(equals(parameters('enableDnsZoneContributorRoleAssignment'), true()), not(equals(parameters('dnsZoneResourceId'), null()))), parameters('webApplicationRoutingEnabled'))]",
       "type": "Microsoft.Authorization/roleAssignments",
       "apiVersion": "2022-04-01",
-      "scope": "[format('Microsoft.Network/dnsZunos/{0}', last(split(if(not(empty(parameters('dnsZunoResourceId'))), parameters('dnsZunoResourceId'), '/dummmyZuno'), '/')))]",
-      "name": "[guid(parameters('dnsZunoResourceId'), subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314'), 'DNS Zuno Contributor')]",
+      "scope": "[format('Microsoft.Network/dnsZones/{0}', last(split(if(not(empty(parameters('dnsZoneResourceId'))), parameters('dnsZoneResourceId'), '/dummmyZone'), '/')))]",
+      "name": "[guid(parameters('dnsZoneResourceId'), subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314'), 'DNS Zone Contributor')]",
       "properties": {
         "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')]",
         "principalId": "[reference('managedCluster').ingressProfile.webAppRouting.identity.objectId]",
         "principalType": "ServicePrincipal"
       },
       "dependsOn": [
-        "dnsZuno",
+        "dnsZone",
         "managedCluster"
       ]
     },
@@ -1317,7 +1317,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-ManagedCluster-AgentPool-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1328,7 +1328,7 @@
           "name": {
             "value": "[parameters('agentPools')[copyIndex()].name]"
           },
-          "availabilityZunos": "[if(contains(parameters('agentPools')[copyIndex()], 'availabilityZunos'), createObject('value', parameters('agentPools')[copyIndex()].availabilityZunos), createObject('value', createArray()))]",
+          "availabilityZones": "[if(contains(parameters('agentPools')[copyIndex()], 'availabilityZones'), createObject('value', parameters('agentPools')[copyIndex()].availabilityZones), createObject('value', createArray()))]",
           "count": "[if(contains(parameters('agentPools')[copyIndex()], 'count'), createObject('value', parameters('agentPools')[copyIndex()].count), createObject('value', 1))]",
           "sourceResourceId": "[if(contains(parameters('agentPools')[copyIndex()], 'sourceResourceId'), createObject('value', parameters('agentPools')[copyIndex()].sourceResourceId), createObject('value', ''))]",
           "enableAutoScaling": "[if(contains(parameters('agentPools')[copyIndex()], 'enableAutoScaling'), createObject('value', parameters('agentPools')[copyIndex()].enableAutoScaling), createObject('value', false()))]",
@@ -1386,7 +1386,7 @@
             "managedClusterName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent managed cluster. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent managed cluster. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -1395,11 +1395,11 @@
                 "description": "Required. Name of the agent pool."
               }
             },
-            "availabilityZunos": {
+            "availabilityZones": {
               "type": "array",
               "defaultValue": [],
               "metadata": {
-                "description": "Optional. The list of Availability zunos to use for nodes. This can only be specified if the AgentPoolType property is \"VirtualMachineScaleSets\"."
+                "description": "Optional. The list of Availability zones to use for nodes. This can only be specified if the AgentPoolType property is \"VirtualMachineScaleSets\"."
               }
             },
             "count": {
@@ -1457,7 +1457,7 @@
               "type": "string",
               "defaultValue": "",
               "allowedValues": [
-                "MIunog",
+                "MIG1g",
                 "MIG2g",
                 "MIG3g",
                 "MIG4g",
@@ -1500,7 +1500,7 @@
               "type": "string",
               "defaultValue": "",
               "metadata": {
-                "description": "Optional. A cluster must have at least uno \"System\" Agent Pool at all times. For additional information on agent pool restrictions and best practices, see: /azure/aks/use-system-pools."
+                "description": "Optional. A cluster must have at least one \"System\" Agent Pool at all times. For additional information on agent pool restrictions and best practices, see: /azure/aks/use-system-pools."
               }
             },
             "nodeLabels": {
@@ -1715,7 +1715,7 @@
               "apiVersion": "2023-07-02-preview",
               "name": "[format('{0}/{1}', parameters('managedClusterName'), parameters('name'))]",
               "properties": {
-                "availabilityZunos": "[parameters('availabilityZunos')]",
+                "availabilityZones": "[parameters('availabilityZones')]",
                 "count": "[parameters('count')]",
                 "creationData": "[if(not(empty(parameters('sourceResourceId'))), variables('creationData'), null())]",
                 "enableAutoScaling": "[parameters('enableAutoScaling')]",
@@ -1790,7 +1790,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-ManagedCluster-FluxExtension', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1878,7 +1878,7 @@
             "extensionType": {
               "type": "string",
               "metadata": {
-                "description": "Required. Type of the Extension, of which this resource is an instance of. It must be uno of the Extension Types registered with Microsoft.KubernetesConfiguration by the Extension publisher."
+                "description": "Required. Type of the Extension, of which this resource is an instance of. It must be one of the Extension Types registered with Microsoft.KubernetesConfiguration by the Extension publisher."
               }
             },
             "releaseTrain": {
@@ -1959,7 +1959,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-ManagedCluster-FluxConfiguration{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
               "properties": {
-                "expressiunovaluationOptions": {
+                "expressionEvaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",

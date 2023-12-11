@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -176,7 +176,7 @@
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Conditional. Resource ID of a subnet for infrastructure compunonts. This is used to deploy the environment into a virtual network. Must not overlap with any other provided IP ranges. Required if \"internal\" is set to true."
+        "description": "Conditional. Resource ID of a subnet for infrastructure components. This is used to deploy the environment into a virtual network. Must not overlap with any other provided IP ranges. Required if \"internal\" is set to true."
       }
     },
     "internal": {
@@ -200,11 +200,11 @@
         "description": "Optional. An IP address from the IP range defined by \"platformReservedCidr\" that will be reserved for the internal DNS server. It must not be the first address in the range and can only be used when the environment is deployed into a virtual network. If not provided, it will be set with a default value by the platform."
       }
     },
-    "zunoRedundant": {
+    "zoneRedundant": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
-        "description": "Optional. Whether or not this Managed Environment is zuno-redundant."
+        "description": "Optional. Whether or not this Managed Environment is zone-redundant."
       }
     },
     "certificatePassword": {
@@ -311,7 +311,7 @@
           "platformReservedDnsIP": "[if(and(empty(parameters('workloadProfiles')), not(empty(parameters('infrastructureSubnetId')))), parameters('platformReservedDnsIP'), null())]"
         },
         "workloadProfiles": "[if(not(empty(parameters('workloadProfiles'))), parameters('workloadProfiles'), null())]",
-        "zunoRedundant": "[parameters('zunoRedundant')]",
+        "zoneRedundant": "[parameters('zoneRedundant')]",
         "infrastructureResourceGroup": "[parameters('infrastructureResourceGroupName')]"
       },
       "dependsOn": [
@@ -341,7 +341,7 @@
       ]
     },
     "managedEnvironment_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.App/managedEnvironments/{0}', parameters('name'))]",

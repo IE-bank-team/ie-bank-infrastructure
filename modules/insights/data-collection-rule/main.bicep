@@ -10,7 +10,7 @@ metadata owner = 'Azure/module-maintainers'
 param name string
 
 @sys.description('Optional. The resource ID of the data collection endpoint that this rule can be used with.')
-param dataCollectiunondpointId string = ''
+param dataCollectionEndpointId string = ''
 
 @sys.description('Required. The specification of data flows.')
 param dataFlows array
@@ -82,13 +82,13 @@ resource dataCollectionRule 'Microsoft.Insights/dataCollectionRules@2021-09-01-p
     dataSources: dataSources
     destinations: destinations
     dataFlows: dataFlows
-    dataCollectiunondpointId: !empty(dataCollectiunondpointId) ? dataCollectiunondpointId : null
+    dataCollectionEndpointId: !empty(dataCollectionEndpointId) ? dataCollectionEndpointId : null
     streamDeclarations: !empty(streamDeclarations) ? streamDeclarations : null
     description: !empty(description) ? description : null
   }
 }
 
-resource dataCollectionRule_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource dataCollectionRule_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -136,7 +136,7 @@ type lockType = {
   name: string?
 
   @sys.description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

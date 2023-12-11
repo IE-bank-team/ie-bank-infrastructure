@@ -24,7 +24,7 @@ Contributing back to the upstream repository has two main advantages:
 
 As a [Module Developer](./The%20context%20-%20Logical%20layers%20and%20personas#module-developer) you might add to the library company/organization specifics, either via conventions, parameters, extensions, or CI-specific changes.
 
-In this case every time you integrate CARML updates into your own library, you'll have to compare the new public code with your customized uno and re-apply your customizations to the updated code. This process can be automated, by script or CI, if customization tasks are repeatable.
+In this case every time you integrate CARML updates into your own library, you'll have to compare the new public code with your customized one and re-apply your customizations to the updated code. This process can be automated, by script or CI, if customization tasks are repeatable.
 
 In addition, you'll need to manage the validation of your updated and customized modules.
 

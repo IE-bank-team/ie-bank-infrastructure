@@ -294,7 +294,7 @@ module managedEnvironment 'br:bicep/modules/app.managed-environment:1.0.0' = {
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`infrastructureSubnetId`](#parameter-infrastructuresubnetid) | string | Resource ID of a subnet for infrastructure compunonts. This is used to deploy the environment into a virtual network. Must not overlap with any other provided IP ranges. Required if "internal" is set to true. |
+| [`infrastructureSubnetId`](#parameter-infrastructuresubnetid) | string | Resource ID of a subnet for infrastructure components. This is used to deploy the environment into a virtual network. Must not overlap with any other provided IP ranges. Required if "internal" is set to true. |
 
 **Optional parameters**
 
@@ -317,7 +317,7 @@ module managedEnvironment 'br:bicep/modules/app.managed-environment:1.0.0' = {
 | [`skuName`](#parameter-skuname) | string | Managed environment SKU. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`workloadProfiles`](#parameter-workloadprofiles) | array | Workload profiles configured for the Managed Environment. |
-| [`zunoRedundant`](#parameter-zunoredundant) | bool | Whether or not this Managed Environment is zuno-redundant. |
+| [`zoneRedundant`](#parameter-zoneredundant) | bool | Whether or not this Managed Environment is zone-redundant. |
 
 ### Parameter: `logAnalyticsWorkspaceResourceId`
 
@@ -335,7 +335,7 @@ Name of the Container Apps Managed Environment.
 
 ### Parameter: `infrastructureSubnetId`
 
-Resource ID of a subnet for infrastructure compunonts. This is used to deploy the environment into a virtual network. Must not overlap with any other provided IP ranges. Required if "internal" is set to true.
+Resource ID of a subnet for infrastructure components. This is used to deploy the environment into a virtual network. Must not overlap with any other provided IP ranges. Required if "internal" is set to true.
 
 - Required: No
 - Type: string
@@ -436,7 +436,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -591,9 +591,9 @@ Workload profiles configured for the Managed Environment.
 - Type: array
 - Default: `[]`
 
-### Parameter: `zunoRedundant`
+### Parameter: `zoneRedundant`
 
-Whether or not this Managed Environment is zuno-redundant.
+Whether or not this Managed Environment is zone-redundant.
 
 - Required: No
 - Type: bool
@@ -611,4 +611,4 @@ Whether or not this Managed Environment is zuno-redundant.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

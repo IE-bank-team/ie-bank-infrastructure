@@ -30,7 +30,7 @@ This module deploys an Azure SQL Server Database.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`serverName`](#parameter-servername) | string | The name of the parent SQL Server. Required if the template is used in a standaluno deployment. |
+| [`serverName`](#parameter-servername) | string | The name of the parent SQL Server. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -65,7 +65,7 @@ This module deploys an Azure SQL Server Database.
 | [`sourceDatabaseDeletionDate`](#parameter-sourcedatabasedeletiondate) | string | The time that the database was deleted when restoring a deleted database. |
 | [`sourceDatabaseResourceId`](#parameter-sourcedatabaseresourceid) | string | Resource ID of database if createMode set to Copy, Secondary, PointInTimeRestore, Recovery or Restore. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
-| [`zunoRedundant`](#parameter-zunoredundant) | bool | Whether or not this database is zuno redundant. |
+| [`zoneRedundant`](#parameter-zoneredundant) | bool | Whether or not this database is zone redundant. |
 
 ### Parameter: `name`
 
@@ -76,7 +76,7 @@ The name of the database.
 
 ### Parameter: `serverName`
 
-The name of the parent SQL Server. Required if the template is used in a standaluno deployment.
+The name of the parent SQL Server. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -349,7 +349,7 @@ The storage account type to be used to store backups for this database.
     ''
     'Geo'
     'Local'
-    'Zuno'
+    'Zone'
   ]
   ```
 
@@ -432,9 +432,9 @@ Tags of the resource.
 - Required: No
 - Type: object
 
-### Parameter: `zunoRedundant`
+### Parameter: `zoneRedundant`
 
-Whether or not this database is zuno redundant.
+Whether or not this database is zone redundant.
 
 - Required: No
 - Type: bool
@@ -452,4 +452,4 @@ Whether or not this database is zuno redundant.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

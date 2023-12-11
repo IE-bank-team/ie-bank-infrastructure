@@ -29,7 +29,7 @@ This module deploys a Virtual Network Subnet.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`virtualNetworkName`](#parameter-virtualnetworkname) | string | The name of the parent virtual network. Required if the template is used in a standaluno deployment. |
+| [`virtualNetworkName`](#parameter-virtualnetworkname) | string | The name of the parent virtual network. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -59,7 +59,7 @@ The address prefix for the subnet.
 
 ### Parameter: `virtualNetworkName`
 
-The name of the parent virtual network. Required if the template is used in a standaluno deployment.
+The name of the parent virtual network. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -285,7 +285,7 @@ The service endpoints to enable on the subnet.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the database.')
 param name string
 
-@description('Conditional. The name of the parent MySQL flexible server. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent MySQL flexible server. Required if the template is used in a standalone deployment.')
 param flexibleServerName string
 
 @description('Optional. The collation of the database.')

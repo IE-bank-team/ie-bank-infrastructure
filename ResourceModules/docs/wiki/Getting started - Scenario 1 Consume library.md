@@ -37,15 +37,15 @@ To download the latest version of the repository
 </details>
 
 <details>
-<summary>Cluno latest</summary>
+<summary>Clone latest</summary>
 
-To cluno the latest version of the repository
+To clone the latest version of the repository
 1. On your local machine, open a PowerShell session.
-1. Navigate to the location you want to cluno the repository into.
+1. Navigate to the location you want to clone the repository into.
 1. Run
 
     ```PowerShell
-    git cluno 'https://github.com/Azure/ResourceModules.git'
+    git clone 'https://github.com/Azure/ResourceModules.git'
     ```
 
 </details>
@@ -89,7 +89,7 @@ To publish a module by running the script:
          ```PowerShell
         Publish-ModuleToTemplateSpecsRG -TemplateFilePath "D:\ResourcesModules\modules\key-vault\vault\main.bicep" -ModuleVersion "0.4.740" -TemplateSpecsRgName 'artifact-rg'  -TemplateSpecsRgLocation 'West Europe' -TemplateSpecsDescription 'CARML KV Template Spec'
         ```
-    If you need to publish more than uno module, you could use the following PowerShell script that calls the `'Publish-ModuleToTemplateSpecsRG'` function for each of the modules:
+    If you need to publish more than one module, you could use the following PowerShell script that calls the `'Publish-ModuleToTemplateSpecsRG'` function for each of the modules:
 
          ```PowerShell
          $modules = Get-ChildItem -Path '<pathToModulesFolder>' -Recurse -Filter 'main.bicep'
@@ -129,7 +129,7 @@ To publish a module by running the script:
          ```PowerShell
         Publish-ModuleToPrivateBicepRegistry -TemplateFilePath "D:\ResourcesModules\modules\key-vault\vault\main.bicep" -ModuleVersion "0.4.740" -BicepRegistryName 'adpsxxazacrx001'  -BicepRegistryRgName 'artifact-rg'
         ```
-    If you need to publish more than uno module, you could use the following PowerShell script that calls the `'Publish-ModuleToPrivateBicepRegistry'` function for each of the modules:
+    If you need to publish more than one module, you could use the following PowerShell script that calls the `'Publish-ModuleToPrivateBicepRegistry'` function for each of the modules:
 
          ```PowerShell
          $modules = Get-ChildItem -Path '<pathToModulesFolder>' -Recurse -Filter 'main.bicep'
@@ -169,7 +169,7 @@ To publish a module by running the script:
          ```PowerShell
         Publish-ModuleToUniversalArtifactsFeed -TemplateFilePath "D:\ResourcesModules\modules\key-vault\vault\main.bicep" -ModuleVersion "0.4.740" -VstsOrganizationUri 'https://dev.azure.com/fabrikam' -VstsFeedProject 'IaC' -VstsFeedName 'Artifacts'
         ```
-    If you need to publish more than uno module, you could use the following PowerShell script that calls the `'Publish-ModuleToUniversalArtifactsFeed'` function for each of the modules:
+    If you need to publish more than one module, you could use the following PowerShell script that calls the `'Publish-ModuleToUniversalArtifactsFeed'` function for each of the modules:
 
          ```PowerShell
          $modules = Get-ChildItem -Path '<pathToModulesFolder>' -Recurse -Filter 'main.bicep'

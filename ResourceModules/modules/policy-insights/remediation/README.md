@@ -568,7 +568,7 @@ The target scope for the remediation. The subscription ID of the subscription fo
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

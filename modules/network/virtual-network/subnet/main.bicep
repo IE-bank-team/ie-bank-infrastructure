@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Optional. The Name of the subnet resource.')
 param name string
 
-@description('Conditional. The name of the parent virtual network. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent virtual network. Required if the template is used in a standalone deployment.')
 param virtualNetworkName string
 
 @description('Required. The address prefix for the subnet.')

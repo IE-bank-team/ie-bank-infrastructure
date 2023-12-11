@@ -50,7 +50,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     name: 'csmaz001'
     primaryAgentPoolProfile: [
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 1
@@ -72,7 +72,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     // Non-required parameters
     agentPools: [
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 2
@@ -98,7 +98,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
         vnetSubnetID: '<vnetSubnetID>'
       }
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 2
@@ -196,7 +196,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
               prune: true
               syncIntervalInSeconds: 600
               timeoutInSeconds: 600
-              validation: 'nuno'
+              validation: 'none'
             }
           }
           namespace: 'flux-system-helm'
@@ -276,7 +276,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     "primaryAgentPoolProfile": {
       "value": [
         {
-          "availabilityZunos": [
+          "availabilityZones": [
             "3"
           ],
           "count": 1,
@@ -300,7 +300,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     "agentPools": {
       "value": [
         {
-          "availabilityZunos": [
+          "availabilityZones": [
             "3"
           ],
           "count": 2,
@@ -326,7 +326,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
           "vnetSubnetID": "<vnetSubnetID>"
         },
         {
-          "availabilityZunos": [
+          "availabilityZones": [
             "3"
           ],
           "count": 2,
@@ -456,7 +456,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
                 "prune": true,
                 "syncIntervalInSeconds": 600,
                 "timeoutInSeconds": 600,
-                "validation": "nuno"
+                "validation": "none"
               }
             },
             "namespace": "flux-system-helm"
@@ -631,7 +631,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     name: 'csmkube001'
     primaryAgentPoolProfile: [
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 1
@@ -652,7 +652,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     // Non-required parameters
     agentPools: [
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 2
@@ -676,7 +676,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
         vmSize: 'Standard_DS2_v2'
       }
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 2
@@ -766,7 +766,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     "primaryAgentPoolProfile": {
       "value": [
         {
-          "availabilityZunos": [
+          "availabilityZones": [
             "3"
           ],
           "count": 1,
@@ -789,7 +789,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     "agentPools": {
       "value": [
         {
-          "availabilityZunos": [
+          "availabilityZones": [
             "3"
           ],
           "count": 2,
@@ -813,7 +813,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
           "vmSize": "Standard_DS2_v2"
         },
         {
-          "availabilityZunos": [
+          "availabilityZones": [
             "3"
           ],
           "count": 2,
@@ -914,7 +914,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     name: 'csmpriv001'
     primaryAgentPoolProfile: [
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 1
@@ -936,7 +936,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     // Non-required parameters
     agentPools: [
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 2
@@ -961,7 +961,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
         vnetSubnetID: '<vnetSubnetID>'
       }
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 2
@@ -1008,7 +1008,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
       ]
     }
     networkPlugin: 'azure'
-    privateDNSZuno: '<privateDNSZuno>'
+    privateDNSZone: '<privateDNSZone>'
     serviceCidr: '10.10.200.0/24'
     skuTier: 'Standard'
     tags: {
@@ -1039,7 +1039,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     "primaryAgentPoolProfile": {
       "value": [
         {
-          "availabilityZunos": [
+          "availabilityZones": [
             "3"
           ],
           "count": 1,
@@ -1063,7 +1063,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     "agentPools": {
       "value": [
         {
-          "availabilityZunos": [
+          "availabilityZones": [
             "3"
           ],
           "count": 2,
@@ -1088,7 +1088,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
           "vnetSubnetID": "<vnetSubnetID>"
         },
         {
-          "availabilityZunos": [
+          "availabilityZones": [
             "3"
           ],
           "count": 2,
@@ -1148,8 +1148,8 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
     "networkPlugin": {
       "value": "azure"
     },
-    "privateDNSZuno": {
-      "value": "<privateDNSZuno>"
+    "privateDNSZone": {
+      "value": "<privateDNSZone>"
     },
     "serviceCidr": {
       "value": "10.10.200.0/24"
@@ -1201,7 +1201,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
 | [`aadProfileTenantId`](#parameter-aadprofiletenantid) | string | Specifies the tenant ID of the Azure Active Directory used by the AKS cluster for authentication. |
 | [`aciConnectorLinuxEnabled`](#parameter-aciconnectorlinuxenabled) | bool | Specifies whether the aciConnectorLinux add-on is enabled or not. |
 | [`adminUsername`](#parameter-adminusername) | string | Specifies the administrator username of Linux virtual machines. |
-| [`agentPools`](#parameter-agentpools) | array | Define uno or more secondary/additional agent pools. |
+| [`agentPools`](#parameter-agentpools) | array | Define one or more secondary/additional agent pools. |
 | [`authorizedIPRanges`](#parameter-authorizedipranges) | array | IP ranges are specified in CIDR format, e.g. 137.117.106.88/29. This feature is not compatible with clusters that use Public IP Per Node, or clusters that are using a Basic Load Balancer. |
 | [`autoScalerProfileBalanceSimilarNodeGroups`](#parameter-autoscalerprofilebalancesimilarnodegroups) | string | Specifies the balance of similar node groups for the auto-scaler of the AKS cluster. |
 | [`autoScalerProfileExpander`](#parameter-autoscalerprofileexpander) | string | Specifies the expand strategy for the auto-scaler of the AKS cluster. |
@@ -1230,11 +1230,11 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
 | [`diskEncryptionSetID`](#parameter-diskencryptionsetid) | string | The resource ID of the disc encryption set to apply to the cluster. For security reasons, this value should be provided. |
 | [`dnsPrefix`](#parameter-dnsprefix) | string | Specifies the DNS prefix specified when creating the managed cluster. |
 | [`dnsServiceIP`](#parameter-dnsserviceip) | string | Specifies the IP address assigned to the Kubernetes DNS service. It must be within the Kubernetes service address range specified in serviceCidr. |
-| [`dnsZunoResourceId`](#parameter-dnszunoresourceid) | string | Specifies the resource ID of connected DNS zuno. It will be ignored if `webApplicationRoutingEnabled` is set to `false`. |
+| [`dnsZoneResourceId`](#parameter-dnszoneresourceid) | string | Specifies the resource ID of connected DNS zone. It will be ignored if `webApplicationRoutingEnabled` is set to `false`. |
 | [`enableAzureDefender`](#parameter-enableazuredefender) | bool | Whether to enable Azure Defender. |
 | [`enableAzureMonitorProfileMetrics`](#parameter-enableazuremonitorprofilemetrics) | bool | Whether the metrics profile for the Azure Monitor managed service for Prometheus addon is enabled. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
-| [`enableDnsZunoContributorRoleAssignment`](#parameter-enablednszunocontributorroleassignment) | bool | Specifies whether assing the DNS zuno contributor role to the cluster service principal. It will be ignored if `webApplicationRoutingEnabled` is set to `false` or `dnsZunoResourceId` not provided. |
+| [`enableDnsZoneContributorRoleAssignment`](#parameter-enablednszonecontributorroleassignment) | bool | Specifies whether assing the DNS zone contributor role to the cluster service principal. It will be ignored if `webApplicationRoutingEnabled` is set to `false` or `dnsZoneResourceId` not provided. |
 | [`enableKeyvaultSecretsProvider`](#parameter-enablekeyvaultsecretsprovider) | bool | Specifies whether the KeyvaultSecretsProvider add-on is enabled or not. |
 | [`enableOidcIssuerProfile`](#parameter-enableoidcissuerprofile) | bool | Whether the The OIDC issuer profile of the Managed Cluster is enabled. |
 | [`enablePodSecurityPolicy`](#parameter-enablepodsecuritypolicy) | bool | Whether to enable Kubernetes pod security policy. Requires enabling the pod security policy feature flag on the subscription. |
@@ -1258,7 +1258,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
 | [`loadBalancerSku`](#parameter-loadbalancersku) | string | Specifies the sku of the load balancer used by the virtual machine scale sets used by nodepools. |
 | [`location`](#parameter-location) | string | Specifies the location of AKS cluster. It picks up Resource Group's location by default. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
-| [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. Only uno type of identity is supported: system-assigned or user-assigned, but not both. |
+| [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. Only one type of identity is supported: system-assigned or user-assigned, but not both. |
 | [`managedOutboundIPCount`](#parameter-managedoutboundipcount) | int | Outbound IP Count for the Load balancer. |
 | [`metricAnnotationsAllowList`](#parameter-metricannotationsallowlist) | string | A comma-separated list of Kubernetes annotation keys. |
 | [`metricLabelsAllowlist`](#parameter-metriclabelsallowlist) | string | A comma-separated list of additional Kubernetes label keys. |
@@ -1276,7 +1276,7 @@ module managedCluster 'br:bicep/modules/container-service.managed-cluster:1.0.0'
 | [`podIdentityProfileEnable`](#parameter-podidentityprofileenable) | bool | Whether the pod identity addon is enabled. |
 | [`podIdentityProfileUserAssignedIdentities`](#parameter-podidentityprofileuserassignedidentities) | array | The pod identities to use in the cluster. |
 | [`podIdentityProfileUserAssignedIdentityExceptions`](#parameter-podidentityprofileuserassignedidentityexceptions) | array | The pod identity exceptions to allow. |
-| [`privateDNSZuno`](#parameter-privatednszuno) | string | Private DNS Zuno configuration. Set to 'system' and AKS will create a private DNS zuno in the node resource group. Set to '' to disable private DNS Zuno creation and use public DNS. Supply the resource ID here of an existing Private DNS zuno to use an existing zuno. |
+| [`privateDNSZone`](#parameter-privatednszone) | string | Private DNS Zone configuration. Set to 'system' and AKS will create a private DNS zone in the node resource group. Set to '' to disable private DNS Zone creation and use public DNS. Supply the resource ID here of an existing Private DNS zone to use an existing zone. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
 | [`serviceCidr`](#parameter-servicecidr) | string | A CIDR notation IP range from which to assign service cluster IPs. It must not overlap with any Subnet IP ranges. |
 | [`skuTier`](#parameter-skutier) | string | Tier of a managed cluster SKU. - Free or Standard. |
@@ -1389,7 +1389,7 @@ Specifies the administrator username of Linux virtual machines.
 
 ### Parameter: `agentPools`
 
-Define uno or more secondary/additional agent pools.
+Define one or more secondary/additional agent pools.
 
 - Required: No
 - Type: array
@@ -1581,7 +1581,7 @@ Auto-upgrade channel on the AKS cluster.
   [
     ''
     'node-image'
-    'nuno'
+    'none'
     'patch'
     'rapid'
     'stable'
@@ -1791,9 +1791,9 @@ Specifies the IP address assigned to the Kubernetes DNS service. It must be with
 - Type: string
 - Default: `''`
 
-### Parameter: `dnsZunoResourceId`
+### Parameter: `dnsZoneResourceId`
 
-Specifies the resource ID of connected DNS zuno. It will be ignored if `webApplicationRoutingEnabled` is set to `false`.
+Specifies the resource ID of connected DNS zone. It will be ignored if `webApplicationRoutingEnabled` is set to `false`.
 
 - Required: No
 - Type: string
@@ -1823,9 +1823,9 @@ Enable telemetry via a Globally Unique Identifier (GUID).
 - Type: bool
 - Default: `True`
 
-### Parameter: `enableDnsZunoContributorRoleAssignment`
+### Parameter: `enableDnsZoneContributorRoleAssignment`
 
-Specifies whether assing the DNS zuno contributor role to the cluster service principal. It will be ignored if `webApplicationRoutingEnabled` is set to `false` or `dnsZunoResourceId` not provided.
+Specifies whether assing the DNS zone contributor role to the cluster service principal. It will be ignored if `webApplicationRoutingEnabled` is set to `false` or `dnsZoneResourceId` not provided.
 
 - Required: No
 - Type: bool
@@ -2045,7 +2045,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -2059,7 +2059,7 @@ Specify the name of lock.
 
 ### Parameter: `managedIdentities`
 
-The managed identity definition for this resource. Only uno type of identity is supported: system-assigned or user-assigned, but not both.
+The managed identity definition for this resource. Only one type of identity is supported: system-assigned or user-assigned, but not both.
 
 - Required: No
 - Type: object
@@ -2259,9 +2259,9 @@ The pod identity exceptions to allow.
 - Type: array
 - Default: `[]`
 
-### Parameter: `privateDNSZuno`
+### Parameter: `privateDNSZone`
 
-Private DNS Zuno configuration. Set to 'system' and AKS will create a private DNS zuno in the node resource group. Set to '' to disable private DNS Zuno creation and use public DNS. Supply the resource ID here of an existing Private DNS zuno to use an existing zuno.
+Private DNS Zone configuration. Set to 'system' and AKS will create a private DNS zone in the node resource group. Set to '' to disable private DNS Zone creation and use public DNS. Supply the resource ID here of an existing Private DNS zone to use an existing zone.
 
 - Required: No
 - Type: string

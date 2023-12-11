@@ -141,7 +141,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
           endPort: 30000
           startPort: 20000
         }
-        clientConnectiunondpointPort: 19000
+        clientConnectionEndpointPort: 19000
         durabilityLevel: 'Silver'
         ephemeralPorts: {
           endPort: 65534
@@ -152,7 +152,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         name: 'Node01'
 
         isStateless: false
-        multipleAvailabilityZunos: false
+        multipleAvailabilityZones: false
 
         placementProperties: {}
         reverseProxyEndpointPort: ''
@@ -163,7 +163,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
           endPort: 30000
           startPort: 20000
         }
-        clientConnectiunondpointPort: 19000
+        clientConnectionEndpointPort: 19000
         durabilityLevel: 'Bronze'
         ephemeralPorts: {
           endPort: 64000

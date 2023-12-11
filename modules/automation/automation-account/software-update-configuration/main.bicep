@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the Deployment schedule.')
 param name string
 
-@description('Conditional. The name of the parent Automation Account. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Automation Account. Required if the template is used in a standalone deployment.')
 param automationAccountName string
 
 @description('Required. The operating system to be configured by the deployment schedule.')
@@ -26,7 +26,7 @@ param rebootSetting string
 
 @description('Required. The frequency of the deployment schedule. When using \'Hour\', \'Day\', \'Week\' or \'Month\', an interval needs to be provided.')
 @allowed([
-  'unoTime'
+  'OneTime'
   'Hour'
   'Day'
   'Week'
@@ -97,8 +97,8 @@ param interval int = 1
 @description('Optional. Enables the deployment schedule.')
 param isEnabled bool = true
 
-@description('Optional. Time zuno for the deployment schedule. IANA ID or a Windows Time Zuno ID.')
-param timeZuno string = 'UTC'
+@description('Optional. Time zone for the deployment schedule. IANA ID or a Windows Time Zone ID.')
+param timeZone string = 'UTC'
 
 @description('Optional. Array of functions from a Log Analytics workspace, used to scope the deployment schedule.')
 param nonAzureQueries array = []
@@ -178,7 +178,7 @@ param nextRunOffsetMinutes int = 0
 @description('Optional. The schedules description.')
 param scheduleDescription string = ''
 
-@description('Generated. Do not touch. Is used to provide the base time for time comparison for startTime. If startTime is specified in HH:MM format, baseTime is used to check if the provided startTime has passed, adding uno day before setting the deployment schedule.')
+@description('Generated. Do not touch. Is used to provide the base time for time comparison for startTime. If startTime is specified in HH:MM format, baseTime is used to check if the provided startTime has passed, adding one day before setting the deployment schedule.')
 param baseTime string = utcNow('u')
 
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')
@@ -251,7 +251,7 @@ resource softwareUpdateConfiguration 'Microsoft.Automation/automationAccounts/so
       interval: interval
       frequency: frequency
       isEnabled: isEnabled
-      timeZuno: timeZuno
+      timeZone: timeZone
       advancedSchedule: {
         weekDays: (empty(weekDays) ? null : weekDays)
         monthDays: (empty(monthDays) ? null : monthDays)

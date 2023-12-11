@@ -19,7 +19,7 @@ This module deploys a Web or Function App.
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
 | `Microsoft.Insights/diagnosticSettings` | [2021-05-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2021-05-01-preview/diagnosticSettings) |
 | `Microsoft.Network/privateEndpoints` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints) |
-| `Microsoft.Network/privateEndpoints/privateDnsZunoGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZunoGroups) |
+| `Microsoft.Network/privateEndpoints/privateDnsZoneGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZoneGroups) |
 | `Microsoft.Web/sites` | [2022-09-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Web/2022-09-01/sites) |
 | `Microsoft.Web/sites/basicPublishingCredentialsPolicies` | [2022-09-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Web/sites) |
 | `Microsoft.Web/sites/config` | [2022-09-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Web/sites) |
@@ -170,8 +170,8 @@ module site 'br:bicep/modules/web.site:1.0.0' = {
     }
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         subnetResourceId: '<subnetResourceId>'
         tags: {
@@ -365,8 +365,8 @@ module site 'br:bicep/modules/web.site:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "subnetResourceId": "<subnetResourceId>",
           "tags": {
@@ -535,8 +535,8 @@ module site 'br:bicep/modules/web.site:1.0.0' = {
     }
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         subnetResourceId: '<subnetResourceId>'
         tags: {
@@ -604,8 +604,8 @@ module site 'br:bicep/modules/web.site:1.0.0' = {
         name: 'slot1'
         privateEndpoints: [
           {
-            privateDnsZunoResourceIds: [
-              '<privateDNSZunoResourceId>'
+            privateDnsZoneResourceIds: [
+              '<privateDNSZoneResourceId>'
             ]
             subnetResourceId: '<subnetResourceId>'
             tags: {
@@ -733,8 +733,8 @@ module site 'br:bicep/modules/web.site:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "subnetResourceId": "<subnetResourceId>",
           "tags": {
@@ -812,8 +812,8 @@ module site 'br:bicep/modules/web.site:1.0.0' = {
           "name": "slot1",
           "privateEndpoints": [
             {
-              "privateDnsZunoResourceIds": [
-                "<privateDNSZunoResourceId>"
+              "privateDnsZoneResourceIds": [
+                "<privateDNSZoneResourceId>"
               ],
               "subnetResourceId": "<subnetResourceId>",
               "tags": {
@@ -946,7 +946,7 @@ module site 'br:bicep/modules/web.site:1.0.0' = {
 | [`clientCertEnabled`](#parameter-clientcertenabled) | bool | To enable client certificate authentication (TLS mutual authentication). |
 | [`clientCertExclusionPaths`](#parameter-clientcertexclusionpaths) | string | Client certificate authentication comma-separated exclusion paths. |
 | [`clientCertMode`](#parameter-clientcertmode) | string | This composes with ClientCertEnabled setting.</p>- ClientCertEnabled: false means ClientCert is ignored.</p>- ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required.</p>- ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted. |
-| [`cloningInfo`](#parameter-cloninginfo) | object | If specified during app creation, the app is clunod from a source app. |
+| [`cloningInfo`](#parameter-cloninginfo) | object | If specified during app creation, the app is cloned from a source app. |
 | [`containerSize`](#parameter-containersize) | int | Size of the function container. |
 | [`customDomainVerificationId`](#parameter-customdomainverificationid) | string | Unique identifier that verifies the custom domains assigned to the app. Customer will add this ID to a txt record for verification. |
 | [`dailyMemoryTimeQuota`](#parameter-dailymemorytimequota) | int | Maximum allowed daily memory-time quota (applicable on dynamic apps only). |
@@ -1090,7 +1090,7 @@ This composes with ClientCertEnabled setting.</p>- ClientCertEnabled: false mean
 
 ### Parameter: `cloningInfo`
 
-If specified during app creation, the app is clunod from a source app.
+If specified during app creation, the app is cloned from a source app.
 
 - Required: No
 - Type: object
@@ -1299,7 +1299,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1365,8 +1365,8 @@ Configuration details for private endpoints. For security reasons, it is recomme
 | [`lock`](#parameter-privateendpointslock) | object | Specify the type of lock. |
 | [`manualPrivateLinkServiceConnections`](#parameter-privateendpointsmanualprivatelinkserviceconnections) | array | Manual PrivateLink Service Connections. |
 | [`name`](#parameter-privateendpointsname) | string | The name of the private endpoint. |
-| [`privateDnsZunoGroupName`](#parameter-privateendpointsprivatednszunogroupname) | string | The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided. |
-| [`privateDnsZunoResourceIds`](#parameter-privateendpointsprivatednszunoresourceids) | array | The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos. |
+| [`privateDnsZoneGroupName`](#parameter-privateendpointsprivatednszonegroupname) | string | The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided. |
+| [`privateDnsZoneResourceIds`](#parameter-privateendpointsprivatednszoneresourceids) | array | The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones. |
 | [`roleAssignments`](#parameter-privateendpointsroleassignments) | array | Array of role assignments to create. |
 | [`service`](#parameter-privateendpointsservice) | string | The service (sub-) type to deploy the private endpoint for. For example "vault" or "blob". |
 | [`tags`](#parameter-privateendpointstags) | object | Tags to be applied on all resources/resource groups in this deployment. |
@@ -1444,7 +1444,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1470,16 +1470,16 @@ The name of the private endpoint.
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZunoGroupName`
+### Parameter: `privateEndpoints.privateDnsZoneGroupName`
 
-The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.
+The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.
 
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZunoResourceIds`
+### Parameter: `privateEndpoints.privateDnsZoneResourceIds`
 
-The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.
+The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.
 
 - Required: No
 - Type: array
@@ -1609,7 +1609,7 @@ Site redundancy mode.
 
 - Required: No
 - Type: string
-- Default: `'Nuno'`
+- Default: `'None'`
 - Allowed:
   ```Bicep
   [
@@ -1617,7 +1617,7 @@ Site redundancy mode.
     'Failover'
     'GeoRedundant'
     'Manual'
-    'Nuno'
+    'None'
   ]
   ```
 

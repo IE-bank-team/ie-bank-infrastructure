@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. The name of the VPN connection.')
 param name string
 
-@description('Conditional. The name of the parent VPN gateway this VPN connection is associated with. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent VPN gateway this VPN connection is associated with. Required if the template is used in a standalone deployment.')
 param vpnGatewayName string
 
 @description('Optional. The IPSec policies to be considered by this connection.')

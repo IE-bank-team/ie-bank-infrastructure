@@ -71,7 +71,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       expirationDateTime: '9999-12-31 23:59:59'
       recurEvery: 'Day'
       startDateTime: '2022-12-31 13:00'
-      timeZuno: 'W. Europe Standard Time'
+      timeZone: 'W. Europe Standard Time'
     }
     namespace: '${serviceShort}ns'
     visibility: 'Custom'

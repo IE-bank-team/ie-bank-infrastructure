@@ -3,7 +3,7 @@ metadata description = 'This module deploys a Storage Account Blob Container.'
 metadata owner = 'Azure/module-maintainers'
 
 @maxLength(24)
-@description('Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment.')
 param storageAccountName string
 
 @description('Required. The name of the storage container to deploy.')
@@ -36,10 +36,10 @@ param metadata object = {}
 @allowed([
   'Container'
   'Blob'
-  'Nuno'
+  'None'
 ])
 @description('Optional. Specifies whether data in the container may be accessed publicly and the level of access.')
-param publicAccess string = 'Nuno'
+param publicAccess string = 'None'
 
 @description('Optional. Array of role assignments to create.')
 param roleAssignments roleAssignmentType

@@ -4,7 +4,7 @@ metadata description = '''This module deploys a DevTest Lab Schedule.
 Lab schedules are used to modify the settings for auto-shutdown, auto-start for lab virtual machines.'''
 metadata owner = 'Azure/module-maintainers'
 
-@sys.description('Conditional. The name of the parent lab. Required if the template is used in a standaluno deployment.')
+@sys.description('Conditional. The name of the parent lab. Required if the template is used in a standalone deployment.')
 param labName string
 
 @allowed([
@@ -43,8 +43,8 @@ param status string = 'Enabled'
 @sys.description('Optional. The resource ID to which the schedule belongs.')
 param targetResourceId string = ''
 
-@sys.description('Optional. The time zuno ID (e.g. Pacific Standard time).')
-param timeZunoId string = 'Pacific Standard time'
+@sys.description('Optional. The time zone ID (e.g. Pacific Standard time).')
+param timeZoneId string = 'Pacific Standard time'
 
 @allowed([
   'Enabled'
@@ -86,7 +86,7 @@ resource schedule 'Microsoft.DevTestLab/labs/schedules@2018-09-15' = {
     weeklyRecurrence: !empty(weeklyRecurrence) ? weeklyRecurrence : null
     status: status
     targetResourceId: !empty(targetResourceId) ? targetResourceId : null
-    timeZunoId: timeZunoId
+    timeZoneId: timeZoneId
     notificationSettings: notificationSettingsStatus == 'Enabled' ? {
       status: notificationSettingsStatus
       timeInMinutes: notificationSettingsTimeInMinutes

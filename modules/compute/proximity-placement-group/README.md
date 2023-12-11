@@ -134,7 +134,7 @@ module proximityPlacementGroup 'br:bicep/modules/compute.proximity-placement-gro
       TagB: 'Tags for sale'
     }
     type: 'Standard'
-    zunos: [
+    zones: [
       '1'
     ]
   }
@@ -212,7 +212,7 @@ module proximityPlacementGroup 'br:bicep/modules/compute.proximity-placement-gro
     "type": {
       "value": "Standard"
     },
-    "zunos": {
+    "zones": {
       "value": [
         "1"
       ]
@@ -263,7 +263,7 @@ module proximityPlacementGroup 'br:bicep/modules/compute.proximity-placement-gro
       TagB: 'Tags for sale'
     }
     type: 'Standard'
-    zunos: [
+    zones: [
       '1'
     ]
   }
@@ -322,7 +322,7 @@ module proximityPlacementGroup 'br:bicep/modules/compute.proximity-placement-gro
     "type": {
       "value": "Standard"
     },
-    "zunos": {
+    "zones": {
       "value": [
         "1"
       ]
@@ -355,7 +355,7 @@ module proximityPlacementGroup 'br:bicep/modules/compute.proximity-placement-gro
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
 | [`tags`](#parameter-tags) | object | Tags of the proximity placement group resource. |
 | [`type`](#parameter-type) | string | Specifies the type of the proximity placement group. |
-| [`zunos`](#parameter-zunos) | array | Specifies the Availability Zuno where virtual machine, virtual machine scale set or availability set associated with the proximity placement group can be created. |
+| [`zones`](#parameter-zones) | array | Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the proximity placement group can be created. |
 
 ### Parameter: `name`
 
@@ -420,7 +420,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -543,9 +543,9 @@ Specifies the type of the proximity placement group.
   ]
   ```
 
-### Parameter: `zunos`
+### Parameter: `zones`
 
-Specifies the Availability Zuno where virtual machine, virtual machine scale set or availability set associated with the proximity placement group can be created.
+Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the proximity placement group can be created.
 
 - Required: No
 - Type: array
@@ -563,4 +563,4 @@ Specifies the Availability Zuno where virtual machine, virtual machine scale set
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

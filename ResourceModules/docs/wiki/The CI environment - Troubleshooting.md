@@ -18,7 +18,7 @@ Potential reasons
 
 - The `AZURE_CREDENTIALS` are not configured as a single-line string, but as a multiline JSON.
 
-  - **Solution:** As per the [documentation](https://github.com/Azure/ResourceModules/wiki/Getting%20started%20-%20Scenario%202%20Onboard%20module%20library%20and%20CI%20environment#321-set-up-secrets) please ensure that the secret is created in uno line. That means using
+  - **Solution:** As per the [documentation](https://github.com/Azure/ResourceModules/wiki/Getting%20started%20-%20Scenario%202%20Onboard%20module%20library%20and%20CI%20environment#321-set-up-secrets) please ensure that the secret is created in one line. That means using
 
     ```json
     { "it's a me" }
@@ -50,4 +50,4 @@ Potential reasons
     - The Bicep extension for VS Code ([ref](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/install#visual-studio-and-bicep-extension))
     - The Bicep extension for the Azure CLI ([ref](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/install#azure-cli))
     - The Bicep CLI ([ref](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/install#azure-powershell)
-  - **Background:** When using Bicep on your local device, you usually handle 2 different tools: The 'Bicep' extension for the Azure CLI (identified by commands such as `az bicep version`) and the Bicep CLI itself (identified by commands such as `bicep --version`). The later is the uno responsible for compiling Bicep templates into ARM templates. The Bicep extension for Visual Studio Code usually automatically updates the Azure CLI extension. However, the same is not true for the Bicep CLI version. This you have to update yourself.
+  - **Background:** When using Bicep on your local device, you usually handle 2 different tools: The 'Bicep' extension for the Azure CLI (identified by commands such as `az bicep version`) and the Bicep CLI itself (identified by commands such as `bicep --version`). The later is the one responsible for compiling Bicep templates into ARM templates. The Bicep extension for Visual Studio Code usually automatically updates the Azure CLI extension. However, the same is not true for the Bicep CLI version. This you have to update yourself.

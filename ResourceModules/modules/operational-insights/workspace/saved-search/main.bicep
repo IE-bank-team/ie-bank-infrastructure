@@ -2,7 +2,7 @@ metadata name = 'Log Analytics Workspace Saved Searches'
 metadata description = 'This module deploys a Log Analytics Workspace Saved Search.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Log Analytics workspace. Required if the template is used in a standalone deployment.')
 param logAnalyticsWorkspaceName string
 
 @description('Required. Name of the saved search.')

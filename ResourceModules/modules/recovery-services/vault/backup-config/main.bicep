@@ -2,7 +2,7 @@ metadata name = 'Recovery Services Vault Backup Config'
 metadata description = 'This module deploys a Recovery Services Vault Backup Config.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment.')
 param recoveryVaultName string
 
 @description('Optional. Name of the Azure Recovery Service Vault Backup Policy.')
@@ -29,8 +29,8 @@ param softDeleteFeatureState string = 'Enabled'
 @allowed([
   'GeoRedundant'
   'LocallyRedundant'
-  'ReadAccessGeoZunoRedundant'
-  'ZunoRedundant'
+  'ReadAccessGeoZoneRedundant'
+  'ZoneRedundant'
 ])
 param storageModelType string = 'GeoRedundant'
 
@@ -38,8 +38,8 @@ param storageModelType string = 'GeoRedundant'
 @allowed([
   'GeoRedundant'
   'LocallyRedundant'
-  'ReadAccessGeoZunoRedundant'
-  'ZunoRedundant'
+  'ReadAccessGeoZoneRedundant'
+  'ZoneRedundant'
 ])
 param storageType string = 'GeoRedundant'
 

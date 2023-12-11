@@ -123,7 +123,7 @@ Describe 'File/folder tests' -Tag 'Modules' {
             }
         }
 
-        It '[<moduleFolderName>] Folder should contain uno or more test files.' -TestCases $folderTestCases {
+        It '[<moduleFolderName>] Folder should contain one or more test files.' -TestCases $folderTestCases {
 
             param(
                 [string] $moduleFolderPath
@@ -269,7 +269,7 @@ Describe 'Pipeline tests' -Tag 'Pipeline' {
             # Get paths include start index
             $pipelinePathsIncludeIndex = $pipelineContent | ForEach-Object {
                 if ($_ -match '^\s*paths:\s*$') {
-                    return $pipelineContent.IndexOf($Matches[0]) + 1 # Adding uno index to shift to 'include:'
+                    return $pipelineContent.IndexOf($Matches[0]) + 1 # Adding one index to shift to 'include:'
                 }
             }
 
@@ -763,7 +763,7 @@ Describe 'Module tests' -Tag 'Module' {
             $outputs | Should -Contain 'resourceId'
         }
 
-        It "[<moduleFolderName>] Each parameters' description should start with a uno word category starting with a capital letter, followed by a dot, a space and the actual description text ending with a dot." -TestCases $deploymentFolderTestCases {
+        It "[<moduleFolderName>] Each parameters' description should start with a one word category starting with a capital letter, followed by a dot, a space and the actual description text ending with a dot." -TestCases $deploymentFolderTestCases {
 
             param(
                 [string] $moduleFolderName,
@@ -1076,7 +1076,7 @@ Describe 'API version tests' -Tag 'ApiCheck' {
         }
     }
 
-    It 'In [<moduleName>] used resource type [<ResourceType>] should use uno of the recent API version(s). Currently using [<TargetApi>].' -TestCases $TestCases {
+    It 'In [<moduleName>] used resource type [<ResourceType>] should use one of the recent API version(s). Currently using [<TargetApi>].' -TestCases $TestCases {
 
         param(
             [string] $moduleName,
@@ -1119,7 +1119,7 @@ Describe 'API version tests' -Tag 'ApiCheck' {
 
         if ($approvedApiVersions -notcontains $TargetApi) {
             # Using a warning now instead of an error, as we don't want to block PRs for this.
-            Write-Warning ("The used API version [$TargetApi] is not uno of the most recent 5 versions. Please consider upgrading to uno of the following: {0}" -f $approvedApiVersions -join ', ')
+            Write-Warning ("The used API version [$TargetApi] is not one of the most recent 5 versions. Please consider upgrading to one of the following: {0}" -f $approvedApiVersions -join ', ')
 
             # The original failed test was
             # $approvedApiVersions | Should -Contain $TargetApi
@@ -1137,7 +1137,7 @@ Describe 'API version tests' -Tag 'ApiCheck' {
 
             if ($indexOfVersion -gt ($approvedApiVersions.Count - 2)) {
                 $newerAPIVersions = $approvedApiVersions[0..($indexOfVersion - 1)]
-                Write-Warning ("The used API version [$TargetApi] for Resource Type [$ProviderNamespace/$ResourceType] will soon expire. Please consider updating it. Consider using uno of the newer API versions [{0}]" -f ($newerAPIVersions -join ', '))
+                Write-Warning ("The used API version [$TargetApi] for Resource Type [$ProviderNamespace/$ResourceType] will soon expire. Please consider updating it. Consider using one of the newer API versions [{0}]" -f ($newerAPIVersions -join ', '))
             }
         }
     }

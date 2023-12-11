@@ -50,7 +50,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -279,7 +279,7 @@
     "managedIdentities": {
       "$ref": "#/definitions/managedIdentitiesType",
       "metadata": {
-        "description": "Optional. The managed identity definition for this resource. Only uno type of identity is supported: system-assigned or user-assigned, but not both."
+        "description": "Optional. The managed identity definition for this resource. Only one type of identity is supported: system-assigned or user-assigned, but not both."
       }
     },
     "integrationAccount": {
@@ -354,7 +354,7 @@
       "type": "object",
       "defaultValue": {},
       "metadata": {
-        "description": "Optional. The definitions for uno or more actions to execute at workflow runtime."
+        "description": "Optional. The definitions for one or more actions to execute at workflow runtime."
       }
     },
     "workflowEndpointsConfiguration": {
@@ -382,21 +382,21 @@
       "type": "object",
       "defaultValue": {},
       "metadata": {
-        "description": "Optional. The definitions for uno or more parameters that pass the values to use at your logic app's runtime."
+        "description": "Optional. The definitions for one or more parameters that pass the values to use at your logic app's runtime."
       }
     },
     "workflowStaticResults": {
       "type": "object",
       "defaultValue": {},
       "metadata": {
-        "description": "Optional. The definitions for uno or more static results returned by actions as mock outputs when static results are enabled on those actions. In each action definition, the runtimeConfiguration.staticResult.name attribute references the corresponding definition inside staticResults."
+        "description": "Optional. The definitions for one or more static results returned by actions as mock outputs when static results are enabled on those actions. In each action definition, the runtimeConfiguration.staticResult.name attribute references the corresponding definition inside staticResults."
       }
     },
     "workflowTriggers": {
       "type": "object",
       "defaultValue": {},
       "metadata": {
-        "description": "Optional. The definitions for uno or more triggers that instantiate your workflow. You can define more than uno trigger, but only with the Workflow Definition Language, not visually through the Logic Apps Designer."
+        "description": "Optional. The definitions for one or more triggers that instantiate your workflow. You can define more than one trigger, but only with the Workflow Definition Language, not visually through the Logic Apps Designer."
       }
     }
   },
@@ -462,7 +462,7 @@
       }
     },
     "logicApp_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Logic/workflows/{0}', parameters('name'))]",

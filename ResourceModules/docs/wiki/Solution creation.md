@@ -33,14 +33,14 @@ There are several open-source repositories that leverage the CARML library today
 | Repository | Description |
 | - | - |
 | [AVD Accelerator](https://github.com/Azure/avdaccelerator) | AVD Accelerator deployment automation to simplify the setup of AVD (Azure Virtual Desktop) |
-| [AKS Baseline Automation](https://github.com/Azure/aks-baseline-automation) | Repository for the AKS Landing Zuno Accelerator program's Automation reference implementation |
+| [AKS Baseline Automation](https://github.com/Azure/aks-baseline-automation) | Repository for the AKS Landing Zone Accelerator program's Automation reference implementation |
 | [DevOps Self-Hosted](https://github.com/Azure/DevOps-Self-Hosted) | - Create & maintain images with a pipeline using the Azure Image Builder service <p> - Deploy & maintain Azure DevOps Self-Hosted agent pools with a pipeline using Virtual Machine Scale Set |
 
 # Orchestration overview
 
-When it comes to deploying multi-module solutions (applications/workloads/environments/landing zuno accelerators/etc.), we can differentiate two types of orchestration methods:
+When it comes to deploying multi-module solutions (applications/workloads/environments/landing zone accelerators/etc.), we can differentiate two types of orchestration methods:
 
-- **_Template-orchestration_**: These types of deployments reference individual modules from a 'main' Bicep or ARM/JSON template and use the capabilities of this template to pass parameters & orchestrate the deployments. By default, deployments are run in parallel by the Azure Resource Manager, while accounting for all dependencies defined. With this approach, the deploying pipeline only needs uno deployment job that triggers the template's deployment.
+- **_Template-orchestration_**: These types of deployments reference individual modules from a 'main' Bicep or ARM/JSON template and use the capabilities of this template to pass parameters & orchestrate the deployments. By default, deployments are run in parallel by the Azure Resource Manager, while accounting for all dependencies defined. With this approach, the deploying pipeline only needs one deployment job that triggers the template's deployment.
 
    <img src="./media/SolutionCreation/templateOrchestration.png" alt="Template orchestration" height="250">
 
@@ -52,12 +52,12 @@ When it comes to deploying multi-module solutions (applications/workloads/enviro
     _Limitations_
     - As per Azure [template limits](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits#template-limits), the compiled (i.e., ARM/JSON) resource template file size may not exceed 4 MB in size. This limitation is more likely to be encountered in a template orchestrated approach.
     - As per Azure [template limits](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits#template-limits), it is not possible to perform more than 800 deployments using a single resource template. This limitation is more likely to be encountered in a template orchestrated approach.
-    - Not all deployments can be duno using the resource template, or only using workarounds (for example, the upload of files, the deployment of AAD resources, etc.)
+    - Not all deployments can be done using the resource template, or only using workarounds (for example, the upload of files, the deployment of AAD resources, etc.)
     - The deploying principal must have permissions of all resource deployments that are part of the resource template
 
 </p>
 
-- **_Pipeline-orchestration_**: This approach uses the platform specific pipeline capabilities (for example, pipeline jobs) to trigger the deployment of individual modules, where each job deploys uno module. By defining dependencies in between jobs you can make sure your resources are deployed in order. Parallelization is achieved by using a pool of pipeline agents that run the jobs, while accounting for all dependencies defined.
+- **_Pipeline-orchestration_**: This approach uses the platform specific pipeline capabilities (for example, pipeline jobs) to trigger the deployment of individual modules, where each job deploys one module. By defining dependencies in between jobs you can make sure your resources are deployed in order. Parallelization is achieved by using a pool of pipeline agents that run the jobs, while accounting for all dependencies defined.
 
    <img src="./media/SolutionCreation/pipelineOrchestration.png" alt="Pipeline orchestration" height="400">
 
@@ -70,7 +70,7 @@ When it comes to deploying multi-module solutions (applications/workloads/enviro
 
     _Limitations_
     - Each deployment needs its own job, and in turn its own agent. As a consequence, parallel resource deployments require multiple agents.
-    - Passing information from uno deployment to another requires passing information from uno agent to another
+    - Passing information from one deployment to another requires passing information from one agent to another
     - As each agent job has to start up and check out the code first, it generally runs slower
 
 </p>
@@ -141,7 +141,7 @@ Once you start building a solution using this library, you may wonder how best t
 - Use the [VS-Code extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) for Bicep to enable DSL-native features such as auto-complete. Metadata implemented in the modules are automatically loaded through the extension.
 - Use the readme
   - If you don't know how to use an object/array parameter, you can check if the module's ReadMe file specifies any 'Parameter Usage' block for the given parameter ([example](https://github.com/Azure/ResourceModules/blob/main/modules/analysis-services/server/README.md#parameter-usage-tags)) - or - check the module's `Deployment Examples` ([example](https://github.com/Azure/ResourceModules/blob/main/modules/analysis-services/server/README.md#deployment-examples)).
-  - In general, take note of the `Deployment Examples` specified in each module's ReadMe file, as they provide you with rich & tested examples of how a given module can be deployed ([example](https://github.com/Azure/ResourceModules/blob/main/modules/analysis-services/server/README.md#deployment-examples)). An easy way to get started is to copy uno of the examples and then adjust it to your needs.
+  - In general, take note of the `Deployment Examples` specified in each module's ReadMe file, as they provide you with rich & tested examples of how a given module can be deployed ([example](https://github.com/Azure/ResourceModules/blob/main/modules/analysis-services/server/README.md#deployment-examples)). An easy way to get started is to copy one of the examples and then adjust it to your needs.
 - Note the outputs that are returned by each module.
   - If an output you need isn't available, you have 2 choices:
     1. Add the missing output to the module
@@ -403,7 +403,7 @@ The example assumes you are using a [`bicepconfig.json`](https://learn.microsoft
 
 # Pipeline-orchestration
 
-The modules provided in this repo can be orchestrated to create more complex infrastructures, and as such, reusable solutions or products. To deploy resources, the pipeline-orchestration approach leverages the modules & pipeline templates of the 'ResourceModules' repository. Each pipeline job deploys uno instance of a resource and the order of resources deployed in a multi-module solution is controlled by specifying dependencies in the pipeline itself.
+The modules provided in this repo can be orchestrated to create more complex infrastructures, and as such, reusable solutions or products. To deploy resources, the pipeline-orchestration approach leverages the modules & pipeline templates of the 'ResourceModules' repository. Each pipeline job deploys one instance of a resource and the order of resources deployed in a multi-module solution is controlled by specifying dependencies in the pipeline itself.
 
 ## GitHub Samples
 
@@ -418,7 +418,7 @@ Below, you can find an example which makes use of multiple repositories to orche
 
 It fetches the _public_ **Azure/ResourceModules** repo for consuming bicep modules and uses the parameter files present in the _private_ **Contoso/MultiRepoTest** repo for deploying infrastructure.
 
-The example executes uno job that creates a Resource group, an NSG and a VNet.
+The example executes one job that creates a Resource group, an NSG and a VNet.
 
 It does so by performing the following tasks
 1. Checkout 'Azure/ResourceModules' repo at root of the agent
@@ -523,7 +523,7 @@ Below, you can find samples which can be used to orchestrate deployments in Azur
 
 Below, you can find an example which makes use of multiple repositories to orchestrate the deployment (also known as a _multi-repository_ approach) in Azure DevOps.
 
-> **Note:** The sample is using a modified and standaluno version of `pipeline.deploy.yml` which can be found with working examples [here](https://github.com/segraef/Platform/blob/main/.azuredevops/pipelineTemplates/jobs.solution.deploy.yml) (`/.azuredevops/pipelineTemplates/jobs.solution.deploy.yml`) which is capable of consuming Modules via any publishing option you prefer. <br>
+> **Note:** The sample is using a modified and standalone version of `pipeline.deploy.yml` which can be found with working examples [here](https://github.com/segraef/Platform/blob/main/.azuredevops/pipelineTemplates/jobs.solution.deploy.yml) (`/.azuredevops/pipelineTemplates/jobs.solution.deploy.yml`) which is capable of consuming Modules via any publishing option you prefer. <br>
 > The Pipelines are stored in GitHub and use a GitHub service connection endpoint and hence get triggered externally. This is out of pure convenience and can also be stored on Azure Repos directly and be triggered in the same way. <br>
 > The full source can be found here as a reference: [Litware/Platform](https://github.com/segraef/Platform/).
 
@@ -595,7 +595,7 @@ stages:
             - route-table
 ```
 
-> 1. `Azure/ResourceModules` repo has been checked out in a nested folder called `ResourceModules` (unlike in the above mentiunod GitHub sample workflow and due to restrictions in order to support all publishing options in ADO.)
+> 1. `Azure/ResourceModules` repo has been checked out in a nested folder called `ResourceModules` (unlike in the above mentioned GitHub sample workflow and due to restrictions in order to support all publishing options in ADO.)
 > 1. `Litware/Platform` repo has been checked out in a nested folder, called `Platform`, to distinguish it from the folders of the other repo in the agent, and in order to support multiple repositories.
 
 </details>

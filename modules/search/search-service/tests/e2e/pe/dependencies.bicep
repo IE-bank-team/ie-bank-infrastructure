@@ -4,8 +4,8 @@ param location string = resourceGroup().location
 @description('Required. The name of the Virtual Network to create.')
 param virtualNetworkName string
 
-@description('Required. The name of the private DNS zuno.')
-param privateDnsZunoName string
+@description('Required. The name of the private DNS zone.')
+param privateDnsZoneName string
 
 @description('Required. The name of the Application Security Group.')
 param applicationSecurityGroupName string
@@ -49,8 +49,8 @@ resource applicationSecurityGroup 'Microsoft.Network/applicationSecurityGroups@2
   properties: {}
 }
 
-resource privateDNSZuno 'Microsoft.Network/privateDnsZunos@2020-06-01' = {
-  name: privateDnsZunoName
+resource privateDNSZone 'Microsoft.Network/privateDnsZones@2020-06-01' = {
+  name: privateDnsZoneName
   location: 'global'
 
   resource virtualNetworkLinks 'virtualNetworkLinks@2020-06-01' = {
@@ -60,7 +60,7 @@ resource privateDNSZuno 'Microsoft.Network/privateDnsZunos@2020-06-01' = {
       virtualNetwork: {
         id: virtualNetwork.id
       }
-      registratiunonabled: false
+      registrationEnabled: false
     }
   }
 }
@@ -107,8 +107,8 @@ output keyVaultLocation string = keyVault.location
 @description('The resource ID of the created Virtual Network Subnet.')
 output subnetResourceId string = virtualNetwork.properties.subnets[0].id
 
-@description('The resource ID of the created Private DNS Zuno.')
-output privateDNSZunoResourceId string = privateDNSZuno.id
+@description('The resource ID of the created Private DNS Zone.')
+output privateDNSZoneResourceId string = privateDNSZone.id
 
 @description('The resource ID of the created Application Security Group.')
 output applicationSecurityGroupResourceId string = applicationSecurityGroup.id

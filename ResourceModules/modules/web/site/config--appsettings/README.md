@@ -28,7 +28,7 @@ This module deploys a Site App Setting.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`appName`](#parameter-appname) | string | The name of the parent site resource. Required if the template is used in a standaluno deployment. |
+| [`appName`](#parameter-appname) | string | The name of the parent site resource. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -59,7 +59,7 @@ Type of site to deploy.
 
 ### Parameter: `appName`
 
-The name of the parent site resource. Required if the template is used in a standaluno deployment.
+The name of the parent site resource. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -115,7 +115,7 @@ Required if app of kind functionapp. Resource ID of the storage account to manag
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

@@ -85,7 +85,7 @@ param publicNetworkAccess string = ''
 
 @allowed([
   'AzureServices'
-  'Nuno'
+  'None'
 ])
 @description('Optional. Whether to allow trusted Azure services to access a network restricted registry.')
 param networkRuleBypassOptions string = 'AzureServices'
@@ -107,8 +107,8 @@ param privateEndpoints privateEndpointType
   'Disabled'
   'Enabled'
 ])
-@description('Optional. Whether or not zuno redundancy is enabled for this container registry.')
-param zunoRedundancy string = 'Disabled'
+@description('Optional. Whether or not zone redundancy is enabled for this container registry.')
+param zoneRedundancy string = 'Disabled'
 
 @description('Optional. All replications to create.')
 param replications array = []
@@ -237,7 +237,7 @@ resource registry 'Microsoft.ContainerRegistry/registries@2023-06-01-preview' = 
       defaultAction: networkRuleSetDefaultAction
       ipRules: networkRuleSetIpRules
     } : null
-    zunoRedundancy: acrSku == 'Premium' ? zunoRedundancy : null
+    zoneRedundancy: acrSku == 'Premium' ? zoneRedundancy : null
   }
 }
 
@@ -247,8 +247,8 @@ module registry_replications 'replication/main.bicep' = [for (replication, index
     name: replication.name
     registryName: registry.name
     location: replication.location
-    regiunondpointEnabled: contains(replication, 'regiunondpointEnabled') ? replication.regiunondpointEnabled : true
-    zunoRedundancy: contains(replication, 'zunoRedundancy') ? replication.zunoRedundancy : 'Disabled'
+    regionEndpointEnabled: contains(replication, 'regionEndpointEnabled') ? replication.regionEndpointEnabled : true
+    zoneRedundancy: contains(replication, 'zoneRedundancy') ? replication.zoneRedundancy : 'Disabled'
     tags: replication.?tags ?? tags
     enableDefaultTelemetry: enableReferencedModulesTelemetry
   }
@@ -288,7 +288,7 @@ module registry_webhooks 'webhook/main.bicep' = [for (webhook, index) in webhook
   }
 }]
 
-resource registry_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource registry_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -349,8 +349,8 @@ module registry_privateEndpoints '../../network/private-endpoint/main.bicep' = [
     enableDefaultTelemetry: privateEndpoint.?enableDefaultTelemetry ?? enableReferencedModulesTelemetry
     location: privateEndpoint.?location ?? reference(split(privateEndpoint.subnetResourceId, '/subnets/')[0], '2020-06-01', 'Full').location
     lock: privateEndpoint.?lock ?? lock
-    privateDnsZunoGroupName: privateEndpoint.?privateDnsZunoGroupName
-    privateDnsZunoResourceIds: privateEndpoint.?privateDnsZunoResourceIds
+    privateDnsZoneGroupName: privateEndpoint.?privateDnsZoneGroupName
+    privateDnsZoneResourceIds: privateEndpoint.?privateDnsZoneResourceIds
     roleAssignments: privateEndpoint.?roleAssignments
     tags: privateEndpoint.?tags ?? tags
     manualPrivateLinkServiceConnections: privateEndpoint.?manualPrivateLinkServiceConnections
@@ -396,7 +396,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {
@@ -435,11 +435,11 @@ type privateEndpointType = {
   @description('Required. Resource ID of the subnet where the endpoint needs to be created.')
   subnetResourceId: string
 
-  @description('Optional. The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.')
-  privateDnsZunoGroupName: string?
+  @description('Optional. The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.')
+  privateDnsZoneGroupName: string?
 
-  @description('Optional. The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.')
-  privateDnsZunoResourceIds: string[]?
+  @description('Optional. The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.')
+  privateDnsZoneResourceIds: string[]?
 
   @description('Optional. Custom DNS configurations.')
   customDnsConfigs: {

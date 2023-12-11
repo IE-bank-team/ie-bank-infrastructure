@@ -81,8 +81,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       {
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
         service: 'SQL'
-        privateDnsZunoResourceIds: [
-          nestedDependencies.outputs.privateDNSZunoResourceId
+        privateDnsZoneResourceIds: [
+          nestedDependencies.outputs.privateDNSZoneResourceId
         ]
         tags: {
           'hidden-title': 'This is visible in the resource name'

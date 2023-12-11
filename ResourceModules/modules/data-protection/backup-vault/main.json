@@ -40,7 +40,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -173,7 +173,7 @@
         "OperationalStore"
       ],
       "metadata": {
-        "description": "Optional. The datastore type to use. ArchiveStore does not support ZunoRedundancy."
+        "description": "Optional. The datastore type to use. ArchiveStore does not support ZoneRedundancy."
       }
     },
     "type": {
@@ -182,7 +182,7 @@
       "allowedValues": [
         "LocallyRedundant",
         "GeoRedundant",
-        "ZunoRedundant"
+        "ZoneRedundant"
       ],
       "metadata": {
         "description": "Optional. The vault redundancy level to use."
@@ -274,7 +274,7 @@
       }
     },
     "backupVault_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.DataProtection/backupVaults/{0}', parameters('name'))]",
@@ -318,7 +318,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-BV-BackupPolicy-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",

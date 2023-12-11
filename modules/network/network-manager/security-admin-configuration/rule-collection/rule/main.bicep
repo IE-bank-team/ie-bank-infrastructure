@@ -1,15 +1,15 @@
 metadata name = 'Network Manager Security Admin Configuration Rule Collection Rules'
 metadata description = '''This module deploys an Azure Virtual Network Manager (AVNM) Security Admin Configuration Rule Collection Rule.
-A security admin configuration contains a set of rule collections. Each rule collection contains uno or more security admin rules.'''
+A security admin configuration contains a set of rule collections. Each rule collection contains one or more security admin rules.'''
 metadata owner = 'Azure/module-maintainers'
 
-@sys.description('Conditional. The name of the parent network manager. Required if the template is used in a standaluno deployment.')
+@sys.description('Conditional. The name of the parent network manager. Required if the template is used in a standalone deployment.')
 param networkManagerName string
 
-@sys.description('Conditional. The name of the parent security admin configuration. Required if the template is used in a standaluno deployment.')
+@sys.description('Conditional. The name of the parent security admin configuration. Required if the template is used in a standalone deployment.')
 param securityAdminConfigurationName string
 
-@sys.description('Conditional. The name of the parent rule collection. Required if the template is used in a standaluno deployment.')
+@sys.description('Conditional. The name of the parent rule collection. Required if the template is used in a standalone deployment.')
 param ruleCollectionName string
 
 @maxLength(64)
@@ -31,7 +31,7 @@ param access string
 @sys.description('Optional. List of destination port ranges. This specifies on which ports traffic will be allowed or denied by this rule. Provide an (*) to allow traffic on any port. Port ranges are between 1-65535.')
 param destinationPortRanges array = []
 
-@sys.description('Optional. The destnations filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in uno rule filter is not permitted.')
+@sys.description('Optional. The destnations filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in one rule filter is not permitted.')
 param destinations array = []
 
 @allowed([
@@ -60,7 +60,7 @@ param protocol string
 @sys.description('Optional. List of destination port ranges. This specifies on which ports traffic will be allowed or denied by this rule. Provide an (*) to allow traffic on any port. Port ranges are between 1-65535.')
 param sourcePortRanges array = []
 
-@sys.description('Optional. The source filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in uno rule filter is not permitted.')
+@sys.description('Optional. The source filter can be an IP Address or a service tag. Each filter contains the properties AddressPrefixType (IPPrefix or ServiceTag) and AddressPrefix (using CIDR notation (e.g. 192.168.99.0/24 or 2001:1234::/64) or a service tag (e.g. AppService.WestEurope)). Combining CIDR and Service tags in one rule filter is not permitted.')
 param sources array = []
 
 @sys.description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')

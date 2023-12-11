@@ -27,7 +27,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -271,7 +271,7 @@
         "description": "Optional. Host Pool RDP properties."
       }
     },
-    "validatiunonvironment": {
+    "validationEnvironment": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
@@ -330,7 +330,7 @@
       "defaultValue": "Desktop",
       "allowedValues": [
         "Desktop",
-        "Nuno",
+        "None",
         "RailApplications"
       ],
       "metadata": {
@@ -398,11 +398,11 @@
         "description": "Optional. List of maintenance windows for scheduled agent updates."
       }
     },
-    "agentUpdateMaintenanceWindowTimeZuno": {
+    "agentUpdateMaintenanceWindowTimeZone": {
       "type": "string",
       "defaultValue": "Central Standard Time",
       "metadata": {
-        "description": "Optional. Time zuno for scheduled agent updates."
+        "description": "Optional. Time zone for scheduled agent updates."
       }
     },
     "agentUpdateUseSessionHostLocalTime": {
@@ -417,11 +417,11 @@
       "defaultValue": {
         "type": "[parameters('agentUpdateType')]",
         "maintenanceWindows": "[parameters('agentUpdateMaintenanceWindows')]",
-        "maintenanceWindowTimeZuno": "[parameters('agentUpdateMaintenanceWindowTimeZuno')]",
+        "maintenanceWindowTimeZone": "[parameters('agentUpdateMaintenanceWindowTimeZone')]",
         "useSessionHostLocalTime": "[parameters('agentUpdateUseSessionHostLocalTime')]"
       },
       "metadata": {
-        "description": "Optional. The session host configuration for updating agent, monitoring agent, and stack compunont."
+        "description": "Optional. The session host configuration for updating agent, monitoring agent, and stack component."
       }
     },
     "ring": {
@@ -522,7 +522,7 @@
         "maxSessionLimit": "[parameters('maxSessionLimit')]",
         "loadBalancerType": "[parameters('loadBalancerType')]",
         "startVMOnConnect": "[parameters('startVMOnConnect')]",
-        "validatiunonvironment": "[parameters('validatiunonvironment')]",
+        "validationEnvironment": "[parameters('validationEnvironment')]",
         "registrationInfo": {
           "expirationTime": "[variables('tokenExpirationTime')]",
           "token": null,
@@ -538,7 +538,7 @@
       }
     },
     "hostPool_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.DesktopVirtualization/hostPools/{0}', parameters('name'))]",

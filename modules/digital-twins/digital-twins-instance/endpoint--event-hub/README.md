@@ -22,7 +22,7 @@ This module deploys a Digital Twins Instance EventHub Endpoint.
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`connectionStringPrimaryKey`](#parameter-connectionstringprimarykey) | securestring | PrimaryConnectionString of the endpoint for key-based authentication. Will be obfuscated during read. Required if the `authenticationType` is "KeyBased". |
-| [`digitalTwinInstanceName`](#parameter-digitaltwininstancename) | string | The name of the parent Digital Twin Instance resource. Required if the template is used in a standaluno deployment. |
+| [`digitalTwinInstanceName`](#parameter-digitaltwininstancename) | string | The name of the parent Digital Twin Instance resource. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -48,7 +48,7 @@ PrimaryConnectionString of the endpoint for key-based authentication. Will be ob
 
 ### Parameter: `digitalTwinInstanceName`
 
-The name of the parent Digital Twin Instance resource. Required if the template is used in a standaluno deployment.
+The name of the parent Digital Twin Instance resource. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -163,4 +163,4 @@ The name of the Digital Twin Endpoint.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

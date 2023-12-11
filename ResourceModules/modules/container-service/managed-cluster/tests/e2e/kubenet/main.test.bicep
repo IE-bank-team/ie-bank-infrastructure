@@ -36,7 +36,7 @@ module nestedDependencies 'dependencies.bicep' = {
   name: '${uniqueString(deployment().name, location)}-nestedDependencies'
   params: {
     managedIdentityName: 'dep-${namePrefix}-msi-${serviceShort}'
-    dnsZunoName: 'dep-${namePrefix}-dns-${serviceShort}.com'
+    dnsZoneName: 'dep-${namePrefix}-dns-${serviceShort}.com'
   }
 }
 
@@ -66,7 +66,7 @@ module testDeployment '../../../main.bicep' = {
     name: '${namePrefix}${serviceShort}001'
     primaryAgentPoolProfile: [
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 1
@@ -86,7 +86,7 @@ module testDeployment '../../../main.bicep' = {
     ]
     agentPools: [
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 2
@@ -110,7 +110,7 @@ module testDeployment '../../../main.bicep' = {
         vmSize: 'Standard_DS2_v2'
       }
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 2

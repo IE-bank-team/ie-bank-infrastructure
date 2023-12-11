@@ -34,7 +34,7 @@ module resourceGroupResources 'dependencies.bicep' = {
   scope: resourceGroup
   name: '${uniqueString(deployment().name, location)}-paramNested'
   params: {
-    dataCollectiunondpointName: 'dep-${namePrefix}-dce-${serviceShort}'
+    dataCollectionEndpointName: 'dep-${namePrefix}-dce-${serviceShort}'
     logAnalyticsWorkspaceName: 'dep-${namePrefix}-law-${serviceShort}'
     managedIdentityName: 'dep-${namePrefix}-msi-${serviceShort}'
     location: location
@@ -51,7 +51,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
   name: '${uniqueString(deployment().name, location)}-test-${serviceShort}-${iteration}'
   params: {
     name: '${namePrefix}${serviceShort}001'
-    dataCollectiunondpointId: resourceGroupResources.outputs.dataCollectiunondpointResourceId
+    dataCollectionEndpointId: resourceGroupResources.outputs.dataCollectionEndpointResourceId
     description: 'Collecting IIS logs.'
     dataFlows: [
       {

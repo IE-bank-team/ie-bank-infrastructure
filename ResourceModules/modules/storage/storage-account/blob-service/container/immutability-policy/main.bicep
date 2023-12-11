@@ -3,10 +3,10 @@ metadata description = 'This module deploys a Storage Account Blob Container Imm
 metadata owner = 'Azure/module-maintainers'
 
 @maxLength(24)
-@description('Conditional. The name of the parent Storage Account. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Storage Account. Required if the template is used in a standalone deployment.')
 param storageAccountName string
 
-@description('Conditional. The name of the parent container to apply the policy to. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent container to apply the policy to. Required if the template is used in a standalone deployment.')
 param containerName string
 
 @description('Optional. The immutability period for the blobs in the container since the policy creation, in days.')

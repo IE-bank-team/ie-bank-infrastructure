@@ -1,6 +1,6 @@
-# Private DNS Zuno AAAA record `[Microsoft.Network/privateDnsZunos/AAAA]`
+# Private DNS Zone AAAA record `[Microsoft.Network/privateDnsZones/AAAA]`
 
-This module deploys a Private DNS Zuno AAAA record.
+This module deploys a Private DNS Zone AAAA record.
 
 ## Navigation
 
@@ -14,7 +14,7 @@ This module deploys a Private DNS Zuno AAAA record.
 | Resource Type | API Version |
 | :-- | :-- |
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
-| `Microsoft.Network/privateDnsZunos/AAAA` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZunos/AAAA) |
+| `Microsoft.Network/privateDnsZones/AAAA` | [2020-06-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2020-06-01/privateDnsZones/AAAA) |
 
 ## Parameters
 
@@ -28,7 +28,7 @@ This module deploys a Private DNS Zuno AAAA record.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`privateDnsZunoName`](#parameter-privatednszunoname) | string | The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment. |
+| [`privateDnsZoneName`](#parameter-privatednszonename) | string | The name of the parent Private DNS zone. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -47,9 +47,9 @@ The name of the AAAA record.
 - Required: Yes
 - Type: string
 
-### Parameter: `privateDnsZunoName`
+### Parameter: `privateDnsZoneName`
 
-The name of the parent Private DNS zuno. Required if the template is used in a standaluno deployment.
+The name of the parent Private DNS zone. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -186,4 +186,4 @@ The TTL (time-to-live) of the records in the record set.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

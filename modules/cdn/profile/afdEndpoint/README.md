@@ -28,7 +28,7 @@ This module deploys a CDN Profile AFD Endpoint.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`profileName`](#parameter-profilename) | string | The name of the parent CDN profile. Required if the template is used in a standaluno deployment. |
+| [`profileName`](#parameter-profilename) | string | The name of the parent CDN profile. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -50,7 +50,7 @@ The name of the AFD Endpoint.
 
 ### Parameter: `profileName`
 
-The name of the parent CDN profile. Required if the template is used in a standaluno deployment.
+The name of the parent CDN profile. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -130,4 +130,4 @@ The tags of the AFD Endpoint.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

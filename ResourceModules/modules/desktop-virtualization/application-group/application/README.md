@@ -29,7 +29,7 @@ This module deploys an Azure Virtual Desktop (AVD) Application Group Application
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`appGroupName`](#parameter-appgroupname) | string | The name of the parent Application Group to create the application(s) in. Required if the template is used in a standaluno deployment. |
+| [`appGroupName`](#parameter-appgroupname) | string | The name of the parent Application Group to create the application(s) in. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -66,7 +66,7 @@ Name of the Application to be created in the Application Group.
 
 ### Parameter: `appGroupName`
 
-The name of the parent Application Group to create the application(s) in. Required if the template is used in a standaluno deployment.
+The name of the parent Application Group to create the application(s) in. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -146,4 +146,4 @@ Specifies whether to show the RemoteApp program in the RD Web Access server.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

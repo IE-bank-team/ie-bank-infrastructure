@@ -30,8 +30,8 @@ This module deploys an Azure NetApp Files Capacity Pool Volume.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`capacityPoolName`](#parameter-capacitypoolname) | string | The name of the parent capacity pool. Required if the template is used in a standaluno deployment. |
-| [`netAppAccountName`](#parameter-netappaccountname) | string | The name of the parent NetApp account. Required if the template is used in a standaluno deployment. |
+| [`capacityPoolName`](#parameter-capacitypoolname) | string | The name of the parent capacity pool. Required if the template is used in a standalone deployment. |
+| [`netAppAccountName`](#parameter-netappaccountname) | string | The name of the parent NetApp account. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -43,7 +43,7 @@ This module deploys an Azure NetApp Files Capacity Pool Volume.
 | [`location`](#parameter-location) | string | Location of the pool volume. |
 | [`protocolTypes`](#parameter-protocoltypes) | array | Set of protocol types. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
-| [`serviceLevel`](#parameter-servicelevel) | string | The pool service level. Must match the uno of the parent capacity pool. |
+| [`serviceLevel`](#parameter-servicelevel) | string | The pool service level. Must match the one of the parent capacity pool. |
 
 ### Parameter: `name`
 
@@ -68,14 +68,14 @@ Maximum storage quota allowed for a file system in bytes.
 
 ### Parameter: `capacityPoolName`
 
-The name of the parent capacity pool. Required if the template is used in a standaluno deployment.
+The name of the parent capacity pool. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `netAppAccountName`
 
-The name of the parent NetApp account. Required if the template is used in a standaluno deployment.
+The name of the parent NetApp account. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -211,7 +211,7 @@ The principal type of the assigned principal ID.
 
 ### Parameter: `serviceLevel`
 
-The pool service level. Must match the uno of the parent capacity pool.
+The pool service level. Must match the one of the parent capacity pool.
 
 - Required: No
 - Type: string
@@ -238,4 +238,4 @@ The pool service level. Must match the uno of the parent capacity pool.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

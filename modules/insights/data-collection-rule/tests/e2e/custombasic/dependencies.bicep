@@ -2,7 +2,7 @@
 param location string = resourceGroup().location
 
 @description('Required. The name of the data collection endpoint to create.')
-param dataCollectiunondpointName string
+param dataCollectionEndpointName string
 
 @description('Required. The name of the log analytics workspace to create.')
 param logAnalyticsWorkspaceName string
@@ -39,10 +39,10 @@ resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2018-
     location: location
 }
 
-resource dataCollectiunondpoint 'Microsoft.Insights/dataCollectiunondpoints@2021-04-01' = {
+resource dataCollectionEndpoint 'Microsoft.Insights/dataCollectionEndpoints@2021-04-01' = {
     kind: 'Windows'
     location: location
-    name: dataCollectiunondpointName
+    name: dataCollectionEndpointName
     properties: {
         networkAcls: {
             publicNetworkAccess: 'Enabled'
@@ -60,4 +60,4 @@ output logAnalyticsWorkspaceName string = logAnalyticsWorkspace.name
 output managedIdentityPrincipalId string = managedIdentity.properties.principalId
 
 @description('The resource ID of the created Data Collection Endpoint.')
-output dataCollectiunondpointResourceId string = dataCollectiunondpoint.id
+output dataCollectionEndpointResourceId string = dataCollectionEndpoint.id

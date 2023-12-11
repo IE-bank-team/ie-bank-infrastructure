@@ -100,7 +100,7 @@ module testDeployment '../../../main.bicep' = {
           }
         ]
         publicNetworkAccess: 'Enabled'
-        resourceVersionPolicy: 'versiunod'
+        resourceVersionPolicy: 'versioned'
         smartProxyEnabled: false
         enableDefaultTelemetry: enableDefaultTelemetry
         managedIdentities: {

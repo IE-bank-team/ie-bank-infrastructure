@@ -5,7 +5,7 @@ metadata owner = 'Azure/module-maintainers'
 @description('Optional. The name of the Digital Twin Endpoint.')
 param name string = 'ServiceBusEndpoint'
 
-@description('Conditional. The name of the parent Digital Twin Instance resource. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Digital Twin Instance resource. Required if the template is used in a standalone deployment.')
 param digitalTwinInstanceName string
 
 @allowed([

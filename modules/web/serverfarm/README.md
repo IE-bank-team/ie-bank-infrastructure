@@ -330,7 +330,7 @@ module serverfarm 'br:bicep/modules/web.serverfarm:1.0.0' = {
 | [`targetWorkerCount`](#parameter-targetworkercount) | int | Scaling worker count. |
 | [`targetWorkerSize`](#parameter-targetworkersize) | int | The instance size of the hosting plan (small, medium, or large). |
 | [`workerTierName`](#parameter-workertiername) | string | Target worker tier assigned to the App Service plan. |
-| [`zunoRedundant`](#parameter-zunoredundant) | bool | When true, this App Service Plan will perform availability zuno balancing. |
+| [`zoneRedundant`](#parameter-zoneredundant) | bool | When true, this App Service Plan will perform availability zone balancing. |
 
 ### Parameter: `name`
 
@@ -485,7 +485,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -641,9 +641,9 @@ Target worker tier assigned to the App Service plan.
 - Type: string
 - Default: `''`
 
-### Parameter: `zunoRedundant`
+### Parameter: `zoneRedundant`
 
-When true, this App Service Plan will perform availability zuno balancing.
+When true, this App Service Plan will perform availability zone balancing.
 
 - Required: No
 - Type: bool
@@ -661,4 +661,4 @@ When true, this App Service Plan will perform availability zuno balancing.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

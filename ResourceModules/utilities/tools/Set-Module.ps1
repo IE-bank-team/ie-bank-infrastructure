@@ -13,7 +13,7 @@ This includes
 Mandatory. The path to the module folder to generate the content for.
 
 .PARAMETER Recurse
-Optional. Set this parameter if you not only want to generate the content for uno module, but also any nested module in the same path.
+Optional. Set this parameter if you not only want to generate the content for one module, but also any nested module in the same path.
 
 .PARAMETER Depth
 Optional. Recursion depth for the module search.

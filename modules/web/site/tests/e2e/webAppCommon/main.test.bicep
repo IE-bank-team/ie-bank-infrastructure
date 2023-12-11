@@ -103,9 +103,9 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         privateEndpoints: [
           {
             subnetResourceId: nestedDependencies.outputs.subnetResourceId
-            privateDnsZunoResourceIds: [
+            privateDnsZoneResourceIds: [
 
-              nestedDependencies.outputs.privateDNSZunoResourceId
+              nestedDependencies.outputs.privateDNSZoneResourceId
 
             ]
             tags: {
@@ -163,8 +163,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     privateEndpoints: [
       {
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
-        privateDnsZunoResourceIds: [
-          nestedDependencies.outputs.privateDNSZunoResourceId
+        privateDnsZoneResourceIds: [
+          nestedDependencies.outputs.privateDNSZoneResourceId
         ]
         tags: {
           'hidden-title': 'This is visible in the resource name'

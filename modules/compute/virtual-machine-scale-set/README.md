@@ -70,7 +70,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
       {
         ipConfigurations: [
           {
-            name: 'ipconfiuno'
+            name: 'ipconfig1'
             properties: {
               subnet: {
                 id: '<id>'
@@ -145,7 +145,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
         {
           "ipConfigurations": [
             {
-              "name": "ipconfiuno",
+              "name": "ipconfig1",
               "properties": {
                 "subnet": {
                   "id": "<id>"
@@ -224,7 +224,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
       {
         ipConfigurations: [
           {
-            name: 'ipconfiuno'
+            name: 'ipconfig1'
             properties: {
               subnet: {
                 id: '<id>'
@@ -325,7 +325,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
         {
           "ipConfigurations": [
             {
-              "name": "ipconfiuno",
+              "name": "ipconfig1",
               "properties": {
                 "subnet": {
                   "id": "<id>"
@@ -388,7 +388,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
     osType: 'Linux'
     skuName: 'Standard_B12ms'
     // Non-required parameters
-    availabilityZunos: [
+    availabilityZones: [
       '2'
     ]
     bootDiagnosticStorageAccountName: '<bootDiagnosticStorageAccountName>'
@@ -475,7 +475,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
       {
         ipConfigurations: [
           {
-            name: 'ipconfiuno'
+            name: 'ipconfig1'
             properties: {
               subnet: {
                 id: '<id>'
@@ -556,7 +556,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
       "value": "Standard_B12ms"
     },
     // Non-required parameters
-    "availabilityZunos": {
+    "availabilityZones": {
       "value": [
         "2"
       ]
@@ -672,7 +672,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
         {
           "ipConfigurations": [
             {
-              "name": "ipconfiuno",
+              "name": "ipconfig1",
               "properties": {
                 "subnet": {
                   "id": "<id>"
@@ -765,7 +765,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
       {
         ipConfigurations: [
           {
-            name: 'ipconfiuno'
+            name: 'ipconfig1'
             properties: {
               subnet: {
                 id: '<id>'
@@ -834,7 +834,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
         {
           "ipConfigurations": [
             {
-              "name": "ipconfiuno",
+              "name": "ipconfig1",
               "properties": {
                 "subnet": {
                   "id": "<id>"
@@ -908,7 +908,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
           Paths: 'D:\\IISlogs;D:\\DatabaseLogs'
           Processes: 'mssence.svc'
         }
-        RealtimeProtectiunonabled: true
+        RealtimeProtectionEnabled: true
         ScheduledScanSettings: {
           day: '7'
           isEnabled: 'true'
@@ -968,7 +968,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
       {
         ipConfigurations: [
           {
-            name: 'ipconfiuno'
+            name: 'ipconfig1'
             properties: {
               subnet: {
                 id: '<id>'
@@ -1078,7 +1078,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
             "Paths": "D:\\IISlogs;D:\\DatabaseLogs",
             "Processes": "mssence.svc"
           },
-          "RealtimeProtectiunonabled": true,
+          "RealtimeProtectionEnabled": true,
           "ScheduledScanSettings": {
             "day": "7",
             "isEnabled": "true",
@@ -1156,7 +1156,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
         {
           "ipConfigurations": [
             {
-              "name": "ipconfiuno",
+              "name": "ipconfig1",
               "properties": {
                 "subnet": {
                   "id": "<id>"
@@ -1228,7 +1228,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
 | [`additionalUnattendContent`](#parameter-additionalunattendcontent) | array | Specifies additional base-64 encoded XML formatted information that can be included in the Unattend.xml file, which is used by Windows Setup. - AdditionalUnattendContent object. |
 | [`adminPassword`](#parameter-adminpassword) | securestring | When specifying a Windows Virtual Machine, this value should be passed. |
 | [`automaticRepairsPolicyEnabled`](#parameter-automaticrepairspolicyenabled) | bool | Specifies whether automatic repairs should be enabled on the virtual machine scale set. |
-| [`availabilityZunos`](#parameter-availabilityzunos) | array | The virtual machine scale set zunos. NOTE: Availability zunos can only be set when you create the scale set. |
+| [`availabilityZones`](#parameter-availabilityzones) | array | The virtual machine scale set zones. NOTE: Availability zones can only be set when you create the scale set. |
 | [`bootDiagnosticStorageAccountName`](#parameter-bootdiagnosticstorageaccountname) | string | Storage account used to store boot diagnostic information. Boot diagnostics will be disabled if no value is provided. |
 | [`bootDiagnosticStorageAccountUri`](#parameter-bootdiagnosticstorageaccounturi) | string | Storage account boot diagnostic base URI. |
 | [`customData`](#parameter-customdata) | string | Custom data associated to the VM, this value will be automatically converted into base64 to account for the expected VM format. |
@@ -1236,7 +1236,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
 | [`diagnosticSettings`](#parameter-diagnosticsettings) | array | The diagnostic settings of the service. |
 | [`disableAutomaticRollback`](#parameter-disableautomaticrollback) | bool | Whether OS image rollback feature should be disabled. |
 | [`disablePasswordAuthentication`](#parameter-disablepasswordauthentication) | bool | Specifies whether password authentication should be disabled. |
-| [`doNotRunExtensionsOnOverprovisiunodVMs`](#parameter-donotrunextensionsonoverprovisiunodvms) | bool | When Overprovision is enabled, extensions are launched only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions do not run on the extra overprovisiunod VMs. |
+| [`doNotRunExtensionsOnOverprovisionedVMs`](#parameter-donotrunextensionsonoverprovisionedvms) | bool | When Overprovision is enabled, extensions are launched only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions do not run on the extra overprovisioned VMs. |
 | [`enableAutomaticOSUpgrade`](#parameter-enableautomaticosupgrade) | bool | Indicates whether OS upgrades should automatically be applied to scale set instances in a rolling fashion when a newer version of the OS image becomes available. Default value is false. If this is set to true for Windows based scale sets, enableAutomaticUpdates is automatically set to false and cannot be set to true. |
 | [`enableAutomaticUpdates`](#parameter-enableautomaticupdates) | bool | Indicates whether Automatic Updates is enabled for the Windows virtual machine. Default value is true. For virtual machine scale sets, this property can be updated and updates will take effect on OS reprovisioning. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
@@ -1256,15 +1256,15 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
 | [`location`](#parameter-location) | string | Location for all resources. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
 | [`managedIdentities`](#parameter-managedidentities) | object | The managed identity definition for this resource. |
-| [`maxBatchInstancePercent`](#parameter-maxbatchinstancepercent) | int | The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling upgrade in uno batch. As this is a maximum, unhealthy instances in previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher reliability. |
+| [`maxBatchInstancePercent`](#parameter-maxbatchinstancepercent) | int | The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling upgrade in one batch. As this is a maximum, unhealthy instances in previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher reliability. |
 | [`maxPriceForLowPriorityVm`](#parameter-maxpriceforlowpriorityvm) | string | Specifies the maximum price you are willing to pay for a low priority VM/VMSS. This price is in US Dollars. |
 | [`maxUnhealthyInstancePercent`](#parameter-maxunhealthyinstancepercent) | int | The maximum percentage of the total virtual machine instances in the scale set that can be simultaneously unhealthy, either as a result of being upgraded, or by being found in an unhealthy state by the virtual machine health checks before the rolling upgrade aborts. This constraint will be checked prior to starting any batch. |
 | [`maxUnhealthyUpgradedInstancePercent`](#parameter-maxunhealthyupgradedinstancepercent) | int | The maximum percentage of the total virtual machine instances in the scale set that can be simultaneously unhealthy, either as a result of being upgraded, or by being found in an unhealthy state by the virtual machine health checks before the rolling upgrade aborts. This constraint will be checked prior to starting any batch. |
 | [`monitoringWorkspaceId`](#parameter-monitoringworkspaceid) | string | Resource ID of the monitoring log analytics workspace. |
-| [`overprovision`](#parameter-overprovision) | bool | Specifies whether the Virtual Machine Scale Set should be overprovisiunod. |
-| [`pauseTimeBetweenBatches`](#parameter-pausetimebetweenbatches) | string | The wait time between completing the update for all virtual machines in uno batch and starting the next batch. The time duration should be specified in ISO 8601 format. |
+| [`overprovision`](#parameter-overprovision) | bool | Specifies whether the Virtual Machine Scale Set should be overprovisioned. |
+| [`pauseTimeBetweenBatches`](#parameter-pausetimebetweenbatches) | string | The wait time between completing the update for all virtual machines in one batch and starting the next batch. The time duration should be specified in ISO 8601 format. |
 | [`plan`](#parameter-plan) | object | Specifies information about the marketplace image used to create the virtual machine. This element is only used for marketplace images. Before you can use a marketplace image from an API, you must enable the image for programmatic use. |
-| [`provisionVMAgent`](#parameter-provisionvmagent) | bool | Indicates whether virtual machine agent should be provisiunod on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later. |
+| [`provisionVMAgent`](#parameter-provisionvmagent) | bool | Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later. |
 | [`proximityPlacementGroupResourceId`](#parameter-proximityplacementgroupresourceid) | string | Resource ID of a proximity placement group. |
 | [`publicKeys`](#parameter-publickeys) | array | The list of SSH public keys used to authenticate with linux based VMs. |
 | [`roleAssignments`](#parameter-roleassignments) | array | Array of role assignments to create. |
@@ -1278,14 +1278,14 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
 | [`singlePlacementGroup`](#parameter-singleplacementgroup) | bool | When true this limits the scale set to a single placement group, of max size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if singlePlacementGroup is false, it may not be modified to true. |
 | [`skuCapacity`](#parameter-skucapacity) | int | The initial instance count of scale set VMs. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
-| [`timeZuno`](#parameter-timezuno) | string | Specifies the time zuno of the virtual machine. e.g. 'Pacific Standard Time'. Possible values can be `TimeZunoInfo.id` value from time zunos returned by `TimeZunoInfo.GetSystemTimeZunos`. |
-| [`ultraSSDEnabled`](#parameter-ultrassdenabled) | bool | The flag that enables or disables a capability to have uno or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled. |
+| [`timeZone`](#parameter-timezone) | string | Specifies the time zone of the virtual machine. e.g. 'Pacific Standard Time'. Possible values can be `TimeZoneInfo.id` value from time zones returned by `TimeZoneInfo.GetSystemTimeZones`. |
+| [`ultraSSDEnabled`](#parameter-ultrassdenabled) | bool | The flag that enables or disables a capability to have one or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled. |
 | [`upgradePolicyMode`](#parameter-upgradepolicymode) | string | Specifies the mode of an upgrade to virtual machines in the scale set.' Manual - You control the application of updates to virtual machines in the scale set. You do this by using the manualUpgrade action. ; Automatic - All virtual machines in the scale set are automatically updated at the same time. - Automatic, Manual, Rolling. |
 | [`vmNamePrefix`](#parameter-vmnameprefix) | string | Specifies the computer name prefix for all of the virtual machines in the scale set. |
 | [`vmPriority`](#parameter-vmpriority) | string | Specifies the priority for the virtual machine. |
 | [`vTpmEnabled`](#parameter-vtpmenabled) | bool | Specifies whether vTPM should be enabled on the virtual machine scale set. This parameter is part of the UefiSettings.  SecurityType should be set to TrustedLaunch to enable UefiSettings. |
 | [`winRM`](#parameter-winrm) | object | Specifies the Windows Remote Management listeners. This enables remote Windows PowerShell. - WinRMConfiguration object. |
-| [`zunoBalance`](#parameter-zunobalance) | bool | Whether to force strictly even Virtual Machine distribution cross x-zunos in case there is zuno outage. |
+| [`zoneBalance`](#parameter-zonebalance) | bool | Whether to force strictly even Virtual Machine distribution cross x-zones in case there is zone outage. |
 
 **Generated parameters**
 
@@ -1374,9 +1374,9 @@ Specifies whether automatic repairs should be enabled on the virtual machine sca
 - Type: bool
 - Default: `False`
 
-### Parameter: `availabilityZunos`
+### Parameter: `availabilityZones`
 
-The virtual machine scale set zunos. NOTE: Availability zunos can only be set when you create the scale set.
+The virtual machine scale set zones. NOTE: Availability zones can only be set when you create the scale set.
 
 - Required: No
 - Type: array
@@ -1513,9 +1513,9 @@ Specifies whether password authentication should be disabled.
 - Type: bool
 - Default: `False`
 
-### Parameter: `doNotRunExtensionsOnOverprovisiunodVMs`
+### Parameter: `doNotRunExtensionsOnOverprovisionedVMs`
 
-When Overprovision is enabled, extensions are launched only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions do not run on the extra overprovisiunod VMs.
+When Overprovision is enabled, extensions are launched only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions do not run on the extra overprovisioned VMs.
 
 - Required: No
 - Type: bool
@@ -1730,7 +1730,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1772,7 +1772,7 @@ The resource ID(s) to assign to the resource.
 
 ### Parameter: `maxBatchInstancePercent`
 
-The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling upgrade in uno batch. As this is a maximum, unhealthy instances in previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher reliability.
+The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling upgrade in one batch. As this is a maximum, unhealthy instances in previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher reliability.
 
 - Required: No
 - Type: int
@@ -1812,7 +1812,7 @@ Resource ID of the monitoring log analytics workspace.
 
 ### Parameter: `overprovision`
 
-Specifies whether the Virtual Machine Scale Set should be overprovisiunod.
+Specifies whether the Virtual Machine Scale Set should be overprovisioned.
 
 - Required: No
 - Type: bool
@@ -1820,7 +1820,7 @@ Specifies whether the Virtual Machine Scale Set should be overprovisiunod.
 
 ### Parameter: `pauseTimeBetweenBatches`
 
-The wait time between completing the update for all virtual machines in uno batch and starting the next batch. The time duration should be specified in ISO 8601 format.
+The wait time between completing the update for all virtual machines in one batch and starting the next batch. The time duration should be specified in ISO 8601 format.
 
 - Required: No
 - Type: string
@@ -1836,7 +1836,7 @@ Specifies information about the marketplace image used to create the virtual mac
 
 ### Parameter: `provisionVMAgent`
 
-Indicates whether virtual machine agent should be provisiunod on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
+Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
 
 - Required: No
 - Type: bool
@@ -2033,9 +2033,9 @@ Tags of the resource.
 - Required: No
 - Type: object
 
-### Parameter: `timeZuno`
+### Parameter: `timeZone`
 
-Specifies the time zuno of the virtual machine. e.g. 'Pacific Standard Time'. Possible values can be `TimeZunoInfo.id` value from time zunos returned by `TimeZunoInfo.GetSystemTimeZunos`.
+Specifies the time zone of the virtual machine. e.g. 'Pacific Standard Time'. Possible values can be `TimeZoneInfo.id` value from time zones returned by `TimeZoneInfo.GetSystemTimeZones`.
 
 - Required: No
 - Type: string
@@ -2043,7 +2043,7 @@ Specifies the time zuno of the virtual machine. e.g. 'Pacific Standard Time'. Po
 
 ### Parameter: `ultraSSDEnabled`
 
-The flag that enables or disables a capability to have uno or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled.
+The flag that enables or disables a capability to have one or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled.
 
 - Required: No
 - Type: bool
@@ -2105,9 +2105,9 @@ Specifies the Windows Remote Management listeners. This enables remote Windows P
 - Type: object
 - Default: `{}`
 
-### Parameter: `zunoBalance`
+### Parameter: `zoneBalance`
 
-Whether to force strictly even Virtual Machine distribution cross x-zunos in case there is zuno outage.
+Whether to force strictly even Virtual Machine distribution cross x-zones in case there is zone outage.
 
 - Required: No
 - Type: bool
@@ -2134,7 +2134,7 @@ Do not provide a value! This date value is used to generate a registration token
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 
@@ -2371,7 +2371,7 @@ Comments:
             "nicSuffix": "-nic01",
             "ipConfigurations": [
                 {
-                    "name": "ipconfiuno",
+                    "name": "ipconfig1",
                     "properties": {
                         "subnet": {
                             "id": "/subscriptions/[[subscriptionId]]/resourceGroups/agents-vmss-rg/providers/Microsoft.Network/virtualNetworks/sxx-az-vnet-x-scaleset/subnets/sxx-az-subnet-scaleset-linux"
@@ -2396,7 +2396,7 @@ nicConfigurations: [
         nicSuffix: '-nic01'
         ipConfigurations: [
             {
-                name: 'ipconfiuno'
+                name: 'ipconfig1'
                 properties: {
                     subnet: {
                         id: '/subscriptions/[[subscriptionId]]/resourceGroups/agents-vmss-rg/providers/Microsoft.Network/virtualNetworks/sxx-az-vnet-x-scaleset/subnets/sxx-az-subnet-scaleset-linux'
@@ -2517,7 +2517,7 @@ Only for OSType Windows
         "Paths": "D:\\IISlogs;D:\\DatabaseLogs",
         "Processes": "mssence.svc"
       },
-      "RealtimeProtectiunonabled": true,
+      "RealtimeProtectionEnabled": true,
       "ScheduledScanSettings": {
         "isEnabled": "true",
         "scanType": "Quick",
@@ -2545,7 +2545,7 @@ extensionAntiMalwareConfig: {
             Paths: 'D:\\IISlogs;D:\\DatabaseLogs'
             Processes: 'mssence.svc'
         }
-        RealtimeProtectiunonabled: true
+        RealtimeProtectionEnabled: true
         ScheduledScanSettings: {
             isEnabled: 'true'
             scanType: 'Quick'

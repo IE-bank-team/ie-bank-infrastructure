@@ -84,7 +84,7 @@
     "keyVaultName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent key vault. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent key vault. Required if the template is used in a standalone deployment."
       }
     },
     "name": {

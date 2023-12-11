@@ -20,7 +20,7 @@ param managedByTenantId string
 @description('Required. Specify an array of objects, containing object of Azure Active Directory principalId, a Azure roleDefinitionId, and an optional principalIdDisplayName. The roleDefinition specified is granted to the principalId in the provider\'s Active Directory and the principalIdDisplayName is visible to customers.')
 param authorizations array
 
-@description('Optional. Specify the name of the Resource Group to delegate access to. If not provided, delegation will be duno on the targeted subscription.')
+@description('Optional. Specify the name of the Resource Group to delegate access to. If not provided, delegation will be done on the targeted subscription.')
 param resourceGroupName string = ''
 
 @description('Optional. Location deployment metadata.')

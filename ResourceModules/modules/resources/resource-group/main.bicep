@@ -59,7 +59,7 @@ resource resourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   properties: {}
 }
 
-module resourceGroup_lock 'modules/nested_lock.bicep' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+module resourceGroup_lock 'modules/nested_lock.bicep' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: '${uniqueString(deployment().name, location)}-RG-Lock'
   params: {
     lock: lock
@@ -99,7 +99,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

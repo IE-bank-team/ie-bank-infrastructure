@@ -46,14 +46,14 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     enableDefaultTelemetry: enableDefaultTelemetry
     name: '${namePrefix}${serviceShort}001'
     managementEndpoint: 'https://${namePrefix}${serviceShort}001.westeurope.cloudapp.azure.com:19080'
-    reliabilityLevel: 'Nuno'
+    reliabilityLevel: 'None'
     nodeTypes: [
       {
         applicationPorts: {
           endPort: 30000
           startPort: 20000
         }
-        clientConnectiunondpointPort: 19000
+        clientConnectionEndpointPort: 19000
         durabilityLevel: 'Bronze'
         ephemeralPorts: {
           endPort: 65534

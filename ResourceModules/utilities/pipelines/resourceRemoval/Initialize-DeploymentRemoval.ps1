@@ -61,7 +61,7 @@ function Initialize-DeploymentRemoval {
             'Microsoft.Authorization/locks',
             'Microsoft.Authorization/roleAssignments',
             'Microsoft.Insights/diagnosticSettings',
-            'Microsoft.Network/privateEndpoints/privateDnsZunoGroups',
+            'Microsoft.Network/privateEndpoints/privateDnsZoneGroups',
             'Microsoft.Network/privateEndpoints',
             'Microsoft.Network/azureFirewalls',
             'Microsoft.Network/virtualHubs',

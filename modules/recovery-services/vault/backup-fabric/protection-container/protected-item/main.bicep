@@ -5,10 +5,10 @@ metadata owner = 'Azure/module-maintainers'
 @description('Required. Name of the resource.')
 param name string
 
-@description('Conditional. Name of the Azure Recovery Service Vault Protection Container. Required if the template is used in a standaluno deployment.')
+@description('Conditional. Name of the Azure Recovery Service Vault Protection Container. Required if the template is used in a standalone deployment.')
 param protectionContainerName string
 
-@description('Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Azure Recovery Service Vault. Required if the template is used in a standalone deployment.')
 param recoveryVaultName string
 
 @description('Optional. Location for all resources.')

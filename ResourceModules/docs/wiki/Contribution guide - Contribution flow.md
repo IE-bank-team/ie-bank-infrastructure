@@ -24,13 +24,13 @@ How you proceed from here, depends on the scenario:
   1. The Bug board's `'Low Priority'` column
   1. The Backlog's `'To do'` column, which has its items sorted by priority from the top <p>
 
-  For the biggest impact, you can help us by following the same path. However, if nuno of the items speak to you, feel free to self-assign any other item of the `'To do'` column that you feel comfortable with. In this case you should assign the item to yourself / or reach out to discuss its content & priority.
+  For the biggest impact, you can help us by following the same path. However, if none of the items speak to you, feel free to self-assign any other item of the `'To do'` column that you feel comfortable with. In this case you should assign the item to yourself / or reach out to discuss its content & priority.
 
   > Note: For starters, we suggest to search for issues labelled with `good first issue`.
 
 - If you find a bug or have an idea that you'd also like to work on, create an issue in the corresponding GitHub section, assign it to yourself and to the project, and get started.
 
-  > Note: If you don't prefer working on an issue aluno, you can label the issue with `help wanted` to let the community know.
+  > Note: If you don't prefer working on an issue alone, you can label the issue with `help wanted` to let the community know.
 
 # Environment setup
 
@@ -69,7 +69,7 @@ Once the contribution is implemented and the changes are pushed to your forked r
 
 Finally, once your contribution is implemented and validated, open a PR for the CARML maintainers to review. Make sure you:
 
-- Provide a meaningful title in the following format: `[<Category>] <PR title>`. For `[<Category>]` use uno of the following, depending on which uno is the primary improvement your PR intends to make:
+- Provide a meaningful title in the following format: `[<Category>] <PR title>`. For `[<Category>]` use one of the following, depending on which one is the primary improvement your PR intends to make:
   - `[Modules]`: For improvements to the CARML library.
   - `[CI environment]`: For improvements to the CI environment pipelines.
   - `[Wiki]`: For improvements to the documentation.

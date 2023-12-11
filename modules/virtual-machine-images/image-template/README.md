@@ -603,7 +603,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -828,7 +828,7 @@ Do not provide a value! This date value is used to generate a unique image templ
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

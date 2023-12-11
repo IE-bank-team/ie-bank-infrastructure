@@ -118,7 +118,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         workspaceResourceId: diagnosticDependencies.outputs.logAnalyticsWorkspaceResourceId
       }
     ]
-    dnsZunoPartner: ''
+    dnsZonePartner: ''
     encryptionProtectorObj: {
       serverKeyName: '${nestedDependencies.outputs.keyVaultName}_${nestedDependencies.outputs.keyVaultKeyName}_${last(split(nestedDependencies.outputs.keyVaultEncryptionKeyUrl, '/'))}'
       serverKeyType: 'AzureKeyVault'
@@ -171,7 +171,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         nestedDependencies.outputs.managedIdentityResourceId
       ]
     }
-    timezunoId: 'UTC'
+    timezoneId: 'UTC'
     vCores: 4
     vulnerabilityAssessmentsObj: {
       emailSubscriptionAdmins: true

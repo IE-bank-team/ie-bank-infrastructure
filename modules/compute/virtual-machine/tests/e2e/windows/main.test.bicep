@@ -111,7 +111,7 @@ module testDeployment '../../../main.bicep' = {
                 }
               ]
             }
-            zunos: [
+            zones: [
               '1'
               '2'
               '3'
@@ -158,7 +158,7 @@ module testDeployment '../../../main.bicep' = {
       }
     ]
     osDisk: {
-      caching: 'Nuno'
+      caching: 'None'
       createOption: 'fromImage'
       deleteOption: 'Delete'
       diskSizeGB: '128'
@@ -169,13 +169,13 @@ module testDeployment '../../../main.bicep' = {
     osType: 'Windows'
     vmSize: 'Standard_DS2_v2'
     adminPassword: password
-    availabilityZuno: 2
+    availabilityZone: 2
     backupPolicyName: nestedDependencies.outputs.recoveryServicesVaultBackupPolicyName
     backupVaultName: nestedDependencies.outputs.recoveryServicesVaultName
     backupVaultResourceGroup: nestedDependencies.outputs.recoveryServicesVaultResourceGroupName
     dataDisks: [
       {
-        caching: 'Nuno'
+        caching: 'None'
         createOption: 'Empty'
         deleteOption: 'Delete'
         diskSizeGB: '128'
@@ -184,7 +184,7 @@ module testDeployment '../../../main.bicep' = {
         }
       }
       {
-        caching: 'Nuno'
+        caching: 'None'
         createOption: 'Empty'
         deleteOption: 'Delete'
         diskSizeGB: '128'
@@ -205,7 +205,7 @@ module testDeployment '../../../main.bicep' = {
           Paths: 'c:\\excluded-path-1;c:\\excluded-path-2'
           Processes: 'excludedproc1.exe;excludedproc2.exe'
         }
-        RealtimeProtectiunonabled: 'true'
+        RealtimeProtectionEnabled: 'true'
         ScheduledScanSettings: {
           day: '7'
           isEnabled: 'true'

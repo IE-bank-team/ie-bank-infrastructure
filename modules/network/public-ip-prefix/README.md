@@ -280,7 +280,7 @@ module publicIpPrefix 'br:bicep/modules/network.public-ip-prefix:1.0.0' = {
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`customIPPrefix`](#parameter-customipprefix) | object | The customIpPrefix that this prefix is associated with. A custom IP address prefix is a contiguous range of IP addresses owned by an external customer and provisiunod into a subscription. When a custom IP prefix is in Provisiunod, Commissioning, or Commissiunod state, a linked public IP prefix can be created. Either as a subset of the custom IP prefix range or the entire range. |
+| [`customIPPrefix`](#parameter-customipprefix) | object | The customIpPrefix that this prefix is associated with. A custom IP address prefix is a contiguous range of IP addresses owned by an external customer and provisioned into a subscription. When a custom IP prefix is in Provisioned, Commissioning, or Commissioned state, a linked public IP prefix can be created. Either as a subset of the custom IP prefix range or the entire range. |
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`location`](#parameter-location) | string | Location for all resources. |
 | [`lock`](#parameter-lock) | object | The lock settings of the service. |
@@ -303,7 +303,7 @@ Length of the Public IP Prefix.
 
 ### Parameter: `customIPPrefix`
 
-The customIpPrefix that this prefix is associated with. A custom IP address prefix is a contiguous range of IP addresses owned by an external customer and provisiunod into a subscription. When a custom IP prefix is in Provisiunod, Commissioning, or Commissiunod state, a linked public IP prefix can be created. Either as a subset of the custom IP prefix range or the entire range.
+The customIpPrefix that this prefix is associated with. A custom IP address prefix is a contiguous range of IP addresses owned by an external customer and provisioned into a subscription. When a custom IP prefix is in Provisioned, Commissioning, or Commissioned state, a linked public IP prefix can be created. Either as a subset of the custom IP prefix range or the entire range.
 
 - Required: No
 - Type: object
@@ -349,7 +349,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -469,4 +469,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

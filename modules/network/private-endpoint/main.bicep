@@ -23,11 +23,11 @@ param ipConfigurations ipConfigurationsType?
 @description('Required. Subtype(s) of the connection to be created. The allowed values depend on the type serviceResourceId refers to.')
 param groupIds array
 
-@description('Optional. The name of the private DNS zuno group to create if `privateDnsZunoResourceIds` were provided.')
-param privateDnsZunoGroupName string?
+@description('Optional. The name of the private DNS zone group to create if `privateDnsZoneResourceIds` were provided.')
+param privateDnsZoneGroupName string?
 
-@description('Optional. The private DNS zuno groups to associate the private endpoint. A DNS zuno group can support up to 5 DNS zunos.')
-param privateDnsZunoResourceIds array?
+@description('Optional. The private DNS zone groups to associate the private endpoint. A DNS zone group can support up to 5 DNS zones.')
+param privateDnsZoneResourceIds array?
 
 @description('Optional. Location for all Resources.')
 param location string = resourceGroup().location
@@ -55,12 +55,12 @@ param manualPrivateLinkServiceConnections array?
 var builtInRoleNames = {
   Contributor: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')
   'DNS Resolver Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d')
-  'DNS Zuno Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')
+  'DNS Zone Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'befefa01-2a29-4197-83a8-272ff33ce314')
   'Domain Services Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'eeaeda52-9324-47f6-8069-5d5bade478b2')
   'Domain Services Reader': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '361898ef-9ed1-48c2-849c-a832951106bb')
   'Network Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4d97b98b-1d4f-4787-a291-c67834d212e7')
   Owner: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')
-  'Private DNS Zuno Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')
+  'Private DNS Zone Contributor': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b12aa53e-6015-4669-85d0-8515ebb3ae7f')
   Reader: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')
   'Role Based Access Control Administrator (Preview)': subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'f58310d9-a9f6-439a-9e8d-f62e7b41a168')
 }
@@ -104,17 +104,17 @@ resource privateEndpoint 'Microsoft.Network/privateEndpoints@2023-04-01' = {
   }
 }
 
-module privateEndpoint_privateDnsZunoGroup 'private-dns-zuno-group/main.bicep' = if (!empty(privateDnsZunoResourceIds)) {
-  name: '${uniqueString(deployment().name)}-PrivateEndpoint-PrivateDnsZunoGroup'
+module privateEndpoint_privateDnsZoneGroup 'private-dns-zone-group/main.bicep' = if (!empty(privateDnsZoneResourceIds)) {
+  name: '${uniqueString(deployment().name)}-PrivateEndpoint-PrivateDnsZoneGroup'
   params: {
-    name: privateDnsZunoGroupName ?? 'default'
-    privateDNSResourceIds: privateDnsZunoResourceIds ?? []
+    name: privateDnsZoneGroupName ?? 'default'
+    privateDNSResourceIds: privateDnsZoneResourceIds ?? []
     privateEndpointName: privateEndpoint.name
     // enableDefaultTelemetry: enableReferencedModulesTelemetry
   }
 }
 
-resource privateEndpoint_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource privateEndpoint_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -181,7 +181,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type ipConfigurationsType = {

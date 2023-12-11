@@ -28,8 +28,8 @@ This module deploys a SQL Database Container in a CosmosDB Account.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`databaseAccountName`](#parameter-databaseaccountname) | string | The name of the parent Database Account. Required if the template is used in a standaluno deployment. |
-| [`sqlDatabaseName`](#parameter-sqldatabasename) | string | The name of the parent SQL Database. Required if the template is used in a standaluno deployment. |
+| [`databaseAccountName`](#parameter-databaseaccountname) | string | The name of the parent Database Account. Required if the template is used in a standalone deployment. |
+| [`sqlDatabaseName`](#parameter-sqldatabasename) | string | The name of the parent SQL Database. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -42,7 +42,7 @@ This module deploys a SQL Database Container in a CosmosDB Account.
 | [`enableDefaultTelemetry`](#parameter-enabledefaulttelemetry) | bool | Enable telemetry via a Globally Unique Identifier (GUID). |
 | [`indexingPolicy`](#parameter-indexingpolicy) | object | Indexing policy of the container. |
 | [`kind`](#parameter-kind) | string | Indicates the kind of algorithm used for partitioning. |
-| [`paths`](#parameter-paths) | array | List of paths using which data within the container can be partitiunod. |
+| [`paths`](#parameter-paths) | array | List of paths using which data within the container can be partitioned. |
 | [`tags`](#parameter-tags) | object | Tags of the SQL Database resource. |
 | [`throughput`](#parameter-throughput) | int | Request Units per second. Will be set to null if autoscaleSettingsMaxThroughput is used. |
 | [`uniqueKeyPolicyKeys`](#parameter-uniquekeypolicykeys) | array | The unique key policy configuration containing a list of unique keys that enforces uniqueness constraint on documents in the collection in the Azure Cosmos DB service. |
@@ -56,14 +56,14 @@ Name of the container.
 
 ### Parameter: `databaseAccountName`
 
-The name of the parent Database Account. Required if the template is used in a standaluno deployment.
+The name of the parent Database Account. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
 
 ### Parameter: `sqlDatabaseName`
 
-The name of the parent SQL Database. Required if the template is used in a standaluno deployment.
+The name of the parent SQL Database. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -134,7 +134,7 @@ Indicates the kind of algorithm used for partitioning.
 
 ### Parameter: `paths`
 
-List of paths using which data within the container can be partitiunod.
+List of paths using which data within the container can be partitioned.
 
 - Required: No
 - Type: array
@@ -174,7 +174,7 @@ The unique key policy configuration containing a list of unique keys that enforc
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

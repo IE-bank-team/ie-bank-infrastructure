@@ -45,7 +45,7 @@ param maxSessionLimit int = 99999
 param customRdpProperty string = 'audiocapturemode:i:1;audiomode:i:0;drivestoredirect:s:;redirectclipboard:i:1;redirectcomports:i:1;redirectprinters:i:1;redirectsmartcards:i:1;screen mode id:i:2;'
 
 @sys.description('Optional. Validation host pools allows you to test service changes before they are deployed to production. When set to true, the Host Pool will be deployed in a validation \'ring\' (environment) that receives all the new features (might be less stable). Defaults to false that stands for the stable, production-ready environment.')
-param validatiunonvironment bool = false
+param validationEnvironment bool = false
 
 @sys.description('Optional. The necessary information for adding more VMs to this Host Pool. The object is converted to an in-line string when handed over to the resource deployment, since that only takes strings.')
 param vmTemplate object = {}
@@ -71,7 +71,7 @@ param enableDefaultTelemetry bool = true
 @sys.description('Optional. The type of preferred application group type, default to Desktop Application Group.')
 @allowed([
   'Desktop'
-  'Nuno'
+  'None'
   'RailApplications'
 ])
 param preferredAppGroupType string = 'Desktop'
@@ -114,17 +114,17 @@ param agentUpdateMaintenanceWindows array = [
   }
 ]
 
-@sys.description('Optional. Time zuno for scheduled agent updates.')
-param agentUpdateMaintenanceWindowTimeZuno string = 'Central Standard Time'
+@sys.description('Optional. Time zone for scheduled agent updates.')
+param agentUpdateMaintenanceWindowTimeZone string = 'Central Standard Time'
 
 @sys.description('Optional. Whether to use localTime of the virtual machine for scheduled agent updates.')
 param agentUpdateUseSessionHostLocalTime bool = false
 
-@sys.description('Optional. The session host configuration for updating agent, monitoring agent, and stack compunont.')
+@sys.description('Optional. The session host configuration for updating agent, monitoring agent, and stack component.')
 param agentUpdate object = {
   type: agentUpdateType
   maintenanceWindows: agentUpdateMaintenanceWindows
-  maintenanceWindowTimeZuno: agentUpdateMaintenanceWindowTimeZuno
+  maintenanceWindowTimeZone: agentUpdateMaintenanceWindowTimeZone
   useSessionHostLocalTime: agentUpdateUseSessionHostLocalTime
 }
 
@@ -202,7 +202,7 @@ resource hostPool 'Microsoft.DesktopVirtualization/hostPools@2022-09-09' = {
     maxSessionLimit: maxSessionLimit
     loadBalancerType: loadBalancerType
     startVMOnConnect: startVMOnConnect
-    validatiunonvironment: validatiunonvironment
+    validationEnvironment: validationEnvironment
     registrationInfo: {
       expirationTime: tokenExpirationTime
       token: null
@@ -218,7 +218,7 @@ resource hostPool 'Microsoft.DesktopVirtualization/hostPools@2022-09-09' = {
   }
 }
 
-resource hostPool_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource hostPool_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -284,7 +284,7 @@ type lockType = {
   name: string?
 
   @sys.description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

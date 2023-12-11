@@ -42,7 +42,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -138,7 +138,7 @@
       "type": "string",
       "defaultValue": "P1D",
       "metadata": {
-        "description": "Optional. Interval for which the service retains the script resource after it reaches a terminal state. Resource will be deleted when this duration expires. Duration is based on ISO 8601 pattern (for example P7D means uno week)."
+        "description": "Optional. Interval for which the service retains the script resource after it reaches a terminal state. Resource will be deleted when this duration expires. Duration is based on ISO 8601 pattern (for example P7D means one week)."
       }
     },
     "runOnce": {
@@ -154,7 +154,7 @@
       "allowedValues": [
         "Always",
         "OnSuccess",
-        "unoxpiration"
+        "OnExpiration"
       ],
       "metadata": {
         "description": "Optional. The clean up preference when the script execution gets in a terminal state. Specify the preference on when to delete the deployment script resources. The default value is Always, which means the deployment script resources are deleted despite the terminal state (Succeeded, Failed, canceled)."
@@ -171,7 +171,7 @@
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optional. The resource ID of the storage account to use for this deployment script. If nuno is provided, the deployment script uses a temporary, managed storage account."
+        "description": "Optional. The resource ID of the storage account to use for this deployment script. If none is provided, the deployment script uses a temporary, managed storage account."
       }
     },
     "timeout": {
@@ -256,7 +256,7 @@
       }
     },
     "deploymentScript_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Resources/deploymentScripts/{0}', parameters('name'))]",

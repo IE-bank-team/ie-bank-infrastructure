@@ -88,12 +88,12 @@ module testDeployment '../../../main.bicep' = {
       name: 'myCustomLockName'
     }
     minimumTlsVersion: '1.2'
-    zunoRedundant: true
-    zunos: [ 1, 2 ]
+    zoneRedundant: true
+    zones: [ 1, 2 ]
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          nestedDependencies.outputs.privateDNSZunoResourceId
+        privateDnsZoneResourceIds: [
+          nestedDependencies.outputs.privateDNSZoneResourceId
         ]
         subnetResourceId: nestedDependencies.outputs.subnetResourceId
         tags: {

@@ -28,7 +28,7 @@ This module deploys a Digital Twins Instance Event Grid Endpoint.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`digitalTwinInstanceName`](#parameter-digitaltwininstancename) | string | The name of the parent Digital Twin Instance resource. Required if the template is used in a standaluno deployment. |
+| [`digitalTwinInstanceName`](#parameter-digitaltwininstancename) | string | The name of the parent Digital Twin Instance resource. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -55,7 +55,7 @@ EventGrid Topic Endpoint.
 
 ### Parameter: `digitalTwinInstanceName`
 
-The name of the parent Digital Twin Instance resource. Required if the template is used in a standaluno deployment.
+The name of the parent Digital Twin Instance resource. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -103,4 +103,4 @@ The name of the Digital Twin Endpoint.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -95,7 +95,7 @@ function ConvertTo-ARMTemplate {
             if ($PSCmdlet.ShouldProcess(('JSON File in Path [{0}]' -f (($jsonFileToRemove -replace '\\', '/') -split '/modules/')[1]), 'Remove')) {
                 $null = Remove-Item -Path $jsonFileToRemove -Force
             }
-            Write-Verbose '   Remove existing main.json and main.test.json files - Duno'
+            Write-Verbose '   Remove existing main.json and main.test.json files - Done'
         }
     }
     #endregion
@@ -117,7 +117,7 @@ function ConvertTo-ARMTemplate {
             $BicepFilesToConvert | ForEach-Object -ThrottleLimit 4 -Parallel $buildScriptBlock
         }
     }
-    Write-Verbose '   Convert bicep files to json - Duno'
+    Write-Verbose '   Convert bicep files to json - Done'
     #endregion
 
     #region Remove Bicep metadata `_generator` property from json
@@ -179,7 +179,7 @@ function ConvertTo-ARMTemplate {
                 $BicepFilesToConvert | ForEach-Object -ThrottleLimit 4 -Parallel $removeScriptBlock
             }
         }
-        Write-Verbose '   Remove Bicep metadata from json - Duno' -Verbose
+        Write-Verbose '   Remove Bicep metadata from json - Done' -Verbose
     }
     #endregion
 
@@ -196,7 +196,7 @@ function ConvertTo-ARMTemplate {
         if ($PSCmdlet.ShouldProcess("[$($BicepFilesToRemove.count)] *.bicep file(s) in path [$Path]", 'Remove-Item')) {
             $BicepFilesToRemove | Remove-Item -Force
         }
-        Write-Verbose 'Remove bicep files and folders - Duno'
+        Write-Verbose 'Remove bicep files and folders - Done'
     }
     #endregion
 
@@ -244,7 +244,7 @@ function ConvertTo-ARMTemplate {
                 }
             }
         }
-        Write-Verbose 'Update pipeline files - Duno'
+        Write-Verbose 'Update pipeline files - Done'
     }
     #endregion
 }

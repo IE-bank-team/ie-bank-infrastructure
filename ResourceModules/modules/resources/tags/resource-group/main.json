@@ -67,7 +67,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-ReadTags', deployment().name)]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",

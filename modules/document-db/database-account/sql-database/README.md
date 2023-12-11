@@ -28,7 +28,7 @@ This module deploys a SQL Database in a CosmosDB Account.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`databaseAccountName`](#parameter-databaseaccountname) | string | The name of the parent Database Account. Required if the template is used in a standaluno deployment. |
+| [`databaseAccountName`](#parameter-databaseaccountname) | string | The name of the parent Database Account. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -49,7 +49,7 @@ Name of the SQL database .
 
 ### Parameter: `databaseAccountName`
 
-The name of the parent Database Account. Required if the template is used in a standaluno deployment.
+The name of the parent Database Account. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -104,4 +104,4 @@ Request units per second. Will be set to null if autoscaleSettingsMaxThroughput 
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -97,7 +97,7 @@
       "type": "bool",
       "defaultValue": true,
       "metadata": {
-        "description": "Optional. Indicates whether this action group is enabled. If an action group is not enabled, then nuno of its receivers will receive communications."
+        "description": "Optional. Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications."
       }
     },
     "roleAssignments": {

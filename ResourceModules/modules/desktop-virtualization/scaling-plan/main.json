@@ -197,11 +197,11 @@
         "description": "Optional. Description of the scaling plan."
       }
     },
-    "timeZuno": {
+    "timeZone": {
       "type": "string",
       "defaultValue": "W. Europe Standard Time",
       "metadata": {
-        "description": "Optional. Timezuno to be used for the scaling plan."
+        "description": "Optional. Timezone to be used for the scaling plan."
       }
     },
     "hostPoolType": {
@@ -347,7 +347,7 @@
       "tags": "[parameters('tags')]",
       "properties": {
         "friendlyName": "[parameters('friendlyName')]",
-        "timeZuno": "[parameters('timeZuno')]",
+        "timeZone": "[parameters('timeZone')]",
         "hostPoolType": "[parameters('hostPoolType')]",
         "exclusionTag": "[parameters('exclusionTag')]",
         "schedules": "[parameters('schedules')]",

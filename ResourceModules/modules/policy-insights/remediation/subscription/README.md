@@ -133,4 +133,4 @@ The way resources to remediate are discovered. Defaults to ExistingNonCompliant 
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "keyVaultName": {
-        "value": "uno-keyvault-uat"
+        "value": "grp1-keyvault-uat"
       },
       "location": {
-        "value": "US East"
+        "value": "Norway East"
       }
     }
   }

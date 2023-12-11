@@ -22,7 +22,7 @@ This module deploys an Azure Container Registry (ACR).
 | `Microsoft.ContainerRegistry/registries/webhooks` | [2023-06-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.ContainerRegistry/registries/webhooks) |
 | `Microsoft.Insights/diagnosticSettings` | [2021-05-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Insights/2021-05-01-preview/diagnosticSettings) |
 | `Microsoft.Network/privateEndpoints` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints) |
-| `Microsoft.Network/privateEndpoints/privateDnsZunoGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZunoGroups) |
+| `Microsoft.Network/privateEndpoints/privateDnsZoneGroups` | [2023-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Network/2023-04-01/privateEndpoints/privateDnsZoneGroups) |
 
 ## Usage examples
 
@@ -238,8 +238,8 @@ module registry 'br:bicep/modules/container-registry.registry:1.0.0' = {
     ]
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         service: 'registry'
         subnetResourceId: '<subnetResourceId>'
@@ -377,8 +377,8 @@ module registry 'br:bicep/modules/container-registry.registry:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "service": "registry",
           "subnetResourceId": "<subnetResourceId>",
@@ -468,8 +468,8 @@ module registry 'br:bicep/modules/container-registry.registry:1.0.0' = {
     enableDefaultTelemetry: '<enableDefaultTelemetry>'
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         subnetResourceId: '<subnetResourceId>'
         tags: {
@@ -514,8 +514,8 @@ module registry 'br:bicep/modules/container-registry.registry:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "subnetResourceId": "<subnetResourceId>",
           "tags": {
@@ -603,8 +603,8 @@ module registry 'br:bicep/modules/container-registry.registry:1.0.0' = {
     ]
     privateEndpoints: [
       {
-        privateDnsZunoResourceIds: [
-          '<privateDNSZunoResourceId>'
+        privateDnsZoneResourceIds: [
+          '<privateDNSZoneResourceId>'
         ]
         service: 'registry'
         subnetResourceId: '<subnetResourceId>'
@@ -725,8 +725,8 @@ module registry 'br:bicep/modules/container-registry.registry:1.0.0' = {
     "privateEndpoints": {
       "value": [
         {
-          "privateDnsZunoResourceIds": [
-            "<privateDNSZunoResourceId>"
+          "privateDnsZoneResourceIds": [
+            "<privateDNSZoneResourceId>"
           ],
           "service": "registry",
           "subnetResourceId": "<subnetResourceId>",
@@ -821,7 +821,7 @@ module registry 'br:bicep/modules/container-registry.registry:1.0.0' = {
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`trustPolicyStatus`](#parameter-trustpolicystatus) | string | The value that indicates whether the trust policy is enabled or not. |
 | [`webhooks`](#parameter-webhooks) | array | All webhooks to create. |
-| [`zunoRedundancy`](#parameter-zunoredundancy) | string | Whether or not zuno redundancy is enabled for this container registry. |
+| [`zoneRedundancy`](#parameter-zoneredundancy) | string | Whether or not zone redundancy is enabled for this container registry. |
 
 ### Parameter: `name`
 
@@ -1088,7 +1088,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1139,7 +1139,7 @@ Whether to allow trusted Azure services to access a network restricted registry.
   ```Bicep
   [
     'AzureServices'
-    'Nuno'
+    'None'
   ]
   ```
 
@@ -1192,8 +1192,8 @@ Configuration details for private endpoints. For security reasons, it is recomme
 | [`lock`](#parameter-privateendpointslock) | object | Specify the type of lock. |
 | [`manualPrivateLinkServiceConnections`](#parameter-privateendpointsmanualprivatelinkserviceconnections) | array | Manual PrivateLink Service Connections. |
 | [`name`](#parameter-privateendpointsname) | string | The name of the private endpoint. |
-| [`privateDnsZunoGroupName`](#parameter-privateendpointsprivatednszunogroupname) | string | The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided. |
-| [`privateDnsZunoResourceIds`](#parameter-privateendpointsprivatednszunoresourceids) | array | The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos. |
+| [`privateDnsZoneGroupName`](#parameter-privateendpointsprivatednszonegroupname) | string | The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided. |
+| [`privateDnsZoneResourceIds`](#parameter-privateendpointsprivatednszoneresourceids) | array | The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones. |
 | [`roleAssignments`](#parameter-privateendpointsroleassignments) | array | Array of role assignments to create. |
 | [`service`](#parameter-privateendpointsservice) | string | The service (sub-) type to deploy the private endpoint for. For example "vault" or "blob". |
 | [`tags`](#parameter-privateendpointstags) | object | Tags to be applied on all resources/resource groups in this deployment. |
@@ -1271,7 +1271,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -1297,16 +1297,16 @@ The name of the private endpoint.
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZunoGroupName`
+### Parameter: `privateEndpoints.privateDnsZoneGroupName`
 
-The name of the private DNS zuno group to create if privateDnsZunoResourceIds were provided.
+The name of the private DNS zone group to create if privateDnsZoneResourceIds were provided.
 
 - Required: No
 - Type: string
 
-### Parameter: `privateEndpoints.privateDnsZunoResourceIds`
+### Parameter: `privateEndpoints.privateDnsZoneResourceIds`
 
-The private DNS zuno groups to associate the private endpoint with. A DNS zuno group can support up to 5 DNS zunos.
+The private DNS zone groups to associate the private endpoint with. A DNS zone group can support up to 5 DNS zones.
 
 - Required: No
 - Type: array
@@ -1618,9 +1618,9 @@ All webhooks to create.
 - Type: array
 - Default: `[]`
 
-### Parameter: `zunoRedundancy`
+### Parameter: `zoneRedundancy`
 
-Whether or not zuno redundancy is enabled for this container registry.
+Whether or not zone redundancy is enabled for this container registry.
 
 - Required: No
 - Type: string

@@ -29,7 +29,7 @@ This module deploys an API Management Service Backend.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standaluno deployment. |
+| [`apiManagementServiceName`](#parameter-apimanagementservicename) | string | The name of the parent API Management service. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -61,7 +61,7 @@ Runtime URL of the Backend.
 
 ### Parameter: `apiManagementServiceName`
 
-The name of the parent API Management service. Required if the template is used in a standaluno deployment.
+The name of the parent API Management service. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -155,7 +155,7 @@ Backend TLS Properties.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 
@@ -213,8 +213,8 @@ credentials: {
 ```json
 "tls": {
     "value":{
-        "validateCertificateChain": "Flag indicating whether SSL certificate chain validation should be duno when using self-signed certificates for this backend host. - boolean",
-        "validateCertificateName": "Flag indicating whether SSL certificate name validation should be duno when using self-signed certificates for this backend host. - boolean"
+        "validateCertificateChain": "Flag indicating whether SSL certificate chain validation should be done when using self-signed certificates for this backend host. - boolean",
+        "validateCertificateName": "Flag indicating whether SSL certificate name validation should be done when using self-signed certificates for this backend host. - boolean"
     }
 }
 ```
@@ -227,8 +227,8 @@ credentials: {
 
 ```bicep
 tls: {
-    validateCertificateChain: 'Flag indicating whether SSL certificate chain validation should be duno when using self-signed certificates for this backend host. - boolean'
-    validateCertificateName: 'Flag indicating whether SSL certificate name validation should be duno when using self-signed certificates for this backend host. - boolean'
+    validateCertificateChain: 'Flag indicating whether SSL certificate chain validation should be done when using self-signed certificates for this backend host. - boolean'
+    validateCertificateName: 'Flag indicating whether SSL certificate name validation should be done when using self-signed certificates for this backend host. - boolean'
 }
 ```
 

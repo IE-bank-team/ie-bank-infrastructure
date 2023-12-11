@@ -50,7 +50,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -390,14 +390,14 @@
     },
     "virtualNetworkType": {
       "type": "string",
-      "defaultValue": "Nuno",
+      "defaultValue": "None",
       "allowedValues": [
-        "Nuno",
+        "None",
         "External",
         "Internal"
       ],
       "metadata": {
-        "description": "Optional. The type of VPN in which API Management service needs to be configured in. Nuno (Default Value) means the API Management service is not part of any Virtual Network, External means the API Management deployment is set up inside a Virtual Network having an internet Facing Endpoint, and Internal means that API Management deployment is setup inside a Virtual Network having an Intranet Facing Endpoint only."
+        "description": "Optional. The type of VPN in which API Management service needs to be configured in. None (Default Value) means the API Management service is not part of any Virtual Network, External means the API Management deployment is set up inside a Virtual Network having an internet Facing Endpoint, and Internal means that API Management deployment is setup inside a Virtual Network having an Intranet Facing Endpoint only."
       }
     },
     "diagnosticSettings": {
@@ -406,11 +406,11 @@
         "description": "Optional. The diagnostic settings of the service."
       }
     },
-    "zunos": {
+    "zones": {
       "type": "array",
       "defaultValue": [],
       "metadata": {
-        "description": "Optional. A list of availability zunos denoting where the resource needs to come from."
+        "description": "Optional. A list of availability zones denoting where the resource needs to come from."
       }
     },
     "newGuidValue": {
@@ -540,7 +540,7 @@
         "name": "[parameters('sku')]",
         "capacity": "[parameters('skuCount')]"
       },
-      "zunos": "[parameters('zunos')]",
+      "zones": "[parameters('zones')]",
       "identity": "[variables('identity')]",
       "properties": {
         "publisherEmail": "[parameters('publisherEmail')]",
@@ -559,7 +559,7 @@
       }
     },
     "service_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.ApiManagement/service/{0}', parameters('name'))]",
@@ -626,7 +626,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Apim-Api-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -696,7 +696,7 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
               }
             },
             "apiRevision": {
@@ -730,7 +730,7 @@
               "type": "string",
               "defaultValue": "",
               "metadata": {
-                "description": "Optional. Indicates the Version identifier of the API if the API is versiunod."
+                "description": "Optional. Indicates the Version identifier of the API if the API is versioned."
               }
             },
             "apiVersionSetId": {
@@ -927,7 +927,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-Policy-{1}', deployment().name, copyIndex())]",
               "properties": {
-                "expressiunovaluationOptions": {
+                "expressionEvaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -963,13 +963,13 @@
                     "apiManagementServiceName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                        "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
                       }
                     },
                     "apiName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent API. Required if the template is used in a standaluno deployment."
+                        "description": "Conditional. The name of the parent API. Required if the template is used in a standalone deployment."
                       }
                     },
                     "name": {
@@ -1100,7 +1100,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Apim-ApiVersionSet-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1133,7 +1133,7 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
               }
             },
             "enableDefaultTelemetry": {
@@ -1218,7 +1218,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Apim-AuthorizationServer-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1229,8 +1229,8 @@
           "name": {
             "value": "[variables('authorizationServerList')[copyIndex()].name]"
           },
-          "authorizatiunondpoint": {
-            "value": "[variables('authorizationServerList')[copyIndex()].authorizatiunondpoint]"
+          "authorizationEndpoint": {
+            "value": "[variables('authorizationServerList')[copyIndex()].authorizationEndpoint]"
           },
           "authorizationMethods": "[if(contains(variables('authorizationServerList')[copyIndex()], 'authorizationMethods'), createObject('value', variables('authorizationServerList')[copyIndex()].authorizationMethods), createObject('value', createArray('GET')))]",
           "bearerTokenSendingMethods": "[if(contains(variables('authorizationServerList')[copyIndex()], 'bearerTokenSendingMethods'), createObject('value', variables('authorizationServerList')[copyIndex()].bearerTokenSendingMethods), createObject('value', createArray('authorizationHeader')))]",
@@ -1241,7 +1241,7 @@
           "clientSecret": {
             "value": "[variables('authorizationServerList')[copyIndex()].clientSecret]"
           },
-          "clientRegistratiunondpoint": "[if(contains(variables('authorizationServerList')[copyIndex()], 'clientRegistratiunondpoint'), createObject('value', variables('authorizationServerList')[copyIndex()].clientRegistratiunondpoint), createObject('value', ''))]",
+          "clientRegistrationEndpoint": "[if(contains(variables('authorizationServerList')[copyIndex()], 'clientRegistrationEndpoint'), createObject('value', variables('authorizationServerList')[copyIndex()].clientRegistrationEndpoint), createObject('value', ''))]",
           "defaultScope": "[if(contains(variables('authorizationServerList')[copyIndex()], 'defaultScope'), createObject('value', variables('authorizationServerList')[copyIndex()].defaultScope), createObject('value', ''))]",
           "grantTypes": {
             "value": "[variables('authorizationServerList')[copyIndex()].grantTypes]"
@@ -1279,10 +1279,10 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
               }
             },
-            "authorizatiunondpoint": {
+            "authorizationEndpoint": {
               "type": "string",
               "metadata": {
                 "description": "Required. OAuth authorization endpoint. See <http://tools.ietf.org/html/rfc6749#section-3.2>."
@@ -1321,7 +1321,7 @@
                 "description": "Required. Client or app ID registered with this authorization server."
               }
             },
-            "clientRegistratiunondpoint": {
+            "clientRegistrationEndpoint": {
               "type": "string",
               "defaultValue": "",
               "metadata": {
@@ -1434,8 +1434,8 @@
                 "resourceOwnerUsername": "[parameters('resourceOwnerUsername')]",
                 "resourceOwnerPassword": "[parameters('resourceOwnerPassword')]",
                 "displayName": "[parameters('name')]",
-                "clientRegistratiunondpoint": "[parameters('clientRegistratiunondpoint')]",
-                "authorizatiunondpoint": "[parameters('authorizatiunondpoint')]",
+                "clientRegistrationEndpoint": "[parameters('clientRegistrationEndpoint')]",
+                "authorizationEndpoint": "[parameters('authorizationEndpoint')]",
                 "grantTypes": "[parameters('grantTypes')]",
                 "clientId": "[parameters('clientId')]",
                 "clientSecret": "[parameters('clientSecret')]"
@@ -1480,7 +1480,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Apim-Backend-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1521,7 +1521,7 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -1675,7 +1675,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Apim-Cache-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1715,7 +1715,7 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -1823,7 +1823,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Apim-IdentityProvider-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1866,7 +1866,7 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
               }
             },
             "enableDefaultTelemetry": {
@@ -2043,7 +2043,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Apim-NamedValue-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -2085,7 +2085,7 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
               }
             },
             "enableDefaultTelemetry": {
@@ -2214,7 +2214,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Apim-PortalSetting-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -2247,7 +2247,7 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
               }
             },
             "enableDefaultTelemetry": {
@@ -2337,7 +2337,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Apim-Policy-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -2370,7 +2370,7 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -2470,7 +2470,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Apim-Product-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -2510,7 +2510,7 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
               }
             },
             "approvalRequired": {
@@ -2624,7 +2624,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-Api-{1}', deployment().name, copyIndex())]",
               "properties": {
-                "expressiunovaluationOptions": {
+                "expressionEvaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -2659,13 +2659,13 @@
                     "apiManagementServiceName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                        "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
                       }
                     },
                     "productName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent Product. Required if the template is used in a standaluno deployment."
+                        "description": "Conditional. The name of the parent Product. Required if the template is used in a standalone deployment."
                       }
                     },
                     "enableDefaultTelemetry": {
@@ -2738,7 +2738,7 @@
               "apiVersion": "2022-09-01",
               "name": "[format('{0}-Group-{1}', deployment().name, copyIndex())]",
               "properties": {
-                "expressiunovaluationOptions": {
+                "expressionEvaluationOptions": {
                   "scope": "inner"
                 },
                 "mode": "Incremental",
@@ -2773,13 +2773,13 @@
                     "apiManagementServiceName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                        "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
                       }
                     },
                     "productName": {
                       "type": "string",
                       "metadata": {
-                        "description": "Conditional. The name of the parent Product. Required if the template is used in a standaluno deployment."
+                        "description": "Conditional. The name of the parent Product. Required if the template is used in a standalone deployment."
                       }
                     },
                     "enableDefaultTelemetry": {
@@ -2903,7 +2903,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-Apim-Subscription-{1}', uniqueString(deployment().name, parameters('location')), copyIndex())]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -2946,7 +2946,7 @@
             "apiManagementServiceName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment."
               }
             },
             "enableDefaultTelemetry": {

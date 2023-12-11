@@ -31,7 +31,7 @@ Manage lab costs by setting a spending target that can be viewed in the Monthly 
 | :-- | :-- | :-- |
 | [`cycleEndDateTime`](#parameter-cycleenddatetime) | string | Reporting cycle end date in the zulu time format (e.g. 2023-12-01T00:00:00.000Z). Required if cycleType is set to "Custom". |
 | [`cycleStartDateTime`](#parameter-cyclestartdatetime) | string | Reporting cycle start date in the zulu time format (e.g. 2023-12-01T00:00:00.000Z). Required if cycleType is set to "Custom". |
-| [`labName`](#parameter-labname) | string | The name of the parent lab. Required if the template is used in a standaluno deployment. |
+| [`labName`](#parameter-labname) | string | The name of the parent lab. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -85,7 +85,7 @@ Reporting cycle start date in the zulu time format (e.g. 2023-12-01T00:00:00.000
 
 ### Parameter: `labName`
 
-The name of the parent lab. Required if the template is used in a standaluno deployment.
+The name of the parent lab. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -297,4 +297,4 @@ Target cost threshold at 75% send notification when exceeded. Indicates whether 
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

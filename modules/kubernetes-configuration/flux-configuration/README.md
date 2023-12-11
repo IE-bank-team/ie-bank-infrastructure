@@ -489,7 +489,7 @@ Whether this configuration should suspend its reconciliation of its kustomizatio
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

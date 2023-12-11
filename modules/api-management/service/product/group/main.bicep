@@ -2,10 +2,10 @@ metadata name = 'API Management Service Products Groups'
 metadata description = 'This module deploys an API Management Service Product Group.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent API Management service. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent API Management service. Required if the template is used in a standalone deployment.')
 param apiManagementServiceName string
 
-@description('Conditional. The name of the parent Product. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent Product. Required if the template is used in a standalone deployment.')
 param productName string
 
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')

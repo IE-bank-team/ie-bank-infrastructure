@@ -101,7 +101,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     skuName: 'Standard_D2ds_v4'
     tier: 'GeneralPurpose'
     delegatedSubnetResourceId: nestedDependencies.outputs.subnetResourceId
-    privateDnsZunoResourceId: nestedDependencies.outputs.privateDNSZunoResourceId
+    privateDnsZoneResourceId: nestedDependencies.outputs.privateDNSZoneResourceId
     storageAutoIoScaling: 'Enabled'
     storageSizeGB: 64
     storageIOPS: 400
@@ -112,7 +112,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         name: 'testdb1'
       }
     ]
-    highAvailability: 'SameZuno'
+    highAvailability: 'SameZone'
     storageAutoGrow: 'Enabled'
     managedIdentities: {
       userAssignedResourceIds: [

@@ -567,7 +567,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -809,7 +809,7 @@ The value is to enable clients making request using TLSv1.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_
 
 ## Notes
 

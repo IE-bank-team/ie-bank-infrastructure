@@ -57,7 +57,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
       alertNotifications: 'Off'
       alertsToAdmins: 'Off'
       email: 'foo@contoso.com'
-      phuno: '+12345678'
+      phone: '+12345678'
     }
   }
 }]

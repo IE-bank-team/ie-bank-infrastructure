@@ -30,7 +30,7 @@ Attaching a compute is not idempotent and will fail in case you try to redeploy 
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`machineLearningWorkspaceName`](#parameter-machinelearningworkspacename) | string | The name of the parent Machine Learning Workspace. Required if the template is used in a standaluno deployment. |
+| [`machineLearningWorkspaceName`](#parameter-machinelearningworkspacename) | string | The name of the parent Machine Learning Workspace. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -79,7 +79,7 @@ Name of the compute.
 
 ### Parameter: `machineLearningWorkspaceName`
 
-The name of the parent Machine Learning Workspace. Required if the template is used in a standaluno deployment.
+The name of the parent Machine Learning Workspace. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -214,4 +214,4 @@ Contains resource tags defined as key-value pairs. Ignored when attaching a comp
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

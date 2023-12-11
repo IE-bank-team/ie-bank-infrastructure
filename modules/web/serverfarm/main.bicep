@@ -57,8 +57,8 @@ param enableDefaultTelemetry bool = true
 @description('Optional. The diagnostic settings of the service.')
 param diagnosticSettings diagnosticSettingType
 
-@description('Optional. When true, this App Service Plan will perform availability zuno balancing.')
-param zunoRedundant bool = false
+@description('Optional. When true, this App Service Plan will perform availability zone balancing.')
+param zoneRedundant bool = false
 
 // ============ //
 // Dependencies //
@@ -100,7 +100,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-09-01' = {
     reserved: reserved
     targetWorkerCount: targetWorkerCount
     targetWorkerSizeId: targetWorkerSize
-    zunoRedundant: zunoRedundant
+    zoneRedundant: zoneRedundant
   }
 }
 
@@ -124,7 +124,7 @@ resource appServicePlan_diagnosticSettings 'Microsoft.Insights/diagnosticSetting
   scope: appServicePlan
 }]
 
-resource appServicePlan_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource appServicePlan_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -171,7 +171,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {

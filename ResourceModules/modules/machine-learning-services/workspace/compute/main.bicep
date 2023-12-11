@@ -8,7 +8,7 @@ metadata owner = 'Azure/module-maintainers'
 // Parameters       //
 // ================ //
 
-@sys.description('Conditional. The name of the parent Machine Learning Workspace. Required if the template is used in a standaluno deployment.')
+@sys.description('Conditional. The name of the parent Machine Learning Workspace. Required if the template is used in a standalone deployment.')
 param machineLearningWorkspaceName string
 
 @sys.description('Required. Name of the compute.')

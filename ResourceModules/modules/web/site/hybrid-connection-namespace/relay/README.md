@@ -27,7 +27,7 @@ This module deploys a Site Hybrid Connection Namespace Relay.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`appName`](#parameter-appname) | string | The name of the parent web site. Required if the template is used in a standaluno deployment. |
+| [`appName`](#parameter-appname) | string | The name of the parent web site. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -46,7 +46,7 @@ The resource ID of the relay namespace hybrid connection.
 
 ### Parameter: `appName`
 
-The name of the parent web site. Required if the template is used in a standaluno deployment.
+The name of the parent web site. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -86,4 +86,4 @@ Name of the authorization rule send key to use.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

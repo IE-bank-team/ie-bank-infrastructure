@@ -50,7 +50,7 @@
           "type": "string",
           "allowedValues": [
             "CanNotDelete",
-            "Nuno",
+            "None",
             "ReadOnly"
           ],
           "nullable": true,
@@ -280,7 +280,7 @@
       "type": "bool",
       "defaultValue": false,
       "metadata": {
-        "description": "Optional. The flag that enables or disables a capability to have uno or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled."
+        "description": "Optional. The flag that enables or disables a capability to have one or more managed data disks with UltraSSD_LRS storage account type on the VM or VMSS. Managed disks with storage account type UltraSSD_LRS can be added to a virtual machine or virtual machine scale set only if this property is enabled."
       }
     },
     "adminUsername": {
@@ -497,7 +497,7 @@
       "type": "int",
       "defaultValue": 20,
       "metadata": {
-        "description": "Optional. The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling upgrade in uno batch. As this is a maximum, unhealthy instances in previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher reliability."
+        "description": "Optional. The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling upgrade in one batch. As this is a maximum, unhealthy instances in previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher reliability."
       }
     },
     "maxUnhealthyInstancePercent": {
@@ -518,7 +518,7 @@
       "type": "string",
       "defaultValue": "PT0S",
       "metadata": {
-        "description": "Optional. The wait time between completing the update for all virtual machines in uno batch and starting the next batch. The time duration should be specified in ISO 8601 format."
+        "description": "Optional. The wait time between completing the update for all virtual machines in one batch and starting the next batch. The time duration should be specified in ISO 8601 format."
       }
     },
     "enableAutomaticOSUpgrade": {
@@ -562,7 +562,7 @@
       "type": "bool",
       "defaultValue": true,
       "metadata": {
-        "description": "Optional. Indicates whether virtual machine agent should be provisiunod on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later."
+        "description": "Optional. Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true. This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later."
       }
     },
     "enableAutomaticUpdates": {
@@ -572,11 +572,11 @@
         "description": "Optional. Indicates whether Automatic Updates is enabled for the Windows virtual machine. Default value is true. For virtual machine scale sets, this property can be updated and updates will take effect on OS reprovisioning."
       }
     },
-    "timeZuno": {
+    "timeZone": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Optional. Specifies the time zuno of the virtual machine. e.g. 'Pacific Standard Time'. Possible values can be `TimeZunoInfo.id` value from time zunos returned by `TimeZunoInfo.GetSystemTimeZunos`."
+        "description": "Optional. Specifies the time zone of the virtual machine. e.g. 'Pacific Standard Time'. Possible values can be `TimeZoneInfo.id` value from time zones returned by `TimeZoneInfo.GetSystemTimeZones`."
       }
     },
     "additionalUnattendContent": {
@@ -625,21 +625,21 @@
       "type": "bool",
       "defaultValue": false,
       "metadata": {
-        "description": "Optional. Specifies whether the Virtual Machine Scale Set should be overprovisiunod."
+        "description": "Optional. Specifies whether the Virtual Machine Scale Set should be overprovisioned."
       }
     },
-    "doNotRunExtensionsOnOverprovisiunodVMs": {
+    "doNotRunExtensionsOnOverprovisionedVMs": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
-        "description": "Optional. When Overprovision is enabled, extensions are launched only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions do not run on the extra overprovisiunod VMs."
+        "description": "Optional. When Overprovision is enabled, extensions are launched only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions do not run on the extra overprovisioned VMs."
       }
     },
-    "zunoBalance": {
+    "zoneBalance": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
-        "description": "Optional. Whether to force strictly even Virtual Machine distribution cross x-zunos in case there is zuno outage."
+        "description": "Optional. Whether to force strictly even Virtual Machine distribution cross x-zones in case there is zone outage."
       }
     },
     "singlePlacementGroup": {
@@ -673,11 +673,11 @@
         "description": "Optional. The initial instance count of scale set VMs."
       }
     },
-    "availabilityZunos": {
+    "availabilityZones": {
       "type": "array",
       "defaultValue": [],
       "metadata": {
-        "description": "Optional. The virtual machine scale set zunos. NOTE: Availability zunos can only be set when you create the scale set."
+        "description": "Optional. The virtual machine scale set zones. NOTE: Availability zones can only be set when you create the scale set."
       }
     },
     "tags": {
@@ -746,7 +746,7 @@
     "windowsConfiguration": {
       "provisionVMAgent": "[parameters('provisionVMAgent')]",
       "enableAutomaticUpdates": "[parameters('enableAutomaticUpdates')]",
-      "timeZuno": "[if(empty(parameters('timeZuno')), null(), parameters('timeZuno'))]",
+      "timeZone": "[if(empty(parameters('timeZone')), null(), parameters('timeZone'))]",
       "additionalUnattendContent": "[if(empty(parameters('additionalUnattendContent')), null(), parameters('additionalUnattendContent'))]",
       "winRM": "[if(not(empty(parameters('winRM'))), createObject('listeners', parameters('winRM')), null())]"
     },
@@ -803,7 +803,7 @@
       "location": "[parameters('location')]",
       "tags": "[parameters('tags')]",
       "identity": "[variables('identity')]",
-      "zunos": "[parameters('availabilityZunos')]",
+      "zones": "[parameters('availabilityZones')]",
       "properties": {
         "proximityPlacementGroup": "[if(not(empty(parameters('proximityPlacementGroupResourceId'))), createObject('id', parameters('proximityPlacementGroupResourceId')), null())]",
         "upgradePolicy": {
@@ -904,8 +904,8 @@
           "scheduledEventsProfile": "[parameters('scheduledEventsProfile')]"
         },
         "overprovision": "[parameters('overprovision')]",
-        "doNotRunExtensionsOnOverprovisiunodVMs": "[parameters('doNotRunExtensionsOnOverprovisiunodVMs')]",
-        "zunoBalance": "[if(equals(parameters('zunoBalance'), 'true'), parameters('zunoBalance'), null())]",
+        "doNotRunExtensionsOnOverprovisionedVMs": "[parameters('doNotRunExtensionsOnOverprovisionedVMs')]",
+        "zoneBalance": "[if(equals(parameters('zoneBalance'), 'true'), parameters('zoneBalance'), null())]",
         "platformFaultDomainCount": "[parameters('scaleSetFaultDomain')]",
         "singlePlacementGroup": "[parameters('singlePlacementGroup')]",
         "additionalCapabilities": {
@@ -929,7 +929,7 @@
       "name": "[last(split(if(not(empty(parameters('monitoringWorkspaceId'))), parameters('monitoringWorkspaceId'), 'law'), '/'))]"
     },
     "vmss_lock": {
-      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'Nuno')))]",
+      "condition": "[and(not(empty(coalesce(parameters('lock'), createObject()))), not(equals(tryGet(parameters('lock'), 'kind'), 'None')))]",
       "type": "Microsoft.Authorization/locks",
       "apiVersion": "2020-05-01",
       "scope": "[format('Microsoft.Compute/virtualMachineScaleSets/{0}', parameters('name'))]",
@@ -992,7 +992,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VMSS-DomainJoin', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1041,7 +1041,7 @@
             "virtualMachineScaleSetName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisiunod for. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisioned for. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -1071,7 +1071,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -1183,7 +1183,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VMSS-MicrosoftAntiMalware', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1227,7 +1227,7 @@
             "virtualMachineScaleSetName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisiunod for. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisioned for. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -1257,7 +1257,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -1369,7 +1369,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VMSS-MicrosoftMonitoringAgent', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1418,7 +1418,7 @@
             "virtualMachineScaleSetName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisiunod for. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisioned for. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -1448,7 +1448,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -1561,7 +1561,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VMSS-DependencyAgent', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1600,7 +1600,7 @@
             "virtualMachineScaleSetName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisiunod for. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisioned for. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -1630,7 +1630,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -1742,7 +1742,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VMSS-NetworkWatcherAgent', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1781,7 +1781,7 @@
             "virtualMachineScaleSetName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisiunod for. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisioned for. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -1811,7 +1811,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -1917,13 +1917,13 @@
         "vmss"
       ]
     },
-    "vmss_desiredStateConfiguratiunoxtension": {
+    "vmss_desiredStateConfigurationExtension": {
       "condition": "[parameters('extensionDSCConfig').enabled]",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VMSS-DesiredStateConfiguration', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -1966,7 +1966,7 @@
             "virtualMachineScaleSetName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisiunod for. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisioned for. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -1996,7 +1996,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -2108,7 +2108,7 @@
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VMSS-CustomScriptExtension', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -2157,7 +2157,7 @@
             "virtualMachineScaleSetName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisiunod for. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisioned for. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -2187,7 +2187,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {
@@ -2291,16 +2291,16 @@
       },
       "dependsOn": [
         "vmss",
-        "vmss_desiredStateConfiguratiunoxtension"
+        "vmss_desiredStateConfigurationExtension"
       ]
     },
-    "vmss_azureDiskEncryptiunoxtension": {
+    "vmss_azureDiskEncryptionExtension": {
       "condition": "[parameters('extensionAzureDiskEncryptionConfig').enabled]",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
       "name": "[format('{0}-VMSS-AzureDiskEncryption', uniqueString(deployment().name, parameters('location')))]",
       "properties": {
-        "expressiunovaluationOptions": {
+        "expressionEvaluationOptions": {
           "scope": "inner"
         },
         "mode": "Incremental",
@@ -2343,7 +2343,7 @@
             "virtualMachineScaleSetName": {
               "type": "string",
               "metadata": {
-                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisiunod for. Required if the template is used in a standaluno deployment."
+                "description": "Conditional. The name of the parent virtual machine scale set that extension is provisioned for. Required if the template is used in a standalone deployment."
               }
             },
             "name": {
@@ -2373,7 +2373,7 @@
             "autoUpgradeMinorVersion": {
               "type": "bool",
               "metadata": {
-                "description": "Required. Indicates whether the extension should use a newer minor version if uno is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
+                "description": "Required. Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true."
               }
             },
             "forceUpdateTag": {

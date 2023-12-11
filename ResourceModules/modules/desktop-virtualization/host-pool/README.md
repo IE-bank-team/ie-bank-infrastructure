@@ -106,7 +106,7 @@ module hostPool 'br:bicep/modules/desktop-virtualization.host-pool:1.0.0' = {
           hour: 8
         }
       ]
-      maintenanceWindowTimeZuno: 'Alaskan Standard Time'
+      maintenanceWindowTimeZone: 'Alaskan Standard Time'
       type: 'Scheduled'
       useSessionHostLocalTime: false
     }
@@ -204,7 +204,7 @@ module hostPool 'br:bicep/modules/desktop-virtualization.host-pool:1.0.0' = {
             "hour": 8
           }
         ],
-        "maintenanceWindowTimeZuno": "Alaskan Standard Time",
+        "maintenanceWindowTimeZone": "Alaskan Standard Time",
         "type": "Scheduled",
         "useSessionHostLocalTime": false
       }
@@ -332,7 +332,7 @@ module hostPool 'br:bicep/modules/desktop-virtualization.host-pool:1.0.0' = {
           hour: 8
         }
       ]
-      maintenanceWindowTimeZuno: 'Alaskan Standard Time'
+      maintenanceWindowTimeZone: 'Alaskan Standard Time'
       type: 'Scheduled'
       useSessionHostLocalTime: false
     }
@@ -413,7 +413,7 @@ module hostPool 'br:bicep/modules/desktop-virtualization.host-pool:1.0.0' = {
             "hour": 8
           }
         ],
-        "maintenanceWindowTimeZuno": "Alaskan Standard Time",
+        "maintenanceWindowTimeZone": "Alaskan Standard Time",
         "type": "Scheduled",
         "useSessionHostLocalTime": false
       }
@@ -508,11 +508,11 @@ module hostPool 'br:bicep/modules/desktop-virtualization.host-pool:1.0.0' = {
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`agentUpdate`](#parameter-agentupdate) | object | The session host configuration for updating agent, monitoring agent, and stack compunont. |
+| [`agentUpdate`](#parameter-agentupdate) | object | The session host configuration for updating agent, monitoring agent, and stack component. |
 | [`agentUpdateMaintenanceWindowDayOfWeek`](#parameter-agentupdatemaintenancewindowdayofweek) | string | Update day for scheduled agent updates. |
 | [`agentUpdateMaintenanceWindowHour`](#parameter-agentupdatemaintenancewindowhour) | int | Update hour for scheduled agent updates. |
 | [`agentUpdateMaintenanceWindows`](#parameter-agentupdatemaintenancewindows) | array | List of maintenance windows for scheduled agent updates. |
-| [`agentUpdateMaintenanceWindowTimeZuno`](#parameter-agentupdatemaintenancewindowtimezuno) | string | Time zuno for scheduled agent updates. |
+| [`agentUpdateMaintenanceWindowTimeZone`](#parameter-agentupdatemaintenancewindowtimezone) | string | Time zone for scheduled agent updates. |
 | [`agentUpdateType`](#parameter-agentupdatetype) | string | Enable scheduled agent updates, Default means agent updates will automatically be installed by AVD when they become available. |
 | [`agentUpdateUseSessionHostLocalTime`](#parameter-agentupdateusesessionhostlocaltime) | bool | Whether to use localTime of the virtual machine for scheduled agent updates. |
 | [`customRdpProperty`](#parameter-customrdpproperty) | string | Host Pool RDP properties. |
@@ -536,7 +536,7 @@ module hostPool 'br:bicep/modules/desktop-virtualization.host-pool:1.0.0' = {
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`tokenValidityLength`](#parameter-tokenvaliditylength) | string | Host Pool token validity length. Usage: 'PT8H' - valid for 8 hours; 'P5D' - valid for 5 days; 'P1Y' - valid for 1 year. When not provided, the token will be valid for 8 hours. |
 | [`type`](#parameter-type) | string | Set this parameter to Personal if you would like to enable Persistent Desktop experience. Defaults to Pooled. |
-| [`validatiunonvironment`](#parameter-validatiunonvironment) | bool | Validation host pools allows you to test service changes before they are deployed to production. When set to true, the Host Pool will be deployed in a validation 'ring' (environment) that receives all the new features (might be less stable). Defaults to false that stands for the stable, production-ready environment. |
+| [`validationEnvironment`](#parameter-validationenvironment) | bool | Validation host pools allows you to test service changes before they are deployed to production. When set to true, the Host Pool will be deployed in a validation 'ring' (environment) that receives all the new features (might be less stable). Defaults to false that stands for the stable, production-ready environment. |
 | [`vmTemplate`](#parameter-vmtemplate) | object | The necessary information for adding more VMs to this Host Pool. The object is converted to an in-line string when handed over to the resource deployment, since that only takes strings. |
 
 **Generated parameters**
@@ -554,7 +554,7 @@ Name of the Host Pool.
 
 ### Parameter: `agentUpdate`
 
-The session host configuration for updating agent, monitoring agent, and stack compunont.
+The session host configuration for updating agent, monitoring agent, and stack component.
 
 - Required: No
 - Type: object
@@ -562,7 +562,7 @@ The session host configuration for updating agent, monitoring agent, and stack c
   ```Bicep
   {
       maintenanceWindows: '[parameters(\'agentUpdateMaintenanceWindows\')]'
-      maintenanceWindowTimeZuno: '[parameters(\'agentUpdateMaintenanceWindowTimeZuno\')]'
+      maintenanceWindowTimeZone: '[parameters(\'agentUpdateMaintenanceWindowTimeZone\')]'
       type: '[parameters(\'agentUpdateType\')]'
       useSessionHostLocalTime: '[parameters(\'agentUpdateUseSessionHostLocalTime\')]'
   }
@@ -612,9 +612,9 @@ List of maintenance windows for scheduled agent updates.
   ]
   ```
 
-### Parameter: `agentUpdateMaintenanceWindowTimeZuno`
+### Parameter: `agentUpdateMaintenanceWindowTimeZone`
 
-Time zuno for scheduled agent updates.
+Time zone for scheduled agent updates.
 
 - Required: No
 - Type: string
@@ -806,7 +806,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -853,7 +853,7 @@ The type of preferred application group type, default to Desktop Application Gro
   ```Bicep
   [
     'Desktop'
-    'Nuno'
+    'None'
     'RailApplications'
   ]
   ```
@@ -1035,7 +1035,7 @@ Set this parameter to Personal if you would like to enable Persistent Desktop ex
   ]
   ```
 
-### Parameter: `validatiunonvironment`
+### Parameter: `validationEnvironment`
 
 Validation host pools allows you to test service changes before they are deployed to production. When set to true, the Host Pool will be deployed in a validation 'ring' (environment) that receives all the new features (might be less stable). Defaults to false that stands for the stable, production-ready environment.
 
@@ -1072,4 +1072,4 @@ Do not provide a value! This date value is used to generate a registration token
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

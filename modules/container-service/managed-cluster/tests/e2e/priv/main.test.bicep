@@ -36,7 +36,7 @@ module nestedDependencies 'dependencies.bicep' = {
   name: '${uniqueString(deployment().name, location)}-nestedDependencies'
   params: {
     managedIdentityName: 'dep-${namePrefix}-msi-${serviceShort}'
-    privateDnsZunoName: 'privatelink.${location}.azmk8s.io'
+    privateDnsZoneName: 'privatelink.${location}.azmk8s.io'
     virtualNetworkName: 'dep-${namePrefix}-vnet-${serviceShort}'
   }
 }
@@ -68,7 +68,7 @@ module testDeployment '../../../main.bicep' = {
     enablePrivateCluster: true
     primaryAgentPoolProfile: [
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 1
@@ -89,7 +89,7 @@ module testDeployment '../../../main.bicep' = {
     ]
     agentPools: [
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 2
@@ -114,7 +114,7 @@ module testDeployment '../../../main.bicep' = {
         vnetSubnetID: nestedDependencies.outputs.agentPoolSubnetResourceId
       }
       {
-        availabilityZunos: [
+        availabilityZones: [
           '3'
         ]
         count: 2
@@ -156,7 +156,7 @@ module testDeployment '../../../main.bicep' = {
         workspaceResourceId: diagnosticDependencies.outputs.logAnalyticsWorkspaceResourceId
       }
     ]
-    privateDNSZuno: nestedDependencies.outputs.privateDnsZunoResourceId
+    privateDNSZone: nestedDependencies.outputs.privateDnsZoneResourceId
     managedIdentities: {
       userAssignedResourceIds: [
         nestedDependencies.outputs.managedIdentityResourceId

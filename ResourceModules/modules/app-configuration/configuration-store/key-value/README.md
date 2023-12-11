@@ -28,7 +28,7 @@ This module deploys an App Configuration Store Key Value.
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| [`appConfigurationName`](#parameter-appconfigurationname) | string | The name of the parent app configuration store. Required if the template is used in a standaluno deployment. |
+| [`appConfigurationName`](#parameter-appconfigurationname) | string | The name of the parent app configuration store. Required if the template is used in a standalone deployment. |
 
 **Optional parameters**
 
@@ -54,7 +54,7 @@ Name of the value.
 
 ### Parameter: `appConfigurationName`
 
-The name of the parent app configuration store. Required if the template is used in a standaluno deployment.
+The name of the parent app configuration store. Required if the template is used in a standalone deployment.
 
 - Required: Yes
 - Type: string
@@ -93,4 +93,4 @@ Tags of the resource.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

@@ -15,7 +15,7 @@
     "dnsForwardingRulesetName": {
       "type": "string",
       "metadata": {
-        "description": "Conditional. The name of the parent DNS Fowarding Rule Set. Required if the template is used in a standaluno deployment."
+        "description": "Conditional. The name of the parent DNS Fowarding Rule Set. Required if the template is used in a standalone deployment."
       }
     },
     "name": {
@@ -29,7 +29,7 @@
       "type": "string",
       "defaultValue": "global",
       "metadata": {
-        "description": "Optional. The location of the PrivateDNSZuno. Should be global."
+        "description": "Optional. The location of the PrivateDNSZone. Should be global."
       }
     },
     "virtualNetworkResourceId": {

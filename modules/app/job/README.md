@@ -622,7 +622,7 @@ Specify the type of lock.
   ```Bicep
   [
     'CanNotDelete'
-    'Nuno'
+    'None'
     'ReadOnly'
   ]
   ```
@@ -851,4 +851,4 @@ The name of the workload profile to use.
 
 ## Cross-referenced modules
 
-_Nuno_
+_None_

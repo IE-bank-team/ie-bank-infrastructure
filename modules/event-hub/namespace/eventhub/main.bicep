@@ -2,7 +2,7 @@ metadata name = 'Event Hub Namespace Event Hubs'
 metadata description = 'This module deploys an Event Hub Namespace Event Hub.'
 metadata owner = 'Azure/module-maintainers'
 
-@description('Conditional. The name of the parent event hub namespace. Required if the template is used in a standaluno deployment.')
+@description('Conditional. The name of the parent event hub namespace. Required if the template is used in a standalone deployment.')
 param namespaceName string
 
 @description('Required. The name of the event hub.')
@@ -70,14 +70,14 @@ param captureDescriptionDestinationBlobContainer string = ''
 param captureDescriptionDestinationStorageAccountResourceId string = ''
 
 @description('Optional. A value that indicates whether capture description is enabled.')
-param captureDescriptiunonabled bool = false
+param captureDescriptionEnabled bool = false
 
 @description('Optional. Enumerates the possible values for the encoding format of capture description. Note: "AvroDeflate" will be deprecated in New API Version.')
 @allowed([
   'Avro'
   'AvroDeflate'
 ])
-param captureDescriptiunoncoding string = 'Avro'
+param captureDescriptionEncoding string = 'Avro'
 
 @description('Optional. The time window allows you to set the frequency with which the capture to Azure Blobs will happen.')
 @minValue(60)
@@ -106,8 +106,8 @@ param retentionDescriptionRetentionTimeInHours int = 1
 
 @minValue(1)
 @maxValue(168)
-@description('Optional. Retention cleanup policy. Number of hours to retain the tombstuno markers of a compacted Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstuno marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key described by the tombstuno marker within the compacted Event Hub.')
-param retentionDescriptionTombstunoRetentionTimeInHours int = 1
+@description('Optional. Retention cleanup policy. Number of hours to retain the tombstone markers of a compacted Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstone marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key described by the tombstone marker within the compacted Event Hub.')
+param retentionDescriptionTombstoneRetentionTimeInHours int = 1
 
 @description('Optional. Enable telemetry via a Globally Unique Identifier (GUID).')
 param enableDefaultTelemetry bool = true
@@ -121,7 +121,7 @@ var eventHubProperties = {
   retentionDescription: {
     cleanupPolicy: retentionDescriptionCleanupPolicy
     retentionTimeInHours: retentionDescriptionCleanupPolicy == 'Delete' ? retentionDescriptionRetentionTimeInHours : null
-    tombstunoRetentionTimeInHours: retentionDescriptionCleanupPolicy == 'Compact' ? retentionDescriptionTombstunoRetentionTimeInHours : null
+    tombstoneRetentionTimeInHours: retentionDescriptionCleanupPolicy == 'Compact' ? retentionDescriptionTombstoneRetentionTimeInHours : null
   }
 }
 
@@ -135,8 +135,8 @@ var eventHubPropertiesCapture = {
         storageAccountResourceId: captureDescriptionDestinationStorageAccountResourceId
       }
     }
-    enabled: captureDescriptiunonabled
-    encoding: captureDescriptiunoncoding
+    enabled: captureDescriptionEnabled
+    encoding: captureDescriptionEncoding
     intervalInSeconds: captureDescriptionIntervalInSeconds
     sizeLimitInBytes: captureDescriptionSizeLimitInBytes
     skipEmptyArchives: captureDescriptionSkipEmptyArchives
@@ -173,10 +173,10 @@ resource namespace 'Microsoft.EventHub/namespaces@2022-10-01-preview' existing =
 resource eventHub 'Microsoft.EventHub/namespaces/eventhubs@2022-10-01-preview' = {
   name: name
   parent: namespace
-  properties: captureDescriptiunonabled ? union(eventHubProperties, eventHubPropertiesCapture) : eventHubProperties
+  properties: captureDescriptionEnabled ? union(eventHubProperties, eventHubPropertiesCapture) : eventHubProperties
 }
 
-resource eventHub_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'Nuno') {
+resource eventHub_lock 'Microsoft.Authorization/locks@2020-05-01' = if (!empty(lock ?? {}) && lock.?kind != 'None') {
   name: lock.?name ?? 'lock-${name}'
   properties: {
     level: lock.?kind ?? ''
@@ -242,7 +242,7 @@ type lockType = {
   name: string?
 
   @description('Optional. Specify the type of lock.')
-  kind: ('CanNotDelete' | 'ReadOnly' | 'Nuno')?
+  kind: ('CanNotDelete' | 'ReadOnly' | 'None')?
 }?
 
 type roleAssignmentType = {
