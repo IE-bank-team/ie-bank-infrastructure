@@ -27,7 +27,7 @@
             "value": "one-ai-prod"
         },
         "location": {
-            "value": "Japan West"
+            "value": "US East"
         },
         "containerRegistryName": {
             "value": "oneCRprod"
