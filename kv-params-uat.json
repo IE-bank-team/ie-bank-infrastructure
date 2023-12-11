@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "keyVaultName": {
-        "value": "softwareonthego-keyvault-uat"
+        "value": "software1-keyvault-uat"
       },
       "location": {
         "value": "Japan West"
