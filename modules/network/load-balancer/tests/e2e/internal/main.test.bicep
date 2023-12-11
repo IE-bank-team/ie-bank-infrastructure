@@ -66,7 +66,7 @@ module testDeployment '../../../main.bicep' = {
     name: '${namePrefix}${serviceShort}001'
     frontendIPConfigurations: [
       {
-        name: 'privateIPConfikhaled'
+        name: 'privateIPConfione'
         subnetId: nestedDependencies.outputs.subnetResourceId
       }
     ]
@@ -94,7 +94,7 @@ module testDeployment '../../../main.bicep' = {
         backendPort: 443
         enableFloatingIP: false
         enableTcpReset: false
-        frontendIPConfigurationName: 'privateIPConfikhaled'
+        frontendIPConfigurationName: 'privateIPConfione'
         frontendPort: 443
         idleTimeoutInMinutes: 4
         name: 'inboundNatRule1'
@@ -102,7 +102,7 @@ module testDeployment '../../../main.bicep' = {
       }
       {
         backendPort: 3389
-        frontendIPConfigurationName: 'privateIPConfikhaled'
+        frontendIPConfigurationName: 'privateIPConfione'
         frontendPort: 3389
         name: 'inboundNatRule2'
       }
@@ -115,7 +115,7 @@ module testDeployment '../../../main.bicep' = {
         disableOutboundSnat: true
         enableFloatingIP: true
         enableTcpReset: false
-        frontendIPConfigurationName: 'privateIPConfikhaled'
+        frontendIPConfigurationName: 'privateIPConfione'
         frontendPort: 0
         idleTimeoutInMinutes: 4
         loadDistribution: 'Default'

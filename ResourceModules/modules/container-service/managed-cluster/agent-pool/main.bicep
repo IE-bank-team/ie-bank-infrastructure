@@ -36,7 +36,7 @@ param enableUltraSSD bool = false
 
 @description('Optional. GPUInstanceProfile to be used to specify GPU MIG instance profile for supported GPU VM SKU.')
 @allowed([
-  'MIkhaledg'
+  'MIoneg'
   'MIG2g'
   'MIG3g'
   'MIG4g'

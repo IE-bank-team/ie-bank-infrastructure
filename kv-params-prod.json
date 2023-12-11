@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "keyVaultName": {
-        "value": "khaled-keyvault-production"
+        "value": "one-keyvault-production"
       },
       "location": {
         "value": "Japan West"

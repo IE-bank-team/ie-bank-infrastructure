@@ -16,7 +16,7 @@ env:
   SUBSCRIPTION_ID_DEV: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
   SUBSCRIPTION_ID_UAT: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
   SUBSCRIPTION_ID_PROD: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
-  USER_ALIAS: khaled
+  USER_ALIAS: one
 
 jobs:
   build:
@@ -27,8 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ENV: dev
-      DBHOST: khaled-dbsrv-dev.postgres.database.azure.com
-      DBNAME: khaled-db-dev
+      DBHOST: one-dbsrv-dev.postgres.database.azure.com
+      DBNAME: one-db-dev
       DBUSER: 'iebankdbadmin'
       DBPASS: 'IE.Bank.DB.Admin.Pa$$'
       FLASK_APP: app.py
@@ -77,8 +77,8 @@ jobs:
       name: 'Development'
     env:
       ENV: dev
-      DBHOST: khaled-dbsrv-dev.postgres.database.azure.com
-      DBNAME: khaled-db-dev
+      DBHOST: one-dbsrv-dev.postgres.database.azure.com
+      DBNAME: one-db-dev
       DBUSER: 'iebankdbadmin'
       DBPASS: 'IE.Bank.DB.Admin.Pa$$'
       FLASK_APP: app.py
@@ -119,8 +119,8 @@ jobs:
       name: 'User Acceptance Testing'
     env:
       ENV: uat
-      DBHOST: khaled-dbsrv-uat.postgres.database.azure.com
-      DBNAME: khaled-db-uat
+      DBHOST: one-dbsrv-uat.postgres.database.azure.com
+      DBNAME: one-db-uat
       DBUSER: 'iebankdbadmin'
       DBPASS: 'IE.Bank.DB.Admin.Pa$$'
       FLASK_APP: app.py
@@ -161,8 +161,8 @@ jobs:
       name: 'Production'
     env:
       ENV: prod
-      DBHOST: khaled-dbsrv-uat.postgres.database.azure.com
-      DBNAME: khaled-db-uat
+      DBHOST: one-dbsrv-uat.postgres.database.azure.com
+      DBNAME: one-db-uat
       DBUSER: 'iebankdbadmin'
       DBPASS: 'IE.Bank.DB.Admin.Pa$$'
       FLASK_APP: app.py

@@ -87,7 +87,7 @@
       "type": "string",
       "defaultValue": "",
       "allowedValues": [
-        "MIkhaledg",
+        "MIoneg",
         "MIG2g",
         "MIG3g",
         "MIG4g",

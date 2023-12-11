@@ -142,8 +142,8 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
         properties: {
           ipConfigurations: [
             {
-              name: 'privateLinkIpConfikhaled'
-              id: '${appGWExpectedResourceID}/privateLinkConfigurations/pvtlink01/ipConfigurations/privateLinkIpConfikhaled'
+              name: 'privateLinkIpConfione'
+              id: '${appGWExpectedResourceID}/privateLinkConfigurations/pvtlink01/ipConfigurations/privateLinkIpConfione'
               properties: {
                 privateIPAllocationMethod: 'Dynamic'
                 primary: false

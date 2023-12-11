@@ -6,31 +6,31 @@
             "value": "nonprod"
         },
         "postgreSQLServerName": {
-            "value": "khaled-dbsrv-dev"
+            "value": "one-dbsrv-dev"
         },
         "postgreSQLDatabaseName": {
-            "value": "khaled-db-dev"
+            "value": "one-db-dev"
         },
         "appServicePlanName": {
-            "value": "khaled-asp-dev"
+            "value": "one-asp-dev"
         },
         "appServiceAPIAppName": {
-            "value": "khaled-be-dev"
+            "value": "one-be-dev"
         },
         "appServiceAppName": {
-            "value": "khaled-fe-dev"
+            "value": "one-fe-dev"
         },
         "azureMonitorName": {
-            "value": "khaled-am-dev"
+            "value": "one-am-dev"
         },
         "appInsightsName": {
-            "value": "khaled-ai-dev"
+            "value": "one-ai-dev"
         },
         "location": {
             "value": "Japan West"
         },
         "containerRegistryName": {
-            "value": "khaledCRdev"
+            "value": "oneCRdev"
           },
           "containerRegistryImageName": {
             "value": "ie-bank-be"
@@ -39,7 +39,7 @@
             "value": "latest"
           },
         "keyVaultName": {
-            "value": "khaled-keyvault-dev"
+            "value": "one-keyvault-dev"
         }
     }
 }

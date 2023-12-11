@@ -109,12 +109,12 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
       }
       {
         kind: 'IISLogs'
-        name: 'sampleIISLokhaled'
+        name: 'sampleIISLoone'
         state: 'OnPremiseEnabled'
       }
       {
         kind: 'LinuxSyslog'
-        name: 'sampleSyslokhaled'
+        name: 'sampleSysloone'
         syslogName: 'kern'
         syslogSeverities: [
           {
@@ -374,12 +374,12 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
         },
         {
           "kind": "IISLogs",
-          "name": "sampleIISLokhaled",
+          "name": "sampleIISLoone",
           "state": "OnPremiseEnabled"
         },
         {
           "kind": "LinuxSyslog",
-          "name": "sampleSyslokhaled",
+          "name": "sampleSysloone",
           "syslogName": "kern",
           "syslogSeverities": [
             {
@@ -687,12 +687,12 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
       }
       {
         kind: 'IISLogs'
-        name: 'sampleIISLokhaled'
+        name: 'sampleIISLoone'
         state: 'OnPremiseEnabled'
       }
       {
         kind: 'LinuxSyslog'
-        name: 'sampleSyslokhaled'
+        name: 'sampleSysloone'
         syslogName: 'kern'
         syslogSeverities: [
           {
@@ -877,12 +877,12 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
         },
         {
           "kind": "IISLogs",
-          "name": "sampleIISLokhaled",
+          "name": "sampleIISLoone",
           "state": "OnPremiseEnabled"
         },
         {
           "kind": "LinuxSyslog",
-          "name": "sampleSyslokhaled",
+          "name": "sampleSysloone",
           "syslogName": "kern",
           "syslogSeverities": [
             {
@@ -1095,12 +1095,12 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
       }
       {
         kind: 'IISLogs'
-        name: 'sampleIISLokhaled'
+        name: 'sampleIISLoone'
         state: 'OnPremiseEnabled'
       }
       {
         kind: 'LinuxSyslog'
-        name: 'sampleSyslokhaled'
+        name: 'sampleSysloone'
         syslogName: 'kern'
         syslogSeverities: [
           {
@@ -1285,12 +1285,12 @@ module workspace 'br:bicep/modules/operational-insights.workspace:1.0.0' = {
         },
         {
           "kind": "IISLogs",
-          "name": "sampleIISLokhaled",
+          "name": "sampleIISLoone",
           "state": "OnPremiseEnabled"
         },
         {
           "kind": "LinuxSyslog",
-          "name": "sampleSyslokhaled",
+          "name": "sampleSysloone",
           "syslogName": "kern",
           "syslogSeverities": [
             {

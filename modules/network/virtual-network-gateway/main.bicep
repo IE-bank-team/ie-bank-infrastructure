@@ -178,7 +178,7 @@ var ipConfiguration = isActiveActiveValid ? [
         id: az.resourceId('Microsoft.Network/publicIPAddresses', gatewayPipName)
       }
     }
-    name: 'vNetGatewayConfikhaled'
+    name: 'vNetGatewayConfione'
   }
   {
     properties: {
@@ -203,7 +203,7 @@ var ipConfiguration = isActiveActiveValid ? [
         id: az.resourceId('Microsoft.Network/publicIPAddresses', gatewayPipName)
       }
     }
-    name: 'vNetGatewayConfikhaled'
+    name: 'vNetGatewayConfione'
   }
 ]
 

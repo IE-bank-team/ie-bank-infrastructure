@@ -70,7 +70,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
       {
         ipConfigurations: [
           {
-            name: 'ipconfikhaled'
+            name: 'ipconfione'
             properties: {
               subnet: {
                 id: '<id>'
@@ -145,7 +145,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
         {
           "ipConfigurations": [
             {
-              "name": "ipconfikhaled",
+              "name": "ipconfione",
               "properties": {
                 "subnet": {
                   "id": "<id>"
@@ -224,7 +224,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
       {
         ipConfigurations: [
           {
-            name: 'ipconfikhaled'
+            name: 'ipconfione'
             properties: {
               subnet: {
                 id: '<id>'
@@ -325,7 +325,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
         {
           "ipConfigurations": [
             {
-              "name": "ipconfikhaled",
+              "name": "ipconfione",
               "properties": {
                 "subnet": {
                   "id": "<id>"
@@ -475,7 +475,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
       {
         ipConfigurations: [
           {
-            name: 'ipconfikhaled'
+            name: 'ipconfione'
             properties: {
               subnet: {
                 id: '<id>'
@@ -672,7 +672,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
         {
           "ipConfigurations": [
             {
-              "name": "ipconfikhaled",
+              "name": "ipconfione",
               "properties": {
                 "subnet": {
                   "id": "<id>"
@@ -765,7 +765,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
       {
         ipConfigurations: [
           {
-            name: 'ipconfikhaled'
+            name: 'ipconfione'
             properties: {
               subnet: {
                 id: '<id>'
@@ -834,7 +834,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
         {
           "ipConfigurations": [
             {
-              "name": "ipconfikhaled",
+              "name": "ipconfione",
               "properties": {
                 "subnet": {
                   "id": "<id>"
@@ -968,7 +968,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
       {
         ipConfigurations: [
           {
-            name: 'ipconfikhaled'
+            name: 'ipconfione'
             properties: {
               subnet: {
                 id: '<id>'
@@ -1156,7 +1156,7 @@ module virtualMachineScaleSet 'br:bicep/modules/compute.virtual-machine-scale-se
         {
           "ipConfigurations": [
             {
-              "name": "ipconfikhaled",
+              "name": "ipconfione",
               "properties": {
                 "subnet": {
                   "id": "<id>"
@@ -2371,7 +2371,7 @@ Comments:
             "nicSuffix": "-nic01",
             "ipConfigurations": [
                 {
-                    "name": "ipconfikhaled",
+                    "name": "ipconfione",
                     "properties": {
                         "subnet": {
                             "id": "/subscriptions/[[subscriptionId]]/resourceGroups/agents-vmss-rg/providers/Microsoft.Network/virtualNetworks/sxx-az-vnet-x-scaleset/subnets/sxx-az-subnet-scaleset-linux"
@@ -2396,7 +2396,7 @@ nicConfigurations: [
         nicSuffix: '-nic01'
         ipConfigurations: [
             {
-                name: 'ipconfikhaled'
+                name: 'ipconfione'
                 properties: {
                     subnet: {
                         id: '/subscriptions/[[subscriptionId]]/resourceGroups/agents-vmss-rg/providers/Microsoft.Network/virtualNetworks/sxx-az-vnet-x-scaleset/subnets/sxx-az-subnet-scaleset-linux'

@@ -53,7 +53,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
     // Required parameters
     frontendIPConfigurations: [
       {
-        name: 'publicIPConfikhaled'
+        name: 'publicIPConfione'
         publicIPAddressId: '<publicIPAddressId>'
       }
     ]
@@ -80,7 +80,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
     "frontendIPConfigurations": {
       "value": [
         {
-          "name": "publicIPConfikhaled",
+          "name": "publicIPConfione",
           "publicIPAddressId": "<publicIPAddressId>"
         }
       ]
@@ -112,7 +112,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
     // Required parameters
     frontendIPConfigurations: [
       {
-        name: 'privateIPConfikhaled'
+        name: 'privateIPConfione'
         subnetId: '<subnetId>'
       }
     ]
@@ -143,7 +143,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         backendPort: 443
         enableFloatingIP: false
         enableTcpReset: false
-        frontendIPConfigurationName: 'privateIPConfikhaled'
+        frontendIPConfigurationName: 'privateIPConfione'
         frontendPort: 443
         idleTimeoutInMinutes: 4
         name: 'inboundNatRule1'
@@ -151,7 +151,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
       }
       {
         backendPort: 3389
-        frontendIPConfigurationName: 'privateIPConfikhaled'
+        frontendIPConfigurationName: 'privateIPConfione'
         frontendPort: 3389
         name: 'inboundNatRule2'
       }
@@ -163,7 +163,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         disableOutboundSnat: true
         enableFloatingIP: true
         enableTcpReset: false
-        frontendIPConfigurationName: 'privateIPConfikhaled'
+        frontendIPConfigurationName: 'privateIPConfione'
         frontendPort: 0
         idleTimeoutInMinutes: 4
         loadDistribution: 'Default'
@@ -214,7 +214,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
     "frontendIPConfigurations": {
       "value": [
         {
-          "name": "privateIPConfikhaled",
+          "name": "privateIPConfione",
           "subnetId": "<subnetId>"
         }
       ]
@@ -255,7 +255,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
           "backendPort": 443,
           "enableFloatingIP": false,
           "enableTcpReset": false,
-          "frontendIPConfigurationName": "privateIPConfikhaled",
+          "frontendIPConfigurationName": "privateIPConfione",
           "frontendPort": 443,
           "idleTimeoutInMinutes": 4,
           "name": "inboundNatRule1",
@@ -263,7 +263,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         },
         {
           "backendPort": 3389,
-          "frontendIPConfigurationName": "privateIPConfikhaled",
+          "frontendIPConfigurationName": "privateIPConfione",
           "frontendPort": 3389,
           "name": "inboundNatRule2"
         }
@@ -277,7 +277,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
           "disableOutboundSnat": true,
           "enableFloatingIP": true,
           "enableTcpReset": false,
-          "frontendIPConfigurationName": "privateIPConfikhaled",
+          "frontendIPConfigurationName": "privateIPConfione",
           "frontendPort": 0,
           "idleTimeoutInMinutes": 4,
           "loadDistribution": "Default",
@@ -340,7 +340,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
     // Required parameters
     frontendIPConfigurations: [
       {
-        name: 'publicIPConfikhaled'
+        name: 'publicIPConfione'
         publicIPAddressId: '<publicIPAddressId>'
       }
     ]
@@ -374,7 +374,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         backendPort: 443
         enableFloatingIP: false
         enableTcpReset: false
-        frontendIPConfigurationName: 'publicIPConfikhaled'
+        frontendIPConfigurationName: 'publicIPConfione'
         frontendPort: 443
         idleTimeoutInMinutes: 4
         name: 'inboundNatRule1'
@@ -382,7 +382,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
       }
       {
         backendPort: 3389
-        frontendIPConfigurationName: 'publicIPConfikhaled'
+        frontendIPConfigurationName: 'publicIPConfione'
         frontendPort: 3389
         name: 'inboundNatRule2'
       }
@@ -394,7 +394,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         disableOutboundSnat: true
         enableFloatingIP: false
         enableTcpReset: false
-        frontendIPConfigurationName: 'publicIPConfikhaled'
+        frontendIPConfigurationName: 'publicIPConfione'
         frontendPort: 80
         idleTimeoutInMinutes: 5
         loadDistribution: 'Default'
@@ -405,7 +405,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
       {
         backendAddressPoolName: 'backendAddressPool2'
         backendPort: 8080
-        frontendIPConfigurationName: 'publicIPConfikhaled'
+        frontendIPConfigurationName: 'publicIPConfione'
         frontendPort: 8080
         loadDistribution: 'Default'
         name: 'publicIPLBRule2'
@@ -420,7 +420,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
       {
         allocatedOutboundPorts: 63984
         backendAddressPoolName: 'backendAddressPool1'
-        frontendIPConfigurationName: 'publicIPConfikhaled'
+        frontendIPConfigurationName: 'publicIPConfione'
         name: 'outboundRule1'
       }
     ]
@@ -471,7 +471,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
     "frontendIPConfigurations": {
       "value": [
         {
-          "name": "publicIPConfikhaled",
+          "name": "publicIPConfione",
           "publicIPAddressId": "<publicIPAddressId>"
         }
       ]
@@ -515,7 +515,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
           "backendPort": 443,
           "enableFloatingIP": false,
           "enableTcpReset": false,
-          "frontendIPConfigurationName": "publicIPConfikhaled",
+          "frontendIPConfigurationName": "publicIPConfione",
           "frontendPort": 443,
           "idleTimeoutInMinutes": 4,
           "name": "inboundNatRule1",
@@ -523,7 +523,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         },
         {
           "backendPort": 3389,
-          "frontendIPConfigurationName": "publicIPConfikhaled",
+          "frontendIPConfigurationName": "publicIPConfione",
           "frontendPort": 3389,
           "name": "inboundNatRule2"
         }
@@ -537,7 +537,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
           "disableOutboundSnat": true,
           "enableFloatingIP": false,
           "enableTcpReset": false,
-          "frontendIPConfigurationName": "publicIPConfikhaled",
+          "frontendIPConfigurationName": "publicIPConfione",
           "frontendPort": 80,
           "idleTimeoutInMinutes": 5,
           "loadDistribution": "Default",
@@ -548,7 +548,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         {
           "backendAddressPoolName": "backendAddressPool2",
           "backendPort": 8080,
-          "frontendIPConfigurationName": "publicIPConfikhaled",
+          "frontendIPConfigurationName": "publicIPConfione",
           "frontendPort": 8080,
           "loadDistribution": "Default",
           "name": "publicIPLBRule2",
@@ -567,7 +567,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         {
           "allocatedOutboundPorts": 63984,
           "backendAddressPoolName": "backendAddressPool1",
-          "frontendIPConfigurationName": "publicIPConfikhaled",
+          "frontendIPConfigurationName": "publicIPConfione",
           "name": "outboundRule1"
         }
       ]
@@ -628,7 +628,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
     // Required parameters
     frontendIPConfigurations: [
       {
-        name: 'publicIPConfikhaled'
+        name: 'publicIPConfione'
         publicIPAddressId: '<publicIPAddressId>'
       }
     ]
@@ -662,7 +662,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         backendPort: 443
         enableFloatingIP: false
         enableTcpReset: false
-        frontendIPConfigurationName: 'publicIPConfikhaled'
+        frontendIPConfigurationName: 'publicIPConfione'
         frontendPort: 443
         idleTimeoutInMinutes: 4
         name: 'inboundNatRule1'
@@ -670,7 +670,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
       }
       {
         backendPort: 3389
-        frontendIPConfigurationName: 'publicIPConfikhaled'
+        frontendIPConfigurationName: 'publicIPConfione'
         frontendPort: 3389
         name: 'inboundNatRule2'
       }
@@ -682,7 +682,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         disableOutboundSnat: true
         enableFloatingIP: false
         enableTcpReset: false
-        frontendIPConfigurationName: 'publicIPConfikhaled'
+        frontendIPConfigurationName: 'publicIPConfione'
         frontendPort: 80
         idleTimeoutInMinutes: 5
         loadDistribution: 'Default'
@@ -693,7 +693,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
       {
         backendAddressPoolName: 'backendAddressPool2'
         backendPort: 8080
-        frontendIPConfigurationName: 'publicIPConfikhaled'
+        frontendIPConfigurationName: 'publicIPConfione'
         frontendPort: 8080
         loadDistribution: 'Default'
         name: 'publicIPLBRule2'
@@ -708,7 +708,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
       {
         allocatedOutboundPorts: 63984
         backendAddressPoolName: 'backendAddressPool1'
-        frontendIPConfigurationName: 'publicIPConfikhaled'
+        frontendIPConfigurationName: 'publicIPConfione'
         name: 'outboundRule1'
       }
     ]
@@ -759,7 +759,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
     "frontendIPConfigurations": {
       "value": [
         {
-          "name": "publicIPConfikhaled",
+          "name": "publicIPConfione",
           "publicIPAddressId": "<publicIPAddressId>"
         }
       ]
@@ -803,7 +803,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
           "backendPort": 443,
           "enableFloatingIP": false,
           "enableTcpReset": false,
-          "frontendIPConfigurationName": "publicIPConfikhaled",
+          "frontendIPConfigurationName": "publicIPConfione",
           "frontendPort": 443,
           "idleTimeoutInMinutes": 4,
           "name": "inboundNatRule1",
@@ -811,7 +811,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         },
         {
           "backendPort": 3389,
-          "frontendIPConfigurationName": "publicIPConfikhaled",
+          "frontendIPConfigurationName": "publicIPConfione",
           "frontendPort": 3389,
           "name": "inboundNatRule2"
         }
@@ -825,7 +825,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
           "disableOutboundSnat": true,
           "enableFloatingIP": false,
           "enableTcpReset": false,
-          "frontendIPConfigurationName": "publicIPConfikhaled",
+          "frontendIPConfigurationName": "publicIPConfione",
           "frontendPort": 80,
           "idleTimeoutInMinutes": 5,
           "loadDistribution": "Default",
@@ -836,7 +836,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         {
           "backendAddressPoolName": "backendAddressPool2",
           "backendPort": 8080,
-          "frontendIPConfigurationName": "publicIPConfikhaled",
+          "frontendIPConfigurationName": "publicIPConfione",
           "frontendPort": 8080,
           "loadDistribution": "Default",
           "name": "publicIPLBRule2",
@@ -855,7 +855,7 @@ module loadBalancer 'br:bicep/modules/network.load-balancer:1.0.0' = {
         {
           "allocatedOutboundPorts": 63984,
           "backendAddressPoolName": "backendAddressPool1",
-          "frontendIPConfigurationName": "publicIPConfikhaled",
+          "frontendIPConfigurationName": "publicIPConfione",
           "name": "outboundRule1"
         }
       ]

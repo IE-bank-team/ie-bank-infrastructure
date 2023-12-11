@@ -3034,7 +3034,7 @@ Comments:
       "deleteOption": "Delete", // Optional. Can be 'Delete' or 'Detach'
       "ipConfigurations": [
         {
-          "name": "ipconfikhaled",
+          "name": "ipconfione",
           "subnetResourceId": "/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Network/virtualNetworks/<vNetName>/subnets/<subnetName>",
           "pipConfiguration": {
             "publicIpNameSuffix": "-pip-01",
@@ -3067,7 +3067,7 @@ Comments:
       "nicSuffix": "-nic-02",
       "ipConfigurations": [
         {
-          "name": "ipconfikhaled",
+          "name": "ipconfione",
           "subnetResourceId": "/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Network/virtualNetworks/<vNetName>/subnets/<subnetName>",
           "pipConfiguration": {
             "publicIpNameSuffix": "-pip-02"
@@ -3099,7 +3099,7 @@ nicConfigurations: {
       deleteOption: 'Delete' // Optional. Can be 'Delete' or 'Detach'
       ipConfigurations: [
         {
-          name: 'ipconfikhaled'
+          name: 'ipconfione'
           subnetResourceId: '/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Network/virtualNetworks/<vNetName>/subnets/<subnetName>'
           pipConfiguration: {
             publicIpNameSuffix: '-pip-01'
@@ -3132,7 +3132,7 @@ nicConfigurations: {
       nicSuffix: '-nic-02'
       ipConfigurations: [
         {
-          name: 'ipconfikhaled'
+          name: 'ipconfione'
           subnetResourceId: '/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Network/virtualNetworks/<vNetName>/subnets/<subnetName>'
           pipConfiguration: {
             publicIpNameSuffix: '-pip-02'
