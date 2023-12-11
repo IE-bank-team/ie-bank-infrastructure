@@ -24,7 +24,7 @@ param appServiceAppName string = 'ie-bank-dev'
 @minLength(3)
 @maxLength(24)
 param appServiceAPIAppName string = 'ie-bank-api-dev'
-@sys.description('The name of the Azure Monitor workspace')
+@sys.description('The name of the Azure Monitor Workspace')
 param azureMonitorName string
 @sys.description('The name of the Application Insights')
 param appInsightsName string
@@ -45,8 +45,27 @@ param appServiceAPIDBHostDBUSER string
 param appServiceAPIDBHostFLASK_APP string
 @sys.description('The value for the environment variable FLASK_DEBUG')
 param appServiceAPIDBHostFLASK_DEBUG string
+param containerRegistryName string
+param containerRegistryImageName string
+param containerRegistryImageVersion string
+// param containerRegistryUserName string
+// @secure()
+// param containerRegistryPassword string
+//param webAppName string
+param keyVaultName string
+@sys.description('The name of the keyvault where secrets are stored')
 
-//this is the server
+param keyVaultSecretNameACRUsername string = 'acr-username'
+@sys.description('The name of the key vault secret for the ACR username')
+
+param keyVaultSecretNameACRPassword1 string = 'acr-password1'
+@sys.description('The name of the key vault secret for the first ACR password')
+
+param keyVaultSecretNameACRPassword2 string = 'acr-password2'
+@sys.description('The name of the key vault secret for the second ACR password')
+
+
+
 resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01' = {
   name: postgreSQLServerName
   location: location
@@ -54,7 +73,6 @@ resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01
     name: 'Standard_B1ms'
     tier: 'Burstable'
   }
-  //we apply the credentials. backend code needs credentials for the db
   properties: {
     administratorLogin: 'iebankdbadmin'
     administratorLoginPassword: 'IE.Bank.DB.Admin.Pa$$'
@@ -73,7 +91,6 @@ resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01
     version: '15'
   }
 
-    //not very secure letting all IPs access the db. 
   resource postgresSQLServerFirewallRules 'firewallRules@2022-12-01' = {
     name: 'AllowAllAzureServicesAndResourcesWithinAzureIps'
     properties: {
@@ -83,20 +100,37 @@ resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01
   }
 }
 
-//this is the database
 resource postgresSQLDatabase 'Microsoft.DBforPostgreSQL/flexibleServers/databases@2022-12-01' = {
   name: postgreSQLDatabaseName
-  parent: postgresSQLServer //depends on the server
+  parent: postgresSQLServer
   properties: {
     charset: 'UTF8'
     collation: 'en_US.UTF8'
   }
 }
-//we have a mdoule for the app service. Is the tool to follow modular code
-//we have another infraestracture as a code in another file and we call it here (app-service.bicep)
-//the app service plan is the server where the app will be deployed
+
+resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' existing = {
+  name: keyVaultName
+}
+// containerRegistry deployment
+module containerRegistry 'modules/container-registry/registry/main.bicep' = { 
+  dependsOn: [
+    keyVault
+  ]
+  name: '${uniqueString(deployment().name)}${containerRegistryName}'
+  params: {
+    name: containerRegistryName
+    location: location
+    acrAdminUserEnabled: true
+    adminCredentialsKeyVaultResourceId: resourceId('Microsoft.KeyVault/vaults', keyVaultName)
+    adminCredentialsKeyVaultSecretUserName: keyVaultSecretNameACRUsername
+    adminCredentialsKeyVaultSecretUserPassword1: keyVaultSecretNameACRPassword1
+    adminCredentialsKeyVaultSecretUserPassword2: keyVaultSecretNameACRPassword2
+  }
+}
+
 module appService 'modules/app-service.bicep' = {
-  name: 'appService'
+  name: '${uniqueString(deployment().name)}appService'
   params: {
     location: location
     environmentType: environmentType
@@ -110,13 +144,17 @@ module appService 'modules/app-service.bicep' = {
     appServiceAPIEnvVarDBNAME: appServiceAPIEnvVarDBNAME
     appServiceAPIEnvVarDBPASS: appServiceAPIEnvVarDBPASS
     appServiceAPIEnvVarENV: appServiceAPIEnvVarENV
+    containerRegistryImageName: containerRegistryImageName
+    containerRegistryImageVersion: containerRegistryImageVersion
+    containerRegistryName: containerRegistryName
+    keyVaultName: keyVaultName
+    dummyOutput: containerRegistry.outputs.name
+    appInsightsInstrumentationKey: appInsights.properties.InstrumentationKey
   }
   dependsOn: [
     postgresSQLDatabase
   ]
 }
-
-output appServiceAppHostName string = appService.outputs.appServiceAppHostName
 
 resource azureMonitor 'Microsoft.OperationalInsights/workspaces@2020-08-01' = {
   name: azureMonitorName
@@ -132,3 +170,29 @@ resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
     WorkspaceResourceId: resourceId('Microsoft.OperationalInsights/workspaces', azureMonitorName)
   }
 }
+
+output appServiceAppHostName string = appService.outputs.appServiceAppHostName
+
+// Azure Web App for Linux containers module
+// module website 'modules/web/site/main.bicep' = {
+//   dependsOn: [
+//     appService
+//   ]
+//   name: '${uniqueString(deployment().name)}site'
+//   params: {
+//     name: webAppName
+//     location: location
+//     serverFarmResourceId: resourceId('Microsoft.Web/serverfarms', appServicePlanName)
+//     siteConfig: {
+//       linuxFxVersion: 'DOCKER|${containerRegistryName}.azurecr.io/${containerRegistryImageName}:${containerRegistryImageVersion}'
+//       appCommandLine: ''
+//     }
+//     kind: 'app'
+//     appSettingsKeyValuePairs: {
+//       WEBSITES_ENABLE_APP_SERVICE_STORAGE: false
+//       DOCKER_REGISTRY_SERVER_URL: 'https://${containerRegistryName}.azurecr.io'
+//       DOCKER_REGISTRY_SERVER_USERNAME: containerRegistryUserName
+//       DOCKER_REGISTRY_SERVER_PASSWORD: containerRegistryPassword
+//     }
+//   }
+// }
