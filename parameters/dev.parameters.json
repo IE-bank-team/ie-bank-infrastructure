@@ -1,45 +1,45 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "environmentType": {
-            "value": "nonprod"
-        },
-        "postgreSQLServerName": {
-            "value": "grp1-dbsrv-dev"
-        },
-        "postgreSQLDatabaseName": {
-            "value": "grp1-db-dev"
-        },
-        "appServicePlanName": {
-            "value": "grp1-asp-dev"
-        },
-        "appServiceAPIAppName": {
-            "value": "grp1-be-dev"
-        },
-        "appServiceAppName": {
-            "value": "grp1-fe-dev"
-        },
-        "azureMonitorName": {
-            "value": "grp1-am-dev"
-        },
-        "appInsightsName": {
-            "value": "grp1-ai-dev"
-        },
-        "location": {
-            "value": "Norway East"
-        },
-        "containerRegistryName": {
-            "value": "grp1CRdev"
-          },
-          "containerRegistryImageName": {
-            "value": "ie-bank-be"
-          },
-          "containerRegistryImageVersion": {
-            "value": "latest"
-          },
-        "keyVaultName": {
-            "value": "grp1-keyvault-dev"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentType": {
+      "value": "nonprod"
+    },
+    "postgreSQLServerName": {
+      "value": "top8-dbsrv-dev"
+    },
+    "postgreSQLDatabaseName": {
+      "value": "top8-db-dev"
+    },
+    "appServicePlanName": {
+      "value": "top8-asp-dev"
+    },
+    "appServiceAPIAppName": {
+      "value": "top8-be-dev"
+    },
+    "appServiceAppName": {
+      "value": "top8-fe-dev"
+    },
+    "azureMonitorName": {
+      "value": "top8-am-dev"
+    },
+    "appInsightsName": {
+      "value": "top8-ai-dev"
+    },
+    "location": {
+      "value": "Central US"
+    },
+    "containerRegistryName": {
+      "value": "top8CRdev"
+    },
+    "containerRegistryImageName": {
+      "value": "ie-bank-be"
+    },
+    "containerRegistryImageVersion": {
+      "value": "latest"
+    },
+    "keyVaultName": {
+      "value": "top8-keyvault-dev"
     }
+  }
 }
